@@ -7,7 +7,7 @@
     <div class="container px-5 pt-8 mx-auto">
       <div class="flex flex-col w-full mb-20 text-center">
         <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tous les Gagnants</h1>
-        <section class="text-gray-400 body-font">
+        <section class="text-gray-300 body-font">
           <div class="container px-5 py-8 mx-auto">
             <div class="flex flex-col w-full mb-10 text-center">
               <p class="mx-auto text-base leading-relaxed">GoKdo est un site de <a class="text-blue-500">jeux gratuits</a> avec une chance de remporter des cadeaux.<br> Jouez vos parties gratuites quotidiennes et gagnez des Diamants, piéces ou gemmes que vous pourrez <a class="text-blue-500">convertir en cadeaux.</a><br> Sur ce site de jeux en ligne, vous pourrez jouer à des dizaines de jeux.</p>

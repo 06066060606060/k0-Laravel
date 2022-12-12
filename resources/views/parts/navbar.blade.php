@@ -28,17 +28,23 @@
         <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
             class="absolute inset-x-0 z-20 w-full px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
             <div class="flex flex-col pb-4 space-y-4 align-baseline lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="/">Accueil</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="games">Nos Jeux</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner">Gagnants</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="help">Aide</a>
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="/"><i
+                        class="fa-solid fa-house"></i>&nbsp; Accueil</a>
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="games"><i
+                        class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner"><i
+                        class="fa-solid fa-trophy"></i>&nbsp; Gagnants</a>
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="help"><i
+                        class="fa-solid fa-circle-question"></i>&nbsp; Aide</a>
             </div>
 
 
-            @if (backpack_auth()->user())
+
+            @if (backpack_auth()->check())
                 <div :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
-                    class="absolute inset-x-0 z-20 w-full px-6 transition-all duration-300 ease-in-out -translate-x-full bg-blue-100 border-t border-b shadow-md opacity-0 md:border-0 lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0">
+                    class="absolute inset-x-0 z-50 w-full px-6 transition-all duration-300 ease-in-out bg-blue-100 border-t border-b shadow-md opacity-0 md:border-0 lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0">
                     <div class="pb-2 -mx-4 lg:flex lg:items-center">
+
                         <p class="pt-2 ml-4 mr-2 font-bold text-gray-600 capitalize lg:ml-8 lg:text-gray-200 lg:mt-0">
                             Bienvenue {{ backpack_auth()->user()->name }}</p>
                         <div class="z-50 pl-5 md:pl-2">
@@ -64,11 +70,11 @@
                                     x-transition:leave-end="opacity-0 scale-90"
                                     class="absolute z-20 w-48 py-2 mt-2 bg-gray-800 rounded-md shadow-xl left:0 lg:right-0"
                                     style="display: none;">
-                                      @if (backpack_auth()->user()->role == "admin")
-                                    <a href="admin"
-                                        class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
-                                        Dashboard </a>
-                                        @endif
+                                    @if (backpack_auth()->user()->role == 'admin')
+                                        <a href="admin"
+                                            class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
+                                            Dashboard </a>
+                                    @endif
                                     <a href="/profil"
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
                                         Profil </a>
@@ -76,10 +82,9 @@
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
                                         Déconnection </a>
                                 </div>
+
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             @else

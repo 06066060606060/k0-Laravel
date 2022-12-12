@@ -42,7 +42,7 @@
       <div class="container px-5 py-12 mx-auto">
         <div class="flex flex-col w-full mb-20 text-center">
           <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
-          <p class="mx-auto text-base leading-relaxed text-gray-400 lg:w-2/3">GoKdo est un site de jeux gratuits permettant de <a href="winner" class="text-blue-500" > gagner des cadeaux</a> !<br>
+          <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKdo est un site de jeux gratuits permettant de <a href="winner" class="text-blue-500" > gagner des cadeaux</a> !<br>
             <a href="/admin/register" class="text-blue-500" >Inscrivez-vous gratuitement</a> pour jouer à plus d'une dizaine de jeux gratuits multijoueurs originaux et amusants et remporter des cadeaux !.</p>
         </div>
         <div class="flex flex-wrap -m-4">
@@ -319,7 +319,7 @@
       <div class="container px-5 py-12 mx-auto">
         <div class="flex flex-col w-full mb-20 text-center">
           <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux boosters</h1>
-          <p class="mx-auto text-base leading-relaxed text-gray-400 lg:w-2/3">Whatever cardigan tote bag tumblr hexagon
+          <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Whatever cardigan tote bag tumblr hexagon
             brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't
             heard of them man bun deep jianbing selfies heirloom.</p>
         </div>
