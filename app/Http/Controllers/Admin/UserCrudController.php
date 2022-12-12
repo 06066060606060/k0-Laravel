@@ -21,7 +21,7 @@ class UserCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
     use \App\Http\Controllers\Admin\Operations\EmailOperation;
-    use \App\Http\Controllers\Admin\Operations\ExportOperation;
+    
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
      * 
@@ -31,7 +31,7 @@ class UserCrudController extends CrudController
     {
         CRUD::setModel(\App\Models\User::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/user');
-        CRUD::setEntityNameStrings('user', 'users');
+        CRUD::setEntityNameStrings('utilisateur', 'utilisateurs');
     }
 
     /**
@@ -47,9 +47,8 @@ class UserCrudController extends CrudController
         CRUD::column('role')->type('select_from_array')->options([
             'admin' => 'Administrateur',
             'user' => 'Utilisateur',
-           
         ]);
-
+        $this->crud->enableExportButtons();
        
 
         /**
@@ -128,7 +127,6 @@ class UserCrudController extends CrudController
             'options'     => [
                 'admin' => 'administrateur',
                 'user' => 'utilisateur',
-                'abo' => 'abonné',
             ]]);
     }
 }

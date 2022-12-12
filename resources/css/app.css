@@ -37,12 +37,32 @@ img{
 }
 
 
+.sidebar {
+  @apply p-4 shadow-md shadow-black border-t border-black border-opacity-50 rounded-lg mb-2 mt-3 bg-gray-900 w-[230px] !important;
+}
+
+.nav-link {
+  @apply rounded-lg my-1 !important;
+}
+
+.page-link {
+  color: rgb(94, 94, 94) !important;
+}
 
 .swiper-container {
   overflow: hidden;
 }
 
 
+/* reduce text height */
+.cropped {  
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  padding-bottom: 5px;
+
+}
 
 .one{
   background-image: url("../img/gift.png");
