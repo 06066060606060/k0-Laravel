@@ -2,23 +2,26 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
 class Games extends Model
 {
-    use \Backpack\CRUD\app\Models\Traits\CrudTrait;
-    use HasFactory;
+    use CrudTrait;
 
-        /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
+    /*
+    |--------------------------------------------------------------------------
+    | GLOBAL VARIABLES
+    |--------------------------------------------------------------------------
+    */
+
+    protected $table = 'games';
+    // protected $primaryKey = 'id';
+     public $timestamps = false;
+    protected $guarded = ['id'];
+     protected $fillable = [
         'name',
-        'banner',
-        'images',
+        'image',
         'type',
         'description',
         'link',
@@ -28,11 +31,18 @@ class Games extends Model
         'data0',
         'data1',
         'data2',
-    ];
+     ];
+    // protected $hidden = [];
+    // protected $dates = [];
 
+    /*
+    |--------------------------------------------------------------------------
+    | FUNCTIONS
+    |--------------------------------------------------------------------------
+    */
     public function setImageAttribute($value)
     {
-        $attribute_name = "banner";
+        $attribute_name = "image";
         $disk = "public";
         $destination_path = "/uploads";
 
@@ -41,5 +51,27 @@ class Games extends Model
 
     // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
     }
+    /*
+    |--------------------------------------------------------------------------
+    | RELATIONS
+    |--------------------------------------------------------------------------
+    */
 
+    /*
+    |--------------------------------------------------------------------------
+    | SCOPES
+    |--------------------------------------------------------------------------
+    */
+
+    /*
+    |--------------------------------------------------------------------------
+    | ACCESSORS
+    |--------------------------------------------------------------------------
+    */
+
+    /*
+    |--------------------------------------------------------------------------
+    | MUTATORS
+    |--------------------------------------------------------------------------
+    */
 }

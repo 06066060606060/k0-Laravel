@@ -34,8 +34,8 @@ class GamesCrudController extends CrudController
     function getFieldsData()
     {
         $this->crud->addColumn([
-            'name' => 'banner',
-            'label' => 'Banniére',
+            'name' => 'image',
+            'label' => 'image',
             'type' => 'image',
             'prefix' => 'storage/',
             'height' => '80px',
@@ -58,27 +58,17 @@ class GamesCrudController extends CrudController
             CRUD::column('name');
             $this->getFieldsData();
             $this->crud->addColumn([
-                'name'    => 'type',
-                'label'   => 'Type de Jeux',
+                'name'    => 'category',
+                'label'   => 'Catégorie',
                 'type'    => 'text',
-                'options' => ['0' => 'Gratuit', '1' => 'Booster'], // optional
                 'wrapper' => [
                     'element' => 'span',
                     'class' => function ($crud, $column, $entry, $related_key) {
-                        if ($column['text'] ==  '1') 
-                        {
-                            return 'badge badge-danger';
-                        } else if ($column['text'] == '0')
-                        {
-                            return 'badge badge-success';
-                        } else 
-                        {
-                            return 'badge badge-default';
-                        }
+                            return 'badge badge-success'; 
                     },
                 ],
             ]);
-            CRUD::column('category');
+            CRUD::column('type');
             CRUD::column('tags');
             CRUD::column('status');
         /**
@@ -101,9 +91,10 @@ class GamesCrudController extends CrudController
         ]);
         CRUD::setValidation(GamesRequest::class);
         CRUD::field('name');
+        CRUD::field('image');
         CRUD::addField([ // Photo
-            'name'      => 'banner',
-            'label'     => 'Banniére',
+            'name'      => 'image',
+            'label'     => 'Image',
             'type'      => 'upload',
             'prefix' => 'storage/',
             'upload'    => true,
@@ -115,11 +106,11 @@ class GamesCrudController extends CrudController
             'label'       => "Type de Jeux",
             'type'        => 'select_from_array',
             'options'     => [
-                '1' => 'Booster',
-                '0' => 'Gratuit',
+                'Booster' => 'Booster',
+                'Gratuit' => 'Gratuit',
             ],
             'allows_null' => false,
-            'default'     => '0',
+            'default'     => 'Gratuit',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
         CRUD::field('description')->type('textarea');
@@ -129,19 +120,19 @@ class GamesCrudController extends CrudController
             'label'       => "Catégorie",
             'type'        => 'select_from_array',
             'options'     => [
-                '0' => 'Simulation',
-                '1' => 'Tir',
-                '2' => 'Multi-joueurs',
-                '3' => 'Action',
-                '4' => 'Aventure',
-                '5' => 'RPG',
-                '6' => 'Stratégie',
-                '7' => 'Sport',
-                '8' => 'Autre',
+                'Simulation' => 'Simulation',
+                'Tir' => 'Tir',
+                'Multi-joueurs' => 'Multi-joueurs',
+                'Action' => 'Action',
+                'Aventure' => 'Aventure',
+                'RPG' => 'RPG',
+                'Stratégie' => 'Stratégie',
+                'Sport' => 'Sport',
+                'Autre' => 'Autre',
             ],
 
             'allows_null' => false,
-            'default'     => '8',
+            'default'     => 'Autre',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
         // CRUD::field('tags');
