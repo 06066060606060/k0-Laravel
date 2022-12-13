@@ -5,6 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Games extends Model
 {
     use CrudTrait;
@@ -21,6 +22,7 @@ class Games extends Model
     protected $guarded = ['id'];
      protected $fillable = [
         'name',
+        'banner',
         'image',
         'type',
         'description',
@@ -34,6 +36,9 @@ class Games extends Model
      ];
     // protected $hidden = [];
     // protected $dates = [];
+    protected $casts = [
+        'image' => 'array'
+    ];
 
     /*
     |--------------------------------------------------------------------------
@@ -42,11 +47,12 @@ class Games extends Model
     */
     public function setImageAttribute($value)
     {
+    
         $attribute_name = "image";
         $disk = "public";
         $destination_path = "/uploads";
 
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+        $this->uploadMultipleFilesToDisk($value, $attribute_name, $disk, $destination_path);
    
 
     // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field

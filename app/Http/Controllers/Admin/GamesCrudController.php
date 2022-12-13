@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests\GamesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-
+use Illuminate\Support\Facades\Log;  //use
 /**
  * Class GamesCrudController
  * @package App\Http\Controllers\Admin
@@ -57,6 +57,18 @@ class GamesCrudController extends CrudController
             ]);
             CRUD::column('name')->label('Nom');
             $this->getFieldsData();
+            CRUD::column('description');
+            $this->crud->addColumn([
+                'name'    => 'status',
+                'label'   => 'En vedette',
+                'type'    => 'boolean',
+                'wrapper' => [
+                    'element' => 'span',
+                    'class' => function ($crud, $column, $entry, $related_key) {
+                                return 'ml-4 badge badge-dark';
+                            }
+                ],
+            ]);
             $this->crud->addColumn([
                 'name'    => 'category',
                 'label'   => 'Catégorie',
@@ -64,13 +76,27 @@ class GamesCrudController extends CrudController
                 'wrapper' => [
                     'element' => 'span',
                     'class' => function ($crud, $column, $entry, $related_key) {
-                            return 'badge badge-success'; 
+                            return 'ml-2 badge-pill badge-success'; 
                     },
                 ],
             ]);
-            CRUD::column('type');
+            $this->crud->addColumn([
+                'name'    => 'type',
+                'label'   => 'Type',
+                'type'    => 'text',
+                'wrapper' => [
+                    'element' => 'span',
+                    'class' => function ($crud, $column, $entry, $related_key) {
+                            if ($entry->type == 'Gratuit') {
+                                return 'badge badge-primary';
+                            } else {
+                                return 'badge badge-warning';
+                            }
+                    },
+                ],
+            ]);
             // CRUD::column('tags');
-            CRUD::column('status');
+            // CRUD::column('status');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -91,11 +117,11 @@ class GamesCrudController extends CrudController
         ]);
         CRUD::setValidation(GamesRequest::class);
         CRUD::field('name')->label('Nom');
-        CRUD::field('image');
         CRUD::addField([ // Photo
             'name'      => 'image',
+            'key' => 'image_up',
             'label'     => 'Miniature',
-            'type'      => 'upload',
+            'type'      => 'upload_multiple',
             'prefix' => 'storage/',
             'upload'    => true,
             'temporary' => 10,
@@ -135,6 +161,19 @@ class GamesCrudController extends CrudController
             'default'     => 'Autre',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
+        $this->crud->addField([   // radio
+            'name'        => 'status', // the name of the db column
+            'label'       => 'En vedette', // the input label
+            'type'        => 'radio',
+            'options'     => [
+                // the key will be stored in the db, the value will be shown as label; 
+                1 => "Oui",
+                0 => "Non"
+            ],
+            // optional
+            'default'     => '0',
+           'inline'      => true, // show the radios all on the same line?
+        ],);
         // CRUD::field('tags');
         // CRUD::field('status');
         // CRUD::field('data0');

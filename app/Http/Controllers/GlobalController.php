@@ -20,14 +20,26 @@ class GlobalController extends Controller
     {
        $freegames = Games::where('type', 'Gratuit')->limit(6)->inRandomOrder()->get();
        $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
-
-         return view('index', compact('freegames', 'boostergames'));
+       $starred = Games::where('status',  1)->inRandomOrder()->get();
+       $starred = $starred[0];
+         return view('index', compact('freegames', 'boostergames', 'starred'));
     }
 
-    public function game()
+    public function game(Request $request)
     {
-        return view('game');
+        $onegame = Games::where('id',  $request->id)->get();
+        $game = $onegame[0];
+      
+        return view('game', compact('game'));
     }
+
+    
+    static function starred()
+    {
+        $starred = Games::where('status',  1)->inRandomOrder()->get();
+        return $starred;
+    }
+
 
     public function games()
     {

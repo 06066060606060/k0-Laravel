@@ -18,17 +18,18 @@
                     <div class="p-4 lg:w-1/4 md:w-1/2">
                         <div
                             class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
+                              @php $images =  $freegame->image[0] ?? null; @endphp
                             <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                src="./storage/{{ $freegame->image }} ">
+                                src="./storage/{{ $images }}" onerror="this.src='/img/empty.png'">
                             <div class="w-full">
                                 <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
                                 <h3 class="mb-1 text-gray-300">{{ $freegame->category }}</h3>
                                 <p class="mb-2 text-sm">{{ $freegame->description }}</p>
-                                <a class="flex justify-center pb-4">
-                                    <da href="game?id={{ $freegame->id }}"
+                                <a href="game?id={{ $freegame->id }}" class="flex justify-center pb-4">
+                                    <button
                                         class=" transform select-none  bg-blue-700 text-center hover:bg-blue-600 active:bg-blue-800 text-white font-semibold py-1 w-[120px] rounded-full">
                                         Jouer
-                                    </da>
+                                    </button>
                                 </a>
                             </div>
                         </div>
@@ -43,24 +44,18 @@
                                 <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">Aucun</h2>
                                 <h3 class="mb-1 text-gray-300">Null</h3>
                                 <p class="mb-2 text-sm">DIY tote bag drinking vinegar cronut adaptogen squid fanny.</p>
-                                <a class="flex justify-center pb-4">
-                                    <da href="game"
+                             <a href="#" class="flex justify-center pb-4">
+                                    <button
                                         class=" transform select-none  bg-blue-700 text-center hover:bg-blue-600 active:bg-blue-800 text-white font-semibold py-1 w-[120px] rounded-full">
                                         Jouer
-                                    </da>
+                                    </button>
                                 </a>
                             </div>
                         </div>
                     </div>
                 @endforelse
-
-
-
             </div>
-
-
             <!-- BOOSTER -->
-
             <div class="container px-5 pt-16 mx-auto">
                 <h2 class="pb-8 text-4xl font-bold tracking-tight text-center text-red-600 underline underline-offset-8">
                     Booster
@@ -70,18 +65,19 @@
                         <div class="p-4 lg:w-1/4 md:w-1/2">
                             <div
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
+                                 @php $imagesb =  $boostergame->image[0] ?? null; @endphp
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                    src="./storage/{{ $boostergame->image }}">
+                                    src="./storage/{{$imagesb  }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
-                                    <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $boostergame->name }}</h2>
+                                    <h2 class="py-1 text-xl font-bold text-orange-600 title-font ">{{ $boostergame->name }}</h2>
                                     <h3 class="mb-1 text-gray-300">{{ $boostergame->category }}</h3>
                                     <p class="mb-2 text-sm">{{ $boostergame->description }}</p>
-                                    <div class="flex justify-center pb-4">
-                                        <a href="game?id={{ $boostergame->id }}"
-                                            class=" transform select-none  bg-orange-700 text-center hover:bg-orange-600 active:bg-orange-800 text-white font-semibold py-1 w-[120px] rounded-full">
-                                            Jouer
-                                    </div>
-                                    </a>
+                                    <a href="game?id={{ $boostergame->id }}" class="flex justify-center pb-4">
+                                    <button
+                                        class=" transform select-none  bg-orange-700 text-center hover:bg-orange-600 active:bg-orange-800 text-white font-semibold py-1 w-[120px] rounded-full">
+                                        Jouer
+                                    </button>
+                                </a>
                                 </div>
                             </div>
                         </div>
@@ -95,12 +91,12 @@
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">Aucun</h2>
                                     <h3 class="mb-1 text-gray-300">Null</h3>
                                     <p class="mb-2 text-sm">DIY tote bag drinking vinegar cronut adaptogen squid fanny.</p>
-                                    <div class="flex justify-center pb-4">
-                                        <a href="game"
-                                            class=" transform select-none  bg-orange-700 text-center hover:bg-orange-600 active:bg-orange-800 text-white font-semibold py-1 w-[120px] rounded-full">
-                                            Jouer
-                                    </div>
-                                    </a>
+                                     <a href="#" class="flex justify-center pb-4">
+                                    <button
+                                        class=" transform select-none  bg-blue-700 text-center hover:bg-blue-600 active:bg-blue-800 text-white font-semibold py-1 w-[120px] rounded-full">
+                                        Jouer
+                                    </button>
+                                </a>
                                 </div>
                             </div>
                         </div>

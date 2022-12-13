@@ -10,9 +10,9 @@
                         <div class="relative w-full max-w-lg">
 
                             <div class="relative">
+                               @php $imagesd =  $starred->image[0] ?? null; @endphp
                                 <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                    src="./img/Gif_Final_1.gif"></img>
-
+                                    src="./storage/{{  $imagesd }}"></img>
                             </div>
                         </div>
                     </div>
@@ -23,14 +23,10 @@
                     </span>
                     <h1
                         class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
-                        Omega Strikers.</h1>
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Omega Strikers est un jeu de
-                        combat en 3v3
-                        et free-to-play. Choisissez votre personnage, percutez vos adversaires pour les projeter hors de
-                        l'arène.
-                    </p>
+                       {{ $starred->name }}</h1>
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
                     <div class="">
-                        <a href="game"
+                        <a href="game?id={{ $starred->id }}"
                             class="block w-full px-5 py-3 mx-4 text-base font-medium text-center text-white bg-green-600 border border-transparent rounded-full shadow hover:bg-green-700 active:bg-green-800 focus:outline-none sm:px-10">Jouer
                             Maintenant</a>
                     </div>
@@ -64,9 +60,11 @@
                                     Gratuit
                                 </div>
                             </div>
+                            @php $images =  $freegame->image[0] ?? null; @endphp
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
-                                src="./storage/{{ $freegame->image }}">
+                                src="./storage/{{ $images }}" onerror="this.src='/img/empty.png'">
+
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">
@@ -273,9 +271,10 @@
                                     Booster
                                 </div>
                             </div>
+                             @php $imagesb =  $boostergame->image[0] ?? null; @endphp
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
-                                src="./storage/{{ $boostergame->image }}">
+                                src="./storage/{{ $imagesb  }}" onerror="this.src='/img/empty.png'">
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">{{ $boostergame->name }}</h2>
