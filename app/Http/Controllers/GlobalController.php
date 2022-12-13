@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Games;
+use App\Models\Pages;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -32,6 +33,12 @@ class GlobalController extends Controller
       
         return view('game', compact('game'));
     }
+
+    static function pages(){
+        $pages = Pages::all();
+        return $pages;
+    }
+
 
     
     static function starred()
