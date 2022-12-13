@@ -46,13 +46,13 @@
                 <table class="min-w-full divide-y divide-gray-200 text-sm ">
                     <thead class="bg-gray-100 rounded-t-lg">
                         <tr>
-                            <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                            <th class="whitespace-nowrap px-4 py-2 text-left font-bold text-gray-900">
                                 Jeux
                             </th>
-                            <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                            <th class="whitespace-nowrap px-4 py-2 text-left font-bold text-gray-900">
                                Score
                             </th>
-                            <th class="whitespace-nowrap px-4 py-2 text-left font-medium text-gray-900">
+                            <th class="whitespace-nowrap px-4 py-2 text-left font-bold text-gray-900">
                                 Items
                             </th>
                         </tr>
@@ -65,7 +65,7 @@
                              {{ $score->game->name }}
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-300"> {{ $score->score }}</td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-300">{{ $score->data }}</td>
+                            <td class="flex whitespace-nowrap px-4 py-2 text-gray-300"><img src="./img/gem5.png" class="mx-1 w-5 h-auto"> <img src="./img/coin10.png" class="mx-1 w-5 h-auto"> <img src="./img/gem6.png" class="mx-1 w-5 h-auto"></td>
                         </tr>
                     @empty
                          <tr>
