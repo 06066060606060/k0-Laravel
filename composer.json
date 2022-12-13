@@ -17,7 +17,6 @@
         "stripe/stripe-php": "^9.9"
     },
     "require-dev": {
-        "backpack/devtools": "^1.2",
         "backpack/generators": "^3.3",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
