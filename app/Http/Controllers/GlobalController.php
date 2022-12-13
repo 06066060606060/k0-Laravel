@@ -18,7 +18,7 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
-       $freegames = Games::where('type', 'Gratuit')->limit(6)->inRandomOrder()->get();
+       $freegames = Games::where('type', 'Gratuit')->where('status',  0)->limit(6)->inRandomOrder()->get();
        $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
        $starred = Games::where('status',  1)->inRandomOrder()->get();
        $starred = $starred[0];

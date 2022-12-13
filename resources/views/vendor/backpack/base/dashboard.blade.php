@@ -5,7 +5,7 @@
 @section('content')
     <section class="text-gray-600 body-font">
         <div id="main-content" class="relative w-full h-full mt-2 overflow-y-auto bg-[#111827] rounded-lg">
-            <div class="flex flex-col xl:flex-row px-4 pt-6 pb-6 gap-4">
+            <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
                 <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
                     <div class="flex items-center justify-between mb-2">
                         <div>
@@ -17,7 +17,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col mt-2 h-96">
-                        <div class="overflow-x-hidden rounded-lg overflow-auto">
+                        <div class="overflow-auto overflow-x-hidden rounded-lg">
                             <div class="inline-block min-w-full align-middle">
                                 <div class="overflow-hidden shadow sm:rounded-lg">
                                     <table class="min-w-full divide-y divide-gray-200">
@@ -36,7 +36,7 @@
                                                     Description
                                                 </th>
                                                  <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase hidden md:block">
+                                                    class="hidden px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase md:block">
                                                     Editer
                                                 </th>
                                             </tr>
@@ -58,7 +58,7 @@
                                                       <p class="cropped">  {{ $star->description }}</p>
                                                     </td>
                                                     <td
-                                                        class="p-4 text-sm font-normal whitespace-nowrap rate-container hidden md:block">
+                                                        class="hidden p-4 text-sm font-normal whitespace-nowrap rate-container md:block">
                                                         <a href="/admin/games/{{ $star->id }}/edit">
                                                             <i
                                                                 class="text-gray-600 hover:text-gray-800 active:text-black las la-edit la-2x"></i>
@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col mt-2 h-96">
-                        <div class="overflow-x-hidden rounded-lg overflow-auto">
+                        <div class="overflow-auto overflow-x-hidden rounded-lg">
                             <div class="inline-block min-w-full align-middle">
                                 <div class="overflow-hidden shadow sm:rounded-lg">
                                     <table class="min-w-full divide-y divide-gray-200">
