@@ -12,7 +12,7 @@
                          <div class="w-full px-4 py-4 bg-gray-900 rounded-md xl:w-1/4 xl:mr-4">
                            @php $imagesb =  $game->image[0] ?? null; @endphp
                          <img src="./storage/{{ $imagesb }}" alt="" class="w-32 mx-auto mb-4" onerror="this.src='/img/empty.png'">
-                             <h1 class="text-2xl font-extrabold text-gray-50">{{ $game->name }}</h1>
+                             <h1 class="text-xl font-extrabold text-gray-50">{{ $game->name }}</h1>
                               <span class="block mb-2 text-blue-500">{{ $game->category }}</span>
                              <p class="my-8">
                                  {{ $game->description }}
