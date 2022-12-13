@@ -10,25 +10,37 @@
                         <div class="relative w-full max-w-lg">
 
                             <div class="relative">
-                               @php $imagesd =  $starred->image[0] ?? null; @endphp
+                                @php $imagesd =  $starred->image[0] ?? null; @endphp
                                 <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                    src="./storage/{{  $imagesd }}"></img>
+                                    src="./storage/{{ $imagesd }}"></img>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div
                     class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> Les jeux de la semaine
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> Selection de la
+                        semaine
                     </span>
                     <h1
                         class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
-                       {{ $starred->name }}</h1>
+                        {{ $starred->name }}</h1>
                     <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
                     <div class="">
+
                         <a href="game?id={{ $starred->id }}"
-                            class="block w-full px-5 py-3 mx-4 text-base font-medium text-center text-white bg-green-600 border border-transparent rounded-full shadow hover:bg-green-700 active:bg-green-800 focus:outline-none sm:px-10">Jouer
-                            Maintenant</a>
+                            class="relative px-5 py-2 mx-auto mt-4 font-medium text-white group">
+                            <span
+                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                            <span
+                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                            <span
+                                class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                            <span
+                                class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                            <span class="relative">Jouer
+                                Maintenant</span>
+                        </a>
                     </div>
 
                 </div>
@@ -72,8 +84,19 @@
                                 <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">{{ $freegame->category }}
                                 </h1>
                                 <p class="text-sm leading-relaxed text-gray-800">{{ $freegame->description }}</p>
+
                                 <a href="game?id={{ $freegame->id }}"
-                                    class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">Jouer</a>
+                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group">
+                                    <span
+                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                    <span
+                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                    <span
+                                        class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                    <span
+                                        class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                    <span class="relative">Jouer</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -94,7 +117,7 @@
                                 <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">
                                 </h2>
                                 <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">Shooting Stars</h1>
-                                 <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed
+                                <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed
                                     sriracha leggings
                                     jianbing microdosing tousled waistcoat.</p>
                                 <a href="game"
@@ -271,17 +294,30 @@
                                     Booster
                                 </div>
                             </div>
-                             @php $imagesb =  $boostergame->image[0] ?? null; @endphp
+                            @php $imagesb =  $boostergame->image[0] ?? null; @endphp
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
-                                src="./storage/{{ $imagesb  }}" onerror="this.src='/img/empty.png'">
+                                src="./storage/{{ $imagesb }}" onerror="this.src='/img/empty.png'">
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
-                                <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">{{ $boostergame->name }}</h2>
-                                <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">{{ $boostergame->category }}</h1>
+                                <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">
+                                    {{ $boostergame->name }}</h2>
+                                <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">
+                                    {{ $boostergame->category }}</h1>
                                 <p class="text-sm leading-relaxed text-gray-800">{{ $boostergame->description }}</p>
+
                                 <a href="game?id={{ $boostergame->id }}"
-                                    class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">Jouer</a>
+                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group">
+                                    <span
+                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                    <span
+                                        class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                    <span
+                                        class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                    <span
+                                        class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                    <span class="relative">Jouer</span>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -302,7 +338,7 @@
                                 <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">
                                 </h2>
                                 <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">Shooting Stars</h1>
-                                 <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed
+                                <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed
                                     sriracha leggings
                                     jianbing microdosing tousled waistcoat.</p>
                                 <a href="game"

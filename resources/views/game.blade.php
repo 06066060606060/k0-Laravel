@@ -17,13 +17,11 @@
                              <p class="my-8">
                                  {{ $game->description }}
                              </p>
-
-                             <button type="button"
-                                 class="w-full py-2 font-semibold text-gray-900 bg-blue-400 rounded hover:bg-blue-500 active:bg-blue-800">Jouer</button>
-
                          </div>
                          <div class="mb-4 xl:mb-0">
 
+
+  
                              <img src="./img/demo.jpg" alt="" class="object-cover w-full bg-gray-500 rounded-md">
                          </div>
                      </div>
@@ -32,4 +30,5 @@
              </div>
          </div>
      </container>
+    
  @endsection
