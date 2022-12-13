@@ -12,7 +12,7 @@
                             <div class="relative">
                                 @php $imagesd =  $starred->image[0] ?? null; @endphp
                                 <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                    src="./storage/{{ $imagesd }}"></img>
+                                    src="./storage/{{ $imagesd }}" onerror="this.src='/img/empty.png'">
                             </div>
                         </div>
                     </div>
