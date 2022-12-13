@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
+use App\Models\Scores;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -76,8 +77,10 @@ class GlobalController extends Controller
     public function getProfil()
     {
         $usermail = backpack_auth()->user()->email;
-       
-        return view('profil');
+        $userid =  backpack_auth()->user()->id;
+        $scores = Scores::where('user_id', $userid)->get();
+
+        return view('profil', compact('scores'));
     }
 
     public function deleteUser(Request $id)

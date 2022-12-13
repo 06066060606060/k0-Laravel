@@ -2,6 +2,7 @@
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('dashboard') }}"><i class="la la-home nav-icon"></i> {{ trans('backpack::base.dashboard') }}</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('games') }}"><i class="nav-icon las la-gamepad"></i></i> Jeux</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user') }}"><i class="nav-icon la la-user"></i> <span>Utilisateurs</span></a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('scores') }}"><i class="nav-icon la la-trophy"></i> Scores</a></li>
 
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('elfinder') }}"><i class="nav-icon la la-files-o"></i> <span>Fichiers</span></a></li>

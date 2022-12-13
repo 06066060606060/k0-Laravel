@@ -7,7 +7,7 @@
 
         <span class="ml-3 text-xl text-gray-300">GoKdo</span>
       </a>
-      <p class="mt-2 text-sm text-gray-400">Air plant banjo lyft occupy retro adaptogen indego</p>
+      <p class="mt-2 text-sm text-gray-400">Gagner des cadeaux tous les jours.</p>
     </div>
     <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
       <div class="w-full px-4 lg:w-1/4 md:w-1/2">
@@ -33,9 +33,6 @@
         <nav class="mb-10 list-none">
           <li>
             <a href="mailto:Contact@gokdo.com" class="text-gray-400 hover:text-gray-500">Contact@gokdo.com</a>
-          </li>
-          <li>
-            <a class="text-gray-400 hover:text-gray-500">Second Link</a>
           </li>
 
         </nav>

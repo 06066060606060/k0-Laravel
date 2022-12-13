@@ -46,4 +46,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function score()
+    {
+        return $this->belongsTo(Scores::class, 'game_id', 'user_id', 'score');
+    }
+
 }
