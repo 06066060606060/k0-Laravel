@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\Models\Conditions;
+use App\Models\Games;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -18,7 +18,10 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
-        return view('index');
+       $freegames = Games::where('type', 'Gratuit')->limit(6)->inRandomOrder()->get();
+       $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
+
+         return view('index', compact('freegames', 'boostergames'));
     }
 
     public function game()
@@ -28,7 +31,9 @@ class GlobalController extends Controller
 
     public function games()
     {
-        return view('games');
+        $freegames = Games::where('type', 'Gratuit')->inRandomOrder()->get();
+        $boostergames = Games::where('type', 'Booster')->inRandomOrder()->get();
+        return view('games', compact('freegames', 'boostergames'));
     }
 
     public function winner()

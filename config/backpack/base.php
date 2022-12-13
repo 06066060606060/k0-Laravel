@@ -85,7 +85,7 @@ return [
      // ------
  
      // Menu logo. You can replace this with an <img> tag if you have a logo.
-     'project_logo'    => '<img class="w-24 h-auto mr-2" src="../../img/logo.png">',
+     'project_logo'    => '<img class="w-24 h-auto mr-2" src="../../../img/logo.png">',
  
      // Show / hide breadcrumbs on admin panel pages.
      'breadcrumbs' => false,

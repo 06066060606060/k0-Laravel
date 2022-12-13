@@ -35,7 +35,7 @@ class GamesCrudController extends CrudController
     {
         $this->crud->addColumn([
             'name' => 'image',
-            'label' => 'image',
+            'label' => 'Miniature',
             'type' => 'image',
             'prefix' => 'storage/',
             'height' => '80px',
@@ -55,7 +55,7 @@ class GamesCrudController extends CrudController
         $this->crud->setValidation([
             'name' => 'required|min:2',
             ]);
-            CRUD::column('name');
+            CRUD::column('name')->label('Nom');
             $this->getFieldsData();
             $this->crud->addColumn([
                 'name'    => 'category',
@@ -69,7 +69,7 @@ class GamesCrudController extends CrudController
                 ],
             ]);
             CRUD::column('type');
-            CRUD::column('tags');
+            // CRUD::column('tags');
             CRUD::column('status');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -90,11 +90,11 @@ class GamesCrudController extends CrudController
             'name' => 'required|min:2|max:255',
         ]);
         CRUD::setValidation(GamesRequest::class);
-        CRUD::field('name');
+        CRUD::field('name')->label('Nom');
         CRUD::field('image');
         CRUD::addField([ // Photo
             'name'      => 'image',
-            'label'     => 'Image',
+            'label'     => 'Miniature',
             'type'      => 'upload',
             'prefix' => 'storage/',
             'upload'    => true,
