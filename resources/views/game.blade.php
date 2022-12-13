@@ -5,9 +5,9 @@
      <div class="z-0 one"></div>
  @php $imagesb =  $game->image[0] ?? null; @endphp
      <container class="block px-4 mx-auto text-white max-w-7xl">
-         <div class="container px-5 pt-4 mx-auto">
+         <div class="container lg:px-5 pt-4 mx-auto">
              <div class="flex flex-col w-full mb-20 text-center">
-                 <section class="p-4 text-gray-100 bg-gray-800 rounded-md overflow-hidden mx-16">
+                 <section class="p-4 text-gray-100 bg-gray-800 rounded-md overflow-hidden lg:mx-16">
 
                      <h1 class="text-4xl font-extrabold text-gray-50 py-4">{{ $game->name }}</h1>
                      <div class="container flex flex-col-reverse xl:flex-row">
