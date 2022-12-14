@@ -28,13 +28,13 @@
         <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
             class="absolute inset-x-0 z-20 w-full px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
             <div class="flex flex-col pb-4 space-y-4 align-baseline lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="/"><i
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="/" @click="isOpen = false"><i
                         class="fa-solid fa-house"></i>&nbsp; Accueil</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="games"><i
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="games" @click="isOpen = false"><i
                         class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner"><i
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner" @click="isOpen = false"><i
                         class="fa-solid fa-trophy"></i>&nbsp; Gagnants</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="help"><i
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="help" @click="isOpen = false"><i
                         class="fa-solid fa-circle-question"></i>&nbsp; Aide</a>
             </div>
 
@@ -79,7 +79,7 @@
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
                                         Profil </a>
                                     <a href="/admin/logout"
-                                        class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
+                                        class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" target="/">
                                         Déconnection </a>
                                 </div>
 
@@ -88,7 +88,7 @@
                     </div>
                 </div>
             @else
-                 <a href="/admin"
+                 <a href="/admin" target="_blank"
                                     class="relative flex justify-center w-24 px-5 py-1 my-2 font-medium text-white lg:ml-8 group">
                                     <span
                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
