@@ -21,6 +21,9 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('score')->nullable();
             $table->string('data')->nullable();
+            $table->string('trophy01')->nullable();
+            $table->string('trophy02')->nullable();
+            $table->string('trophy03')->nullable();
             $table->string('save')->nullable();
             $table->timestamps();
         });

@@ -44,6 +44,9 @@ class UserCrudController extends CrudController
     {
         CRUD::column('name');
         CRUD::column('email');
+        CRUD::column('trophee1')->label('Diamants');
+        CRUD::column('trophee2')->label('Rubis');
+        CRUD::column('trophee3')->label('Piéces');
         CRUD::column('role')->type('select_from_array')->options([
             'admin' => 'Administrateur',
             'user' => 'Utilisateur',
@@ -112,6 +115,9 @@ class UserCrudController extends CrudController
         ]);
         CRUD::field('name');
         CRUD::field('email');
+        CRUD::field('trophee1')->label('Diamants')->type('number');
+        CRUD::field('trophee2')->label('Rubis')->type('number');
+        CRUD::field('trophee3')->label('Piéces')->type('number');
         $this->crud->addField([   // select_from_array
             'name'        => 'role',
             'label'       => "role",

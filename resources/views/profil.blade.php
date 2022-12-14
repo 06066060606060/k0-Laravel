@@ -2,10 +2,9 @@
 
 @section('main')
   <div data-barba="container">
-    <container class="flex flex-col md:flex-row px-8 mx-auto lg:max-w-6xl md:pl-16">
-        <div class="flex flex-col items-center justify-center">
-            <article
-                class="relative max-w-2xl p-4 bg-gray-800 border border-gray-700 rounded-xl w-64 h-96 mb-4 md:mb-0 md:mr-4">
+    <container class="flex flex-col md:flex-row px-8 mx-auto lg:max-w-6xl md:pl-16 min-h-screen">
+        <div class="flex flex-col items-center">
+            <card class="relative p-4 bg-gray-800 border border-gray-700 rounded-xl w-full md:w-64 h-96 mb-4 md:mb-0 md:mr-4">
                 <div class="flex items-center">
                     <img alt="Developer" src="img/avatar.png"
                         class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
@@ -23,7 +22,20 @@
                     </div>
                 </div>
 
-                <ul class="absolute mt-4 space-y-2 bottom-0 mb-4">
+                <div class="flex flex-col md:items-center pl-8 md:pl-0">
+                  <h3 class="text-lg font-bold text-white pt-4 pb-2">Trophées</h3>
+                    <div class="flex py-2">
+                  <img src="img/diamond5.png" class="w-10 h-8"><p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
+                  </div>
+                  <div class="flex py-2">
+                  <img src="img/gem10.png" class="w-10 h-8"><p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
+                  </div>
+                   <div class="flex py-2">
+                  <img src="img/coin10.png" class="w-10 h-8"><p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
+                  </div>
+                </div>
+
+                <ul class="absolute mt-4 bottom-0 mb-4">
                     <div
                         class="flex w-full max-w-sm overflow-hidden bg-gray-800 border border-gray-700 rounded-lg shadow-md">
                         <div class="flex items-center justify-center w-12 bg-red-500">
@@ -34,13 +46,13 @@
                             </svg>
                         </div>
 
-                        <div class="px-4 py-2 ml-1">
+                        <div class="px-4 pb-1 ml-1">
                             <span class="text-xs font-semibold text-red-400">Supprimer mon compte</span>
                             @include('parts.delete')
                         </div>
                     </div>
                 </ul>
-            </article>
+            </card>
         </div>
         <div class="flex flex-col bg-gray-800 border border-gray-700 rounded-xl w-full h-96">
             <div class="overflow-x-auto rounded-t-lg">
@@ -53,9 +65,6 @@
                             <th class="whitespace-nowrap px-4 py-2 text-left font-bold text-gray-900">
                                Score
                             </th>
-                            <th class="whitespace-nowrap px-4 py-2 text-left font-bold text-gray-900">
-                                Items
-                            </th>
                         </tr>
                     </thead>
 
@@ -66,14 +75,13 @@
                              {{ $score->game->name }}
                             </td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-300"> {{ $score->score }}</td>
-                            <td class="flex whitespace-nowrap px-4 py-2 text-gray-300"><img src="./img/gem5.png" class="mx-1 w-5 h-auto"> <img src="./img/coin10.png" class="mx-1 w-5 h-auto"> <img src="./img/gem6.png" class="mx-1 w-5 h-auto"></td>
                         </tr>
                     @empty
                          <tr>
                             <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-200">
                                Aucun Score enregistré
                             </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-300">2850</td>
+                            <td class="whitespace-nowrap px-4 py-2 text-gray-300"></td>
                             <td class="whitespace-nowrap px-4 py-2 text-gray-300"></td>
                         </tr>
                     @endforelse
