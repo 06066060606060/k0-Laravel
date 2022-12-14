@@ -5,7 +5,7 @@
     <container class="flex flex-col md:flex-row px-8 mx-auto lg:max-w-6xl md:pl-16 min-h-screen">
         <div class="flex flex-col items-center">
             <card class="relative p-4 bg-gray-800 border border-gray-700 rounded-xl w-full md:w-64 h-96 mb-4 md:mb-0 md:mr-4">
-                <div class="flex items-center">
+                <div class="flex items-center pb-4 border-b border-gray-500">
                     <img alt="Developer" src="img/avatar.png"
                         class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
 
@@ -22,8 +22,11 @@
                     </div>
                 </div>
 
-                <div class="flex flex-col md:items-center pl-8 md:pl-0">
-                  <h3 class="text-lg font-bold text-white pt-4 pb-2">Trophées</h3>
+                <div class="flex flex-col md:items-center ">
+                <p class="text-white font-medium pb-1 border-b border-gray-500 ">
+                Score total : {{ backpack_auth()->user()->global_score }}
+                </p>
+                  <h3 class="text-lg font-bold text-white pt-1 pb-2">Mes Butins</h3>
                     <div class="flex py-2">
                   <img src="img/diamond5.png" class="w-10 h-8"><p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                   </div>
@@ -68,7 +71,7 @@
                         </tr>
                     </thead>
 
-                    <tbody class="divide-y divide-gray-200">
+                    <tbody class="divide-y divide-gray-500">
                     @forelse ($scores as $score)
                          <tr>
                             <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-200">

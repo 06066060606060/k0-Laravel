@@ -2,8 +2,9 @@
 <!-- HOME -->
 <container id="home">
     <section>
+
         <div
-            class="px-12 py-12 mx-8 bg-gray-800 rounded-lg md:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
+            class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
             <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
                 <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
                     <div>
@@ -29,7 +30,7 @@
                     <div class="">
 
                         <a href="game?id={{ $starred->id }}"
-                            class="relative px-5 py-2 mx-auto mt-4 font-medium text-white group">
+                            class="relative px-5 py-2 mx-auto mt-4 font-medium text-white group shadow-lg">
                             <span
                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                             <span
@@ -68,13 +69,13 @@
                         <div class="relative flex overflow-hidden">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
-                                    class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
+                                    class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                     Gratuit
                                 </div>
                             </div>
                             @php $images =  $freegame->image[0] ?? null; @endphp
                             <img alt="gallery"
-                                class="absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
+                                class="imggame absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
                                 src="./storage/{{ $images }}" onerror="this.src='/img/empty.png'">
 
                             <div
@@ -86,7 +87,7 @@
                                 <p class="text-sm leading-relaxed text-gray-800">{{ $freegame->description }}</p>
 
                                 <a href="game?id={{ $freegame->id }}"
-                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group">
+                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group shadow-lg">
                                     <span
                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                     <span
@@ -150,7 +151,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-md rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -170,7 +171,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-md rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -190,7 +191,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-md rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -210,7 +211,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-md rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -230,7 +231,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-md rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -250,7 +251,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-md rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -290,13 +291,13 @@
                         <div class="relative flex overflow-hidden">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
-                                    class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
+                                    class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                     Booster
                                 </div>
                             </div>
                             @php $imagesb =  $boostergame->image[0] ?? null; @endphp
                             <img alt="gallery"
-                                class="absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
+                                class="imggame absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
                                 src="./storage/{{ $imagesb }}" onerror="this.src='/img/empty.png'">
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
@@ -307,7 +308,7 @@
                                 <p class="text-sm leading-relaxed text-gray-800">{{ $boostergame->description }}</p>
 
                                 <a href="game?id={{ $boostergame->id }}"
-                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group">
+                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group shadow-lg">
                                     <span
                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                     <span
