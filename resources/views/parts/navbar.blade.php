@@ -109,15 +109,15 @@
                     <div class="flex pr-4 items-center">
                         <div class="flex px-2">
                             <img src="img/diamond5.png" class="w-10 h-8">
-                            <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
+                            <p class="text-white pt-1">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                         </div>
                         <div class="flex px-2">
                             <img src="img/gem10.png" class="w-10 h-8">
-                            <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
+                            <p class="text-white pt-1">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
                         </div>
                         <div class="flex px-2">
                             <img src="img/coin10.png" class="w-10 h-8">
-                            <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
+                            <p class="text-white pt-1">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
                     </div>
                 </div>
