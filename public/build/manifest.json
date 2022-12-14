@@ -13,8 +13,12 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app.29b095f5.css",
+    "file": "assets/app.be391bf0.css",
     "src": "resources/css/app.css",
     "isEntry": true
+  },
+  "resources/css/gift.png": {
+    "file": "assets/gift.d04b1766.png",
+    "src": "resources/css/gift.png"
   }
 }
