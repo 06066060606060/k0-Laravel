@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('main')
+  <div data-barba="container">
     <container class="flex flex-col md:flex-row px-8 mx-auto lg:max-w-6xl md:pl-16">
         <div class="flex flex-col items-center justify-center">
             <article
@@ -85,4 +86,5 @@
 
         </div>
     </container>
+    </div>
 @endsection
