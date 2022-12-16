@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d73da7eec6ceb7d880726609a08b137",
+    "content-hash": "b125b87f34de1f7dc623a169ab16c03f",
     "packages": [
         {
             "name": "backpack/backupmanager",
@@ -1874,16 +1874,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v9.43.0",
+            "version": "v9.44.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "011f2e1d49a11c22519a7899b46ddf3bc5b0f40b"
+                "reference": "60808a7d9acd53461fd69634c08fc7e0a99fbf98"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/011f2e1d49a11c22519a7899b46ddf3bc5b0f40b",
-                "reference": "011f2e1d49a11c22519a7899b46ddf3bc5b0f40b",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/60808a7d9acd53461fd69634c08fc7e0a99fbf98",
+                "reference": "60808a7d9acd53461fd69634c08fc7e0a99fbf98",
                 "shasum": ""
             },
             "require": {
@@ -2056,7 +2056,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2022-12-06T14:26:07+00:00"
+            "time": "2022-12-15T14:56:36+00:00"
         },
         {
             "name": "laravel/sanctum",
@@ -3078,6 +3078,68 @@
                 }
             ],
             "time": "2022-10-28T22:51:32+00:00"
+        },
+        {
+            "name": "pestopancake/laravel-backpack-database-notifications",
+            "version": "1.0.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pestopancake/laravel-backpack-database-notifications.git",
+                "reference": "34b7be7662c9bddbaa04b05fce95bc88cec9253b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pestopancake/laravel-backpack-database-notifications/zipball/34b7be7662c9bddbaa04b05fce95bc88cec9253b",
+                "reference": "34b7be7662c9bddbaa04b05fce95bc88cec9253b",
+                "shasum": ""
+            },
+            "require": {
+                "backpack/crud": "^5.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.0|^5.0|^4.0|^3.0",
+                "phpunit/phpunit": "~8.0|~7.0|~9.0",
+                "scrutinizer/ocular": "~1.7|~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Pestopancake\\LaravelBackpackNotifications\\LaravelBackpackNotificationsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pestopancake\\LaravelBackpackNotifications\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "pestopancake",
+                    "email": "pestopancake@gmail.com"
+                }
+            ],
+            "description": "Database notifications interface for Laravel Backpack",
+            "homepage": "https://github.com/pestopancake/laravel-backpack-notifications",
+            "keywords": [
+                "database notifications",
+                "laravel",
+                "laravel backpack",
+                "notifications"
+            ],
+            "support": {
+                "issues": "https://github.com/pestopancake/laravel-backpack-database-notifications/issues",
+                "source": "https://github.com/pestopancake/laravel-backpack-database-notifications/tree/1.0.8"
+            },
+            "time": "2022-08-06T15:24:35+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -7036,16 +7098,16 @@
     "packages-dev": [
         {
             "name": "backpack/generators",
-            "version": "v3.3.8",
+            "version": "v3.3.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Laravel-Backpack/Generators.git",
-                "reference": "df37d2b365c7cd6e6d8e02987a75c330dfeeb544"
+                "reference": "5f1f960dbc8cd85e8c5dc922b436f92964f0a152"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Laravel-Backpack/Generators/zipball/df37d2b365c7cd6e6d8e02987a75c330dfeeb544",
-                "reference": "df37d2b365c7cd6e6d8e02987a75c330dfeeb544",
+                "url": "https://api.github.com/repos/Laravel-Backpack/Generators/zipball/5f1f960dbc8cd85e8c5dc922b436f92964f0a152",
+                "reference": "5f1f960dbc8cd85e8c5dc922b436f92964f0a152",
                 "shasum": ""
             },
             "require": {
@@ -7100,9 +7162,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Laravel-Backpack/Generators/issues",
-                "source": "https://github.com/Laravel-Backpack/Generators/tree/v3.3.8"
+                "source": "https://github.com/Laravel-Backpack/Generators/tree/v3.3.9"
             },
-            "time": "2022-12-13T13:37:27+00:00"
+            "time": "2022-12-16T08:46:24+00:00"
         },
         {
             "name": "barryvdh/laravel-debugbar",
@@ -7516,16 +7578,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.16.4",
+            "version": "v1.16.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "72412b14d6f4e73b71b5f3068bdb064184fbb001"
+                "reference": "9ec5338d13bdc941a23347cb36385988c525fe02"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/72412b14d6f4e73b71b5f3068bdb064184fbb001",
-                "reference": "72412b14d6f4e73b71b5f3068bdb064184fbb001",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/9ec5338d13bdc941a23347cb36385988c525fe02",
+                "reference": "9ec5338d13bdc941a23347cb36385988c525fe02",
                 "shasum": ""
             },
             "require": {
@@ -7572,7 +7634,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2022-12-12T16:47:37+00:00"
+            "time": "2022-12-14T14:54:21+00:00"
         },
         {
             "name": "maximebf/debugbar",
@@ -7972,16 +8034,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "9.2.20",
+            "version": "9.2.21",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "af7463c955007de36db0c5e26d03e2f933c2e980"
+                "reference": "3f893e19712bb0c8bc86665d1562e9fd509c4ef0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/af7463c955007de36db0c5e26d03e2f933c2e980",
-                "reference": "af7463c955007de36db0c5e26d03e2f933c2e980",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/3f893e19712bb0c8bc86665d1562e9fd509c4ef0",
+                "reference": "3f893e19712bb0c8bc86665d1562e9fd509c4ef0",
                 "shasum": ""
             },
             "require": {
@@ -8037,7 +8099,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.20"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.21"
             },
             "funding": [
                 {
@@ -8045,7 +8107,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-12-13T07:49:28+00:00"
+            "time": "2022-12-14T13:26:54+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",

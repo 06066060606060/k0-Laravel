@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\AboMail;
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class CheckIfAdmin
 {
@@ -32,7 +33,9 @@ class CheckIfAdmin
         if ($user->role == 'admin') {
             //   dd('admin');
             return true;
-        }  elseif ($user->role == 'user0') {
+        } elseif ($user->role == 'user0') {
+            // if just registered user send welcome mail
+
             $mailcontent = [
                 'email' => env('MAIL_USERNAME'),
                 'message' =>
@@ -43,6 +46,21 @@ class CheckIfAdmin
             Mail::to($user->email)->queue(new AboMail($mailcontent));
             $user->role = 'user';
             $user->save();
+
+            //create notification
+            $user = backpack_user()->find(1);
+            $user->notify(
+                new DatabaseNotification(
+                    ($type = 'info'), // info / success / warning / error
+                    ($message = 'Nouvelle Inscription'),
+                    ($messageLong = 'Nouvelle Inscription: ' . $user->email)
+                       // rand(1, 99999)), // optional
+                    // ($href = '/some-custom-url'), // optional, e.g. backpack_url('/example')
+                   // ($hrefText = 'Go to custom URL') // optional
+                )
+            );
+
+            
             return true;
         } elseif ($user->role == 'user') {
             //   dd('user');

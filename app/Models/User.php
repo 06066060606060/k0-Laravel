@@ -5,6 +5,7 @@ namespace App\Models;
 //  use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
@@ -14,7 +15,7 @@ class User extends Authenticatable
 
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasApiTokens, HasFactory, Notifiable;
-   
+    
     /**
      * The attributes that are mass assignable.
      *
@@ -52,4 +53,10 @@ class User extends Authenticatable
         return $this->belongsTo(Scores::class, 'game_id', 'user_id', 'score');
     }
 
+    public function hasPermissionTo()
+    {
+        return 'notifications admin';
+    }
+
+    
 }
