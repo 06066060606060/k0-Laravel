@@ -1,7 +1,7 @@
 @php use \App\Http\Controllers\GlobalController; @endphp
 @php  $version = GlobalController::version();@endphp
 @php  $starred = GlobalController::starred();@endphp
-@php use Illuminate\Support\Facades\Auth; @endphp
+@php  $sessions = GlobalController::getSessions();@endphp
 @extends(backpack_view('blank'))
 @section('content')
     <section class="text-gray-600 body-font">
@@ -89,7 +89,7 @@
                         </div>
                     </div>
                 </div>
-
+ 
                 <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
                     <div class="flex items-center justify-between mb-2">
                         <div>
@@ -125,6 +125,7 @@
                                         <tbody class="bg-white">
                                             @php  $users = GlobalController::getUsers();@endphp
                                             @foreach ($users as $user)
+                                         
                                                 <tr>
                                                  <td
                                                         class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">

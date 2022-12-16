@@ -6,9 +6,10 @@ use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
 use App\Models\Scores;
+use App\Models\Session;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Session;
+
 
 class GlobalController extends Controller
 {
@@ -99,6 +100,13 @@ class GlobalController extends Controller
         //retrive all users
         $users = User::all();
         return $users;
+    }
+
+    static function getSessions()
+    {
+        //retrive all users
+        $users_session = Session::all();
+        return $users_session;
     }
 
     
