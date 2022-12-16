@@ -69,7 +69,8 @@ class GlobalController extends Controller
     static function version()
     {
         $filename = '../public/build/manifest.json';
-        $ver = date('d/m/y H:i', filemtime($filename) + 3600);
+       // $ver = date('d/m/y H:i', filemtime($filename) + 3600);
+       $ver = "1.1.0";
         $version = $ver;
         return $version;
     }

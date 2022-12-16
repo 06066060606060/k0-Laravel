@@ -1,6 +1,7 @@
 @php use \App\Http\Controllers\GlobalController; @endphp
 @php  $version = GlobalController::version();@endphp
 @php  $starred = GlobalController::starred();@endphp
+@php use Illuminate\Support\Facades\Auth; @endphp
 @extends(backpack_view('blank'))
 @section('content')
     <section class="text-gray-600 body-font">
@@ -92,7 +93,7 @@
                 <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
                     <div class="flex items-center justify-between mb-2">
                         <div>
-                            <h3 class="mb-1 text-xl font-bold text-gray-900">Inscriptions</h3>
+                            <h3 class="mb-1 text-xl font-bold text-gray-900">Utilisateurs</h3>
                         </div>
                         <div class="flex-shrink-0">
                             <a href="user/"
@@ -109,6 +110,10 @@
                                             <tr>
                                                 <th scope="col"
                                                     class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    Online
+                                                </th>
+                                                <th scope="col"
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                                     Nom
                                                 </th>
                                                 <th scope="col"
@@ -121,6 +126,14 @@
                                             @php  $users = GlobalController::getUsers();@endphp
                                             @foreach ($users as $user)
                                                 <tr>
+                                                 <td
+                                                        class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">
+                                                        @if ($user == backpack_auth()->user())
+                                                            <i class="text-green-500 las la-circle"></i>
+                                                            @else
+                                                            <i class="text-red-500 las la-circle"></i>
+                                                        @endif
+                                                    </td>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
                                                         {{ $user->name }}
