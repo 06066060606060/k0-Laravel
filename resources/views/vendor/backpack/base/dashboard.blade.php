@@ -129,9 +129,9 @@
                                                  <td
                                                         class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">
                                                         @if ($user == backpack_auth()->user())
-                                                            <i class="text-green-500 las la-circle"></i>
+                                                            <div class="w-3 h-3 ml-2 bg-green-500 rounded-full"></div>
                                                             @else
-                                                            <i class="text-red-500 las la-circle"></i>
+                                                            <div class="w-3 h-3 ml-2 bg-red-500 rounded-full"></div>
                                                         @endif
                                                     </td>
                                                     <td

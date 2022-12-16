@@ -1,4 +1,4 @@
-<header class="z-10 flex px-4 md:px-0 pt-6 pb-2 md:mx-auto max-w-7xl border-x-1 justify-evenly">
+<header class="z-10 flex px-4 pt-6 pb-2 md:px-0 md:mx-auto max-w-7xl border-x-1 justify-evenly">
     <nav x-data="{ isOpen: false }" class="container py-6 pl-2 pr-4 mx-auto lg:flex lg:justify-between lg:items-center">
         <div class="flex items-center justify-between">
             <div>
@@ -65,7 +65,7 @@
                                     x-transition:leave="transition ease-in duration-100"
                                     x-transition:leave-start="opacity-100 scale-100"
                                     x-transition:leave-end="opacity-0 scale-90"
-                                    class="absolute z-20 w-48 py-2 mt-2 bg-gray-800 rounded-md shadow-xl left:0 lg:right-0 border border-gray-500"
+                                    class="absolute z-20 w-48 py-2 mt-2 bg-gray-800 border border-gray-500 rounded-md shadow-xl left:0 lg:right-0"
                                     style="display: none;">
                                     @if (backpack_auth()->user()->role == 'admin')
                                         <a href="admin"
@@ -86,7 +86,7 @@
                 </div>
             @else
                  <a href="/admin" target="_blank"
-                                    class="relative flex justify-center w-24 px-5 py-1 my-2 font-medium text-white lg:ml-8 group shadow-lg">
+                                    class="relative flex justify-center w-24 px-5 py-1 my-2 font-medium text-white shadow-lg lg:ml-8 group">
                                     <span
                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
                                     <span
@@ -102,22 +102,22 @@
     </nav>
 </header>
         @if (backpack_auth()->check())
-            <div class=" py-2 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl mb-4 mx-8">
-                <div class="flex flex-wrap justify-center md:justify-between items-center mx-auto max-w-7xl py-2">
-                    <p class="ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 pb-2 md:pb-0">
+            <div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
+                <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
+                    <p class="pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0">
                         Bienvenue {{ backpack_auth()->user()->name }}</p>
-                    <div class="flex pr-4 items-center">
+                    <div class="flex items-center pr-4">
                         <div class="flex px-2">
                             <img src="img/diamond5.png" class="w-10 h-8">
-                            <p class="text-white pt-1">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
+                            <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                         </div>
                         <div class="flex px-2">
                             <img src="img/gem10.png" class="w-10 h-8">
-                            <p class="text-white pt-1">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
+                            <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
                         </div>
                         <div class="flex px-2">
                             <img src="img/coin10.png" class="w-10 h-8">
-                            <p class="text-white pt-1">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
+                            <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
                     </div>
                 </div>
