@@ -2,6 +2,7 @@
 @php  $version = GlobalController::version();@endphp
 @php  $starred = GlobalController::starred();@endphp
 @php  $sessions = GlobalController::getSessions();@endphp
+@php  $users = GlobalController::getUsers();@endphp
 @extends(backpack_view('blank'))
 @section('content')
     <section class="text-gray-600 body-font">
@@ -94,6 +95,7 @@
                     <div class="flex items-center justify-between mb-2">
                         <div>
                             <h3 class="mb-1 text-xl font-bold text-gray-900">Utilisateurs</h3>
+                            <a class="p-2 text-sm font-medium rounded-lg text-gray-800">Total: {{ $users->count() }}</a>
                         </div>
                         <div class="flex-shrink-0">
                             <a href="user/"
@@ -123,7 +125,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white">
-                                            @php  $users = GlobalController::getUsers();@endphp
+                                          
                                             @foreach ($users as $user)
                                          
                                                 <tr>
@@ -159,6 +161,9 @@
         @if (backpack_user()->role == 'admin')
             <p class="w-1/2 px-4 py-2 mx-8 mt-4 text-xs text-gray-200 bg-gray-900 rounded -pl-2">
                 Derniéres mise à jour: {{ $version }}<br>
+                 -Ajout notification<br>
+                 -Ajout nombres utilisateurs<br>
+
             </p>
         @endif
         </div>

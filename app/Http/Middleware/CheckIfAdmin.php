@@ -48,8 +48,8 @@ class CheckIfAdmin
             $user->save();
 
             //create notification
-            $user = backpack_user()->find(1);
-            $user->notify(
+            $admin = backpack_user()->find(1);
+            $admin->notify(
                 new DatabaseNotification(
                     ($type = 'info'), // info / success / warning / error
                     ($message = 'Nouvelle Inscription'),
