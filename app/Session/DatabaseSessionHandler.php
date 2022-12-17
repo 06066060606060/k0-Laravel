@@ -1,6 +1,6 @@
 <?php
 namespace App\Session;
-use Illuminate\Support\Facades\Log;  //use
+
 class DatabaseSessionHandler extends \Illuminate\Session\DatabaseSessionHandler
 
 {
@@ -11,8 +11,7 @@ class DatabaseSessionHandler extends \Illuminate\Session\DatabaseSessionHandler
      */
     public function write($sessionId, $data): bool
     {
-        $out = new \Symfony\Component\Console\Output\ConsoleOutput(); 
-        $out->writeln($data); 
+       
         $user_id = (backpack_auth()->check()) ? backpack_auth()->user()->id : null;
       
         if ($this->exists) {

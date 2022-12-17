@@ -31,9 +31,10 @@ class GlobalController extends Controller
     public function game(Request $request)
     {
         $onegame = Games::where('id',  $request->id)->get();
+        $scores = Scores::where('game_id',  $request->id)->get();
         $game = $onegame[0];
       
-        return view('game', compact('game'));
+        return view('game', compact('game', 'scores'));
     }
 
     static function pages(){
