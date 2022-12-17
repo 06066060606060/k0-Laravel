@@ -24,7 +24,7 @@ class Smoke extends Phaser.GameObjects.Image
         else
         {
             this.visible = false;
-            this.scene.pool_smoke_effect(this);
+            this.scene.object_pooler.pool_smoke_effect(this);
         }
     }
     
