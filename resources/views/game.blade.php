@@ -3,7 +3,6 @@
  @section('main')
      <div data-barba="container">
          <div class="z-0 one"></div>
-         @php $imagesb =  $game->image[0] ?? null; @endphp
          <container class="block px-4 mx-auto text-white max-w-7xl">
              <div class="container pt-4 mx-auto lg:px-5">
                  <div class="flex flex-col w-full mb-20 text-center">
@@ -45,7 +44,8 @@
                                      </tbody>
                                  </table>
                              </div>
-                                <iframe id="gameBody" src="games/game01/game.php" class="w-full h-[667px] overflow-hidden" scrolling="no"></iframe>
+                                @php $link =  $game->link ?? null; @endphp
+                                <iframe id="gameBody" src="{{ $link }}" class="w-full h-[667px] overflow-hidden" scrolling="no"></iframe>
                          </div>
 
                      </section>

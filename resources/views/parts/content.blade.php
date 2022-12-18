@@ -30,7 +30,7 @@
                     <div class="">
 
                         <a href="game?id={{ $starred->id }}"
-                            class="relative px-5 py-2 mx-auto mt-4 font-medium text-white group shadow-lg">
+                            class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                             <span
                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                             <span
@@ -75,7 +75,7 @@
                             </div>
                             @php $images =  $freegame->image[0] ?? null; @endphp
                             <img alt="gallery"
-                                class="imggame absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
+                                class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
                                 src="./storage/{{ $images }}" onerror="this.src='/img/empty.png'">
 
                             <div
@@ -87,7 +87,7 @@
                                 <p class="text-sm leading-relaxed text-gray-800">{{ $freegame->description }}</p>
 
                                 <a href="game?id={{ $freegame->id }}"
-                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group shadow-lg">
+                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                     <span
                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                     <span
@@ -128,7 +128,7 @@
                     </div>
                 @endforelse
             </div>
-            <a href="games">
+            <a href="allgames">
                 <h1
                     class="pt-12 mb-4 text-2xl font-medium text-center text-blue-700 sm:text-3xl title-font hover:text-blue-600">
                     Voir la liste complete</h1>
@@ -297,7 +297,7 @@
                             </div>
                             @php $imagesb =  $boostergame->image[0] ?? null; @endphp
                             <img alt="gallery"
-                                class="imggame absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
+                                class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
                                 src="./storage/{{ $imagesb }}" onerror="this.src='/img/empty.png'">
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
@@ -308,7 +308,7 @@
                                 <p class="text-sm leading-relaxed text-gray-800">{{ $boostergame->description }}</p>
 
                                 <a href="game?id={{ $boostergame->id }}"
-                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white group shadow-lg">
+                                    class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                     <span
                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                     <span
@@ -350,7 +350,7 @@
                 @endforelse
 
             </div>
-            <a href="games">
+            <a href="allgames">
                 <h1
                     class="pt-12 mb-4 text-2xl font-medium text-center text-blue-700 sm:text-3xl title-font hover:text-blue-600">
                     Voir la liste complete</h1>

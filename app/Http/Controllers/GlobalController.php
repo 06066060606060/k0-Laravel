@@ -55,7 +55,7 @@ class GlobalController extends Controller
     {
         $freegames = Games::where('type', 'Gratuit')->inRandomOrder()->get();
         $boostergames = Games::where('type', 'Booster')->inRandomOrder()->get();
-        return view('games', compact('freegames', 'boostergames'));
+        return view('allgames', compact('freegames', 'boostergames'));
     }
 
     public function winner()

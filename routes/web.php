@@ -18,7 +18,7 @@ Route::controller(GlobalController::class)->group(function(){
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
-Route::get('games', 'games');
+Route::get('allgames', 'games');
 Route::get('game', 'game');
 Route::get('winner', 'winner');
 Route::get('help', 'help');

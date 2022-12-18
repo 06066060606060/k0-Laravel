@@ -30,7 +30,7 @@
             <div class="flex flex-col pb-4 space-y-4 align-baseline lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="/" @click="isOpen = false"><i
                         class="fa-solid fa-house"></i>&nbsp; Accueil</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="games" @click="isOpen = false"><i
+                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="allgames" @click="isOpen = false"><i
                         class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner" @click="isOpen = false"><i
                         class="fa-solid fa-trophy"></i>&nbsp; Gagnants</a>
