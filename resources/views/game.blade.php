@@ -16,7 +16,9 @@
 
                          <div class="container flex flex-col-reverse xl:flex-row">
                              <div class="w-full px-4 py-4 bg-gray-900 rounded-md xl:w-1/4 xl:mr-4">
-                                 <h1 class="font-extrabold text-md text-gray-50">SCORE DU MOIS</h1>
+                            <h1 class="font-extrabold text-md text-gray-50">SCORE:</h1>
+                             <div id="latest_score" class="py-2 text-sm font-normal text-gray-200"> &nbsp;</div>
+                                 <h1 class="font-extrabold text-md text-gray-50">CLASSEMENT DU MOIS:</h1>
                                  <table class="min-w-full divide-y divide-gray-200">
                                      <thead>
                                          <tr>
@@ -39,21 +41,56 @@
                                                  <td class="px-4 py-2 text-sm font-normal text-gray-200 rate-container">
                                                      {{ $score->score }}
                                                  </td>
+
                                              </tr>
                                          @endforeach
                                      </tbody>
                                  </table>
                              </div>
-                                @php $link =  $game->link ?? null; @endphp
-                                <iframe id="gameBody" src="{{ $link }}" class="w-full h-[667px] overflow-hidden" scrolling="no"></iframe>
+                             @php $link =  $game->link ?? null; @endphp
+                             <iframe id="gameBody" src="{{ $link }}" class="w-full h-[667px] overflow-hidden"
+                                 scrolling="no"></iframe>
                          </div>
-
+                     {{-- <button id="butsave" class="px-4 py-2 mt-4 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700">test</button>
+                     <input type="hidden" id="diff" name="diff" value=""> --}}
                      </section>
                  </div>
              </div>
+            
          </container>
      </div>
-     <style>
 
-        </style>
+  <script> 
+  
+window.addEventListener("DOMContentLoaded", (event) => {
+         Echo.channel('score')
+             .listen('NewScore', (e) => {
+                 console.log(e.score);
+                 document.getElementById('latest_score').innerHTML = e.score;
+             })
+    });
+
+
+ $(document).ready(function () {
+                    $('#butsave').on('click', function () {
+                        var value = $('#diff').val();
+                            $.ajax({
+                                url: 'score',
+                                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                                method: 'POST',
+                                type: 'json',
+                                data: {
+                                    value,
+                                },
+                                success: function (response) {
+                                    console.log(response);
+                                },
+                                error: function (error) {
+                                    console.log(error);
+                                }
+                            });
+                    });
+                });
+    </script>
+
  @endsection
