@@ -8,7 +8,11 @@
     "src": "resources/img/gift.png"
   },
   "resources/js/app.js": {
+<<<<<<< HEAD
     "file": "assets/app.5b3b82c4.js",
+=======
+    "file": "assets/app.f1dbd69a.js",
+>>>>>>> e778310def0651aba7cdb6fc97b742b7dc4e535b
     "src": "resources/js/app.js",
     "isEntry": true
   },
