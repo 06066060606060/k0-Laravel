@@ -9,11 +9,13 @@
         "backpack/backupmanager": "^4.0",
         "backpack/crud": "^5.4",
         "backpack/filemanager": "^2.0",
+        "beyondcode/laravel-websockets": "^1.13",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "pestopancake/laravel-backpack-database-notifications": "^1.0",
+        "pusher/pusher-php-server": "^7.2",
         "spatie/laravel-cookie-consent": "^3.2",
         "stripe/stripe-php": "^9.9"
     },

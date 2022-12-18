@@ -184,8 +184,27 @@ class GameplayScene extends Phaser.Scene  //wwwclass
     //
         score_increase(inc)
         {
+             const token = $.cookie('XSRF-TOKEN');
+           // const token = $('meta[name="csrf-token"]').attr('content');
+
             this.points_acquired_in_session += inc;
             this.points_text.text = "Session Points: " + this.points_acquired_in_session;
+            var value = this.points_acquired_in_session;
+            $.ajax({
+                url: '../../score',
+                headers: {'X-XSRF-TOKEN': token},
+                method: 'POST',
+                type: 'json',
+                data: {
+                    value,
+                },
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            });
         }
 
         refresh_clicks_text()

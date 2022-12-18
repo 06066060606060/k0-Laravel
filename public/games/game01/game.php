@@ -24,4 +24,4 @@
     <script src = "src/GlobalFunctions.js"></script>
     <script src = "src/GlobalAttributes.js"></script>
     <script src = "src/main.js"></script>
-
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
