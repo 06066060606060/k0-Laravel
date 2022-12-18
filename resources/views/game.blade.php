@@ -48,7 +48,7 @@
                                  </table>
                              </div>
                              @php $link =  $game->link ?? null; @endphp
-                             <iframe id="gameBody" src="{{ $link }}" class="w-full h-[667px] overflow-hidden"
+                             <iframe id="gameBody" src="{{ $link }}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe>
                          </div>
                   
