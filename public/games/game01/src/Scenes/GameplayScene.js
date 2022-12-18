@@ -190,21 +190,22 @@ class GameplayScene extends Phaser.Scene  //wwwclass
             this.points_acquired_in_session += inc;
             this.points_text.text = "Session Points: " + this.points_acquired_in_session;
             var value = this.points_acquired_in_session;
-            $.ajax({
-                url: '../../score',
-                headers: {'X-XSRF-TOKEN': token},
-                method: 'POST',
-                type: 'json',
-                data: {
-                    value,
-                },
-                success: function (response) {
-                    console.log(response);
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            });
+            $('#points', parent.document).html(value);
+            // $.ajax({
+            //     url: '../../api/scores',
+            //     headers: {'X-XSRF-TOKEN': token},
+            //     method: 'POST',
+            //     type: 'json',
+            //     data: {
+            //         value,
+            //     },
+            //     success: function (response) {
+            //         console.log(response);
+            //     },
+            //     error: function (error) {
+            //         console.log(error);
+            //     }
+            // });
         }
 
         refresh_clicks_text()

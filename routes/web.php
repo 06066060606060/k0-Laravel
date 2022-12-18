@@ -29,8 +29,3 @@ Route::get('confidentialite' , [GlobalController::class, 'getConf']);
 
 Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
-
-Route::post('score', function () {
-    event(new App\Events\NewScore(request('value')));
-    return "Event has been sent!";
-});
