@@ -51,8 +51,8 @@
                              <iframe id="gameBody" src="{{ $link }}" class="w-full h-[667px] overflow-hidden"
                                  scrolling="no"></iframe>
                          </div>
-                     <button id="butsave" class="px-4 py-2 mt-4 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700">test</button>
-                     <input type="hidden" id="diff" name="diff" value="">
+                     {{-- <button id="butsave" class="px-4 py-2 mt-4 font-bold text-white bg-gray-800 rounded-md hover:bg-gray-700">test</button>
+                     <input type="hidden" id="diff" name="diff" value=""> --}}
                      </section>
                  </div>
              </div>
