@@ -45,10 +45,7 @@
                                      </tbody>
                                  </table>
                              </div>
-                             <div id="gameBody" class="gameBody mb-4 xl:mb-0 w-full">
-                                 <iframe src="./src/game.html" title="description"
-                                     class="object-cover w-full h-[666px] bg-gray-500 rounded-md"></iframe>
-                             </div>
+                                <iframe id="gameBody" src="games/game01/game.php" class="w-full h-[667px] overflow-hidden" scrolling="no"></iframe>
                          </div>
 
                      </section>
@@ -56,4 +53,7 @@
              </div>
          </container>
      </div>
+     <style>
+
+        </style>
  @endsection

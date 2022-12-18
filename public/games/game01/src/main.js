@@ -11,6 +11,7 @@ var config =
         mode: Phaser['Scale']['FIT'],
         width: 1111,
         height: 666
+    
     },
     fps: 
     {
