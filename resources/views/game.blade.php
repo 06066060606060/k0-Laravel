@@ -5,19 +5,19 @@
          <div class="z-0 one"></div>
          @php $imagesb =  $game->image[0] ?? null; @endphp
          <container class="block px-4 mx-auto text-white max-w-7xl">
-             <div class="container lg:px-5 pt-4 mx-auto">
+             <div class="container pt-4 mx-auto lg:px-5">
                  <div class="flex flex-col w-full mb-20 text-center">
-                     <section class="p-4 text-gray-100 bg-gray-800 rounded-md overflow-hidden">
+                     <section class="p-4 overflow-hidden text-gray-100 bg-gray-800 rounded-md">
                          <div class="flex justify-between">
                              @php $imagesb =  $game->image[0] ?? null; @endphp
-                             <img src="./storage/{{ $imagesb }}" alt="" class="block w-32 mb-4 rounded-md pl-1"
+                             <img src="./storage/{{ $imagesb }}" alt="" class="block w-32 pl-1 mb-4 rounded-md"
                                  onerror="this.src='/img/empty.png'">
-                             <h1 class="block text-4xl font-extrabold text-gray-50 pt-2">{{ $game->name }}</h1>
+                             <h1 class="block pt-2 pr-2 text-4xl font-extrabold text-gray-50">{{ $game->name }}</h1>
                          </div>
 
                          <div class="container flex flex-col-reverse xl:flex-row">
                              <div class="w-full px-4 py-4 bg-gray-900 rounded-md xl:w-1/4 xl:mr-4">
-                                 <h1 class="text-md font-extrabold text-gray-50">SCORE DU MOIS</h1>
+                                 <h1 class="font-extrabold text-md text-gray-50">SCORE DU MOIS</h1>
                                  <table class="min-w-full divide-y divide-gray-200">
                                      <thead>
                                          <tr>
