@@ -61,7 +61,9 @@ class GlobalController extends Controller
 
     public function winner()
     {
-        return view('winner');
+
+        $scores = Scores::all();
+        return view('winner', compact('scores'));
     }
 
     public function store()
