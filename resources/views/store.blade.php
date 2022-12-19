@@ -35,7 +35,7 @@
                                                          <p class="mt-2">x {{ $cadeau->prix }}</p>
                                                          </div>
                                                      </div>
-                                                     <p class="mb-4 text-sm">{{ $cadeau->description }}</p>
+                                                     <p class="mb-4 text-sm mx-2">{{ $cadeau->description }}</p>
 
                                                      <a href=""
                                                          class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
