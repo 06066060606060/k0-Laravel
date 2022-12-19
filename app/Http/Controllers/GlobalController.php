@@ -88,11 +88,15 @@ class GlobalController extends Controller
 
     public function getProfil()
     {
-        $usermail = backpack_auth()->user()->email;
-        $userid =  backpack_auth()->user()->id;
-        $scores = Scores::where('user_id', $userid)->get();
-
-        return view('profil', compact('scores'));
+        if (backpack_auth()->check()){
+            $usermail = backpack_auth()->user()->email;
+            $userid =  backpack_auth()->user()->id;
+            $scores = Scores::where('user_id', $userid)->get();
+            return view('profil', compact('scores'));
+        } else {
+            return redirect('/');
+        }
+      
     }
 
     public function deleteUser(Request $id)

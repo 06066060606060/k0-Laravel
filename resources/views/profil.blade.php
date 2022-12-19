@@ -8,7 +8,7 @@
                 <div class="flex items-center pb-4 border-b border-gray-500">
                     <img alt="Developer" src="img/avatar.png"
                         class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
-
+     
                     <div class="ml-3">
                         <h3 class="text-lg font-medium text-white">{{ backpack_auth()->user()->name }}</h3>
 

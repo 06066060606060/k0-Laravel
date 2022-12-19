@@ -29,4 +29,5 @@ Route::get('legal' , [GlobalController::class, 'getLegal']);
 Route::get('confidentialite' , [GlobalController::class, 'getConf']);
 
 Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
+
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
