@@ -70,7 +70,7 @@
                             <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                Score
                             </th>
-                             <th class="px-4 py-2 font-bold text-gray-900 whitespace-nowrap">
+                             <th class="hidden px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
                                Bonus
                             </th>
                         </tr>
@@ -83,7 +83,7 @@
                              {{ $score->game->name }}
                             </td>
                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
-                             <td class="flex mx-auto justify-center whitespace-nowrap py-2 w-[250px]">
+                             <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                                      <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold  bg-red-600 text-white max-w-[180px]">
                                                         <p class="ml-2 ">+ {{ $score->data }}</p>  <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                                                         <p class="ml-2 ">+ {{ $score->data2 }}</p>  <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
@@ -121,7 +121,7 @@
                                 <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                     Prix
                                 </th>
-                                <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                <th class="hidden px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
                                     Status
                                 </th>
                                 <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
@@ -141,12 +141,13 @@
 
 
                                     @if ($order->status == 'Non')
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
+                                        <td class="hidden px-4 py-2 text-gray-300 whitespace-nowrap md:flex">
                                             <p
-                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-red-400 ">
+                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-red-400 md:flex">
                                                 En attente</p>
                                         </td>
-                                        <td class="flex py-2 text-gray-300 whitespace-nowrap">
+                                        <td class="py-2 text-gray-300 whitespace-nowrap">
+                                        <div class="flex">
                                             <form action="confirm_order" method="POST" class="py-2">
                                             @csrf
                                             <input type="hidden" name="id" value="{{ $order->id }}">
@@ -162,6 +163,7 @@
                                             <i class="text-gray-400 fas fa-trash-alt hover:text-red-400"></i>
                                             </button>
                                             </form>
+                                            </div>
                                         </td>
                                     @elseif ($order->status == 'Oui')
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
