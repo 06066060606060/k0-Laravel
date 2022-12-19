@@ -40,7 +40,22 @@ class ConcoursCrudController extends CrudController
     protected function setupListOperation()
     {
         
-
+        CRUD::column('name')->label('Titre');
+        CRUD::column('cadeau')->label('Cadeaux');
+        $this->crud->addColumn([
+            'name'    => 'type',
+            'label'   => 'Type',
+            'type'    => 'text',
+            'wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+                        return 'ml-2 badge-pill badge-success'; 
+                },
+            ],
+        ]);
+        CRUD::column('description');
+        CRUD::column('date_debut')->label('Date de début');
+        CRUD::column('date_fin')->label('Date de fin');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -56,9 +71,29 @@ class ConcoursCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
+        $this->crud->setValidation([
+            'name' => 'required|min:2',
+        ]);
         CRUD::setValidation(ConcoursRequest::class);
 
-        
+        CRUD::field('name')->label('Titre');
+        CRUD::field('cadeau');
+
+        $this->crud->addField([   // select_from_array
+            'name'        => 'type',
+            'label'       => "Type",
+            'type'        => 'select_from_array',
+            'options'     => [
+                'Maximum de points' => 'Maximum de points',
+                'Le plus rapide' => 'Le plus rapide',
+            ],
+            'allows_null' => false,
+            'default'     => '0',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+        CRUD::field('description')->type('textarea');
+        CRUD::field('date_debut')->type('datetime');
+        CRUD::field('date_fin')->type('datetime');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

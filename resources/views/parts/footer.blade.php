@@ -29,8 +29,11 @@
         </nav>
       </div>
       <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-        <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Contact</h2>
+        <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Plus</h2>
         <nav class="mb-10 list-none">
+         <li>
+            <a href="help" class="text-gray-400 hover:text-gray-500">Aide</a>
+          </li>
           <li>
             <a href="mailto:Contact@gokdo.com" class="text-gray-400 hover:text-gray-500">Contact@gokdo.com</a>
           </li>

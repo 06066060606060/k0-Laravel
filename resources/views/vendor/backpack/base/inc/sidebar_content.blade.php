@@ -7,12 +7,12 @@
         Jeux</a></li>
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('user') }}"><i class="nav-icon la la-user"></i>
         <span>Utilisateurs</span></a></li>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('scores') }}"><i class="nav-icon la la-trophy"></i>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('scores') }}"><i class="nav-icon la la-list-ol"></i>
         Scores</a></li>
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('cadeaux') }}"><i class="nav-icon la la-gift"></i> Cadeaux</a></li>
 
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('concours') }}"><i class="nav-icon la la-award"></i> Concours</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('concours') }}"><i class="nav-icon la la-trophy"></i> Concours</a></li>
 
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('commandes') }}"><i class="nav-icon la la-file-invoice"></i> Commandes</a></li>
 

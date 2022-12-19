@@ -19,7 +19,15 @@ class Cadeaux extends Model
     // protected $primaryKey = 'id';
     public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'image',
+        'category',
+        'description',
+        'prix',
+        'active',
+        
+     ];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -28,13 +36,24 @@ class Cadeaux extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+    public function setImageAttribute($value)
+    {
+    
+        $attribute_name = "image";
+        $disk = "public";
+        $destination_path = "/uploads";
 
+        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+   
+
+    // return $this->attributes[{$attribute_name}]; // uncomment if this is a translatable field
+    }
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
+   
     /*
     |--------------------------------------------------------------------------
     | SCOPES

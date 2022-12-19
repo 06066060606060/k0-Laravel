@@ -31,6 +31,20 @@ class CadeauxCrudController extends CrudController
         CRUD::setEntityNameStrings('cadeaux', 'cadeaux');
     }
 
+    function getFieldsData()
+    {
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Miniature',
+            'type' => 'image',
+            'prefix' => 'storage/',
+            'height' => '80px',
+            'width' => 'auto',
+
+        ]);
+    }
+
+
     /**
      * Define what happens when the List operation is loaded.
      * 
@@ -40,13 +54,41 @@ class CadeauxCrudController extends CrudController
     protected function setupListOperation()
     {
         
-
+ 
+            CRUD::column('name')->label('Titre');
+            $this->getFieldsData();
+            $this->crud->addColumn([
+                'name'    => 'category',
+                'label'   => 'Catégorie',
+                'type'    => 'text',
+                'wrapper' => [
+                    'element' => 'span',
+                    'class' => function ($crud, $column, $entry, $related_key) {
+                            return 'ml-2 badge-pill badge-success'; 
+                    },
+                ],
+            ]);
+            CRUD::column('description');
+            CRUD::column('prix');
+            $this->crud->addColumn([
+                'name'    => 'active',
+                'label'   => 'Afficher',
+                'type'    => 'text',
+                'wrapper' => [
+                    'element' => 'span',
+                    'class' => function ($crud, $column, $entry, $related_key) {
+                                return 'ml-4 badge badge-dark';
+                            }
+                ],
+            ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
          * - CRUD::addColumn(['name' => 'price', 'type' => 'number']); 
          */
     }
+
+
 
     /**
      * Define what happens when the Create operation is loaded.
@@ -56,13 +98,52 @@ class CadeauxCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CadeauxRequest::class);
-
         
-
+        $this->crud->setValidation([
+            'name' => 'required|min:2',
+        ]);
+        CRUD::setValidation(CadeauxRequest::class);
+        CRUD::field('name')->label('Titre');
+        CRUD::addField([ // Photo
+            'name'      => 'image',
+            'key' => 'image_up',
+            'label'     => 'Miniature',
+            'type'      => 'upload',
+            'prefix' => 'storage/',
+            'upload'    => true,
+            'temporary' => 10,
+        ]);
+        CRUD::field('description')->type('textarea');
+        $this->crud->addField([   // select_from_array
+            'name'        => 'category',
+            'label'       => "Catégorie",
+            'type'        => 'select_from_array',
+            'options'     => [
+                'Multimédia' => 'Multimédia',
+                'Carte cadeaux' => 'Carte cadeaux',
+                'Electroménager' => 'Electroménager',
+            ],
+            'allows_null' => false,
+            'default'     => '0',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+        $this->crud->addField([   // radio
+            'name'        => 'active', // the name of the db column
+            'label'       => 'Afficher', // the input label
+            'type'        => 'radio',
+            'options'     => [
+                // the key will be stored in the db, the value will be shown as label; 
+                1 => "Oui",
+                0 => "Non"
+            ],
+            // optional
+            'default'     => '0',
+           'inline'      => true, // show the radios all on the same line?
+        ],);
+        CRUD::field('prix')->type('number');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
-         * - CRUD::field('price')->type('number');
+        
          * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
          */
     }

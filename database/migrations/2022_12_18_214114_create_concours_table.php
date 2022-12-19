@@ -20,9 +20,10 @@ return new class extends Migration
             $table->string('type')->nullable();
             $table->string('description')->nullable();
             $table->string('condition')->nullable();
-            $table->datetime('duree')->nullable();
-            $table->unsignedBigInteger('gift_id');
-            $table->foreign('gift_id')->references('id')->on('cadeaux');
+            $table->datetime('date_debut')->nullable();
+            $table->datetime('date_fin')->nullable();
+            $table->unsignedBigInteger('cadeau');
+            $table->foreign('cadeau')->references('id')->on('cadeaux')->onDelete('cascade');
             $table->timestamps();
         });
     }

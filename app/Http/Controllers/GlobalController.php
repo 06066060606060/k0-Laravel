@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cadeaux;
 use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
@@ -61,6 +62,12 @@ class GlobalController extends Controller
     public function winner()
     {
         return view('winner');
+    }
+
+    public function store()
+    {
+        $cadeaux  = Cadeaux::all();
+        return view('store', compact('cadeaux'));
     }
 
     public function help()

@@ -34,11 +34,11 @@
                         class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner" @click="isOpen = false"><i
                         class="fa-solid fa-trophy"></i>&nbsp; Gagnants</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="help" @click="isOpen = false"><i
-                        class="fa-solid fa-circle-question"></i>&nbsp; Aide</a>
                           @if (backpack_auth()->check())
+                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="store" @click="isOpen = false"><i
+                        class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>
                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="profil" @click="isOpen = false"><i
-                        class="fa-solid fa-user"></i>&nbsp; Mon Compte</a>
+                        class="fa-solid fa-user"></i>&nbsp; Profil</a>
                         @endif
                               
             </div>

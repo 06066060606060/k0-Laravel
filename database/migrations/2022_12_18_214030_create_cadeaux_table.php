@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('category')->nullable();
             $table->string('description')->nullable();
             $table->integer('prix')->nullable();
+            $table->string('active')->nullable();
         });
     }
 

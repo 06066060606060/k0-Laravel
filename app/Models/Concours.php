@@ -19,7 +19,17 @@ class Concours extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    // protected $primaryKey = 'id';
+    protected $fillable = [
+        'name',
+        'image',
+        'type',
+        'description',
+        'condition',
+        'date_debut',
+        'date_fin',
+        'cadeau',
+     ];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -28,13 +38,16 @@ class Concours extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
-
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
 
+    public function cadeau()
+    {
+        return $this->belongsTo(Cadeaux::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
