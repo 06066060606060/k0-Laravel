@@ -30,4 +30,9 @@ Route::get('confidentialite' , [GlobalController::class, 'getConf']);
 
 Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 
+Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
+Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
+// Route::get('order', [GlobalController::class, 'getOrder'])->name('getOrder');
+Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
+
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');

@@ -2,9 +2,9 @@
 
 @section('main')
   <div data-barba="container">
-    <container class="flex flex-col md:flex-row px-8 mx-auto lg:max-w-6xl md:pl-16 min-h-screen">
+    <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
         <div class="flex flex-col items-center">
-            <card class="relative p-4 bg-gray-800 border border-gray-700 rounded-xl w-full md:w-64 h-96 mb-4 md:mb-0 md:mr-4">
+            <card class="relative w-full p-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 h-96 md:mb-0 md:mr-4">
                 <div class="flex items-center pb-4 border-b border-gray-500">
                     <img alt="Developer" src="img/avatar.png"
                         class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
@@ -23,10 +23,10 @@
                 </div>
 
                 <div class="flex flex-col md:items-center ">
-                <p class="text-white font-medium pb-1 border-b border-gray-500 ">
+                <p class="pb-1 font-medium text-white border-b border-gray-500 ">
                 Score total : {{ backpack_auth()->user()->global_score }}
                 </p>
-                  <h3 class="text-lg font-bold text-white pt-1 pb-2">Mes Butins</h3>
+                  <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
                     <div class="flex py-2">
                   <img src="img/diamond5.png" class="w-10 h-8"><p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                   </div>
@@ -38,7 +38,7 @@
                   </div>
                 </div>
 
-                <ul class="absolute mt-4 bottom-0 mb-4">
+                <ul class="absolute bottom-0 mt-4 mb-4">
                     <div
                         class="flex w-full max-w-sm overflow-hidden bg-gray-800 border border-gray-700 rounded-lg shadow-md">
                         <div class="flex items-center justify-center w-12 bg-red-500">
@@ -57,15 +57,16 @@
                 </ul>
             </card>
         </div>
-        <div class="flex flex-col bg-gray-800 border border-gray-700 rounded-xl w-full h-96">
+         <div class="flex flex-col w-full">
+        <div class="flex flex-col w-full bg-gray-800 border border-gray-700 rounded-xl">
             <div class="overflow-x-auto rounded-t-lg">
-                <table class="min-w-full divide-y divide-gray-200 text-sm ">
+                <table class="min-w-full text-sm divide-y divide-gray-200 ">
                     <thead class="bg-gray-100 rounded-t-lg">
                         <tr>
-                            <th class="whitespace-nowrap px-4 py-2 text-left font-bold text-gray-900">
+                            <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                 Jeux
                             </th>
-                            <th class="whitespace-nowrap px-4 py-2 text-left font-bold text-gray-900">
+                            <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                Score
                             </th>
                         </tr>
@@ -74,18 +75,18 @@
                     <tbody class="divide-y divide-gray-500">
                     @forelse ($scores as $score)
                          <tr>
-                            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-200">
+                            <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                              {{ $score->game->name }}
                             </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-300"> {{ $score->score }}</td>
+                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
                         </tr>
                     @empty
                          <tr>
-                            <td class="whitespace-nowrap px-4 py-2 font-medium text-gray-200">
+                            <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                Aucun Score enregistré
                             </td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-300"></td>
-                            <td class="whitespace-nowrap px-4 py-2 text-gray-300"></td>
+                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
                         </tr>
                     @endforelse
                        
@@ -95,6 +96,87 @@
             </div>
 
         </div>
+        <h1 class="pt-4 text-lg font-bold text-white">Mes commandes:</h1>
+        <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
+                <div class="overflow-x-auto rounded-t-lg">
+                    <table class="min-w-full text-sm divide-y divide-gray-200 ">
+                        <thead class="bg-gray-100 rounded-t-lg">
+                            <tr>
+                                <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                    Cadeau
+                                </th>
+                                <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                    Prix
+                                </th>
+                                <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                    Status
+                                </th>
+                                <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                   Opérations
+                                </th>
+                            </tr>
+                        </thead>
+
+                        <tbody class="divide-y divide-gray-500">
+                            @forelse ($orders as $order)
+                                <tr>
+                                    <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                        {{ $order->cadeau->name }}
+                                    </td>
+                                    <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $order->cadeau->prix }} </td>
+                                    </td>
+
+
+                                    @if ($order->status == 'Non')
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
+                                            <p
+                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-red-400 ">
+                                                En attente</p>
+                                        </td>
+                                        <td class="flex py-2 text-gray-300 whitespace-nowrap">
+                                            <form action="confirm_order" method="POST" class="py-2">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $order->id }}">
+                                            <button type="submit">
+                                            <i class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Valider</i>
+                                            </button>
+                                            </form>
+
+                                            <form action="delete_order" method="POST" class="px-4 py-2">
+                                            @csrf
+                                            <input type="hidden" name="id" value="{{ $order->id }}">
+                                            <button type="submit">
+                                            <i class="text-gray-400 fas fa-trash-alt hover:text-red-400"></i>
+                                            </button>
+                                            </form>
+                                        </td>
+                                    @elseif ($order->status == 'Oui')
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
+                                            <p
+                                                class="w-16 px-2 py-1 font-bold text-center text-gray-700 bg-green-400 rounded">
+                                                Validé</p>
+                                        </td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
+                                            &nbsp;
+                                        </td>
+                                    @endif
+
+                                </tr>
+                            @empty
+                                <tr>
+                                    <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                        Aucun article
+                                    </td>
+                                    <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                    <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                </tr>
+                            @endforelse
+
+
+                        </tbody>
+                    </table>
+                </div>
+ </div>
     </container>
     </div>
 @endsection

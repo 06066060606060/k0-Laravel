@@ -43,7 +43,7 @@ class CommandesCrudController extends CrudController
         CRUD::column('user_id')->label('Utilisateur');
         CRUD::column('created_at')->label('Date');
         CRUD::column('cadeau_id')->label('Contenu');
-        CRUD::column('prix')->label('Prix');
+
         $this->crud->addColumn([
             'name'    => 'status',
             'label'   => 'Validé',
@@ -92,7 +92,7 @@ class CommandesCrudController extends CrudController
             'default'     => 'Oui',
            'inline'      => true, // show the radios all on the same line?
         ],);
-        CRUD::field('prix')->type('number');
+   
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

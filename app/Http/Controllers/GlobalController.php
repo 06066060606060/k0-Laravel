@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cadeaux;
+use App\Models\Commandes;
 use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
@@ -92,11 +93,45 @@ class GlobalController extends Controller
             $usermail = backpack_auth()->user()->email;
             $userid =  backpack_auth()->user()->id;
             $scores = Scores::where('user_id', $userid)->get();
-            return view('profil', compact('scores'));
+            $orders = Commandes::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders'));
         } else {
             return redirect('/');
         }
       
+    }
+
+    public function setOrder(Request $request)
+    {
+        if (backpack_auth()->check()){
+            $usermail = backpack_auth()->user()->email;
+            $userid =  backpack_auth()->user()->id;
+                $order = new Commandes();
+                $order->cadeau_id = $request->id;
+                $order->user_id = $userid;
+                $order->status = "Non";
+                $order->prix = $request->prix;
+                $order->save();
+                $scores = Scores::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders'));
+        } else {
+            return redirect('/');
+        }
+    }
+
+    public function deleteOrder(Request $request)
+    {
+        if (backpack_auth()->check()){
+            $usermail = backpack_auth()->user()->email;
+            $userid =  backpack_auth()->user()->id;
+            Commandes::where('user_id', $userid)->where('id', $request->id)->delete();
+            $scores = Scores::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders'));
+        } else {
+            return redirect('/');
+        }
     }
 
     public function deleteUser(Request $id)
