@@ -20,9 +20,9 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('score')->nullable();
-            $table->string('data')->nullable();
-            $table->string('data2')->nullable();
-            $table->string('data3')->nullable();
+            $table->string('data')->nullable()->default('0');
+            $table->string('data2')->nullable()->default('0');
+            $table->string('data3')->nullable()->default('0');
             $table->string('save')->nullable();
             $table->timestamps();
         });

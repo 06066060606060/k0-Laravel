@@ -58,6 +58,7 @@
             </card>
         </div>
          <div class="flex flex-col w-full">
+          <h1 class="pb-4 text-lg font-bold text-white">Mes scores:</h1>
         <div class="flex flex-col w-full bg-gray-800 border border-gray-700 rounded-xl">
             <div class="overflow-x-auto rounded-t-lg">
                 <table class="min-w-full text-sm divide-y divide-gray-200 ">
@@ -69,6 +70,9 @@
                             <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                Score
                             </th>
+                             <th class="px-4 py-2 font-bold text-gray-900 whitespace-nowrap">
+                               Bonus
+                            </th>
                         </tr>
                     </thead>
 
@@ -79,6 +83,14 @@
                              {{ $score->game->name }}
                             </td>
                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
+                             <td class="flex mx-auto justify-center whitespace-nowrap py-2 w-[250px]">
+                                                     <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold  bg-red-600 text-white max-w-[180px]">
+                                                        <p class="ml-2 ">+ {{ $score->data }}</p>  <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
+                                                        <p class="ml-2 ">+ {{ $score->data2 }}</p>  <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+                                                         <p class="ml-2 ">+ {{ $score->data3 }}</p>  <img src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
+                                                     </strong>
+                                                     
+                                                 </td>
                         </tr>
                     @empty
                          <tr>
@@ -87,6 +99,7 @@
                             </td>
                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
                         </tr>
                     @endforelse
                        
