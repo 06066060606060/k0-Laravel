@@ -32,6 +32,19 @@ class ConcoursCrudController extends CrudController
         CRUD::setEntityNameStrings('concours', 'concours');
     }
 
+
+    function getFieldsData()
+    {
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Miniature',
+            'type' => 'image',
+            'prefix' => 'storage/',
+            'height' => '80px',
+            'width' => 'auto',
+
+        ]);
+    }
     /**
      * Define what happens when the List operation is loaded.
      * 
@@ -42,6 +55,7 @@ class ConcoursCrudController extends CrudController
     {
         
         CRUD::column('name')->label('Titre');
+        $this->getFieldsData();
         CRUD::column('cadeau_id')->label('Cadeaux');
         CRUD::column('game_id')->label('Jeux');
         $this->crud->addColumn([
@@ -55,9 +69,9 @@ class ConcoursCrudController extends CrudController
                 },
             ],
         ]);
-        CRUD::column('description');
-        CRUD::column('date_debut')->label('Date de début');
-        CRUD::column('date_fin')->label('Date de fin');
+        // CRUD::column('description');
+       // CRUD::column('date_debut')->label('Date de début');
+         CRUD::column('date_fin')->label('Date de fin');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -79,6 +93,15 @@ class ConcoursCrudController extends CrudController
         CRUD::setValidation(ConcoursRequest::class);
 
         CRUD::field('name')->label('Titre');
+        CRUD::addField([ // Photo
+            'name'      => 'image',
+            'key' => 'image_up',
+            'label'     => 'Miniature',
+            'type'      => 'upload',
+            'prefix' => 'storage/',
+            'upload'    => true,
+            'temporary' => 10,
+        ]);
         $this->crud->Field('cadeau_id');
         $this->crud->Field('game_id')->label('Jeux');
 

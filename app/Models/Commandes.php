@@ -19,7 +19,13 @@ class Commandes extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'type',
+        'user_id',
+        'cadeau_id',
+        'status',
+        'prix',
+     ];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,7 +40,15 @@ class Commandes extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
+    public function cadeau()
+    {
+        return $this->belongsTo(Cadeaux::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES

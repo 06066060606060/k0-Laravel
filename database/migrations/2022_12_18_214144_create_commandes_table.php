@@ -15,12 +15,11 @@ return new class extends Migration
     {
         Schema::create('commandes', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
             $table->string('type')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->unsignedBigInteger('gift_id');
-            $table->foreign('gift_id')->references('id')->on('cadeaux');
+            $table->unsignedBigInteger('cadeau_id');
+            $table->foreign('cadeau_id')->references('id')->on('cadeaux');
             $table->string('status')->nullable();
             $table->integer('prix')->nullable();
             $table->timestamps();

@@ -17,7 +17,7 @@ class CommandesCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+   // use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -39,8 +39,25 @@ class CommandesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
-
+        CRUD::column('id')->label('Numero de commande');
+        CRUD::column('user_id')->label('Utilisateur');
+        CRUD::column('created_at')->label('Date');
+        CRUD::column('cadeau_id')->label('Contenu');
+        CRUD::column('prix')->label('Prix');
+        $this->crud->addColumn([
+            'name'    => 'status',
+            'label'   => 'Validé',
+            'type'    => 'text',
+            'wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+                    if ($entry->status == 'Oui') {
+                            return 'ml-4 badge badge-success';
+                        } else {
+                            return 'ml-4 badge badge-danger';
+                        }
+                },  ]
+            ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -58,7 +75,24 @@ class CommandesCrudController extends CrudController
     {
         CRUD::setValidation(CommandesRequest::class);
 
-        
+        CRUD::field('user_id')->label('Utilisateur');
+        CRUD::field('created_at')->label('Date de commande');
+        CRUD::field('cadeau_id')->label('Contenu commande');
+
+        $this->crud->addField([   // radio
+            'name'        => 'status', // the name of the db column
+            'label'       => 'Validé', // the input label
+            'type'        => 'radio',
+            'options'     => [
+                // the key will be stored in the db, the value will be shown as label; 
+                "Oui" => "Oui",
+                "Non" => "Non"
+            ],
+            // optional
+            'default'     => 'Oui',
+           'inline'      => true, // show the radios all on the same line?
+        ],);
+        CRUD::field('prix')->type('number');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
