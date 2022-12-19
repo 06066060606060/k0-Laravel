@@ -34,5 +34,6 @@ Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
 Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
 // Route::get('order', [GlobalController::class, 'getOrder'])->name('getOrder');
 Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
+Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
 
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');

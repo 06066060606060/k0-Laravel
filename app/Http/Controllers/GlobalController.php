@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cadeaux;
 use App\Models\Commandes;
+use App\Models\Infosperso;
 use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
@@ -92,9 +93,10 @@ class GlobalController extends Controller
         if (backpack_auth()->check()){
             $usermail = backpack_auth()->user()->email;
             $userid =  backpack_auth()->user()->id;
-            $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders'));
+            $scores = Scores::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
+            $infos = Infosperso::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders', 'infos'));
         } else {
             return redirect('/');
         }
@@ -119,6 +121,29 @@ class GlobalController extends Controller
             return redirect('/');
         }
     }
+
+    public function saveAddress(Request $request)
+    {
+        if (backpack_auth()->check()){
+            $usermail = backpack_auth()->user()->email;
+            $userid =  backpack_auth()->user()->id;
+                $infos = new Infosperso();
+                $infos->nom = $request->lastname;
+                $infos->prenom = $request->firstname;
+                $infos->user_id = $request->user_id;
+                $infos->adresse = $request->address;
+                $infos->codepostal = $request->zip;
+                $infos->ville = $request->city;
+                $infos->save();
+                $scores = Scores::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->get();
+            $infos = Infosperso::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders', 'infos'));
+        } else {
+            return redirect('/');
+        }
+    }
+
 
     public function deleteOrder(Request $request)
     {
