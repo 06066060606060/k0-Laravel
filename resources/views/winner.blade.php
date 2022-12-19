@@ -77,9 +77,9 @@
                                                  </td>
                                                  <td class="whitespace-nowrap px-4 py-2 w-[250px]">
                                                      <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold  bg-red-600 text-white max-w-[180px]">
-                                                        <p class="hidden md:block ml-1"> {{ $score->data }}</p>  <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="ml-2 w-4 h-4"> 
-                                                        <p class="hidden md:block ml-1"> {{ $score->data2 }}</p>  <img src="{{ asset('img/coin10.png') }}" alt="coin" class="ml-2 w-4 h-4">
-                                                         <p class="hidden md:block ml-1"> {{ $score->data3 }}</p>  <img src="{{ asset('img/gem5.png') }}" alt="coin" class="ml-2 w-4 h-4">
+                                                        <p class="hidden md:block ml-1">+ {{ $score->data }}</p>  <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="ml-2 w-4 h-4"> 
+                                                        <p class="hidden md:block ml-1">+ {{ $score->data2 }}</p>  <img src="{{ asset('img/coin10.png') }}" alt="coin" class="ml-2 w-4 h-4">
+                                                         <p class="hidden md:block ml-1">+ {{ $score->data3 }}</p>  <img src="{{ asset('img/gem5.png') }}" alt="coin" class="ml-2 w-4 h-4">
                                                      </strong>
                                                      
                                                  </td>

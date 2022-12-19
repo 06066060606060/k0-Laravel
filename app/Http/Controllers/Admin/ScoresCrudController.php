@@ -44,7 +44,9 @@ class ScoresCrudController extends CrudController
         CRUD::column('game_id')->label('Nom du jeu');
         CRUD::column('user_id')->label('Joueur');
         CRUD::column('score')->label('Score');
-
+        CRUD::column('data')->label('Bonus1');
+        CRUD::column('data2')->label('Bonus2');
+        CRUD::column('data3')->label('Bonus3');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -67,7 +69,9 @@ class ScoresCrudController extends CrudController
         CRUD::field('game_id')->label('Nom du jeu');
         CRUD::field('user_id')->label('Joueur');
         CRUD::field('score')->type('number')->label('Score');
-        CRUD::field('data')->type('textarea');
+        CRUD::field('data')->type('number')->label('Bonus1');
+        CRUD::field('data2')->type('number')->label('Bonus2');
+        CRUD::field('data3')->type('number')->label('Bonus3');
         CRUD::field('save');
 
         /**
