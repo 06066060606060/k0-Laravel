@@ -28,7 +28,8 @@ class Concours extends Model
         'condition',
         'date_debut',
         'date_fin',
-        'cadeau',
+        'cadeau_id',
+        'game_id',
      ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -47,6 +48,11 @@ class Concours extends Model
     public function cadeau()
     {
         return $this->belongsTo(Cadeaux::class);
+    }
+
+    public function game()
+    {
+        return $this->belongsTo(Games::class);
     }
     /*
     |--------------------------------------------------------------------------

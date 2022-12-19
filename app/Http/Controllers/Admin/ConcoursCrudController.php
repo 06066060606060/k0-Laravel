@@ -6,6 +6,7 @@ use App\Http\Requests\ConcoursRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
+use function PHPSTORM_META\type;
 /**
  * Class ConcoursCrudController
  * @package App\Http\Controllers\Admin
@@ -17,7 +18,7 @@ class ConcoursCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-    use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+    // use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -41,7 +42,8 @@ class ConcoursCrudController extends CrudController
     {
         
         CRUD::column('name')->label('Titre');
-        CRUD::column('cadeau')->label('Cadeaux');
+        CRUD::column('cadeau_id')->label('Cadeaux');
+        CRUD::column('game_id')->label('Jeux');
         $this->crud->addColumn([
             'name'    => 'type',
             'label'   => 'Type',
@@ -77,8 +79,10 @@ class ConcoursCrudController extends CrudController
         CRUD::setValidation(ConcoursRequest::class);
 
         CRUD::field('name')->label('Titre');
-        CRUD::field('cadeau');
+        $this->crud->Field('cadeau_id');
+        $this->crud->Field('game_id')->label('Jeux');
 
+        
         $this->crud->addField([   // select_from_array
             'name'        => 'type',
             'label'       => "Type",

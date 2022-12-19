@@ -22,8 +22,10 @@ return new class extends Migration
             $table->string('condition')->nullable();
             $table->datetime('date_debut')->nullable();
             $table->datetime('date_fin')->nullable();
-            $table->unsignedBigInteger('cadeau');
-            $table->foreign('cadeau')->references('id')->on('cadeaux')->onDelete('cascade');
+            $table->unsignedBigInteger('cadeau_id')->nullable();
+            $table->foreign('cadeau_id')->references('id')->on('cadeaux')->onDelete('cascade');
+            $table->unsignedBigInteger('game_id')->nullable();
+            $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
             $table->timestamps();
         });
     }
