@@ -35,7 +35,10 @@
                         class="inline-block w-full max-w-4xl pt-32 mx-4 overflow-hidden transition-all transform">
 
                         <div class="flex flex-col max-w-md mx-auto mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
-                     
+                        <div class="flex flex-row-reverse pr-4">
+                                <img class="w-6 h-6 mt-4 transition-colors duration-100 transform opacity-25 hover:opacity-100"
+                                    src="/img/iconclose.png" @click="modelOpen = false">
+                            </div>
                             <form action="admin/login" class="m-4 space-y-6" method="post">
                                 @csrf
                            <h1 class="text-3xl font-bold text-center text-gray-100">Se connecter</h1>
@@ -89,7 +92,10 @@
                         class="inline-block w-full max-w-4xl pt-32 mx-4 overflow-hidden transition-all transform">
 
                         <div class="flex flex-col max-w-md mx-auto mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
-                     
+                        <div class="flex flex-row-reverse pr-4">
+                                <img class="w-6 h-6 mt-4 transition-colors duration-100 transform opacity-25 hover:opacity-100"
+                                    src="/img/iconclose.png" @click="modelOpen = false">
+                            </div>
                             <form action="admin/register" class="m-4 space-y-6" method="post">
                                 @csrf
                            <h1 class="text-3xl font-bold text-center text-gray-100">Inscription</h1>
