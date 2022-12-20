@@ -45,12 +45,12 @@
                                 <div class="space-y-1 text-sm">
                                     <label for="email" class="block text-gray-400">email</label>
                                     <input type="email" name="email" id="email" placeholder="exemple@mail.com"
-                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
+                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
                                 </div>
                                 <div class="space-y-1 text-sm">
                                     <label for="password" class="block text-gray-400">Mot de passe</label>
                                     <input type="password" name="password" id="password" placeholder="Password"
-                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
+                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
 
                                 </div>
                                 <button
@@ -102,23 +102,23 @@
                               <div class="space-y-1 text-sm">
                                     <label for="" class="block text-gray-400">Pseudo</label>
                                     <input type="text" name="name" id="name" placeholder=""
-                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
+                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
                                 </div>
                                 <div class="space-y-1 text-sm">
                                     <label for="email" class="block text-gray-400">email</label>
                                     <input type="email" name="email" id="email" placeholder="exemple@mail.com"
-                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
+                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
                                 </div>
                                 <div class="space-y-1 text-sm">
                                     <label for="password" class="block text-gray-400">Mot de passe</label>
                                     <input type="password" name="password" id="password" placeholder=""
-                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
+                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
 
                                 </div>
                                  <div class="space-y-1 text-sm">
                                     <label for="password" class="block text-gray-400">Confirmation du mot de passe</label>
                                     <input type="password" name="password_confirmation" id="password_confirmation" placeholder=""
-                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400">
+                                        class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
 
                                 </div>
                                 <button
