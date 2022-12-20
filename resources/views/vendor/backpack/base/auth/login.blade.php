@@ -4,7 +4,7 @@
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="/">
-                <img class="pb-8 mx-auto w-auto h-1/6" src="/img/logo.png"></a>
+                <img class="w-auto pb-8 mx-auto h-1/6" src="/img/logo.png"></a>
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12 p-t-10" role="form" method="POST" action="{{ route('backpack.auth.login') }}">

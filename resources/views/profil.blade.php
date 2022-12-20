@@ -4,7 +4,7 @@
     <div data-barba="container">
         <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
             <div class="flex flex-col">
-                <h1 class="pb-4 text-lg font-bold text-left text-white">Mon Profil:</h1>
+                <h1 class="pt-2 pb-4 text-lg font-bold text-left text-white">Mon Profil:</h1>
                 <card
                     class="relative w-full p-4 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 h-96 md:h-[480px] md:mb-0 md:mr-4">
                     <div class="flex items-center pb-4 border-b border-gray-500">
@@ -26,7 +26,7 @@
                     </div>
 
                     <div class="flex flex-col md:items-center">
-                        <p class="pb-1 font-medium text-white border-b border-gray-500 ">
+                        <p class="py-4 font-medium text-white border-b border-gray-500 ">
                             Score total : {{ backpack_auth()->user()->global_score }}
                         </p>
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
