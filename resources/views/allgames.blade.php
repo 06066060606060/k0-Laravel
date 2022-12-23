@@ -22,7 +22,7 @@
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 @php $images =  $freegame->image[0] ?? null; @endphp
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                    src="./storage/{{ $images }}" onerror="this.src='/img/empty.png'">
+                                    src="{{ asset('storage/' . $images ) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
                                     <h3 class="mb-1 text-gray-300">{{ $freegame->category }}</h3>
@@ -78,7 +78,7 @@
                                     @php $imagesb =  $boostergame->image[0] ?? null; @endphp
                                     <img alt="gallery"
                                         class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                        src="./storage/{{ $imagesb }}" onerror="this.src='/img/empty.png'">
+                                        src="{{ asset('storage/' . $imagesb ) }}" onerror="this.src='/img/empty.png'">
                                     <div class="w-full">
                                         <h2 class="py-1 text-xl font-bold text-orange-600 title-font ">
                                             {{ $boostergame->name }}</h2>

@@ -3,11 +3,10 @@
 @section('main')
     <div data-barba="container">
         <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
-            <div class="flex flex-col">
-                <h1 class="pt-2 pb-4 text-lg font-bold text-left text-white">Mon Profil:</h1>
+            <div class="flex flex-col pt-2">
                 <card
                     class="relative w-full p-4 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 h-96 md:h-[480px] md:mb-0 md:mr-4">
-                    <div class="flex items-center pb-4 border-b border-gray-500">
+                    <div class="flex items-center pb-4 pt-2 border-b border-gray-500">
                         <img alt="Developer" src="img/avatar.png"
                             class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
 
@@ -64,64 +63,68 @@
                 </card>
             </div>
             <div class="flex flex-col w-full py-2">
-                <h1 class="pb-4 text-lg font-bold text-white">Mes scores:</h1>
-                <div class="flex flex-col w-full bg-gray-800 border border-gray-700 rounded-xl max-h-64">
+                <div class="flex flex-col w-full mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 h-48">
                     <div class="overflow-x-auto rounded-t-lg">
-                        <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
+                        <table class="py-2 text-sm divide-y divide-gray-200 w-full">
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Jeux
+                                        Recharger mon compte
                                     </th>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Score
-                                    </th>
-                                    <th class="hidden px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
-                                        Bonus
+                                        Paiements
                                     </th>
                                 </tr>
                             </thead>
 
                             <tbody class="divide-y divide-gray-500">
-                                @forelse ($scores as $score)
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{ $score->game->name }}
-                                        </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
-                                        <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
-                                            <strong
-                                                class="flex rounded md:px-3 py-1.5 text-xs font-bold  bg-red-600 text-white max-w-[180px]">
-                                                <p class="ml-2 ">+ {{ $score->data }}</p> <img
-                                                    src="{{ asset('img/diamond5.png') }}" alt="coin"
-                                                    class="w-4 h-4 ml-2">
-                                                <p class="ml-2 ">+ {{ $score->data2 }}</p> <img
-                                                    src="{{ asset('img/coin10.png') }}" alt="coin"
-                                                    class="w-4 h-4 ml-2">
-                                                <p class="ml-2 ">+ {{ $score->data3 }}</p> <img
-                                                    src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
-                                            </strong>
+                                <tr>
+                                    <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap max-h-24">
+                                        <fieldset class="grid grid-cols-2 gap-4">
+                                            <div>
+                                                <input type="radio" name="DeliveryOption" value="DeliveryStandard"
+                                                    id="DeliveryStandard" class="peer hidden" checked />
 
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            Aucun Score enregistré
-                                        </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
-                                    </tr>
-                                @endforelse
+                                                <label for="DeliveryStandard"
+                                                    class="block cursor-pointer rounded-lg border border-gray-400 p-4 text-sm font-medium shadow-sm hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
+                                                    <div class="flex flex-col md:flex-row">
+                                                        <img src="{{ asset('img/diamond5.png') }}" alt="coin"
+                                                            class="w-6 h-6 md:mr-2  pb-1">
+                                                        <p class="text-gray-700 dark:text-gray-200">x 500</p>
+                                                    </div>
+                                                    <p class="mt-1 text-gray-900 dark:text-white">10 €</p>
+                                                </label>
+                                            </div>
 
+                                            <div>
+                                                <input type="radio" name="DeliveryOption" value="DeliveryPriority"
+                                                    id="DeliveryPriority" class="peer hidden" />
 
+                                                <label for="DeliveryPriority"
+                                                    class="block cursor-pointer rounded-lg border border-gray-400 p-4 text-sm font-medium shadow-sm hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
+                                                    <div class="flex flex-col md:flex-row">
+                                                        <img src="{{ asset('img/diamond5.png') }}" alt="coin"
+                                                            class="w-6 h-6 md:mr-2 pb-1">
+                                                        <p class="text-gray-700 dark:text-gray-200">x 1000</p>
+                                                    </div>
+                                                    <p class="mt-1 text-gray-900 dark:text-white">19 €</p>
+                                                </label>
+                                            </div>
+                                        </fieldset>
+                                    </td>
+                                     <td class="px-4 pt-8 font-medium text-gray-200 whitespace-nowrap max-h-24"
+                                            <div id="smart-button-container" class="">
+                                                <div style="text-align: center;">
+                                                    <div id="paypal-button-container"></div>
+                                                </div>
+                                            </div>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-
                 </div>
-                <h1 class="pt-4 text-lg font-bold text-white">Mes commandes:</h1>
+                <h1 class="pt-3 text-lg font-bold text-white">Mes commandes:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
                         <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
@@ -164,7 +167,8 @@
                                                 <div class="flex">
                                                     <form action="confirm_order" method="POST" class="py-2">
                                                         @csrf
-                                                        <input type="hidden" name="id" value="{{ $order->id }}">
+                                                        <input type="hidden" name="id"
+                                                            value="{{ $order->id }}">
                                                         <button type="submit">
                                                             <i
                                                                 class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Valider</i>
@@ -173,7 +177,8 @@
 
                                                     <form action="delete_order" method="POST" class="px-4 py-2">
                                                         @csrf
-                                                        <input type="hidden" name="id" value="{{ $order->id }}">
+                                                        <input type="hidden" name="id"
+                                                            value="{{ $order->id }}">
                                                         <button type="submit">
                                                             <i
                                                                 class="text-gray-400 fas fa-trash-alt hover:text-red-400"></i>
@@ -208,42 +213,107 @@
                     </div>
                 </div>
 
+                <h1 class="py-4 text-lg font-bold text-white">Mes scores:</h1>
+                <div class="flex flex-col w-full bg-gray-800 border border-gray-700 rounded-xl max-h-64">
+                    <div class="overflow-x-auto rounded-t-lg">
+                        <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
+                            <thead class="bg-gray-100 rounded-t-lg">
+                                <tr>
+                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                        Jeux
+                                    </th>
+                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                        Score
+                                    </th>
+                                    <th class="hidden px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
+                                        Bonus
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-gray-500">
+                                @forelse ($scores as $score)
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                            {{ $score->game->name }}
+                                        </td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
+                                        <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
+                                            <strong
+                                                class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
+                                                <p class="ml-2 ">+ {{ $score->data }}</p> <img
+                                                    src="{{ asset('img/diamond5.png') }}" alt="coin"
+                                                    class="w-4 h-4 ml-2">
+                                                <p class="ml-2 ">+ {{ $score->data2 }}</p> <img
+                                                    src="{{ asset('img/coin10.png') }}" alt="coin"
+                                                    class="w-4 h-4 ml-2">
+                                                <p class="ml-2 ">+ {{ $score->data3 }}</p> <img
+                                                    src="{{ asset('img/gem5.png') }}" alt="coin"
+                                                    class="w-4 h-4 ml-2">
+                                            </strong>
+
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                            Aucun Score enregistré
+                                        </td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                    </tr>
+                                @endforelse
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
                 <h1 class="pt-4 text-lg font-bold text-white">Mon adresse de livraison:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
                     <form action="save_address" class="container flex flex-col mx-auto" method="POST">
-                    @csrf
-                    <input type="hidden" name="user_id" value="{{ backpack_auth()->user()->id }}">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ backpack_auth()->user()->id }}">
                         <fieldset class="grid grid-cols-4 gap-6 p-6">
                             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                             <div class="col-span-full sm:col-span-3">
+                                <div class="col-span-full sm:col-span-3">
                                     <label for="lastname" class="text-sm text-gray-300">Nom</label>
-                                    <input name="lastname" id="lastname" type="text" placeholder=""
-                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400" value="{{ $infos[0]->nom ?? null;  }}">
+                                    <input name="lastname" id="lastname" type="text" placeholder="" required
+                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
+                                        value="{{ $infos[0]->nom ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-3">
                                     <label for="firstname" class="text-sm text-gray-300">Prénom</label>
-                                    <input name="firstname" id="firstname" type="text" placeholder=""
-                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400" value="{{ $infos[0]->prenom ?? null;  }}">
+                                    <input name="firstname" id="firstname" type="text" placeholder="" required
+                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
+                                        value="{{ $infos[0]->prenom ?? null }}">
                                 </div>
                                 <div class="col-span-full">
                                     <label for="address" class="text-sm text-gray-300">Adresse</label>
-                                    <input name="address" id="address" type="text" placeholder=""
-                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400" value="{{ $infos[0]->adresse ?? null;  }}">
+                                    <input name="address" id="address" type="text" placeholder="" required
+                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
+                                        value="{{ $infos[0]->adresse ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="zip" class="text-sm text-gray-300">Code Postal</label>
-                                    <input name="zip" id="zip" type="text" placeholder=""
-                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400" value="{{ $infos[0]->codepostal ?? null;  }}">
+                                    <input name="zip" id="zip" type="text" placeholder="" required
+                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
+                                        value="{{ $infos[0]->codepostal ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="city" class="text-sm text-gray-300">Ville</label>
-                                    <input name="city" id="city" type="text" placeholder=""
-                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400" value="{{ $infos[0]->ville ?? null;  }}">
+                                    <input name="city" id="city" type="text" placeholder="" required
+                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
+                                        value="{{ $infos[0]->ville ?? null }}">
                                 </div>
-                                 <div class="col-span-full sm:col-span-2">
-                                 <label for="" class="text-sm text-gray-300">  &nbsp;</label>
-                                    <button type="submit" class="w-full px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Enregistrer
-                                        </button>
+                                <div class="col-span-full sm:col-span-2">
+                                    <label for="" class="text-sm text-gray-300"> &nbsp;</label>
+                                    <button type="submit"
+                                        class="w-full px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Enregistrer
+                                    </button>
                                 </div>
                             </div>
                         </fieldset>
@@ -251,4 +321,61 @@
                 </div>
         </container>
     </div>
+
+     <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD"
+                                                data-sdk-integration-source="button-factory"></script>
+                                            <script>
+                                                function initPayPalButton() {
+                                                    paypal.Buttons({
+                                                        style: {
+                                                            shape: 'rect',
+                                                            color: 'gold',
+                                                            layout: 'vertical',
+                                                            label: 'paypal',
+
+                                                        },
+
+                                                        createOrder: function(data, actions) {
+                                                            return actions.order.create({
+                                                                purchase_units: [{
+                                                                    "amount": {
+                                                                        "currency_code": "EUR",
+                                                                        "value": 10
+                                                                    }
+                                                                }]
+                                                            });
+                                                        },
+
+                                                        onApprove: function(data, actions) {
+                                                            return actions.order.capture().then(function(orderData) {
+
+                                                                // Full available details
+                                                                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+                                                                // Show a success message within this page, e.g.
+                                                                const element = document.getElementById('paypal-button-container');
+                                                                element.innerHTML = '';
+                                                                element.innerHTML = '<h3>Merci pour votre paiement !</h3>';
+
+                                                                // Or go to another URL:  actions.redirect('thank_you.html');
+
+                                                            });
+                                                        },
+
+                                                        onError: function(err) {
+                                                            console.log(err);
+                                                        }
+                                                    }).render('#paypal-button-container');
+                                                }
+                                                initPayPalButton();
+                                            </script>
+                                            <style>
+                                                #paypal-button-container {
+                                                    max-width: 200px;
+                                                    margin: 0 auto;
+                                       
+                                                }
+
+                                                
+                                            </style>
 @endsection

@@ -50,7 +50,7 @@
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap rate-container">
 
                                                         @php $imagesx =   $star->image[0] ?? null; @endphp
-                                                        <img src="../storage/{{ $imagesx }}" class="w-32 h-auto">
+                                                        <img src="{{ asset('storage/' . $imagesx ) }}" class="w-32 h-auto">
                                                     </td>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">

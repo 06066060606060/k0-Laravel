@@ -3,9 +3,9 @@
     "file": "assets/anim.6ed443fd.svg",
     "src": "resources/css/anim.svg"
   },
-  "resources/img/gift.png": {
+  "resources/css/gift.png": {
     "file": "assets/gift.d04b1766.png",
-    "src": "resources/img/gift.png"
+    "src": "resources/css/gift.png"
   },
   "resources/js/app.js": {
     "file": "assets/app.bb07a8ec.js",
@@ -13,12 +13,12 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app.e8335c0d.css",
+    "file": "assets/app.b762f089.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/css/gift.png": {
+  "resources/img/gift.png": {
     "file": "assets/gift.d04b1766.png",
-    "src": "resources/css/gift.png"
+    "src": "resources/img/gift.png"
   }
 }
