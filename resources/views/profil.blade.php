@@ -281,31 +281,31 @@
                             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                                 <div class="col-span-full sm:col-span-3">
                                     <label for="lastname" class="text-sm text-gray-300">Nom</label>
-                                    <input name="lastname" id="lastname" type="text" placeholder="" required
+                                    <input name="lastname" id="lastname" type="text" placeholder="" 
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->nom ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-3">
                                     <label for="firstname" class="text-sm text-gray-300">Prénom</label>
-                                    <input name="firstname" id="firstname" type="text" placeholder="" required
+                                    <input name="firstname" id="firstname" type="text" placeholder="" 
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->prenom ?? null }}">
                                 </div>
                                 <div class="col-span-full">
                                     <label for="address" class="text-sm text-gray-300">Adresse</label>
-                                    <input name="address" id="address" type="text" placeholder="" required
+                                    <input name="address" id="address" type="text" placeholder="" 
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->adresse ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="zip" class="text-sm text-gray-300">Code Postal</label>
-                                    <input name="zip" id="zip" type="text" placeholder="" required
+                                    <input name="zip" id="zip" type="text" placeholder="" 
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->codepostal ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="city" class="text-sm text-gray-300">Ville</label>
-                                    <input name="city" id="city" type="text" placeholder="" required
+                                    <input name="city" id="city" type="text" placeholder="" 
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->ville ?? null }}">
                                 </div>
@@ -322,8 +322,7 @@
         </container>
     </div>
 
-     <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=USD"
-                                                data-sdk-integration-source="button-factory"></script>
+     <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
                                             <script>
                                                 function initPayPalButton() {
                                                     paypal.Buttons({
