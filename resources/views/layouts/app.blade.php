@@ -11,7 +11,8 @@
     </navbar>
     <main>
         @yield('main')
-        <div x-data="{ modelOpen: false }" class="flex justify-center">
+    </main>
+     <div x-data="{ modelOpen: false }" class="flex justify-center">
 
             <button @click="modelOpen =!modelOpen" id="primary_button" class="hidden">
             </button>
@@ -106,12 +107,12 @@
                                 </div>
                                 <div class="space-y-1 text-sm">
                                     <label for="email" class="block text-gray-400">email</label>
-                                    <input type="email" name="email" id="email" placeholder="exemple@mail.com"
+                                    <input type="email" name="email" id="email2" placeholder="exemple@mail.com"
                                         class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
                                 </div>
                                 <div class="space-y-1 text-sm">
                                     <label for="password" class="block text-gray-400">Mot de passe</label>
-                                    <input type="password" name="password" id="password" placeholder=""
+                                    <input type="password" name="password" id="password2" placeholder=""
                                         class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400" required>
 
                                 </div>
@@ -130,60 +131,13 @@
                 </div>
             </div>
         </div>
-    </main>
     <footer>
         @include('parts.footer')
     </footer>
     @vite('resources/js/app.js')
 
-    <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
     <script>
-        barba.init();
-        barba.hooks.afterEnter((data) => {
-            const swiper = new Swiper('.swiper-container', {
-                loop: true,
-                slidesPerView: 1.5,
-                spaceBetween: 24,
-                centeredSlides: true,
-                autoplay: {
-                    delay: 8000,
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    800: {
-                        slidesPerView: 3,
-                    },
-                    1100: {
-                        slidesPerView: 4,
-                    },
-                },
-            })
-        });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const swiper = new Swiper('.swiper-container', {
-                loop: true,
-                slidesPerView: 1.5,
-                spaceBetween: 24,
-                centeredSlides: true,
-                autoplay: {
-                    delay: 8000,
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    800: {
-                        slidesPerView: 3,
-                    },
-                    1100: {
-                        slidesPerView: 4,
-                    },
-                },
-            })
-        })
+        
     </script>
 </body>
 

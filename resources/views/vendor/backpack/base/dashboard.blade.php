@@ -161,8 +161,8 @@
         @if (backpack_user()->role == 'admin')
             <p class="w-1/2 px-4 py-2 mx-8 mt-4 text-xs text-gray-200 bg-gray-900 rounded -pl-2">
                 Derniéres mise à jour: {{ $version }}<br>
-                 -Ajout system de commandes<br>
-                 -Ajout system de cadeaux<br>
+                 -Fix storage upload OVH<br>
+                 -Ajout paiement  paypal<br>
 
             </p>
         @endif

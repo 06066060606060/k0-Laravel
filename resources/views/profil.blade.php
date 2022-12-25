@@ -6,7 +6,7 @@
             <div class="flex flex-col pt-2">
                 <card
                     class="relative w-full p-4 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 h-96 md:h-[480px] md:mb-0 md:mr-4">
-                    <div class="flex items-center pb-4 pt-2 border-b border-gray-500">
+                    <div class="flex items-center pt-2 pb-4 border-b border-gray-500">
                         <img alt="Developer" src="img/avatar.png"
                             class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
 
@@ -63,9 +63,9 @@
                 </card>
             </div>
             <div class="flex flex-col w-full py-2">
-                <div class="flex flex-col w-full mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 h-48">
+                <div class="flex flex-col w-full h-48 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
                     <div class="overflow-x-auto rounded-t-lg">
-                        <table class="py-2 text-sm divide-y divide-gray-200 w-full">
+                        <table class="w-full py-2 text-sm divide-y divide-gray-200">
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
@@ -83,13 +83,13 @@
                                         <fieldset class="grid grid-cols-2 gap-4">
                                             <div>
                                                 <input type="radio" name="DeliveryOption" value="DeliveryStandard"
-                                                    id="DeliveryStandard" class="peer hidden" checked />
+                                                    id="DeliveryStandard" class="hidden peer" checked />
 
                                                 <label for="DeliveryStandard"
-                                                    class="block cursor-pointer rounded-lg border border-gray-400 p-4 text-sm font-medium shadow-sm hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
+                                                    class="block p-4 text-sm font-medium border border-gray-400 rounded-lg shadow-sm cursor-pointer hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
                                                     <div class="flex flex-col md:flex-row">
                                                         <img src="{{ asset('img/diamond5.png') }}" alt="coin"
-                                                            class="w-6 h-6 md:mr-2  pb-1">
+                                                            class="w-6 h-6 pb-1 md:mr-2">
                                                         <p class="text-gray-700 dark:text-gray-200">x 500</p>
                                                     </div>
                                                     <p class="mt-1 text-gray-900 dark:text-white">10 €</p>
@@ -98,13 +98,13 @@
 
                                             <div>
                                                 <input type="radio" name="DeliveryOption" value="DeliveryPriority"
-                                                    id="DeliveryPriority" class="peer hidden" />
+                                                    id="DeliveryPriority" class="hidden peer" />
 
                                                 <label for="DeliveryPriority"
-                                                    class="block cursor-pointer rounded-lg border border-gray-400 p-4 text-sm font-medium shadow-sm hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
+                                                    class="block p-4 text-sm font-medium border border-gray-400 rounded-lg shadow-sm cursor-pointer hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
                                                     <div class="flex flex-col md:flex-row">
                                                         <img src="{{ asset('img/diamond5.png') }}" alt="coin"
-                                                            class="w-6 h-6 md:mr-2 pb-1">
+                                                            class="w-6 h-6 pb-1 md:mr-2">
                                                         <p class="text-gray-700 dark:text-gray-200">x 1000</p>
                                                     </div>
                                                     <p class="mt-1 text-gray-900 dark:text-white">19 €</p>
@@ -112,12 +112,17 @@
                                             </div>
                                         </fieldset>
                                     </td>
-                                     <td class="px-4 pt-8 font-medium text-gray-200 whitespace-nowrap max-h-24"
-                                            <div id="smart-button-container" class="">
-                                                <div style="text-align: center;">
-                                                    <div id="paypal-button-container"></div>
-                                                </div>
-                                            </div>
+                                    <td class="px-4 pt-8 font-medium text-gray-200 whitespace-nowrap max-h-24" <td/>
+                                    <a class="m-3 btn btn-primary" href="{{ route('processTransaction') }}" target="_blank">Payer EUR.10</a>
+
+                                    @if (\Session::has('error'))
+                                        <div class="alert alert-danger">{{ \Session::get('error') }}</div>
+                                        {{ \Session::forget('error') }}
+                                    @endif
+                                    @if (\Session::has('success'))
+                                        <div class="alert alert-success">{{ \Session::get('success') }}</div>
+                                        {{ \Session::forget('success') }}
+                                    @endif
                                     </td>
                                 </tr>
                             </tbody>
@@ -167,8 +172,7 @@
                                                 <div class="flex">
                                                     <form action="confirm_order" method="POST" class="py-2">
                                                         @csrf
-                                                        <input type="hidden" name="id"
-                                                            value="{{ $order->id }}">
+                                                        <input type="hidden" name="id" value="{{ $order->id }}">
                                                         <button type="submit">
                                                             <i
                                                                 class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Valider</i>
@@ -281,31 +285,31 @@
                             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                                 <div class="col-span-full sm:col-span-3">
                                     <label for="lastname" class="text-sm text-gray-300">Nom</label>
-                                    <input name="lastname" id="lastname" type="text" placeholder="" 
+                                    <input name="lastname" id="lastname" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->nom ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-3">
                                     <label for="firstname" class="text-sm text-gray-300">Prénom</label>
-                                    <input name="firstname" id="firstname" type="text" placeholder="" 
+                                    <input name="firstname" id="firstname" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->prenom ?? null }}">
                                 </div>
                                 <div class="col-span-full">
                                     <label for="address" class="text-sm text-gray-300">Adresse</label>
-                                    <input name="address" id="address" type="text" placeholder="" 
+                                    <input name="address" id="address" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->adresse ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="zip" class="text-sm text-gray-300">Code Postal</label>
-                                    <input name="zip" id="zip" type="text" placeholder="" 
+                                    <input name="zip" id="zip" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->codepostal ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="city" class="text-sm text-gray-300">Ville</label>
-                                    <input name="city" id="city" type="text" placeholder="" 
+                                    <input name="city" id="city" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->ville ?? null }}">
                                 </div>
@@ -321,60 +325,4 @@
                 </div>
         </container>
     </div>
-
-     <script src="https://www.paypal.com/sdk/js?client-id=sb&enable-funding=venmo&currency=EUR" data-sdk-integration-source="button-factory"></script>
-                                            <script>
-                                                function initPayPalButton() {
-                                                    paypal.Buttons({
-                                                        style: {
-                                                            shape: 'rect',
-                                                            color: 'gold',
-                                                            layout: 'vertical',
-                                                            label: 'paypal',
-
-                                                        },
-
-                                                        createOrder: function(data, actions) {
-                                                            return actions.order.create({
-                                                                purchase_units: [{
-                                                                    "amount": {
-                                                                        "currency_code": "EUR",
-                                                                        "value": 10
-                                                                    }
-                                                                }]
-                                                            });
-                                                        },
-
-                                                        onApprove: function(data, actions) {
-                                                            return actions.order.capture().then(function(orderData) {
-
-                                                                // Full available details
-                                                                console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-
-                                                                // Show a success message within this page, e.g.
-                                                                const element = document.getElementById('paypal-button-container');
-                                                                element.innerHTML = '';
-                                                                element.innerHTML = '<h3>Merci pour votre paiement !</h3>';
-
-                                                                // Or go to another URL:  actions.redirect('thank_you.html');
-
-                                                            });
-                                                        },
-
-                                                        onError: function(err) {
-                                                            console.log(err);
-                                                        }
-                                                    }).render('#paypal-button-container');
-                                                }
-                                                initPayPalButton();
-                                            </script>
-                                            <style>
-                                                #paypal-button-container {
-                                                    max-width: 200px;
-                                                    margin: 0 auto;
-                                       
-                                                }
-
-                                                
-                                            </style>
 @endsection
