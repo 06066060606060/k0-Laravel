@@ -35,11 +35,15 @@ Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
 Route::post('orderpack', [GlobalController::class, 'setOrderpack'])->name('setOrderpack');
 Route::get('order', [GlobalController::class, 'getProfil'])->name('getProfil');
-Route::get('orderpack', [GlobalController::class, 'getProfil'])->name('getProfil');
+Route::get('orderpack', [GlobalController::class, 'getProfil']);
 Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
 Route::post('confirm_orderpack', [GlobalController::class, 'confirmOrderpack'])->name('confirmOrderpack');
 // Route::get('order', [GlobalController::class, 'getOrder'])->name('getOrder');
 Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
+
+Route::get('delete_order',  [GlobalController::class, 'getProfil']);
+Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
+
 Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
 Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
 
