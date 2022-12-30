@@ -63,7 +63,7 @@
                 </card>
             </div>
             <div class="flex flex-col w-full py-2">
-                <div class="flex flex-col w-full h-48 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
+                <div class="flex flex-col w-full mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
                     <div class="overflow-x-auto rounded-t-lg">
                         <table class="w-full py-2 text-sm divide-y divide-gray-200">
                             <thead class="bg-gray-100 rounded-t-lg">
@@ -153,17 +153,17 @@
                             </thead>
 
                             <tbody class="divide-y divide-gray-500">
-                                @forelse ($orders as $order)
+                                @forelse ($paiements as $paiement)
                                     <tr>
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{ $order->cadeau->name }}
+                                            {{ $paiement->pack->name }}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $order->cadeau->prix }}
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->pack->prix }}
                                         </td>
                                         </td>
 
 
-                                        @if ($order->status == 'Non')
+                                        @if ($paiement->status == 'Non')
                                             <td class="hidden px-4 py-2 text-gray-300 whitespace-nowrap md:flex">
                                                 <p
                                                     class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-red-400 md:flex">
@@ -173,7 +173,7 @@
                                                 <div class="flex">
                                                     <form action="confirm_order" method="POST" class="py-2">
                                                         @csrf
-                                                        <input type="hidden" name="id" value="{{ $order->id }}">
+                                                        <input type="hidden" name="id" value="{{ $paiement->id }}">
                                                         <button type="submit">
                                                             <i
                                                                 class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
@@ -183,7 +183,7 @@
                                                     <form action="delete_order" method="POST" class="px-4 py-2">
                                                         @csrf
                                                         <input type="hidden" name="id"
-                                                            value="{{ $order->id }}">
+                                                            value="{{ $paiement->id }}">
                                                         <button type="submit">
                                                             <i
                                                                 class="text-gray-400 fas fa-trash-alt hover:text-red-400"></i>
@@ -191,7 +191,7 @@
                                                     </form>
                                                 </div>
                                             </td>
-                                        @elseif ($order->status == 'Oui')
+                                        @elseif ($paiement->status == 'Oui')
                                             <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
                                                     Confirmé</p>

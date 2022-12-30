@@ -15,6 +15,13 @@ return new class extends Migration
     {
         Schema::create('paiements', function (Blueprint $table) {
             $table->id();
+            $table->string('name')->nullable();
+            $table->string('type')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->unsignedBigInteger('pack_id');
+            $table->foreign('pack_id')->references('id')->on('packs');
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

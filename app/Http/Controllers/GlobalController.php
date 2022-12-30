@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
 use App\Models\Packs;
+use App\Models\Paiements;
 use App\Models\Scores;
 use App\Models\Session;
 use Illuminate\Http\Request;
@@ -120,7 +121,8 @@ class GlobalController extends Controller
                 ->limit('6')
                 ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders', 'infos'));
+            $paiements = Paiements::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
         } else {
             return redirect('/');
         }

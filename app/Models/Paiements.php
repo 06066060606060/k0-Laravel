@@ -19,7 +19,13 @@ class Paiements extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'type',
+        'user_id',
+        'pack_id',
+        'status',
+    ];
     // protected $hidden = [];
     // protected $dates = [];
 
@@ -34,7 +40,15 @@ class Paiements extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
+    public function pack()
+    {
+        return $this->belongsTo(Packs::class);
+    }
     /*
     |--------------------------------------------------------------------------
     | SCOPES
