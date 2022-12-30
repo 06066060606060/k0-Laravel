@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('main')
+    <script
+        src="https://www.paypal.com/sdk/js?client-id=AbUTLj45WxuC204ODLnTOw9BngDgdBj_XUyfVmVA-3TgKXxUSYNuxObFMclnWviTteDuRqCBroWM_SIo&enable-funding=venmo&currency=EUR"
+        data-sdk-integration-source="button-factory"></script>
+
     <div data-barba="container">
         <div class="z-0 one"></div>
         <container class="block px-4 mx-auto text-white max-w-7xl">
@@ -51,7 +55,6 @@
                                                     x-transition:leave-end="opacity-0"
                                                     class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60"
                                                     aria-hidden="true"></div>
-
                                                 <div x-cloak x-show="modelOpen"
                                                     x-transition:enter="transition ease-out duration-300 transform"
                                                     x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
@@ -60,66 +63,16 @@
                                                     x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                                                     x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                                                     class="inline-block w-full max-w-4xl pt-32 mx-4 overflow-hidden transition-all transform">
+                                                    <div
+                                                        class="flex flex-col my-4 bg-white rounded-md shadow-2xl justify-center px-4">
 
-                                                    <form action="orderpack" method="POST"
-                                                        class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl ">
-                                                        @csrf
-                                                        <div class="flex justify-between w-full border-b">
-                                                            <h1 class="py-6 mx-auto text-lg font-bold">
-                                                                ACHETER CE PACK DE RUBIS ?
-                                                            </h1>
-                                                            <i class="float-right las la-times la-1x mr-5 mt-1 py-6 text-[#1E9FD9]"
-                                                                @click="modelOpen = false"></i>
-                                                        </div>
-                                                        <div class="bg-gray-700 rounded-b-md">
-                                                            <h1 class="py-6 mx-auto text-lg font-bold">Passer sur votre
-                                                                profil pour confirmer.</h1>
-                                                            <div
-                                                                class="flex items-center justify-around pt-4 pb-2 mx-auto text-2xl font-semibold align-middle">
-                                                                <div class="flex flex-col items-center align-middle">
-                                                                    <img alt="gallery"
-                                                                        class="inset-0 object-cover object-center w-32 h-auto pt-2"
-                                                                        src="{{ asset('storage/' . $images) }}"
-                                                                        onerror="this.src='/img/empty.png'">
-                                                                    <p class="pt-4 text-center">{{ $pack->prix }} €</p>
-                                                                </div>
-                                                            </div>
-                                                            <input type="hidden" name="id"
-                                                                value="{{ $pack->id }}">
-                                                            <input type="hidden" name="prix"
-                                                                value="{{ $pack->prix }}">
-
-                                                            <div class="flex flex-col items-center pb-8 mx-24 mt-1">
-                                                                <div class="flex justify-center">
-                                                                    <div @click="modelOpen = false"
-                                                                        class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 mr-4 font-medium text-white group">
-                                                                        <span
-                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
-                                                                        <span
-                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-800 group-hover:bg-red-600 group-active:bg-red-700 group-hover:-skew-x-12"></span>
-                                                                        <span
-                                                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
-                                                                        <span
-                                                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
-                                                                        <span class="relative">Annuler</span>
-                                                                    </div>
-
-                                                                    <button type="submit"
-                                                                        class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
-                                                                        <span
-                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
-                                                                        <span
-                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
-                                                                        <span
-                                                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
-                                                                        <span
-                                                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                        <span class="relative">Continuer</span>
-                                                                    </button>
-                                                                </div>
+                                                        <div class="paypal-button pt-4">
+                                                            <div style="text-align: center;">
+                                                                <div id="paypal-button-container{{ $pack->id }}"></div>
                                                             </div>
                                                         </div>
-                                                    </form>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -127,6 +80,29 @@
                                 </div>
                             </div>
                         </div>
+                        <script>
+                            packid = {!! json_encode($pack->id) !!};
+                            packprice = {!! json_encode($pack->prix) !!};
+                            paypal.Buttons({
+                                createOrder: function(data, actions) {
+                                    // Créez ici votre commande
+                                    return actions.order.create({
+                                        purchase_units: [{
+                                            amount: {
+                                                value: packprice
+                                            }
+                                        }]
+                                    });
+                                },
+                                onApprove: function(data, actions) {
+                                    // Capturez ici la commande
+                                    return actions.order.capture().then(function(details) {
+                                        // Affichez les détails de la commande à votre utilisateur
+                                        alert('Transaction effectuée avec succès !');
+                                    });
+                                }
+                            }).render('#paypal-button-container' + packid);
+                        </script>
                     @empty
                         <div class="p-4 lg:w-1/4 md:w-1/2">
                             <div
@@ -140,7 +116,7 @@
                                     <a href="#" class="flex justify-center pb-4">
                                         <button
                                             class=" transform select-none  bg-blue-700 text-center hover:bg-blue-600 active:bg-blue-800 text-white font-semibold py-1 w-[120px] rounded-full">
-                                            Jouer
+                                            Empty
                                         </button>
                                     </a>
                                 </div>

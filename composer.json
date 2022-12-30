@@ -14,7 +14,6 @@
         "laravel/sanctum": "^3.0",
         "pestopancake/laravel-backpack-database-notifications": "^1.0",
         "spatie/laravel-cookie-consent": "^3.2",
-        "srmklive/paypal": "^3.0",
         "stripe/stripe-php": "^9.9"
     },
     "require-dev": {
