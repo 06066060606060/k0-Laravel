@@ -151,9 +151,9 @@ class GlobalController extends Controller
             $paiement = new Paiements();
             $paiement->pack_id = $request->id;
             $paiement->user_id = $userid;
-            $paiement->status = 'Non';
+            $paiement->status = 'Oui';
             $paiement->type = "paiement";
-            $paiement->name = $request->name;
+            $paiement->name = "test-paypal";
             $paiement->save();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
