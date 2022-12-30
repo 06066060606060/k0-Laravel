@@ -141,7 +141,47 @@ class GlobalController extends Controller
             $order->save();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders'));
+            $paiements = Paiements::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders','paiements'));
+        } else {
+            return redirect('/');
+        }
+    }
+
+    public function setOrderpack(Request $request)
+    {
+        if (backpack_auth()->check()) {
+            $usermail = backpack_auth()->user()->email;
+            $userid = backpack_auth()->user()->id;
+            $paiement = new Paiements();
+            $paiement->pack_id = $request->id;
+            $paiement->user_id = $userid;
+            $paiement->status = 'Non';
+            $paiement->type = "paiement";
+            $paiement->name = $request->name;
+            $paiement->save();
+            $scores = Scores::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders', 'paiements'));
+        } else {
+            return redirect('/');
+        }
+    }
+
+    public function confirmOrderpack(Request $request)
+    {
+        if (backpack_auth()->check()) {
+            $usermail = backpack_auth()->user()->email;
+            $userid = backpack_auth()->user()->id;
+            Paiements::where('user_id', $userid)
+                ->where('id', $request->id)
+                ->update(['status' => 'Oui']);
+            $scores = Scores::where('user_id', $userid)->get();
+            // substrate diamonds
+            $orders = Commandes::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->get();
+            return back();
         } else {
             return redirect('/');
         }
@@ -158,6 +198,7 @@ class GlobalController extends Controller
             $scores = Scores::where('user_id', $userid)->get();
             // substrate diamonds
             $orders = Commandes::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->get();
             return back();
         } else {
             return redirect('/');
@@ -178,6 +219,7 @@ class GlobalController extends Controller
                     'ville' => $request->city,
                     
                 ]);
+                $paiements = Paiements::where('user_id', $userid)->get();
                 return back();
             } else {
                 $infos = new Infosperso();
@@ -191,6 +233,7 @@ class GlobalController extends Controller
                 $scores = Scores::where('user_id', $userid)->get();
                 $orders = Commandes::where('user_id', $userid)->get();
                 $infos = Infosperso::where('user_id', $userid)->get();
+                $paiements = Paiements::where('user_id', $userid)->get();
                 return back();
             }
         } else {
@@ -208,7 +251,25 @@ class GlobalController extends Controller
                 ->delete();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders'));
+            $paiements = Paiements::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders','paiements'));
+        } else {
+            return redirect('/');
+        }
+    }
+
+    public function deleteOrderpack(Request $request)
+    {
+        if (backpack_auth()->check()) {
+            $usermail = backpack_auth()->user()->email;
+            $userid = backpack_auth()->user()->id;
+            Paiements::where('user_id', $userid)
+                ->where('id', $request->id)
+                ->delete();
+            $scores = Scores::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders','paiements'));
         } else {
             return redirect('/');
         }

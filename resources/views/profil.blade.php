@@ -171,7 +171,7 @@
                                             </td>
                                             <td class="py-2 text-gray-300 whitespace-nowrap">
                                                 <div class="flex">
-                                                    <form action="confirm_order" method="POST" class="py-2">
+                                                    <form action="confirm_orderpack" method="POST" class="py-2">
                                                         @csrf
                                                         <input type="hidden" name="id" value="{{ $paiement->id }}">
                                                         <button type="submit">
@@ -180,7 +180,7 @@
                                                         </button>
                                                     </form>
 
-                                                    <form action="delete_order" method="POST" class="px-4 py-2">
+                                                    <form action="delete_orderpack" method="POST" class="px-4 py-2">
                                                         @csrf
                                                         <input type="hidden" name="id"
                                                             value="{{ $paiement->id }}">

@@ -62,7 +62,7 @@
                                                                          x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                                                                          class="inline-block w-full max-w-4xl pt-32 mx-4 overflow-hidden transition-all transform">
 
-                                                                         <form action="order" method="POST"
+                                                                         <form action="orderpack" method="POST"
                                                                              class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl ">
                                                                              @csrf
                                                                              <div
