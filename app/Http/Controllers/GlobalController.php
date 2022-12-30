@@ -112,14 +112,8 @@ class GlobalController extends Controller
         if (backpack_auth()->check()) {
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
-            $scores = Scores::where('user_id', $userid)
-                ->latest()
-                ->limit('6')
-                ->get();
-            $orders = Commandes::where('user_id', $userid)
-                ->latest()
-                ->limit('6')
-                ->get();
+            $scores = Scores::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
             $paiements = Paiements::where('user_id', $userid)->get();
             return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
@@ -140,9 +134,10 @@ class GlobalController extends Controller
             $order->prix = $request->prix;
             $order->save();
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $paiements = Paiements::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders','paiements'));
+            $infos = Infosperso::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders', 'infos','paiements'));
         } else {
             return redirect('/');
         }
@@ -161,9 +156,10 @@ class GlobalController extends Controller
             $paiement->name = $request->name;
             $paiement->save();
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
+            $infos = Infosperso::where('user_id', $userid)->get();
             $paiements = Paiements::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders', 'paiements'));
+            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
         } else {
             return redirect('/');
         }
@@ -179,26 +175,33 @@ class GlobalController extends Controller
                 ->update(['status' => 'Oui']);
             $scores = Scores::where('user_id', $userid)->get();
             // substrate diamonds
-            $orders = Commandes::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $paiements = Paiements::where('user_id', $userid)->get();
+            $infos = Infosperso::where('user_id', $userid)->get();
             return back();
         } else {
             return redirect('/');
         }
     }
 
-    public function confirmOrder(Request $request)
+    public function confirmOrder(Request $request) 
     {
         if (backpack_auth()->check()) {
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
-            Commandes::where('user_id', $userid)
+            $scores = Scores::where('user_id', $userid)->get();
+            //substrate diamonds from global score
+            if (backpack_auth()->user()->global_score >= $request->price) {
+                backpack_auth()->user()->update(['global_score' => backpack_auth()->user()->global_score - $request->price]);
+                Commandes::where('user_id', $userid)
                 ->where('id', $request->id)
                 ->update(['status' => 'Oui']);
-            $scores = Scores::where('user_id', $userid)->get();
-            // substrate diamonds
-            $orders = Commandes::where('user_id', $userid)->get();
+            } else {
+                return back();
+            }
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $paiements = Paiements::where('user_id', $userid)->get();
+            $infos = Infosperso::where('user_id', $userid)->get();
             return back();
         } else {
             return redirect('/');
@@ -231,7 +234,7 @@ class GlobalController extends Controller
                 $infos->ville = $request->city;
                 $infos->save();
                 $scores = Scores::where('user_id', $userid)->get();
-                $orders = Commandes::where('user_id', $userid)->get();
+                $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
                 $infos = Infosperso::where('user_id', $userid)->get();
                 $paiements = Paiements::where('user_id', $userid)->get();
                 return back();
@@ -250,9 +253,10 @@ class GlobalController extends Controller
                 ->where('id', $request->id)
                 ->delete();
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $paiements = Paiements::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders','paiements'));
+            $infos = Infosperso::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
         } else {
             return redirect('/');
         }
@@ -267,9 +271,10 @@ class GlobalController extends Controller
                 ->where('id', $request->id)
                 ->delete();
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->get();
+            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $paiements = Paiements::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders','paiements'));
+            $infos = Infosperso::where('user_id', $userid)->get();
+            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
         } else {
             return redirect('/');
         }

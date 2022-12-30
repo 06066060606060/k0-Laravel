@@ -39,7 +39,7 @@ class PaiementsCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
+        CRUD::column('id')->label('Numéro');
         CRUD::column('name')->label('Nom');
         CRUD::column('type')->label('Type');
         CRUD::column('user_id')->label('Utilisateur');

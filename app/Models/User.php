@@ -27,6 +27,10 @@ class User extends Authenticatable
         'password',
         'role',
         'abonnement',
+        'global_score',
+        'trophee1',
+        'trophee2',
+        'trophee3',
     ];
 
     /**

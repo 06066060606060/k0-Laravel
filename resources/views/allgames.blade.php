@@ -29,7 +29,7 @@
                                     <p class="mb-2 text-sm">{{ $freegame->description }}</p>
 
                                     <a href="game?id={{ $freegame->id }}"
-                                        class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                        class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
                                         <span
