@@ -112,8 +112,9 @@
                                             </div>
                                         </fieldset>
                                     </td>
-                                    <td class="px-4 pt-8 font-medium text-gray-200 whitespace-nowrap max-h-24" <td/>
-                                    <a class="m-3 btn btn-primary" href="{{ route('processTransaction') }}" target="_blank">Payer EUR.10</a>
+                                    <td class="px-4 pt-8 font-medium text-gray-200 whitespace-nowrap max-h-24" <td />
+                                    <a class="m-3 btn btn-primary" href="{{ route('processTransaction') }}"
+                                        target="_blank">Payer EUR.10</a>
 
                                     @if (\Session::has('error'))
                                         <div class="alert alert-danger">{{ \Session::get('error') }}</div>
@@ -129,6 +130,94 @@
                         </table>
                     </div>
                 </div>
+                <h1 class="pt-3 text-lg font-bold text-white">Mes recharges:</h1>
+                <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
+                    <div class="overflow-x-auto rounded-t-lg">
+                        <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
+                            <thead class="bg-gray-100 rounded-t-lg">
+                                <tr>
+                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                        Type
+                                    </th>
+                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                        Prix
+                                    </th>
+                                    <th
+                                        class="hidden px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
+                                        Status
+                                    </th>
+                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                        Opérations
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-gray-500">
+                                @forelse ($orders as $order)
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                            {{ $order->cadeau->name }}
+                                        </td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $order->cadeau->prix }}
+                                        </td>
+                                        </td>
+
+
+                                        @if ($order->status == 'Non')
+                                            <td class="hidden px-4 py-2 text-gray-300 whitespace-nowrap md:flex">
+                                                <p
+                                                    class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-red-400 md:flex">
+                                                    En attente</p>
+                                            </td>
+                                            <td class="py-2 text-gray-300 whitespace-nowrap">
+                                                <div class="flex">
+                                                    <form action="confirm_order" method="POST" class="py-2">
+                                                        @csrf
+                                                        <input type="hidden" name="id" value="{{ $order->id }}">
+                                                        <button type="submit">
+                                                            <i
+                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
+                                                        </button>
+                                                    </form>
+
+                                                    <form action="delete_order" method="POST" class="px-4 py-2">
+                                                        @csrf
+                                                        <input type="hidden" name="id"
+                                                            value="{{ $order->id }}">
+                                                        <button type="submit">
+                                                            <i
+                                                                class="text-gray-400 fas fa-trash-alt hover:text-red-400"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                        @elseif ($order->status == 'Oui')
+                                            <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
+                                                <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
+                                                    Confirmé</p>
+                                            </td>
+                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
+                                                &nbsp;
+                                            </td>
+                                        @endif
+
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                            Aucun article
+                                        </td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                    </tr>
+                                @endforelse
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
                 <h1 class="pt-3 text-lg font-bold text-white">Mes commandes:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
@@ -172,10 +261,11 @@
                                                 <div class="flex">
                                                     <form action="confirm_order" method="POST" class="py-2">
                                                         @csrf
-                                                        <input type="hidden" name="id" value="{{ $order->id }}">
+                                                        <input type="hidden" name="id"
+                                                            value="{{ $order->id }}">
                                                         <button type="submit">
                                                             <i
-                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Valider</i>
+                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
                                                         </button>
                                                     </form>
 

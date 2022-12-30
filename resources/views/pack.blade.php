@@ -1,46 +1,27 @@
- @extends('layouts.app')
+@extends('layouts.app')
 
- @section('main')
-     <div data-barba="container">
-         <div class="z-0 one"></div>
+@section('main')
+    <div data-barba="container">
+        <div class="z-0 one"></div>
+        <container class="block px-4 mx-auto text-white max-w-7xl">
+            <div class="container px-5 pt-8 mx-auto">
+                <div class="flex flex-col w-full mb-20 text-center">
+                    <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tous nos pack de rubis</h1>
+                    <p class="mx-auto text-base leading-relaxed lg:w-2/3">Acheter des rubis supplémentaires !</p>
+                </div>
+                <div class="flex flex-wrap justify-center -m-4">
+                    @forelse ($packs as $pack)
+                        <div class="p-4 lg:w-1/4 md:w-1/2">
+                            <div
+                                class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
+                                @php $images =  $pack->image ?? null; @endphp
+                                <img alt="gallery" class="inset-0 object-cover object-center w-24 h-auto p-2 rounded-t-md"
+                                    src="{{ asset('storage/' . $images ) }}" onerror="this.src='/img/empty.png'">
+                                <div class="w-full">
+                                    <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $pack->name }}</h2>
+                                    <p class="mb-2 text-sm">{{ $pack->description }}</p>
 
-         <container class="block min-h-screen px-4 mx-auto text-white max-w-7xl">
-             <div class="container px-5 pt-8 mx-auto">
-                 <div class="flex flex-col w-full mb-20 text-center">
-                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Boutique de cadeaux</h1>
-                     <section class="text-gray-300 body-font">
-                         <div class="container px-5 py-4 mx-auto">
-                             <div class="flex flex-col w-full mb-10 text-center">
-                                 <p class="mx-auto text-base leading-relaxed">Echanger vos <a
-                                         class="text-blue-500">diamants</a> contre des cadeaux <br></p>
-                             </div>
-                             <div class="container px-5 mx-auto">
-                                 <div class="flex flex-wrap -m-4">
-
-                                     @forelse ($cadeaux as $cadeau)
-                                         <div class="p-4 lg:w-1/4 md:w-1/2">
-                                             <div
-                                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
-                                                 <input type="hidden" name="id" value="{{ $cadeau->id }}">
-                                                 @php $image =  $cadeau->image ?? null; @endphp
-                                                 <img alt="gallery"
-                                                     class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                                     src="./storage/{{ $image }}"
-                                                     onerror="this.src='/img/empty.png'">
-                                                 <div class="w-full">
-                                                     <div class="flex justify-between mx-4">
-                                                         <h2 name="name"
-                                                             class="py-1 text-xl font-bold text-green-600 title-font ">
-                                                             {{ $cadeau->name }}</h2>
-                                                         <div class="flex">
-                                                             <img src="./img/diamond5.png" class="w-4 h-4 mx-2 mt-3">
-                                                             <p name="prix" class="mt-2">x {{ $cadeau->prix }}</p>
-                                                         </div>
-                                                     </div>
-                                                     <p class="mx-2 mb-4 text-sm">{{ $cadeau->description }}</p>
-
-                                                     <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
-                                                         <div x-data="{ modelOpen: false }" class="flex justify-center">
+                                      <div x-data="{ modelOpen: false }" class="flex justify-center">
 
                                                              <button @click="modelOpen =!modelOpen"
                                                                  class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
@@ -52,7 +33,7 @@
                                                                      class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
                                                                  <span
                                                                      class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                 <span class="relative">Echanger</span>
+                                                                 <span class="relative">Acheter</span>
                                                              </button>
 
                                                              <div x-cloak x-show="modelOpen"
@@ -87,7 +68,7 @@
                                                                              <div
                                                                                  class="flex justify-between w-full border-b">
                                                                                  <h1 class="py-6 mx-auto text-lg font-bold">
-                                                                                     ECHANGER VOTRE BUTIN ?
+                                                                                     ACHETER CE PACK DE RUBIS ?
                                                                                  </h1>
                                                                                  <i class="float-right las la-times la-1x mr-5 mt-1 py-6 text-[#1E9FD9]"
                                                                                      @click="modelOpen = false"></i>
@@ -100,31 +81,15 @@
                                                                                          class="flex flex-col items-center align-middle">
                                                                                          <img alt="gallery"
                                                                                              class="inset-0 object-cover object-center w-32 h-auto pt-2"
-                                                                                             src="./img/diamond5.png"
+                                                                                             src="{{ asset('storage/' . $images ) }}"
                                                                                              onerror="this.src='/img/empty.png'">
-                                                                                         <p class="pt-4 text-center">x
-                                                                                             {{ $cadeau->prix }}</p>
+                                                                                         <p class="pt-4 text-center">{{ $pack->prix }} €</p>
                                                                                      </div>
-                                                                                     <div
-                                                                                         class="flex items-center align-middle ">
-                                                                                         <i
-                                                                                             class="mx-2 fa-solid fa-right-long fa-2x"></i>
-                                                                                     </div>
-                                                                                     <div
-                                                                                         class="flex flex-col items-center align-middle ">
-                                                                                         <img alt="gallery"
-                                                                                             class="inset-0 object-cover object-center w-32 h-auto pt-6 rounded"
-                                                                                             src="./storage/{{ $image }}"
-                                                                                             onerror="this.src='/img/empty.png'">
-                                                                                         <p class="pt-6 text-center">
-                                                                                             {{ $cadeau->name }}</p>
-                                                                                     </div>
-
                                                                                  </div>
                                                                                  <input type="hidden" name="id"
-                                                                                     value="{{ $cadeau->id }}">
+                                                                                     value="{{ $pack->id }}">
                                                                                  <input type="hidden" name="prix"
-                                                                                     value="{{ $cadeau->prix }}">
+                                                                                     value="{{ $pack->prix }}">
 
                                                                                  <div
                                                                                      class="flex flex-col items-center pb-8 mx-24 mt-1">
@@ -164,23 +129,30 @@
                                                                  </div>
                                                              </div>
                                                          </div>
-
-                                                     </div>
-                                                 </div>
-                                             </div>
-                                         </div>
-
-
-                                     @empty
-                                     @endforelse
-
-
-                                 </div>
-                             </div>
-                         </div>
-                     </section>
-                 </div>
-             </div>
-         </container>
-     </div>
- @endsection
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <div class="p-4 lg:w-1/4 md:w-1/2">
+                            <div
+                                class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
+                                <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
+                                    src="./img/empty.jpg">
+                                <div class="w-full">
+                                    <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">Aucun</h2>
+                                    <h3 class="mb-1 text-gray-300">Null</h3>
+                                    <p class="mb-2 text-sm">DIY tote bag drinking vinegar cronut adaptogen squid fanny.</p>
+                                    <a href="#" class="flex justify-center pb-4">
+                                        <button
+                                            class=" transform select-none  bg-blue-700 text-center hover:bg-blue-600 active:bg-blue-800 text-white font-semibold py-1 w-[120px] rounded-full">
+                                            Jouer
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforelse
+                </div>
+        </container>
+    </div>
+@endsection

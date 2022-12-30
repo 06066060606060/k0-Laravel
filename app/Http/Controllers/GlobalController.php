@@ -8,6 +8,7 @@ use App\Models\Infosperso;
 use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
+use App\Models\Packs;
 use App\Models\Scores;
 use App\Models\Session;
 use Illuminate\Http\Request;
@@ -83,6 +84,12 @@ class GlobalController extends Controller
     {
         $cadeaux = Cadeaux::all();
         return view('store', compact('cadeaux'));
+    }
+
+    public function pack()
+    {
+        $packs = Packs::where('id', '!=',  1)->where('id', '!=', 2)->get();
+        return view('pack', compact('packs'));
     }
 
     public function help()

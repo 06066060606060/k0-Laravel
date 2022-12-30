@@ -21,6 +21,7 @@ Route::get('/', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
 Route::get('allgames', 'games');
 Route::get('game', 'game');
+Route::get('pack', 'pack');
 Route::get('winner', 'winner');
 Route::get('store', 'store');
 Route::get('help', 'help');

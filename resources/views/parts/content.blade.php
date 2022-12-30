@@ -151,7 +151,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -171,7 +171,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -191,7 +191,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -211,7 +211,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -231,7 +231,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
@@ -251,7 +251,7 @@
                     <div class="swiper-slide">
                         <blockquote>
                             <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-blue-100 shadow-lg rounded-xl h-28">
+                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
                                 <div class="flex">
                                     <img alt="" class="inline-block object-center w-12 h-12"
