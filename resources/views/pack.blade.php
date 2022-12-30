@@ -15,11 +15,12 @@
                             <div
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 @php $images =  $pack->image ?? null; @endphp
-                                <img alt="gallery" class="inset-0 object-cover object-center w-24 h-auto p-2 rounded-t-md"
+                                <img alt="gallery" class="inset-0 object-cover object-center w-auto h-24 px-2 pt-3 pb-2 rounded-t-md"
                                     src="{{ asset('storage/' . $images ) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $pack->name }}</h2>
                                     <p class="mb-2 text-sm">{{ $pack->description }}</p>
+                                    <p class="mb-2 text-sm">{{ $pack->prix }} €</p>
 
                                       <div x-data="{ modelOpen: false }" class="flex justify-center">
 

@@ -89,7 +89,7 @@ class GlobalController extends Controller
 
     public function pack()
     {
-        $packs = Packs::where('id', '!=',  1)->where('id', '!=', 2)->get();
+        $packs = Packs::all();
         return view('pack', compact('packs'));
     }
 

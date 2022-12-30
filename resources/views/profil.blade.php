@@ -63,74 +63,8 @@
                 </card>
             </div>
             <div class="flex flex-col w-full py-2">
-                <div class="flex flex-col w-full mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
-                    <div class="overflow-x-auto rounded-t-lg">
-                        <table class="w-full py-2 text-sm divide-y divide-gray-200">
-                            <thead class="bg-gray-100 rounded-t-lg">
-                                <tr>
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Recharger mon compte
-                                    </th>
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Paiements
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="divide-y divide-gray-500">
-                                <tr>
-                                    <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap max-h-24">
-                                        <fieldset class="grid grid-cols-2 gap-4">
-                                            <div>
-                                                <input type="radio" name="DeliveryOption" value="DeliveryStandard"
-                                                    id="DeliveryStandard" class="hidden peer" checked />
-
-                                                <label for="DeliveryStandard"
-                                                    class="block p-4 text-sm font-medium border border-gray-400 rounded-lg shadow-sm cursor-pointer hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
-                                                    <div class="flex flex-col md:flex-row">
-                                                        <img src="{{ asset('img/diamond5.png') }}" alt="coin"
-                                                            class="w-6 h-6 pb-1 md:mr-2">
-                                                        <p class="text-gray-700 dark:text-gray-200">x 500</p>
-                                                    </div>
-                                                    <p class="mt-1 text-gray-900 dark:text-white">10 €</p>
-                                                </label>
-                                            </div>
-
-                                            <div>
-                                                <input type="radio" name="DeliveryOption" value="DeliveryPriority"
-                                                    id="DeliveryPriority" class="hidden peer" />
-
-                                                <label for="DeliveryPriority"
-                                                    class="block p-4 text-sm font-medium border border-gray-400 rounded-lg shadow-sm cursor-pointer hover:border-gray-300 peer-checked:border-blue-500 peer-checked:ring-1 peer-checked:ring-blue-500 ">
-                                                    <div class="flex flex-col md:flex-row">
-                                                        <img src="{{ asset('img/diamond5.png') }}" alt="coin"
-                                                            class="w-6 h-6 pb-1 md:mr-2">
-                                                        <p class="text-gray-700 dark:text-gray-200">x 1000</p>
-                                                    </div>
-                                                    <p class="mt-1 text-gray-900 dark:text-white">19 €</p>
-                                                </label>
-                                            </div>
-                                        </fieldset>
-                                    </td>
-                                    <td class="px-4 pt-8 font-medium text-gray-200 whitespace-nowrap max-h-24" <td />
-                                    <a class="m-3 btn btn-primary" href="{{ route('processTransaction') }}"
-                                        target="_blank">Payer EUR.10</a>
-
-                                    @if (\Session::has('error'))
-                                        <div class="alert alert-danger">{{ \Session::get('error') }}</div>
-                                        {{ \Session::forget('error') }}
-                                    @endif
-                                    @if (\Session::has('success'))
-                                        <div class="alert alert-success">{{ \Session::get('success') }}</div>
-                                        {{ \Session::forget('success') }}
-                                    @endif
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <h1 class="pt-3 text-lg font-bold text-white">Mes recharges:</h1>
+               
+                <h1 class="pt-0 text-lg font-bold text-white">Mes recharges:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
                         <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
