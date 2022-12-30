@@ -5,9 +5,9 @@
         <div class="z-0 one"></div>
         <container class="block px-4 mx-auto text-white max-w-7xl">
             <div class="container px-5 pt-8 mx-auto">
-                <div class="flex flex-col w-full mb-20 text-center">
+                <div class="flex flex-col w-full mb-10 text-center">
                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tous nos pack de rubis</h1>
-                    <p class="mx-auto text-base leading-relaxed lg:w-2/3">Acheter des rubis supplémentaires !</p>
+                   <p class="mx-auto text-base leading-relaxed">Acheter des rubis supplémentaires !</p>
                 </div>
                 <div class="flex flex-wrap justify-center -m-4">
                     @forelse ($packs as $pack)
