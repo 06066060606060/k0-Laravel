@@ -19,11 +19,11 @@
                             <div
                                 class="relative overflow-hidden flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 <div class="absolute top-0 right-0 w-16 h-16">
-                                <div
-                                    class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                 {{ $pack->prix }} €
+                                    <div
+                                        class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                        {{ $pack->prix }} €
+                                    </div>
                                 </div>
-                            </div>
                                 @php $images =  $pack->image ?? null; @endphp
                                 <img alt="gallery"
                                     class="inset-0 object-cover object-center w-auto h-24 px-2 pt-3 pb-2 rounded-t-md"
@@ -86,8 +86,7 @@
                             </div>
                         </div>
                         <script>
-                           
-                            packid = {!! json_encode($pack->id) !!};
+                            pack_id = {!! json_encode($pack->id) !!};
                             packprice = {!! json_encode($pack->prix) !!};
                             paypal.Buttons({
                                 createOrder: function(data, actions) {
@@ -104,12 +103,39 @@
                                     // Capturez ici la commande
                                     return actions.order.capture().then(function(details) {
                                         // Affichez les détails de la commande à votre utilisateur
-                                        alert('Transaction effectuée avec succès !');
-                                        
+                                        $.ajaxSetup({
+                                            headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            }
+                                        });
+                                        //let appUrl = '{!! env('APP_URL') !!}';
+                                        name = "";
+                                        $.ajax({
+                                            url: 'http://127.0.0.1:8000/orderpack',
+                                            headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            },
+                                            method: 'POST',
+                                            type: 'json',
+                                            data: {
+                                                pack_id,
+                                                name,
+                                            },
+                                            success: function(response) {
+                                                console.log(response);
+                                            },
+                                            error: function(error) {
+                                                console.log(error);
+                                            }
+                                        });
+                                        window.location.href = "http://127.0.0.1:8000/profil";
                                     });
+                                },
+                                onError: function(err) {
+                                    console.log(err);
+                                    alert("Une erreur est survenue");
                                 }
-                            }).render('#paypal-button-container' + packid);
-                        
+                            }).render('#paypal-button-container' + pack_id);
                         </script>
                     @empty
                         <div class="p-4 lg:w-1/4 md:w-1/2">

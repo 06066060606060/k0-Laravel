@@ -11,9 +11,10 @@ use App\Models\Pages;
 use App\Models\Packs;
 use App\Models\Paiements;
 use App\Models\Scores;
-use App\Models\Session;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class GlobalController extends Controller
 {
@@ -149,17 +150,17 @@ class GlobalController extends Controller
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
             $paiement = new Paiements();
-            $paiement->pack_id = $request->id;
+            $paiement->pack_id = $request->pack_id;
             $paiement->user_id = $userid;
             $paiement->status = 'Oui';
             $paiement->type = "paiement";
-            $paiement->name = "test-paypal";
+            $paiement->name = $request->name;
             $paiement->save();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
             $paiements = Paiements::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
+            return view('profil', compact('scores', 'orders', 'infos', 'paiements'))->with('success', 'ok');;
         } else {
             return redirect('/');
         }

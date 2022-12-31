@@ -2,6 +2,11 @@
 
 @section('main')
     <div data-barba="container">
+      @if (session('success'))
+            <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())">
+                <div id="popmenu" class="px-4 py-2 text-gray-100 btnmenu">Transaction confirmé</div>
+            </div>
+        @endif
         <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
             <div class="flex flex-col pt-2">
                 <card
@@ -105,7 +110,6 @@
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-blue-400">
                                                     Payé</p>
                                             </td>
-                                            
                                         @endif
 
                                     </tr>
@@ -124,6 +128,17 @@
                         </table>
                     </div>
                 </div>
+                 {{-- <form action="orderpack" method="POST" class="py-2">
+                                                        @csrf
+                                                          <input type="hidden" name="price"
+                                                            value="{{ $paiement->pack->prix }}">
+                                                        <input type="hidden" name="id"
+                                                            value="{{ $paiement->id }}">
+                                                        <button type="submit">
+                                                            <i
+                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
+                                                        </button>
+                                                    </form> --}}
 
                 <h1 class="pt-3 text-lg font-bold text-white">Mes commandes:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
@@ -423,4 +438,76 @@
                 </div>
         </container>
     </div>
+    <script>
+    function PopupUser() {
+        console.log('okpop');
+        var updateElement = document.getElementById("popmenu");
+        updateElement.classList.toggle("active");
+
+    }
+</script>
+<style>
+    /* ANIMATION SURVOL MENU FULL CSS AU TOP */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black;
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 130px;
+        top: -35px;
+        left: -50px;
+        color: rgba(255, 255, 255, 0.534);
+        text-alrgba(255, 255, 255, 0.459) center;
+        padding: 4px 4px;
+        border-radius: 6px;
+        position: absolute;
+        z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+    .tooltip .tooltiptext {
+        opacity: 0;
+        transition: opacity 0.2s;
+    }
+
+    .tooltip:hover .tooltiptext {
+        opacity: 1;
+    }
+
+    #popmenu {
+        position: fixed;
+        top: -50px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        background-color: #46515F;
+        text-decoration: none;
+        transition: 0.25s;
+        border-radius: 8px;
+        user-select: none;
+        overflow: hidden;
+
+    }
+
+    #popmenu.active {
+        top: 60px;
+        transition: 0.3s;
+        transition: 0.25s;
+    }
+
+    @media (max-width: 640px) {
+        #popmenu.active {
+            top: 165px;
+            transition: 0.3s;
+            transition: 0.25s;
+        }
+    }
+</style>
 @endsection
