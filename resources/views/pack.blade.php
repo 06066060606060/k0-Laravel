@@ -5,12 +5,12 @@
         src="https://www.paypal.com/sdk/js?client-id=AUUI0_mUeQz4bH9yeO94b-z0BEQZNtzGR_vvOcxOugMD_WCnY73WlovQJhFGMRI66h8B6e9vvY7qX5lr&enable-funding=venmo&currency=EUR"
         data-sdk-integration-source="button-factory"></script>
 
-    <div>
+    <div data-barba="container">
         <div class="z-0 one"></div>
         <container class="block px-4 mx-auto text-white max-w-7xl">
             <div class="container px-5 pt-8 mx-auto">
                 <div class="flex flex-col w-full mb-10 text-center">
-                    <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tous nos pack de rubis</h1>
+                    <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tous nos packs</h1>
                     <p class="mx-auto text-base leading-relaxed">Acheter des rubis supplémentaires !</p>
                 </div>
                 <div class="flex flex-wrap justify-center -m-4">
@@ -81,6 +81,7 @@
                             </div>
                         </div>
                         <script>
+                           
                             packid = {!! json_encode($pack->id) !!};
                             packprice = {!! json_encode($pack->prix) !!};
                             paypal.Buttons({
@@ -103,6 +104,7 @@
                                     });
                                 }
                             }).render('#paypal-button-container' + packid);
+                        
                         </script>
                     @empty
                         <div class="p-4 lg:w-1/4 md:w-1/2">

@@ -37,7 +37,7 @@
                           @if (backpack_auth()->check())
                  <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="store" @click="isOpen = false"><i
                         class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>
-                          <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="pack" @click="isOpen = false"><i
+                          <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="pack" @click="isOpen = false"  data-barba-prevent="self"><i
                         class="fa-solid fa-shop"></i>&nbsp; Pack</a>
                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="profil" @click="isOpen = false"><i
                         class="fa-solid fa-user"></i>&nbsp; Profil</a>
