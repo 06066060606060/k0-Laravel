@@ -116,7 +116,7 @@
                                 @empty
                                     <tr>
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            Aucun article
+                                            Aucune recharge effectuée
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
@@ -128,18 +128,6 @@
                         </table>
                     </div>
                 </div>
-                 {{-- <form action="orderpack" method="POST" class="py-2">
-                                                        @csrf
-                                                          <input type="hidden" name="price"
-                                                            value="{{ $paiement->pack->prix }}">
-                                                        <input type="hidden" name="id"
-                                                            value="{{ $paiement->id }}">
-                                                        <button type="submit">
-                                                            <i
-                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
-                                                        </button>
-                                                    </form> --}}
-
                 <h1 class="pt-3 text-lg font-bold text-white">Mes commandes:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
