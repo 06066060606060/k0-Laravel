@@ -105,7 +105,7 @@
                         <script>
                             pack_id = document.getElementById("name" + {!! json_encode($pack->id) !!}).value;
                             packprice = document.getElementById("price" + pack_id).value;
-                            console.log(packprice);
+                            console.log(pack_id, packprice);
                             paypal.Buttons({
                                
                                 createOrder: function(data, actions) {

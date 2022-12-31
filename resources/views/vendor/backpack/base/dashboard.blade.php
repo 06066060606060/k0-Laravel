@@ -163,6 +163,7 @@
                 Derniéres mise à jour: {{ $version }}<br>
                  -Ajout paypal checkout<br>
                  -fix button paiement<br>
+                 -systeme promotion<br>
                  
 
             </p>
