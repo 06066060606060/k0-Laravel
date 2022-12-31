@@ -5,7 +5,7 @@
         src="https://www.paypal.com/sdk/js?client-id=AUUI0_mUeQz4bH9yeO94b-z0BEQZNtzGR_vvOcxOugMD_WCnY73WlovQJhFGMRI66h8B6e9vvY7qX5lr&enable-funding=venmo&currency=EUR"
         data-sdk-integration-source="button-factory"></script>
 
-    <div data-barba="container">
+    <div>
         <div class="z-0 one"></div>
         <container class="block px-4 mx-auto text-white max-w-7xl">
             <div class="container px-5 pt-8 mx-auto">
