@@ -92,7 +92,7 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $paiement->pack->name }}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->pack->prix }}
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->pack->prix }} €
                                         </td>
                                         </td>
 
@@ -126,8 +126,8 @@
                                             </td>
                                         @elseif ($paiement->status == 'Oui')
                                             <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
-                                                <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
-                                                    Confirmé</p>
+                                                <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-blue-400">
+                                                    Payé</p>
                                             </td>
                                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                                 &nbsp;
@@ -161,7 +161,7 @@
                                         Cadeau
                                     </th>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Prix
+                                        Coût
                                     </th>
                                     <th
                                         class="hidden px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
