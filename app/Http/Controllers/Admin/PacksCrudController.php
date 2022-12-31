@@ -68,7 +68,20 @@ class PacksCrudController extends CrudController
                         }
                 },  ]
             ]);
-        CRUD::column('promo');
+            $this->crud->addColumn([
+                'name'    => 'promo',
+                'label'   => 'En promo',
+                'type'    => 'text',
+                'wrapper' => [
+                    'element' => 'span',
+                    'class' => function ($crud, $column, $entry, $related_key) {
+                        if ($entry->promo == 'Oui') {
+                                return 'ml-4 badge badge-primary';
+                            } else {
+                                return 'ml-4 badge badge-dark';
+                            }
+                    },  ]
+                ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -103,7 +116,7 @@ class PacksCrudController extends CrudController
         CRUD::field('description')->type('textarea');
         $this->crud->addField([   // radio
             'name'        => 'active', // the name of the db column
-            'label'       => 'Afficher', // the input label
+            'label'       => 'Activer', // the input label
             'type'        => 'radio',
             'options'     => [
                 // the key will be stored in the db, the value will be shown as label; 
@@ -115,7 +128,19 @@ class PacksCrudController extends CrudController
            'inline'      => true, // show the radios all on the same line?
         ],);
         CRUD::field('prix')->type('number');
-        CRUD::field('promo')->type('number');
+        $this->crud->addField([   // radio
+            'name'        => 'promo', // the name of the db column
+            'label'       => 'En promo', // the input label
+            'type'        => 'radio',
+            'options'     => [
+                // the key will be stored in the db, the value will be shown as label; 
+                "Oui" => "Oui",
+                "Non" => "Non"
+            ],
+            // optional
+            'default'     => '0',
+           'inline'      => true, // show the radios all on the same line?
+        ],);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');

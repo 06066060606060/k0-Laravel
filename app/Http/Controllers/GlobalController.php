@@ -153,7 +153,7 @@ class GlobalController extends Controller
             $paiement->pack_id = $request->pack_id;
             $paiement->user_id = $userid;
             $paiement->status = 'Oui';
-            $paiement->type = "paiement";
+            $paiement->type = $request->montant + €;
             $paiement->name = $request->name;
             $paiement->save();
             $scores = Scores::where('user_id', $userid)->get();

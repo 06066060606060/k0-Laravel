@@ -109,7 +109,7 @@
                                             }
                                         });
                                         //let appUrl = '{!! env('APP_URL') !!}';
-                                        name = "";
+                                        name = "test-name";
                                         $.ajax({
                                             url: 'http://127.0.0.1:8000/orderpack',
                                             headers: {
@@ -120,6 +120,7 @@
                                             data: {
                                                 pack_id,
                                                 name,
+                                                montant: packprice,
                                             },
                                             success: function(response) {
                                                 console.log(response);

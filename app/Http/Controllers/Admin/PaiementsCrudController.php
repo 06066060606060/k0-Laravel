@@ -41,7 +41,7 @@ class PaiementsCrudController extends CrudController
     {
         CRUD::column('id')->label('Numéro');
         CRUD::column('name')->label('Transaction');
-        CRUD::column('type')->label('Type');
+        CRUD::column('type')->label('Montant');
         CRUD::column('user_id')->label('Utilisateur');
         CRUD::column('pack_id')->label('Pack');
         $this->crud->addColumn([
@@ -78,7 +78,7 @@ class PaiementsCrudController extends CrudController
 
         
         CRUD::field('name')->label('Nom');
-        CRUD::field('type')->label('Type');
+       // CRUD::field('type')->label('Montant');
         CRUD::field('user_id')->label('Utilisateur');
         CRUD::field('pack_id')->label('Pack');
         $this->crud->addField([   // radio

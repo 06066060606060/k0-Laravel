@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('description')->nullable();
             $table->integer('prix')->nullable();
-            $table->integer('promo')->nullable();
+            $table->string('promo')->nullable();
             $table->string('active')->nullable();
         });
     }
