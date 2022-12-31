@@ -76,12 +76,9 @@
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         Prix
                                     </th>
-                                    <th
-                                        class="hidden px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
-                                        Status
-                                    </th>
+        
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Opérations
+                                        Status
                                     </th>
                                 </tr>
                             </thead>
@@ -94,44 +91,21 @@
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->pack->prix }} €
                                         </td>
-                                        </td>
+                                       
 
 
                                         @if ($paiement->status == 'Non')
-                                            <td class="hidden px-4 py-2 text-gray-300 whitespace-nowrap md:flex">
+                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                                 <p
                                                     class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-red-400 md:flex">
                                                     En attente</p>
                                             </td>
-                                            <td class="py-2 text-gray-300 whitespace-nowrap">
-                                                <div class="flex">
-                                                    <form action="confirm_orderpack" method="POST" class="py-2">
-                                                        @csrf
-                                                        <input type="hidden" name="id" value="{{ $paiement->id }}">
-                                                        <button type="submit">
-                                                            <i
-                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
-                                                        </button>
-                                                    </form>
-
-                                                    <form action="delete_orderpack" method="POST" class="px-4 py-2">
-                                                        @csrf
-                                                        <input type="hidden" name="id" value="{{ $paiement->id }}">
-                                                        <button type="submit">
-                                                            <i
-                                                                class="text-gray-400 fas fa-trash-alt hover:text-red-400"></i>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </td>
                                         @elseif ($paiement->status == 'Oui')
-                                            <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
+                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-blue-400">
                                                     Payé</p>
                                             </td>
-                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
-                                                &nbsp;
-                                            </td>
+                                            
                                         @endif
 
                                     </tr>
