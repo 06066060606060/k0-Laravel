@@ -18,12 +18,29 @@
                         <div class="p-4 lg:w-1/4 md:w-1/2">
                             <div
                                 class="relative overflow-hidden flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
-                                <div class="absolute top-0 right-0 w-16 h-16">
-                                    <div
-                                        class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                        {{ $pack->prix }} €
+                                <input id="name{{ $pack->id }}" type="hidden" name="id"
+                                    value="{{ $pack->id }}">
+                                {{-- ribbon --}}
+                                @if ($pack->promo == 'Oui')
+                                    <input id="price{{ $pack->id }}" type="hidden" name="price"
+                                        value="{{ $pack->prix_promo }}">
+                                    <div class="absolute top-0 right-0 w-16 h-16">
+                                        <div
+                                            class="border z-20 absolute transform select-none rotate-45 bg-red-500 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                           Promo {{ $pack->prix_promo }} €
+                                        </div>
                                     </div>
-                                </div>
+                                @else
+                                    <input id="price{{ $pack->id }}" type="hidden" name="price"
+                                        value="{{ $pack->prix }}">
+                                    <div class="absolute top-0 right-0 w-16 h-16">
+                                        <div
+                                            class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                            {{ $pack->prix }} €
+                                        </div>
+                                    </div>
+                                @endif
+                                {{-- ribbon end --}}
                                 @php $images =  $pack->image ?? null; @endphp
                                 <img alt="gallery"
                                     class="inset-0 object-cover object-center w-auto h-24 px-2 pt-3 pb-2 rounded-t-md"
@@ -86,11 +103,13 @@
                             </div>
                         </div>
                         <script>
-                            pack_id = {!! json_encode($pack->id) !!};
-                            packprice = {!! json_encode($pack->prix) !!};
+                            pack_id = document.getElementById("name" + {!! json_encode($pack->id) !!}).value;
+                            packprice = document.getElementById("price" + pack_id).value;
+                            console.log(packprice);
                             paypal.Buttons({
+                               
                                 createOrder: function(data, actions) {
-                                    // Créez ici votre commande
+                                  
                                     return actions.order.create({
                                         purchase_units: [{
                                             amount: {
