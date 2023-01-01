@@ -146,6 +146,7 @@ class GlobalController extends Controller
 
     public function setOrderpack(Request $request)
     {
+        dd($request->all());
         if (backpack_auth()->check()) {
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
@@ -153,8 +154,8 @@ class GlobalController extends Controller
             $paiement->pack_id = $request->pack_id;
             $paiement->user_id = $userid;
             $paiement->status = 'Oui';
-            $paiement->type = $request->montant + €;
-            $paiement->name = $request->name;
+            $paiement->type = $request->pack_price + €;
+            $paiement->name = $request->pack_name;
             $paiement->save();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();

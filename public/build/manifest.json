@@ -1,11 +1,11 @@
 {
-  "resources/css/anim.svg": {
-    "file": "assets/anim.6ed443fd.svg",
-    "src": "resources/css/anim.svg"
-  },
   "resources/css/gift.png": {
     "file": "assets/gift.d04b1766.png",
     "src": "resources/css/gift.png"
+  },
+  "resources/css/anim.svg": {
+    "file": "assets/anim.6ed443fd.svg",
+    "src": "resources/css/anim.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app.64dc5a68.js",
@@ -13,7 +13,7 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app.a46fa3b5.css",
+    "file": "assets/app.45d4a5c0.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },

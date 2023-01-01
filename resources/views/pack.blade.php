@@ -17,20 +17,20 @@
                     @forelse ($packs as $pack)
                         <div class="p-4 lg:w-1/4 md:w-1/2">
                             <div
-                                class="relative overflow-hidden flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
-                                <input id="name{{ $pack->id }}" type="hidden" name="id"
-                                    value="{{ $pack->id }}">
+                                class="relative flex flex-col items-center h-full overflow-hidden text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 {{-- ribbon --}}
                                 @if ($pack->promo == 'Oui')
+                                @php $globalprice = $pack->prix_promo; @endphp
                                     <input id="price{{ $pack->id }}" type="hidden" name="price"
                                         value="{{ $pack->prix_promo }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
                                         <div
                                             class="border z-20 absolute transform select-none rotate-45 bg-red-500 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                           Promo {{ $pack->prix_promo }} €
+                                            Promo {{ $pack->prix_promo }} €
                                         </div>
                                     </div>
                                 @else
+                                 @php $globalprice = $pack->prix; @endphp
                                     <input id="price{{ $pack->id }}" type="hidden" name="price"
                                         value="{{ $pack->prix }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
@@ -40,6 +40,8 @@
                                         </div>
                                     </div>
                                 @endif
+                                <input id="pack_id{{ $pack->id }}" type="hidden" name="pack_id" value="{{ $pack->id }}">
+                                <input id="globalprice{{ $pack->id }}" type="hidden" name="pack_prive" value="{{ $globalprice }}">
                                 {{-- ribbon end --}}
                                 @php $images =  $pack->image ?? null; @endphp
                                 <img alt="gallery"
@@ -49,10 +51,10 @@
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $pack->name }}</h2>
                                     <p class="mb-2 text-sm text-gray-400">{{ $pack->description }}</p>
 
-                                    <div x-data="{ modelOpen: false }" class="flex justify-center">
+                                    <div x-data="{ modelOpen: false }" class="flex justify-center" id="poppaie">
 
-                                        <button @click="modelOpen =!modelOpen"
-                                            class="relative flex justify-center w-24 px-5 py-1 mb-2 mx-auto font-medium text-white group">
+                                        <button @click="modelOpen =!modelOpen" onclick="initButton({{$pack->id}})"
+                                            class="relative flex justify-center w-24 px-5 py-1 mx-auto mb-2 font-medium text-white group">
                                             <span
                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
                                             <span
@@ -63,6 +65,16 @@
                                                 class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
                                             <span class="relative">Acheter</span>
                                         </button>
+
+                                        {{-- <form action="setorderpack" method="POST">
+                                            @csrf
+                                            <input type="hidden" id="pack_id{{ $pack->id }}" name="pack_id" value="{{ $pack->id }}">
+                                            <input type="hidden" id="pack_name{{ $pack->id }}" name="pack_name" value="{{ $pack->name }}">
+                                            <input type="hidden" id="pack_price{{ $pack->id }}" name="pack_price" value="{{ $globalprice }}">
+                                            <button type="submit"
+                                                class="relative flex justify-center w-24 px-5 py-1 mx-auto mb-2 font-medium text-white group">
+                                                test</button>
+                                        </form> --}}
 
                                         <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto"
                                             aria-labelledby="modal-title" role="dialog" aria-modal="true">
@@ -86,9 +98,9 @@
                                                     x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                                                     class="inline-block w-full max-w-xl pt-24 mx-4 overflow-hidden transition-all transform">
                                                     <div
-                                                        class="flex flex-col my-4 bg-white rounded-md shadow-2xl justify-center px-4">
+                                                        class="flex flex-col justify-center px-4 my-4 bg-white rounded-md shadow-2xl">
 
-                                                        <div class="paypal-button pt-4">
+                                                        <div class="pt-4 paypal-button">
                                                             <div style="text-align: center;">
                                                                 <div id="paypal-button-container{{ $pack->id }}"></div>
                                                             </div>
@@ -103,13 +115,18 @@
                             </div>
                         </div>
                         <script>
-                            pack_id = document.getElementById("name" + {!! json_encode($pack->id) !!}).value;
-                            packprice = document.getElementById("price" + pack_id).value;
-                            console.log(pack_id, packprice);
+                         packid = {!! json_encode($pack->id) !!};
+                         packprice = {!! json_encode($pack->prix) !!};
+                         function initButton(id) {
+                             packid = id;
+                             packprice = document.getElementById('globalprice' + id).value;
+                              console.log(packid, packprice);
+                         }
+                          
                             paypal.Buttons({
-                               
+
                                 createOrder: function(data, actions) {
-                                  
+
                                     return actions.order.create({
                                         purchase_units: [{
                                             amount: {
@@ -120,42 +137,17 @@
                                 },
                                 onApprove: function(data, actions) {
                                     // Capturez ici la commande
-                                    return actions.order.capture().then(function(details) {
-                                        // Affichez les détails de la commande à votre utilisateur
-                                        $.ajaxSetup({
-                                            headers: {
-                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                            }
-                                        });
+                                    return actions.order.capture().then(function(orderData) {
                                         //let appUrl = '{!! env('APP_URL') !!}';
-                                        name = "test-name";
-                                        $.ajax({
-                                            url: 'http://127.0.0.1:8000/orderpack',
-                                            headers: {
-                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                            },
-                                            method: 'POST',
-                                            type: 'json',
-                                            data: {
-                                                pack_id,
-                                                name,
-                                                montant: packprice,
-                                            },
-                                            success: function(response) {
-                                                console.log(response);
-                                            },
-                                            error: function(error) {
-                                                console.log(error);
-                                            }
-                                        });
-                                        window.location.href = "http://127.0.0.1:8000/profil";
+                                        console.log(orderData.payer.name.given_name);
+
                                     });
                                 },
                                 onError: function(err) {
                                     console.log(err);
                                     alert("Une erreur est survenue");
                                 }
-                            }).render('#paypal-button-container' + pack_id);
+                            }).render('#paypal-button-container' + packid);
                         </script>
                     @empty
                         <div class="p-4 lg:w-1/4 md:w-1/2">
