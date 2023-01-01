@@ -161,12 +161,11 @@
         @if (backpack_user()->role == 'admin')
             <p class="w-1/2 px-4 py-2 mx-8 mt-4 text-xs text-gray-200 bg-gray-900 rounded -pl-2">
                 Derniéres mise à jour: {{ $version }}<br>
-                 -Ajout paypal checkout<br>
-                 -fix button paiement<br>
-                 -systeme promotion<br>
                  -ajout notification commandes<br>
                  -ajout status expédié<br>
                  -ajout pas assez de diamants<br>
+                 -ajout notification paiement<br>
+                 -ajout paramétre avancé<br>
                  
 
             </p>

@@ -169,7 +169,7 @@
                                                  console.log(error);
                                             }
                                          });
-                                         alert("Paiement effectué avec succès");
+                                        // alert("Paiement effectué avec succès");
                                           //   window.location.href = "http://127.0.0.1:8000/profil";
                                           window.location.href = "https://gokdo.com/profil";
                                     });

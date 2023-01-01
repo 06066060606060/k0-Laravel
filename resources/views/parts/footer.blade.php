@@ -35,7 +35,7 @@
             <a href="help" class="text-gray-400 hover:text-gray-500">Aide</a>
           </li>
           <li>
-            <a href="mailto:Contact@gokdo.com" class="text-gray-400 hover:text-gray-500">Contact@gokdo.com</a>
+            <a href="mailto:{{ Setting::get('contact_email') }}" class="text-gray-400 hover:text-gray-500">{{ Setting::get('contact_email') }}</a>
           </li>
 
         </nav>
