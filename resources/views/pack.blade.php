@@ -20,20 +20,15 @@
                                 class="relative flex flex-col items-center h-full overflow-hidden text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 {{-- ribbon --}}
                                 @if ($pack->promo == 'Oui')
-                                    @php $globalprice = $pack->prix_promo; @endphp
-
-                                    <input id="price{{ $pack->id }}" type="hidden" name="price"
-                                        value="{{ $pack->prix_promo }}">
+                                @php $prix = $pack->prix_promo @endphp
                                     <div class="absolute top-0 right-0 w-16 h-16">
                                         <div
                                             class="border z-20 absolute transform select-none rotate-45 bg-red-500 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                             Promo {{ $pack->prix_promo }} €
                                         </div>
                                     </div>
-                                @else
-                                    @php $globalprice = $pack->prix; @endphp
-                                    <input id="price{{ $pack->id }}" type="hidden" name="price"
-                                        value="{{ $pack->prix }}">
+                                @else 
+                                @php $prix = $pack->prix @endphp
                                     <div class="absolute top-0 right-0 w-16 h-16">
                                         <div
                                             class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
@@ -41,14 +36,10 @@
                                         </div>
                                     </div>
                                 @endif
-                                <input id="pack_id{{ $pack->id }}" type="hidden" name="pack_id"
-                                    value="{{ $pack->id }}">
-                                <input id="globalprice{{ $pack->id }}" type="hidden" name="pack_prive"
-                                    value="{{ $globalprice }}">
-                                <input id="packname{{ $pack->id }}" type="hidden" name="pack_name"
-                                    value="{{ $pack->name }}">
-                                      <input id="packgain{{ $pack->id }}" type="hidden" name="pack_gain"
-                                    value="{{ $pack->gain }}">
+                                <input id="price{{ $pack->id }}" type="hidden" name="pack_price" value="{{ $prix }}">
+                                <input id="pack_id{{ $pack->id }}" type="hidden" name="pack_id" value="{{ $pack->id }}">
+                                <input id="packname{{ $pack->id }}" type="hidden" name="pack_name" value="{{ $pack->name }}">
+                                <input id="packgain{{ $pack->id }}" type="hidden" name="pack_gain" value="{{ $pack->gain }}">
                                 {{-- ribbon end --}}
                                 @php $images =  $pack->image ?? null; @endphp
                                 <img alt="gallery"
@@ -123,15 +114,16 @@
                         </div>
                         <script>
                             packid = {!! json_encode($pack->id) !!};
-                            packprice = {!! json_encode($globalprice) !!};
+                            packprice = document.getElementById('packname' + packid).value;
                             packname = {!! json_encode($pack->name) !!};
-                             packgain = {!! json_encode($pack->gain) !!};
+                            packgain = {!! json_encode($pack->gain) !!};
 
                             function initButton(id) {
                                 packid = id;
-                                packprice = document.getElementById('globalprice' + id).value;
+                                packprice = document.getElementById('price' + id).value;
                                 packname = document.getElementById('packname' + id).value;
                                 packgain = document.getElementById('packgain' + id).value;
+                                
                                 console.log(packid, packprice, packname);
                             }
 

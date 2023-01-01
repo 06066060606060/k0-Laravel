@@ -94,7 +94,7 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $paiement->pack->name }}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->pack->prix }} €
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->type }} €
                                         </td>
                                        
 
