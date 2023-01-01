@@ -2,7 +2,7 @@
 
 @section('main')
     <div data-barba="container">
-      @if (session('success'))
+        @if (session('success'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())">
                 <div id="popmenu" class="px-4 py-2 text-gray-100 btnmenu">Transaction confirmé</div>
             </div>
@@ -81,7 +81,7 @@
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         Prix
                                     </th>
-        
+
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         Status
                                     </th>
@@ -96,7 +96,7 @@
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->type }} €
                                         </td>
-                                       
+
 
 
                                         @if ($paiement->status == 'Non')
@@ -183,14 +183,16 @@
 
                                                     <div x-data="{ modelOpen: false }" class="py-2">
 
-                                                        <i @click="modelOpen =!modelOpen" id="submitbtn"
-                                                            class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
-
+                                                        @if (backpack_auth()->user()->global_score < $order->cadeau->prix)
+                                                          <i class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-orange-300 rounded hover:bg-green-400">Pas assez de diamands</i>
+                                                        @else
+                                                            <i @click="modelOpen =!modelOpen" id="submitbtn"
+                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
+                                                        @endif
 
                                                         <div x-cloak x-show="modelOpen"
                                                             class="fixed inset-0 z-50 overflow-y-auto"
-                                                            aria-labelledby="modal-title" role="dialog"
-                                                            aria-modal="true">
+                                                            aria-labelledby="modal-title" role="dialog" aria-modal="true">
                                                             <div
                                                                 class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
                                                                 <div x-cloak @click="modelOpen = false" x-show="modelOpen"
@@ -271,14 +273,13 @@
                                                                             </div>
                                                                         </div>
                                                                     </form>
+
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <script>
-
-                                                      //  $('#submitbtn').attr('disabled', 'disabled');
-
+                                                        //  $('#submitbtn').attr('disabled', 'disabled');
                                                     </script>
                                                     <form action="delete_order" method="POST" class="px-4 py-2">
                                                         @csrf
@@ -299,9 +300,10 @@
                                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                                 &nbsp;
                                             </td>
-@else
-   <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
-                                                <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-purple-400">
+                                        @else
+                                            <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
+                                                <p
+                                                    class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-purple-400">
                                                     Expédié</p>
                                             </td>
                                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
@@ -435,75 +437,75 @@
         </container>
     </div>
     <script>
-    function PopupUser() {
-        console.log('okpop');
-        var updateElement = document.getElementById("popmenu");
-        updateElement.classList.toggle("active");
+        function PopupUser() {
+            console.log('okpop');
+            var updateElement = document.getElementById("popmenu");
+            updateElement.classList.toggle("active");
 
-    }
-</script>
-<style>
-    /* ANIMATION SURVOL MENU FULL CSS AU TOP */
-    .tooltip {
-        position: relative;
-        display: inline-block;
-        border-bottom: 1px dotted black;
-    }
+        }
+    </script>
+    <style>
+        /* ANIMATION SURVOL MENU FULL CSS AU TOP */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+        }
 
-    /* Tooltip text */
-    .tooltip .tooltiptext {
-        visibility: hidden;
-        width: 130px;
-        top: -35px;
-        left: -50px;
-        color: rgba(255, 255, 255, 0.534);
-        text-alrgba(255, 255, 255, 0.459) center;
-        padding: 4px 4px;
-        border-radius: 6px;
-        position: absolute;
-        z-index: 1;
-    }
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 130px;
+            top: -35px;
+            left: -50px;
+            color: rgba(255, 255, 255, 0.534);
+            text-alrgba(255, 255, 255, 0.459) center;
+            padding: 4px 4px;
+            border-radius: 6px;
+            position: absolute;
+            z-index: 1;
+        }
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-    }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
 
-    .tooltip .tooltiptext {
-        opacity: 0;
-        transition: opacity 0.2s;
-    }
+        .tooltip .tooltiptext {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
 
-    .tooltip:hover .tooltiptext {
-        opacity: 1;
-    }
+        .tooltip:hover .tooltiptext {
+            opacity: 1;
+        }
 
-    #popmenu {
-        position: fixed;
-        top: -50px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 100;
-        background-color: #46515F;
-        text-decoration: none;
-        transition: 0.25s;
-        border-radius: 8px;
-        user-select: none;
-        overflow: hidden;
+        #popmenu {
+            position: fixed;
+            top: -50px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 100;
+            background-color: #46515F;
+            text-decoration: none;
+            transition: 0.25s;
+            border-radius: 8px;
+            user-select: none;
+            overflow: hidden;
 
-    }
+        }
 
-    #popmenu.active {
-        top: 60px;
-        transition: 0.3s;
-        transition: 0.25s;
-    }
-
-    @media (max-width: 640px) {
         #popmenu.active {
-            top: 165px;
+            top: 60px;
             transition: 0.3s;
             transition: 0.25s;
         }
-    }
-</style>
+
+        @media (max-width: 640px) {
+            #popmenu.active {
+                top: 165px;
+                transition: 0.3s;
+                transition: 0.25s;
+            }
+        }
+    </style>
 @endsection

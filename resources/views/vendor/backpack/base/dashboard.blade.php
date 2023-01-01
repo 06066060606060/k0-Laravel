@@ -166,6 +166,7 @@
                  -systeme promotion<br>
                  -ajout notification commandes<br>
                  -ajout status expédié<br>
+                 -ajout pas assez de diamants<br>
                  
 
             </p>
