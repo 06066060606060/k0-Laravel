@@ -184,7 +184,7 @@
                                                     <div x-data="{ modelOpen: false }" class="py-2">
 
                                                         @if (backpack_auth()->user()->global_score < $order->cadeau->prix)
-                                                          <i class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-orange-300 rounded hover:bg-green-400">Pas assez de diamands</i>
+                                                          <i class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-orange-300 rounded ">Pas assez de diamands</i>
                                                         @else
                                                             <i @click="modelOpen =!modelOpen" id="submitbtn"
                                                                 class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>

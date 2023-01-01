@@ -181,7 +181,7 @@ class GlobalController extends Controller
                 ->user()
                 ->update([
                     'global_score' =>
-                        backpack_auth()->user()->global_score - $request->gain,
+                        backpack_auth()->user()->global_score + $request->gain,
                 ]);
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)
