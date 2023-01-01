@@ -164,7 +164,8 @@
                  -Ajout paypal checkout<br>
                  -fix button paiement<br>
                  -systeme promotion<br>
-                 -fix paiement promo<br>
+                 -ajout notification commandes<br>
+                 -ajout status expédié<br>
                  
 
             </p>

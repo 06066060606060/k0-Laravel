@@ -11,7 +11,7 @@ use App\Models\Pages;
 use App\Models\Packs;
 use App\Models\Paiements;
 use App\Models\Scores;
-
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
@@ -113,11 +113,23 @@ class GlobalController extends Controller
         if (backpack_auth()->check()) {
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
-            $scores = Scores::where('user_id', $userid)->latest()->limit('6')->get();
-            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
+            $scores = Scores::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            $orders = Commandes::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
-            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
+            $paiements = Paiements::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            return view(
+                'profil',
+                compact('scores', 'orders', 'infos', 'paiements')
+            );
         } else {
             return redirect('/');
         }
@@ -135,10 +147,19 @@ class GlobalController extends Controller
             $order->prix = $request->prix;
             $order->save();
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            $paiements = Paiements::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders', 'infos','paiements'));
+            return view(
+                'profil',
+                compact('scores', 'orders', 'infos', 'paiements')
+            );
         } else {
             return redirect('/');
         }
@@ -146,7 +167,6 @@ class GlobalController extends Controller
 
     public function setOrderpack(Request $request)
     {
-       
         if (backpack_auth()->check()) {
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
@@ -157,12 +177,26 @@ class GlobalController extends Controller
             $paiement->type = $request->pack_price;
             $paiement->name = $request->transaction;
             $paiement->save();
-            backpack_auth()->user()->update(['global_score' => backpack_auth()->user()->global_score - $request->gain]);
+            backpack_auth()
+                ->user()
+                ->update([
+                    'global_score' =>
+                        backpack_auth()->user()->global_score - $request->gain,
+                ]);
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
-            return view('profil', compact('scores', 'orders', 'infos', 'paiements'))->with('success', 'ok');;
+            $paiements = Paiements::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            return view(
+                'profil',
+                compact('scores', 'orders', 'infos', 'paiements')
+            )->with('success', 'ok');
         } else {
             return redirect('/');
         }
@@ -178,16 +212,37 @@ class GlobalController extends Controller
                 ->update(['status' => 'Oui']);
             $scores = Scores::where('user_id', $userid)->get();
             // substrate diamonds
-            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            $paiements = Paiements::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
+            //create notification
+            $admin = backpack_user()->find(1);
+            $admin->notify(
+                new DatabaseNotification(
+                    ($type = 'success'), // info / success / warning / error
+                    ($message = 'Nouvelle Commande'),
+                    ($messageLong =
+                        'Nouvelle Commande en attente de validation: ' .
+                        $usermail),
+                    // rand(1, 99999)), // optional
+                    ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
+                    ($hrefText = 'Voir') // optional
+                )
+            );
+
             return back();
         } else {
             return redirect('/');
         }
     }
 
-    public function confirmOrder(Request $request) 
+    public function confirmOrder(Request $request)
     {
         if (backpack_auth()->check()) {
             $usermail = backpack_auth()->user()->email;
@@ -195,16 +250,43 @@ class GlobalController extends Controller
             $scores = Scores::where('user_id', $userid)->get();
             //substrate diamonds from global score
             if (backpack_auth()->user()->global_score >= $request->price) {
-                backpack_auth()->user()->update(['global_score' => backpack_auth()->user()->global_score - $request->price]);
+                backpack_auth()
+                    ->user()
+                    ->update([
+                        'global_score' =>
+                            backpack_auth()->user()->global_score -
+                            $request->price,
+                    ]);
                 Commandes::where('user_id', $userid)
-                ->where('id', $request->id)
-                ->update(['status' => 'Oui']);
+                    ->where('id', $request->id)
+                    ->update(['status' => 'Oui']);
             } else {
                 return back();
             }
-            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            $paiements = Paiements::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
+
+            //create notification
+            $admin = backpack_user()->find(1);
+            $admin->notify(
+                new DatabaseNotification(
+                    ($type = 'success'), // info / success / warning / error
+                    ($message = 'Nouvelle Commande'),
+                    ($messageLong =
+                        'Nouvelle Commande passé par: ' .
+                        $usermail),
+                    // rand(1, 99999)), // optional
+                    ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
+                    ($hrefText = 'Voir') // optional
+                )
+            );
             return back();
         } else {
             return redirect('/');
@@ -223,7 +305,6 @@ class GlobalController extends Controller
                     'adresse' => $request->address,
                     'codepostal' => $request->zip,
                     'ville' => $request->city,
-                    
                 ]);
                 $paiements = Paiements::where('user_id', $userid)->get();
                 return back();
@@ -237,9 +318,15 @@ class GlobalController extends Controller
                 $infos->ville = $request->city;
                 $infos->save();
                 $scores = Scores::where('user_id', $userid)->get();
-                $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
+                $orders = Commandes::where('user_id', $userid)
+                    ->latest()
+                    ->limit('6')
+                    ->get();
                 $infos = Infosperso::where('user_id', $userid)->get();
-                $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
+                $paiements = Paiements::where('user_id', $userid)
+                    ->latest()
+                    ->limit('6')
+                    ->get();
                 return back();
             }
         } else {
@@ -256,10 +343,19 @@ class GlobalController extends Controller
                 ->where('id', $request->id)
                 ->delete();
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            $paiements = Paiements::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
+            return view(
+                'profil',
+                compact('scores', 'orders', 'infos', 'paiements')
+            );
         } else {
             return redirect('/');
         }
@@ -274,10 +370,19 @@ class GlobalController extends Controller
                 ->where('id', $request->id)
                 ->delete();
             $scores = Scores::where('user_id', $userid)->get();
-            $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
+            $orders = Commandes::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
+            $paiements = Paiements::where('user_id', $userid)
+                ->latest()
+                ->limit('6')
+                ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
+            return view(
+                'profil',
+                compact('scores', 'orders', 'infos', 'paiements')
+            );
         } else {
             return redirect('/');
         }

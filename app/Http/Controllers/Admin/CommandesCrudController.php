@@ -53,8 +53,10 @@ class CommandesCrudController extends CrudController
                 'class' => function ($crud, $column, $entry, $related_key) {
                     if ($entry->status == 'Oui') {
                             return 'ml-4 badge badge-success';
-                        } else {
+                        } else if ($entry->status == 'Non') {
                             return 'ml-4 badge badge-danger';
+                        } else {
+                            return 'ml-4 badge badge-warning';
                         }
                 },  ]
             ]);
@@ -85,6 +87,7 @@ class CommandesCrudController extends CrudController
             'type'        => 'radio',
             'options'     => [
                 // the key will be stored in the db, the value will be shown as label; 
+                "Envoyé" => "Envoyé",
                 "Oui" => "Oui",
                 "Non" => "Non"
             ],
