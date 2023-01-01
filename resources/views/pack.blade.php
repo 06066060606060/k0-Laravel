@@ -143,7 +143,7 @@
                                 onApprove: function(data, actions) {
                                     // Capturez ici la commande
                                     return actions.order.capture().then(function(orderData) {
-                                        //let appUrl = '{!! env('APP_URL') !!}';
+                                       
                                         //console.log(orderData.payer.name.given_name);
                                         console.log(orderData.payer.email_address);
                                         console.log(orderData.id);

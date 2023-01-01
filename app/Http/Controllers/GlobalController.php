@@ -116,7 +116,7 @@ class GlobalController extends Controller
             $scores = Scores::where('user_id', $userid)->latest()->limit('6')->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            $paiements = Paiements::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
             return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
         } else {
             return redirect('/');
@@ -136,7 +136,7 @@ class GlobalController extends Controller
             $order->save();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
             return view('profil', compact('scores', 'orders', 'infos','paiements'));
         } else {
@@ -161,7 +161,7 @@ class GlobalController extends Controller
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-            $paiements = Paiements::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
             return view('profil', compact('scores', 'orders', 'infos', 'paiements'))->with('success', 'ok');;
         } else {
             return redirect('/');
@@ -179,7 +179,7 @@ class GlobalController extends Controller
             $scores = Scores::where('user_id', $userid)->get();
             // substrate diamonds
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
             return back();
         } else {
@@ -203,7 +203,7 @@ class GlobalController extends Controller
                 return back();
             }
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
             return back();
         } else {
@@ -239,7 +239,7 @@ class GlobalController extends Controller
                 $scores = Scores::where('user_id', $userid)->get();
                 $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
                 $infos = Infosperso::where('user_id', $userid)->get();
-                $paiements = Paiements::where('user_id', $userid)->get();
+                $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
                 return back();
             }
         } else {
@@ -257,7 +257,7 @@ class GlobalController extends Controller
                 ->delete();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
             return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
         } else {
@@ -275,7 +275,7 @@ class GlobalController extends Controller
                 ->delete();
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)->latest()->limit('6')->get();
-            $paiements = Paiements::where('user_id', $userid)->get();
+            $paiements = Paiements::where('user_id', $userid)->latest()->limit('6')->get();
             $infos = Infosperso::where('user_id', $userid)->get();
             return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
         } else {
