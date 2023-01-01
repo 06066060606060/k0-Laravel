@@ -20,7 +20,8 @@
                                 class="relative flex flex-col items-center h-full overflow-hidden text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 {{-- ribbon --}}
                                 @if ($pack->promo == 'Oui')
-                                @php $globalprice = $pack->prix_promo; @endphp
+                                    @php $globalprice = $pack->prix_promo; @endphp
+
                                     <input id="price{{ $pack->id }}" type="hidden" name="price"
                                         value="{{ $pack->prix_promo }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
@@ -30,7 +31,7 @@
                                         </div>
                                     </div>
                                 @else
-                                 @php $globalprice = $pack->prix; @endphp
+                                    @php $globalprice = $pack->prix; @endphp
                                     <input id="price{{ $pack->id }}" type="hidden" name="price"
                                         value="{{ $pack->prix }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
@@ -40,8 +41,14 @@
                                         </div>
                                     </div>
                                 @endif
-                                <input id="pack_id{{ $pack->id }}" type="hidden" name="pack_id" value="{{ $pack->id }}">
-                                <input id="globalprice{{ $pack->id }}" type="hidden" name="pack_prive" value="{{ $globalprice }}">
+                                <input id="pack_id{{ $pack->id }}" type="hidden" name="pack_id"
+                                    value="{{ $pack->id }}">
+                                <input id="globalprice{{ $pack->id }}" type="hidden" name="pack_prive"
+                                    value="{{ $globalprice }}">
+                                <input id="packname{{ $pack->id }}" type="hidden" name="pack_name"
+                                    value="{{ $pack->name }}">
+                                      <input id="packgain{{ $pack->id }}" type="hidden" name="pack_gain"
+                                    value="{{ $pack->gain }}">
                                 {{-- ribbon end --}}
                                 @php $images =  $pack->image ?? null; @endphp
                                 <img alt="gallery"
@@ -53,7 +60,7 @@
 
                                     <div x-data="{ modelOpen: false }" class="flex justify-center" id="poppaie">
 
-                                        <button @click="modelOpen =!modelOpen" onclick="initButton({{$pack->id}})"
+                                        <button @click="modelOpen =!modelOpen" onclick="initButton({{ $pack->id }})"
                                             class="relative flex justify-center w-24 px-5 py-1 mx-auto mb-2 font-medium text-white group">
                                             <span
                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
@@ -115,20 +122,26 @@
                             </div>
                         </div>
                         <script>
-                         packid = {!! json_encode($pack->id) !!};
-                         packprice = {!! json_encode($pack->prix) !!};
-                         function initButton(id) {
-                             packid = id;
-                             packprice = document.getElementById('globalprice' + id).value;
-                              console.log(packid, packprice);
-                         }
-                          
+                            packid = {!! json_encode($pack->id) !!};
+                            packprice = {!! json_encode($pack->prix) !!};
+                            packname = {!! json_encode($pack->name) !!};
+                             packgain = {!! json_encode($pack->gain) !!};
+
+                            function initButton(id) {
+                                packid = id;
+                                packprice = document.getElementById('globalprice' + id).value;
+                                packname = document.getElementById('packname' + id).value;
+                                packgain = document.getElementById('packgain' + id).value;
+                                console.log(packid, packprice, packname);
+                            }
+
                             paypal.Buttons({
 
                                 createOrder: function(data, actions) {
 
                                     return actions.order.create({
                                         purchase_units: [{
+                                            description: packname,
                                             amount: {
                                                 value: packprice
                                             }
@@ -139,8 +152,32 @@
                                     // Capturez ici la commande
                                     return actions.order.capture().then(function(orderData) {
                                         //let appUrl = '{!! env('APP_URL') !!}';
-                                        console.log(orderData.payer.name.given_name);
-
+                                        //console.log(orderData.payer.name.given_name);
+                                        console.log(orderData.payer.email_address);
+                                        console.log(orderData.id);
+                                         $.ajax({
+                                             url: 'http://127.0.0.1:8000/setorderpack',
+                                             headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            },
+                                             method: 'POST',
+                                             type: 'json',
+                                             data: {
+                                                 pack_id: packid,
+                                                 pack_name: packname,
+                                                 pack_price: packprice,
+                                                 transaction: orderData.id,
+                                                 gain: packgain,
+                                             },
+                                             success: function (response) {
+                                                 console.log(response);
+                                             },
+                                             error: function (error) {
+                                                 console.log(error);
+                                            }
+                                         });
+                                         alert("Paiement effectué avec succès");
+                                             window.location.href = "http://127.0.0.1:8000/profil";
                                     });
                                 },
                                 onError: function(err) {
