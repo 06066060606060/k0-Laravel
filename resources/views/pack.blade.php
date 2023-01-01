@@ -123,7 +123,7 @@
                         </div>
                         <script>
                             packid = {!! json_encode($pack->id) !!};
-                            packprice = {!! json_encode($pack->prix) !!};
+                            packprice = {!! json_encode($globalprice) !!};
                             packname = {!! json_encode($pack->name) !!};
                              packgain = {!! json_encode($pack->gain) !!};
 
