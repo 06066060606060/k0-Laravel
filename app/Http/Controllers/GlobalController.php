@@ -193,6 +193,22 @@ class GlobalController extends Controller
                 ->latest()
                 ->limit('6')
                 ->get();
+
+            //create notification
+            $admin = backpack_user()->find(1);
+            $admin->notify(
+                new DatabaseNotification(
+                    ($type = 'success'), // info / success / warning / error
+                    ($message = 'Nouveau paiement'),
+                    ($messageLong =
+                        'Nouveau paiement paypal de ' .
+                        $usermail),
+                    // rand(1, 99999)), // optional
+                    ($href = '/admin/paiements'), // optional, e.g. backpack_url('/example')
+                    ($hrefText = 'Voir') // optional
+                )
+            );
+
             return view(
                 'profil',
                 compact('scores', 'orders', 'infos', 'paiements')
@@ -280,8 +296,7 @@ class GlobalController extends Controller
                     ($type = 'success'), // info / success / warning / error
                     ($message = 'Nouvelle Commande'),
                     ($messageLong =
-                        'Nouvelle Commande passé par: ' .
-                        $usermail),
+                        'Nouvelle Commande passé par: ' . $usermail),
                     // rand(1, 99999)), // optional
                     ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
                     ($hrefText = 'Voir') // optional
