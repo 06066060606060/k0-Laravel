@@ -2,7 +2,7 @@
 
 @section('main')
     <script
-        src="https://www.paypal.com/sdk/js?client-id=AUUI0_mUeQz4bH9yeO94b-z0BEQZNtzGR_vvOcxOugMD_WCnY73WlovQJhFGMRI66h8B6e9vvY7qX5lr&enable-funding=venmo&currency=EUR"
+        src="{{ Setting::get('paypal_link') }}"
         data-sdk-integration-source="button-factory"></script>
 
     <div data-barba="container">
