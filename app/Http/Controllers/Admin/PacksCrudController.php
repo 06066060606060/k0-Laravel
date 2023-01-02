@@ -83,6 +83,7 @@ class PacksCrudController extends CrudController
                     },  ]
                 ]);
                 CRUD::column('prix_promo');
+                CRUD::column('gain')->label('Gain');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -143,6 +144,7 @@ class PacksCrudController extends CrudController
            'inline'      => true, // show the radios all on the same line?
         ],);
         CRUD::field('prix_promo')->type('number');
+        CRUD::field('gain')->type('number');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
          * - CRUD::field('price')->type('number');
