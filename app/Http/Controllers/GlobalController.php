@@ -177,12 +177,28 @@ class GlobalController extends Controller
             $paiement->type = $request->pack_price;
             $paiement->name = $request->transaction;
             $paiement->save();
+            if ($request->type == 'Rubis'){
+                backpack_auth()
+                ->user()
+                ->update([
+                    'trophee2' =>
+                        backpack_auth()->user()->trophee2 + $request->gain,
+                ]);
+            } else if ($request->type == 'Diamants'){
             backpack_auth()
                 ->user()
                 ->update([
                     'trophee1' =>
                         backpack_auth()->user()->trophee1 + $request->gain,
                 ]);
+            } else if ($request->type == 'Coins'){
+            backpack_auth()
+                ->user()
+                ->update([
+                    'trophee3' =>
+                        backpack_auth()->user()->trophee3 + $request->gain,
+                ]);
+            }
             $scores = Scores::where('user_id', $userid)->get();
             $orders = Commandes::where('user_id', $userid)
                 ->latest()

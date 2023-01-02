@@ -152,7 +152,7 @@ class PacksCrudController extends CrudController
             'options'     => [
                 'Diamants' => 'Diamants',
                 'Rubis' => 'Rubis',
-                'Coin' => 'Coin',
+                'Coins' => 'Coins',
             ],
 
             'allows_null' => false,

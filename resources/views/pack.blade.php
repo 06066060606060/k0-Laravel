@@ -40,6 +40,7 @@
                                 <input id="pack_id{{ $pack->id }}" type="hidden" name="pack_id" value="{{ $pack->id }}">
                                 <input id="packname{{ $pack->id }}" type="hidden" name="pack_name" value="{{ $pack->name }}">
                                 <input id="packgain{{ $pack->id }}" type="hidden" name="pack_gain" value="{{ $pack->gain }}">
+                                <input id="packtype{{ $pack->id }}" type="hidden" name="pack_type" value="{{ $pack->type }}">
                                 {{-- ribbon end --}}
                                 @php $images =  $pack->image ?? null; @endphp
                                 <img alt="gallery"
@@ -117,13 +118,13 @@
                             packprice = document.getElementById('packname' + packid).value;
                             packname = {!! json_encode($pack->name) !!};
                             packgain = {!! json_encode($pack->gain) !!};
-
+                            packtype = {!! json_encode($pack->type) !!};
                             function initButton(id) {
                                 packid = id;
                                 packprice = document.getElementById('price' + id).value;
                                 packname = document.getElementById('packname' + id).value;
                                 packgain = document.getElementById('packgain' + id).value;
-                                
+                                packtype = document.getElementById('packtype' + id).value;
                                 console.log(packid, packprice, packname);
                             }
 
@@ -148,8 +149,8 @@
                                         console.log(orderData.payer.email_address);
                                         console.log(orderData.id);
                                          $.ajax({
-                                            // url: 'http://127.0.0.1:8000/setorderpack',
-                                             url: 'https://gokdo.com/setorderpack',
+                                             url: 'http://127.0.0.1:8000/setorderpack',
+                                           //  url: 'https://gokdo.com/setorderpack',
                                              headers: {
                                                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                             },
@@ -161,6 +162,7 @@
                                                  pack_price: packprice,
                                                  transaction: orderData.id,
                                                  gain: packgain,
+                                                 type: packtype,
                                              },
                                              success: function (response) {
                                                  console.log(response);
@@ -170,8 +172,8 @@
                                             }
                                          });
                                         // alert("Paiement effectué avec succès");
-                                          //   window.location.href = "http://127.0.0.1:8000/profil";
-                                          window.location.href = "https://gokdo.com/profil";
+                                             window.location.href = "http://127.0.0.1:8000/profil";
+                                       //   window.location.href = "https://gokdo.com/profil";
                                     });
                                 },
                                 onError: function(err) {
