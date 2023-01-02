@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('promo')->nullable();
             $table->integer('prix_promo')->nullable();
             $table->integer('gain')->nullable();
+            $table->string('type')->nullable();
             $table->string('active')->nullable();
         });
     }

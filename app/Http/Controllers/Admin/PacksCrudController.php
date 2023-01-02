@@ -129,7 +129,7 @@ class PacksCrudController extends CrudController
             'default'     => '0',
            'inline'      => true, // show the radios all on the same line?
         ],);
-        CRUD::field('prix')->type('number');
+        CRUD::field('prix')->type('number')->label('Prix en €');
         $this->crud->addField([   // radio
             'name'        => 'promo', // the name of the db column
             'label'       => 'En promo', // the input label
@@ -143,7 +143,22 @@ class PacksCrudController extends CrudController
             'default'     => '0',
            'inline'      => true, // show the radios all on the same line?
         ],);
-        CRUD::field('prix_promo')->type('number');
+        CRUD::field('prix_promo')->type('number')->label('Prix promo en €');
+
+        $this->crud->addField([   // select_from_array
+            'name'        => 'type',
+            'label'       => "Type",
+            'type'        => 'select_from_array',
+            'options'     => [
+                'Diamants' => 'Diamants',
+                'Rubis' => 'Rubis',
+                'Coin' => 'Coin',
+            ],
+
+            'allows_null' => false,
+            'default'     => 'Diamants',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
         CRUD::field('gain')->type('number');
         /**
          * Fields can be defined using the fluent syntax or array syntax:
