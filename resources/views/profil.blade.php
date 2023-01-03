@@ -10,7 +10,7 @@
         <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
             <div class="flex flex-col pt-2">
                 <card
-                    class="relative w-full p-4 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 h-96 md:h-[480px] md:mb-0 md:mr-4">
+                    class="relative w-full p-4 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 md:mb-0 md:mr-4">
                     <div class="flex items-center pt-2 pb-4 border-b border-gray-500">
                         <img alt="Developer" src="img/avatar.png"
                             class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
@@ -46,25 +46,26 @@
                             <img src="img/coin10.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
-                    </div>
+                        <div class="flex py-2">
+                            <div
+                                class="flex w-full max-w-sm py-2  bg-gray-800 border border-gray-700 rounded-lg shadow-md">
+                                <div class="flex items-center justify-center w-12 ml-2 bg-red-500 rounded">
+                                    <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
+                                    </svg>
+                                </div>
 
-                    <ul class="absolute bottom-0 mt-4 mb-4">
-                        <div
-                            class="flex w-full max-w-sm py-2 overflow-hidden bg-gray-800 border border-gray-700 rounded-lg shadow-md">
-                            <div class="flex items-center justify-center w-12 ml-2 bg-red-500 rounded">
-                                <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
-                                </svg>
-                            </div>
-
-                            <div class="px-4 pb-1 ml-1">
-                                <span class="text-xs font-semibold text-red-400">Supprimer mon compte</span>
-                                @include('parts.delete')
+                                <div class="px-4 pb-1 ml-1">
+                                    <span class="text-xs font-semibold text-red-400">Supprimer mon compte</span>
+                                    @include('parts.delete')
+                                </div>
                             </div>
                         </div>
-                    </ul>
+                    </div>
+
+
                 </card>
             </div>
             <div class="flex flex-col w-full py-2">
@@ -141,11 +142,8 @@
                                         Coût
                                     </th>
                                     <th
-                                        class="hidden px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
+                                        class=" px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
                                         Status
-                                    </th>
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Opérations
                                     </th>
                                 </tr>
                             </thead>
@@ -160,22 +158,17 @@
                                         </td>
                                         </td>
                                         @if ($order->status == 'Oui')
-                                            <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
+                                            <td class=" px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
                                                     Confirmé</p>
                                             </td>
-                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
-                                                &nbsp;
-                                            </td>
+                                       
                                         @else
-                                            <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
-                                                <p
-                                                    class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-purple-400">
+                                            <td class=" px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
+                                                <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-purple-400">
                                                     Expédié</p>
                                             </td>
-                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
-                                                &nbsp;
-                                            </td>
+                                       
                                         @endif
 
                                     </tr>
@@ -207,7 +200,7 @@
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         Score
                                     </th>
-                                    <th class="hidden px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
+                                    <th class=" px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
                                         Bonus
                                     </th>
                                 </tr>
@@ -221,8 +214,7 @@
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
                                         <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
-                                            <strong
-                                                class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
+                                            <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
                                                 <p class="ml-2 ">+ {{ $score->data }}</p> <img
                                                     src="{{ asset('img/diamond5.png') }}" alt="coin"
                                                     class="w-4 h-4 ml-2">
@@ -241,10 +233,10 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             Aucun Score enregistré
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">  &nbsp;  &nbsp;  &nbsp;</td>
-                                       
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">  &nbsp;  &nbsp;  &nbsp;
-                                            </td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;</td>
+
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;
+                                        </td>
                                     </tr>
                                 @endforelse
 
