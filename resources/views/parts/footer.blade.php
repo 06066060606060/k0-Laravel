@@ -1,5 +1,5 @@
  <!-- FOOTER -->
- <footer class="mx-auto text-gray-400 body-font max-w-7xl">
+ <container id="footer" class="mx-auto text-gray-400 body-font max-w-7xl">
   <div
     class="container flex flex-col flex-wrap px-5 py-12 mx-auto md:items-center lg:items-start md:flex-row md:flex-nowrap">
     <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
@@ -18,7 +18,7 @@
       </div>
       <div class="w-full px-4 lg:w-1/4 md:w-1/2">
         <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">A propos</h2>
-        <nav class="mb-10 list-none">
+        <div class="mb-10 list-none">
           <li>
             <a href="legal" class="text-gray-400 hover:text-gray-500">Mentions Legales</a>
           </li>
@@ -26,11 +26,11 @@
             <a href="confidentialite" class="text-gray-400 hover:text-gray-500">Confidentialité</a>
           </li>
 
-        </nav>
+        </div>
       </div>
       <div class="w-full px-4 lg:w-1/4 md:w-1/2">
         <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Plus</h2>
-        <nav class="mb-10 list-none">
+        <div class="mb-10 list-none">
          <li>
             <a href="help" class="text-gray-400 hover:text-gray-500">Aide</a>
           </li>
@@ -38,7 +38,7 @@
             <a href="mailto:{{ Setting::get('contact_email') }}" class="text-gray-400 hover:text-gray-500">{{ Setting::get('contact_email') }}</a>
           </li>
 
-        </nav>
+        </div>
       </div>
     </div>
   </div>
@@ -63,6 +63,6 @@
       </span>
     </div>
   </div>
-</footer>
+</container>
 
 
