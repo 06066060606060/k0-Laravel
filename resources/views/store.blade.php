@@ -89,7 +89,7 @@
                                                                  aria-labelledby="modal-title" role="dialog"
                                                                  aria-modal="true">
                                                                  <div
-                                                                     class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
+                                                                     class="flex justify-center px-4 text-center items-center sm:block sm:p-0">
                                                                      <div x-cloak @click="modelOpen = false"
                                                                          x-show="modelOpen"
                                                                          x-transition:enter="transition ease-out duration-300 transform"
@@ -98,7 +98,7 @@
                                                                          x-transition:leave="transition ease-in duration-200 transform"
                                                                          x-transition:leave-start="opacity-100"
                                                                          x-transition:leave-end="opacity-0"
-                                                                         class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60"
+                                                                         class="w-screen fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60"
                                                                          aria-hidden="true"></div>
 
                                                                      <div x-cloak x-show="modelOpen"
@@ -108,7 +108,7 @@
                                                                          x-transition:leave="transition ease-in duration-200 transform"
                                                                          x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
                                                                          x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                                                         class="inline-block w-full max-w-4xl pt-32 mx-4 overflow-hidden transition-all transform">
+                                                                         class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
 
                                                                          <form action="order" method="POST"
                                                                              class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl ">
