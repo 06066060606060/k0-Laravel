@@ -8,7 +8,11 @@ window.Alpine = Alpine
  
 Alpine.start()
 
-barba.init();
+barba.init(
+    {
+        prevent: ({ el }) => el.classList && el.classList.contains('prevent')
+    }
+);
         barba.hooks.afterEnter((data) => {
             const swiper = new Swiper('.swiper-container', {
                 loop: true,
