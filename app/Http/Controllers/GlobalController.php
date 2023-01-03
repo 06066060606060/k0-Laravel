@@ -143,10 +143,24 @@ class GlobalController extends Controller
             $order = new Commandes();
             $order->cadeau_id = $request->id;
             $order->user_id = $userid;
-            $order->status = 'Non';
+            $order->status = 'Oui';
             $order->prix = $request->prix;
             $order->save();
             $scores = Scores::where('user_id', $userid)->get();
+            if (backpack_auth()->user()->trophee1 >= $request->price) {
+                backpack_auth()
+                    ->user()
+                    ->update([
+                        'trophee1' =>
+                            backpack_auth()->user()->trophee1 -
+                            $request->price,
+                    ]);
+                Commandes::where('user_id', $userid)
+                    ->where('id', $request->id)
+                    ->update(['status' => 'Oui']);
+            } else {
+                return back();
+            }
             $orders = Commandes::where('user_id', $userid)
                 ->latest()
                 ->limit('6')
@@ -156,6 +170,18 @@ class GlobalController extends Controller
                 ->limit('6')
                 ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
+             //create notification
+             $admin = backpack_user()->find(1);
+             $admin->notify(
+                 new DatabaseNotification(
+                     ($type = 'success'), // info / success / warning / error
+                     ($message = 'Nouvelle commande'),
+                     ($messageLong = 'Nouvelle commande de cadeau par' . $usermail),
+                     // rand(1, 99999)), // optional
+                     ($href = '/admin/paiements'), // optional, e.g. backpack_url('/example')
+                     ($hrefText = 'Voir') // optional
+                 )
+             );
             return view(
                 'profil',
                 compact('scores', 'orders', 'infos', 'paiements')
@@ -279,12 +305,12 @@ class GlobalController extends Controller
             $userid = backpack_auth()->user()->id;
             $scores = Scores::where('user_id', $userid)->get();
             //substrate diamonds from global score
-            if (backpack_auth()->user()->global_score >= $request->price) {
+            if (backpack_auth()->user()->trophee1 >= $request->price) {
                 backpack_auth()
                     ->user()
                     ->update([
-                        'global_score' =>
-                            backpack_auth()->user()->global_score -
+                        'trophee1' =>
+                            backpack_auth()->user()->trophee1 -
                             $request->price,
                     ]);
                 Commandes::where('user_id', $userid)

@@ -22,24 +22,38 @@
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 @php $images =  $freegame->image[0] ?? null; @endphp
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                    src="{{ asset('storage/' . $images ) }}" onerror="this.src='/img/empty.png'">
+                                    src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
                                     <h3 class="mb-1 text-gray-300">{{ $freegame->category }}</h3>
                                     <p class="mb-2 text-sm">{{ $freegame->description }}</p>
-
-                                    <a href="game?id={{ $freegame->id }}"
-                                        class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group">
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-blue-700 group-hover:bg-blue-500 group-active:bg-blue-600 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-blue-600 -rotate-12"></span>
-                                        <span
-                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
-                                        <span class="relative">Jouer</span>
-                                    </a>
+                                    @if (backpack_auth()->check())
+                                        <a href="game?id={{ $freegame->id }}"
+                                            class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group">
+                                            <span
+                                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
+                                            <span
+                                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-blue-700 group-hover:bg-blue-500 group-active:bg-blue-600 group-hover:-skew-x-12"></span>
+                                            <span
+                                                class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-blue-600 -rotate-12"></span>
+                                            <span
+                                                class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
+                                            <span class="relative">Jouer</span>
+                                        </a>
+                                    @else
+                                        <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')"
+                                            class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group">
+                                            <span
+                                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
+                                            <span
+                                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-blue-700 group-hover:bg-blue-500 group-active:bg-blue-600 group-hover:-skew-x-12"></span>
+                                            <span
+                                                class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-blue-600 -rotate-12"></span>
+                                            <span
+                                                class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
+                                            <span class="relative">Jouer</span>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -78,25 +92,39 @@
                                     @php $imagesb =  $boostergame->image[0] ?? null; @endphp
                                     <img alt="gallery"
                                         class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                        src="{{ asset('storage/' . $imagesb ) }}" onerror="this.src='/img/empty.png'">
+                                        src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
                                     <div class="w-full">
                                         <h2 class="py-1 text-xl font-bold text-orange-600 title-font ">
                                             {{ $boostergame->name }}</h2>
                                         <h3 class="mb-1 text-gray-300">{{ $boostergame->category }}</h3>
                                         <p class="mb-2 text-sm">{{ $boostergame->description }}</p>
-
-                                        <a href="game?id={{ $boostergame->id }}"
-                                            class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
-                                            <span
-                                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-orange-700 group-hover:skew-x-12"></span>
-                                            <span
-                                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-orange-700 group-hover:bg-orange-500 group-active:bg-orange-600 group-hover:-skew-x-12"></span>
-                                            <span
-                                                class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-orange-600 -rotate-12"></span>
-                                            <span
-                                                class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-400 -rotate-12"></span>
-                                            <span class="relative">Jouer</span>
-                                        </a>
+                                        @if (backpack_auth()->check())
+                                            <a href="game?id={{ $boostergame->id }}"
+                                                class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                                <span
+                                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-orange-700 group-hover:skew-x-12"></span>
+                                                <span
+                                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-orange-700 group-hover:bg-orange-500 group-active:bg-orange-600 group-hover:-skew-x-12"></span>
+                                                <span
+                                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-orange-600 -rotate-12"></span>
+                                                <span
+                                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-400 -rotate-12"></span>
+                                                <span class="relative">Jouer</span>
+                                            </a>
+                                        @else
+                                            <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')"
+                                                class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                                <span
+                                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-orange-700 group-hover:skew-x-12"></span>
+                                                <span
+                                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-orange-700 group-hover:bg-orange-500 group-active:bg-orange-600 group-hover:-skew-x-12"></span>
+                                                <span
+                                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-orange-600 -rotate-12"></span>
+                                                <span
+                                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-orange-400 -rotate-12"></span>
+                                                <span class="relative">Jouer</span>
+                                            </a>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

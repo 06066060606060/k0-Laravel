@@ -159,140 +159,7 @@
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $order->cadeau->prix }}
                                         </td>
                                         </td>
-
-
-                                        @if ($order->status == 'Non')
-                                            <td class="hidden px-4 py-2 text-gray-300 whitespace-nowrap md:flex">
-                                                <p
-                                                    class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-red-400 md:flex">
-                                                    En attente</p>
-                                            </td>
-                                            <td class="py-2 text-gray-300 whitespace-nowrap">
-                                                <div class="flex">
-                                                    {{-- <form action="confirm_order" method="POST" class="py-2">
-                                                        @csrf
-                                                          <input type="hidden" name="price"
-                                                            value="{{ $order->cadeau->prix }}">
-                                                        <input type="hidden" name="id"
-                                                            value="{{ $order->id }}">
-                                                        <button type="submit">
-                                                            <i
-                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
-                                                        </button>
-                                                    </form> --}}
-
-                                                    <div x-data="{ modelOpen: false }" class="py-2">
-
-                                                        @if (backpack_auth()->user()->global_score < $order->cadeau->prix)
-                                                          <i class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-orange-300 rounded ">Pas assez de diamands</i>
-                                                        @else
-                                                            <i @click="modelOpen =!modelOpen" id="submitbtn"
-                                                                class="w-20 px-2 py-1 font-bold text-center text-gray-700 bg-green-600 rounded hover:bg-green-400">Confirmer</i>
-                                                        @endif
-
-                                                        <div x-cloak x-show="modelOpen"
-                                                            class="fixed inset-0 z-50 overflow-y-auto"
-                                                            aria-labelledby="modal-title" role="dialog" aria-modal="true">
-                                                            <div
-                                                                class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
-                                                                <div x-cloak @click="modelOpen = false" x-show="modelOpen"
-                                                                    x-transition:enter="transition ease-out duration-300 transform"
-                                                                    x-transition:enter-start="opacity-0"
-                                                                    x-transition:enter-end="opacity-100"
-                                                                    x-transition:leave="transition ease-in duration-200 transform"
-                                                                    x-transition:leave-start="opacity-100"
-                                                                    x-transition:leave-end="opacity-0"
-                                                                    class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60"
-                                                                    aria-hidden="true"></div>
-
-                                                                <div x-cloak x-show="modelOpen"
-                                                                    x-transition:enter="transition ease-out duration-300 transform"
-                                                                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                                                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-                                                                    x-transition:leave="transition ease-in duration-200 transform"
-                                                                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-                                                                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                                                                    class="inline-block w-full max-w-4xl pt-32 mx-4 overflow-hidden transition-all transform">
-
-                                                                    <form action="confirm_order" method="POST"
-                                                                        class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl ">
-                                                                        @csrf
-                                                                        <input type="hidden" name="price"
-                                                                            value="{{ $order->cadeau->prix }}">
-                                                                        <input type="hidden" name="id"
-                                                                            value="{{ $order->id }}">
-                                                                        <div class="flex justify-between w-full border-b">
-                                                                            <h1 class="py-6 mx-auto text-lg font-bold">
-                                                                                Confirmer votre commande:
-                                                                            </h1>
-                                                                        </div>
-                                                                        <div class="bg-gray-700 rounded-b-md">
-                                                                            <div
-                                                                                class="flex flex-col items-center pb-8 mx-24 mt-1">
-                                                                                <h1
-                                                                                    class="py-2 text-sm font-medium text-white">
-                                                                                    {{ $order->cadeau->prix }} diamants
-                                                                                    seronts retiré de votre score global
-                                                                                </h1>
-
-                                                                                <div class="flex justify-center">
-                                                                                    <div @click="modelOpen = false"
-                                                                                        class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 mr-4 font-medium text-white group">
-                                                                                        <span
-                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
-                                                                                        <span
-                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-800 group-hover:bg-red-600 group-active:bg-red-700 group-hover:-skew-x-12"></span>
-                                                                                        <span
-                                                                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
-                                                                                        <span
-                                                                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
-                                                                                        <span
-                                                                                            class="relative">Annuler</span>
-                                                                                    </div>
-
-                                                                                    <button type="submit"
-                                                                                        class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
-                                                                                        <span
-                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
-                                                                                        <span
-                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
-                                                                                        <span
-                                                                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
-                                                                                        <span
-                                                                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                                        <span
-                                                                                            class="relative">Confirmer</span>
-                                                                                    </button>
-
-                                                                                </div>
-                                                                                <h1
-                                                                                    class="text-xs font-medium text-gray-200">
-                                                                                    Vérifier que vous avez enregistré une
-                                                                                    adresse de livraison avant de confirmer.
-                                                                                </h1>
-                                                                            </div>
-                                                                        </div>
-                                                                    </form>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <script>
-                                                        //  $('#submitbtn').attr('disabled', 'disabled');
-                                                    </script>
-                                                    <form action="delete_order" method="POST" class="px-4 py-2">
-                                                        @csrf
-                                                        <input type="hidden" name="id"
-                                                            value="{{ $order->id }}">
-                                                        <button type="submit">
-                                                            <i
-                                                                class="text-gray-400 fas fa-trash-alt hover:text-red-400"></i>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </td>
-                                        @elseif ($order->status == 'Oui')
+                                        @if ($order->status == 'Oui')
                                             <td class="hidden px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
                                                     Confirmé</p>
@@ -374,9 +241,10 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             Aucun Score enregistré
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">  &nbsp;  &nbsp;  &nbsp;</td>
+                                       
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">  &nbsp;  &nbsp;  &nbsp;
+                                            </td>
                                     </tr>
                                 @endforelse
 

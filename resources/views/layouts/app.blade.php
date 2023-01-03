@@ -52,11 +52,10 @@
                                     required>
                             </div>
                             <div class="space-y-1 text-sm">
-                                <label for="password" class="block text-gray-400">Mot de passe</label>
+                                <label for="password" class="control-label block text-gray-400"  for="password">Mot de passe</label>
                                 <input type="password" name="password" id="password" placeholder="Password"
                                     class="w-full px-4 py-3 text-gray-100 bg-gray-900 border-gray-700 rounded-md focus:border-emerald-400"
                                     required>
-
                             </div>
                             <button
                                 class="block w-full p-3 font-bold text-center text-white transition-colors duration-200 rounded bg-emerald-500 hover:bg-emerald-400 focus:bg-emerald-400">Se

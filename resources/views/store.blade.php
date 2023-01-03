@@ -41,20 +41,49 @@
 
                                                      <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
                                                          <div x-data="{ modelOpen: false }" class="flex justify-center">
-
-                                                             <button @click="modelOpen =!modelOpen"
-                                                                 class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
-                                                                 <span
-                                                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
-                                                                 <span
-                                                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
-                                                                 <span
-                                                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
-                                                                 <span
-                                                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                 <span class="relative">Echanger</span>
-                                                             </button>
-
+                                                    @if (backpack_auth()->check() )
+                                                             @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
+                                                                 <button
+                                                                     onclick="alert('Vous devez n\'avez pas assez de diamants !')"
+                                                                     class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                                                     <span
+                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
+                                                                     <span
+                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-gray-400 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
+                                                                     <span
+                                                                         class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
+                                                                     <span
+                                                                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
+                                                                     <span class="relative">Echanger</span>
+                                                                 </button>
+                                                             @else
+                                                                 <button @click="modelOpen =!modelOpen"
+                                                                     class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                                                     <span
+                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
+                                                                     <span
+                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
+                                                                     <span
+                                                                         class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
+                                                                     <span
+                                                                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
+                                                                     <span class="relative">Echanger</span>
+                                                                 </button>
+                                                             @endif
+                                                    @else
+                                                       <button onclick="alert('Vous devez être connecté pour échanger !')"
+                                                                     class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                                                     <span
+                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
+                                                                     <span
+                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
+                                                                     <span
+                                                                         class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
+                                                                     <span
+                                                                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
+                                                                     <span class="relative">Echanger</span>
+                                                                 </button>
+                                                    @endif
                                                              <div x-cloak x-show="modelOpen"
                                                                  class="fixed inset-0 z-50 overflow-y-auto"
                                                                  aria-labelledby="modal-title" role="dialog"
@@ -83,82 +112,62 @@
 
                                                                          <form action="order" method="POST"
                                                                              class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl ">
-                                                                             @csrf
-                                                                             <div
-                                                                                 class="flex justify-between w-full border-b">
-                                                                                 <h1 class="py-6 mx-auto text-lg font-bold">
-                                                                                     ECHANGER VOTRE BUTIN ?
-                                                                                 </h1>
-                                                                                 <i class="float-right las la-times la-1x mr-5 mt-1 py-6 text-[#1E9FD9]"
-                                                                                     @click="modelOpen = false"></i>
-                                                                             </div>
-                                                                             <div class="bg-gray-700 rounded-b-md">
-                                                                             <h1 class="py-6 mx-auto text-lg font-bold">Passer sur votre profil pour confirmer.</h1>
-                                                                                 <div
-                                                                                     class="flex items-center justify-around pt-4 pb-2 mx-auto text-2xl font-semibold align-middle">
-                                                                                     <div
-                                                                                         class="flex flex-col items-center align-middle">
-                                                                                         <img alt="gallery"
-                                                                                             class="inset-0 object-cover object-center w-32 h-auto pt-2"
-                                                                                             src="./img/diamond5.png"
-                                                                                             onerror="this.src='/img/empty.png'">
-                                                                                         <p class="pt-4 text-center">x
-                                                                                             {{ $cadeau->prix }}</p>
-                                                                                     </div>
-                                                                                     <div
-                                                                                         class="flex items-center align-middle ">
-                                                                                         <i
-                                                                                             class="mx-2 fa-solid fa-right-long fa-2x"></i>
-                                                                                     </div>
-                                                                                     <div
-                                                                                         class="flex flex-col items-center align-middle ">
-                                                                                         <img alt="gallery"
-                                                                                             class="inset-0 object-cover object-center w-32 h-auto pt-6 rounded"
-                                                                                             src="./storage/{{ $image }}"
-                                                                                             onerror="this.src='/img/empty.png'">
-                                                                                         <p class="pt-6 text-center">
-                                                                                             {{ $cadeau->name }}</p>
-                                                                                     </div>
+                                                                               @csrf
+                                                                        <input type="hidden" name="price"
+                                                                            value="{{ $cadeau->prix }}">
+                                                                        <input type="hidden" name="id"
+                                                                            value="{{ $cadeau->id }}">
+                                                                        <div class="flex justify-between w-full border-b">
+                                                                            <h1 class="py-6 mx-auto text-lg font-bold">
+                                                                                Confirmer votre commande:
+                                                                            </h1>
+                                                                        </div>
+                                                                        <div class="bg-gray-700 rounded-b-md">
+                                                                            <div
+                                                                                class="flex flex-col items-center pb-8 mx-24 mt-1">
+                                                                                <h1
+                                                                                    class="py-2 text-sm font-medium text-white">
+                                                                                    {{ $cadeau->prix }} diamants
+                                                                                    seronts retiré de votre solde.
+                                                                                </h1>
 
-                                                                                 </div>
-                                                                                 <input type="hidden" name="id"
-                                                                                     value="{{ $cadeau->id }}">
-                                                                                 <input type="hidden" name="prix"
-                                                                                     value="{{ $cadeau->prix }}">
+                                                                                <div class="flex justify-center">
+                                                                                    <div @click="modelOpen = false"
+                                                                                        class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 mr-4 font-medium text-white group">
+                                                                                        <span
+                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
+                                                                                        <span
+                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-800 group-hover:bg-red-600 group-active:bg-red-700 group-hover:-skew-x-12"></span>
+                                                                                        <span
+                                                                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
+                                                                                        <span
+                                                                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
+                                                                                        <span
+                                                                                            class="relative">Annuler</span>
+                                                                                    </div>
 
-                                                                                 <div
-                                                                                     class="flex flex-col items-center pb-8 mx-24 mt-1">
-                                                                                     <div class="flex justify-center">
-                                                                                         <div @click="modelOpen = false"
-                                                                                             class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 mr-4 font-medium text-white group">
-                                                                                             <span
-                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-800 group-hover:bg-red-600 group-active:bg-red-700 group-hover:-skew-x-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
-                                                                                             <span
-                                                                                                 class="relative">Annuler</span>
-                                                                                         </div>
+                                                                                    <button type="submit"
+                                                                                        class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                                                                        <span
+                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
+                                                                                        <span
+                                                                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
+                                                                                        <span
+                                                                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
+                                                                                        <span
+                                                                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
+                                                                                        <span
+                                                                                            class="relative">Confirmer</span>
+                                                                                    </button>
 
-                                                                                         <button type="submit"
-                                                                                             class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
-                                                                                             <span
-                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                                             <span
-                                                                                                 class="relative">Continuer</span>
-                                                                                         </button>
-                                                                                     </div>
-                                                                                 </div>
-                                                                             </div>
+                                                                                </div>
+                                                                                <h1
+                                                                                    class="text-xs font-medium text-gray-200">
+                                                                                    Vérifier que vous avez enregistré une
+                                                                                    adresse de livraison avant de confirmer.
+                                                                                </h1>
+                                                                            </div>
+                                                                        </div>
                                                                          </form>
                                                                      </div>
                                                                  </div>
