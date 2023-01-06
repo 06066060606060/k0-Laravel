@@ -54,7 +54,7 @@
          <container class="block min-h-screen px-2 mx-auto text-white max-w-7xl">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
-                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tableau des scores des concours</h1>
+                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tableau des scores:</h1>
                      <section class="text-gray-300 body-font">
                          <div class="container py-8 mx-auto">
                                  <div
