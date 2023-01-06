@@ -49,6 +49,10 @@ img{
   color: rgb(94, 94, 94) !important;
 }
 
+.reverted{
+  all: revert;
+}
+
 .swiper-container {
   overflow: hidden;
 }

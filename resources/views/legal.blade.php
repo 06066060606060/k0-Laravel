@@ -17,10 +17,5 @@
             </div>
         </div>
     </div>
-    <style>
-    .reverted{
 
-       all: revert;
-}
-    </style>
 @endsection
