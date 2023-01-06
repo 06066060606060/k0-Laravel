@@ -1,6 +1,6 @@
 {
   "resources/css/anim.svg": {
-    "file": "assets/anim.6ed443fd.svg",
+    "file": "assets/anim.ac3fceeb.svg",
     "src": "resources/css/anim.svg"
   },
   "resources/css/gift.png": {
@@ -13,7 +13,7 @@
     "isEntry": true
   },
   "resources/css/app.css": {
-    "file": "assets/app.76d6348b.css",
+    "file": "assets/app.373455e2.css",
     "src": "resources/css/app.css",
     "isEntry": true
   },

@@ -161,9 +161,8 @@
         @if (backpack_user()->role == 'admin')
             <p class="w-1/2 px-4 py-2 mx-8 mt-4 text-xs text-gray-200 bg-gray-900 rounded -pl-2">
                 Derniéres mise à jour: {{ $version }}<br>
-                 -fix footer<br>
-                 -fix pack image padding<br>
-                 -restriction jeux<br>
+                 -fix performance mobile<br>
+                 -ajout coins decimale<br>
                  
                  
 

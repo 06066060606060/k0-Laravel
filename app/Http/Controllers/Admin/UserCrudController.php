@@ -117,7 +117,13 @@ class UserCrudController extends CrudController
         CRUD::field('email');
         CRUD::field('trophee1')->label('Diamants')->type('number');
         CRUD::field('trophee2')->label('Rubis')->type('number');
-        CRUD::field('trophee3')->label('Piéces')->type('number');
+        $this->crud->addField([   // select_from_array
+            'name'        => 'trophee3',
+            'label'       => "Piéces",
+            'type'        => 'number',
+            'attributes' => ["step" => "0.1"], // allow decimals
+            ]);
+
         $this->crud->addField([   // select_from_array
             'name'        => 'role',
             'label'       => "role",
