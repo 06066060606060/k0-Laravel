@@ -22,7 +22,7 @@
                     class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
                     <span class="mb-1 font-bold tracking-widest text-blue-600 uppercase text-md"> Prochain concours:</span>
                     <h1 class="mb-2 text-gray-100">
-                        {{ $startdate }} </h1>
+                      Du  {{ $startdate }}  au  {{ $enddate }} </h1>
                     <h1
                         class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                       {{ $concours->name }} </h1>

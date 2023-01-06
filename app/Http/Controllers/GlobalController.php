@@ -82,8 +82,9 @@ class GlobalController extends Controller
     {
         $concours = Concours::All()->last();
         $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m/y H:i');
+        $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m/y H:i');
         $scores = Scores::all();
-        return view('winner', compact('scores', 'concours', 'startdate'));
+        return view('winner', compact('scores', 'concours', 'startdate', 'enddate'));
     }
 
     public function store()
