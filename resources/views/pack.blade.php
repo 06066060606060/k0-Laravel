@@ -17,7 +17,7 @@
                     @forelse ($packs as $pack)
                         <div class="p-4 lg:w-1/4 md:w-1/2">
                             <div
-                                class="relative flex flex-col items-center h-full overflow-hidden text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700 min-w-full">
+                                class="relative flex flex-col items-center h-full min-w-full overflow-hidden text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 {{-- ribbon --}}
                                 @if ($pack->promo == 'Oui')
                                 @php $prix = $pack->prix_promo @endphp
@@ -47,8 +47,8 @@
                                     class="inset-0 object-cover object-center w-auto h-24 px-2 pt-3 pb-2 rounded-t-md"
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
-                                    <h2 class="py-1 text-xl font-bold text-blue-600 title-font mx-2">{{ $pack->name }}</h2>
-                                    <p class="mb-2 text-sm text-gray-400 mx-2">{{ $pack->description }}</p>
+                                    <h2 class="py-1 mx-2 text-xl font-bold text-blue-600 title-font">{{ $pack->name }}</h2>
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description }}</p>
 
                                     <div x-data="{ modelOpen: false }" class="flex justify-center" id="poppaie">
 
@@ -61,7 +61,7 @@
                                             <span
                                                 class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
                                             <span
-                                                class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12 mx-4"></span>
+                                                class="absolute bottom-0 right-0 hidden w-10 h-20 mx-4 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
                                             <span class="relative">Acheter</span>
                                         </button>
 
@@ -98,7 +98,7 @@
                                                     class="inline-block w-full max-w-xl pt-24 mx-4 overflow-hidden transition-all transform">
                                                     <div
                                                         class="flex flex-col justify-center px-4 my-4 bg-white rounded-md shadow-2xl">
-
+                                                    <h1 class="pt-2 text-2xl font-bold text-center text-gray-900">Modes de paiements:</h1>
                                                         <div class="pt-4 paypal-button">
                                                             <div style="text-align: center;">
                                                                 <div id="paypal-button-container{{ $pack->id }}"></div>

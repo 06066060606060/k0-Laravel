@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Models\Cadeaux;
 use App\Models\Commandes;
+use App\Models\Concours;
 use App\Models\Infosperso;
 use App\Models\User;
 use App\Models\Games;
 use App\Models\Pages;
 use App\Models\Packs;
+use Carbon\Carbon;
 use App\Models\Paiements;
 use App\Models\Scores;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
@@ -78,8 +80,10 @@ class GlobalController extends Controller
 
     public function winner()
     {
+        $concours = Concours::All()->last();
+        $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m/y H:i');
         $scores = Scores::all();
-        return view('winner', compact('scores'));
+        return view('winner', compact('scores', 'concours', 'startdate'));
     }
 
     public function store()
@@ -466,6 +470,7 @@ class GlobalController extends Controller
         $users_session = Session::all();
         return $users_session;
     }
+    
 
     static function getLegal()
     {

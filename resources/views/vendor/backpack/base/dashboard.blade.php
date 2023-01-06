@@ -163,6 +163,9 @@
                 Derniéres mise à jour: {{ $version }}<br>
                  -fix performance mobile<br>
                  -ajout coins decimale<br>
+                 -ajout concours<br>
+                 -status annulé<br>
+                 -fix<br>
                  
                  
 

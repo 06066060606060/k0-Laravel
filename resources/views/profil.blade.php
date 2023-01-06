@@ -161,8 +161,12 @@
                                             <td class=" px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
                                                     Confirmé</p>
+                                         </td>
+                                             @elseif ($order->status == 'Annulé')
+                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
+                                                <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-orange-400">
+                                                    Annulé</p>
                                             </td>
-                                       
                                         @else
                                             <td class=" px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-purple-400">

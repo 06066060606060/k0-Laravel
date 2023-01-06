@@ -34,7 +34,7 @@
                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="allgames" @click="isOpen = false"><i
                         class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner" @click="isOpen = false"><i
-                        class="fa-solid fa-trophy"></i>&nbsp; Scores</a>
+                        class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
                           @if (backpack_auth()->check())
                  <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="store" @click="isOpen = false"><i
                         class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>

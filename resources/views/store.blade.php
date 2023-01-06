@@ -49,12 +49,12 @@
                                                                      <span
                                                                          class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
                                                                      <span
-                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-gray-400 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
+                                                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-600 group-hover:bg-red-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
                                                                      <span
                                                                          class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
                                                                      <span
                                                                          class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                     <span class="relative">Echanger</span>
+                                                                     <span class="relative text-sm">Trop Cher</span>
                                                                  </button>
                                                              @else
                                                                  <button @click="modelOpen =!modelOpen"
@@ -89,7 +89,7 @@
                                                                  aria-labelledby="modal-title" role="dialog"
                                                                  aria-modal="true">
                                                                  <div
-                                                                     class="flex justify-center px-4 text-center items-center sm:block sm:p-0">
+                                                                     class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
                                                                      <div x-cloak @click="modelOpen = false"
                                                                          x-show="modelOpen"
                                                                          x-transition:enter="transition ease-out duration-300 transform"
@@ -98,7 +98,7 @@
                                                                          x-transition:leave="transition ease-in duration-200 transform"
                                                                          x-transition:leave-start="opacity-100"
                                                                          x-transition:leave-end="opacity-0"
-                                                                         class="w-screen fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60"
+                                                                         class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60"
                                                                          aria-hidden="true"></div>
 
                                                                      <div x-cloak x-show="modelOpen"

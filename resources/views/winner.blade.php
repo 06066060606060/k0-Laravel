@@ -3,11 +3,58 @@
  @section('main')
      <div data-barba="container">
          <div class="z-0 one"></div>
+  <div
+            class="max-w-6xl px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 sm:px-16 md:px-24 lg:py-18 ">
+            <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
+                <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
+                    <div>
+                        <div class="relative w-full max-w-lg">
+
+                            <div class="relative">
+                                @php $imagesd =  $concours->image ?? null; @endphp
+                                <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
+                                    src="{{ asset('storage/' . $imagesd) }}" onerror="this.src='/img/empty.png'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
+                    <span class="mb-1 font-bold tracking-widest text-blue-600 uppercase text-md"> Prochain concours:</span>
+                    <h1 class="mb-2 text-gray-100">
+                        {{ $startdate }} </h1>
+                    <h1
+                        class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
+                      {{ $concours->name }} </h1>
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300"> {{ $concours->description }}</p>
+
+                    <div class="">
+                            <a href=""
+                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                <span
+                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                <span
+                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                <span
+                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                <span
+                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                <span class="relative">Participer</span>
+                            </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
 
          <container class="block min-h-screen px-2 mx-auto text-white max-w-7xl">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
-                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tableau des scores</h1>
+                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tableau des scores des concours</h1>
                      <section class="text-gray-300 body-font">
                          <div class="container py-8 mx-auto">
                                  <div

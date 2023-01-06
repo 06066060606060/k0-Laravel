@@ -55,6 +55,8 @@ class CommandesCrudController extends CrudController
                             return 'ml-4 badge badge-success';
                         } else if ($entry->status == 'Non') {
                             return 'ml-4 badge badge-danger';
+                        } else if ($entry->status == 'Annulé') {
+                            return 'ml-4 badge badge-danger';
                         } else {
                             return 'ml-4 badge badge-warning';
                         }
@@ -88,6 +90,7 @@ class CommandesCrudController extends CrudController
             'options'     => [
                 // the key will be stored in the db, the value will be shown as label; 
                 "Envoyé" => "Envoyé",
+                "Annulé" => "Annulé",
                 "Oui" => "Oui",
                 "Non" => "Non"
             ],
