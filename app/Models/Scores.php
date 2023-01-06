@@ -24,6 +24,8 @@ class Scores extends Model
         'game_id',
         'score',
         'data',
+        'data2',
+        'data3',
         'save',
 
     ];
