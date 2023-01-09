@@ -49,7 +49,7 @@
                              </div>
                              @if (backpack_auth()->check())
                              @php $link =  $game->link ?? null; @endphp
-                             <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&tk=' . csrf_token() }}" class="w-full h-[667px] overflow-hidden -mt-1"
+                             <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&tk=' . csrf_token() . 'user_name=' . $username }}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe>
                                 @else
                                 <script>alert('Vous devez être connecté pour jouer à un jeu !')</script>

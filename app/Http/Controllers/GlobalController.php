@@ -38,20 +38,20 @@ class GlobalController extends Controller
             ->inRandomOrder()
             ->get();
         $starred = Games::where('status', 1)
-            ->inRandomOrder()
-            ->get();
-        $starred = $starred[0];
+        ->inRandomOrder()
+        ->first();
         return view('index', compact('freegames', 'boostergames', 'starred'));
     }
 
     public function game(Request $request)
     {
         $userid = backpack_auth()->id();
+        $username = backpack_auth()->user()->name;
         $onegame = Games::where('id', $request->id)->get();
         $scores = Scores::where('game_id', $request->id)->get();
         $game = $onegame[0];
 
-        return view('game', compact('game', 'scores', 'userid'));
+        return view('game', compact('game', 'scores', 'userid', 'username'));
     }
 
     static function pages()
