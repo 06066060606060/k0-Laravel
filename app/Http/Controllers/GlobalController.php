@@ -46,11 +46,12 @@ class GlobalController extends Controller
 
     public function game(Request $request)
     {
+        $userid = backpack_auth()->id();
         $onegame = Games::where('id', $request->id)->get();
         $scores = Scores::where('game_id', $request->id)->get();
         $game = $onegame[0];
 
-        return view('game', compact('game', 'scores'));
+        return view('game', compact('game', 'scores', 'userid'));
     }
 
     static function pages()

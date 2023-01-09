@@ -3,9 +3,9 @@
     "file": "assets/anim.ac3fceeb.svg",
     "src": "resources/css/anim.svg"
   },
-  "resources/img/gift.png": {
+  "resources/css/gift.png": {
     "file": "assets/gift.d04b1766.png",
-    "src": "resources/img/gift.png"
+    "src": "resources/css/gift.png"
   },
   "resources/js/app.js": {
     "file": "assets/app.d47cb4ec.js",
@@ -17,8 +17,8 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/css/gift.png": {
+  "resources/img/gift.png": {
     "file": "assets/gift.d04b1766.png",
-    "src": "resources/css/gift.png"
+    "src": "resources/img/gift.png"
   }
 }
