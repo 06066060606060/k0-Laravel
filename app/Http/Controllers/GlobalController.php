@@ -47,11 +47,12 @@ class GlobalController extends Controller
     {
         $userid = backpack_auth()->id();
         $username = backpack_auth()->user()->name;
+        $rubis = backpack_auth()->user()->trophee2;
         $onegame = Games::where('id', $request->id)->get();
         $scores = Scores::where('game_id', $request->id)->get();
         $game = $onegame[0];
 
-        return view('game', compact('game', 'scores', 'userid', 'username'));
+        return view('game', compact('game', 'scores', 'userid', 'username', 'rubis'));
     }
 
     static function pages()
