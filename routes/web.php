@@ -5,6 +5,7 @@ use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Middleware\Cors;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +26,10 @@ Route::get('pack', 'pack');
 Route::get('winner', 'winner');
 Route::get('store', 'store');
 Route::get('help', 'help');
+});
+
+Route::middleware(['cors'])->group(function () {
+    Route::get('game', [GlobalController::class, 'game']);
 });
 
 Route::get('legal' , [GlobalController::class, 'getLegal']);
