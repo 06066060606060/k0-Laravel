@@ -47,6 +47,7 @@ class ScoresCrudController extends CrudController
         CRUD::column('data')->label('Bonus1');
         CRUD::column('data2')->label('Bonus2');
         CRUD::column('data3')->label('Bonus3');
+        CRUD::column('save')->label('Partie gratuite');
 
         /**
          * Columns can be defined using the fluent syntax or array syntax:
