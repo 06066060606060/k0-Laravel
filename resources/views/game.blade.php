@@ -39,7 +39,7 @@
                                                      {{ $score->user->name }}
                                                  </td>
                                                  <td class="px-4 py-2 text-sm font-normal text-gray-200 rate-container">
-                                                     {{ $score->score }}
+                                                     {{ $score->data }}
                                                  </td>
 
                                              </tr>
