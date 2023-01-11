@@ -28,6 +28,7 @@ class User extends Authenticatable
         'role',
         'abonnement',
         'global_score',
+        'parties',
         'trophee1',
         'trophee2',
         'trophee3',

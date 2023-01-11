@@ -45,6 +45,7 @@ class UserCrudController extends CrudController
         CRUD::column('name');
         CRUD::column('email');
         CRUD::column('global_score')->label('Parties gratuites');
+        CRUD::column('parties')->label('Parties payées');
         CRUD::column('trophee1')->label('Diamants');
         CRUD::column('trophee2')->label('Rubis');
         CRUD::column('trophee3')->label('Piéces');
@@ -117,6 +118,7 @@ class UserCrudController extends CrudController
         CRUD::field('name');
         CRUD::field('email');
         CRUD::field('global_score')->label('Partie gratuites')->type('number');
+        CRUD::field('parties')->label('Partie payées')->type('number');
         CRUD::field('trophee1')->label('Diamants')->type('number');
         CRUD::field('trophee2')->label('Rubis')->type('number');
         $this->crud->addField([   // select_from_array

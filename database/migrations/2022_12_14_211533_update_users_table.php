@@ -18,6 +18,7 @@ return new class extends Migration
             $table->integer('trophee2')->default(0)->nullable();
             $table->decimale('trophee3', 4, 2)->default(0)->nullable();
             $table->integer('global_score')->default(0)->nullable();
+            $table->integer('parties')->default(0)->nullable();
         });
     }
 
