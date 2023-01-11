@@ -39,7 +39,7 @@ class ScoresController extends Controller
         $Scores->save();
         //update user data
         $user = User::where('id', $request->user_id)->first();
-        $user->global_score = $user->global_score + $request->score;
+       
         $user->trophee1 = $user->trophee1 + $request->data;
         $user->trophee2 = $user->trophee2 + $request->data2;
         $user->trophee3 = $user->trophee3 + $request->data3;
