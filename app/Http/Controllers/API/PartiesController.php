@@ -32,7 +32,7 @@ class PartiesController extends Controller
         $user = User::where('id', $user_id)->first();
         //subtract request score from user global score but nover go below 0
         $user->parties = $user->parties + 10;
-        $user->trophee2 =  $user->trophee2 - $request->trophee2;
+        $user->trophee2 =  $user->trophee2 - 5;
         //add request score to user global score
        // $user->global_score = $user->global_score + $request->score;
         $user->save();
