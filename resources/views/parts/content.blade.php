@@ -80,7 +80,7 @@
             <div class="flex flex-wrap -m-4">
                 @forelse ($freegames as $freegame)
                     <div class="w-1/2 p-4 lg:w-1/3">
-                        <div class="relative flex overflow-hidden  max-h-[150px]">
+                        <div class="relative flex overflow-hidden  max-h-[150px]  md:max-h-full">
                         <a href="game?id={{ $freegame->id }}">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -253,7 +253,7 @@
             <div class="flex flex-wrap -m-4">
                 @forelse ($boostergames as $boostergame)
                     <div class="w-1/2 p-4 lg:w-1/3">
-                        <div class="relative flex overflow-hidden max-h-[150px]">
+                        <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
