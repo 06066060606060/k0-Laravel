@@ -193,8 +193,8 @@
                                 <div
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
-                                        <img alt="" class="inline-block object-center w-12 h-12"
-                                            src="./img/gem10.png">
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="storage/{{ $concour->cadeau->image }}">
                                         <div class="flex flex-col">
                                             <h2 class="pb-2 pl-4 font-semibold md:text-xl">
                                              {{ $concour->user->name }} 
