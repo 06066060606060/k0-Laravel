@@ -84,7 +84,7 @@
                          @if (backpack_auth()->check())
                         <a href="game?id={{ $freegame->id }}">
                             @else
-                            <a>
+                            <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -263,7 +263,7 @@
                         @if (backpack_auth()->check())
                         <a href="game?id={{ $boostergame->id }}">
                             @else
-                            <a>
+                            <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
