@@ -65,9 +65,9 @@
 </container>
 
 <!-- FREE GAMES -->
-<container id="game" class="block px-4 mx-auto md:pt-8 max-w-7xl">
+<container id="game" class="block px-2 mx-auto md:px-4 md:pt-8 max-w-7xl">
     <section class="text-gray-400 border-b border-gray-600 body-font">
-        <div class="container px-5 py-12 mx-auto">
+        <div class="container px-2 py-12 mx-auto md:px-5">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKdo est un site de jeux gratuits
@@ -79,8 +79,9 @@
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($freegames as $freegame)
-                    <div class="w-1/2 p-4 lg:w-1/3 ">
-                        <div class="relative flex overflow-hidden">
+                    <div class="w-1/2 p-4 lg:w-1/3">
+                        <div class="relative flex overflow-hidden  max-h-[150px]">
+                        <a href="game?id={{ $freegame->id }}">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
@@ -129,6 +130,7 @@
                                 @endif
                             </div>
                         </div>
+                         </a>
                     </div>
                 @empty
                     <div class="w-1/3 p-4 lg:w-1/3">
@@ -240,7 +242,7 @@
 <!-- GAMES BOOSTER -->
 <container id="game" class="block px-4 mx-auto max-w-7xl">
     <section class="text-gray-400 border-b border-gray-600 body-font">
-        <div class="container px-5 py-12 mx-auto">
+        <div class="container px-2 py-12 mx-auto md:px-4">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux boosters</h1>
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Whatever cardigan tote bag tumblr
@@ -251,7 +253,7 @@
             <div class="flex flex-wrap -m-4">
                 @forelse ($boostergames as $boostergame)
                     <div class="w-1/2 p-4 lg:w-1/3">
-                        <div class="relative flex overflow-hidden">
+                        <div class="relative flex overflow-hidden max-h-[150px]">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">

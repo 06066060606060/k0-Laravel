@@ -166,6 +166,7 @@
                  -button liste complete <br>
                  -winner <br>
                  -logo inscription,pass oublié <br>
+                 -carré<br>
                  
                 
                  
