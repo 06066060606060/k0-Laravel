@@ -20,8 +20,7 @@
                 </div>
                 <div
                     class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> Selection de la
-                        semaine:
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> Jeu du moment
                     </span>
                     <h1
                         class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
@@ -80,7 +79,7 @@
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($freegames as $freegame)
-                    <div class="p-4 lg:w-1/3 sm:w-1/2">
+                    <div class="w-1/2 p-4 lg:w-1/3 ">
                         <div class="relative flex overflow-hidden">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -132,7 +131,7 @@
                         </div>
                     </div>
                 @empty
-                    <div class="p-4 lg:w-1/3 sm:w-1/2">
+                    <div class="w-1/3 p-4 lg:w-1/3">
                         <div class="relative flex overflow-hidden">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -158,11 +157,18 @@
                     </div>
                 @endforelse
             </div>
-            <a href="allgames">
-                <h1
-                    class="pt-12 mb-4 text-2xl font-medium text-center text-blue-700 sm:text-3xl title-font hover:text-blue-600">
-                    Voir la liste complete</h1>
-            </a>
+             <a href="allgames"
+                                        class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
+                                        <span
+                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                        <span
+                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                        <span
+                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                        <span
+                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                        <span class="relative">Voir la liste compléte</span>
+                                    </a>
         </div>
     </section>
 </container>
@@ -317,7 +323,7 @@
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($boostergames as $boostergame)
-                    <div class="p-4 lg:w-1/3 sm:w-1/2">
+                    <div class="w-1/2 p-4 lg:w-1/3">
                         <div class="relative flex overflow-hidden">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -394,11 +400,18 @@
                 @endforelse
 
             </div>
-            <a href="allgames">
-                <h1
-                    class="pt-12 mb-4 text-2xl font-medium text-center text-blue-700 sm:text-3xl title-font hover:text-blue-600">
-                    Voir la liste complete</h1>
-            </a>
+            <a href="allgames"
+                                        class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
+                                        <span
+                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                        <span
+                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                        <span
+                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                        <span
+                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                        <span class="relative">Voir la liste compléte</span>
+                                    </a>
         </div>
     </section>
 </container>
