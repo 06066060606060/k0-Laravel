@@ -164,6 +164,8 @@
                  -jeu du moment <br>
                  -page d'acceuil mobile <br>
                  -button liste complete <br>
+                 -winner <br>
+                 -logo inscription,pass oublié <br>
                  
                 
                  

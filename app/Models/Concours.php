@@ -30,6 +30,7 @@ class Concours extends Model
         'date_fin',
         'cadeau_id',
         'game_id',
+        'user_id',
      ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -60,6 +61,11 @@ class Concours extends Model
     public function cadeau()
     {
         return $this->belongsTo(Cadeaux::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public function game()

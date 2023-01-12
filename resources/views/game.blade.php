@@ -65,9 +65,6 @@
 
   <script> 
   
-window.addEventListener("DOMContentLoaded", (event) => {
-        
-    });
 
 window.addEventListener("message", (event) => {
   if (event.origin !== "https://gikdo.com")

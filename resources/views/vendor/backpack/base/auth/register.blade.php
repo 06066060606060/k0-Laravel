@@ -4,10 +4,11 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-            <h3 class="mb-4 text-center text-white">{{ trans('backpack::base.register') }}</h3>
+             <a href="/"><img class="pb-4 mx-auto w-[240px]" src="/img/logo.png"></a>
             <div class="card">
                 <div class="card-body">
-                    <form class="col-md-12 p-t-10" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
+                   <h3 class="mb-2 text-center text-black">{{ trans('backpack::base.register') }}</h3>
+                    <form class="pt-8 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group">
@@ -54,7 +55,6 @@
 
                         <div class="form-group">
                             <label class="control-label" for="password_confirmation">{{ trans('backpack::base.confirm_password') }}</label>
-
                             <div>
                                 <input type="password" class="form-control{{ $errors->has('password_confirmation') ? ' is-invalid' : '' }}" name="password_confirmation" id="password_confirmation">
 

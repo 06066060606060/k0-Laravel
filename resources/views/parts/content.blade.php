@@ -1,5 +1,4 @@
 <div class="z-0 one"></div>
-<!-- HOME -->
 <container id="home">
     <section>
 
@@ -73,7 +72,8 @@
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKdo est un site de jeux gratuits
                     permettant de <a href="winner" class="text-blue-500"> gagner des cadeaux</a> !<br>
-                    <a href="/admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> pour jouer à plus
+                    <a href="/admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> pour jouer à
+                    plus
                     d'une dizaine de jeux gratuits multijoueurs originaux et amusants et remporter des cadeaux !.
                 </p>
             </div>
@@ -157,18 +157,18 @@
                     </div>
                 @endforelse
             </div>
-             <a href="allgames"
-                                        class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                        <span
-                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Voir la liste compléte</span>
-                                    </a>
+            <a href="allgames"
+                class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
+                <span
+                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                <span
+                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                <span
+                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                <span
+                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                <span class="relative">Voir la liste compléte</span>
+            </a>
         </div>
     </section>
 </container>
@@ -179,130 +179,57 @@
     <section>
         <div class="px-4 pt-16 mx-auto max-w-7xl">
             <h2 class="text-3xl font-bold tracking-tight text-center text-gray-100 ">
-                Derniers Bonus
+                Les gagnants
             </h2>
 
             <div class="pb-16 mt-4 border-b border-gray-600 md:mt-6 swiper-container">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <blockquote>
-                            <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
-                                <div class="flex">
-                                    <img alt="" class="inline-block object-center w-12 h-12"
-                                        src="./img/gem10.png">
+
+
+                    @forelse ($concours as $concour)
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
-                                        <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                            Jenny001<br>
-                                            <span href="#"
-                                                class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10 ✧</span>
-                                        </h2>
+                                        <img alt="" class="inline-block object-center w-12 h-12"
+                                            src="./img/gem10.png">
+                                        <div class="flex flex-col">
+                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                             {{ $concour->user->name }} 
+                                            </h2>
+                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $concour->cadeau->name }}</span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </blockquote>
-                    </div>
+                            </blockquote>
+                        </div>
+                    @empty
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
-                    <div class="swiper-slide">
-                        <blockquote>
-                            <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-
-                                <div class="flex">
-                                    <img alt="" class="inline-block object-center w-12 h-12"
-                                        src="./img/gem5b.png">
                                     <div class="flex">
-                                        <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                            JohnDohn<br>
-                                            <span href="#"
-                                                class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 5 ✧</span>
-                                        </h2>
+                                        <img alt="" class="inline-block object-center w-12 h-12"
+                                            src="./img/gem10.png">
+                                        <div class="flex">
+                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                                Dummy<br>
+                                                <span href="#"
+                                                    class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10
+                                                    ✧</span>
+                                            </h2>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </blockquote>
-                    </div>
+                            </blockquote>
+                        </div>
+                    @endforelse
 
-                    <div class="swiper-slide">
-                        <blockquote>
-                            <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
 
-                                <div class="flex">
-                                    <img alt="" class="inline-block object-center w-12 h-12"
-                                        src="./img/gem5.png">
-                                    <div class="flex">
-                                        <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                            FrankD<br>
-                                            <span href="#"
-                                                class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 5 ✧</span>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </blockquote>
-                    </div>
 
-                    <div class="swiper-slide">
-                        <blockquote>
-                            <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-
-                                <div class="flex">
-                                    <img alt="" class="inline-block object-center w-12 h-12"
-                                        src="./img/gem6.png">
-                                    <div class="flex">
-                                        <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                            DanB38<br>
-                                            <span href="#"
-                                                class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 5 ✧</span>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </blockquote>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <blockquote>
-                            <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-
-                                <div class="flex">
-                                    <img alt="" class="inline-block object-center w-12 h-12"
-                                        src="./img/coin10.png">
-                                    <div class="flex">
-                                        <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                            User3366<br>
-                                            <span href="#"
-                                                class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 5 ✧</span>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </blockquote>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <blockquote>
-                            <div
-                                class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-
-                                <div class="flex">
-                                    <img alt="" class="inline-block object-center w-12 h-12"
-                                        src="./img/food.png">
-                                    <div class="flex">
-                                        <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                            Yann007<br>
-                                            <span href="#"
-                                                class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 5 ✧</span>
-                                        </h2>
-                                    </div>
-                                </div>
-                            </div>
-                        </blockquote>
-                    </div>
 
                 </div>
             </div>
@@ -401,17 +328,17 @@
 
             </div>
             <a href="allgames"
-                                        class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                        <span
-                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Voir la liste compléte</span>
-                                    </a>
+                class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
+                <span
+                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                <span
+                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                <span
+                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                <span
+                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                <span class="relative">Voir la liste compléte</span>
+            </a>
         </div>
     </section>
 </container>
