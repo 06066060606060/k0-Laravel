@@ -167,6 +167,8 @@
                  -winner <br>
                  -logo inscription,pass oublié <br>
                  -carré<br>
+                 -autoscroll<br>
+                 -login<br>
                  
                 
                  

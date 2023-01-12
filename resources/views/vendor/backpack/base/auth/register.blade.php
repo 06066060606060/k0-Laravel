@@ -74,12 +74,13 @@
                             </div>
                         </div>
                     </form>
-                </div>
-            </div>
-            @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
+                      @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
                 <div class="text-center"><a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
             @endif
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a></div>
+                </div>
+            </div>
+          
         </div>
     </div>
 @endsection

@@ -81,7 +81,11 @@
                 @forelse ($freegames as $freegame)
                     <div class="w-1/2 p-4 lg:w-1/3">
                         <div class="relative flex overflow-hidden  max-h-[150px]  md:max-h-full">
+                         @if (backpack_auth()->check())
                         <a href="game?id={{ $freegame->id }}">
+                            @else
+                            <a>
+                            @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
@@ -206,6 +210,7 @@
                                     </div>
                                 </div>
                             </blockquote>
+                         
                         </div>
                     @empty
                         <div class="swiper-slide">
@@ -253,7 +258,13 @@
             <div class="flex flex-wrap -m-4">
                 @forelse ($boostergames as $boostergame)
                     <div class="w-1/2 p-4 lg:w-1/3">
+                     
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
+                        @if (backpack_auth()->check())
+                        <a href="game?id={{ $boostergame->id }}">
+                            @else
+                            <a>
+                            @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
@@ -300,6 +311,7 @@
                                 @endif
                             </div>
                         </div>
+                        </a>
                     </div>
                 @empty
                     <div class="p-4 lg:w-1/3 sm:w-1/2">
