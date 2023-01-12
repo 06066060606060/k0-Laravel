@@ -95,11 +95,11 @@
 
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
-                                <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">
+                                <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
                                     {{ $freegame->name }}</h2>
-                                <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">{{ $freegame->category }}
+                                <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">{{ $freegame->category }}
                                 </h1>
-                                <p class="text-sm leading-relaxed text-gray-800">{{ $freegame->description }}</p>
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $freegame->description }}</p>
 
                                 @if (backpack_auth()->check())
                                     <a href="game?id={{ $freegame->id }}"
@@ -266,11 +266,11 @@
                                 src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
-                                <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">
+                                <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
                                     {{ $boostergame->name }}</h2>
-                                <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">
+                                <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">
                                     {{ $boostergame->category }}</h1>
-                                <p class="text-sm leading-relaxed text-gray-800">{{ $boostergame->description }}</p>
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $boostergame->description }}</p>
                                 @if (backpack_auth()->check())
                                     <a href="game?id={{ $boostergame->id }}"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
