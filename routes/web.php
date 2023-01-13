@@ -60,6 +60,8 @@ Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('sav
 
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
 
+Route::post('contactmail' , [MailController::class, 'sendMessage']);
+
 // La redirection vers le provider
 Route::get("redirect/{provider}",[SocialiteController::class, 'redirect'])->name('socialite.redirect');
 
