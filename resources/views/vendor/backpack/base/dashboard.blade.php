@@ -7,11 +7,11 @@
 @section('content')
     <section class="text-gray-600 body-font">
         <div id="main-content" class="relative w-full h-full mt-2 overflow-y-auto bg-[#111827] rounded-lg">
-            <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
+            <div class="flex flex-col-reverse gap-4 px-4 pt-6 pb-6 xl:flex-row">
                 <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
                     <div class="flex items-center justify-between mb-2">
                         <div>
-                            <h3 class="mb-1 text-xl font-bold text-gray-900">Jeux en vedettes</h3>
+                            <h3 class="mb-1 text-xl font-bold text-gray-900">Jeux du moment</h3>
                         </div>
                         <div class="flex-shrink-0">
                             <a href="user/" class="p-2 text-sm font-medium rounded-lg text-cyan-600 hover:bg-gray-100">Tout
