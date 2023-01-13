@@ -176,6 +176,7 @@
                  -en ligne page acceuil<br>
                  -login google-fb<br>
                  -parametre avancé google-fb<br>
+                 -profil score <br>
                  
                 
                  

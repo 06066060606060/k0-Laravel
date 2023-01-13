@@ -31,7 +31,7 @@
 
                     <div class="flex flex-col md:items-center">
                         <p class="py-4 font-medium text-white border-b border-gray-500 ">
-                            Score total : {{ backpack_auth()->user()->global_score }}
+                            Score Concours : {{ backpack_auth()->user()->global_score }} Pts
                         </p>
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
                         <div class="flex py-2">
@@ -205,7 +205,7 @@
                                         Score
                                     </th>
                                     <th class=" px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
-                                        Bonus
+                                        Date
                                     </th>
                                 </tr>
                             </thead>
@@ -219,15 +219,7 @@
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
                                         <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
-                                                <p class="ml-2 ">+ {{ $score->data }}</p> <img
-                                                    src="{{ asset('img/diamond5.png') }}" alt="coin"
-                                                    class="w-4 h-4 ml-2">
-                                                <p class="ml-2 ">+ {{ $score->data2 }}</p> <img
-                                                    src="{{ asset('img/coin10.png') }}" alt="coin"
-                                                    class="w-4 h-4 ml-2">
-                                                <p class="ml-2 ">+ {{ $score->data3 }}</p> <img
-                                                    src="{{ asset('img/gem5.png') }}" alt="coin"
-                                                    class="w-4 h-4 ml-2">
+                                                <p class="ml-2 ">{{ $score->created_at }}</p> 
                                             </strong>
 
                                         </td>
