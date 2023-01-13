@@ -5,6 +5,7 @@ use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\SocialiteController;
 use App\Http\Middleware\Cors;
 /*
 |--------------------------------------------------------------------------
@@ -57,3 +58,9 @@ Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->n
 Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
 
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
+
+// La redirection vers le provider
+Route::get("redirect/{provider}",[SocialiteController::class, 'redirect'])->name('socialite.redirect');
+
+// Le callback du provider
+Route::get("callback/{provider}",[SocialiteController::class, 'callback'])->name('socialite.callback');

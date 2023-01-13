@@ -17,7 +17,7 @@ class GamesCrudController extends CrudController
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
-    // use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
+     use \Backpack\CRUD\app\Http\Controllers\Operations\ShowOperation;
 
     /**
      * Configure the CrudPanel object. Apply settings to all operations.
@@ -29,6 +29,7 @@ class GamesCrudController extends CrudController
         CRUD::setModel(\App\Models\Games::class);
         CRUD::setRoute(config('backpack.base.route_prefix') . '/games');
         CRUD::setEntityNameStrings('jeux', 'jeux');
+  
     }
 
     function getFieldsData()
@@ -51,7 +52,6 @@ class GamesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        
         $this->crud->setValidation([
             'name' => 'required|min:2',
             ]);
