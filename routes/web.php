@@ -26,6 +26,8 @@ Route::get('pack', 'pack');
 Route::get('winner', 'winner');
 Route::get('store', 'store');
 Route::get('help', 'help');
+Route::get('contact', 'contact');
+Route::post('contactus', 'contactus');
 });
 
 Route::middleware(['cors'])->group(function () {

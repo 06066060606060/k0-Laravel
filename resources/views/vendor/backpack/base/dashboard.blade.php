@@ -169,6 +169,7 @@
                  -lien jouer<br>
                  -mobile zoom<br>
                  -menu deco<br>
+                 -page contact<br>
                  
                 
                  
