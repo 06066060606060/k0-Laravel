@@ -4,11 +4,11 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-             <a href="/"><img class="pb-4 mx-auto w-[240px]" src="/img/logo.png"></a>
+             <a href="/"><img class="pb-2 mx-auto w-[240px]" src="/img/logo.png"></a>
             <div class="card">
                 <div class="card-body">
-                   <h3 class="mb-2 text-center text-black">{{ trans('backpack::base.register') }}</h3>
-                    <form class="pt-8 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
+                   <h3 class="text-center text-black">{{ trans('backpack::base.register') }}</h3>
+                    <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
 
                         <div class="form-group">

@@ -41,8 +41,8 @@
                                     Maintenant</span>
                             </a>
                         @else
-                            <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')"
-                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                            <a href="/admin/register"
+                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                 <span
                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                 <span
@@ -72,7 +72,7 @@
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKdo est un site de jeux gratuits
                     permettant de <a href="winner" class="text-blue-500"> gagner des cadeaux</a> !<br>
-                    <a href="/admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> pour jouer à
+                    <a href="/admin/register" class="text-blue-500 prevent prevent">Inscrivez-vous gratuitement</a> pour jouer à
                     plus
                     d'une dizaine de jeux gratuits multijoueurs originaux et amusants et remporter des cadeaux !.
                 </p>
@@ -84,7 +84,7 @@
                          @if (backpack_auth()->check())
                         <a href="game?id={{ $freegame->id }}">
                             @else
-                            <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')">
+                            <a href="/admin/register" class="prevent">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -119,8 +119,8 @@
                                         <span class="relative">Jouer</span>
                                     </a>
                                 @else
-                                    <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')"
-                                        class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                    <a href="/admin/register"
+                                        class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                         <span
@@ -263,7 +263,7 @@
                         @if (backpack_auth()->check())
                         <a href="game?id={{ $boostergame->id }}">
                             @else
-                            <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')">
+                            <a href="/admin/register" class="prevent">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -296,8 +296,8 @@
                                         <span class="relative">Jouer</span>
                                     </a>
                                 @else
-                                    <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')"
-                                        class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                    <a href="/admin/register"
+                                        class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                         <span

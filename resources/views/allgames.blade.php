@@ -41,8 +41,8 @@
                                             <span class="relative">Jouer</span>
                                         </a>
                                     @else
-                                        <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')"
-                                            class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group">
+                                        <a href="/admin/register"
+                                            class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group prevent">
                                             <span
                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
                                             <span
@@ -112,8 +112,8 @@
                                                 <span class="relative">Jouer</span>
                                             </a>
                                         @else
-                                            <a onclick="alert('Vous devez être connecté pour jouer à un jeu !')"
-                                                class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                            <a href="/admin/register"
+                                                class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group prevent">
                                                 <span
                                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-orange-700 group-hover:skew-x-12"></span>
                                                 <span

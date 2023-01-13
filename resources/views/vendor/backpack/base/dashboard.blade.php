@@ -160,15 +160,15 @@
         </div>
         @if (backpack_user()->role == 'admin')
             <p class="w-1/2 px-4 py-2 mx-8 mt-4 text-xs text-gray-200 bg-gray-900 rounded -pl-2">
-                Derniéres mise à jour: '1.5.0'<br>
-                 -jeu du moment <br>
-                 -page d'acceuil mobile <br>
-                 -button liste complete <br>
+                Derniéres mise à jour: '1.6.0'<br>
                  -winner <br>
                  -logo inscription,pass oublié <br>
                  -carré<br>
                  -autoscroll<br>
-                 -login<br>
+                 -login/register<br>
+                 -lien jouer<br>
+                 -mobile zoom<br>
+                 -menu deco<br>
                  
                 
                  

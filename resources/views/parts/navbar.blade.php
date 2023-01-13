@@ -29,19 +29,29 @@
         <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
             class="absolute inset-x-0 z-50 w-screen px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
             <div class="flex flex-col pb-4 space-y-4 align-baseline lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="/" @click="isOpen = false"><i
+                <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="/" @click="isOpen = false"><i
                         class="fa-solid fa-house"></i>&nbsp; Accueil</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="allgames" @click="isOpen = false"><i
+                        @if (backpack_auth()->check())
+                        @else
+                <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm prevent" href="/admin/register" @click="isOpen = false"><i
+                        class="fa-solid fa-user"></i>&nbsp; Inscription</a>
+                        @endif
+                <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="allgames" @click="isOpen = false"><i
                         class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="winner" @click="isOpen = false"><i
+                <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="winner" @click="isOpen = false"><i
                         class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
                           @if (backpack_auth()->check())
-                 <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="store" @click="isOpen = false"><i
+                 <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="store" @click="isOpen = false"><i
                         class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>
-                          <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="pack" @click="isOpen = false"  data-barba-prevent="self"><i
+                          <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="pack" @click="isOpen = false"  data-barba-prevent="self"><i
                         class="fa-regular fa-gem"></i>&nbsp; Pack</a>
-                <a class="font-bold text-gray-400 lg:mx-6 hover:text-blue-600" href="profil" @click="isOpen = false"><i
+                <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="profil" @click="isOpen = false"><i
                         class="fa-solid fa-user"></i>&nbsp; Profil</a>
+                        @else
+                              <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="winner" @click="isOpen = false"><i
+                        class="fa-solid fa-message"></i>&nbsp; Contact</a>
+                          <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="winner" @click="isOpen = false"><i
+                        class="fa-solid fa-circle-info"></i>&nbsp; Aide</a>
                         @endif
                               
             </div>
@@ -80,7 +90,7 @@
                                             class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" target="_blank">
                                             Dashboard </a>
                                     @endif
-                                    <a href="/admin/logout"
+                                    <a href="logout"
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" target="/">
                                         Déconnection </a>
                                 </div>
@@ -91,7 +101,7 @@
                 </div>
             @else
                                 <a href="admin/login" 
-                                    class="relative flex justify-center w-24 px-5 py-1 my-2 font-medium text-white shadow-lg prevent lg:ml-8 group">
+                                    class="relative flex justify-center w-24 px-5 py-1 my-2 font-medium text-white shadow-lg prevent lg:ml-8 group mt-2">
                                     <span
                                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
                                     <span

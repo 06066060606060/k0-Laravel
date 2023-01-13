@@ -5,7 +5,7 @@
         <div class="col-12 col-md-9 col-lg-6">
             <h3 class="mb-4 text-center">{{ trans('backpack::base.reset_password') }}</h3>
                 <a href="/">
-                <img class="w-auto pb-4 mx-auto h-1/6" src="/img/logo.png"></a>
+                <img class="w-auto pb-2 mx-auto h-1/8" src="/img/logo.png"></a>
             <div class="nav-steps-wrapper">
                 <ul class="nav nav-tabs">
                       <li class="nav-item"><a class="nav-link disabled text-muted"><strong>{{ trans('backpack::base.step') }} 1.</strong> {{ trans('backpack::base.confirm_email') }}</a></li>
@@ -20,7 +20,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <form class="col-md-12 p-t-10" role="form" method="POST" action="{{ route('backpack.auth.password.reset') }}">
+                    <form class="col-md-12 p-t-5" role="form" method="POST" action="{{ route('backpack.auth.password.reset') }}">
                         {!! csrf_field() !!}
 
                         <input type="hidden" name="token" value="{{ $token }}">

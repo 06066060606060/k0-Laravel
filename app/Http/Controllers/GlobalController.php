@@ -189,7 +189,7 @@ class GlobalController extends Controller
                      ($message = 'Nouvelle commande'),
                      ($messageLong = 'Nouvelle commande de cadeau par' . $usermail),
                      // rand(1, 99999)), // optional
-                     ($href = '/admin/paiements'), // optional, e.g. backpack_url('/example')
+                     ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
                      ($hrefText = 'Voir') // optional
                  )
              );
@@ -462,6 +462,14 @@ class GlobalController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         return redirect('/');
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+        //$request->session()->invalidate();
+        return view('/');
     }
 
     static function getUsers()
