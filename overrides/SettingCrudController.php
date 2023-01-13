@@ -25,10 +25,6 @@ class SettingCrudController extends CrudController
         // columns to show in the table view
         CRUD::setColumns([
             [
-                'name'  => 'key',
-                'label' => 'key',
-            ],
-            [
                 'name'  => 'name',
                 'label' => trans('backpack::settings.name'),
             ],
