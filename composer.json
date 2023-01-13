@@ -33,12 +33,14 @@
     "autoload": {
         "exclude-from-classmap": [
             "Backpack\\CRUD\\app\\Library\\CrudPanel\\Traits\\Read",
-            "pestopancake\\laravel-backpack-database-notifications\\src\\Http\\Controllers\\NotificationCrudController"
+            "pestopancake\\laravel-backpack-database-notifications\\src\\Http\\Controllers\\NotificationCrudController",
+            "Backpack\\settings\\src\\app\\Http\\Controllers\\SettingCrudController"
         ],
         "files": [ 
             "overrides/Read.php",
             "overrides/BackpackProRequiredException.php",
-            "overrides/NotificationCrudController.php"
+            "overrides/NotificationCrudController.php",
+            "overrides/SettingCrudController.php"
         ], 
         "psr-4": {
             "App\\": "app/",
