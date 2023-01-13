@@ -48,7 +48,7 @@ class SettingCrudController extends CrudController
         CRUD::addField([   // CustomHTML
             'name'  => 'separator',
             'type'  => 'custom_html',
-            'value' => '<h3 class="text-gray-800 text-base">ATTENTION LA MODIFICATION DE CE PARAMETRE REDEMARRE LE SERVEUR</h3>',
+            'value' => '<h3 class="text-gray-800 text-base">Attention la modification de ce paramétre redemarre le serveur patienter 1mn</h3>',
         ],);
         CRUD::addField([
             'name'       => 'key',
