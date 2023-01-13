@@ -117,10 +117,11 @@ class GamesCrudController extends CrudController
         ]);
         CRUD::setValidation(GamesRequest::class);
         CRUD::field('name')->label('Nom');
+
         CRUD::addField([ // Photo
             'name'      => 'image',
             'key' => 'image_up',
-            'label'     => 'Miniature',
+            'label'     => 'Miniature: (H 200px minimum)',
             'type'      => 'upload_multiple',
             'prefix' => 'storage/',
             'upload'    => true,
