@@ -173,7 +173,7 @@
                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                 <span
                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                <span class="relative">Voir la liste compléte</span>
+                <span class="relative">Voir la liste complète</span>
             </a>
         </div>
     </section>
@@ -250,10 +250,9 @@
         <div class="container px-2 py-12 mx-auto md:px-4">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux boosters</h1>
-                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Whatever cardigan tote bag tumblr
-                    hexagon
-                    brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't
-                    heard of them man bun deep jianbing selfies heirloom.</p>
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Gagnez d'avantage sur nos jeux Booster et 
+                    profitez de meilleurs gains (Diamants, Rubis, Coins, Carte cadeaux Amazon).
+                </p>
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($boostergames as $boostergame)
@@ -351,7 +350,7 @@
                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                 <span
                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                <span class="relative">Voir la liste compléte</span>
+                <span class="relative">Voir la liste complète</span>
             </a>
         </div>
     </section>

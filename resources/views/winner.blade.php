@@ -20,7 +20,7 @@
                 </div>
                 <div
                     class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                    <span class="mb-1 font-bold tracking-widest text-blue-600 uppercase text-md"> Prochain concours:</span>
+                    <span class="mb-1 font-bold tracking-widest text-blue-600 uppercase text-md"> Concours:</span>
                     <h1 class="mb-2 text-gray-100">
                       Du  {{ $startdate }}  au  {{ $enddate }} </h1>
                     <h1
@@ -39,7 +39,7 @@
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">Participer</span>
+                                <span class="relative">Jouer</span>
                             </a>
                     </div>
 
@@ -54,7 +54,7 @@
          <container class="block min-h-screen px-2 mx-auto text-white max-w-7xl">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
-                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tableau des scores:</h1>
+                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Classement Concours:</h1>
                      <section class="text-gray-300 body-font">
                          <div class="container py-8 mx-auto">
                                  <div
@@ -71,7 +71,7 @@
                                                  <th
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                      <div class="flex items-center gap-2">
-                                                         Jeux
+                                                         Position
                                                      </div>
                                                  </th>
                                                  <th
@@ -87,14 +87,8 @@
                                                      </div>
                                                  </th>
                                                  <th
-                                                     class="hidden px-4 py-2 font-bold text-left text-white md:block whitespace-nowrap">
-                                                     <div class="flex items-center gap-2">
-                                                         Date
-                                                     </div>
-                                                 </th>
-                                                 <th
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
-                                                     Bonus
+                                                     Gain
                                                  </th>
                                              </tr>
                                          </thead>
@@ -118,9 +112,6 @@
                                                  </td>
                                                  <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
                                                     {{ $score->score }}
-                                                 </td>
-                                                 <td class="hidden px-4 py-2 text-left text-gray-200 md:block whitespace-nowrap">
-                                                   <p class="pb-6"> {{ $score->created_at->format('d/m/Y') }}</p>
                                                  </td>
                                                  <td class="whitespace-nowrap px-4 py-2 w-[250px]">
                                                      <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold  bg-red-600 text-white max-w-[180px]">

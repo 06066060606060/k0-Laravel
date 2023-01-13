@@ -3,6 +3,7 @@
 {{ $mailData['email']}}</i>
 <p>
 {{ $mailData['message']}}
-nom:
+<br><br>
+Nom du contact:
 {{ $mailData['name']}}
 </div>
