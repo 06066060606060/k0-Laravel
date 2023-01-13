@@ -15,7 +15,7 @@
              </div>
          @endif
          <div class="p-5 mx-auto text-gray-100 sm:p-10 md:px-16">
-             <div class="flex flex-col max-w-5xl mx-auto overflow-hidden rounded">
+             <div class="flex flex-col max-w-5xl mx-auto overflow-hidden rounded mb-8 pb-8">
                  <section class="text-gray-600 body-font relative">
                      <div class="container px-5 py-8 mx-auto">
                          <div class="flex flex-col text-center w-full mb-4">
@@ -59,7 +59,7 @@
                                          <span class="relative">Envoyer le message</span>
                                      </button>
                                  </div>
-                                 <div class="p-2 w-full pt-8 border-t border-gray-200 text-center">
+                                 <div class="p-2 w-full mt-8 pt-8 border-t border-gray-200 text-center">
 
                                  </div>
                              </form>
