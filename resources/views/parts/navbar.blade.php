@@ -134,25 +134,10 @@
                             <img src="img/coin10.png" class="w-8 h-6">
                             <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
-                          <div class="flex px-2">
-
-                            <p class="pt-1 text-white"><i class="fa-solid fa-user pr-1"></i> <span class="text-green-600 font-semibold">10</span></p>
-                        </div>
                     </div>
                 </div>
             </div>
             @else
-             <div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
-                <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
-                    <p class="pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0">
-                        Bienvenue </p>
-                    <div class="flex items-center pr-4">
-                        <div class="flex px-2">
-
-                            <p class="pt-1 text-white"><i class="fa-solid fa-user pr-1"></i> <span class="text-green-600 font-semibold">10</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         @endif
 
