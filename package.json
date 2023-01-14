@@ -4,6 +4,7 @@
         "dev": "vite",
         "build": "vite build --watch",
         "serve": "php artisan serve",
+         "host": "npm run dev -- --host",
         "migrate-fresh-seed": "php artisan migrate:fresh --seed",
         "migrate-standard": "php artisan migrate"
     },

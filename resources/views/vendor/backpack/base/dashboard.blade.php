@@ -7,18 +7,59 @@
 @section('content')
     <section class="text-gray-600 body-font">
         <div id="main-content" class="relative w-full h-full mt-2 overflow-y-auto bg-[#111827] rounded-lg">
-            <div class="flex px-4 pt-6">
-                <div class=" bg-white rounded-lg shadow p-4">Utilisateurs connectés: 10</div>
-            </div>
-            <div class="flex px-4 pt-6">
-                <div class=" bg-white rounded-lg shadow p-4">Diamants: 100 000</div>
-            </div>
-            <div class="flex px-4 pt-6">
-                <div class=" bg-white rounded-lg shadow p-4">Rubis: 2 500</div>
-            </div>
-            <div class="flex px-4 pt-6">
-                <div class=" bg-white rounded-lg shadow p-4">Coins: 10.00€</div>
-            </div>
+            
+            <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
+                <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
+                    <div class="flex items-center justify-between mb-2">
+                        <div>
+                            <h3 class="mb-1 text-xl font-bold text-gray-900">Circulation</h3>
+                        </div>
+                    </div>
+                    <div class="flex flex-col mt-2 h-96">
+                        <div class="overflow-auto overflow-x-hidden rounded-lg">
+                            <div class="inline-block min-w-full align-middle">
+                                <div class="overflow-hidden shadow sm:rounded-lg">
+                                    <table class="min-w-full divide-y divide-gray-200">
+                                        <thead class="bg-gray-50">
+                                            <tr>
+                                                <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    Connectés:
+                                                </th>
+                                                <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    Diamants:
+                                                </th>
+                                                    <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    Rubis:
+                                                </th>
+                                                 <th scope="col" class="hidden px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase md:block">
+                                                    Coins:
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="bg-white">
+                                                <tr>
+                                                    <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
+                                                        10
+                                                    </td>
+                                                    <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
+                                                        250 000
+                                                    </td>
+                                                    <td class="p-4 text-sm font-normal text-gray-900 time-container ">
+                                                        300
+                                                    </td>
+                                                    <td class="hidden p-4 text-sm font-normal whitespace-nowrap rate-container md:block">
+                                                        0.00€
+                                                    </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            
             <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
                 <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
                     <div class="flex items-center justify-between mb-2">
