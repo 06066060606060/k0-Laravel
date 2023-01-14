@@ -506,4 +506,15 @@ class GlobalController extends Controller
     {
         return view('confidentialite');
     }
+
+    static function getSommeRubis()
+    {
+       $sommerubis = User::All()->sum('trophee2');
+        return $sommerubis;
+    }
+
+
+
+
+
 }

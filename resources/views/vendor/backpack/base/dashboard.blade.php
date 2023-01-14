@@ -3,6 +3,7 @@
 @php  $starred = GlobalController::starred();@endphp
 @php  $sessions = GlobalController::getSessions();@endphp
 @php  $users = GlobalController::getUsers();@endphp
+@php  $sommerubis = GlobalController::getSommeRubis();@endphp   //variable qui appellera la fonction getSommeRubis() du controller GlobalController
 @extends(backpack_view('blank'))
 @section('content')
     <section class="text-gray-600 body-font">
@@ -45,7 +46,7 @@
                                                         250 000
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-gray-900 time-container ">
-                                                        300
+                                                        {{ $sommerubis }}
                                                     </td>
                                                     <td class="hidden p-4 text-sm font-normal whitespace-nowrap rate-container md:block">
                                                         0.00€
