@@ -1,0 +1,31 @@
+name: remote ssh command
+on: 
+ push:
+    branches: [ main ]
+jobs:
+  job_one:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: 65002
+        script: |
+          cd www/gokdo/
+          git pull
+  job_two:
+      name: Success
+      runs-on: ubuntu-latest
+      steps: 
+       - uses: sarisia/actions-status-discord@v1
+         if: always()
+         with:
+          webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title: "deployement ok"
+          description: "SSH deploy"
+          color: 0x0000ff
+          username: GitHub Actions
