@@ -70,7 +70,7 @@
         <div class="container px-2 py-12 mx-auto md:px-5">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
-                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKdo est un site de jeux gratuits
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO est un site de jeux gratuits
                     permettant de <a href="winner" class="text-blue-500"> gagner des cadeaux</a> !<br>
                     <a href="/admin/register" class="text-blue-500 prevent prevent">Inscrivez-vous gratuitement</a> pour jouer à
                     plus
@@ -173,7 +173,7 @@
                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                 <span
                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                <span class="relative">Voir la liste compléte</span>
+                <span class="relative">Voir la liste complète</span>
             </a>
         </div>
     </section>
@@ -250,10 +250,9 @@
         <div class="container px-2 py-12 mx-auto md:px-4">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux boosters</h1>
-                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Whatever cardigan tote bag tumblr
-                    hexagon
-                    brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't
-                    heard of them man bun deep jianbing selfies heirloom.</p>
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Gagnez d'avantage sur nos jeux Booster et 
+                    profitez de meilleurs gains (Diamants, Rubis, Coins, Carte cadeaux Amazon).
+                </p>
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($boostergames as $boostergame)
@@ -351,7 +350,7 @@
                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                 <span
                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                <span class="relative">Voir la liste compléte</span>
+                <span class="relative">Voir la liste complète</span>
             </a>
         </div>
     </section>
@@ -362,7 +361,7 @@
 <container id="how" class="block py-16 mx-8 border-b border-gray-600 max-w-7xl md:mx-auto">
     <section class="text-gray-400 body-font">
         <div class="flex flex-col items-center">
-            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagner des cadeaux</h1>
+            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagner dess cadeaux</h1>
         </div>
         <div class="container flex flex-wrap px-5 py-8 mx-auto">
             <div class="relative flex pt-10 pb-20 mx-auto sm:items-center md:w-2/3">
@@ -379,8 +378,7 @@
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Inscrivez-vous gratuitement</h2>
-                        <p class="leading-relaxed text-gray-300">VHS cornhole pop-up, try-hard 8-bit iceland helvetica.
-                            Kinfolk</p>
+                        <p class="leading-relaxed text-gray-300">C'est rapide, gratuit et on vous offre 150 diamants pour bien démarrer.</p>
                     </div>
                 </div>
             </div>
@@ -399,8 +397,8 @@
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Jouez vos parties gratuites
                             quotidiennes</h2>
-                        <p class="leading-relaxed text-gray-300">VHS cornhole pop-up, try-hard 8-bit iceland helvetica.
-                            Kinfolk</p>
+                        <p class="leading-relaxed text-gray-300">Vous disposez chaque jour de 30 parties gratuites à 
+                            jouer sur les jeux de votre choix.</p>
                     </div>
                 </div>
             </div>
@@ -417,10 +415,11 @@
                         <i class="fa-regular fa-gem fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gagnez des Diamants, piéces, gemmes
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gagnez des Diamants, Rubis, Coins
                         </h2>
-                        <p class="leading-relaxed text-gray-300">VHS cornhole pop-up, try-hard 8-bit iceland helvetica.
-                            Kinfolk</p>
+                        <p class="leading-relaxed text-gray-300">Vous avez le choix du roi sur ce site de jeux en ligne, 
+                            les diamants sont échangeables contre des cadeaux, les rubis servent à jouer des parties supplémentaires et 
+                            les Coins représentent vos euros virtuels remportés sur Gokdo.</p>
                     </div>
                 </div>
             </div>
@@ -438,8 +437,8 @@
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Convertisser les en cadeaux</h2>
-                        <p class="leading-relaxed text-gray-300">VHS cornhole pop-up, try-hard 8-bit iceland helvetica.
-                            Kinfolk</p>
+                        <p class="leading-relaxed text-gray-300">Un large choix de cadeaux sont disponibles, avec des 
+                            cartes cadeaux Amazon et vous pouvez faire des retraits Paypal.</p>
                     </div>
                 </div>
             </div>

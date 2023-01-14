@@ -7,7 +7,14 @@
 
         <span class="ml-3 text-xl text-gray-300">GoKdo</span>
       </a>
-      <p class="mt-2 text-sm text-gray-400">Gagner des cadeaux tous les jours.</p>
+      <p class="mt-2 text-sm text-gray-400">Gagner des cadeaux tous les jours. <br>
+    GoKDO est un site de jeux gratuits avec une chance de remporter des cadeaux. 
+    Jouez vos parties gratuites quotidiennes, et gagnez des Diamants que vous pourrez 
+    convertir en cadeaux. Sur ce site de jeux en ligne, vous pourrez jouer à des dizaines
+     de jeux html5, jeux d'adresse, jeux de réflexion, jeux de chance et même des jeux multijoueurs.
+      Rejoignez les dizaines de milliers de joueurs 
+       déjà inscrits !
+    </p>
     </div>
     <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
       <div class="w-full px-4 lg:w-1/4 md:w-1/2">
@@ -35,7 +42,7 @@
             <a href="help" class="text-gray-400 hover:text-gray-500">Aide</a>
           </li>
           <li>
-            <a href="mailto:{{ Setting::get('contact_email') }}" class="text-gray-400 hover:text-gray-500">{{ Setting::get('contact_email') }}</a>
+            <a href="contact" class="text-gray-400 hover:text-gray-500">Nous Contacter</a>
           </li>
 
         </div>
@@ -44,7 +51,7 @@
   </div>
   <div class="bg-gray-700">
     <div class="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-      <p class="text-sm text-center text-gray-400 sm:text-left">© 2022 GoKdo
+      <p class="text-sm text-center text-gray-400 sm:text-left">© 2023 GoKDO - Tous droits réservés
       </p>
       <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
         <a class="text-gray-400">

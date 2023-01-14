@@ -47,11 +47,6 @@
                         class="fa-regular fa-gem"></i>&nbsp; Pack</a>
                 <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm lg:pr-4" href="profil" @click="isOpen = false"><i
                         class="fa-solid fa-user"></i>&nbsp; Profil</a>
-                        @else
-                              <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="contact" @click="isOpen = false"><i
-                        class="fa-solid fa-message"></i>&nbsp; Contact</a>
-                          <a class="font-bold text-gray-400 lg:mx-4 hover:text-blue-600 text-sm" href="help" @click="isOpen = false"><i
-                        class="fa-solid fa-circle-info"></i>&nbsp; Aide</a>
                         @endif
                               
             </div>
@@ -88,11 +83,11 @@
                                     @if (backpack_auth()->user()->role == 'admin')
                                         <a href="admin"
                                             class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" target="_blank">
-                                            Dashboard </a>
+                                            Administration</a>
                                     @endif
                                     <a href="/admin/logout"
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white prevent">
-                                        Déconnection </a>
+                                        Déconnexion </a>
                                 </div>
 
                             </div>

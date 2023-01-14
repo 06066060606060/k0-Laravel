@@ -9,7 +9,16 @@
         <div id="main-content" class="relative w-full h-full mt-2 overflow-y-auto bg-[#111827] rounded-lg">
             <div class="flex px-4 pt-6">
                 <div class=" bg-white rounded-lg shadow p-4">Utilisateurs connectés: 10</div>
-                    </div>
+            </div>
+            <div class="flex px-4 pt-6">
+                <div class=" bg-white rounded-lg shadow p-4">Diamants: 100 000</div>
+            </div>
+            <div class="flex px-4 pt-6">
+                <div class=" bg-white rounded-lg shadow p-4">Rubis: 2 500</div>
+            </div>
+            <div class="flex px-4 pt-6">
+                <div class=" bg-white rounded-lg shadow p-4">Coins: 10.00€</div>
+            </div>
             <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
                 <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
                     <div class="flex items-center justify-between mb-2">
