@@ -507,12 +507,23 @@ class GlobalController extends Controller
         return view('confidentialite');
     }
 
+    static function getSommeDiamants()
+    {
+       $sommediamants = User::All()->sum('trophee1');
+        return $sommediamants;
+    }
+
     static function getSommeRubis()
     {
        $sommerubis = User::All()->sum('trophee2');
         return $sommerubis;
     }
 
+    static function getSommeCoins()
+    {
+       $sommecoins = User::All()->sum('trophee3');
+        return $sommecoins;
+    }
 
 
 
