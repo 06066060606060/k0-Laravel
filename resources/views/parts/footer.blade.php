@@ -8,12 +8,7 @@
         <span class="ml-3 text-xl text-gray-300">GoKdo</span>
       </a>
       <p class="mt-2 text-sm text-gray-400">Gagner des cadeaux tous les jours. <br>
-    GoKDO est un site de jeux gratuits avec une chance de remporter des cadeaux. 
-    Jouez vos parties gratuites quotidiennes, et gagnez des Diamants que vous pourrez 
-    convertir en cadeaux. Sur ce site de jeux en ligne, vous pourrez jouer à des dizaines
-     de jeux html5, jeux d'adresse, jeux de réflexion, jeux de chance et même des jeux multijoueurs.
-      Rejoignez les dizaines de milliers de joueurs 
-       déjà inscrits !
+    GoKDO est un site de jeux gratuits sans obligation d'achat. 
     </p>
     </div>
     <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
