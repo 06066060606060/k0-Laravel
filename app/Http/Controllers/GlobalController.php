@@ -510,19 +510,19 @@ class GlobalController extends Controller
     static function getSommeDiamants()
     {
        $sommediamants = User::All()->sum('trophee1');
-        return $sommediamants;
+        return number_format($sommediamants, 0, ',', ' ');
     }
 
     static function getSommeRubis()
     {
        $sommerubis = User::All()->sum('trophee2');
-        return $sommerubis;
+        return number_format($sommerubis, 0, ',', ' ');
     }
 
     static function getSommeCoins()
     {
        $sommecoins = User::All()->sum('trophee3');
-        return $sommecoins;
+        return number_format($sommecoins, 0, ',', ' ');
     }
 
 
