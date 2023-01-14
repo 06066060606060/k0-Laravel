@@ -17,7 +17,7 @@
                 <div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
                     <div class="flex items-center justify-center py-2 mx-auto md:max-w-7xl">
                   
-                        <i class="pb-2 pr-2 fa-solid fa-gamepad fa-2x"></i>&nbsp;
+                        <i class="pb-3 pr-2 fa-solid fa-gamepad fa-2x"></i>&nbsp;
                         <h2 class="pb-2 text-4xl font-bold tracking-tight text-center text-blue-600 underline underline-offset-8">
                         JEUX GRATUITS 
                         </h2>
