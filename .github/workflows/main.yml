@@ -1,4 +1,4 @@
-name: remote ssh command
+name: Github Repo Update
 on: 
  push:
     branches: [ main ]
