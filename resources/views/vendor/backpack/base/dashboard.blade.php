@@ -186,6 +186,7 @@
                  -login google-fb<br>
                  -parametre avancé google-fb<br>
                  -profil score <br>
+                 -test auto update<br>
                  
                 
                  
