@@ -45,17 +45,17 @@
                                                         10
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container">
-                                                     <div class="flex">
+                                                     <div class="flex justify-center">
                                                     {{ $sommediamants }}
                                                       </div>
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-center text-gray-900 time-container ">
-                                                     <div class="flex">
+                                                     <div class="flex justify-center">
                                                     {{ $sommerubis }}
                                                       </div>
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-center whitespace-nowrap rate-container md:block">
-                                                    <div class="flex">
+                                                    <div class="flex justify-center">
                                                     {{ $sommecoins }}€
                                                     </div>
                                                     </td>
