@@ -9,13 +9,13 @@
         <div id="main-content" class="relative w-full h-full mt-2 overflow-y-auto bg-[#111827] rounded-lg">
             
             <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
-                <div class="p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
+                <div class="w-full p-4 bg-white rounded-lg shadow sm:p-6 xl:p-8">
                     <div class="flex items-center justify-between mb-2">
                         <div>
                             <h3 class="mb-1 text-xl font-bold text-gray-900">Circulation</h3>
                         </div>
                     </div>
-                    <div class="flex flex-col mt-2 h-96">
+                    <div class="flex flex-col h-24 mt-2">
                         <div class="overflow-auto overflow-x-hidden rounded-lg">
                             <div class="inline-block min-w-full align-middle">
                                 <div class="overflow-hidden shadow sm:rounded-lg">
