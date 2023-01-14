@@ -18,40 +18,43 @@
                             <h3 class="mb-1 text-xl font-bold text-gray-900">Circulation</h3>
                         </div>
                     </div>
-                    <div class="flex flex-col h-24 mt-2">
+                    <div class="flex flex-col h-32 mt-2">
                         <div class="overflow-auto overflow-x-hidden rounded-lg">
                             <div class="inline-block min-w-full align-middle">
                                 <div class="overflow-hidden shadow sm:rounded-lg">
                                     <table class="min-w-full divide-y divide-gray-200">
                                         <thead class="bg-gray-50">
                                             <tr>
-                                                <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Connectés:
                                                 </th>
-                                                <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Diamants:
                                                 </th>
-                                                    <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Rubis:
                                                 </th>
-                                                 <th scope="col" class="hidden px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase md:block">
+                                                 <th scope="col" class="hidden px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase md:block">
                                                     Coins:
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white">
                                                 <tr>
-                                                    <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
+                                                    <td class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container">
                                                         10
                                                     </td>
-                                                    <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
-                                                        {{ $sommediamants }}
+                                                    <td class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container">
+                                                    <img src="img/diamond5.png" class="w-8 h-6">
+                                                    {{ $sommediamants }}
                                                     </td>
-                                                    <td class="p-4 text-sm font-normal text-gray-900 time-container ">
-                                                        {{ $sommerubis }}
+                                                    <td class="p-4 text-sm font-normal text-center text-gray-900 time-container ">
+                                                    <img src="img/gem10.png" class="w-8 h-6">
+                                                    {{ $sommerubis }}
                                                     </td>
-                                                    <td class="hidden p-4 text-sm font-normal whitespace-nowrap rate-container md:block">
-                                                        {{ $sommecoins }}€
+                                                    <td class="p-4 text-sm font-normal text-center whitespace-nowrap rate-container md:block">
+                                                    <img src="img/coin10.png" class="w-8 h-6">
+                                                    {{ $sommecoins }}€
                                                     </td>
                                                 </tr>
                                         </tbody>
