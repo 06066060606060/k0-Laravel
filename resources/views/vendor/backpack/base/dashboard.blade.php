@@ -34,7 +34,7 @@
                                                     <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Rubis:
                                                 </th>
-                                                 <th scope="col" class="hidden px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase md:block">
+                                                 <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase md:block">
                                                     Coins:
                                                 </th>
                                             </tr>
@@ -45,16 +45,22 @@
                                                         10
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container">
-                                                    <img src="img/diamond5.png" class="w-8 h-6">
+                                                     <div class="flex">
+                                                    <img src="../img/diamond5.png" class="w-6 h-4 pr-2">
                                                     {{ $sommediamants }}
+                                                      </div>
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-center text-gray-900 time-container ">
-                                                    <img src="img/gem10.png" class="w-8 h-6">
+                                                     <div class="flex">
+                                                    <img src="../img/gem10.png" class="w-6 h-4 pr-2">
                                                     {{ $sommerubis }}
+                                                      </div>
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-center whitespace-nowrap rate-container md:block">
-                                                    <img src="img/coin10.png" class="w-8 h-6">
+                                                    <div class="flex">
+                                                    <img src="../img/coin10.png" class="w-6 h-4 pr-2">
                                                     {{ $sommecoins }}€
+                                                    </div>
                                                     </td>
                                                 </tr>
                                         </tbody>
