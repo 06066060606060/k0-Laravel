@@ -1,4 +1,4 @@
-name: remote ssh command
+name: Github Repo Update
 on: 
  push:
     branches: [ main ]
@@ -11,7 +11,6 @@ jobs:
          if: always()
          with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: "deployement ok"
-          description: "SSH deploy"
+          title: "Mise à jour du repos Github"
           color: 0x0000ff
           username: GitHub Actions
