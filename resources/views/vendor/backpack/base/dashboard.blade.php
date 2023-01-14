@@ -172,20 +172,8 @@
         </div>
         @if (backpack_user()->role == 'admin')
             <p class="w-1/2 px-4 py-2 mx-8 mt-4 text-xs text-gray-200 bg-gray-900 rounded -pl-2">
-                Derniéres mise à jour: '1.6.0'<br>
-                 -winner <br>
-                 -logo inscription,pass oublié <br>
-                 -carré<br>
-                 -autoscroll<br>
-                 -login/register<br>
-                 -lien jouer<br>
-                 -mobile zoom<br>
-                 -menu deco<br>
-                 -page contact<br>
-                 -en ligne page acceuil<br>
-                 -login google-fb<br>
-                 -parametre avancé google-fb<br>
-                 -profil score <br>
+                Derniéres mise à jour: '1.7.0'<br>
+
                  -test auto update<br>
                  
                 
