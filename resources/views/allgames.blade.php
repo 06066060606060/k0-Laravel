@@ -17,7 +17,7 @@
                     <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:max-w-7xl">
                   
                         <i class="pb-1 pr-2 fa-solid fa-gamepad fa-3x"></i>&nbsp;
-                        <h2 class="pb-1 text-4xl font-bold tracking-tight text-center text-white-600">
+                        <h2 class="pb-1 text-xl font-bold tracking-tight text-center md:text-4xl text-white-600">
                         JEUX GRATUITS 
                         </h2>
                  
@@ -93,7 +93,7 @@
                     <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:max-w-7xl">
                   
                         <i class="pb-1 pr-2 text-red-600 fa-solid fa-bolt fa-3x"></i>&nbsp;
-                        <h2 class="pb-1 text-4xl font-bold tracking-tight text-center text-red-600">
+                        <h2 class="pb-1 text-xl font-bold tracking-tight text-center text-red-600 md:text-4xl">
                         JEUX BOOSTER 
                         </h2>
                  
