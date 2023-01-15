@@ -44,14 +44,22 @@ class ScoresController extends Controller
             $Scores->user_id = $request->user_id;
             $Scores->game_id = $request->game_id;
             $Scores->score = $request->score;
+            if ($request->µµµµ == 'µ') {
+                $Scores->data = -100;
+            } else {
+                $Scores->data = $request->data;
+            }
             $Scores->data = $request->data;
             $Scores->data2 = $request->data2;
             $Scores->data3 = $request->data3;
             $Scores->save();
             //update user data
             $user = User::where('id', $request->user_id)->first();
-           
+            if ($request->newgame == 1) {
+             $user->trophee1 = $user->trophee1 - 100;
+            } else {
             $user->trophee1 = $user->trophee1 + $request->data;
+            }
             $user->trophee2 = $user->trophee2 + $request->data2;
             $user->trophee3 = $user->trophee3 + $request->data3;
             $user->save();

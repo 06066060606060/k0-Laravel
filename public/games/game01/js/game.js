@@ -152,7 +152,7 @@ function buildGameButton() {
 						data: {
 							game_id: gameid,
 							user_id: userId,
-							data: -100,
+							µµµµ: 'µ',
 							secret: secretData
 						},
 					});
