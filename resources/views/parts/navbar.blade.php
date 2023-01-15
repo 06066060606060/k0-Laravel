@@ -49,11 +49,6 @@
                         Pack</a>
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 lg:pr-4" href="profil"
                         @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp; Profil</a>
-                @else
-                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="contact"
-                        @click="isOpen = false"><i class="fa-solid fa-message"></i>&nbsp; Contact</a>
-                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="help"
-                        @click="isOpen = false"><i class="fa-solid fa-circle-info"></i>&nbsp; Aide</a>
                 @endif
 
             </div>
