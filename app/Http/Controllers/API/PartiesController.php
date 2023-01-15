@@ -14,7 +14,8 @@ class PartiesController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
+      
         $user = User::all();
         return response()->json($user);
     }
@@ -46,9 +47,10 @@ class PartiesController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Request $request)
     {
-        //
+       $data = User::where('id', $request->id)->first();
+        return response()->json($data);
     }
 
     /**
