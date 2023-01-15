@@ -924,8 +924,8 @@ $.ajax({
                  data: {
 					game_id: gameid,
                      user_id: userId,
-                     score: 100,
-					 data: 100,
+                     score: 0,
+					 data: score,
                 },
             });
 }
