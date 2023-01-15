@@ -164,17 +164,17 @@ function buildGameButton(){
 		toggleConfirm(false);
 		stopGame(true);
 		goPage('main');
-		// $.ajax({
-        //          url: 'https://gokdo.com/api/parties',
-        //          headers: {'X-XSRF-TOKEN': tk},
-        //         method: 'POST',
-        //          type: 'json',
-        //          data: {
-		// 			game_id: gameId,
-        //              user_id: userId,
-        //              data: 100,
-        //         },
-        // });
+		$.ajax({
+                 url: 'https://gokdo.com/api/scores',
+                 headers: {'X-XSRF-TOKEN': tk},
+                method: 'POST',
+                 type: 'json',
+                 data: {
+					game_id: gameId,
+                     user_id: userId,
+                     data: -100,
+                },
+        });
 	});
 	
 	buttonCancel.cursor = "pointer";
