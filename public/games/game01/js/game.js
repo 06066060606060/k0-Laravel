@@ -135,7 +135,7 @@ function buildGameButton(){
 	buttonAchatRubis.cursor = "pointer";
 	buttonAchatRubis.addEventListener("click", function(evt) {
 		playSound('soundClick');
-        window.location.href = "https://gokdo.com/pack";
+        window.open("https://gokdo.com/pack" , "_top");
 	});
 	
 	//game
