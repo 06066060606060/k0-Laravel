@@ -135,7 +135,7 @@ function buildGameButton() {
 			type: "GET",
 			success: function (result) {
 				if (result.trophee1 < 100 ) {
-					alert("Le score récupéré est inférieur à 100!");
+					alert("Pas assez de diamants pour jouer !");
 					goPage('main');
 				} else {
 					goPage('game');
