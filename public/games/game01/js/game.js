@@ -130,18 +130,31 @@ function buildGameButton(){
 	buttonStart.cursor = "pointer";
 	buttonStart.addEventListener("click", function(evt) {
 		playSound('soundClick'); 
-		goPage('game');
+		
 		$.ajax({
-			url: 'https://gokdo.com/api/scores',
-			headers: {'X-XSRF-TOKEN': tk},
-		   method: 'POST',
-			type: 'json',
-			data: {
-			   game_id: gameid,
-				user_id: userId,
-				data: -100,
-		   },
-   });
+			url: 'https://gokdo.com/api/parties',
+			success: function(response) {
+			  const userId = response.find(user => user.id === userId);
+			  if (userId.trophee1 < 100) {
+				console.log('Le score global de l\'ID 1 est inférieur à 100');
+			  } else {
+				goPage('game');
+				$.ajax({
+					url: 'https://gokdo.com/api/scores',
+					headers: {'X-XSRF-TOKEN': tk},
+				   method: 'POST',
+					type: 'json',
+					data: {
+					   game_id: gameid,
+						user_id: userId,
+						data: -100,
+				   },
+		   });
+			  }
+			}
+		  });
+
+		
 	});
 
 	buttonAchatRubis.cursor = "pointer";
