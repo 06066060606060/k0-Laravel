@@ -48,7 +48,7 @@
                         </div>
                         <div class="flex py-2">
                             <div
-                                class="flex w-full max-w-sm py-2  bg-gray-800 border border-gray-700 rounded-lg shadow-md">
+                                class="flex w-full max-w-sm py-2 bg-gray-800 border border-gray-700 rounded-lg shadow-md">
                                 <div class="flex items-center justify-center w-12 ml-2 bg-red-500 rounded">
                                     <svg class="w-6 h-6 text-white fill-current" viewBox="0 0 40 40"
                                         xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +142,7 @@
                                         Coût
                                     </th>
                                     <th
-                                        class=" px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
+                                        class="px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
                                         Status
                                     </th>
                                 </tr>
@@ -158,7 +158,7 @@
                                         </td>
                                         </td>
                                         @if ($order->status == 'Oui')
-                                            <td class=" px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
+                                            <td class="px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
                                                     Confirmé</p>
                                          </td>
@@ -168,7 +168,7 @@
                                                     Annulé</p>
                                             </td>
                                         @else
-                                            <td class=" px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
+                                            <td class="px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-purple-400">
                                                     Expédié</p>
                                             </td>
@@ -204,7 +204,7 @@
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         Score
                                     </th>
-                                    <th class=" px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
+                                    <th class="px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
                                         Date
                                     </th>
                                 </tr>
@@ -219,7 +219,7 @@
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
                                         <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
-                                                <p class="ml-2 ">{{ $score->created_at }}</p> 
+                                                <p class="ml-2 ">{{ $score->created_at->format('d M H:i') }}</p> 
                                             </strong>
 
                                         </td>
