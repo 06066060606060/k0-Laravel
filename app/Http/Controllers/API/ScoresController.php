@@ -29,22 +29,38 @@ class ScoresController extends Controller
      */
     public function store(Request $request)
     {
-        $Scores = new Scores();
-        $Scores->user_id = $request->user_id;
-        $Scores->game_id = $request->game_id;
-        $Scores->score = $request->score;
-        $Scores->data = $request->data;
-        $Scores->data2 = $request->data2;
-        $Scores->data3 = $request->data3;
-        $Scores->save();
-        //update user data
-        $user = User::where('id', $request->user_id)->first();
-       
-        $user->trophee1 = $user->trophee1 + $request->data;
-        $user->trophee2 = $user->trophee2 + $request->data2;
-        $user->trophee3 = $user->trophee3 + $request->data3;
-        $user->save();
-        return response()->json($Scores);
+        $decrypted = decrypt($request->secret);
+        $secrettoken = $decrypted[0];
+        $secretuser_id = $decrypted['userid'];
+        $secretgame_id = $decrypted['gameid'];
+        $secretrubis = $decrypted['rubis'];
+        $secretscore = $decrypted['free_game'];
+        $secretdata = $decrypted['parties'];
+        $secrettime = $decrypted['timestamp'];
+
+        if ( $request->user_id == $secretuser_id && $request->game_id == $secretgame_id) {
+            Log::info('Secret token is valid');
+            $Scores = new Scores();
+            $Scores->user_id = $request->user_id;
+            $Scores->game_id = $request->game_id;
+            $Scores->score = $request->score;
+            $Scores->data = $request->data;
+            $Scores->data2 = $request->data2;
+            $Scores->data3 = $request->data3;
+            $Scores->save();
+            //update user data
+            $user = User::where('id', $request->user_id)->first();
+           
+            $user->trophee1 = $user->trophee1 + $request->data;
+            $user->trophee2 = $user->trophee2 + $request->data2;
+            $user->trophee3 = $user->trophee3 + $request->data3;
+            $user->save();
+            return response()->json($Scores);
+        } else {
+            Log::info('Secret token is invalid');
+            return response()->json('Secret token is invalid');
+        }
+
     }
 
     /**

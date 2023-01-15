@@ -122,9 +122,9 @@ class GlobalController extends Controller
 
     public function test()
     {
-       $test = encrypt("test encypted aes data" );
-       $decrypted = decrypt($test);
-       dd($test);
+       $test = encrypt(time());
+       $decrypted = decrypt('eyJpdiI6IklKdTMvTEVKa1FRbEJkTzkxTHFPd0E9PSIsInZhbHVlIjoiV09JUy9Eak4yRG9kODQ4WitFa1AxRzNmVXdPV0xDTjQ1a0N2NGJpZUt1UjFCSDFNK05PYndQelRUczFmK2xWemdsV1Brc2t2eVNEM0NNcEFueGwrek9lRjVqR2cyYkkrbmpGWUZOVmYwUmxUWExHLzVtQWkwZmRMN21RbjZUN0pMZ3AxWXk4aTlTbmtuRjVZb01vL0hQSWxUSkZPM2ZEUzRlT3YyOFV0VmZTV0diZ3BWVEhrYTkybEtnRkd1VlY5cDhSSDBJaDRVM1I5Y2hLRS9uWGpaWVpIWlVSZFA4N05LS0RyUWg5M05QSVU5am9Hd3FwWk9Nbm82RTljYStsOCIsIm1hYyI6Ijg4MTM1ZDczZDIzMTQyYzkzN2IzOGM1YjE1NjRlN2VmYWVjMTA0MTk2ZDA4N2E4NDI5N2Q1NTQwNjY0ZDg2M2YiLCJ0YWciOiIifQ==');
+       dd($decrypted['gameid']);
     }
 
     static function version()

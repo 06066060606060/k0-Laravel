@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
 class PartiesController extends Controller
 {
     /**
@@ -28,6 +29,7 @@ class PartiesController extends Controller
      */
     public function store(Request $request)
     {
+       
         $user_id  = $request->user_id;
         //update user global score
         $user = User::where('id', $user_id)->first();
@@ -37,6 +39,7 @@ class PartiesController extends Controller
         //add request score to user global score
        // $user->global_score = $user->global_score + $request->score;
         $user->save();
+
         return response()->json($user);
 
     }

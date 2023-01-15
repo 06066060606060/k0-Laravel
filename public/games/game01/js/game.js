@@ -13,7 +13,7 @@ tk = urlParams.get('tk');
 playername = urlParams.get('user_name');
 diamants = urlParams.get('diamants');
 gameid = urlParams.get('gameid');
-Secret = urlParams.get('secret');
+secretData = urlParams.get('secret');
 
 
 var gameSettings = {
@@ -134,6 +134,7 @@ function buildGameButton() {
 		playSound('soundClick');
 		$.ajax({
 			url: "https://gokdo.com/api/parties/user?id=" + userId,
+			//url: "http://127.0.0.1:8000/api/parties/user?id=" + userId,
 			type: "GET",
 			success: function (result) {
 				if (result.trophee1 < 100 ) {
@@ -143,6 +144,7 @@ function buildGameButton() {
 				} else {
 					goPage('game');
 					$.ajax({
+						//url: 'http://127.0.0.1:8000/api/scores',
 						url: 'https://gokdo.com/api/scores',
 						headers: { 'X-XSRF-TOKEN': tk },
 						method: 'POST',
@@ -151,7 +153,7 @@ function buildGameButton() {
 							game_id: gameid,
 							user_id: userId,
 							data: -100,
-							secret: Secret
+							secret: secretData
 						},
 					});
 				}
@@ -936,6 +938,7 @@ function saveGame(score) {
 	});*/
 	$.ajax({
 		url: 'https://gokdo.com/api/scores',
+		//url: 'http://127.0.0.1:8000/api/scores',
 		headers: { 'X-XSRF-TOKEN': tk },
 		method: 'POST',
 		type: 'json',
@@ -944,7 +947,7 @@ function saveGame(score) {
 			user_id: userId,
 			score: 0,
 			data: score,
-			secret: Secret
+			secret: secretData
 		},
 	});
 }
