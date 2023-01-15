@@ -8,6 +8,11 @@
  * 
  */
 urlParams= new URLSearchParams(window.location.search);
+userId = urlParams.get('userid');
+tk= urlParams.get('tk');
+playername= urlParams.get('user_name');
+diamants= urlParams.get('diamants');
+gameid= urlParams.get('gameid');
 
 var gameSettings ={
 	
@@ -20,11 +25,7 @@ var gameSettings ={
     maxBet:500, //max bet amount
 	coin:true, //enable collect coin
 	coinPercent:20, //total coins for collect
-	userId: urlParams.get('userid'),
-    tk: urlParams.get('tk'),
-    playername: urlParams.get('user_name'),
-    diamants: urlParams.get('diamants'),
-    gameid: urlParams.get('gameid')
+
 }
 
 var plinkoSettings = {
@@ -163,16 +164,17 @@ function buildGameButton(){
 		toggleConfirm(false);
 		stopGame(true);
 		goPage('main');
-		$.ajax({
-                 url: 'https://gokdo.com/api/score',
-                 headers: {'X-XSRF-TOKEN': tk},
-                method: 'POST',
-                 type: 'json',
-                 data: {
-                     user_id: 1,
-                     trophee1: +100,
-                },
-        });
+		// $.ajax({
+        //          url: 'https://gokdo.com/api/parties',
+        //          headers: {'X-XSRF-TOKEN': tk},
+        //         method: 'POST',
+        //          type: 'json',
+        //          data: {
+		// 			game_id: gameId,
+        //              user_id: userId,
+        //              data: 100,
+        //         },
+        // });
 	});
 	
 	buttonCancel.cursor = "pointer";
@@ -915,13 +917,15 @@ function saveGame(score){
       }
     });*/
 $.ajax({
-                url: 'https://gokdo.com/api/score',
+                url: 'https://gokdo.com/api/scores',
                 headers: {'X-XSRF-TOKEN': tk},
                 method: 'POST',
                  type: 'json',
                  data: {
-                     user_id: 1,
-                     trophee1: +100,
+					game_id: gameid,
+                     user_id: userId,
+                     score: 100,
+					 data: 100,
                 },
             });
 }
