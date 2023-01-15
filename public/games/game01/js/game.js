@@ -152,7 +152,7 @@ function buildGameButton() {
 							game_id: gameid,
 							user_id: userId,
 							data: -100,
-							secret: Secret,
+							secret: 88888888
 						},
 					});
 				}
@@ -945,7 +945,7 @@ function saveGame(score) {
 			user_id: userId,
 			score: 0,
 			data: score,
-			secret: Secret,
+			secret: 888888
 		},
 	});
 }
