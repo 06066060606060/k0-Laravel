@@ -131,7 +131,7 @@ function buildGameButton() {
 
 	buttonStart.cursor = "pointer";
 	buttonStart.addEventListener("click", function (evt) {
-		console.log(secret);
+		console.log(Secret);
 		playSound('soundClick');
 		$.ajax({
 			url: "https://gokdo.com/api/parties/user?id=" + userId,
