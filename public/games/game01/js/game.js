@@ -13,7 +13,7 @@ tk = urlParams.get('tk');
 playername = urlParams.get('user_name');
 diamants = urlParams.get('diamants');
 gameid = urlParams.get('gameid');
-secret = urlParams.get('secret');
+Secret = urlParams.get('secret');
 
 
 var gameSettings = {
@@ -152,7 +152,7 @@ function buildGameButton() {
 							game_id: gameid,
 							user_id: userId,
 							data: -100,
-							secret: secret
+							secret: Secret,
 						},
 					});
 				}
@@ -945,7 +945,7 @@ function saveGame(score) {
 			user_id: userId,
 			score: 0,
 			data: score,
-			secret: secret
+			secret: Secret,
 		},
 	});
 }
