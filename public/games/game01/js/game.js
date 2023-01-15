@@ -131,10 +131,10 @@ function buildGameButton() {
 	buttonStart.addEventListener("click", function (evt) {
 		playSound('soundClick');
 		$.ajax({
-			url: "https://api.example.com/score",
+			url: "https://gokdo.com/api/parties",
 			type: "GET",
 			success: function (result) {
-				if (result.score < 100) {
+				if (result.id == userId & result.trophee1 < 100) {
 					alert("Le score récupéré est inférieur à 100!");
 				} else {
 					goPage('game');
