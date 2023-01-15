@@ -131,7 +131,6 @@ function buildGameButton() {
 
 	buttonStart.cursor = "pointer";
 	buttonStart.addEventListener("click", function (evt) {
-		console.log(Secret);
 		playSound('soundClick');
 		$.ajax({
 			url: "https://gokdo.com/api/parties/user?id=" + userId,
@@ -152,7 +151,7 @@ function buildGameButton() {
 							game_id: gameid,
 							user_id: userId,
 							data: -100,
-							secret: 88888888
+							secret: Secret
 						},
 					});
 				}
@@ -945,7 +944,7 @@ function saveGame(score) {
 			user_id: userId,
 			score: 0,
 			data: score,
-			secret: 888888
+			secret: Secret
 		},
 	});
 }
