@@ -15,9 +15,9 @@
                 </div>
                 <div class="flex flex-wrap justify-center -m-4">
                     @forelse ($packs as $pack)
-                        <div class="p-4 lg:w-1/4 md:w-1/2">
+                        <div class="w-1/2 p-2 lg:w-1/3">
                             <div
-                                class="relative flex flex-col items-center h-full min-w-full overflow-hidden text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
+                                class="relative flex flex-col items-center max-h-[250px]  md:max-h-full min-w-full overflow-hidden text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 {{-- ribbon --}}
                                 @if ($pack->promo == 'Oui')
                                 @php $prix = $pack->prix_promo @endphp
