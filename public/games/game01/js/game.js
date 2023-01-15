@@ -134,7 +134,7 @@ function buildGameButton(){
 		$.ajax({
 			url: 'https://gokdo.com/api/parties',
 			success: function(response) {
-			  const userId = response.find(user => user.id === userId);
+			  const userId = response.find(id === userId);
 			  if (userId.trophee1 < 100) {
 				console.log('Le score global de l\'ID 1 est inférieur à 100');
 			  } else {
