@@ -136,6 +136,7 @@ function buildGameButton() {
 			success: function (result) {
 				if (result.trophee1 < 100 ) {
 					alert("Pas assez de diamants pour jouer !");
+					$('#points', parent.document).html('Pas assez de diamants pour jouer !');   //modifie la valeur de lid points dans le parent
 					goPage('main');
 				} else {
 					goPage('game');
