@@ -13,8 +13,8 @@
                         chasse au trésor enablée..<br><a -500">Rejoignez les centaines de joueurs déjà inscrits !</a> </p>
                 </div>
 
-                <div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
-                    <div class="flex items-center justify-center py-2 mx-auto md:max-w-7xl">
+                <div class="flex flex-wrap py-2 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
+                    <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:max-w-7xl">
                   
                         <i class="pb-1 pr-2 fa-solid fa-gamepad fa-3x"></i>&nbsp;
                         <h2 class="pb-1 text-4xl font-bold tracking-tight text-center text-white-600">
@@ -89,10 +89,10 @@
                 </div>
                 <!-- BOOSTER -->
                 <div class="container px-5 pt-16 mx-auto">
-                                    <div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
-                    <div class="flex items-center justify-center py-2 mx-auto md:max-w-7xl">
+                                    <div class="flex flex-wrap py-2 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
+                    <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:max-w-7xl">
                   
-                        <i class="pb-1 pr-2 text-red fa-solid fa-bolt fa-3x"></i>&nbsp;
+                        <i class="pb-1 pr-2 text-red-600 fa-solid fa-bolt fa-3x"></i>&nbsp;
                         <h2 class="pb-1 text-4xl font-bold tracking-tight text-center text-red-600">
                         JEUX BOOSTER 
                         </h2>

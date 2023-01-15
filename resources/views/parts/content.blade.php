@@ -70,7 +70,7 @@
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO est un site de jeux gratuits
-                    permettant de <a href="winner" class="text-blue-500"> gagner des cadeaux</a> !<br>
+                    permettant de <a href="store" class="text-blue-500"> gagner des cadeaux</a> !<br>
                     <a href="/admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> pour jouer à
                     plus
                     d'une dizaine de jeux gratuits multijoueurs originaux et amusants et remporter des cadeaux !.
