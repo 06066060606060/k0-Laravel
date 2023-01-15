@@ -13,6 +13,8 @@ tk = urlParams.get('tk');
 playername = urlParams.get('user_name');
 diamants = urlParams.get('diamants');
 gameid = urlParams.get('gameid');
+secret = urlParams.get('secret');
+
 
 var gameSettings = {
 
@@ -129,6 +131,7 @@ function buildGameButton() {
 
 	buttonStart.cursor = "pointer";
 	buttonStart.addEventListener("click", function (evt) {
+		console.log(secret);
 		playSound('soundClick');
 		$.ajax({
 			url: "https://gokdo.com/api/parties/user?id=" + userId,
@@ -149,6 +152,7 @@ function buildGameButton() {
 							game_id: gameid,
 							user_id: userId,
 							data: -100,
+							secret: secret
 						},
 					});
 				}
@@ -941,6 +945,7 @@ function saveGame(score) {
 			user_id: userId,
 			score: 0,
 			data: score,
+			secret: secret
 		},
 	});
 }

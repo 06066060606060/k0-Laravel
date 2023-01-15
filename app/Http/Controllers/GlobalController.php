@@ -120,6 +120,13 @@ class GlobalController extends Controller
         return view('contactus');
     }
 
+    public function test()
+    {
+       $test = encrypt("test encypted aes data" );
+       $decrypted = decrypt($test);
+       dd($test);
+    }
+
     static function version()
     {
         $filename = '../public/build/manifest.json';

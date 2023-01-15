@@ -49,8 +49,15 @@ class PartiesController extends Controller
      */
     public function show(Request $request)
     {
-       $data = User::where('id', $request->id)->first();
+       // $myid = session()->get('user_id');
+       if ($request->id ==  3) {
+        $data = User::where('id', $request->id)->first();
         return response()->json($data);
+        } else {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+
+
     }
 
     /**

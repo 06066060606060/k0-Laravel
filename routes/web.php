@@ -30,6 +30,7 @@ Route::get('store', 'store');
 Route::get('help', 'help');
 Route::get('contact', 'contact');
 Route::post('contactus', 'contactus');
+Route::get('test', 'test');
 });
 
 Route::middleware(['cors'])->group(function () {
