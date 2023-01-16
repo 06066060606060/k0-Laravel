@@ -18,7 +18,7 @@
                   
                         <i class="pb-1 pr-2 fa-solid fa-gamepad fa-3x"></i>&nbsp;
                         <h2 class="pb-1 text-xl font-bold tracking-tight text-center md:text-4xl text-white-600">
-                        JEUX GRATUIT
+                        JEUX GRATUITS
                         </h2>
                  
                     </div>
