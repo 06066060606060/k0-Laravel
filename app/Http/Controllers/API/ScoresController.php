@@ -49,7 +49,6 @@ class ScoresController extends Controller
             } else {
                 $Scores->data = $request->data;
             }
-            $Scores->data = $request->data;
             $Scores->data2 = $request->data2;
             $Scores->data3 = $request->data3;
             $Scores->save();

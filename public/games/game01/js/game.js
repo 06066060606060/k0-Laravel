@@ -133,6 +133,7 @@ function buildGameButton() {
 	buttonStart.addEventListener("click", function (evt) {
 		playSound('soundClick');
 		$.ajax({
+			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 			url: "https://gokdo.com/api/parties/user?id=" + userId,
 			//url: "http://127.0.0.1:8000/api/parties/user?id=" + userId,
 			type: "GET",
@@ -144,9 +145,9 @@ function buildGameButton() {
 				} else {
 					goPage('game');
 					$.ajax({
+						headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },						
 						//url: 'http://127.0.0.1:8000/api/scores',
 						url: 'https://gokdo.com/api/scores',
-						headers: { 'X-XSRF-TOKEN': tk },
 						method: 'POST',
 						type: 'json',
 						data: {
@@ -937,9 +938,9 @@ function saveGame(score) {
 	  }
 	});*/
 	$.ajax({
+		headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
 		url: 'https://gokdo.com/api/scores',
 		//url: 'http://127.0.0.1:8000/api/scores',
-		headers: { 'X-XSRF-TOKEN': tk },
 		method: 'POST',
 		type: 'json',
 		data: {
