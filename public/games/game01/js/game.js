@@ -42,11 +42,11 @@ var plinkoSettings = {
 	prizes: [
 		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 15 },
 		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 20 },
-		{ value: 100, text: "2\n5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 10 },
+		{ value: 100, text: "1\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 10 },
 		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 20 },
 		{ value: 500, text: "5\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 5 },
 		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 20 },
-		{ value: 200, text: "2\n5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 10 },
+		{ value: 250, text: "2\n5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 10 },
 		{ value: 0, image: 'assets/item_prize_bonus.png', x: 0, y: 0, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 20, bonus: true },
 		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 15 },
 	]
@@ -133,7 +133,10 @@ function buildGameButton() {
 	buttonStart.addEventListener("click", function (evt) {
 		playSound('soundClick');
 		$.ajax({
-			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+			headers: { 
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'), 
+				'Content-Type': 'application/json' 
+			},
 			url: "https://gokdo.com/api/parties/user?id=" + userId,
 			//url: "http://127.0.0.1:8000/api/parties/user?id=" + userId,
 			type: "GET",
@@ -145,18 +148,23 @@ function buildGameButton() {
 				} else {
 					goPage('game');
 					$.ajax({
-						headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },						
-						//url: 'http://127.0.0.1:8000/api/scores',
+						headers: { 
+							'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'), 
+							'Content-Type': 'application/json' 
+						},
 						url: 'https://gokdo.com/api/scores',
+						//url: 'http://127.0.0.1:8000/api/scores',
 						method: 'POST',
-						type: 'json',
-						data: {
+						data: JSON.stringify({
 							game_id: gameid,
 							user_id: userId,
-							µµµµ: 'µ',
+							data: -100,
 							secret: secretData
-						},
-					});
+						}),
+						error: function(error) {
+							console.log(error);
+						}
+					});	
 				}
 			}
 		});
@@ -929,28 +937,25 @@ function stopGame() {
  * 
  */
 function saveGame(score) {
-	/*$.ajax({
-	  type: "POST",
-	  url: 'saveResults.php',
-	  data: {score:score},
-	  success: function (result) {
-		  console.log(result);
-	  }
-	});*/
 	$.ajax({
-		headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
+		headers: { 
+			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'), 
+			'Content-Type': 'application/json' 
+		},
 		url: 'https://gokdo.com/api/scores',
-		//url: 'http://127.0.0.1:8000/api/scores',
+        //url: 'http://127.0.0.1:8000/api/scores',
 		method: 'POST',
-		type: 'json',
-		data: {
+		data: JSON.stringify({
 			game_id: gameid,
 			user_id: userId,
 			score: 0,
 			data: score,
 			secret: secretData
-		},
-	});
+		}),
+		error: function(error) {
+			console.log(error);
+		}
+	}); 
 }
 
 /*!

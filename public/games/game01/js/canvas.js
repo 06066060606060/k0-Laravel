@@ -356,7 +356,7 @@ function resizeCanvas(){
 			buttonFullscreen.x = buttonSettings.x;
 			buttonFullscreen.y = buttonSettings.y+(distanceNum*2);
 		}else{
-			buttonExit.visible = true;
+			buttonExit.visible = false;
 			buttonSoundOn.x = buttonSoundOff.x = buttonSettings.x;
 			buttonSoundOn.y = buttonSoundOff.y = buttonSettings.y+distanceNum;
 			buttonSoundOn.x = buttonSoundOff.x;
