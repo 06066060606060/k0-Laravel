@@ -41,9 +41,9 @@
                     @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="winner"
                     @click="isOpen = false"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
-                @if (backpack_auth()->check())
-                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="store"
+                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="store"
                         @click="isOpen = false"><i class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>
+                @if (backpack_auth()->check())
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="pack"
                         @click="isOpen = false" data-barba-prevent="self"><i class="fa-regular fa-gem"></i>&nbsp;
                         Pack</a>
