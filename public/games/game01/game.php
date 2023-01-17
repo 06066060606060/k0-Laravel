@@ -7,23 +7,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <!----><meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>Super Plinko</title>
+        <title>GoKDO.com - Jouez au Super Plinko et gagnez des cadeaux !</title>
         
         <meta name="Title" content="Super Plinko" />
-        <meta name="description" content="Super Plinko is a HTML5 game where you can chips down the Plinko board and try to land them in the pockets at the bottom of the board.">		
-		<meta name="keywords" content="chips, disc, move, plinko, price is right, gamble, jackpot, lose, lucky, coin, drop, board, wins">
+        <meta name="description" content="Gokdo vous propose de jouer au Super Plinko, c'est un jeu HTML5 où vous lancez le palet sur le Plinko et essayer de le faire atterrir dans les lots situés en bas du jeu.">		
+		<meta name="keywords" content="jeu, jouer, gagner, jeu du plinko, jeu du fakir, chance, plinko, le juste prix, pari, cagnotte, perdre, chanceux, pièce de monnaie, laisser tomber, planche, gagne">
         
         <!-- for Facebook -->
-        <meta property="og:title" content="Super Plinko"/>
+        <meta property="og:title" content="Gokdo - Super Plinko"/>
         <meta property="og:site_name" content="Super Plinko"/>
         <meta property="og:image" content="http://demonisblack.com/code/2021/superplinko/game/share.jpg" />
         <meta property="og:url" content="http://demonisblack.com/code/2020/superplinko/game/" />
-        <meta property="og:description" content="Super Plinko is a HTML5 game where you can chips down the Plinko board and try to land them in the pockets at the bottom of the board.">
+        <meta property="og:description" content="Gokdo vous propose de jouer au Super Plinko, c'est un jeu HTML5 où vous lancez le palet sur le Plinko et essayer de le faire atterrir dans les lots situés en bas du jeu.">
         
         <!-- for Twitter -->
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Super Plinko" />
-        <meta name="twitter:description" content="Super Plinko is a HTML5 game where you can chips down the Plinko board and try to land them in the pockets at the bottom of the board." />
+        <meta name="twitter:title" content="Gokdo -Super Plinko" />
+        <meta name="twitter:description" content="Gokdo vous propose de jouer au Super Plinko, c'est un jeu HTML5 où vous lancez le palet sur le Plinko et essayer de le faire atterrir dans les lots situés en bas du jeu." />
         <meta name="twitter:image" content="http://demonisblack.com/code/2020/superplinko/game/share.jpg" />
         
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
