@@ -7,7 +7,7 @@
              <a href="/"><img class="pb-2 mx-auto w-[240px]" src="/img/logo.png"></a>
             <div class="card">
                 <div class="card-body">
-                   <h3 class="text-center text-black">{{ trans('backpack::base.register') }}</h3>
+                   <!--<h3 class="text-center text-black">{{ trans('backpack::base.register') }}</h3>-->
                     <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
 
