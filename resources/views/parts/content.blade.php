@@ -65,7 +65,7 @@
 
 <!-- FREE GAMES -->
 <container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
-    <section class="text-gray-400 border-b border-gray-600  body-font">
+    <section class="text-gray-400 border-b border-gray-600 body-font">
         <div class="container px-2 py-12 mx-auto md:px-5">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
@@ -100,7 +100,6 @@
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
                                 src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
-
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
