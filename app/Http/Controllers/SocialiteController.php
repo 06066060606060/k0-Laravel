@@ -64,6 +64,11 @@ class SocialiteController extends Controller
                     'email' => $email,
                     'password' => bcrypt("emilie") // On attribue un mot de passe
                 ]);
+                    # 4. On connecte l'utilisateur
+                 backpack_auth()->login($user);
+
+           
+                 if (backpack_auth()->check()) return redirect('/');
             }
 
             # 4. On connecte l'utilisateur
