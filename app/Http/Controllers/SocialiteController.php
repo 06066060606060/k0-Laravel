@@ -45,7 +45,6 @@ class SocialiteController extends Controller
             $email = $data->getEmail(); // L'adresse email
             $name = $data->getName(); // le nom
            
-    
             # 1. On récupère l'utilisateur à partir de l'adresse email
             $user = User::where("email", $email)->first();
             # 2. Si l'utilisateur existe
@@ -62,13 +61,10 @@ class SocialiteController extends Controller
                 $user = User::create([
                     'name' => $name,
                     'email' => $email,
-                    'password' => bcrypt("emilie") // On attribue un mot de passe
+                    'role' => 'user',
+                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds") // On attribue un mot de passe
                 ]);
-                    # 4. On connecte l'utilisateur
-                 backpack_auth()->login($user);
-
-           
-                 if (backpack_auth()->check()) return redirect('/');
+                
             }
 
             # 4. On connecte l'utilisateur
