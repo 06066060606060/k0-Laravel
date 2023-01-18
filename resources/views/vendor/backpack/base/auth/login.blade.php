@@ -51,7 +51,7 @@
                         #show:checked~#content{display:block;}
                         </style>
                         <input type=checkbox id="show">
-                        <label for="show"class="border btn btn-block" ><i class="fa fa-user mr-2"></i> Connexion Classique</label>
+                        <label for="show"class="border btn btn-block" style="cursor:pointer;"><i class="fa fa-user mr-2"></i> Connexion Classique</label>
                         <span id="content">
 
 
