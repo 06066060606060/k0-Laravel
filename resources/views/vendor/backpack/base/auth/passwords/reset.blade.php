@@ -3,7 +3,6 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
-            <h3 class="mb-4 text-center">{{ trans('backpack::base.reset_password') }}</h3>
                 <a href="/">
                 <img class="w-auto pb-2 mx-auto h-1/8" src="/img/logo.png"></a>
             <div class="nav-steps-wrapper">
