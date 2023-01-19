@@ -68,22 +68,6 @@ img{
 
 }
 
-.one{
-  background-image: url("../img/gift.png");
-  background-repeat: no-repeat;
-  z-index: -10 ;
-	height: 500px;
-	width: 500px;
-	left: -200px;
-	top: -100px;
-	transform: rotate(0deg) scale(0.6);
-	animation: movement_three 50s ease-in-out infinite both;
-  opacity:.03;
-	position: absolute;
-  z-index: -10 ;
-  overflow-x: hidden;
-}
-
 
 /* .shape-blob.two{
   z-index: 0 ;
@@ -120,21 +104,7 @@ img{
 
   }
 
-  .one{
-    background-image: url("gift.png");
-    background-repeat: no-repeat;
-    z-index: -10 ;
-    height: 500px;
-    width: 500px;
-    left: -200px;
-    top: -20px;
-    transform: rotate(0deg) scale(0.5);
-    animation: movement_three 50s ease-in-out infinite both;
-    opacity:.03;
-    position: absolute;
-    z-index: -10 ;
-    overflow-x: hidden; 
-  }
+  
 
 
 .menu__btn > span,
