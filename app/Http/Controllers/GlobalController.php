@@ -554,16 +554,4 @@ class GlobalController extends Controller
 
         return false;
     }
-
-    static function detectPrivateMode() {
-        if (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1) {
-            $detect = true;
-        } else {
-            $detect = false; 
-        }
-    }
-
-
-
-
 }
