@@ -259,9 +259,8 @@
     <section class="text-gray-400 border-b border-gray-600 body-font">
         <div class="container px-2 py-12 mx-auto md:px-4">
             <div class="flex flex-col w-full mb-20 text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux boosters</h1>
-                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Gagnez d'avantage sur nos jeux Booster et 
-                    profitez de meilleurs gains (Diamants, Rubis, Coins, Carte cadeaux Amazon).
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux booster</h1>
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Les jeux booster permettent de gagner d'avantage mais également vous laisse la chance de pouvoir remporter des cadeaux (Diamants, Rubis, Coins, Carte cadeaux Amazon). Venez tenter votre chance !
                 </p>
             </div>
             <div class="flex flex-wrap -m-4">
