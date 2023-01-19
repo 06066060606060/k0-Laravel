@@ -1,10 +1,11 @@
-@php use \App\Http\Controllers\GlobalController;
-  $check_mobile = GlobalController::check_mobile();
-if($check_mobile == true) {
-} else {
-echo '<div class="z-0 one"></div>';
-}
+@php
+    use \App\Http\Controllers\GlobalController;
+    $isMobile = GlobalController::check_mobile();
 @endphp
+@if($isMobile)
+@else
+    <div class="z-0 one"></div>
+@endif
 <container id="home">
     <section>
         <div
