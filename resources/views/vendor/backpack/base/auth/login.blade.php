@@ -1,16 +1,16 @@
 @extends(backpack_view('layouts.plain'))
 
 @section('content')
-    @php
-        use \App\Http\Controllers\GlobalController;
-        $detect = GlobalController::detectPrivateMode();
-    @endphp
-<?php if($detect == true){ ?>
-<script>
+    
+@php
+if (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1) {
+        echo "<script>
         createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
-</script>
-<?php } else { ?>
-<?php } ?>
+        </script>";
+        } else {
+        echo "";
+        }
+@endphp
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="/">
