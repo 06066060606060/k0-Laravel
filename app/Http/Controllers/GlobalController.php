@@ -532,9 +532,10 @@ class GlobalController extends Controller
         return number_format($sommecoins, 0, ',', ' ');
     }
 
-    static function check_mobile(){
-        $user_agent = $_SERVER['HTTP_USER_AGENT'];
-        $mobile_agents = array(
+    static function isMobile(): bool
+    {
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        $mobileAgents = [
             'Android',
             'iPhone',
             'iPod',
@@ -543,15 +544,15 @@ class GlobalController extends Controller
             'Opera Mini',
             'IEMobile',
             'Mobile Safari'
-        );
-        $is_mobile = false;
-        foreach($mobile_agents as $agent){
-            if(strpos($user_agent, $agent) !== false){
-                $is_mobile = true;
-                break;
+        ];
+
+        foreach ($mobileAgents as $agent) {
+            if (stripos($userAgent, $agent) !== false) {
+                return true;
             }
         }
-        return $is_mobile;
+
+        return false;
     }
 
 
