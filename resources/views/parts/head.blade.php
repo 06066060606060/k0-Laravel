@@ -55,31 +55,18 @@ document.tidioIdentify = {
 <script>
 function createNotification(message) {
     // Création d'un élément de notification
-    let notificationeph = document.createElement("div");
-    notificationeph.classList.add("notificationeph");
-    notificationeph.innerHTML = message;
+    let notification = document.createElement("div");
+    notification.classList.add("alert", "alert-info", "fade", "show");
+    notification.innerHTML = message;
+    notification.setAttribute("role", "alert");
     // Ajout de la notification à la page
-    document.body.appendChild(notificationeph);
+    document.getElementById("notification-container").appendChild(notification);
+
     // Suppression de la notification après 5 secondes
     setTimeout(() => {
-        notificationeph.remove();
+        $(notification).alert('close');
     }, 5000);
 }
 </script>
-<style>
-.notificationeph {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 15px;
-    background-color: #d9edf7;
-    color: #31708f;
-    border-radius: 4px;
-    font-size: 14px;
-    font-weight: bold;
-}
-</style>
-<script>
-createNotification("ATTENTION votre navigation web est privée, nous vous conseillons d'utiliser une 
-navigation acceptant les cookies.");
-</script>
+<div id="notification-container"></div>
+createNotification("Votre message ici");

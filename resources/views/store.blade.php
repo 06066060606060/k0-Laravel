@@ -2,7 +2,14 @@
 
  @section('main')
      <div data-barba="container">
-         <div class="z-0 one"></div>
+    @php
+        use \App\Http\Controllers\GlobalController;
+        $isMobile = GlobalController::isMobile();
+    @endphp
+    @if($isMobile == true)
+    @else
+        <div class="z-0 one"></div>
+    @endif
 
          <container class="block min-h-screen px-4 mx-auto text-white max-w-7xl">
              <div class="container px-5 pt-8 mx-auto">
