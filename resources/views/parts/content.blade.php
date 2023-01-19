@@ -1,9 +1,9 @@
 @php use \App\Http\Controllers\GlobalController;
   $check_mobile = GlobalController::check_mobile();
-if($check_mobile == false)
-else
+if($check_mobile == false) {
+} else {
 {{ '<div class="z-0 one"></div>' }}
-endif
+}
 @endphp
 <container id="home">
     <section>
