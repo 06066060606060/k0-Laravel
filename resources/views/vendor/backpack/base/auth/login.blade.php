@@ -3,16 +3,11 @@
 @section('content')
 
 <?php
-    if (isset($_COOKIE['test'])) {
-        return false;
-    } else {
-        setcookie('test', 'value');
-        if (isset($_COOKIE['test'])) {
-            echo "Cookie désactivé";
-        } else {
-            echo "Cookie activé";
-        }
-    }
+if (count($_COOKIE) > 0) {
+    echo "Cookies are enabled.";
+} else {
+    echo "Cookies are disabled.";
+}
 ?>
         
     <div class="row justify-content-center ">
