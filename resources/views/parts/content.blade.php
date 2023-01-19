@@ -1,6 +1,6 @@
 @php use \App\Http\Controllers\GlobalController;
-  $check_mobile = GlobalController::mafonction();
-if($is_mobile == false)
+  $check_mobile = GlobalController::check_mobile();
+if(check_mobile())
 else
 {{ '<div class="z-0 one"></div>' }}
 endif
