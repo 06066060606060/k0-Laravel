@@ -120,7 +120,19 @@ img{
 
   }
 
-  
+  .one{
+    background-image: url("gift.png");
+    background-repeat: no-repeat;
+    z-index: -10 ;
+    height: 500px;
+    width: 500px;
+    left: -200px;
+    top: -20px;
+    opacity:.03;
+    position: absolute;
+    z-index: -10 ;
+  }
+
 
 .menu__btn > span,
 .menu__btn > span::before,
