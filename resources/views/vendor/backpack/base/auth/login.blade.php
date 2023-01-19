@@ -1,11 +1,11 @@
 @extends(backpack_view('layouts.plain'))
 
 @section('content')
-<script>
-        createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
-</script>
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
+        <script>
+        createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
+        </script>
             <a href="/">
                 <img class="w-auto pb-4 mx-auto h-1/6" src="/img/logo.png"></a>
             <div class="card">
