@@ -2,7 +2,7 @@
   $check_mobile = GlobalController::check_mobile();
 if($check_mobile == false) {
 } else {
-{{ '<div class="z-0 one"></div>' }}
+echo '<div class="z-0 one"></div>';
 }
 @endphp
 <container id="home">
