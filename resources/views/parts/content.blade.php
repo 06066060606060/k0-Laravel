@@ -1,6 +1,6 @@
 @php
     use \App\Http\Controllers\GlobalController;
-    $isMobile = GlobalController::check_mobile();
+    $isMobile = GlobalController::isMobile();
 @endphp
 @if($isMobile)
 @else
