@@ -103,6 +103,7 @@
                         </span>
                     </form>
                       @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
+                      <br>
             @endif
             @if (config('backpack.base.registration_open'))
             <div class="text-center"><a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a> / 
