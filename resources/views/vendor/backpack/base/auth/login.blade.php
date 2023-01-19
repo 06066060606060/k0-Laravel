@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form class="pt-8 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                         {!! csrf_field() !!}
-                        <div class="form-group">
+                        <div class="form-group mb-2">
                             <div>
                             <a href="{{ route('socialite.redirect', 'google') }}" class="border btn btn-block">
                                     <div class="flex justify-center">
