@@ -90,5 +90,5 @@ document.tidioIdentify = {
                 $(notification).alert('close');
             }, 5000);
         }
-        createNotification("ATTENTION : la navigation privée est interdite sur notre site web.");
+        createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
     </script>
