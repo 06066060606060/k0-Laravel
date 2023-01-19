@@ -3,23 +3,16 @@
 @section('content')
 
 <?php
-function isPrivateMode() {
     if (isset($_COOKIE['test'])) {
         return false;
     } else {
         setcookie('test', 'value');
         if (isset($_COOKIE['test'])) {
-            return false;
+            echo "Cookie désactivé";
         } else {
-            return true;
+            echo "Cookie activé";
         }
     }
-}
-if (isPrivateMode()) {
-    echo "Cookies are disabled or the browser is in private mode.";
-} else {
-    echo "Cookies are enabled.";
-}
 ?>
         
     <div class="row justify-content-center ">
