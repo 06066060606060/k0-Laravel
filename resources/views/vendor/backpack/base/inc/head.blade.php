@@ -62,6 +62,6 @@
             // Suppression de la notification après 5 secondes
             setTimeout(() => {
                 $(notification).alert('close');
-            }, 5000);
+            }, 10000);
         }
     </script>
