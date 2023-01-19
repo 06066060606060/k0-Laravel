@@ -1,22 +1,7 @@
 @extends(backpack_view('layouts.plain'))
 
 @section('content')
-    <div class="row justify-content-center ">
-    <script>
-        function createNotification(message) {
-            // Création d'un élément de notification
-            let notification = document.createElement("div");
-            notification.classList.add("alert", "alert-danger", "fade", "show");
-            notification.innerHTML = message;
-            notification.setAttribute("role", "alert");
-            // Ajout de la notification à la page
-            document.getElementById("notification-container").appendChild(notification);
-            // Suppression de la notification après 5 secondes
-            setTimeout(() => {
-                $(notification).alert('close');
-            }, 5000);
-        }
-    </script>
+    <div class="justify-content-center ">
     <script>
         createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
         </script>
