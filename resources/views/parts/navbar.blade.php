@@ -125,10 +125,7 @@
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                 </div>
                 <div class="flex px-2">
-                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="pack"
-                        @click="isOpen = false" data-barba-prevent="self">
                         <img src="img/gem10.png" class="w-8 h-6">
-                    </a>
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
                 </div>
                 <div class="flex px-2">
