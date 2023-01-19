@@ -1,5 +1,5 @@
 @php use \App\Http\Controllers\GlobalController;
-  $ma fonction = GlobalController::mafonction();
+  $check_mobile = GlobalController::mafonction();
 if(check_mobile())
 else
 {{ '<div class="z-0 one"></div>' }}
