@@ -7,7 +7,7 @@
                 <img class="w-auto pb-4 mx-auto h-1/6" src="/img/logo.png"></a>
             <div class="card">
                 <div class="card-body">
-                    <form class="pt-1 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
+                    <form class="pt-0 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                         {!! csrf_field() !!}
                         <div class="form-group mb-2">
                             <div>
