@@ -1,6 +1,7 @@
 @extends(backpack_view('layouts.plain'))
 
 @section('content')
+    <div id="notification-container flex flex-col"></div>
     <div class="justify-content-center ">
     <script>
         createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
