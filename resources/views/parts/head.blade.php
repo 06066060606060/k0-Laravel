@@ -31,7 +31,15 @@
 <script>
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{};
+Tawk_API.visitor = {
+name : {{ backpack_auth()->user()->name }},
+email : {{ backpack_auth()->user()->email }}
+};
 
+var Tawk_LoadStart=new Date();
+</script>
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
@@ -42,4 +50,6 @@ s1.charset='UTF-8';
 s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
+
+
 </script>
