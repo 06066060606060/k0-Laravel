@@ -51,3 +51,34 @@ document.tidioIdentify = {
 };
 </script>
 @endif
+
+<script>
+function createNotification(message) {
+    // Création d'un élément de notification
+    let notification = document.createElement("div");
+    notification.classList.add("notificationeph");
+    notification.innerHTML = message;
+    // Ajout de la notification à la page
+    document.body.appendChild(notification);
+    // Suppression de la notification après 5 secondes
+    setTimeout(() => {
+        notification.remove();
+    }, 5000);
+}
+</script>
+<style>
+.notificationeph {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 15px;
+    background-color: #d9edf7;
+    color: #31708f;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+}
+</style>
+<script>
+createNotification("ATTENTION votre navigation web est privée, nous vous conseillons d'utiliser une navigation acceptant les cookies.");
+</script>
