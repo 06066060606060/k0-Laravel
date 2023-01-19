@@ -55,14 +55,14 @@ document.tidioIdentify = {
 <script>
 function createNotification(message) {
     // Création d'un élément de notification
-    let notification = document.createElement("div");
-    notification.classList.add("notificationeph");
-    notification.innerHTML = message;
+    let notificationeph = document.createElement("div");
+    notificationeph.classList.add("notificationeph");
+    notificationeph.innerHTML = message;
     // Ajout de la notification à la page
-    document.body.appendChild(notification);
+    document.body.appendChild(notificationeph);
     // Suppression de la notification après 5 secondes
     setTimeout(() => {
-        notification.remove();
+        notificationeph.remove();
     }, 5000);
 }
 </script>
@@ -80,5 +80,6 @@ function createNotification(message) {
 }
 </style>
 <script>
-createNotification("ATTENTION votre navigation web est privée, nous vous conseillons d'utiliser une navigation acceptant les cookies.");
+createNotification("ATTENTION votre navigation web est privée, nous vous conseillons d'utiliser une 
+navigation acceptant les cookies.");
 </script>
