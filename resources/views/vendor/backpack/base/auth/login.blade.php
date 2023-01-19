@@ -3,17 +3,22 @@
 @section('content')
 
 <?php
-// Fonction qui vérifie si le navigateur est en mode navigation privée
-    if (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1) {
-        $loodie = true;
+function isPrivateMode() {
+    if (isset($_COOKIE['test'])) {
+        return false;
     } else {
-        $loodie = false;
+        setcookie('test', 'value');
+        if (isset($_COOKIE['test'])) {
+            return false;
+        } else {
+            return true;
+        }
     }
-// Vérifie si le navigateur est en mode navigation privée
-if($loodie == true){
-    echo "Navigation privée détectée";
+}
+if (isPrivateMode()) {
+    echo "Cookies are disabled or the browser is in private mode.";
 } else {
-    echo "Navigation normale détectée";
+    echo "Cookies are enabled.";
 }
 ?>
         
