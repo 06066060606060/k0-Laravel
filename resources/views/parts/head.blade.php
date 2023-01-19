@@ -69,4 +69,6 @@ function createNotification(message) {
 }
 </script>
 <div id="notification-container"></div>
+<script>
 createNotification("Votre message ici");
+</script>
