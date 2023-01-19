@@ -64,5 +64,4 @@
                 $(notification).alert('close');
             }, 5000);
         }
-        createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
     </script>
