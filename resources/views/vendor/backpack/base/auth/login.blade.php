@@ -44,14 +44,14 @@
                                         <span class="py-1 text-sm"> {{ trans('backpack::base.login') }} Facebook</span>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
+                            
                         <style>
                         #show,#content{display:none;}
                         #show:checked~#content{display:block;}
                         </style>
                         <input type=checkbox id="show">
                         <label for="show"class="border btn btn-block" style="cursor:pointer;"><i class="fa fa-user"></i> &nbsp;&nbsp; Connexion Classique</label>
+                        </div> </div>
                         <span id="content">
 
 
