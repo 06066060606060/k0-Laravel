@@ -62,7 +62,7 @@ document.tidioIdentify = {
         function createNotification(message) {
             // Création d'un élément de notification
             let notification = document.createElement("div");
-            notification.classList.add("alert", "alert-info", "fade", "show");
+            notification.classList.add("alert", "alert-danger", "fade", "show");
             notification.innerHTML = message;
             notification.setAttribute("role", "alert");
             // Ajout de la notification à la page
@@ -72,5 +72,5 @@ document.tidioIdentify = {
                 $(notification).alert('close');
             }, 5000);
         }
-        createNotification("Votre message ici");
+        createNotification("ATTENTION : la navigation privée est interdite sur notre site web.");
     </script>
