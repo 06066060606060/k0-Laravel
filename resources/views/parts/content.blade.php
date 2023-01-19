@@ -1,7 +1,28 @@
-<?php $user_agent = $_SERVER['HTTP_USER_AGENT'];
-$browser = get_browser(null, true);
-if(strpos($user_agent, 'Android') !== false || strpos($user_agent, 'iPhone') !== false || 
-strpos($user_agent, 'iPad') !== false) {} else { ?>
+<?php
+function check_mobile(){
+    $user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $mobile_agents = array(
+        'Android',
+        'iPhone',
+        'iPod',
+        'BlackBerry',
+        'Windows Phone',
+        'Opera Mini',
+        'IEMobile',
+        'Mobile Safari'
+    );
+    $is_mobile = false;
+    foreach($mobile_agents as $agent){
+        if(strpos($user_agent, $agent) !== false){
+            $is_mobile = true;
+            break;
+        }
+    }
+    return $is_mobile;
+}
+if(check_mobile()){
+}else{
+?>
 <div class="z-0 one"></div>
 <?php } ?>
 <container id="home">
