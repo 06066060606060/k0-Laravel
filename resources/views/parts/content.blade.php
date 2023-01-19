@@ -1,4 +1,8 @@
+<?php $user_agent = $_SERVER['HTTP_USER_AGENT'];
+$browser = get_browser(null, true);
+if(strpos($user_agent, 'Android') !== false || strpos($user_agent, 'iPhone') !== false || strpos($user_agent, 'iPad') !== false {} else { ?>
 <div class="z-0 one"></div>
+<?php } ?>
 <container id="home">
     <section>
         <div
