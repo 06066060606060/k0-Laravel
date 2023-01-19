@@ -204,7 +204,7 @@ class GlobalController extends Controller
                  new DatabaseNotification(
                      ($type = 'success'), // info / success / warning / error
                      ($message = 'Nouvelle commande'),
-                     ($messageLong = 'Nouvelle commande de cadeau par' . $usermail),
+                     ($messageLong = 'Nouvelle commande de cadeau par ' . $usermail),
                      // rand(1, 99999)), // optional
                      ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
                      ($hrefText = 'Voir') // optional
