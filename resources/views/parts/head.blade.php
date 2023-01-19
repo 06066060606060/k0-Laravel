@@ -32,10 +32,12 @@
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
 <script type="text/javascript">
+var login = "<?php echo backpack_auth()->user()->name; ?>";
+var mail = "<?php echo backpack_auth()->user()->email; ?>";
 var Tawk_API=Tawk_API||{};
 Tawk_API.visitor = {
-name : {{ backpack_auth()->user()->name }},
-email : {{ backpack_auth()->user()->email }}
+name : login,
+email : mail
 };
 
 var Tawk_LoadStart=new Date();
