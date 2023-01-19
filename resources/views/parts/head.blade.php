@@ -31,6 +31,7 @@
 <script>
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
+@if (backpack_auth()->check())
 <script type="text/javascript">
 var login = "<?php echo backpack_auth()->user()->name; ?>";
 var mail = "<?php echo backpack_auth()->user()->email; ?>";
@@ -42,6 +43,8 @@ email : mail
 
 var Tawk_LoadStart=new Date();
 </script>
+@else
+@endif
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
