@@ -1,15 +1,7 @@
 @extends(backpack_view('layouts.plain'))
 
 @section('content')
-
-<?php
-if (count($_COOKIE) > 0) {
-    echo "Cookies are enabled.";
-} else {
-    echo "Cookies are disabled.";
-}
-?>
-        
+       
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="/">
