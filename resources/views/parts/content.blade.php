@@ -2,7 +2,7 @@
     use \App\Http\Controllers\GlobalController;
     $isMobile = GlobalController::isMobile();
 @endphp
-@if($isMobile)
+@if($isMobile == true)
 @else
     <div class="z-0 one"></div>
 @endif
