@@ -4,21 +4,18 @@
 
 <?php
 // Fonction qui vérifie si le navigateur est en mode navigation privée
-function detectPrivateMode() {
     if (isset($_SERVER['HTTP_DNT']) && $_SERVER['HTTP_DNT'] == 1) {
         $loodie = true;
     } else {
         $loodie = false;
     }
-}
-
 // Vérifie si le navigateur est en mode navigation privée
 if($loodie == true){
     echo "Navigation privée détectée";
 } else {
     echo "Navigation normale détectée";
 }
-
+?>
         
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
