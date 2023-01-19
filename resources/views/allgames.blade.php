@@ -7,10 +7,8 @@
             <div class="container px-5 pt-8 mx-auto">
                 <div class="flex flex-col w-full mb-20 text-center">
                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tous nos jeux</h1>
-                    <p class="mx-auto text-base leading-relaxed lg:w-2/3">Des dizaines de jeux flash, jeux d'adresse, jeux de
-                        réflexion et jeux de chance.<br> Vous pourrez jouer à Fish Mania, un jeu de pêche multijoueur, ou
-                        une
-                        chasse au trésor enablée..<br><a -500">Rejoignez les centaines de joueurs déjà inscrits !</a> </p>
+                    <p class="mx-auto text-base leading-relaxed lg:w-2/3">Sur GoKDO, nous vous proposons un large choix de jeux, optez pour nos jeux multijoueurs pour plus de fun.<br> 
+                    Nous proposons des jeux gratuits avec des parties quotidiennes et bonus ainsi que des jeux booster afin que les plus joueurs se sentent au bon endroit.</p>
                 </div>
 
                 <div class="flex flex-wrap py-2 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
