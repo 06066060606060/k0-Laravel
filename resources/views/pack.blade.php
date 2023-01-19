@@ -6,7 +6,14 @@
         data-sdk-integration-source="button-factory"></script>
 
     <div data-barba="container">
+    @php
+        use \App\Http\Controllers\GlobalController;
+        $isMobile = GlobalController::isMobile();
+    @endphp
+    @if($isMobile == true)
+    @else
         <div class="z-0 one"></div>
+    @endif
         <container class="block px-4 mx-auto text-white max-w-7xl">
             <div class="container px-5 pt-8 mx-auto">
                 <div class="flex flex-col w-full mb-10 text-center">
