@@ -5,7 +5,7 @@
         use \App\Http\Controllers\GlobalController;
         $detect = GlobalController::detectPrivateMode();
     @endphp
-<?php if($detect = true){ ?>
+<?php if($detect == true){ ?>
 <script>
         createNotification("ATTENTION : en navigation privée vous devrez vous connecter deux fois si vous utilisez Google ou Facebook connect.");
 </script>
