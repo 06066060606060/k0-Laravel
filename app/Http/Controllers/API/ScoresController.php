@@ -29,7 +29,7 @@ class ScoresController extends Controller
      */
     public function store(Request $request)
     {
-        $decrypted = $request->secret;
+        $decrypted = decrypt($request->secret);
         $secrettoken = $decrypted[0];
         $secretuser_id = $decrypted['userid'];
         $secretgame_id = $decrypted['gameid'];
