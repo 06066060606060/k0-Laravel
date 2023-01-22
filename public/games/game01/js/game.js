@@ -41,14 +41,14 @@ var plinkoSettings = {
 	prizeBorderColor: "#fff",
 	prizes: [
 		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 100 },
-		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
-		{ value: 100, text: "1\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
-		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
-		{ value: 500, text: "5\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
-		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
-		{ value: 250, text: "2\n5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
-		{ value: 0, image: 'assets/item_prize_bonus.png', x: 0, y: 0, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1, bonus: true },
-		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
+		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
+		{ value: 100, text: "1\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
+		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
+		{ value: 500, text: "5\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
+		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
+		{ value: 250, text: "2\n5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
+		{ value: 0, image: 'assets/item_prize_bonus.png', x: 0, y: 0, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0, bonus: true },
+		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
 	]
 }
 
