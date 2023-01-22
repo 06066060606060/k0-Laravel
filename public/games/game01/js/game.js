@@ -19,7 +19,7 @@ secretData = urlParams.get('secret');
 var gameSettings = {
 
 	enableFixedResult: false, //option to have fixed result by API, enabling this will disable 2D physics engine
-	enablePercentage: true, //option to have result base on percentage, enabling this will disable 2D physics engine
+	enablePercentage: false, //option to have result base on percentage, enabling this will disable 2D physics engine
 	gamePlayType: true, //game play type; true for chance, false for bet
 	totalChance: 1, //total chance
 	betPoint: 500, //start bet amount
