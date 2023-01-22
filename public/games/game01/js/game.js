@@ -937,24 +937,27 @@ function stopGame() {
  * 
  */
 function saveGame(score) {
+	const headers = { 
+		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'), 
+		'Content-Type': 'application/json' 
+	};
+	const data = {
+		game_id: gameid,
+		user_id: userId,
+		score: 0,
+		data: score,
+		secret: secretData
+	}; 
+	
 	$.ajax({
-		headers: { 
-			'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'), 
-			'Content-Type': 'application/json' 
-		},
-		url: 'https://gokdo.com/api/scores',
-        //url: 'http://127.0.0.1:8000/api/scores',
-		method: 'POST',
-		data: JSON.stringify({
-			game_id: gameid,
-			user_id: userId,
-			score: 0,
-			data: score,
-			secret: secretData
-		}),
-		error: function(error) {
-			console.log(error);
-		}
+		headers, 
+		url: 'https://gokdo.com/api/scores', //commenter pour le localhost et décommenter pour le serveur distant 
+		//url: 'http://127.0.0.1:8000/api/scores', //décommenter pour le localhost et commenter pour le serveur distant  
+	
+		method: 'POST', 
+		data: JSON.stringify(data), 
+	
+		error(error) { console.log(error); } 
 	}); 
 }
 
