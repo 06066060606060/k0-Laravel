@@ -18,8 +18,8 @@ secretData = urlParams.get('secret');
 
 var gameSettings = {
 
-	enableFixedResult: true, //option to have fixed result by API, enabling this will disable 2D physics engine
-	enablePercentage: false, //option to have result base on percentage, enabling this will disable 2D physics engine
+	enableFixedResult: false, //option to have fixed result by API, enabling this will disable 2D physics engine
+	enablePercentage: true, //option to have result base on percentage, enabling this will disable 2D physics engine
 	gamePlayType: true, //game play type; true for chance, false for bet
 	totalChance: 1, //total chance
 	betPoint: 500, //start bet amount
@@ -40,15 +40,15 @@ var plinkoSettings = {
 	pinColor: "#fff",
 	prizeBorderColor: "#fff",
 	prizes: [
-		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
-		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 100 },
-		{ value: 100, text: "1\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
-		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
-		{ value: 500, text: "5\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
-		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
-		{ value: 250, text: "2\n5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
-		{ value: 0, image: 'assets/item_prize_bonus.png', x: 0, y: 0, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0, bonus: true },
-		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 0 },
+		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 100 },
+		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
+		{ value: 100, text: "1\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
+		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
+		{ value: 500, text: "5\n0\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
+		{ value: 0, text: "0", fontSize: 20, lineHeight: 18, x: 0, y: 5, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
+		{ value: 250, text: "2\n5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -8, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
+		{ value: 0, image: 'assets/item_prize_bonus.png', x: 0, y: 0, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1, bonus: true },
+		{ value: 50, text: "5\n0", fontSize: 20, lineHeight: 18, x: 0, y: -3, color: "#fff", bgColor: "#7700B0", bgWinColor: "#A600F9", percent: 1 },
 	]
 }
 
