@@ -126,6 +126,7 @@ class CadeauxCrudController extends CrudController
                 'Cuisine' => 'Cuisine',
                 'DVD Blue Ray' => 'DVD Blue Ray',
                 'Electroménager' => 'Electroménager',
+                'GoKDO' => 'GoKDO',
                 'High Tech' => 'High Tech',
                 'Jardin' => 'Jardin',                                                
                 'Jeux Vidéo' => 'Jeux Vidéo',
