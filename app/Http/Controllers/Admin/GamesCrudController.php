@@ -157,7 +157,11 @@ class GamesCrudController extends CrudController
                 'Sport' => 'Sport',
                 'Autre' => 'Autre',
             ],
-            CRUD::field('nbr_gratuit')->label('Nbr Gratuit');
+            'allows_null' => false,
+            'default'     => 'Autre',
+            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+        ]);
+        CRUD::field('nbr_gratuit')->label('Nbr Gratuit');
             CRUD::field('prix')->label('Prix Booster');
             $this->crud->addField([   // select_from_array
                 'name'        => 'type_prix',
@@ -168,11 +172,6 @@ class GamesCrudController extends CrudController
                     'Rubis' => 'Rubis',
                     'Coins' => 'Coins',
                 ],
-
-            'allows_null' => false,
-            'default'     => 'Autre',
-            // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
-        ]);
         $this->crud->addField([   // radio
             'name'        => 'status', // the name of the db column
             'label'       => 'En vedette', // the input label
