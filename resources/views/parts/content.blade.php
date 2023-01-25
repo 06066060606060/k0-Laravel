@@ -100,7 +100,7 @@
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                    10 par 24h
+                                    {{ $freegame->nbr_gratuit }} par 24h
                                 </div>
                             </div>
                             @php $images =  $freegame->image[0] ?? null; @endphp
