@@ -10,7 +10,7 @@
 
                  <div class="text-white reverted">
                      @php
-                         echo $pages[2]->content;
+                         echo $pages[3]->content;
                      @endphp
                  </div>
 
