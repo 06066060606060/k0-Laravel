@@ -39,8 +39,8 @@
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
-                                    <h3 class="mb-1 text-gray-300"><i class="fa fa-gamepad"></i>&nbsp;&nbsp; <b>{{ $freegame->nbr_gratuit }}</b> par jour</h3>
-                                    <h3 class="mb-1 text-gray-300">{{ $freegame->category }}</h3>
+                                    <h3 class="mb-1 text-gray-300"><i class="fa fa-gamepad"></i>&nbsp; <b>{{ $freegame->nbr_gratuit }}</b> par jour</h3>
+                                    <h3 class="mb-1 text-gray-300"><i>{{ $freegame->category }}</i></h3>
                                     <p class="mb-2 text-sm">{{ $freegame->description }}</p>
                                     @if (backpack_auth()->check())
                                         <a href="game?id={{ $freegame->id }}"
