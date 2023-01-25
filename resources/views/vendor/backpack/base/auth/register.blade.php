@@ -124,7 +124,7 @@
             @endif
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a> /
             <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
-                </div>
+                <br><br>En vous iscrivant vous acceptez le <a href="rules">règlement</a></div>
             </div>
           
         </div>
