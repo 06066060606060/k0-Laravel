@@ -509,9 +509,9 @@ class GlobalController extends Controller
         return view('legal');
     }
 
-    static function getConf()
+    static function getRules()
     {
-        return view('confidentialite');
+        return view('rules');
     }
 
     static function getConf()
