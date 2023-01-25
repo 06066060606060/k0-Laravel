@@ -117,7 +117,7 @@
                                         class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                         src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
                                     <div class="w-full">
-                                        <h3 class="mb-1 text-gray-300 bg-gray-900"><b>{{ $boostergame->prix }}</b> 
+                                        <h3 class="mb-1 pt-2 pb-2 text-gray-300 bg-orange-800 border"><b>{{ $boostergame->prix }}</b> 
                                         @if ($boostergame->type_prix == 'Diamants')
                                         <img src="img/diamond5.png" class="w-4" style="display:inline;">
                                         @elseif ($boostergame->type_prix == 'Rubis')
