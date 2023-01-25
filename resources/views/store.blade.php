@@ -127,7 +127,7 @@
                                                                             value="{{ $cadeau->id }}">
                                                                         <div class="flex justify-between w-full border-b">
                                                                             <h1 class="py-6 mx-auto text-lg font-bold">
-                                                                                Confirmer votre commande:
+                                                                                Confirmez votre commande:
                                                                             </h1>
                                                                         </div>
                                                                         <div class="bg-gray-700 rounded-b-md">
@@ -135,8 +135,8 @@
                                                                                 class="flex flex-col items-center pb-8 mx-24 mt-1">
                                                                                 <h1
                                                                                     class="py-2 text-sm font-medium text-white">
-                                                                                    {{ $cadeau->prix }} diamants
-                                                                                    seronts retiré de votre solde.
+                                                                                    {{ $cadeau->prix }} <img src="img/diamond5.png" class="w-8 h-6">
+                                                                                    seronts retirés de votre solde.
                                                                                 </h1>
 
                                                                                 <div class="flex justify-center">
@@ -171,7 +171,7 @@
                                                                                 </div>
                                                                                 <h1
                                                                                     class="text-xs font-medium text-gray-200">
-                                                                                    Vérifier que vous avez enregistré une
+                                                                                    Vérifiez d'avoir enregistré une
                                                                                     adresse de livraison avant de confirmer.
                                                                                 </h1>
                                                                             </div>
