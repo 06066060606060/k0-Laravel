@@ -28,6 +28,7 @@ Route::get('pack', 'pack');
 Route::get('winner', 'winner');
 Route::get('store', 'store');
 Route::get('help', 'help');
+Route::get('rules', 'rules');
 Route::get('contact', 'contact');
 Route::post('contactus', 'contactus');
 Route::get('test', 'test');
