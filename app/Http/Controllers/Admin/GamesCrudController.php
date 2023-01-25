@@ -161,6 +161,10 @@ class GamesCrudController extends CrudController
             'default'     => 'Autre',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
+        CRUD::addField([
+            'prefix' => '<i class="las la-map"></i>',
+            'name' => 'nbr_gratuit','type' => 'number','label' => 'Nbr gratuit',
+            ]);
         CRUD::field('nbr_gratuit')->label('Nbr Gratuit')->type('number');
             CRUD::field('prix')->label('Prix Booster')->type('number');
             $this->crud->addField([   // select_from_array
