@@ -35,6 +35,12 @@
                             <div
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 @php $images =  $freegame->image[0] ?? null; @endphp
+                                <div class="absolute top-0 right-0 w-16 h-16">
+                                <div
+                                    class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                    {{ $freegame->nbr_gratuit }} par 24h
+                                </div>
+                            </div>
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
