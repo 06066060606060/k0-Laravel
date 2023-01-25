@@ -31,7 +31,7 @@
 
                 <div class="flex flex-wrap justify-center -m-4">
                     @forelse ($freegames as $freegame)
-                        <div class="p-4 lg:w-1/4 md:w-1/2">
+                        <div class="relative p-4 lg:w-1/4 md:w-1/2">
                             <div
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 @php $images =  $freegame->image[0] ?? null; @endphp
