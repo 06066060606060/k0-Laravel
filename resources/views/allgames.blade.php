@@ -38,7 +38,7 @@
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
-                                    <h3 class="mb-1 pt-1 pb-1 bg-blue-700 text-gray-300"><i class="fa fa-gamepad"></i>&nbsp; <b>{{ $freegame->nbr_gratuit }}</b> par jour</h3>
+                                    <h3 class="border mb-1 pt-1 pb-1 bg-blue-700 text-gray-300"><i class="fa fa-gamepad"></i>&nbsp; <b>{{ $freegame->nbr_gratuit }}</b> par 24h</h3>
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
                                     <h3 class="mb-1 text-gray-300"><i>{{ $freegame->category }}</i></h3>
                                     <p class="mb-2 text-sm">{{ $freegame->description }}</p>
