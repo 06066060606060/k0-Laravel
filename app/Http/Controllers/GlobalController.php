@@ -105,6 +105,11 @@ class GlobalController extends Controller
         return view('pack', compact('packs'));
     }
 
+    public function rules()
+    {
+        return view('rules');
+    }
+
     public function help()
     {
         return view('help');
@@ -507,11 +512,6 @@ class GlobalController extends Controller
     static function getLegal()
     {
         return view('legal');
-    }
-
-    static function getRules()
-    {
-        return view('rules');
     }
 
     static function getConf()
