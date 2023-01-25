@@ -5,7 +5,6 @@
 @section('main')
     <div data-barba="container">
             @php
-        use \App\Http\Controllers\GlobalController;
         $isMobile = GlobalController::isMobile();
     @endphp
     @if($isMobile == true)
