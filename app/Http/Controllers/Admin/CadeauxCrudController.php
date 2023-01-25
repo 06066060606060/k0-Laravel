@@ -123,6 +123,7 @@ class CadeauxCrudController extends CrudController
             'type'        => 'select_from_array',
             'options'     => [
                 'BD' => 'BD',
+                'Cryptomonnaie' => 'Cryptomonnaie',                
                 'Cuisine' => 'Cuisine',
                 'DVD Blue Ray' => 'DVD Blue Ray',
                 'Electroménager' => 'Electroménager',
@@ -154,7 +155,7 @@ class CadeauxCrudController extends CrudController
             'default'     => '0',
            'inline'      => true, // show the radios all on the same line?
         ],);
-        CRUD::field('prix')->type('number');
+        CRUD::field('prix')->type('number'); 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
         
