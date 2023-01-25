@@ -157,6 +157,17 @@ class GamesCrudController extends CrudController
                 'Sport' => 'Sport',
                 'Autre' => 'Autre',
             ],
+            CRUD::field('nbr_gratuit')->label('Nbr Gratuit');
+            CRUD::field('prix')->label('Prix Booster');
+            $this->crud->addField([   // select_from_array
+                'name'        => 'type_prix',
+                'label'       => "Type Prix Booster",
+                'type'        => 'select_from_array',
+                'options'     => [
+                    'Diamants' => 'Diamants',
+                    'Rubis' => 'Rubis',
+                    'Coins' => 'Coins',
+                ],
 
             'allows_null' => false,
             'default'     => 'Autre',
