@@ -514,6 +514,11 @@ class GlobalController extends Controller
         return view('confidentialite');
     }
 
+    static function getConf()
+    {
+        return view('confidentialite');
+    }
+
     static function getSommeDiamants()
     {
        $sommediamants = User::All()->sum('trophee1');
