@@ -31,20 +31,15 @@
 
                 <div class="flex flex-wrap justify-center -m-4">
                     @forelse ($freegames as $freegame)
-                        <div class="relative p-4 lg:w-1/4 md:w-1/2">
+                        <div class="p-4 lg:w-1/4 md:w-1/2">
                             <div
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 @php $images =  $freegame->image[0] ?? null; @endphp
-                                <div class="absolute top-0 right-0 w-16 h-16">
-                                <div
-                                    class="border z-20 absolute transform select-none rotate-45 bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                    {{ $freegame->nbr_gratuit }} par 24h
-                                </div>
-                            </div>
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
+                                    <h3 class="mb-1 text-gray-300"><i class="fa fa-gamepad"></i> {{ $freegame->nbr_gratuit }} par jour</h3>
                                     <h3 class="mb-1 text-gray-300">{{ $freegame->category }}</h3>
                                     <p class="mb-2 text-sm">{{ $freegame->description }}</p>
                                     @if (backpack_auth()->check())
