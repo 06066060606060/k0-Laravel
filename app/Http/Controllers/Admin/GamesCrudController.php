@@ -161,8 +161,8 @@ class GamesCrudController extends CrudController
             'default'     => 'Autre',
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
-        CRUD::field('nbr_gratuit')->label('Nbr Gratuit');
-            CRUD::field('prix')->label('Prix Booster');
+        CRUD::field('nbr_gratuit')->label('Nbr Gratuit')->type('number');
+            CRUD::field('prix')->label('Prix Booster')->type('number');
             $this->crud->addField([   // select_from_array
                 'name'        => 'type_prix',
                 'label'       => "Type Prix Booster",
