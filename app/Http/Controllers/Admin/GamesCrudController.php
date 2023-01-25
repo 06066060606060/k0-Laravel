@@ -172,7 +172,12 @@ class GamesCrudController extends CrudController
                     'Rubis' => 'Rubis',
                     'Coins' => 'Coins',
                 ],
-        $this->crud->addField([   // radio
+                'allows_null' => false,
+                'default'     => 'Autre',
+                // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
+            ]);
+    
+            $this->crud->addField([   // radio
             'name'        => 'status', // the name of the db column
             'label'       => 'En vedette', // the input label
             'type'        => 'radio',
