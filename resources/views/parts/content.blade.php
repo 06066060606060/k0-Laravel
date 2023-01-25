@@ -276,7 +276,14 @@
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                    50 <img src="img/diamond5.png" class="w-4" style="display:inline;">
+                                {{ $games->prix }}
+                                @if ($games->type_prix == 'Diamants')
+                                 <img src="img/diamond5.png" class="w-4" style="display:inline;">
+                                @elseif ($games->type_prix == 'Rubis')
+                                 <img src="img/gem10.png" class="w-4" style="display:inline;">
+                                @else
+                                 <img src="img/coin10.png" class="w-4" style="display:inline;">
+                                 @endif
                                 </div>
                             </div>
                             @php $imagesb =  $boostergame->image[0] ?? null; @endphp
