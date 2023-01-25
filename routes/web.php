@@ -38,6 +38,7 @@ Route::middleware(['cors'])->group(function () {
     Route::get('game', [GlobalController::class, 'game']);
 });
 
+Route::get('rules' , [GlobalController::class, 'getRules']);
 Route::get('legal' , [GlobalController::class, 'getLegal']);
 Route::get('confidentialite' , [GlobalController::class, 'getConf']);
 
