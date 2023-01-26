@@ -62,7 +62,8 @@ class SocialiteController extends Controller
                     'name' => $name,
                     'email' => $email,
                     'role' => 'user',
-                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds") // On attribue un mot de passe
+                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
+                    'trophee1' => '150' // On offre 150 diamants
                 ]);
                 
             }
