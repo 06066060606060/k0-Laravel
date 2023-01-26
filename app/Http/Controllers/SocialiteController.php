@@ -68,10 +68,11 @@ class SocialiteController extends Controller
                 ]);
                 //create notification
                 $admin = backpack_user();
-                $admin->notify(new DatabaseNotification(
-                        $type = 'info', // info / success / warning / error
-                        $message = 'Nouvelle Inscription',
-                        $messageLong = 'Nouvelle Inscription: ' . $user->email
+                $admin->notify(
+                    new DatabaseNotification(
+                        ($type = 'info'), // info / success / warning / error
+                        ($message = 'Nouvelle Inscription'),
+                        ($messageLong = 'Nouvelle Inscription: ' . $user->email)
                     )
                 );
                 
