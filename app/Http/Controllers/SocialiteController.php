@@ -68,15 +68,12 @@ class SocialiteController extends Controller
                     'trophee1' => '150' // On offre 150 diamants
                 ]);
                 //create notification
-                
+                $admin = backpack_user()->where('id', 1);
                 $admin->notify(
                     new DatabaseNotification(
                         ($type = 'info'), // info / success / warning / error
                         ($message = 'Nouvelle Inscription'),
                         ($messageLong = 'Nouvelle Inscription: ' . $user->email)
-                        // rand(1, 99999)), // optional
-                        // ($href = '/some-custom-url'), // optional, e.g. backpack_url('/example')
-                    // ($hrefText = 'Go to custom URL') // optional
                     )
                 );
                 
