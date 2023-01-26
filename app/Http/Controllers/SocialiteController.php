@@ -7,7 +7,7 @@ use Socialite;
 
 use App\Models\User;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
-
+use App\Models\User;
 
 class SocialiteController extends Controller
 {
@@ -68,7 +68,6 @@ class SocialiteController extends Controller
                     'trophee1' => '150' // On offre 150 diamants
                 ]);
                 //create notification
-                dd(backpack_user()->all());
                 $admin = backpack_user()->where('id', 1);
                 $admin->notify(
                     new DatabaseNotification(
