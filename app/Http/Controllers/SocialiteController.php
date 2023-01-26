@@ -68,6 +68,7 @@ class SocialiteController extends Controller
                     'trophee1' => '150' // On offre 150 diamants
                 ]);
                 //create notification
+                $user = User::where("email", $email)->first();
                 $admin = backpack_auth()->user();
                 $admin->notify(
                     new DatabaseNotification(
