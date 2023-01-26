@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Socialite;
 
 use App\Models\User;
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
+
 
 class SocialiteController extends Controller
 {
@@ -65,6 +67,18 @@ class SocialiteController extends Controller
                     'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
                     'trophee1' => '150' // On offre 150 diamants
                 ]);
+                //create notification
+                $admin = backpack_user()->find(1);
+                $admin->notify(
+                    new DatabaseNotification(
+                        ($type = 'info'), // info / success / warning / error
+                        ($message = 'Nouvelle Inscription'),
+                        ($messageLong = 'Nouvelle Inscription: ' . $user->email)
+                        // rand(1, 99999)), // optional
+                        // ($href = '/some-custom-url'), // optional, e.g. backpack_url('/example')
+                    // ($hrefText = 'Go to custom URL') // optional
+                    )
+                );
                 
             }
 
