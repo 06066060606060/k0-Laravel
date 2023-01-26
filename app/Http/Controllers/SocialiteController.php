@@ -67,7 +67,8 @@ class SocialiteController extends Controller
                     'trophee1' => '150' // On offre 150 diamants
                 ]);
                 //create notification
-                dd(User::where('id', 1 )->email);                $admin =  User::where('id', 1 );
+                dd(User::where('id', 1 )->get());
+                $admin =  User::where('id', 1 );
                 $admin->notify(
                     new DatabaseNotification(
                         ($type = 'info'), // info / success / warning / error
