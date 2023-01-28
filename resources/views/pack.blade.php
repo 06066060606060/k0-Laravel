@@ -157,7 +157,7 @@
                                         console.log(orderData.id);
                                          $.ajax({
                                             // url: 'http://127.0.0.1:8000/setorderpack',
-                                             url: 'https://gokdo.com/setorderpack',
+                                             url: 'setorderpack',
                                              headers: {
                                                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                                             },
@@ -180,7 +180,7 @@
                                          });
                                         // alert("Paiement effectué avec succès");
                                            //  window.location.href = "http://127.0.0.1:8000/profil";
-                                          window.location.href = "https://gokdo.com/profil";
+                                          window.location.href = "profil";
                                     });
                                 },
                                 onError: function(err) {
