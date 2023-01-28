@@ -5,12 +5,12 @@
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="/">
-                <img class="w-auto pb-4 mx-auto h-1/6" src="/img/logo.png"></a>
+                <img class="w-auto pb-4 mx-auto h-1/6" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
                     <form class="pt-0 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                         {!! csrf_field() !!}
-                        <div class="form-group mb-2">
+                        <div class="mb-2 form-group">
                             <div>
                             <a href="{{ route('socialite.redirect', 'google') }}" class="border btn btn-block">
                                     <div class="flex justify-center">

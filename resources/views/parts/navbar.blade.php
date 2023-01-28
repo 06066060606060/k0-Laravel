@@ -34,7 +34,7 @@
                 @if (backpack_auth()->check())
                 @else
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 prevent"
-                        href="/admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
+                        href="{{ env('APP_URL') }}/admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
                         Inscription</a>
                 @endif
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="allgames"
