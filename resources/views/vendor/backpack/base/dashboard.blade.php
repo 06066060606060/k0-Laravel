@@ -26,9 +26,6 @@
                                         <thead class="bg-gray-50">
                                             <tr>
                                                 <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
-                                                    Connectés:
-                                                </th>
-                                                <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Diamants:
                                                 </th>
                                                     <th scope="col" class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
@@ -41,9 +38,6 @@
                                         </thead>
                                         <tbody class="bg-white">
                                                 <tr>
-                                                    <td class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container">
-                                                        10
-                                                    </td>
                                                     <td class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container">
                                                      <div class="flex justify-center">
                                                     {{ $sommediamants }}

@@ -19,7 +19,7 @@ class Pages extends Model
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
-    // protected $fillable = [];
+    protected $fillable = ['title', 'content', 'created_at', 'updated_at'];
     // protected $hidden = [];
     // protected $dates = [];
 

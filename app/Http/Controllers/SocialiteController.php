@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
+
 use Socialite;
 
 use App\Models\User;
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class SocialiteController extends Controller
 {
@@ -62,8 +64,18 @@ class SocialiteController extends Controller
                     'name' => $name,
                     'email' => $email,
                     'role' => 'user',
-                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds") // On attribue un mot de passe
+                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
+                    'trophee1' => '150' // On offre 150 diamants
                 ]);
+                //create notification
+                $admin = User::where('id', 1)->first();
+                $admin->notify(
+                    new DatabaseNotification(
+                        ($type = 'info'), // info / success / warning / error
+                        ($message = 'Nouvelle Inscription'),
+                        ($messageLong = 'Nouvelle Inscription: ' . $email)
+                    )
+                );
                 
             }
 

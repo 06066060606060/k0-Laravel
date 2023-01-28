@@ -105,6 +105,11 @@ class GlobalController extends Controller
         return view('pack', compact('packs'));
     }
 
+    public function rules()
+    {
+        return view('rules');
+    }
+
     public function help()
     {
         return view('help');

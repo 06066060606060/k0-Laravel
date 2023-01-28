@@ -2,7 +2,14 @@
 
 @section('main')
     <div data-barba="container">
+            @php
+        use \App\Http\Controllers\GlobalController;
+        $isMobile = GlobalController::isMobile();
+    @endphp
+    @if($isMobile == true)
+    @else
         <div class="z-0 one"></div>
+    @endif
         <container class="block px-4 mx-auto text-white max-w-7xl">
             <div class="container px-5 pt-8 mx-auto">
                 <div class="flex flex-col w-full mb-20 text-center">
@@ -31,8 +38,9 @@
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
+                                    <h3 class="mb-1 pt-1 pb-1 bg-blue-700 text-gray-300"><i class="fa fa-gamepad"></i>&nbsp; <b>{{ $freegame->nbr_gratuit }}</b> par 24h</h3>
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
-                                    <h3 class="mb-1 text-gray-300">{{ $freegame->category }}</h3>
+                                    <h3 class="mb-1 text-gray-300"><i>{{ $freegame->category }}</i></h3>
                                     <p class="mb-2 text-sm">{{ $freegame->description }}</p>
                                     @if (backpack_auth()->check())
                                         <a href="game?id={{ $freegame->id }}"
@@ -109,6 +117,15 @@
                                         class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                         src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
                                     <div class="w-full">
+                                        <h3 class="mb-1 pt-1 pb-1 text-gray-300 bg-orange-800"><b>{{ $boostergame->prix }}</b> 
+                                        @if ($boostergame->type_prix == 'Diamants')
+                                        <img src="img/diamond5.png" class="w-4" style="display:inline;">
+                                        @elseif ($boostergame->type_prix == 'Rubis')
+                                        <img src="img/gem10.png" class="w-4" style="display:inline;">
+                                        @else
+                                        <img src="img/coin10.png" class="w-4" style="display:inline;">
+                                        @endif
+                                        </h3>
                                         <h2 class="py-1 text-xl font-bold text-orange-600 title-font ">
                                             {{ $boostergame->name }}</h2>
                                         <h3 class="mb-1 text-gray-300">{{ $boostergame->category }}</h3>
