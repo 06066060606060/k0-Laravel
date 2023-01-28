@@ -33,8 +33,9 @@
                     @click="isOpen = false"><i class="fa-solid fa-house"></i>&nbsp; Accueil</a>
                 @if (backpack_auth()->check())
                 @else
+                @php $url = url('/'); @endphp
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 prevent"
-                        href="{{ env('APP_URL') }}/admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
+                        href="{{ $url }}/admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
                         Inscription</a>
                 @endif
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="allgames"
