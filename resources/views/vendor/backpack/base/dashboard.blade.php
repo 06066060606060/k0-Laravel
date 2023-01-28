@@ -117,7 +117,7 @@
                                                     </td>
                                                     <td
                                                         class="hidden p-4 text-sm font-normal whitespace-nowrap rate-container md:block">
-                                                        <a href="/admin/games/{{ $star->id }}/edit">
+                                                        <a href="admin/games/{{ $star->id }}/edit">
                                                             <i
                                                                 class="text-gray-600 hover:text-gray-800 active:text-black las la-edit la-2x"></i>
                                                         </a>

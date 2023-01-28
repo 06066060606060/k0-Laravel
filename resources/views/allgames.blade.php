@@ -38,7 +38,7 @@
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
-                                    <h3 class="mb-1 pt-1 pb-1 bg-blue-700 text-gray-300"><i class="fa fa-gamepad"></i>&nbsp; <b>{{ $freegame->nbr_gratuit }}</b> par 24h</h3>
+                                    <h3 class="pt-1 pb-1 mb-1 text-gray-300 bg-blue-700"><i class="fa fa-gamepad"></i>&nbsp; <b>{{ $freegame->nbr_gratuit }}</b> par 24h</h3>
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">{{ $freegame->name }}</h2>
                                     <h3 class="mb-1 text-gray-300"><i>{{ $freegame->category }}</i></h3>
                                     <p class="mb-2 text-sm">{{ $freegame->description }}</p>
@@ -56,7 +56,7 @@
                                             <span class="relative">Jouer</span>
                                         </a>
                                     @else
-                                        <a href="/admin/register"
+                                        <a href="admin/register"
                                             class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group prevent">
                                             <span
                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
@@ -77,7 +77,7 @@
                             <div
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                    src="./img/empty.jpg">
+                                    src="img/empty.jpg">
                                 <div class="w-full">
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">Aucun</h2>
                                     <h3 class="mb-1 text-gray-300">Null</h3>
@@ -117,7 +117,7 @@
                                         class="inset-0 object-cover object-center w-full h-full rounded-t-md"
                                         src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
                                     <div class="w-full">
-                                        <h3 class="mb-1 pt-1 pb-1 text-gray-300 bg-orange-800"><b>{{ $boostergame->prix }}</b> 
+                                        <h3 class="pt-1 pb-1 mb-1 text-gray-300 bg-orange-800"><b>{{ $boostergame->prix }}</b> 
                                         @if ($boostergame->type_prix == 'Diamants')
                                         <img src="img/diamond5.png" class="w-4" style="display:inline;">
                                         @elseif ($boostergame->type_prix == 'Rubis')
@@ -144,7 +144,7 @@
                                                 <span class="relative">Jouer</span>
                                             </a>
                                         @else
-                                            <a href="/admin/register"
+                                            <a href="admin/register"
                                                 class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group prevent">
                                                 <span
                                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-orange-500 group-hover:bg-orange-700 group-hover:skew-x-12"></span>

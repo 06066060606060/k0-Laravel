@@ -47,7 +47,7 @@
                                     Maintenant</span>
                             </a>
                         @else
-                            <a href="/admin/register"
+                            <a href="admin/register"
                                 class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                 <span
                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
@@ -79,10 +79,10 @@
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO est un site de jeux gratuits
                     permettant de <a href="store" class="text-blue-500"> gagner des cadeaux</a> !<br>
                     @if (backpack_auth()->check())
-                    <a href="/allgames#gt" class="text-blue-500 prevent">Jouez aux jeux gratuits</a> originaux et amusants et remportez des diamants et autres surprises !
-                    <br><a href="/allgames#bt" class="text-blue-500 prevent">Jouez aux jeux booster</a> pour gagnez diamants / rubis / coins ou encore même des cadeaux !
+                    <a href="allgames#gt" class="text-blue-500 prevent">Jouez aux jeux gratuits</a> originaux et amusants et remportez des diamants et autres surprises !
+                    <br><a href="allgames#bt" class="text-blue-500 prevent">Jouez aux jeux booster</a> pour gagnez diamants / rubis / coins ou encore même des cadeaux !
                     @else
-                    <a href="/admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> pour jouer à
+                    <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> pour jouer à
                     plus
                     d'une dizaine de jeux gratuits multijoueurs originaux et amusants et remporter des cadeaux !
                     @endif                    
@@ -95,7 +95,7 @@
                          @if (backpack_auth()->check())
                         <a href="game?id={{ $freegame->id }}">
                             @else
-                            <a href="/admin/register" class="prevent">
+                            <a href="admin/register" class="prevent">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -129,7 +129,7 @@
                                         <span class="relative">Jouer</span>
                                     </a>
                                 @else
-                                    <a href="/admin/register"
+                                    <a href="admin/register"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
@@ -271,7 +271,7 @@
                         @if (backpack_auth()->check())
                         <a href="game?id={{ $boostergame->id }}">
                             @else
-                            <a href="/admin/register" class="prevent">
+                            <a href="admin/register" class="prevent">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
@@ -311,7 +311,7 @@
                                         <span class="relative">Jouer</span>
                                     </a>
                                 @else
-                                    <a href="/admin/register"
+                                    <a href="admin/register"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>

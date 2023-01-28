@@ -35,7 +35,7 @@
                 @else
                 @php $url = url()->current(); @endphp
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 prevent"
-                        href="{{ $url }}/admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
+                        href="admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
                         Inscription</a>
                 @endif
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="allgames"
@@ -89,7 +89,7 @@
                                             target="_blank">
                                             Administration</a>
                                     @endif
-                                    <a href="/admin/logout"
+                                    <a href="admin/logout"
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white prevent">
                                         Déconnexion </a>
                                 </div>
