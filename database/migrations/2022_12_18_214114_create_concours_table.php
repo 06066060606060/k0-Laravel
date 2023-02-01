@@ -26,7 +26,7 @@ return new class extends Migration
             $table->foreign('cadeau_id')->references('id')->on('cadeaux')->onDelete('cascade');
             $table->unsignedBigInteger('game_id')->nullable();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
-            $table->unsignedBigInteger('user_id')->nullable();
+            $table->uuid('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
