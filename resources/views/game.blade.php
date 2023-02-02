@@ -75,13 +75,6 @@
   <script> 
   
 
-window.addEventListener("message", (event) => {
-  if (event.origin !== "https://gikdo.com")
-
-    console.log("yesyesyes");
-  
-}, false);
-
 // $(document).ready(function () {
                   //  $('#butsave').on('click', function () {
                   //      var value = $('#diff').val();

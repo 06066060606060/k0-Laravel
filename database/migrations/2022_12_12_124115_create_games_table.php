@@ -22,6 +22,9 @@ return new class extends Migration
             $table->string('description')->nullable();
             $table->string('link')->nullable();
             $table->string('category')->nullable();
+			$table->integer('nbr_gratuit')->nullable();
+			$table->integer('prix')->nullable();
+			$table->integer('type_prix')->nullable();
             $table->string('tags')->nullable();
             $table->string('status')->nullable();
             $table->string('data0')->nullable();
