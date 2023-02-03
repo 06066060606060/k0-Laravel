@@ -34,7 +34,7 @@ class CheckIfAdmin
             //   dd('admin');
             return true;
         } elseif ($user->role == 'user0') {
-            if just registered user send welcome mail
+        //    if just registered user send welcome mail
 
             $mailcontent = [
                 'email' => env('MAIL_USERNAME'),
