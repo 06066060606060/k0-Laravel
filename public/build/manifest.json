@@ -1,11 +1,11 @@
 {
+  "resources/img/gift.png": {
+    "file": "assets/gift.d04b1766.png",
+    "src": "resources/img/gift.png"
+  },
   "resources/css/anim.svg": {
     "file": "assets/anim.ac3fceeb.svg",
     "src": "resources/css/anim.svg"
-  },
-  "resources/css/gift.png": {
-    "file": "assets/gift.d04b1766.png",
-    "src": "resources/css/gift.png"
   },
   "resources/js/app.js": {
     "file": "assets/app.0287e3cf.js",
@@ -17,8 +17,8 @@
     "src": "resources/css/app.css",
     "isEntry": true
   },
-  "resources/img/gift.png": {
+  "resources/css/gift.png": {
     "file": "assets/gift.d04b1766.png",
-    "src": "resources/img/gift.png"
+    "src": "resources/css/gift.png"
   }
 }
