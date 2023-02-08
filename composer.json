@@ -11,6 +11,7 @@
         "backpack/filemanager": "^2.0",
         "backpack/settings": "^3.0",
         "guzzlehttp/guzzle": "^7.2",
+        "josiasmontag/laravel-recaptchav3": "^1.0",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/socialite": "^5.5",
@@ -34,13 +35,15 @@
         "exclude-from-classmap": [
             "Backpack\\CRUD\\app\\Library\\CrudPanel\\Traits\\Read",
             "pestopancake\\laravel-backpack-database-notifications\\src\\Http\\Controllers\\NotificationCrudController",
-            "Backpack\\settings\\src\\app\\Http\\Controllers\\SettingCrudController"
+            "Backpack\\settings\\src\\app\\Http\\Controllers\\SettingCrudController",
+			"backpack\\crud\\src\\app\\Library\\Auth\\AuthenticatesUsers"
         ],
         "files": [ 
             "overrides/Read.php",
             "overrides/BackpackProRequiredException.php",
             "overrides/NotificationCrudController.php",
-            "overrides/SettingCrudController.php"
+            "overrides/SettingCrudController.php",
+			"overrides/AuthenticatesUsers.php"
         ], 
         "psr-4": {
             "App\\": "app/",

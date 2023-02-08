@@ -1,6 +1,6 @@
 
 @extends(backpack_view('layouts.plain'))
-
+ {!! RecaptchaV3::initJs() !!}
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
@@ -108,7 +108,16 @@
                                 @endif
                             </div>
                         </div>
-
+ <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                            <div class="col-md-6">
+                                {!! RecaptchaV3::field('register') !!}
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div>
                                 <button type="submit" class="btn btn-block btn-primary">
