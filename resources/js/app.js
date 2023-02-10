@@ -36,6 +36,21 @@ barba.init(
                     },
                 },
             })
+            const menuItem = document.querySelectorAll('.mynav a');
+            const menuLength = menuItem.length;
+
+                const currentLocation = location.href;
+                document.querySelectorAll('.mynav a').className = '';
+                for (let i = 0; i < menuLength; i++) {
+                  if (menuItem[i].href === currentLocation) {
+                    menuItem[i].className = 'text-sm font-bold text-blue-600 lg:mx-4';
+                  } else {
+                    menuItem[i].className = 'text-sm font-bold text-gray-500 lg:mx-4';
+                  }
+                }
+  
+
+
         });
 
         document.addEventListener('DOMContentLoaded', function() {

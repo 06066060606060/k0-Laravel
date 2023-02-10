@@ -22,11 +22,11 @@ Route::controller(GlobalController::class)->group(function(){
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
-Route::get('allgames', 'games');
+Route::get('jeux', 'games');
 Route::get('game', 'game');
 Route::get('pack', 'pack');
-Route::get('winner', 'winner');
-Route::get('store', 'store');
+Route::get('concours', 'winner');
+Route::get('cadeaux', 'store');
 Route::get('help', 'help');
 Route::get('rules', 'rules');
 Route::get('contact', 'contact');

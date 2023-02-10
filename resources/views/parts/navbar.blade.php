@@ -28,27 +28,27 @@
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
         <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
             class="absolute inset-x-0 z-50 w-screen px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
-            <div class="flex flex-col pb-4 space-y-4 align-baseline lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="/"
+            <div class="flex flex-col pb-4 space-y-4 align-baseline mynav lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
+                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="/"
                     @click="isOpen = false"><i class="fa-solid fa-house"></i>&nbsp; Accueil</a>
                 @if (backpack_auth()->check())
                 @else
                 @php $url = url()->current(); @endphp
-                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 prevent"
+                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 prevent"
                         href="admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
                         Inscription</a>
                 @endif
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="allgames"
-                    @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos Jeux</a>
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="winner"
+                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="jeux"
+                    @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos jeux</a>
+                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
                     @click="isOpen = false"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="store"
+                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="cadeaux"
                         @click="isOpen = false"><i class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>
                 @if (backpack_auth()->check())
-                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600" href="pack"
+                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="pack"
                         @click="isOpen = false" data-barba-prevent="self"><i class="fa-regular fa-gem"></i>&nbsp;
                         Pack</a>
-                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 lg:pr-4" href="profil"
+                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-4" href="profil"
                         @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp; Profil</a>
                 @endif
 
@@ -138,3 +138,18 @@
     </div>
 @else
 @endif
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  const currentLocation = location.href;
+  const menuItem = document.querySelectorAll('.mynav a');
+  const menuLength = menuItem.length;
+  for (let i = 0; i < menuLength; i++) {
+    if (menuItem[i].href === currentLocation) {
+      menuItem[i].className = 'text-sm font-bold lg:mx-4 text-blue-600';
+    }
+  }
+});
+</script>
