@@ -107,7 +107,7 @@
                                                  <td
                                                      class="hidden px-4 mt-3 font-bold text-white md:block whitespace-nowrap">
                                                      <div class="flex items-center justify-center">
-                                                   <img src="storage/{{ $score->game->image[0] }}" alt="coin" class="w-16 mt-3 h-9">
+                                                   <img src="storage/{{ $score->game->image[0] }}" alt="coin" class="w-16 mb-4 h-9">
                                                    </div>
                                                  </td>
                                                  <td
