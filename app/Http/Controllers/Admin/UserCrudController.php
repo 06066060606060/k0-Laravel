@@ -119,6 +119,8 @@ class UserCrudController extends CrudController
         CRUD::field('email');
         CRUD::field('global_score')->label('Partie gratuites')->type('number');
         CRUD::field('parties')->label('Partie payées')->type('number');
+        CRUD::field('concours_score')->label('Score concours')->type('number');
+        CRUD::field('concours_parties')->label('Parties concours')->type('number');
         CRUD::field('trophee1')->label('Diamants')->type('number');
         CRUD::field('trophee2')->label('Rubis')->type('number');
         $this->crud->addField([   // select_from_array

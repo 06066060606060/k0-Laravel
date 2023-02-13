@@ -25,6 +25,8 @@ return new class extends Migration
             $table->decimal('trophee3', 4, 2)->default(0)->nullable();
             $table->integer('global_score')->default(0)->nullable();
             $table->integer('parties')->default(0)->nullable();
+            $table->integer('concours_parties')->default(0)->nullable();
+            $table->integer('concours_score')->default(0)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
