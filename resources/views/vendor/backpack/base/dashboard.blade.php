@@ -249,12 +249,7 @@
                                                 <tr>
                                                     <td class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">
                                                         @php
-                                                            exec('ps aux | grep -v grep | grep app.js', $output, $return);
-                                                            if ($return == 0) {
-                                                                $process = 'Stopped';
-                                                            } else {
-                                                                $process = 'Running';
-                                                            }
+                                                          $process = exec('ps aux | grep -v grep | grep app.js') ? 'Stopped' : 'Running';
                                                         @endphp
 
                                                         @if ($process == 'Running')
