@@ -249,11 +249,11 @@
                                                 <tr>
                                                     <td class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">
                                                         @php
-                                                            exec('pgrep lighttpd', $output, $return);
+                                                            exec(' ps aux | grep -v grep | grep "app.js"', $output, $return);
                                                             if ($return == 0) {
-                                                                $process = 'Running';
-                                                            } else {
                                                                 $process = 'Stopped';
+                                                            } else {
+                                                                $process = 'Running';
                                                             }
                                                         @endphp
 
