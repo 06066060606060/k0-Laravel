@@ -28,7 +28,7 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
-        fast('FAST DEBUGGER IS WORKING');
+   
         $concours = Concours::All();
         $winner = User::all();
         $freegames = Games::where('type', 'Gratuit')
@@ -83,6 +83,13 @@ class GlobalController extends Controller
             ->inRandomOrder()
             ->get();
         return view('allgames', compact('freegames', 'boostergames'));
+    }
+    static function getGames()
+    {
+        $games1 = Games::where('type', 'Gratuit')->get();
+        $games2 = Games::where('type', 'Booster')->get();
+        $games = $games1->merge($games2);
+        return $games;
     }
 
     public function winner()

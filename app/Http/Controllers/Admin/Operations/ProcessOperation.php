@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers\Admin\Operations;
-
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Illuminate\Support\Facades\Route;
 
@@ -49,13 +50,23 @@ trait ProcessOperation
     public function process()
     {
         CRUD::hasAccessOrFail('process');
-
+        fast('FAST DEBUGGER IS WORKING');
         // prepare the fields you need to show
         $this->data['crud'] = $this->crud;
-        $this->data['title'] = CRUD::getTitle() ?? 'Process '.$this->crud->entity_name;
-        $this->data['entry'] = $this->crud->getCurrentEntry();
-        // load the view
-        dd($this->data);
-        return view('crud::games', $this->data);
+        $this->data['game_id'] = CRUD::getCurrentEntry()->id;
+        $command = $this->crud->getCurrentEntry()->process;
+        $process = Process::fromShellCommandline($command );
+        $processOutput = '';
+        $captureOutput = function ($type, $line) use (&$processOutput) {
+            $processOutput .= $line;
+        };
+
+        $process->setTimeout(null)->run($captureOutput);
+
+        if ($process->getExitCode()) {
+         return $processOutput;
+        }
+        // return $processOutput;
+        return redirect('/admin');
     }
 }
