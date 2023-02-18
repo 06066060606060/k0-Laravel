@@ -71,7 +71,7 @@
             </div>
 
             <div class="flex flex-col h-auto gap-4 px-4 pb-6 xl:flex-row">
-                <div class="p-3 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
+                <div class="p-3 bg-white rounded-lg shadow sm:p-6 xl:p-8 w-full">
                     <div class="flex items-center justify-between mb-2">
                         <div>
                             <h3 class="mb-1 text-xl font-bold text-gray-900">Jeux du moment</h3>
@@ -125,7 +125,7 @@
                                                     </td>
                                                     <td
                                                         class="hidden p-4 text-sm font-normal whitespace-nowrap rate-container md:block">
-                                                        <a href="admin/games/{{ $star->id }}/edit">
+                                                        <a href="games/{{ $star->id }}/edit">
                                                             <i
                                                                 class="text-gray-600 hover:text-gray-800 active:text-black las la-edit la-2x"></i>
                                                         </a>
@@ -167,7 +167,7 @@
                                 voir</a>
                         </div>
                     </div>
-                    <div class="flex flex-col mt-2 h-[500px]">
+                    <div class="flex flex-col mt-2 h-[400px]">
                         <div class="overflow-auto overflow-x-hidden rounded-lg">
                             <div class="inline-block min-w-full align-middle">
                                 <div class="overflow-hidden shadow sm:rounded-lg">
@@ -226,7 +226,7 @@
                                 class="p-2 text-sm font-medium rounded-lg text-cyan-600 hover:bg-gray-100">Demarrer</a>
                         </div>
                     </div>
-                    <div class="flex flex-col mt-2 h-[500px]">
+                    <div class="flex flex-col mt-2 h-[400px]">
                         <div class="overflow-auto overflow-x-hidden rounded-lg">
                             <div class="inline-block min-w-full align-middle">
                                 <div class="overflow-hidden shadow sm:rounded-lg">
