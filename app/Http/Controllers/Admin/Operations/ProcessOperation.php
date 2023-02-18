@@ -93,8 +93,13 @@ trait ProcessOperation
                  // ($href = '/some-custom-url'), // optional, e.g. backpack_url('/example')
                  // ($hrefText = 'Go to custom URL') // optional
               )
+
           );
+          //wait 3 seconds before returning
+           
+         
         // return $processOutput;
         return redirect('/admin');
+        sleep(5);
     }
 }

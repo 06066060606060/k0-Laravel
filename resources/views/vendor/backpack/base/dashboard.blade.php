@@ -248,8 +248,20 @@
                                             @foreach ($games as $game)
                                                 <tr>
                                                     <td class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">
-                                                        {{-- <div class="w-3 h-3 ml-2 bg-green-500 rounded-full"></div> --}}
-                                                        <div class="w-3 h-3 ml-2 bg-red-500 rounded-full"></div>
+                                                        @php
+                                                            exec('pgrep lighttpd', $output, $return);
+                                                            if ($return == 0) {
+                                                                $process = 'Running';
+                                                            } else {
+                                                                $process = 'Stopped';
+                                                            }
+                                                        @endphp
+
+                                                        @if ($process == 'Running')
+                                                            <div class="w-3 h-3 ml-2 bg-green-500 rounded-full"></div>
+                                                        @else
+                                                            <div class="w-3 h-3 ml-2 bg-red-500 rounded-full"></div>
+                                                        @endif
                                                     </td>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
