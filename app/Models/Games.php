@@ -36,6 +36,7 @@ class Games extends Model
         'data0',
         'data1',
         'data2',
+        'process',
      ];
     // protected $hidden = [];
     // protected $dates = [];

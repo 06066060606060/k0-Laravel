@@ -28,6 +28,7 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
+        fast('FAST DEBUGGER IS WORKING');
         $concours = Concours::All();
         $winner = User::all();
         $freegames = Games::where('type', 'Gratuit')

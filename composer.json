@@ -15,10 +15,12 @@
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/socialite": "^5.5",
+        "manadinho/fast-debugger": "^1.0",
         "nesbot/carbon": "^2.64",
         "pestopancake/laravel-backpack-database-notifications": "^1.0",
         "spatie/laravel-cookie-consent": "^3.2",
-        "stripe/stripe-php": "^9.9"
+        "stripe/stripe-php": "^9.9",
+        "symfony/process": "^6.2"
     },
     "require-dev": {
         "backpack/generators": "^3.3",

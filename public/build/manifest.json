@@ -1,11 +1,11 @@
 {
-  "resources/css/anim.svg": {
-    "file": "assets/anim.ac3fceeb.svg",
-    "src": "resources/css/anim.svg"
-  },
   "resources/css/gift.png": {
     "file": "assets/gift.d04b1766.png",
     "src": "resources/css/gift.png"
+  },
+  "resources/css/anim.svg": {
+    "file": "assets/anim.ac3fceeb.svg",
+    "src": "resources/css/anim.svg"
   },
   "resources/js/app.js": {
     "file": "assets/app.fd7ac64b.js",

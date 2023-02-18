@@ -6,6 +6,7 @@ use App\Http\Controllers\MailController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\SocialiteController;
+use App\Http\Controllers\ProcessController;
 use App\Http\Middleware\Cors;
 /*
 |--------------------------------------------------------------------------
@@ -63,6 +64,8 @@ Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('sav
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
 
 Route::post('contactmail' , [MailController::class, 'sendMessage']);
+
+Route::get('processtart' , [ProcessController::class, 'execute']);
 
 // La redirection vers le provider
 Route::get("redirect/{provider}",[SocialiteController::class, 'redirect'])->name('socialite.redirect');
