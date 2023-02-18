@@ -11,7 +11,7 @@ use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
  * @package App\Http\Controllers\Admin
  * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
-class GainCrudController extends CrudController
+class GainsCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
@@ -26,9 +26,9 @@ class GainCrudController extends CrudController
      */
     public function setup()
     {
-        CRUD::setModel(\App\Models\Gain::class);
-        CRUD::setRoute(config('backpack.base.route_prefix') . '/gain');
-        CRUD::setEntityNameStrings('gain', 'gains');
+        CRUD::setModel(\App\Models\Gains::class);
+        CRUD::setRoute(config('backpack.base.route_prefix') . '/gains');
+        CRUD::setEntityNameStrings('gains', 'gains');
     }
 
     /**
@@ -40,7 +40,8 @@ class GainCrudController extends CrudController
     protected function setupListOperation()
     {
         
-
+        CRUD::column('name')->label('nom');
+        CRUD::column('concours_id')->label('concours');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -57,8 +58,8 @@ class GainCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(GainRequest::class);
-
-        
+        CRUD::field('name')->label('nom');
+        $this->crud->Field('concours_id')->label('concours');
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

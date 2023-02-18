@@ -18,7 +18,7 @@
     <a class="nav-link nav-dropdown-toggle" href="#"><i class="nav-icon las la-trophy"></i> Concours</a>
     <ul class="nav-dropdown-items">
 <li class="nav-item"><a class="nav-link" href="{{ backpack_url('concours') }}"><i class="nav-icon las la-trophy "></i> Concours</a>
-<li class="nav-item"><a class="nav-link" href="{{ backpack_url('gain') }}"><i class="nav-icon la la-th-list"></i> Gains</a></li>
+<li class="nav-item"><a class="nav-link" href="{{ backpack_url('gains') }}"><i class="nav-icon la la-th-list"></i> Gains</a></li>
     </ul>
 </li>
 
