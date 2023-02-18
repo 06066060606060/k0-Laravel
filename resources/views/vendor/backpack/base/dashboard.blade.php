@@ -249,9 +249,14 @@
                                                 <tr>
                                                     <td class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">
                                                         @php
-                                                          $process = exec('ps aux | grep -v grep | grep app.js') ? 'Running' : 'Stopped';
+                                                            //$process = exec('ps aux | grep -v grep | grep app.js') ? 'Running' : 'Stopped';
+                                                            $host = 'localhost'; // replace with the hostname or IP address of the server
+                                                            $port = 5005; // replace with the port number you want to check
+                                                            
+                                                            $fp = @fsockopen($host, $port, $errno, $errstr, 1);
+                                                            
                                                         @endphp
-                                                        @if ($process == 'Running')
+                                                        @if ($fp)
                                                             <div class="w-3 h-3 ml-2 bg-green-500 rounded-full"></div>
                                                         @else
                                                             <div class="w-3 h-3 ml-2 bg-red-500 rounded-full"></div>
