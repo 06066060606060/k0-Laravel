@@ -115,7 +115,8 @@
                                                    <a class="text-blue-600" href="game?id={{ $score->game->id }}"> {{ $score->game->name }}</a>
                                                  </td>
                                                  <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
-                                                      {{ $score->user->name }}
+                                                 
+                                                  {{-- {{ $score->user->name }} --}}
                                                  </td>
                                                  <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
                                                     {{ $score->score }}
