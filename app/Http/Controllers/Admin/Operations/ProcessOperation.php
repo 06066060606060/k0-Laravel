@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Operations;
 use Symfony\Component\Process\Process;
 use Symfony\Component\Process\Exception\ProcessFailedException;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 use Illuminate\Support\Facades\Route;
 
 trait ProcessOperation
@@ -54,6 +55,8 @@ trait ProcessOperation
         // prepare the fields you need to show
         $this->data['crud'] = $this->crud;
         $this->data['game_id'] = CRUD::getCurrentEntry()->id;
+       $gamename = CRUD::getCurrentEntry()->name;
+      
         $command = $this->crud->getCurrentEntry()->process;
         $process = Process::fromShellCommandline($command );
         $processOutput = '';
@@ -64,8 +67,33 @@ trait ProcessOperation
         $process->setTimeout(null)->run($captureOutput);
 
         if ($process->getExitCode()) {
+        
+         $admin = backpack_user()->where('role', 'admin')->first();
+         $admin->notify(
+             new DatabaseNotification(
+                 ($type = 'error'), // info / success / warning / error
+                 ($message = 'Erreur au lancement de ' . $gamename),
+                 ($messageLong = 'Erreur au lancement de ' . $gamename . ' : ' . $processOutput)
+                    // rand(1, 99999)), // optional
+                // ($href = '/some-custom-url'), // optional, e.g. backpack_url('/example')
+                // ($hrefText = 'Go to custom URL') // optional
+             )
+         );
          return $processOutput;
         }
+
+          //create notification
+          $admin = backpack_user()->where('role', 'admin')->first();
+          $admin->notify(
+              new DatabaseNotification(
+                  ($type = 'success'), // info / success / warning / error
+                  ($message = 'Lancement de ' . $gamename),
+                  ($messageLong = 'Lancement de ' . $gamename)
+                     // rand(1, 99999)), // optional
+                 // ($href = '/some-custom-url'), // optional, e.g. backpack_url('/example')
+                 // ($hrefText = 'Go to custom URL') // optional
+              )
+          );
         // return $processOutput;
         return redirect('/admin');
     }
