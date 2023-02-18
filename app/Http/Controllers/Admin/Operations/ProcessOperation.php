@@ -51,7 +51,7 @@ trait ProcessOperation
     public function process()
     {
         CRUD::hasAccessOrFail('process');
-        fast('FAST DEBUGGER IS WORKING');
+
         // prepare the fields you need to show
         $this->data['crud'] = $this->crud;
         $this->data['game_id'] = CRUD::getCurrentEntry()->id;
@@ -68,7 +68,7 @@ trait ProcessOperation
 
         if ($process->getExitCode()) {
         
-         $admin = backpack_user()->where('role', 'admin')->first();
+         $admin = backpack_user()->where('name', 'Admin')->first();
          $admin->notify(
              new DatabaseNotification(
                  ($type = 'error'), // info / success / warning / error
@@ -83,7 +83,7 @@ trait ProcessOperation
         }
 
           //create notification
-          $admin = backpack_user()->where('role', 'admin')->first();
+          $admin = backpack_user()->where('name', 'Admin')->first();
           $admin->notify(
               new DatabaseNotification(
                   ($type = 'success'), // info / success / warning / error
@@ -100,6 +100,6 @@ trait ProcessOperation
          
         // return $processOutput;
         return redirect('/admin');
-        sleep(5);
+        sleep(3);
     }
 }
