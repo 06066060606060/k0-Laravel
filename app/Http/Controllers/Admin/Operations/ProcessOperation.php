@@ -58,7 +58,7 @@ trait ProcessOperation
        $gamename = CRUD::getCurrentEntry()->name;
       
         $command = $this->crud->getCurrentEntry()->process;
-        $process = Process::fromShellCommandline($command );
+        $process = Process::fromShellCommandline('node/home/' . $command );
         $processOutput = '';
         $captureOutput = function ($type, $line) use (&$processOutput) {
             $processOutput .= $line;
