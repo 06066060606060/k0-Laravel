@@ -31,6 +31,7 @@ class Concours extends Model
         'cadeau_id',
         'game_id',
         'user_id',
+        'active',
      ];
     // protected $hidden = [];
     // protected $dates = [];

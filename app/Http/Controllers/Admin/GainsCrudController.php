@@ -60,6 +60,7 @@ class GainsCrudController extends CrudController
         CRUD::setValidation(GainRequest::class);
         CRUD::field('name')->label('nom');
         $this->crud->Field('concours_id')->label('concours');
+       
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:

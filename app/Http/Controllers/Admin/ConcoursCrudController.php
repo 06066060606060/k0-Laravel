@@ -72,6 +72,18 @@ class ConcoursCrudController extends CrudController
         // CRUD::column('description');
        // CRUD::column('date_debut')->label('Date de début');
          CRUD::column('date_fin')->label('Date de fin');
+         $this->crud->addColumn([
+            'name'    => 'active',
+            'label'   => 'Actif',
+            'type'    => 'boolean',
+            'wrapper' => [
+                'element' => 'span',
+                'class' => function ($crud, $column, $entry, $related_key) {
+                            return 'badge badge-dark';
+                        }
+            ],
+        ]);
+         
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -121,6 +133,19 @@ class ConcoursCrudController extends CrudController
         CRUD::field('description')->type('textarea');
         CRUD::field('date_debut')->type('datetime');
         CRUD::field('date_fin')->type('datetime');
+        $this->crud->addField([   // radio
+            'name'        => 'active', // the name of the db column
+            'label'       => 'Activer', // the input label
+            'type'        => 'radio',
+            'options'     => [
+                // the key will be stored in the db, the value will be shown as label; 
+                1 => "Oui",
+                0 => "Non"
+            ],
+            // optional
+            'default'     => '0',
+           'inline'      => true, // show the radios all on the same line?
+        ],);
 
         /**
          * Fields can be defined using the fluent syntax or array syntax:
