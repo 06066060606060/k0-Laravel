@@ -251,7 +251,7 @@
                                                         @php
                                                             //$process = exec('ps aux | grep -v grep | grep app.js') ? 'Running' : 'Stopped';
                                                             $host = 'localhost'; // replace with the hostname or IP address of the server
-                                                            $port = 5005; // replace with the port number you want to check
+                                                            $port = $game->port; // replace with the port number you want to check
                                                             
                                                             $fp = @fsockopen($host, $port, $errno, $errstr, 1);
                                                             

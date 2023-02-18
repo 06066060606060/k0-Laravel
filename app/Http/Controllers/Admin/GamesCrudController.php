@@ -197,6 +197,7 @@ class GamesCrudController extends CrudController
            'inline'      => true, // show the radios all on the same line?
         ],);
         CRUD::field('process')->label('Processus');
+        CRUD::field('port')->type('number')->label('Socket port');
         // CRUD::field('tags');
         // CRUD::field('status');
         // CRUD::field('data0');

@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::table('games', function (Blueprint $table) {
             $table->string('process')->nullable();
+            $table->integer('port')->nullable();
         });
     }
 
