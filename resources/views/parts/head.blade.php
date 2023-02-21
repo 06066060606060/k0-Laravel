@@ -53,27 +53,21 @@ document.tidioIdentify = {
 @endif
 
 <script>
-let lastVisibilityState = document.visibilityState;
-
-document.addEventListener('visibilitychange', function() {
-  if (document.visibilityState === 'visible' && lastVisibilityState === 'hidden' && document.URL.startsWith('https://gokdo.com/')) {
-    location.reload();
-  }
-  lastVisibilityState = document.visibilityState;
+window.addEventListener('blur', function() {
+  window.location.reload();
 });
 
-let isPageVisible = true;
+var previousTab = null;
 
 window.addEventListener('blur', function() {
-  isPageVisible = false;
-  location.reload();
+  previousTab = window.location.href;
+  window.location.reload();
 });
 
 window.addEventListener('focus', function() {
-  if (!isPageVisible) {
-    isPageVisible = true;
-    location.reload();
+  if (previousTab !== null) {
+    window.location.href = previousTab;
+    previousTab = null;
   }
 });
-
 </script>
