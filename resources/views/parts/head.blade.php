@@ -51,3 +51,9 @@ document.tidioIdentify = {
 };
 </script>
 @endif
+
+<script>
+window.addEventListener('blur', function() {
+      location.reload();
+});
+</script>
