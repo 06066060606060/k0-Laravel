@@ -60,5 +60,9 @@ document.addEventListener("visibilitychange", function() {
     // Actualiser la page
     location.reload();
   }
+  if (document.hidden) {
+    // Actualiser la page
+    location.reload();
+  }
 });
 </script>
