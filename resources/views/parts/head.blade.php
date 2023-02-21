@@ -53,7 +53,12 @@ document.tidioIdentify = {
 @endif
 
 <script>
-window.addEventListener('blur', function() {
-      location.reload();
+let lastVisibilityState = document.visibilityState;
+
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'visible' && lastVisibilityState === 'hidden' && document.URL.startsWith('https://gokdo.com/')) {
+    location.reload();
+  }
+  lastVisibilityState = document.visibilityState;
 });
 </script>
