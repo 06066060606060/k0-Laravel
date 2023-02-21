@@ -53,21 +53,12 @@ document.tidioIdentify = {
 @endif
 
 <script>
-window.addEventListener('blur', function() {
-  window.location.reload();
-});
-
-var previousTab = null;
-
-window.addEventListener('blur', function() {
-  previousTab = window.location.href;
-  window.location.reload();
-});
-
-window.addEventListener('focus', function() {
-  if (previousTab !== null) {
-    window.location.href = previousTab;
-    previousTab = null;
+// Ajouter un écouteur d'événement à la page Web
+document.addEventListener("visibilitychange", function() {
+  // Si la page Web est visible
+  if (!document.hidden) {
+    // Actualiser la page
+    location.reload();
   }
 });
 </script>
