@@ -61,4 +61,19 @@ document.addEventListener('visibilitychange', function() {
   }
   lastVisibilityState = document.visibilityState;
 });
+
+let isPageVisible = true;
+
+window.addEventListener('blur', function() {
+  isPageVisible = false;
+  location.reload();
+});
+
+window.addEventListener('focus', function() {
+  if (!isPageVisible) {
+    isPageVisible = true;
+    location.reload();
+  }
+});
+
 </script>
