@@ -173,7 +173,7 @@
                     </div>
                 @endforelse
             </div>
-            <a href="allgames"
+            <a href="jeux"
                 class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
                 <span
                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
@@ -356,7 +356,7 @@
                 @endforelse
 
             </div>
-            <a href="allgames"
+            <a href="jeux"
                 class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
                 <span
                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
