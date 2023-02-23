@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Log;  //use
 class GamesCrudController extends CrudController
 {
     use \Backpack\CRUD\app\Http\Controllers\Operations\ListOperation;
-    use \App\Http\Controllers\Admin\Operations\ProcessOperation;
+   // use \App\Http\Controllers\Admin\Operations\ProcessOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\CreateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\UpdateOperation;
     use \Backpack\CRUD\app\Http\Controllers\Operations\DeleteOperation;
@@ -96,7 +96,7 @@ class GamesCrudController extends CrudController
                     },
                 ],
             ]);
-            CRUD::column('process')->label('Processus');
+            CRUD::column('port')->label('Socket port');
             // CRUD::column('tags');
             // CRUD::column('status');
         /**
@@ -196,7 +196,7 @@ class GamesCrudController extends CrudController
             'default'     => '0',
            'inline'      => true, // show the radios all on the same line?
         ],);
-        CRUD::field('process')->label('Processus');
+      //  CRUD::field('process')->label('Processus');
         CRUD::field('port')->type('number')->label('Socket port');
         // CRUD::field('tags');
         // CRUD::field('status');
