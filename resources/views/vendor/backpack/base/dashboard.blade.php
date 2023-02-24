@@ -176,10 +176,6 @@
                                             <tr>
                                                 <th scope="col"
                                                     class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                                    Online
-                                                </th>
-                                                <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                                     Nom
                                                 </th>
                                                 <th scope="col"
@@ -192,13 +188,6 @@
 
                                             @foreach ($users as $user)
                                                 <tr>
-                                                    <td class="pl-8 text-sm font-normal text-gray-900 whitespace-nowrap">
-                                                        @if ($user == backpack_auth()->user())
-                                                            <div class="w-3 h-3 ml-2 bg-green-500 rounded-full"></div>
-                                                        @else
-                                                            <div class="w-3 h-3 ml-2 bg-red-500 rounded-full"></div>
-                                                        @endif
-                                                    </td>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
                                                         {{ $user->name }}
@@ -223,7 +212,7 @@
                         </div>
                         <div class="flex-shrink-0">
                             <a href="games/"
-                                class="p-2 text-sm font-medium rounded-lg text-cyan-600 hover:bg-gray-100">Demarrer</a>
+                                class="p-2 text-sm font-medium rounded-lg text-cyan-600 hover:bg-gray-100">Tout voir</a>
                         </div>
                     </div>
                     <div class="flex flex-col mt-2 h-[400px]">
