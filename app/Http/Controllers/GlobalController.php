@@ -107,6 +107,18 @@ class GlobalController extends Controller
         return view('store', compact('cadeaux'));
     }
 
+    public function search(Request $request)
+    {
+        $q = request()->input('q');
+        if ($request->filled('q')) {
+        $cadeaux = Cadeaux::where('name', 'like', '%' . $q . '%')->get();
+        } else {
+            $cadeaux = Cadeaux::all();
+        }
+        return view('store', compact('cadeaux'));
+    }
+  
+
     public function pack()
     {
         $packs = Packs::where('active', 'Oui')->get();

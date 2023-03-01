@@ -28,6 +28,7 @@ Route::get('game', 'game');
 Route::get('pack', 'pack');
 Route::get('concours', 'winner');
 Route::get('cadeaux', 'store');
+Route::get('cadeaux', 'search')->name('searchfilter');
 Route::get('help', 'help');
 Route::get('rules', 'rules');
 Route::get('contact', 'contact');
