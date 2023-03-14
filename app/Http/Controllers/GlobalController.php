@@ -109,12 +109,20 @@ class GlobalController extends Controller
 
     public function search(Request $request)
     {
+       
         $q = request()->input('q');
         if ($request->filled('q')) {
         $cadeaux = Cadeaux::where('name', 'like', '%' . $q . '%')->get();
         } else {
             $cadeaux = Cadeaux::all();
         }
+        if ($request->filled('category')) {
+            if ($request->filled('category')) {
+            $cadeaux = Cadeaux::where('category', $request->category)->get();
+        } else {
+            $cadeaux = Cadeaux::all();
+        }
+    }
         return view('store', compact('cadeaux'));
     }
   
