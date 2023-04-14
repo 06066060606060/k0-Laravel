@@ -52,7 +52,7 @@ document.tidioIdentify = {
 </script>
 @endif
 
-<script>
+/*<script>
 if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
 document.addEventListener("visibilitychange", function() {
   // Si la page Web est visible
@@ -66,4 +66,4 @@ document.addEventListener("visibilitychange", function() {
   }
 });
 };
-</script>
+</script>*/
