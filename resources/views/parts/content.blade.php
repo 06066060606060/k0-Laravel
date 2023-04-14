@@ -452,9 +452,9 @@
                         <i class="fa-solid fa-gift fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Convertisser les en cadeaux</h2>
-                        <p class="leading-relaxed text-gray-300">Un large choix de cadeaux sont disponibles, avec des 
-                            cartes cadeaux Amazon et vous pouvez faire des retraits Paypal.</p>
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Convertissez les en cadeaux</h2>
+                        <p class="leading-relaxed text-gray-300">Un large choix de cadeaux sont disponible, avec des 
+                            cartes cadeaux Amazon, de la cryptomonnaie et vous pouvez aussi faire des retraits Paypal.</p>
                     </div>
                 </div>
             </div>
