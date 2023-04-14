@@ -31,6 +31,7 @@
 <script>
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
+/*
 @if (backpack_auth()->check())
 <script src="//code.tidio.co/0kwbckypxsfhrk4cutsabqskwxgz7blv.js" async></script>
 <script>
@@ -51,7 +52,7 @@ document.tidioIdentify = {
 };
 </script>
 @endif
-
+*/
 <script>
 if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
 document.addEventListener("visibilitychange", function() {
