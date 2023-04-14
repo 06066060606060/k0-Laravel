@@ -31,3 +31,19 @@
 <script>
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
+
+<script>
+if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
+document.addEventListener("visibilitychange", function() {
+  // Si la page Web est visible
+  if (!document.hidden) {
+    // Actualiser la page
+    location.reload();
+  }
+  if (document.hidden) {
+    // Actualiser la page
+    location.reload();
+  }
+});
+};
+</script>

@@ -33,6 +33,7 @@
                     @click="isOpen = false"><i class="fa-solid fa-house"></i>&nbsp; Accueil</a>
                 @if (backpack_auth()->check())
                 @else
+                @php $url = url()->current(); @endphp
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 prevent"
                         href="admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
                         Inscription</a>
