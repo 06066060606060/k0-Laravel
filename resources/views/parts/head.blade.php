@@ -67,3 +67,11 @@ document.addEventListener("visibilitychange", function() {
 });
 };
 </script>
+<script>
+var mainWindow = window.name || "main";
+if (window.opener && !window.opener.closed && window.opener.name == mainWindow) {
+  window.close();
+} else {
+  window.name = mainWindow;
+}
+</script>
