@@ -53,19 +53,6 @@
                                      </tbody>
                                  </table>
                              </div>
-                             <script>
-                             const iframe = document.querySelector('iframe');
-
-                            iframe.addEventListener('click', () => {
-                            if (iframe.requestFullscreen) {
-                                iframe.requestFullscreen();
-                            } else if (iframe.webkitRequestFullscreen) {
-                                iframe.webkitRequestFullscreen();
-                            } else if (iframe.msRequestFullscreen) {
-                                iframe.msRequestFullscreen();
-                            }
-                            });
-                            </script>
                              @if (backpack_auth()->check())
                              @php
                               $link =  $game->link ?? null;
