@@ -56,11 +56,7 @@ function detectMultipleWindows() {
     var numWindows = localStorage.getItem("numWindows") || 0;
     // Incrémentez le nombre de fenêtres ouvertes
     localStorage.setItem("numWindows", ++numWindows);
-    // Vérifiez si le nombre de fenêtres ouvertes est supérieur à 1
-    if (numWindows > 1) {
-      // Émettez une alerte demandant de recharger la page
-      alert("Rechargez la page !");
-    }
+
     // Lorsque la fenêtre est fermée, décrémentez le nombre de fenêtres ouvertes
     window.addEventListener("beforeunload", function() {
       localStorage.setItem("numWindows", --numWindows);
