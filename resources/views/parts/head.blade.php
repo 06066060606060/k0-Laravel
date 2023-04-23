@@ -32,27 +32,6 @@
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
 
-@if (backpack_auth()->check())
-<script src="//code.tidio.co/0kwbckypxsfhrk4cutsabqskwxgz7blv.js" async></script>
-<script>
-var id_member = "<?php echo backpack_auth()->user()->id; ?>";
-var pseudo = "<?php echo backpack_auth()->user()->name; ?>";
-var mail = "<?php echo backpack_auth()->user()->email; ?>";
-document.tidioIdentify = {
-  distinct_id: id_member, // Unique visitor ID in your system
-  email: mail, // visitor email
-  name: pseudo, // Visitor name
-};
-</script>
-@else
-<script src="//code.tidio.co/0kwbckypxsfhrk4cutsabqskwxgz7blv.js" async></script>
-<script>
-document.tidioIdentify = {
-  name: "Visiteur", // Visitor name
-};
-</script>
-@endif
-
 <script>
 if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
 document.addEventListener("visibilitychange", function() {
@@ -67,4 +46,31 @@ document.addEventListener("visibilitychange", function() {
   }
 });
 };
+</script>
+
+<script>
+function detectMultipleWindows() {
+  // Vérifiez si le localStorage est disponible dans le navigateur
+  if (typeof(Storage) !== "undefined") {
+    // Récupérez le nombre de fenêtres ouvertes avec ce site
+    var numWindows = localStorage.getItem("numWindows") || 0;
+    // Incrémentez le nombre de fenêtres ouvertes
+    localStorage.setItem("numWindows", ++numWindows);
+    // Vérifiez si le nombre de fenêtres ouvertes est supérieur à 1
+    if (numWindows > 1) {
+      // Émettez une alerte demandant de recharger la page
+      alert("Rechargez la page !");
+    }
+    // Lorsque la fenêtre est fermée, décrémentez le nombre de fenêtres ouvertes
+    window.addEventListener("beforeunload", function() {
+      localStorage.setItem("numWindows", --numWindows);
+    });
+  } else {
+    console.log("localStorage n'est pas supporté par votre navigateur.");
+  }
+}
+
+// Appeler la fonction pour détecter les fenêtres multiples
+detectMultipleWindows();
+
 </script>
