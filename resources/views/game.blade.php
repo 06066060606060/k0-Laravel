@@ -62,10 +62,10 @@
                                                  <img src="img/diamond5.png" class="w-6 h-4">
                                                  @endif
                                                  @if($score->data2 > 0)
-                                                 <img src="img/gem10.png" class="w-6 h-4">
+                                                 <img src="img/gem10.png" class="w-5 h-4">
                                                  @endif
                                                  @if($score->data3 > 0)
-                                                 <img src="img/coin10.png" class="w-6 h-4">
+                                                 <img src="img/coin10.png" class="w-5 h-4">
                                                  @endif
                                                 
                                                  </td>
