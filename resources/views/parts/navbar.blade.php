@@ -38,8 +38,8 @@
                         href="admin/register" @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp;
                         Inscription</a>
                 @endif
-                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="jeux"
-                    @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos jeux</a>
+                <!--<a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="jeux"
+                    @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos jeux</a>-->
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
                     @click="isOpen = false"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="cadeaux"
