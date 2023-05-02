@@ -7,6 +7,26 @@
     <div class="z-0 one"></div>
 @endif
 <container id="home">
+<div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+
+                                    <div class="flex">
+                                        <img alt="" class="inline-block object-center w-12 h-12"
+                                            src="./img/gem10.png">
+                                        <div class="flex">
+                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                                Dummy<br>
+                                                <span href="#"
+                                                    class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10
+                                                    ✧</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
     <section>
         <div
             class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
