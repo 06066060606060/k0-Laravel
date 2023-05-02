@@ -24,17 +24,17 @@
                          <div class="container flex flex-col-reverse xl:flex-row">
                              <div class="w-full px-4 py-4 bg-gray-900 rounded-md xl:w-1/4 xl:mr-4">
                              <div id="points" class="py-2 text-sm font-normal text-gray-200"> &nbsp;</div>
-                                 <h1 class="font-extrabold text-md text-gray-50">LES SCORES:</h1>
+                                 <h1 class="font-extrabold text-md text-gray-50">LES GAGNANTS:</h1>
                                  <table class="min-w-full divide-y divide-gray-200">
                                      <thead>
                                          <tr>
                                              <th scope="col"
                                                  class="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 Joueurs:
+                                                 Joueurs :
                                              </th>
                                              <th scope="col"
                                                  class="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 Scores:
+                                                 Gains :
                                              </th>
                                          </tr>
                                      </thead>
