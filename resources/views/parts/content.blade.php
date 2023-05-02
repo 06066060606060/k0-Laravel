@@ -7,7 +7,39 @@
     <div class="z-0 one"></div>
 @endif
 <container id="home">
-<div class="swiper-slide">
+<winner class="mx-auto max-w-7xl" id="win">
+    <section>
+        <div class="px-4 pt-16 mx-auto max-w-7xl">
+            <h2 class="text-3xl font-bold tracking-tight text-center text-gray-100 ">
+                Les gagnants
+            </h2>
+
+            <div class="pb-16 mt-4 border-b border-gray-600 md:mt-6 swiper-container">
+                <div class="swiper-wrapper">
+
+
+
+                    @forelse ($concours as $concour)
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                    <div class="flex">
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="storage/{{ $concour->cadeau->image }}">
+                                        <div class="flex flex-col">
+                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                             {{-- {{ $concour->user->name }}  --}}
+                                            </h2>
+                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $concour->cadeau->name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </blockquote>
+                         
+                        </div>
+                    @empty
+                        <div class="swiper-slide">
                             <blockquote>
                                 <div
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
@@ -27,6 +59,17 @@
                                 </div>
                             </blockquote>
                         </div>
+                    @endforelse
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</winner>
+
     <section>
         <div
             class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
