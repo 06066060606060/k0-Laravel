@@ -71,7 +71,7 @@
 
 <!-- FREE GAMES -->
 <container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
-    <section class="text-gray-400 border-b border-gray-600 body-font">
+    <section class="text-gray-400 border-gray-600 body-font">
         <div class="container px-2 py-12 mx-auto md:px-5">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
