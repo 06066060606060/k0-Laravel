@@ -47,11 +47,27 @@
                                                      {{ $score->user->name }}
                                                  </td>
                                                  <td class="px-4 py-2 text-sm font-normal text-gray-200 rate-container">
+                                                 @if($score->data > 0)
                                                      {{ $score->data }} 
-
+                                                 @endif
+                                                 @if($score->data2 > 0)
+                                                     {{ $score->data2 }} 
+                                                 @endif
+                                                 @if($score->data3 > 0)
+                                                     {{ $score->data3 }} 
+                                                 @endif
                                                  </td>
                                                  <td>
+                                                 @if($score->data > 0)
                                                  <img src="img/diamond5.png" class="w-6 h-4">
+                                                 @endif
+                                                 @if($score->data2 > 0)
+                                                 <img src="img/gem10.png" class="w-6 h-4">
+                                                 @endif
+                                                 @if($score->data3 > 0)
+                                                 <img src="img/coin10.png" class="w-6 h-4">
+                                                 @endif
+                                                
                                                  </td>
 
                                              </tr>
