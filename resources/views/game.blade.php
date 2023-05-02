@@ -66,7 +66,6 @@
                                     const iframe = document.getElementById('gameBody');
                                     
                                     btn.addEventListener('click', () => {
-                                        iframe.style.display = 'block';
                                         iframe.requestFullscreen();
                                     });
                                 </script>
