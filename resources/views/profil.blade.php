@@ -218,8 +218,29 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $score->game->name }}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->data }} </td>
-                                        <td><img src="img/diamond5.png" class="w-6 h-4"></td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> 
+                                        @if($score->data > 0)
+                                        {{ $score->data }} 
+                                        @endif
+                                        @if($score->data2 > 0)
+                                        {{ $score->data2 }} 
+                                        @endif
+                                        @if($score->data3 > 0)
+                                        {{ $score->data3 }} 
+                                        @endif
+                                        </td>
+                                        <td>
+                                        @if($score->data > 0)
+                                        <img src="img/diamond5.png" class="w-6 h-4">
+                                        @endif
+                                        @if($score->data2 > 0)
+                                        <img src="img/gem10.png" class="w-5 h-4">
+                                        @endif
+                                        @if($score->data3 > 0)
+                                        <img src="img/coin10.png" class="w-5 h-4">
+                                        @endif
+                                        
+                                        </td>
                                         <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
                                                 <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
