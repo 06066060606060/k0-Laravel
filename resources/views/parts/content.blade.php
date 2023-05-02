@@ -76,15 +76,13 @@
         <div class="container px-2 py-12 mx-auto md:px-5">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
-                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO est un site de jeux gratuits
-                    permettant de <a href="cadeaux" class="text-blue-500"> gagner des cadeaux</a> !<br>
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO vous propose des jeux gratuits
+                    permettant d'avoir une chance de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
                     @if (backpack_auth()->check())
-                    <a href="allgames#gt" class="text-blue-500 prevent">Jouez aux jeux gratuits</a> originaux et amusants et remportez des diamants et autres surprises !
-                    <br><a href="allgames#bt" class="text-blue-500 prevent">Jouez aux jeux booster</a> pour gagnez diamants / rubis / coins ou encore même des cadeaux !
+                    <a href="allgames#gt" class="text-blue-500 prevent">Jouez aux jeux gratuits</a>, nous proposons des grilles de jeux instantanées multijoueurs et amusants ! Remportez des diamants sur nos jeux gratuits afin de les échanger en boutique contre des cadeaux, de l'argent Paypal ou encore des chèques cadeaux Amazon !
+                    <br><a href="allgames#bt" class="text-blue-500 prevent">Jouez aux jeux booster</a> et gagnez des diamants / rubis / coins afin de les échanger contre de l'argent réel via Paypal, des chèques cadeaux Amazon ou encore même des cadeaux !
                     @else
-                    <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> pour jouer à
-                    plus
-                    d'une dizaine de jeux gratuits multijoueurs originaux et amusants et remporter des cadeaux !
+                    <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
                     @endif                    
                 </p>
             </div>
@@ -377,7 +375,7 @@
 <container id="how" class="block py-16 mx-8 border-b border-gray-600 max-w-7xl md:mx-auto">
     <section class="text-gray-400 body-font">
         <div class="flex flex-col items-center">
-            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagner dess cadeaux</h1>
+            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagnez des cadeaux</h1>
         </div>
         <div class="container flex flex-wrap px-5 py-8 mx-auto">
             <div class="relative flex pt-10 pb-20 mx-auto sm:items-center md:w-2/3">
@@ -394,7 +392,7 @@
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Inscrivez-vous gratuitement</h2>
-                        <p class="leading-relaxed text-gray-300">C'est rapide, gratuit et on vous offre 150 diamants pour bien démarrer.</p>
+                        <p class="leading-relaxed text-gray-300">L'inscription est rapide, gratuite et on vous offre 150 diamants pour bien commencer.</p>
                     </div>
                 </div>
             </div>
@@ -413,8 +411,8 @@
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Jouez vos parties gratuites
                             quotidiennes</h2>
-                        <p class="leading-relaxed text-gray-300">Vous disposez chaque jour de 30 parties gratuites à 
-                            jouer sur les jeux de votre choix.</p>
+                        <p class="leading-relaxed text-gray-300">Vous disposez chaque jour de 10 parties gratuites à 
+                            jouer sur la grille GoFRUITS, en multijoueur avec gains de lots instantanés.</p>
                     </div>
                 </div>
             </div>
@@ -433,9 +431,7 @@
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gagnez des Diamants, Rubis, Coins
                         </h2>
-                        <p class="leading-relaxed text-gray-300">Vous avez le choix du roi sur ce site de jeux en ligne, 
-                            les diamants sont échangeables contre des cadeaux, les rubis servent à jouer des parties supplémentaires et 
-                            les Coins représentent vos euros virtuels remportés sur Gokdo.</p>
+                        <p class="leading-relaxed text-gray-300">Jouez sur la grille de jeux instantanées "Billard", il s'agit d'un jeu booster vous permettant de participer au concours mensuel, de plus vous pouvez gagner des Diamants / Rubis / Coins sur ce jeu ! Cumulez vos score pour le concours afin de tenter de gagner le gros lot !</p>
                     </div>
                 </div>
             </div>
@@ -453,8 +449,8 @@
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Convertissez les en cadeaux</h2>
-                        <p class="leading-relaxed text-gray-300">Un large choix de cadeaux sont disponible, avec des 
-                            cartes cadeaux Amazon, de la cryptomonnaie et vous pouvez aussi faire des retraits Paypal.</p>
+                        <p class="leading-relaxed text-gray-300">Un large choix de cadeaux sont disponible (Playstation 5, Cookéo, Plancha, Barre de son, Rubis...). Des 
+                            cartes cadeaux Amazon, de la cryptomonnaie ( crypto satoshi ). Vous pouvez aussi faire des retraits Paypal gratuitement.</p>
                     </div>
                 </div>
             </div>
