@@ -85,6 +85,10 @@
                     @endif                    
                 </p>
             </div>
+            <video width="640" height="360" controls>
+                <source src="https://youtu.be/KOYONV1GjrI" type="video/mp4">
+                Votre navigateur ne supporte pas la balise vidéo.
+            </video>
             <div class="flex flex-wrap -m-4">
                 @forelse ($freegames as $freegame)
                     <div class="w-1/2 p-4 lg:w-1/3">
