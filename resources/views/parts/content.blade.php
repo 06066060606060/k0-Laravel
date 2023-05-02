@@ -79,8 +79,7 @@
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO vous propose des jeux gratuits
                     permettant d'avoir une chance de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
                     @if (backpack_auth()->check())
-                    <a href="allgames#gt" class="text-blue-500 prevent">Jouez aux jeux gratuits</a>, nous proposons des grilles de jeux instantanées multijoueurs et amusants ! Remportez des diamants sur nos jeux gratuits afin de les échanger en boutique contre des cadeaux, de l'argent Paypal ou encore des chèques cadeaux Amazon !
-                    <br><a href="allgames#bt" class="text-blue-500 prevent">Jouez aux jeux booster</a> et gagnez des diamants / rubis / coins afin de les échanger contre de l'argent réel via Paypal, des chèques cadeaux Amazon ou encore même des cadeaux !
+                    <a class="text-blue-500 prevent">Jouez aux jeux gratuits</a>, nous proposons gratuitement une grille de jeu instantanée multijoueurs et amusante dans laquelle le but est découvrir des fruits ! Remportez des diamants sur notre jeu gratuit afin de les échanger contre des cadeaux, de l'argent Paypal ou encore des chèques cadeaux Amazon !
                     @else
                     <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
                     @endif                    
@@ -258,7 +257,7 @@
         <div class="container px-2 py-12 mx-auto md:px-4">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux booster</h1>
-                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">Les jeux booster permettent de gagner d'avantage mais également vous laisse la chance de pouvoir remporter des cadeaux (Diamants, Rubis, Coins, Carte cadeaux Amazon). Venez tenter votre chance !
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3"><a class="text-blue-500 prevent">Jouez aux jeux booster</a> et gagnez des diamants / rubis / coins afin de les échanger contre de l'argent réel via Paypal, des chèques cadeaux Amazon ou encore même des cadeaux !
                 </p>
             </div>
             <div class="flex flex-wrap -m-4">
