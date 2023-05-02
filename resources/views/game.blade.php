@@ -58,23 +58,8 @@
                               $link =  $game->link ?? null;
                               $secret =  encrypt(['userid' => $userid, '&tk=' . csrf_token(), 'rubis' => $rubis, 'gameid' => $game->id, 'free_game' => $free, 'parties' => $parties, 'timestamp' => time()]);
                              @endphp
-                            @if($isMobile == true)
-                             <button id="btn" style="width:100%; height:1000px; display:absolute;"> </button>
-                            @else
-                            @endif
                              <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe>
-                            @if($isMobile == true)
-                                <script>
-                                    const btn = document.getElementById('btn');
-                                    const iframe = document.getElementById('gameBody');
-                                    
-                                    btn.addEventListener('click', () => {
-                                        iframe.requestFullscreen();
-                                    });
-                                </script>
-                            @else
-                            @endif
                                 @else
                                 <script>alert('Vous devez être connecté pour jouer à un jeu !')</script>
                                 @endif
