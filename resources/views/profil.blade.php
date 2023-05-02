@@ -216,7 +216,7 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $score->game->name }}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->data }}</td>
+                                        <td class="flex px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->data }} <img src="img/diamond5.png" class="w-8 h-6"> </td>
                                         <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
                                                 <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
