@@ -219,9 +219,6 @@
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $score->score }}</td>
                                         <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
-                                            @if($score)
-                                                <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
-                                            @endif
                                             </strong>
 
                                         </td>
