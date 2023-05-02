@@ -7,6 +7,67 @@
     <div class="z-0 one"></div>
 @endif
 <container id="home">
+    <section>
+        <div
+            class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
+            <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
+                <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
+                    <div>
+                        <div class="relative w-full max-w-lg">
+
+                            <div class="relative">
+                                @php $imagesd =  $starred->image[0] ?? null; @endphp
+                                <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
+                                    src="{{ asset('storage/' . $imagesd) }}" onerror="this.src='/img/empty.png'">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JOUEZ GRATUITEMENT A
+                    </span>
+                    <h1
+                        class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
+                        {{ $starred->name }}</h1>
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
+                    <div class="">
+                        @if (backpack_auth()->check())
+                            <a href="game?id={{ $starred->id }}"
+                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                <span
+                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                <span
+                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                <span
+                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                <span
+                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                <span class="relative">Jouez
+                                    Maintenant</span>
+                            </a>
+                        @else
+                            <a href="admin/register"
+                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
+                                <span
+                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                <span
+                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                <span
+                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                <span
+                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                <span class="relative">Jouez
+                                    Maintenant</span>
+                            </a>
+                        @endif
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 <winner class="mx-auto max-w-7xl" id="win">
     <section>
         <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
@@ -70,66 +131,6 @@
     </section>
 </winner>
 
-    <section>
-        <div
-            class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
-            <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
-                <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
-                    <div>
-                        <div class="relative w-full max-w-lg">
-
-                            <div class="relative">
-                                @php $imagesd =  $starred->image[0] ?? null; @endphp
-                                <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                    src="{{ asset('storage/' . $imagesd) }}" onerror="this.src='/img/empty.png'">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JOUEZ GRATUITEMENT A
-                    </span>
-                    <h1
-                        class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
-                        {{ $starred->name }}</h1>
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
-                    <div class="">
-                        @if (backpack_auth()->check())
-                            <a href="game?id={{ $starred->id }}"
-                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                <span
-                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                <span
-                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">Jouez
-                                    Maintenant</span>
-                            </a>
-                        @else
-                            <a href="admin/register"
-                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                <span
-                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                <span
-                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">Jouez
-                                    Maintenant</span>
-                            </a>
-                        @endif
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
 
 </container>
 
