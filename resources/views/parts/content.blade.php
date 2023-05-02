@@ -79,7 +79,7 @@
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO vous propose des jeux gratuits
                     permettant d'avoir une chance de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
                     @if (backpack_auth()->check())
-                    <a class="text-blue-500 prevent">Jouez aux jeux gratuits</a>, nous proposons gratuitement une grille de jeu instantanée multijoueurs et amusante dans laquelle le but est découvrir des fruits ! Remportez des diamants sur notre jeu gratuit afin de les échanger contre des cadeaux, de l'argent Paypal ou encore des chèques cadeaux Amazon !
+                    <a class="text-blue-500 prevent">Jouez aux jeux gratuits</a>, nous proposons gratuitement une grille de jeu instantanée multijoueurs et amusante dans laquelle le but est découvrir des fruits ! Remportez des diamants sur notre jeu gratuit GoFRUITS afin de les échanger contre des cadeaux, de l'argent Paypal ou encore des chèques cadeaux Amazon !
                     @else
                     <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
                     @endif                    
