@@ -73,7 +73,7 @@
 <container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
     <section class="text-gray-400 border-gray-600 body-font">
         <div class="container px-2 py-12 mx-auto md:px-5">
-            <div class="flex flex-col w-full mb-20 text-center">
+            <div class="flex flex-col w-full mb-0 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
                 <p class="mb-10 mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO vous propose des jeux gratuits
                     permettant d'avoir une chance de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
