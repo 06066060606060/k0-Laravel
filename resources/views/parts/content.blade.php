@@ -412,7 +412,7 @@
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Jouez vos parties gratuites
                             quotidiennes</h2>
                         <p class="leading-relaxed text-gray-300">Vous disposez chaque jour de 10 parties gratuites à 
-                            jouer sur la grille GoFRUITS, en multijoueur avec gains de lots instantanés.</p>
+                            jouer sur la grille GoFRUITS, en multijoueurs avec gains de lots instantanés. Vos scores vous permettrons de vous faire une place sur notre concours mensuel afin de remporter le gros lot avec 500€ (500 Coins) en jeu !</p>
                     </div>
                 </div>
             </div>
@@ -431,7 +431,7 @@
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gagnez des Diamants, Rubis, Coins
                         </h2>
-                        <p class="leading-relaxed text-gray-300">Jouez sur la grille de jeux instantanées "Billard", il s'agit d'un jeu booster vous permettant de participer au concours mensuel, de plus vous pouvez gagner des Diamants / Rubis / Coins sur ce jeu ! Cumulez vos score pour le concours afin de tenter de gagner le gros lot !</p>
+                        <p class="leading-relaxed text-gray-300">Jouez sur la grille de jeux instantanées "Billard", il s'agit d'un jeu booster vous permettant de participer au concours mensuel, de plus vous pouvez gagner des Diamants / Rubis / Coins sur ce jeu ! Cumulez vos scores pour le concours afin de tenter de gagner 500€ (500 Coins) en jeu !</p>
                     </div>
                 </div>
             </div>
