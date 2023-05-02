@@ -124,7 +124,7 @@ class ConcoursCrudController extends CrudController
             'type'        => 'select_from_array',
             'options'     => [
                 'Maximum de points' => 'Maximum de points',
-                'Le plus rapide' => 'Le plus rapide',
+                'Cumul de parties' => 'Cumul de parties',
             ],
             'allows_null' => false,
             'default'     => '0',
