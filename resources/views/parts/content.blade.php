@@ -84,11 +84,10 @@
                     <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
                     @endif                    
                 </p>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KOYONV1GjrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
             </div>
-            <video width="640" height="360" controls>
-                <source src="https://youtu.be/KOYONV1GjrI" type="video/mp4">
-                Votre navigateur ne supporte pas la balise vidéo.
-            </video>
             <div class="flex flex-wrap -m-4">
                 @forelse ($freegames as $freegame)
                     <div class="w-1/2 p-4 lg:w-1/3">
