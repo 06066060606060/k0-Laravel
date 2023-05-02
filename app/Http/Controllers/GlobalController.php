@@ -54,7 +54,9 @@ class GlobalController extends Controller
         $free = backpack_auth()->user()->global_score;
         $parties = backpack_auth()->user()->parties;
         $onegame = Games::where('id', $request->id)->get();
-        $scores = Scores::where('game_id', $request->id)->get();
+        $scores = Scores::where('game_id', $request->id)
+                 ->orderBy('id', 'desc')
+                 ->get();
         $game = $onegame[0];
 
         return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
