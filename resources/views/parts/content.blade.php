@@ -11,7 +11,7 @@
     <section>
         <div class="px-4 pt-0 mx-auto max-w-7xl">
             <h2 class="text-3xl font-bold tracking-tight text-center text-gray-100 ">
-                Les gagnants
+                Derniers gagnants
             </h2>
 
             <div class="pb-8 mt-4 border-gray-600 md:mt-6 swiper-container">
