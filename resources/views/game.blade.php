@@ -44,8 +44,8 @@
                                                  <td class="px-4 py-2 text-sm font-normal text-gray-200 whitespace-nowrap">
                                                      {{ $score->user->name }}
                                                  </td>
-                                                 <td class="px-4 py-2 text-sm font-normal text-gray-200 rate-container" style="display:inline;">
-                                                     {{ $score->data }} <img src="img/diamond5.png" class="mt-0.5 ml-0.5 w-6 h-4" style="display:inline;">
+                                                 <td class="px-4 py-2 text-sm font-normal text-gray-200 rate-container">
+                                                     {{ $score->data }} 
 
                                                  </td>
 
