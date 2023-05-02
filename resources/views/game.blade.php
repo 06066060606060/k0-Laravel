@@ -36,6 +36,8 @@
                                                  class="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
                                                  Gains :
                                              </th>
+                                             <th>
+                                             </th>
                                          </tr>
                                      </thead>
                                      <tbody>
@@ -47,6 +49,9 @@
                                                  <td class="px-4 py-2 text-sm font-normal text-gray-200 rate-container">
                                                      {{ $score->data }} 
 
+                                                 </td>
+                                                 <td>
+                                                 <img src="img/diamond5.png" class="w-6 h-4">
                                                  </td>
 
                                              </tr>
