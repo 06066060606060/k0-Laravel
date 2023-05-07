@@ -286,8 +286,8 @@
 
 
 <!-- CADEAU -->
-<container id="how" class="block py-16 mx-8 border-b border-gray-600 max-w-7xl md:mx-auto">
-    <section class="text-gray-400 body-font" id="concept">
+<container id="how concept" class="block py-16 mx-8 border-b border-gray-600 max-w-7xl md:mx-auto">
+    <section class="text-gray-400 body-font">
         <div class="flex flex-col items-center">
             <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagnez des cadeaux</h1>
         </div>
