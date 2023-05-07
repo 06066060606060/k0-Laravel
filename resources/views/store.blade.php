@@ -15,7 +15,7 @@
          <container class="block min-h-screen px-4 mx-auto text-white max-w-7xl">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
-                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Boutique de cadeaux</h1>
+                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Espace cadeaux</h1>
                      <section class="text-gray-300 body-font">
                          <div class="sm:flex-1">
                              <form action="{{ route('searchfilter') }}" method="get">
@@ -65,8 +65,11 @@
                          </div>
                          <div class="container px-5 py-4 mx-auto">
                              <div class="flex flex-col w-full mb-10 text-center">
-                                 <p class="mx-auto text-base leading-relaxed">Echanger vos <a
-                                         class="text-blue-500">diamants</a> contre des cadeaux <br></p>
+                                 <p class="mx-auto text-base leading-relaxed">Echanger vos 
+                                 <div class="flex px-2"><img src="img/diamond5.png" class="w-8 h-6"></div> 
+                                  <a class="text-blue-500">Diamants</a> et vos 
+                                  <div class="flex px-2"><img src="img/coin10.png" class="w-8 h-6"></div>
+                                   <a class="text-blue-500">Coins</a> contre de magnifique cadeaux.<br></p>
                              </div>
                              <div class="container px-5 mx-auto">
                                  <div class="flex flex-wrap -m-4">
