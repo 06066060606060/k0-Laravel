@@ -20,10 +20,7 @@
                          <div class="sm:flex-1">
                              <form action="{{ route('searchfilter') }}" method="get">
                                  <div class="relative w-1/2 mx-auto">
-                                     <input id="searchbar" type="text" placeholder="Rechercher" name="q"
-                                         value="{{ request()->q ?? '' }}"
-                                         class="w-full p-3 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm focus:border-white focus:outline-none focus:ring focus:ring-gray-400" />
-                                     <a href="cadeaux"
+                                                                          <a href="cadeaux"
                                          class="absolute top-1.5 right-0 h-full px-3 py-2 text-gray-500 transition hover:text-gray-700 focus:outline-none">
                                          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                                              <path fill-rule="evenodd"
