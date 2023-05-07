@@ -140,6 +140,70 @@
         </div>
     </section>
 </container>
+<!-- WINNER -->
+<winner class="mx-auto max-w-7xl" id="win">
+    <section>
+        <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+            <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
+                DERNIERS GAGNANTS
+            </h2>
+
+            <div class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper-wrapper">
+
+
+
+                    @forelse ($concours as $concour)
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                    <div class="flex">
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="storage/{{ $concour->cadeau->image }}">
+                                        <div class="flex flex-col">
+                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                             {{-- {{ $concour->user->name }}  --}}
+                                            </h2>
+                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $concour->cadeau->name }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </blockquote>
+                         
+                        </div>
+                    @empty
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+
+                                    <div class="flex">
+                                        <img alt="" class="inline-block object-center w-12 h-12"
+                                            src="./img/gem10.png">
+                                        <div class="flex">
+                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                                Dummy<br>
+                                                <span href="#"
+                                                    class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10
+                                                    ✧</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    @endforelse
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</winner>
+
 @endif
 
 <container id="home">
@@ -227,69 +291,6 @@
 </container>
 
 
-<!-- WINNER -->
-<winner class="mx-auto max-w-7xl" id="win">
-    <section>
-        <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-            <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
-                DERNIERS GAGNANTS
-            </h2>
-
-            <div class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
-                <div class="swiper-wrapper">
-
-
-
-                    @forelse ($concours as $concour)
-                        <div class="swiper-slide">
-                            <blockquote>
-                                <div
-                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-                                    <div class="flex">
-                                        <img alt="" class="inline-block object-center w-auto h-12"
-                                            src="storage/{{ $concour->cadeau->image }}">
-                                        <div class="flex flex-col">
-                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                             {{-- {{ $concour->user->name }}  --}}
-                                            </h2>
-                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $concour->cadeau->name }}</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </blockquote>
-                         
-                        </div>
-                    @empty
-                        <div class="swiper-slide">
-                            <blockquote>
-                                <div
-                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-
-                                    <div class="flex">
-                                        <img alt="" class="inline-block object-center w-12 h-12"
-                                            src="./img/gem10.png">
-                                        <div class="flex">
-                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                                Dummy<br>
-                                                <span href="#"
-                                                    class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10
-                                                    ✧</span>
-                                            </h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </blockquote>
-                        </div>
-                    @endforelse
-
-
-
-
-                </div>
-            </div>
-        </div>
-    </section>
-</winner>
 
 
 
