@@ -7,21 +7,24 @@
             @php
         $isMobile = GlobalController::isMobile();
     @endphp
+    <container class="mx-auto max-w-7xl" id="win">
+    <section>
     @if($isMobile == true)
     @else
         <div class="z-0 one"></div>
     @endif
-                 <div class="text-gray-100 mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-            <div class="flex flex-wrap -m-4">
+            <div class="text-gray-100 mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                <div class="flex flex-wrap -m-4">
 
-                <div class="text-white reverted">
-                    @php
-                        echo $pages[0]->content;
-                    @endphp
+                    <div class="text-white reverted">
+                        @php
+                            echo $pages[0]->content;
+                        @endphp
+                    </div>
+
                 </div>
-
             </div>
         </div>
-    </div>
-
+    </section>
+</container>
 @endsection
