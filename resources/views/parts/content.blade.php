@@ -182,12 +182,14 @@
                                 @else
                                 {{ $allgame->prix }}
                                 @endif
-                                @if ($allgame->type_prix == 'Diamants')
+                                @if($allgame->prix > 0)
+                                @if ($allgame->type_prix == 'Diamants' && $allgame->prix == 0)
                                  <img src="img/diamond5.png" class="w-4" style="display:inline;">
                                 @elseif ($allgame->type_prix == 'Rubis')
                                  <img src="img/gem10.png" class="w-4" style="display:inline;">
                                 @else
                                  <img src="img/coin10.png" class="w-4" style="display:inline;">
+                                 @endif
                                  @endif
                                 </div>
                             </div>
