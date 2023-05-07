@@ -13,12 +13,8 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux multijoueurs en temps réel !</h1>
-                <p class="mx-auto text-base mb-4 leading-relaxed text-gray-300 lg:w-2/3">
-                - GoFRUITS est un <a class="text-blue-500 prevent">jeu totalement gratuit</a> avec 10 parties offertes toutes les 24h.
-                <br>
-                - Pool est un <a class="text-blue-500 prevent">jeu 100% gagnant</a> pour lequel 10 Rubis sont requis !
-                </p>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux multijoueurs !</h1>
+                
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($allgames as $allgame)
