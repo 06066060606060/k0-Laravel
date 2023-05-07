@@ -11,7 +11,7 @@
     @else
         <div class="z-0 one"></div>
     @endif
-        <div class="p-5 mx-auto text-gray-100 sm:p-10 md:px-16  min-h-screen">
+                 <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="flex flex-col max-w-5xl mx-auto overflow-hidden rounded">
 
                 <div class="text-white reverted">
