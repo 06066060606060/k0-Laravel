@@ -6,6 +6,7 @@
 @else
     <div class="z-0 one"></div>
 @endif
+{{ request()->path() }}
 <container id="home">
     <section>
         <div
