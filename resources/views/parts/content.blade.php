@@ -166,7 +166,7 @@
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($boostergames as $boostergame)
-                    <div class="w-1/2 p-4 lg:w-1/3">
+                    <div class="w-1/2 p-4 lg:w-1/2">
                      
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                         @if (backpack_auth()->check())
