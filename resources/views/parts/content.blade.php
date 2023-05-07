@@ -157,7 +157,7 @@
 
 <!-- GAMES BOOSTER -->
 <container id="game" class="block px-4 mx-auto max-w-7xl">
-    <section class="text-gray-400 border-b border-gray-600 body-font">
+    <section class="text-gray-400 border-gray-600 body-font">
         <div class="container px-2 py-12 mx-auto md:px-4">
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux booster</h1>
@@ -268,7 +268,7 @@
                 @endforelse
 
             </div>
-            <a href="jeux"
+            <!--<a href="jeux"
                 class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
                 <span
                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
@@ -279,7 +279,7 @@
                 <span
                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
                 <span class="relative">Voir la liste complète</span>
-            </a>
+            </a>-->
         </div>
     </section>
 </container>
