@@ -5,7 +5,7 @@
          <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
              <a class="flex items-center justify-center font-medium text-gray-700 title-font md:justify-start">
 
-                 <span class="ml-3 text-xl text-gray-300">Jeux en ligne Multijoueurs</span>
+                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Jeux en ligne Multijoueurs</h2>
              </a>
              <p class="mt-2 text-sm text-gray-400">Gagnez des cadeaux en jouant !<br>
                  GoKDO est un site de jeux gratuits sans obligation d'achat.
