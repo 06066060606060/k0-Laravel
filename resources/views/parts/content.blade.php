@@ -165,41 +165,41 @@
                 </p>
             </div>
             <div class="flex flex-wrap -m-4">
-                @forelse ($boostergames as $boostergame)
+                @forelse ($allgames as $allgame)
                     <div class="w-1/2 p-4 lg:w-1/2">
                      
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                         @if (backpack_auth()->check())
-                        <a href="game?id={{ $boostergame->id }}">
+                        <a href="game?id={{ $allgame->id }}">
                             @else
                             <a href="admin/register" class="prevent">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                {{ $boostergame->prix }}
-                                @if ($boostergame->type_prix == 'Diamants')
+                                {{ $allgame->prix }}
+                                @if ($allgame->type_prix == 'Diamants')
                                  <img src="img/diamond5.png" class="w-4" style="display:inline;">
-                                @elseif ($boostergame->type_prix == 'Rubis')
+                                @elseif ($allgame->type_prix == 'Rubis')
                                  <img src="img/gem10.png" class="w-4" style="display:inline;">
                                 @else
                                  <img src="img/coin10.png" class="w-4" style="display:inline;">
                                  @endif
                                 </div>
                             </div>
-                            @php $imagesb =  $boostergame->image[0] ?? null; @endphp
+                            @php $imagesb =  $allgame->image[0] ?? null; @endphp
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
                                 src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
-                                    {{ $boostergame->name }}</h2>
+                                    {{ $allgame->name }}</h2>
                                 <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">
                                     {{ $boostergame->category }}</h1>
-                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $boostergame->description }}</p>
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
                                 @if (backpack_auth()->check())
-                                    <a href="game?id={{ $boostergame->id }}"
+                                    <a href="game?id={{ $allgame->id }}"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
