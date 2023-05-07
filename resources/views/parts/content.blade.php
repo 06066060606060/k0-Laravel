@@ -6,7 +6,7 @@
 @else
     <div class="z-0 one"></div>
 @endif
-{{ getSessions() }}
+{{ getSessions()->users_session }}
 @if (backpack_auth()->check())
 <!-- JOUEZ UNE FOIS CONNECTE -->
 <container class="mx-auto max-w-7xl" id="win">
