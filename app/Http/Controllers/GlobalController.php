@@ -28,7 +28,6 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
-   
         $concours = Concours::All();
         $winner = User::all();
         $allgames = Games::orderBy('id', 'desc')
