@@ -4,7 +4,9 @@
      <div data-barba="container">
              @php
         use \App\Http\Controllers\GlobalController;
+        use Illuminate\Http\Request;
         use Illuminate\Support\Facades\Session;
+        use Illuminate\Support\Facades\Auth;
 
         $isMobile = GlobalController::isMobile();
     @endphp
@@ -12,10 +14,12 @@
     @else
         <div class="z-0 one"></div>
     @endif
-    {{ $request->session(); }}
    
          <container class="block px-4 mx-auto text-white max-w-7xl">
+    
              <div class="container pt-4 mx-auto lg:px-5">
+    {{ $request->session(); }}
+
                  <div class="flex flex-col w-full mb-20 text-center">
                      <section class="p-4 overflow-hidden text-gray-100 bg-gray-800 rounded-md">
                          <div class="flex justify-between">
