@@ -7,7 +7,7 @@
 
                  <span class="ml-3 text-xl text-gray-300">GoKdo</span>
              </a>
-             Chaque jour, tentez de <p class="mt-2 text-sm text-gray-400">gagner des cadeaux<br>
+             <p class="mt-2 text-sm text-gray-400">Chaque jour, tentez de gagner des cadeaux<br>
                  GoKDO est un site de jeux gratuits sans obligation d'achat.
              </p>
          </div>
