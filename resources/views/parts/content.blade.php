@@ -175,8 +175,13 @@
                             <a href="admin/register" class="prevent">
                             @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
+                                @if($allgame->prix == 0)
+                                <div
+                                    class="border z-20 absolute transform rotate-45 select-none bg-blue-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                @else
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                @endif
                                 @if($allgame->prix == 0)
                                 10 par 24h
                                 @else
