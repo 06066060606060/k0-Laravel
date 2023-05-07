@@ -7,7 +7,7 @@
         use Illuminate\Http\Request;
         use Illuminate\Support\Facades\Session;
         use Illuminate\Support\Facades\Auth;
-
+        $request = session();
         $isMobile = GlobalController::isMobile();
     @endphp
     @if($isMobile == true)
@@ -18,7 +18,7 @@
          <container class="block px-4 mx-auto text-white max-w-7xl">
     
              <div class="container pt-4 mx-auto lg:px-5">
-    {{ $request->session(); }}
+    {{ $request }}
 
                  <div class="flex flex-col w-full mb-20 text-center">
                      <section class="p-4 overflow-hidden text-gray-100 bg-gray-800 rounded-md">
