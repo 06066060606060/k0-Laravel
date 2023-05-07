@@ -360,7 +360,7 @@
             class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
             <div class="flex flex-col w-full mb-0 text-left">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
-                <p class="mb-8 mx-0 text-base leading-relaxed text-gray-300 lg:w-3/3">GoKDO vous offre la possibilité de jouer à des jeux gratuits et de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
+                <p class="mb-8 mx-0 text-base leading-relaxed text-gray-300 lg:w-3/3">Jouez gratuitement aux jeux de GoKDO et <a href="cadeaux" class="text-blue-500">gagnez des cadeaux !</a><br>
                     @if (backpack_auth()->check())
                     <a class="text-blue-500 prevent">Jouez gratuitement</a> à notre jeu multijoueur amusant 
                     GoFRUITS, où le but est de découvrir des fruits, et remportez des diamants échangeables 
