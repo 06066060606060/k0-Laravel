@@ -177,7 +177,11 @@
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                @if($allgame->prix == 0)
+                                10 par 24h
+                                @else
                                 {{ $allgame->prix }}
+                                @endif
                                 @if ($allgame->type_prix == 'Diamants')
                                  <img src="img/diamond5.png" class="w-4" style="display:inline;">
                                 @elseif ($allgame->type_prix == 'Rubis')
