@@ -107,9 +107,8 @@ class GlobalController extends Controller
 
     public function store()
     {
-        $concours = Concours::All()->last();
         $cadeaux = Cadeaux::all();
-        return view('store', compact('cadeaux', 'concours'));
+        return view('store', compact('cadeaux'));
     }
 
     public function search(Request $request)
