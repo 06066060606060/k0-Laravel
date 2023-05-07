@@ -4,7 +4,7 @@
     {!! RecaptchaV3::initJs() !!}
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
-            <a href="/" onclick="event.preventDefault(); window.location.reload(true); window.location.href='gokdo.com';">
+            <a href="/">
                 <img class="w-auto pb-4 mx-auto h-1/6" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
