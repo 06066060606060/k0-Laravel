@@ -10,22 +10,8 @@
     @else
         <div class="z-0 one"></div>
     @endif
-    @if(backpack_auth()->check() && session('user_id') !== backpack_auth()->user()->id)
-    <div id="session-expired-alert" class="alert alert-warning">
-        Votre session a expiré ou a été ouverte sur un autre appareil. Veuillez recharger la page pour synchroniser vos données.
-    </div>
-@endif
-
-<script>
-    window.onload = function() {
-        var sessionExpiredAlert = document.getElementById('session-expired-alert');
-        if (sessionExpiredAlert) {
-            alert('Votre session a expiré ou a été ouverte sur un autre appareil. Veuillez recharger la page pour synchroniser vos données.');
-            location.reload();
-        }
-    };
-</script>
-
+    {{ $request->session(); }}
+   
          <container class="block px-4 mx-auto text-white max-w-7xl">
              <div class="container pt-4 mx-auto lg:px-5">
                  <div class="flex flex-col w-full mb-20 text-center">

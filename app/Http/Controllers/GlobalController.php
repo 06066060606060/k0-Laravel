@@ -514,7 +514,7 @@ class GlobalController extends Controller
         $thisuser[0]->delete();
         Session::flush();
         Auth::logout();
-        $request->session()->invalidate();
+        //$request->session()->invalidate();
         return redirect('/');
     }
 
@@ -522,7 +522,7 @@ class GlobalController extends Controller
     {
         Session::flush();
         Auth::logout();
-        $request->session()->invalidate();
+        //$request->session()->invalidate();
         return view('index');
     }
 
