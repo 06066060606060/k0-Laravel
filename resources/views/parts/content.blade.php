@@ -156,9 +156,10 @@
 </winner>
 
 <!-- GAMES BOOSTER -->
-<container id="game" class="block px-4 mx-auto max-w-7xl">
-    <section class="text-gray-400 border-b border-gray-600 body-font">
-        <div class="container px-2 py-12 mx-auto md:px-4">
+<winner class="mx-auto max-w-7xl" id="win">
+    <section>
+        <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Nos jeux booster</h1>
                 <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3"><a class="text-blue-500 prevent">Jouez aux jeux booster</a> et gagnez des diamants / rubis / coins afin de les échanger contre de l'argent réel via Paypal, des chèques cadeaux Amazon ou encore même des cadeaux !
