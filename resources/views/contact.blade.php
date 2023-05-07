@@ -15,8 +15,8 @@
                      message aujourd'hui</div>
              </div>
          @endif
-         <div class="p-5 mx-auto text-gray-100 sm:p-10 md:px-16">
-             <div class="flex flex-col max-w-5xl pb-8 mx-auto mb-8 overflow-hidden rounded">
+                 <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+    <div class="flex flex-col max-w-5xl pb-8 mx-auto mb-8 overflow-hidden rounded">
                  <section class="relative text-gray-600 body-font">
                      <div class="container px-5 py-8 mx-auto">
                          <div class="flex flex-col w-full mb-4 text-center">
