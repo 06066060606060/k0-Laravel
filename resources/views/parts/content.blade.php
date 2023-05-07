@@ -196,7 +196,7 @@
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
                                     {{ $allgame->name }}</h2>
                                 <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">
-                                    {{ $boostergame->category }}</h1>
+                                    {{ $allgame->category }}</h1>
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
                                 @if (backpack_auth()->check())
                                     <a href="game?id={{ $allgame->id }}"

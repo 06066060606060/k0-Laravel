@@ -44,7 +44,7 @@ class GlobalController extends Controller
         $starred = Games::where('status', 1)
         ->inRandomOrder()
         ->first();
-        return view('index', compact('freegames', 'boostergames', 'starred', 'winner', 'concours'));
+        return view('index', compact('freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
     }
 
     public function game(Request $request)
