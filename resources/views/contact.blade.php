@@ -20,7 +20,7 @@
                  <section class="relative text-gray-600 body-font">
                      <div class="container px-5 py-8 mx-auto">
                          <div class="flex flex-col w-full mb-4 text-center">
-                             <h1 class="mb-2 text-2xl font-medium text-gray-100 sm:text-3xl title-font">Contactez Nous</h1>
+                             <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Contactez Nous</h1>
                          </div>
                          <div class="mx-auto lg:w-1/2 md:w-2/3">
                              <form class="flex flex-wrap -m-2" method="post" action="contactmail">
