@@ -1,12 +1,14 @@
 @php
     use \App\Http\Controllers\GlobalController;
+    $sessions = GlobalController::getSessions();
+
     $isMobile = GlobalController::isMobile();
 @endphp
 @if($isMobile == true)
 @else
     <div class="z-0 one"></div>
 @endif
-{{ getSessions()->users_session }}
+{{ $sessions }}
 @if (backpack_auth()->check())
 <!-- JOUEZ UNE FOIS CONNECTE -->
 <container class="mx-auto max-w-7xl" id="win">
