@@ -6,6 +6,7 @@
 @else
     <div class="z-0 one"></div>
 @endif
+
 @if (backpack_auth()->check())
 <!-- JOUEZ UNE FOIS CONNECTE -->
 <container class="mx-auto max-w-7xl" id="win">
@@ -199,7 +200,7 @@
     </section>
 </winner>
 
-@endif
+@else
 
 <container id="home">
     <section>
@@ -263,32 +264,6 @@
         </div>
     </section>
 </container>
-
-<!-- FREE GAMES -->
-<container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
-    <section class="text-gray-400 border-gray-600 body-font">
-        <div class="container px-2 py-0 mx-auto md:px-5">
-            <div class="flex flex-col w-full mb-0 text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
-                <p class="mb-10 mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO vous offre la possibilité de jouer à des jeux gratuits et de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
-                    @if (backpack_auth()->check())
-                    <a class="text-blue-500 prevent">Jouez gratuitement</a> à notre jeu multijoueur amusant 
-                    GoFRUITS, où le but est de découvrir des fruits, et remportez des diamants échangeables 
-                    contre des cadeaux, de l'argent Paypal ou des chèques cadeaux Amazon. 
-                    @else
-                    <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
-                    @endif                    
-                </p>
-            <center>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </center>
-            </div>
-        </div>    
-    </section>
-</container>
-
-
-
-
 
 <!-- CADEAU -->
 <div id="concept"></div>
@@ -377,3 +352,26 @@
         </div>
     </section>
 </container>
+
+<!-- FREE GAMES -->
+<container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
+    <section class="text-gray-400 border-gray-600 body-font">
+        <div class="container px-2 py-0 mx-auto md:px-5">
+            <div class="flex flex-col w-full mb-0 text-center">
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
+                <p class="mb-10 mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO vous offre la possibilité de jouer à des jeux gratuits et de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
+                    @if (backpack_auth()->check())
+                    <a class="text-blue-500 prevent">Jouez gratuitement</a> à notre jeu multijoueur amusant 
+                    GoFRUITS, où le but est de découvrir des fruits, et remportez des diamants échangeables 
+                    contre des cadeaux, de l'argent Paypal ou des chèques cadeaux Amazon. 
+                    @else
+                    <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
+                    @endif                    
+                </p>
+            <center>
+            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </center>
+            </div>
+        </div>    
+    </section>
+</container>
+@endif
