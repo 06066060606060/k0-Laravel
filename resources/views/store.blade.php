@@ -67,7 +67,7 @@
                              <div class="flex flex-col w-full mb-10 text-center">
                                  <p class="flex mx-auto text-base leading-relaxed">Echangez vos &nbsp;
                                  <img src="img/diamond5.png" class="w-8 h-6">&nbsp; 
-                                  <a class="text-blue-500">Diamants</a>&nbsp; et vos 
+                                  <a class="text-blue-500">Diamants</a>&nbsp; et vos&nbsp; 
                                  <img src="img/coin10.png" class="w-8 h-6">&nbsp;
                                    <a class="text-blue-500"> Coins</a>&nbsp; contre de magnifique cadeaux.<br></p>
                              </div>
