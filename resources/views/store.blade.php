@@ -65,7 +65,7 @@
                          </div>
                          <div class="container px-5 py-4 mx-auto">
                              <div class="flex flex-col w-full mb-10 text-center">
-                                 <p class="flex mx-auto text-base leading-relaxed">Echanger vos &nbsp;
+                                 <p class="flex mx-auto text-base leading-relaxed">Echangez vos &nbsp;
                                  <img src="img/diamond5.png" class="w-8 h-6">&nbsp; 
                                   <a class="text-blue-500">Diamants</a>&nbsp; et vos 
                                  <img src="img/coin10.png" class="w-8 h-6">&nbsp;
