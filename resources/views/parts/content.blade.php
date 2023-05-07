@@ -267,7 +267,7 @@
 
 <!-- CADEAU -->
 <div id="concept"></div>
-<container id="how" class="block py-16 mx-8 border-b border-gray-600 max-w-7xl md:mx-auto">
+<container id="how" class="block py-16 mx-8 border-gray-600 max-w-7xl md:mx-auto">
     <section class="text-gray-400 body-font">
         <div class="flex flex-col items-center">
             <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagnez des cadeaux</h1>
@@ -356,7 +356,8 @@
 <!-- FREE GAMES -->
 <container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
     <section class="text-gray-400 border-gray-600 body-font">
-        <div class="container px-2 py-0 mx-auto md:px-5">
+        <div
+            class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
             <div class="flex flex-col w-full mb-0 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
                 <p class="mb-10 mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">GoKDO vous offre la possibilité de jouer à des jeux gratuits et de <a href="cadeaux" class="text-blue-500">gagner des cadeaux</a> !<br>
