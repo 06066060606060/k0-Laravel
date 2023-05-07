@@ -32,7 +32,7 @@
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
 @php
-@if(request()->path()=='game')  
+if(request()->path()=='game')  {
 @endphp
 <script>
 if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
@@ -73,6 +73,5 @@ detectMultipleWindows();
 
 </script>
 @php
-@else
-@endif
+} else { }
 @endphp
