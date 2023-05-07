@@ -32,7 +32,8 @@ class GlobalController extends Controller
         $concours = Concours::All();
         $winner = User::all();
         $allgames = Games::all()
-        ->sortBy('id', 'asc');
+        ->orderBy('id', 'asc')
+        ->get();
         $freegames = Games::where('type', 'Gratuit')
             ->where('status', 0)
             ->limit(6)
