@@ -162,7 +162,11 @@
 
             <div class="flex flex-col w-full mb-20 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jouez !</h1>
-                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3"><a class="text-blue-500 prevent">Deux jeux</a> - Un gratuit avec 10 parties offertes toutes les 24h et un jeu pour lequel 10 Rubis sont requis !
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3"><a class="text-blue-500 prevent">Deux jeux</a> sont proposés hors évènements ! <br>
+                - Un jeu totalement gratuit avec 10 parties offertes toutes les 24h.
+                <br>
+                - Un jeu 100% gagnant pour lequel 10 Rubis sont requis !<br>
+                Ces jeux sont multijoueurs en temps réel.
                 </p>
             </div>
             <div class="flex flex-wrap -m-4">
