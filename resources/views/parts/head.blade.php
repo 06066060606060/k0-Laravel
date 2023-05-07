@@ -31,7 +31,9 @@
 <script>
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
-
+@php
+@if(request()->path()=='game')  
+@endphp
 <script>
 if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
 document.addEventListener("visibilitychange", function() {
@@ -70,3 +72,7 @@ function detectMultipleWindows() {
 detectMultipleWindows();
 
 </script>
+@php
+@else
+@endif
+@endphp
