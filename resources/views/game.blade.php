@@ -10,6 +10,7 @@
     @else
         <div class="z-0 one"></div>
     @endif
+    {{ session() }}
     @if(backpack_auth()->check() && session('user_token') !== backpack_auth()->user()->token)
     <div id="session-expired-alert" class="alert alert-warning">
         Votre session a expiré ou a été ouverte sur un autre appareil. Veuillez recharger la page pour synchroniser vos données.
