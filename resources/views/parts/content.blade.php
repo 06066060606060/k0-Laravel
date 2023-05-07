@@ -13,7 +13,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux multijoueurs !</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux Multijoueurs</h1>
                 
             </div>
             <div class="flex flex-wrap -m-4">
