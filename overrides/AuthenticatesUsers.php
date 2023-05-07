@@ -114,7 +114,7 @@ trait AuthenticatesUsers
         if ($response = $this->authenticated($request, $this->guard()->user())) {
             return $response;
         }
-
+        return redirect('/')->withCacheControlHeader();
         return $request->wantsJson()
                     ? new Response('', 204)
                     : redirect()->intended($this->redirectPath());
