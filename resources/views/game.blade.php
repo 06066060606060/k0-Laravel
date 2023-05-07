@@ -4,6 +4,8 @@
      <div data-barba="container">
              @php
         use \App\Http\Controllers\GlobalController;
+        use Illuminate\Support\Facades\Session;
+
         $isMobile = GlobalController::isMobile();
     @endphp
     @if($isMobile == true)
