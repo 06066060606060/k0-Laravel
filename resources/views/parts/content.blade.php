@@ -355,7 +355,7 @@
 
 <!-- FREE GAMES -->
 <container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
-    <section class="text-gray-400 border-gray-600 body-font">
+    <section id="video" class="text-gray-400 border-gray-600 body-font">
         <div
             class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
             <div class="flex flex-col w-full mb-0 text-left">
