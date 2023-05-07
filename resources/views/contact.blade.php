@@ -16,7 +16,7 @@
              </div>
          @endif
                  <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-    <div class="flex flex-col max-w-5xl pb-8 mx-auto mb-8 overflow-hidden rounded">
+                <div class="flex flex-col max-w-5xl pb-8 mx-auto mb-8 overflow-hidden rounded">
                  <section class="relative text-gray-600 body-font">
                      <div class="container px-5 py-8 mx-auto">
                          <div class="flex flex-col w-full mb-4 text-center">
@@ -69,9 +69,6 @@
                                              class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
                                          <span class="relative">Envoyer le message</span>
                                      </button>
-                                 </div>
-                                 <div class="w-full p-2 pt-8 mt-8 text-center border-t border-gray-200">
-
                                  </div>
                              </form>
                          </div>
