@@ -14,6 +14,7 @@
 
             <div class="flex flex-col w-full mb-10 text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux multijoueurs en temps réel !</h1>
+                <p class="mx-auto text-base leading-relaxed text-gray-300 lg:w-2/3">
                 - GoFRUITS est un <a class="text-blue-500 prevent">jeu totalement gratuit</a> avec 10 parties offertes toutes les 24h.
                 <br>
                 - Pool est un <a class="text-blue-500 prevent">jeu 100% gagnant</a> pour lequel 10 Rubis sont requis !
