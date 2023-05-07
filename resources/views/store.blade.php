@@ -6,7 +6,7 @@
              use App\Http\Controllers\GlobalController;
              $isMobile = GlobalController::isMobile();
              $category = request()->query('category');
-             $concours = request()->query('id');
+             $concours = request()->query();
 
          @endphp
          @if ($isMobile == true)
