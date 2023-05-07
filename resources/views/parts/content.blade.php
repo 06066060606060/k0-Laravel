@@ -274,7 +274,7 @@
                     @if (backpack_auth()->check())
                     <a class="text-blue-500 prevent">Jouez gratuitement</a> à notre jeu multijoueur amusant 
                     GoFRUITS, où le but est de découvrir des fruits, et remportez des diamants échangeables 
-                    contre des cadeaux, de l'argent Paypal ou des chèques cadeaux Amazon ! 
+                    contre des cadeaux, de l'argent Paypal ou des chèques cadeaux Amazon. 
                     @else
                     <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
                     @endif                    
