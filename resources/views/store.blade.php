@@ -97,13 +97,13 @@
                                                                          onclick="alert('Vous devez n\'avez pas assez de diamants !')"
                                                                          class="relative flex justify-center w-24 px-4 py-2 mx-auto my-2 font-medium text-white group">
                                                                          <span
-                                                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
+                                                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
                                                                          <span
-                                                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-600 group-hover:bg-red-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
+                                                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-600 group-hover:bg-red-600 group-active:bg-red-700 group-hover:-skew-x-12"></span>
                                                                          <span
-                                                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
+                                                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
                                                                          <span
-                                                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
+                                                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
                                                                          <span class="relative text-sm">Trop Cher</span>
                                                                      </button>
                                                                  @else
