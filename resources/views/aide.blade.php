@@ -1,20 +1,8 @@
  @extends('layouts.app')
 
  @section('main')
-  {!! RecaptchaV3::initJs() !!}
      <div data-barba="container">
          @php use \App\Http\Controllers\GlobalController; @endphp
-         @if (session('Message_envoye'))
-             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000, PopupUser())" class="pt-1 pr-4">
-                 <div id="popmenu" class="px-4 py-2 text-xs btnmenu text-emerald-500">&zwnj; Email envoyé</div>
-             </div>
-         @endif
-         @if (session('already_send'))
-             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000, PopupUser())" class="pt-1 pr-4">
-                 <div id="popmenu" class="px-4 py-2 text-xs btnmenu text-emerald-500">&zwnj; Vous avez déja envoyé un
-                     message aujourd'hui</div>
-             </div>
-         @endif
                  <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                 <div class="flex flex-col max-w-5xl pb-8 mx-auto mb-8 overflow-hidden rounded">
                  <section class="relative text-gray-600 body-font">
@@ -50,11 +38,17 @@
          </div>
      </div>
      <script>
-         function PopupUser() {
-             console.log('okpop');
-             var updateElement = document.getElementById("popmenu");
-             updateElement.classList.toggle("active");
-
-         }
+        $(document).ready(function() {
+        // écouter le clic sur les titres des onglets
+        $('.tab-titles a').click(function(e) {
+            e.preventDefault();
+            // afficher le contenu associé
+            $($(this).attr('href')).show().siblings('.tab-pane').hide();
+            // activer la classe 'active' sur l'onglet sélectionné
+            $(this).parent('li').addClass('active').siblings().removeClass('active');
+        });
+        // afficher le premier onglet par défaut
+        $('.tab-titles li:first-child a').click();
+        });
      </script>
  @endsection
