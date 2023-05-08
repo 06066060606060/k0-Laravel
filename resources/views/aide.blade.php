@@ -12,11 +12,11 @@
                          </div>
                          <div class="mx-auto lg:w-1/2 md:w-2/3">
                              <div class="tabs">
-  <ul class="tab-titles">
-    <li class="active"><a href="#tab1">Comment jouer au jeu GoFRUITS ?</a></li>
-    <li><a href="#tab2">Comment jouer au jeu Pool ?</a></li>
-    <li><a href="#tab3">Comment acheter des Rubis ?</a></li>
-    <li><a href="#tab4">Comment choisir un cadeau ?</a></li>    
+  <ul class="tab-titles text-white">
+    <li class="active"><h2><a href="#tab1">Comment jouer au jeu GoFRUITS ?</a></h2></li>
+    <li><h2><a href="#tab2">Comment jouer au jeu Pool ?</a></h2></li>
+    <li><h2><a href="#tab3">Comment acheter des Rubis ?</a></h2></li>
+    <li><h2><a href="#tab4">Comment choisir un cadeau ?</a></h2></li>    
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
