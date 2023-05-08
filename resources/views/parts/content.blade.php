@@ -310,8 +310,7 @@
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Jouez vos parties gratuites
                             quotidiennes</h2>
-                        <p class="leading-relaxed text-gray-300">Vous disposez chaque jour de 10 parties gratuites à 
-                            jouer sur la grille GoFRUITS, en multijoueurs avec gains de lots instantanés. Vos scores vous permettrons de vous faire une place sur notre concours mensuel afin de remporter le gros lot avec 500€ (500 Coins) en jeu !</p>
+                        <p class="leading-relaxed text-gray-300">Chaque jour, vous avez la possibilité de jouer gratuitement 10 parties sur la grille GoFRUITS en multijoueur, avec la possibilité de gagner des lots instantanés. Vos scores vous donnent la possibilité de participer à notre concours mensuel, où le gros lot de 500€ (500 Coins) est en jeu ! Cette offre est une excellente occasion de profiter d'un jeu amusant tout en ayant la chance de gagner de superbes prix.</p>
                     </div>
                 </div>
             </div>
@@ -330,7 +329,7 @@
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gagnez des Diamants, Rubis, Coins
                         </h2>
-                        <p class="leading-relaxed text-gray-300">Jouez sur la grille de jeux instantanées "Billard", il s'agit d'un jeu booster vous permettant de participer au concours mensuel, de plus vous pouvez gagner des Diamants / Rubis / Coins sur ce jeu ! Cumulez vos scores pour le concours afin de tenter de gagner 500€ (500 Coins) en jeu !</p>
+                        <p class="leading-relaxed text-gray-300">Pool est une grille de jeux instantanées que vous pouvez jouer pour booster vos chances de participer au concours mensuel. De plus, vous avez la possibilité de remporter des Diamants, Rubis et Coins en jouant à ce jeu ! En cumulant vos scores, vous pouvez améliorer vos chances de remporter le gros lot de 500€ (500 Coins) offert dans le concours mensuel. Cette offre est une excellente opportunité pour les joueurs de s'amuser tout en ayant la chance de gagner de superbes récompenses.</p>
                     </div>
                 </div>
             </div>
@@ -348,8 +347,7 @@
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
                         <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Convertissez les en cadeaux</h2>
-                        <p class="leading-relaxed text-gray-300">Un large choix de cadeaux sont disponible (Playstation 5, Cookéo, Plancha, Barre de son, Rubis...). Des 
-                            cartes cadeaux Amazon, de la cryptomonnaie ( crypto satoshi ). Vous pouvez aussi faire des retraits Paypal gratuitement.</p>
+                        <p class="leading-relaxed text-gray-300">Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.</p>
                     </div>
                 </div>
             </div>
