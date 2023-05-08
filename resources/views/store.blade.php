@@ -34,8 +34,12 @@
                                      </a>
                                  </div>
                                  <input type="submit" value="Search" class="hidden">
+                                 @if ($isMobile == true)
                                  <div class="relative inline-flex min-w-full">
-         @if ($isMobile == true)
+                                 @else
+                                 <div class="relative inline-flex" style="width:50%;">
+                                 @endif
+
                                      <select name="category"
                                          class="w-full p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
                                          onchange="submit()">
@@ -48,21 +52,6 @@
                                          <option value="Jeux Vidéo" {{ $category == 'Jeux Vidéo'  ? 'selected' : '' }}>Jeux Vidéo</option>
                                          <option value="Rubis" {{ $category == 'Rubis'  ? 'selected' : '' }}>Rubis</option>
                                      </select>
-
-         @else
-                                     <select name="category"
-                                         style="width:50%;" class="p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
-                                         onchange="submit()">
-                                         <option value="" {{ $category == ''  ? 'selected' : '' }} >Toutes les catégories</option>
-                                         <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
-                                         <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
-                                         <option value="Cryptomonnaie" {{ $category == 'Cryptomonnaie'  ? 'selected' : '' }}>Cryptomonnaie</option>
-                                         <option value="Electroménager" {{ $category == 'Electroménager'  ? 'selected' : '' }}>Electroménager</option>
-                                         <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>High Tech</option>
-                                         <option value="Jeux Vidéo" {{ $category == 'Jeux Vidéo'  ? 'selected' : '' }}>Jeux Vidéo</option>
-                                         <option value="Rubis" {{ $category == 'Rubis'  ? 'selected' : '' }}>Rubis</option>
-                                     </select>
-              @endif
                                      <div class="absolute inset-y-0 right-0 flex items-center px-2 pt-2 text-gray-500 transition pointer-events-none hover:text-gray-700">
                                          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                                              <path
