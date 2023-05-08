@@ -528,7 +528,7 @@ class GlobalController extends Controller
         Session::flush();
         Auth::logout();
         //$request->session()->invalidate();
-        return view('index');
+        return redirect('/');
     }
 
     static function getUsers()
