@@ -30,10 +30,14 @@
             class="absolute inset-x-0 z-50 w-screen px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
             <div class="flex flex-col pb-4 space-y-4 align-baseline mynav lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="/"
-                    @click="isOpen = false"><i class="fa-solid fa-house"></i>&nbsp; Accueil</a>
+                    @click="isOpen = false">
+                    @if (backpack_auth()->check())
+                    <i class="fa-solid fa-gamepad"></i>&nbsp; Jeux</a>
+                @else
+                    <i class="fa-solid fa-house"></i>&nbsp; Accueil</a>
+                @endif
                 @if (backpack_auth()->check())
                 @else
-                @php $url = url()->current(); @endphp
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="/#concept"
                     @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Concept</a>
                 @endif
