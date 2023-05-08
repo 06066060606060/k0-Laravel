@@ -31,3 +31,47 @@
 <script>
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
+@php
+if(request()->path()=='game')  {
+@endphp
+<script>
+if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
+document.addEventListener("visibilitychange", function() {
+  // Si la page Web est visible
+  if (!document.hidden) {
+    // Actualiser la page
+    location.reload();
+  }
+  if (document.hidden) {
+    // Actualiser la page
+    location.reload();
+  }
+});
+};
+</script>
+
+<script>
+function detectMultipleWindows() {
+  // Vérifiez si le localStorage est disponible dans le navigateur
+  if (typeof(Storage) !== "undefined") {
+    // Récupérez le nombre de fenêtres ouvertes avec ce site
+    var numWindows = localStorage.getItem("numWindows") || 0;
+    // Incrémentez le nombre de fenêtres ouvertes
+    localStorage.setItem("numWindows", ++numWindows);
+
+    // Lorsque la fenêtre est fermée, décrémentez le nombre de fenêtres ouvertes
+    window.addEventListener("beforeunload", function() {
+      localStorage.setItem("numWindows", --numWindows);
+    });
+  } else {
+    console.log("localStorage n'est pas supporté par votre navigateur.");
+  }
+}
+
+// Appeler la fonction pour détecter les fenêtres multiples
+detectMultipleWindows();
+
+</script>
+@php
+} else { }
+@endphp
