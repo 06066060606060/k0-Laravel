@@ -74,21 +74,4 @@ detectMultipleWindows();
 </script>
 @php
 } else { }
-
-
-// Vérifie si l'utilisateur est connecté
-if(backpack_auth()->check()) {
-    // Si l'utilisateur est connecté, redirige-le vers la page d'accueil
-    return redirect('/')->with('refresh', true);
-} else {
-    // Si l'utilisateur n'est pas connecté, affiche la page d'accueil normalement
-    return view('index');
-}
 @endphp
-<script>
-// Vérifie si la variable "refresh" est définie
-if (typeof refresh !== 'undefined' && refresh) {
-    // Actualise la page
-    location.reload(true);
-}
-</script>
