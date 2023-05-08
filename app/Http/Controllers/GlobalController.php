@@ -157,6 +157,11 @@ class GlobalController extends Controller
         return view('contactus');
     }
 
+    public function aide()
+    {
+        return view('aide');
+    }
+
     public function test()
     {
        $test = encrypt(time());

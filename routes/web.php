@@ -34,6 +34,7 @@ Route::get('rules', 'rules');
 Route::get('contact', 'contact');
 Route::post('contactus', 'contactus');
 Route::get('test', 'test');
+Route::get('aide', 'aide');
 });
 
 Route::middleware(['cors'])->group(function () {
