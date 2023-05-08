@@ -13,19 +13,25 @@
                          <div class="mx-auto lg:w-1/2 md:w-2/3">
                              <div class="tabs">
   <ul class="tab-titles">
-    <li class="active"><a href="#tab1">Titre 1</a></li>
-    <li><a href="#tab2">Titre 2</a></li>
-    <li><a href="#tab3">Titre 3</a></li>
+    <li class="active"><a href="#tab1">Comment jouer au jeu GoFRUITS ?</a></li>
+    <li><a href="#tab2">Comment jouer au jeu Pool ?</a></li>
+    <li><a href="#tab3">Comment acheter des Rubis ?</a></li>
+    <li><a href="#tab4">Comment choisir un cadeau ?</a></li>    
   </ul>
   <div class="tab-content">
     <div class="tab-pane active" id="tab1">
-      <p>Contenu 1</p>
+      <p><center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </center>
+      </p>
     </div>
     <div class="tab-pane" id="tab2">
       <p>Contenu 2</p>
     </div>
     <div class="tab-pane" id="tab3">
       <p>Contenu 3</p>
+    </div>
+    <div class="tab-pane" id="tab4">
+      <p>Contenu 4</p>
     </div>
   </div>
 </div>
