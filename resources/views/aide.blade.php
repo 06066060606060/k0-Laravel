@@ -23,65 +23,25 @@
                              <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Espace Aide</h1>
                          </div>
                          <div class="mx-auto lg:w-1/2 md:w-2/3">
-                             <form class="flex flex-wrap -m-2" method="post" action="contactmail">
-                                 @csrf
-                                 <div class="w-1/2 p-2">
-                                     <div class="relative">
-                                         <label for="name" class="text-sm leading-7 text-gray-200">
-                                         @if (backpack_auth()->check())
-                                            Pseudo 
-                                            @else
-                                         Nom
-                                         @endif
-                                         </label>
-                                         <input @if (backpack_auth()->check())
-                                            value="{{ backpack_auth()->user()->name }}" disabled 
-                                            @endif
-                                          type="text" id="name" name="name" required
-                                             class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200">
-                                     </div>
-                                 </div>
-                                 <div class="w-1/2 p-2">
-                                     <div class="relative">
-                                         <label for="email" class="text-sm leading-7 text-gray-200">Email</label>
-                                         <input @if (backpack_auth()->check())
-                                            value="{{ backpack_auth()->user()->email }}" disabled
-                                            @endif type="email" id="email" name="email" required
-                                             class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200">
-                                     </div>
-                                 </div>
-                                 <div class="w-full p-2">
-                                     <div class="relative">
-                                         <label for="message" class="text-sm leading-7 text-gray-200">Message</label>
-                                         <textarea id="message" name="message" required
-                                             class="w-full h-32 px-3 py-1 text-base leading-6 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none resize-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200"></textarea>
-                                     </div>
-                                 </div>
-                                 <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
-                                     <div class="col-md-6">
-                                         {!! RecaptchaV3::field('register') !!}
-                                         @if ($errors->has('g-recaptcha-response'))
-                                             <span class="help-block">
-                                                 <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                             </span>
-                                         @endif
-                                     </div>
-                                 </div>
-                                 <div class="flex justify-center w-full p-2">
-                                     <button type="submit"
-                                         class="relative flex justify-center w-48 px-5 py-1 my-2 mt-2 font-medium text-white shadow-lg prevent group">
-                                         <span
-                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>
-                                         <span
-                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-blue-700 group-hover:bg-blue-500 group-active:bg-blue-600 group-hover:-skew-x-12"></span>
-                                         <span
-                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-blue-600 -rotate-12"></span>
-                                         <span
-                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
-                                         <span class="relative">Envoyer le message</span>
-                                     </button>
-                                 </div>
-                             </form>
+                             <div class="tabs">
+  <ul class="tab-titles">
+    <li class="active"><a href="#tab1">Titre 1</a></li>
+    <li><a href="#tab2">Titre 2</a></li>
+    <li><a href="#tab3">Titre 3</a></li>
+  </ul>
+  <div class="tab-content">
+    <div class="tab-pane active" id="tab1">
+      <p>Contenu 1</p>
+    </div>
+    <div class="tab-pane" id="tab2">
+      <p>Contenu 2</p>
+    </div>
+    <div class="tab-pane" id="tab3">
+      <p>Contenu 3</p>
+    </div>
+  </div>
+</div>
+
                          </div>
                      </div>
                  </section>
