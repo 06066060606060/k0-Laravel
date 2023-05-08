@@ -77,7 +77,7 @@ detectMultipleWindows();
 
 
 // Vérifie si l'utilisateur est connecté
-if (Auth::check()) {
+if(backpack_auth()->check()) {
     // Si l'utilisateur est connecté, redirige-le vers la page d'accueil
     return redirect('/')->with('refresh', true);
 } else {
