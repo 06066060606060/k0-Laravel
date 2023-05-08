@@ -35,13 +35,16 @@
                                     </p>
                                 </div>
                                 <div class="tab-pane" id="tab2">
-                                    <p>Contenu 2</p>
+                                    <p><center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </center></p>
                                 </div>
                                 <div class="tab-pane" id="tab3">
-                                    <p>Contenu 3</p>
+                                    <p><center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </center></p>
                                 </div>
                                 <div class="tab-pane" id="tab4">
-                                    <p>Contenu 4</p>
+                                    <p><center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        </center></p>
                                 </div>
                             </div>
                         </div>
