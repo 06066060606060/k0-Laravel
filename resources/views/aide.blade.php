@@ -15,16 +15,16 @@
                         <div class="tabs">
                             <ul class="tab-titles text-white">
                                 <li class="active">
-                                    <h2><a href="#tab1">Comment jouer au jeu GoFRUITS ?</a></h2>
+                                    <h2><a href="#tab1">> Comment jouer au jeu GoFRUITS ?</a></h2>
                                 </li>
                                 <li>
-                                    <h2><a href="#tab2">Comment jouer au jeu Pool ?</a></h2>
+                                    <h2><a href="#tab2">> Comment jouer au jeu Pool ?</a></h2>
                                 </li>
                                 <li>
-                                    <h2><a href="#tab3">Comment acheter des Rubis ?</a></h2>
+                                    <h2><a href="#tab3">> Comment acheter des Rubis ?</a></h2>
                                 </li>
                                 <li>
-                                    <h2><a href="#tab4">Comment choisir un cadeau ?</a></h2>
+                                    <h2><a href="#tab4">> Comment choisir un cadeau ?</a></h2>
                                 </li>
                             </ul>
                             <div class="tab-content mt-4">
