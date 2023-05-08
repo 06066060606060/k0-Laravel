@@ -12,14 +12,9 @@
     <main>
         @yield('main')
     </main>
-    @php
-    @if(request()->path()=='admin/login')
-    @else
     <footer>
         @include('parts.footer')
     </footer>
-    @endif
-    @endphp    
     @vite('resources/js/app.js')
 
     <script></script>
