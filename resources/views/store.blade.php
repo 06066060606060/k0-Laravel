@@ -74,11 +74,9 @@
                          </div>
                          <div class="container px-5 py-4 mx-auto">
                              <div class="flex flex-col w-full mb-10 text-center">
-                                 <p class="flex mx-auto text-base leading-relaxed">Echangez vos &nbsp;
-                                 <img src="img/diamond5.png" class="w-8 h-6">&nbsp; 
-                                  <a class="text-blue-500">Diamants</a>&nbsp; et vos&nbsp; 
-                                 <img src="img/coin10.png" class="w-8 h-6">&nbsp;
-                                   <a class="text-blue-500"> Coins</a>&nbsp; contre de magnifique cadeaux.<br></p>
+                                 <p class="flex mx-auto text-base leading-relaxed">Echangez vos 
+                                  <a class="text-blue-500">Diamants</a> et vos
+                                   <a class="text-blue-500"> Coins</a> contre de magnifique cadeaux.<br></p>
                              </div>
                              <div class="container px-5 mx-auto">
                                  <div class="flex flex-wrap -m-4">
