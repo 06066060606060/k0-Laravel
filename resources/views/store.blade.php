@@ -17,6 +17,10 @@
                  <div class="flex flex-col w-full mb-20 text-center">
                      <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Espace cadeaux</h1>
                      <section class="text-gray-300 body-font">
+                         <div class="flex flex-col w-full mb-10 text-center">
+                                 <p class="flex mx-auto text-base leading-relaxed">Echangez vos 
+                                Diamants et vos Coins contre de magnifique cadeaux.<br></p>
+                             </div>
                          <div class="sm:flex-1">
                              <form action="{{ route('searchfilter') }}" method="get">
                                  <div class="relative w-1/2 mx-auto">
@@ -73,10 +77,6 @@
 
                          </div>
                          <div class="container px-5 py-4 mx-auto">
-                             <div class="flex flex-col w-full mb-10 text-center">
-                                 <p class="flex mx-auto text-base leading-relaxed">Echangez vos 
-                                Diamants et vos Coins contre de magnifique cadeaux.<br></p>
-                             </div>
                              <div class="container px-5 mx-auto">
                                  <div class="flex flex-wrap -m-4">
 
