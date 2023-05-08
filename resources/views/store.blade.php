@@ -51,7 +51,7 @@
 
          @else
                                      <select name="category"
-                                         class="w-full p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
+                                         style="width:50%;" class="p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
                                          onchange="submit()">
                                          <option value="" {{ $category == ''  ? 'selected' : '' }} >Toutes les catégories</option>
                                          <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
