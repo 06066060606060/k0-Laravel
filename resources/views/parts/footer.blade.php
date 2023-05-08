@@ -34,7 +34,7 @@
                  <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Plus</h2>
                  <div class="mb-10 list-none">
                      <li>
-                         <a href="help" class="text-gray-400 hover:text-gray-500">Aide</a>
+                         <a href="aide" class="text-gray-400 hover:text-gray-500">Aide</a>
                      </li>
                      <li>
                          <a href="contact" class="text-gray-400 hover:text-gray-500">Nous Contacter</a>
