@@ -11,7 +11,7 @@
         <div class="z-0 one"></div>
     @endif
   <div
-            class="max-w-6xl px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 sm:px-16 md:px-24 lg:py-18 ">
+            class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
                 <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
                     <div>
