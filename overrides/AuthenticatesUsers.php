@@ -115,9 +115,8 @@ trait AuthenticatesUsers
             return $response;
         }
         return $request->wantsJson()
-    ? response()->json(['message' => 'No Content'], 204)
-    : redirect()->intended($this->redirectPath());
-
+                    ? new Response('', 204)
+                    : redirect()->intended($this->redirectPath());
     }
 
     /**
