@@ -21,11 +21,7 @@
                     <div class="w-1/2 p-4 lg:w-1/2">
                      
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                        @if (backpack_auth()->check())
                         <a href="game?id={{ $allgame->id }}">
-                            @else
-                            <a href="admin/register" class="prevent">
-                            @endif
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 @if($allgame->prix == 0)
                                 <div
@@ -61,7 +57,6 @@
                                 <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">
                                     {{ $allgame->category }}</h1>
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
-                                @if (backpack_auth()->check())
                                     <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span
@@ -74,20 +69,7 @@
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
                                         <span class="relative">Jouer</span>
                                     </a>
-                                @else
-                                    <a href="admin/register"
-                                        class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                        <span
-                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                        <span
-                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                        <span
-                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Jouer</span>
-                                    </a>
-                                @endif
+                                
                             </div>
                         </div>
                         </a>
@@ -232,21 +214,6 @@
                         {{ $starred->name }}</h1>
                     <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
                     <div class="">
-                        @if (backpack_auth()->check())
-                            <a href="game?id={{ $starred->id }}"
-                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                <span
-                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                <span
-                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">Jouez
-                                    Maintenant</span>
-                            </a>
-                        @else
                             <a href="admin/register"
                                 class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                 <span
@@ -260,7 +227,6 @@
                                 <span class="relative">Jouez
                                     Maintenant</span>
                             </a>
-                        @endif
                     </div>
 
                 </div>
