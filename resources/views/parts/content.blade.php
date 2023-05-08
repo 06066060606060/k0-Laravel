@@ -369,16 +369,6 @@
                 ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, 
                 vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de 
                 gagner de superbes prix.
-                
-                
-                Jouez gratuitement aux jeux de GoKDO et <a href="cadeaux" class="text-blue-500">gagnez des cadeaux !</a><br>
-                    @if (backpack_auth()->check())
-                    <a class="text-blue-500 prevent">Jouez gratuitement</a> à notre jeu multijoueur amusant 
-                    GoFRUITS, où le but est de découvrir des fruits, et remportez des diamants échangeables 
-                    contre des cadeaux, de l'argent Paypal ou des chèques cadeaux Amazon. 
-                    @else
-                    <a href="admin/register" class="text-blue-500 prevent">Inscrivez-vous gratuitement</a> et bénéficiez de 150 Diamants OFFERTS !
-                    @endif                    
                 </p>
             <center>
             <iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </center>
