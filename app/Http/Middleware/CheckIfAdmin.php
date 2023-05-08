@@ -33,7 +33,7 @@ class CheckIfAdmin
         if ($user->role == 'admin') {
             //   dd('admin');
             return true;
-        } elseif ($user->role == 'user0') {
+        } elseif ($user->role == 'Utilisateur') {
         //    if just registered user send welcome mail
 
             $mailcontent = [
@@ -41,10 +41,10 @@ class CheckIfAdmin
                 'message' =>
                     'Bienvenue ' .
                     $user->name .
-                    ' Votre Compte à été crée avec succés',
+                    ' Votre Compte à été crée avec succès',
             ];
             Mail::to($user->email)->queue(new AboMail($mailcontent));
-            $user->role = 'user';
+            $user->role = 'Utilisateur';
             $user->trophee1 = '150';
             $user->save();
 
@@ -63,7 +63,7 @@ class CheckIfAdmin
 
             
             return true;
-        } elseif ($user->role == 'user') {
+        } elseif ($user->role == 'Utilisateur') {
             //   dd('user');
             return true;
         }
