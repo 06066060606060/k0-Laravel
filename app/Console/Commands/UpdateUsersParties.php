@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Models\User;
+use \App\Models\User;
 
 
 class UpdateUsersParties extends Command
