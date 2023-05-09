@@ -11,14 +11,14 @@ class UpdateUsersParties extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'update:user';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Update users table with new value daily at midnight';
 
     /**
      * Execute the console command.
