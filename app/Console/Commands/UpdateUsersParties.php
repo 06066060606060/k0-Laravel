@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use Illuminate\Support\Facade\DB;
+
 
 class UpdateUsersParties extends Command
 {
