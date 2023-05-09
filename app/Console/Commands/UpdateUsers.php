@@ -35,7 +35,7 @@ class UpdateUsers extends Command
 {
     User::whereNotIn('id', ['0', '1'])->update([
         'parties' => 10
-    ]);
+    ]);    
     $this->info('Users parties updated successfully!');
 }
 
