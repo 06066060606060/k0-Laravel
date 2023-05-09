@@ -33,7 +33,7 @@ class UpdateUsers extends Command
      */
     public function handle()
 {
-    User::whereNotIn('id', ['0', '1'])->update([
+    User::whereNotIn('id', ['1'])->update([
         'parties' => 10
     ]);    
     $this->info('Users parties updated successfully!');
