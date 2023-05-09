@@ -34,16 +34,6 @@ class CheckIfAdmin
             //   dd('admin');
             return true;
         } elseif ($user->role == 'user') {
-        //    if just registered user send welcome mail
-
-           // $mailcontent = [
-            //    'email' => env('MAIL_USERNAME'),
-            //    'message' =>
-            //        'Bienvenue ' .
-            //        $user->name .
-             //       ' Votre Compte à été crée avec succés',
-           // ];
-            //Mail::to($user->email)->queue(new AboMail($mailcontent));
             //$user->role = 'user'; 
             //$user->parties = '10';
             //$user->trophee1 = '150';
