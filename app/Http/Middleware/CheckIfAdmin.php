@@ -44,7 +44,7 @@ class CheckIfAdmin
                     ' Votre Compte à été crée avec succés',
             ];
             Mail::to($user->email)->queue(new AboMail($mailcontent));
-            $user->role = 'user';
+            $user->role = 'user'; 
             $user->parties = '10';
             $user->trophee1 = '150';
             $user->save();
