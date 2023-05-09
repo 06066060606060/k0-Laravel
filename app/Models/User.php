@@ -18,6 +18,8 @@ class User extends Authenticatable
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasApiTokens, HasFactory, Notifiable;
     use HasUuids;
+    public $timestamps = true;
+   
     /**
      * The attributes that are mass assignable.
      *
@@ -65,5 +67,6 @@ class User extends Authenticatable
         return 'notifications admin';
     }
 
-    
+   
+   
 }
