@@ -33,9 +33,8 @@ class UpdateUsers extends Command
      */
     public function handle()
 {
-    User::where('id' !='1')->update([
-        'parties' => 10,
-        'updated_at' => now()->toDateTimeString()
+    User::whereNotIn('id', ['0', '1'])->update([
+        'parties' => 10
     ]);
     $this->info('Users parties updated successfully!');
 }
