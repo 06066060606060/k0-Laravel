@@ -34,7 +34,8 @@ class UpdateUsers extends Command
     public function handle()
 {
     User::where('id' !='1')->update([
-        'parties' => 10
+        'parties' => 10,
+        'updated_at' => now()->toDateTimeString()
     ]);
     $this->info('Users parties updated successfully!');
 }
