@@ -24,6 +24,12 @@ class UpdateUsers extends Command
      */
     protected $description = 'Update users table with new value daily at midnight';
 
+    public function __construct()
+    {
+        parent::__construct();
+    }
+
+
     /**
      * Execute the console command.
      *
