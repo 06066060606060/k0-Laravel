@@ -3,7 +3,6 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Database\Eloquent\Builder;
 use App\Models\User;
 
 class UpdateUsers extends Command
