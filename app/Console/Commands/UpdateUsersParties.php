@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\DB;
+use App\Models\User;
 
 
 class UpdateUsersParties extends Command
@@ -29,7 +29,9 @@ class UpdateUsersParties extends Command
      */
     public function handle()
 {
-    DB::table('users')->update(['parties' => 10]);
+    User::update([
+        'parties' => 10,
+    ]);
     $this->info('Users parties updated successfully!');
 }
 
