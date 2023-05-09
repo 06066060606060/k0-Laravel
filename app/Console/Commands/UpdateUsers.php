@@ -37,8 +37,8 @@ class UpdateUsers extends Command
      */
     public function handle()
 {
-    User::update(['parties' => '10']);
-    DB::table('users')->update(['parties' => 10]);
+    //User::update(['parties' => '10']);
+    //DB::table('users')->update(['parties' => 10]);
     $this->info('Users parties updated successfully!');
 }
 
