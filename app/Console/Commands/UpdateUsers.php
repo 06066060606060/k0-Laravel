@@ -33,7 +33,7 @@ class UpdateUsers extends Command
      */
     public function handle()
 {
-    User::where('uid', '!=', '1')->update([
+    where('id', '!=', '1')->update([
         'parties' => 10,
     ]);         
     $this->info('Users parties updated successfully!');
