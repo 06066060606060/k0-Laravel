@@ -4,11 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\Models\User;
-use Illuminate\Foundation\Auth\User as AuthUser;
-use Illuminate\Support\Facades\DB;
-use Laravel\Socialite\One\User as OneUser;
 
-class UpdateUsers extends Command
+class UsersUpdate extends Command
 {
     /**
      * The name and signature of the console command.
@@ -29,7 +26,6 @@ class UpdateUsers extends Command
         parent::__construct();
     }
 
-
     /**
      * Execute the console command.
      *
@@ -37,8 +33,7 @@ class UpdateUsers extends Command
      */
     public function handle()
 {
-    //User::update(['parties' => '10']);
-    //DB::table('users')->update(['parties' => 10]);
+    User::update(['parties' => 10]);
     $this->info('Users parties updated successfully!');
 }
 
