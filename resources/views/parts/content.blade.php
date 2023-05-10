@@ -147,7 +147,11 @@
                                             src="{{ asset('img/coin10.png') }}">
                                     @endif
                                         <div class="flex flex-col">
+                                        @if($isMobile == true)
+                                            <h2 class="pb-0 pl-4 font-semibold text-xs">                                        
+                                        @else
                                             <h2 class="pb-0 pl-4 font-semibold text-s">
+                                        @endif
                                             {{ $score->name }}
                                             </h2>
                                     @if($score->data > 0)
