@@ -112,13 +112,13 @@
                 $total3 = $score->data3*1000;
                 $totalite = $total1+$total2+$total3;
             @endphp
-            <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-red-600 text-white max-w-[180px]">
-                <p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  
-                <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
+            <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
+                <p class="hidden ml-1 md:block">{{ $score->total }} PTS</p>  
+                <!--<img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                 <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
                 <img src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
                 <p class="hidden ml-1 md:block">+ {{ $score->data3 }}</p>  
-                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
             </strong>
             {{ $score->score }}
         </td>
