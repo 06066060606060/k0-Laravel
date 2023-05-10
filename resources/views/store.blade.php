@@ -11,7 +11,7 @@
          @else
              <div class="z-0 one"></div>
          @endif
-<winner class="mx-auto max-w-7xl" id="win">
+<container class="mx-auto max-w-7xl">
     <section>
         <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
@@ -72,7 +72,7 @@
             </div>
         </div>
     </section>
-</winner>
+</container>
          <container class="block min-h-screen px-4 mx-auto text-white max-w-7xl">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
