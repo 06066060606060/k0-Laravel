@@ -114,7 +114,9 @@ class GlobalController extends Controller
                 //->orderBy('id', 'desc')
                 //->get();        
                 return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
-    }
+                return view('content', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
+
+            }
 
     public function store()
     {
