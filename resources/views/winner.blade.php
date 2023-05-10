@@ -70,7 +70,7 @@
                                          <thead class="bg-gray-800 ">
                                              <tr>
                                                  <th
-                                                     class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
+                                                     class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
                                                      <div class="flex items-center gap-2">
                                                          Position
                                                      </div>
@@ -100,7 +100,7 @@
                                          @php $position++; @endphp
                                               <tr class="dark:bg-gray-900">
                                                  <td
-                                                     class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
+                                                     class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
                                                    {{ $position }}
                                                  </td>
                                                  <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
