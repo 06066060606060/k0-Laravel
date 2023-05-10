@@ -97,10 +97,11 @@
                                          <tbody class="divide-y divide-gray-700">
 
                                          @forelse ($scores as $score)
+                                         {{ $position++ }}
                                               <tr class="dark:bg-gray-900">
                                                  <td
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
-                                                   <a class="text-blue-600" href="game?id={{ $score->game->id }}"> {{ $score->game->name }}</a>
+                                                   {{ $position }}
                                                  </td>
                                                  <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
                                                       {{ $score->user->name }}
