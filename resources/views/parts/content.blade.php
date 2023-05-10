@@ -129,7 +129,7 @@
                 <div class="swiper-wrapper">
 
 
-
+@foreach ($name_scores as $name_score)
                     @forelse ($scores as $score)
                         <div class="swiper-slide">
                             <blockquote>
@@ -148,9 +148,8 @@
                                     @endif
                                         <div class="flex flex-col">
                                             <h2 class="pb-0 pl-4 font-semibold md:text-xl">
-@foreach ($name_scores as $name_score)
     {{ $name_score->name }}
-@endforeach                                            </h2>
+        </h2>
                                     @if($score->data > 0)
                                               <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data }}</span>
                                     @elseif($score->data2 > 0)
@@ -187,7 +186,7 @@
                             </blockquote>
                         </div>
                     @endforelse
-
+    @endforeach
 
 
 
