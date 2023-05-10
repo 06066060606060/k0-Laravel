@@ -105,7 +105,7 @@ class GlobalController extends Controller
         //Date de fin
         $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
         //Score effectués ordre par id desc
-        $score = Scores::where('game_id', $concours->game_id)
+        $scores = Scores::where('game_id', $concours->game_id)
         ->where(function ($query) {
             $query->where('data', '>', 0)
                   ->orWhere('data2', '>', 0)
@@ -115,10 +115,10 @@ class GlobalController extends Controller
         ->limit(1)
         ->first();
 
-if ($score) {
-$total = $score->data;
-$total2 = $score->data2 * 100;
-$total3 = $score->data3 * 1000;
+if ($scores) {
+$total = $scores->data;
+$total2 = $scores->data2 * 100;
+$total3 = $scores->data3 * 1000;
 $totalite = $total + $total2 + $total3;
 } else {
 $totalite = 0;
