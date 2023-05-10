@@ -147,7 +147,7 @@
                                             src="{{ asset('img/coin10.png') }}">
                                     @endif
                                         <div class="flex flex-col">
-                                            <h2 class="pb-0 pl-4 font-semibold md:text-xl">
+                                            <h2 class="pb-0 pl-4 font-semibold md:text-l">
                                             {{ $score->name }}
                                             </h2>
                                     @if($score->data > 0)
