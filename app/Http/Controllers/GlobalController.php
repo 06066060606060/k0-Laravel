@@ -104,11 +104,26 @@ class GlobalController extends Controller
         $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
         //Date de fin
         $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
-        //Score effectués
-        $scores = Scores::where('game_id', $concours->game_id)
+        //Score effectués ordre par id desc
+        $score = Scores::where('game_id', $concours->game_id)
+        ->where(function ($query) {
+            $query->where('data', '>', 0)
+                  ->orWhere('data2', '>', 0)
+                  ->orWhere('data3', '>', 0);
+        })
         ->orderBy('id', 'desc')
-        ->get();
-        return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
+        ->limit(1)
+        ->first();
+
+if ($score) {
+$total = $score->data;
+$total2 = $score->data2 * 100;
+$total3 = $score->data3 * 1000;
+$totalite = $total + $total2 + $total3;
+} else {
+$totalite = 0;
+}
+    return view('winner', compact('totalite', 'position', 'scores', 'concours', 'startdate', 'enddate'));
     }
 
     public function store()
