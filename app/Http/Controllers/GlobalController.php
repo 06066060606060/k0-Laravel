@@ -200,6 +200,7 @@ $allgames = Games::orderBy('id', 'desc')
     public function getProfil()
     {
         if (backpack_auth()->check()) {
+            $idjoueur= backpack_auth()->user()->id;
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
             $scores = Scores::where('user_id', $userid)
@@ -215,9 +216,15 @@ $allgames = Games::orderBy('id', 'desc')
                 ->latest()
                 ->limit('6')
                 ->get();
+                $scory = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
+                ->where('user_id', $idjoueur)
+                ->groupBy('user_id')
+                ->orderBy('total', 'desc')
+                ->first();
+            
             return view(
                 'profil',
-                compact('scores', 'orders', 'infos', 'paiements')
+                compact('idjoueur', 'scory', 'scores', 'orders', 'infos', 'paiements')
             );
         } else {
             return redirect('/');

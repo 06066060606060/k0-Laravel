@@ -34,8 +34,14 @@
                     </div>
 
                     <div class="flex flex-col md:items-center">
-                        <p class="py-4 font-small text-white border-b border-gray-500 ">
-                            Score Concours : {{ backpack_auth()->user()->global_score }} Pts
+                        @php
+                        $total1 = $scory->data;
+                        $total2 = $scory->data2*100;
+                        $total3 = $scory->data3*1000;
+                        $totalite = $total1+$total2+$total3;
+                        @endphp
+                        <p class="py-4 text-xs text-white border-b border-gray-500 ">
+                            Score Concours : {{ $totalite }} Pts
                         </p>
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
                         <div class="flex py-2">
