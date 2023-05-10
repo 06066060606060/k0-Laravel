@@ -148,7 +148,9 @@
                                     @endif
                                         <div class="flex flex-col">
                                             <h2 class="pb-0 pl-4 font-semibold md:text-xl">
-                                             {{ $name_score->name }}
+@foreach ($name_scores as $name_score)
+    {{ $name_score->name }}
+@endforeach
                                             </h2>
                                     @if($score->data > 0)
                                               <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data }}</span>
