@@ -195,7 +195,11 @@
                 <h1 class="py-4 text-lg font-bold text-white">Mes scores:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
-                        <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
+                    @if($isMobile == true)
+                                     <table style="width:500px;" class="min-w-full py-2 text-sm divide-y divide-gray-200">
+                          @else
+                                     <table style="width:500px;" class="min-w-full py-2 text-sm divide-y divide-gray-200">
+                          @endif
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
