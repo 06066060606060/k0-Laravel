@@ -32,9 +32,14 @@ class GlobalController extends Controller
         //DERNIERS GAGNANTS JEUX
         $scores = Scores::All();
         $winner = User::all();
-        $name_scores = User::where('id', $scores->user_id)
-            ->get();
-        $allgames = Games::orderBy('id', 'desc')
+        $name_scores = [];
+
+foreach ($scores as $score) {
+    $user_id = $score->user_id;
+    $name_score = User::where('id', $user_id)->first();
+    $name_scores[] = $name_score;
+}
+$allgames = Games::orderBy('id', 'desc')
         ->get();
         $freegames = Games::where('type', 'Gratuit')
             ->where('status', 0)
