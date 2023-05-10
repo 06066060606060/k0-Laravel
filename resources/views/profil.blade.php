@@ -35,14 +35,15 @@
 
                     <div class="flex flex-col md:items-center">
                         @php
-                        $total1 = $scory->data;
-                        $total2 = $scory->data2*100;
-                        $total3 = $scory->data3*1000;
-                        $totalite = $total1+$total2+$total3;
-                        @endphp
-                        <p class="py-4 text-xs text-white border-b border-gray-500 ">
-                            Score Concours : {{ $totalite }} Pts
-                        </p>
+    $total1 = $scory->total;
+    $total2 = $scory->total2 * 100;
+    $total3 = $scory->total3 * 1000;
+    $totalite = $total1 + $total2 + $total3;
+@endphp
+<p class="py-4 text-xs text-white border-b border-gray-500">
+    Score Concours : {{ $totalite }} Pts
+</p>
+
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
                         <div class="flex py-2">
                             <img src="img/diamond5.png" class="w-10 h-8">
