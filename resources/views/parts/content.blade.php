@@ -130,7 +130,7 @@
 
 
 
-                    @foreach ($scores as $score)
+                    @forelse ($scores as $score)
                         <div class="swiper-slide">
                             <blockquote>
                                 <div
@@ -185,7 +185,7 @@
                                 </div>
                             </blockquote>
                         </div>
-                    @endforeach
+                    @endforelse
 
 
 
