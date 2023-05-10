@@ -58,7 +58,7 @@
 
 
 
-         <container class="block min-h-screen px-2 mx-auto text-white max-w-7xl">
+         <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
                      <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Classement Concours:</h1>
@@ -66,7 +66,11 @@
                          <div class="container py-8 mx-auto">
                                  <div
                                      class="overflow-x-auto border border-gray-700 rounded-lg">
+    @if($isMobile == true)
+                                     <table style="width:500px;" class="min-w-full text-sm divide-y divide-gray-700">
+                          @else
                                      <table class="min-w-full text-sm divide-y divide-gray-700">
+                          @endif
                                          <thead class="bg-gray-800 ">
                                              <tr>
                                                  <th style="width:10%;"
