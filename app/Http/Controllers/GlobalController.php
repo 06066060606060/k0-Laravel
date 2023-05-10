@@ -28,12 +28,17 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
-        $concours = Concours::All();
-        //DERNIERS GAGNANTS JEUX
-        $winner = User::all();
+        $concours = Concours::All(); // TOUTES LES COMMANDES
+        $winner = User::all(); //DERNIERS GAGNANTS JEUX
 
+        // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')
         ->join('users', 'users.id', '=', 'scores.user_id')
+        ->get();
+
+        // JOINT COMMANDE ET CADEAUX DERNIERS GAGNANTS PAGE BOUTIQUE
+        $commandes = Commandes::select('commandes.*', 'cadeaux.name')
+        ->join('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
         ->get();
     
         
@@ -52,7 +57,7 @@ $allgames = Games::orderBy('id', 'desc')
         $starred = Games::where('status', 1)
         ->inRandomOrder()
         ->first();
-        return view('index', compact('scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('commandes', 'scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
     }
 
     public function game(Request $request)
