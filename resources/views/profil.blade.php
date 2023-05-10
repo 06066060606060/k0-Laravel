@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="flex flex-col md:items-center">
-                        <p class="py-4 font-medium text-white border-b border-gray-500 ">
+                        <p class="py-4 font-small text-white border-b border-gray-500 ">
                             Score Concours : {{ backpack_auth()->user()->global_score }} Pts
                         </p>
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
