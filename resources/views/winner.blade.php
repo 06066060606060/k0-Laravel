@@ -97,7 +97,7 @@
                                          <tbody class="divide-y divide-gray-700">
 
                                          @forelse ($scores as $score)
-                                         {{ $position++ }}
+                                         @php $position++; @endphp
                                               <tr class="dark:bg-gray-900">
                                                  <td
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
