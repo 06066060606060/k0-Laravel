@@ -66,7 +66,7 @@
                          <div class="container py-8 mx-auto">
                                  <div
                                      class="overflow-x-auto border border-gray-700 rounded-lg">
-    @if($isMobile == true)
+                        @if($isMobile == true)
                                      <table style="width:500px;" class="min-w-full text-sm divide-y divide-gray-700">
                           @else
                                      <table class="min-w-full text-sm divide-y divide-gray-700">
@@ -117,7 +117,7 @@
                 $totalite = $total1+$total2+$total3;
             @endphp
                 @if($isMobile == true)
-                <p class="hidden ml-1 md:block">{{ $score->total }} PTS</p>  
+                <p class="ml-1 md:block">{{ $score->total }} PTS</p>  
                 @else
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
                 <p class="hidden ml-1 md:block">{{ $score->total }} PTS</p>  
@@ -132,7 +132,7 @@
         </td>
         <td class="whitespace-nowrap px-4 py-2 w-[250px]">
             @if($isMobile == true)
-            <p class="hidden ml-1 md:block">500</p>  
+            <p class="ml-1 md:block">500</p>  
                 <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             @else
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
