@@ -70,7 +70,7 @@
                                  <div class="flex flex-wrap -m-4">
 
                                      @forelse ($cadeaux as $cadeau)
-                                         <div class="p-4 w-1/4 lg:w-1/4 md:w-1/2">
+                                         <div class="p-4 w-1/2 lg:w-1/4 md:w-1/2">
                                              <div
                                                  class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                                  <input type="hidden" name="id" value="{{ $cadeau->id }}">
