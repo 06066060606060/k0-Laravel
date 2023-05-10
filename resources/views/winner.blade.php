@@ -75,7 +75,7 @@
                                                          #
                                                      </div>
                                                  </th>
-                                                 <th  style="width:30%;"
+                                                 <th  style="width:20%;"
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                      <div class="flex items-center gap-2">
                                                          Pseudo
@@ -87,7 +87,7 @@
                                                          Score
                                                      </div>
                                                  </th>
-                                                 <th  style="width:20%;"
+                                                 <th  style="width:30%;"
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                      Gain
                                                  </th>
