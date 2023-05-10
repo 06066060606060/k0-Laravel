@@ -69,12 +69,6 @@
                                      <table class="min-w-full text-sm divide-y divide-gray-700">
                                          <thead class="bg-gray-800 ">
                                              <tr>
-                                                <th
-                                                     class="hidden px-4 py-2 font-bold text-left text-white md:block whitespace-nowrap">
-                                                     <div class="flex items-center gap-2">
-                                                         
-                                                     </div>
-                                                 </th>
                                                  <th
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                      <div class="flex items-center gap-2">
@@ -104,12 +98,6 @@
 
                                          @forelse ($scores as $score)
                                               <tr class="dark:bg-gray-900">
-                                                 <td
-                                                     class="hidden px-4 mt-3 font-bold text-white md:block whitespace-nowrap">
-                                                     <div class="flex items-center justify-center">
-                                                   <img src="storage/{{ $score->game->image[0] }}" alt="coin" class="w-16 mb-4 h-9">
-                                                   </div>
-                                                 </td>
                                                  <td
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                    <a class="text-blue-600" href="game?id={{ $score->game->id }}"> {{ $score->game->name }}</a>
