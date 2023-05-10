@@ -29,7 +29,10 @@ class GlobalController extends Controller
     public function getAll()
     {
         $concours = Concours::All();
+        //DERNIERS GAGNANTS JEUX
         $scores = Scores::All();
+        $name_scores = User::where('id', $scores->user_id)
+            ->get();
         $winner = User::all();
         $allgames = Games::orderBy('id', 'desc')
         ->get();
@@ -45,7 +48,7 @@ class GlobalController extends Controller
         $starred = Games::where('status', 1)
         ->inRandomOrder()
         ->first();
-        return view('index', compact('scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('name_scores', 'scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
     }
 
     public function game(Request $request)
