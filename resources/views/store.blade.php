@@ -104,7 +104,7 @@
                                                                              class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
                                                                          <span
                                                                              class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
-                                                                         <span class="relative">Trop Cher</span>
+                                                                         <span class="relative">Echanger</span>
                                                                      </button>
                                                                  @else
                                                                      <button @click="modelOpen =!modelOpen"
