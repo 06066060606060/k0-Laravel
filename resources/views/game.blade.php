@@ -50,14 +50,14 @@
                                                  </td>
                                                  <td class="flex px-4 py-2 text-sm font-normal text-gray-200 rate-container">
                                                  @if($score->data > 0)
-                                                     {{ $score->data }} <img src="img/diamond5.png" class="flex w-6 h-4">
+                                                     {{ $score->data }} <img src="img/diamond5.png" class="flex w-6 h-4 ml-2 mt-1">
 
                                                  @endif
                                                  @if($score->data2 > 0)
-                                                     {{ $score->data2 }} <img src="img/gem10.png" class="flex w-5 h-4">
+                                                     {{ $score->data2 }} <img src="img/gem10.png" class="flex w-5 h-4 ml-2 mt-1">
                                                  @endif
                                                  @if($score->data3 > 0)
-                                                     {{ $score->data3 }} <img src="img/coin10.png" class="flex w-5 h-4">
+                                                     {{ $score->data3 }} <img src="img/coin10.png" class="flex w-5 h-4 ml-2 mt-1">
                                                  @endif
                                                  </td>
                                              </tr>
