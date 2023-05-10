@@ -66,7 +66,7 @@
 
                          </div>
                          <div class="container mt-4 px-5 py-4 mx-auto">
-                             <div class="container px-5 mx-auto">
+                             <div class="container px-0 mx-auto">
                                  <div class="flex flex-wrap -m-4">
 
                                      @forelse ($cadeaux as $cadeau)
