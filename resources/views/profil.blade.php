@@ -1,7 +1,12 @@
 @extends('layouts.app')
+        $isMobile = GlobalController::isMobile();
 
 @section('main')
     <div data-barba="container">
+      @php
+        use \App\Http\Controllers\GlobalController;
+        $isMobile = GlobalController::isMobile();
+    @endphp
         @if (session('success'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())">
                 <div id="popmenu" class="px-4 py-2 text-gray-100 btnmenu">Transaction confirmé</div>
