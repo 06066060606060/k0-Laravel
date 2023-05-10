@@ -130,14 +130,22 @@
 
 
 
-                    @forelse ($concours as $concour)
+                    @forelse ($scores as $score)
                         <div class="swiper-slide">
                             <blockquote>
                                 <div
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
+                                    @if($score->data > 0)
                                         <img alt="" class="inline-block object-center w-auto h-12"
-                                            src="storage/{{ $concour->cadeau->image }}">
+                                            src="{{ asset('img/diamond5.png') }}">
+                                    @elseif($score->data2 > 0)
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="{{ asset('img/gem10.png') }}">
+                                    @elseif($score->data3 > 0)
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="{{ asset('img/coin10.png') }}">
+                                    @endif
                                         <div class="flex flex-col">
                                             <h2 class="pb-2 pl-4 font-semibold md:text-xl">
                                              {{-- {{ $concour->user->name }}  --}}
