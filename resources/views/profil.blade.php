@@ -221,7 +221,7 @@
                                         {{ $score->data }} <img src="img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
                                         @endif
                                         @if($score->data2 > 0)
-                                        {{ $score->data2 }} <img src="img/gem10.png" class="flex ml-1 mt-1 w-5 h-4">
+                                        {{ $score->data2 }} <img src="img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
                                         @endif
                                         @if($score->data3 > 0)
                                         {{ $score->data3 }} <img src="img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
