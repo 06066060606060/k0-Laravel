@@ -28,17 +28,15 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
+        $concours = Concours::All();
+        //DERNIERS GAGNANTS JEUX
         $winner = User::all();
-        $concours = Concours::all();
-        $scores = Scores::all();
         $name_scores = [];
-                
-        foreach ($scores as $score) {
-            $user_id = $score->user_id;
-            $name_score = User::whereIn('id', [$user_id])->get();
-            $name_scores = array_merge($name_scores, $name_score->all());
-        }
-        
+
+        $scores = Scores::select('scores.*', 'users.name')
+        ->join('users', 'users.id', '=', 'scores.user_id')
+        ->get();
+    
         
 
 $allgames = Games::orderBy('id', 'desc')
