@@ -71,7 +71,7 @@
                                              <tr>
                                                  <th
                                                      class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
-                                                     <div class="flex items-center gap-2">
+                                                     <div class="items-center gap-2">
                                                          Position
                                                      </div>
                                                  </th>
