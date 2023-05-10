@@ -147,15 +147,15 @@
                                             src="{{ asset('img/coin10.png') }}">
                                     @endif
                                         <div class="flex flex-col">
-                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                            <h2 class="pb-0 pl-4 font-semibold md:text-xl">
                                              {{ $name_score->name }}
                                             </h2>
                                     @if($score->data > 0)
-                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $score->data }}</span>
+                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data }}</span>
                                     @elseif($score->data2 > 0)
-                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $score->data2 }}</span>
+                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data2 }}</span>
                                     @elseif($score->data3 > 0)
-                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $score->data3 }}</span>
+                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data3 }}</span>
                                     @endif
 
                                         </div>
