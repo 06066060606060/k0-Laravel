@@ -63,7 +63,7 @@
                  <div class="flex flex-col w-full mb-20 text-center">
                      <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Classement Concours:</h1>
                      <section class="text-gray-300 body-font">
-                         <div class="container py-8 mx-auto">
+                         <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                                  <div
                                      class="overflow-x-auto border border-gray-700 rounded-lg">
                                      <table class="min-w-full text-sm divide-y divide-gray-700">
