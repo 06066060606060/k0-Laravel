@@ -35,8 +35,8 @@ class GlobalController extends Controller
                 
         foreach ($scores as $score) {
             $user_id = $score->user_id;
-            $name_score = User::whereIn('id', [$user_id])->get()->toArray();
-            $name_scores = array_merge($name_scores, $name_score);
+            $name_score = User::whereIn('id', [$user_id])->get();
+            $name_scores = array_merge($name_scores, $name_score->all());
         }
         
         
