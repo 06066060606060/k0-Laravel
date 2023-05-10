@@ -177,10 +177,10 @@
                                                                                  <div
                                                                                      class="flex flex-col items-center pb-8 mx-24 mt-1">
                                                                                      <h1
-                                                                                         class="py-2 text-sm font-medium text-white">
+                                                                                         class="flex py-2 text-sm font-medium text-white">
                                                                                          {{ $cadeau->prix }} <img
                                                                                              src="img/diamond5.png"
-                                                                                             class="w-8 h-6">
+                                                                                             class="flex w-8 h-6">
                                                                                          seronts retirés de votre solde.
                                                                                      </h1>
 
