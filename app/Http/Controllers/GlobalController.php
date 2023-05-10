@@ -131,7 +131,7 @@ $allgames = Games::orderBy('id', 'desc')
         $commandes = Commandes::select('commandes.*', 'cadeaux.name')
             ->join('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
             ->get();
-    
+     
         return view('store', compact('commandes', 'cadeaux', 'concours'));
     }
 
