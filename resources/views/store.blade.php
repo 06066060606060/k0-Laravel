@@ -35,7 +35,7 @@
                                             <h2 class="pb-0 pl-4 font-semibold text-s">
                                             {{ $commande->name }}
                                             </h2>
-                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data3 }}</span>
+                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $commande->user_id }}</span>
                                         </div>
                                     </div>
                                 </div>
