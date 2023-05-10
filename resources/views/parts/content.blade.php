@@ -137,13 +137,13 @@
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
                                     @if($score->data > 0)
-                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                        <img alt="" class="inline-block object-center w-auto h-6"
                                             src="{{ asset('img/diamond5.png') }}">
                                     @elseif($score->data2 > 0)
-                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                        <img alt="" class="inline-block object-center w-auto h-6"
                                             src="{{ asset('img/gem10.png') }}">
                                     @elseif($score->data3 > 0)
-                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                        <img alt="" class="inline-block object-center w-auto h-6"
                                             src="{{ asset('img/coin10.png') }}">
                                     @endif
                                         <div class="flex flex-col">
