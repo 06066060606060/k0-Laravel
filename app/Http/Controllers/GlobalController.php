@@ -200,6 +200,7 @@ $allgames = Games::orderBy('id', 'desc')
     public function getProfil()
     {
         if (backpack_auth()->check()) {
+            $concours = Concours::All(); // TOUTES LES COMMANDES
             $idjoueur= backpack_auth()->user()->id;
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
@@ -226,7 +227,7 @@ $allgames = Games::orderBy('id', 'desc')
             
             return view(
                 'profil',
-                compact('idjoueur', 'scory', 'scores', 'orders', 'infos', 'paiements')
+                compact('concours', 'idjoueur', 'scory', 'scores', 'orders', 'infos', 'paiements')
             );
         } else {
             return redirect('/');
