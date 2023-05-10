@@ -65,7 +65,7 @@
                      <section class="text-gray-300 body-font">
                          <div class="container py-8 mx-auto">
                                  <div
-                                     class="overflow-x-auto border border-gray-700 rounded-lg">
+                                     class="overflow-x-hidden border border-gray-700 rounded-lg">
                                      <table class="min-w-full text-sm divide-y divide-gray-700">
                                          <thead class="bg-gray-800 ">
                                              <tr>
