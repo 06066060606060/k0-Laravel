@@ -138,9 +138,7 @@
             
         </td>
         <td class="whitespace-nowrap px-4 py-2 w-[250px]">
-            complete ma série
-
-@if($position == 1)
+            @if($position == 1)
             @php $gain_joueur = 500; @endphp
             @elseif($position == 2)
             @php $gain_joueur = 200; @endphp
