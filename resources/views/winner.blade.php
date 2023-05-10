@@ -96,7 +96,7 @@
 
                                          <tbody class="divide-y divide-gray-700">
 
-                                         @forelse ($scores as $score)
+                                         @foreach ($scores as $score)
                                          @php $position++; @endphp
                                               <tr class="dark:bg-gray-900">
                                                  <td
@@ -146,7 +146,7 @@
                                                      </strong>
                                                  </td>
                                              </tr>
-                                         @endforelse
+                                         @endforeach
                                             
                                          </tbody>
                                      </table>
