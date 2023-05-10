@@ -216,18 +216,18 @@
                                         <td style="width:33%;" class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $score->game->name }}
                                         </td>
-                                        <td style="width:33%;" class="flex px-4 py-2 text-gray-300 whitespace-nowrap"> 
+                                        <td style="width:33%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
                                         @if($score->data > 0)
-                                        {{ $score->data }} <img src="img/diamond5.png" class="flex ml-1 mt-1 w-6 h-4">
+                                        {{ $score->data }} <img src="img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
                                         @endif
                                         @if($score->data2 > 0)
                                         {{ $score->data2 }} <img src="img/gem10.png" class="flex ml-1 mt-1 w-5 h-4">
                                         @endif
                                         @if($score->data3 > 0)
-                                        {{ $score->data3 }} <img src="img/coin10.png" class="flex ml-1 mt-1 w-5 h-4">
+                                        {{ $score->data3 }} <img src="img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
                                         @endif
                                         </td>
-                                        <td style="width:33%;" class="flex text-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
+                                        <td style="width:33%;">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
                                                 <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
                                             </strong>
