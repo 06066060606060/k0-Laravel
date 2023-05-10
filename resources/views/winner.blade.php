@@ -36,7 +36,7 @@
                     <p class="mb-4 text-base leading-relaxed text-left text-gray-300"> {{ $concours->description }}</p>
 
                     <div class="">
-                            <a href=""
+                            <a href="game?id={{ $concours->game_id }}"
                                 class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                 <span
                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
