@@ -80,7 +80,7 @@
                                                      src="./storage/{{ $image }}"
                                                      onerror="this.src='/img/empty.png'">
                                                  <div class="w-full">
-                                                     <div class="flex justify-between mx-4">
+                                                     <div class="text-center mx-4">
                                                          <h2 name="name"
                                                              class="py-1 text-xl font-bold text-green-600 title-font ">
                                                              {{ $cadeau->name }}</h2>
@@ -89,8 +89,6 @@
                                                              <p name="prix" class="mt-2">x {{ $cadeau->prix }}</p>
                                                          </div>
                                                      </div>
-                                                     <p class="mx-2 mb-4 text-sm">{{ $cadeau->description }}</p>
-
                                                      <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
                                                          <div x-data="{ modelOpen: false }" class="flex justify-center">
                                                              @if (backpack_auth()->check())
