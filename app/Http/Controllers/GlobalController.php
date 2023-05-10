@@ -105,10 +105,12 @@ class GlobalController extends Controller
         //Date de fin
         $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
         //Score effectués ordre par id desc
-        $scores = Scores::where('game_id', $concours->game_id)
-        ->orderBy('id', 'desc')
-        ->limit(1)
-        ->get();
+        $scores = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
+                ->where('game_id', $concours->game_id)
+                ->groupBy('user_id')
+                ->orderBy('total', 'desc')
+                ->limit(1)
+                ->get();
         return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
     }
 
