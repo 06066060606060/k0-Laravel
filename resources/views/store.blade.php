@@ -85,8 +85,8 @@
                                                              class="py-1 text-xl font-bold text-green-600 title-font ">
                                                              {{ $cadeau->name }}</h2>
                                                          <div class="flex">
-                                                             <img src="./img/diamond5.png" class="w-4 h-4 mx-2 mt-3">
-                                                             <p name="prix" class="mt-2">x {{ $cadeau->prix }}</p>
+                                                             <img src="./img/diamond5.png" class="w-10 h-8 mx-2 mt-1">
+                                                             <p name="prix" class="mt-2 text-2xl">x {{ $cadeau->prix }}</p>
                                                          </div>
                                                      </div>
                                                      <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
