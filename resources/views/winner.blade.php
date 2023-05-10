@@ -112,8 +112,8 @@
         <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
             @php 
                 $total1 = $score->total;
-                $total2 = $score->total2*100;
-                $total3 = $score->total3*1000;
+                $total2 = $score->total2 * 100;
+                $total3 = $score->total3 * 1000;
                 $totalite = $total1+$total2+$total3;
             @endphp
                 @if($isMobile == true)
