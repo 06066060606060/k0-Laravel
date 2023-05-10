@@ -108,7 +108,7 @@
                                                  </td>
                                                  <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
                                                     <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold  bg-red-600 text-white max-w-[180px]">
-                                                        <p class="hidden ml-1 md:block">+ {{ $totalite }}</p>  <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
+                                                        <p class="hidden ml-1 md:block">+ {{ $score->data }}</p>  <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                                                         <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
                                                          <p class="hidden ml-1 md:block">+ {{ $score->data3 }}</p>  <img src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
                                                      </strong>
