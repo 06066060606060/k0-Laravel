@@ -104,7 +104,9 @@ class GlobalController extends Controller
         //Date de fin
         $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
         //Score effectués
-        $scores = Scores::where('game_id', $concours->game_id)->get();
+        $scores = Scores::where('game_id', $concours->game_id)
+        ->orderBy('id', 'desc')
+        ->get();
         return view('winner', compact('scores', 'concours', 'startdate', 'enddate'));
     }
 
