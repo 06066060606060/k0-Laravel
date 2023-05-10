@@ -41,7 +41,7 @@
     $totalite = $total1 + $total2 + $total3;
 @endphp
 <p class="py-4 text-xs text-white border-b border-gray-500">
-    Score Concours : {{ $totalite }} Pts
+    Score Concours : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-2 h-2 ml-2">
 </p>
 
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
