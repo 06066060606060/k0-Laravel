@@ -200,7 +200,7 @@ $allgames = Games::orderBy('id', 'desc')
     public function getProfil()
     {
         if (backpack_auth()->check()) {
-            $concours = Concours::All(); // TOUTES LES COMMANDES
+            $concours = Concours::first(); // TOUTES LES COMMANDES
             $idjoueur= backpack_auth()->user()->id;
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
