@@ -109,7 +109,6 @@ class GlobalController extends Controller
                 ->where('game_id', $concours->game_id)
                 ->groupBy('user_id')
                 ->orderBy('total', 'desc')
-                ->limit(1)
                 ->get();
         return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
     }
