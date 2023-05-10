@@ -128,8 +128,8 @@ $allgames = Games::orderBy('id', 'desc')
         $concours = Concours::All();
         $cadeaux = Cadeaux::all();
         // JOINT COMMANDE ET CADEAUX DERNIERS GAGNANTS PAGE BOUTIQUE
-        $cmds = Commandes::select('commandes.*', 'cadeaux.name')
-            ->join('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
+        $cmds = Commandes::select('commandes.*', $cadeaux->name)
+            ->join($cadeaux, $cadeaux->id, '=', 'commandes.cadeau_id')
             ->get();
         return view('store', compact('cadeaux', 'concours', 'cmds'));
     }
