@@ -198,13 +198,13 @@
                         <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                    <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         Jeux
                                     </th>
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                    <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         Score
                                     </th>
-                                    <th class="px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
+                                    <th style="width:33%;" class="px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
                                         Date
                                     </th>
                                 </tr>
@@ -213,10 +213,10 @@
                             <tbody class="divide-y divide-gray-500">
                                 @forelse ($scores as $score)
                                     <tr>
-                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                        <td style="width:33%;" class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $score->game->name }}
                                         </td>
-                                        <td class="flex px-4 py-2 text-gray-300 whitespace-nowrap"> 
+                                        <td style="width:33%;" class="flex px-4 py-2 text-gray-300 whitespace-nowrap"> 
                                         @if($score->data > 0)
                                         {{ $score->data }} <img src="img/diamond5.png" class="flex ml-1 mt-1 w-6 h-4">
                                         @endif
@@ -227,7 +227,7 @@
                                         {{ $score->data3 }} <img src="img/coin10.png" class="flex ml-1 mt-1 w-5 h-4">
                                         @endif
                                         </td>
-                                        <td class="flex text-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
+                                        <td style="width:33%;" class="flex text-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
                                                 <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
                                             </strong>
