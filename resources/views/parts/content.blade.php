@@ -147,7 +147,7 @@
                                             src="{{ asset('img/coin10.png') }}">
                                     @endif
                                         <div class="flex flex-col">
-                                            <h2 class="pb-0 pl-4 font-semibold md:text-l">
+                                            <h2 class="pb-0 pl-4 font-semibold md:text-m">
                                             {{ $score->name }}
                                             </h2>
                                     @if($score->data > 0)
@@ -157,7 +157,7 @@
                                     @elseif($score->data3 > 0)
                                               <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data3 }}</span>
                                     @endif
-                                    <span href="#" class="ml-4 text-s font-bold text-green-800 lg:mb-0">Sur le jeu Pool</span>
+                                    <span href="#" class="ml-4 text-s font-bold text-blue-700 lg:mb-0">Sur le jeu Pool</span>
                                     
 
                                         </div>
