@@ -34,14 +34,11 @@ class GlobalController extends Controller
         $winner = User::all();
         $name_scores = [];
 
-        foreach ($scores as $score) {
-            $user_id = $score->user_id;
-            $name_score = User::where('id', $user_id)->get();
-            
-            foreach ($name_score as $user) {
-                $name_scores[] = $user->name;
-            }
-        }
+foreach ($scores as $score) {
+    $user_id = $score->user_id;
+    $name_score = User::where('id', $user_id)->first();
+    $name_scores[] = $name_score;
+}
 $allgames = Games::orderBy('id', 'desc')
         ->get();
         $freegames = Games::where('type', 'Gratuit')
@@ -56,7 +53,7 @@ $allgames = Games::orderBy('id', 'desc')
         $starred = Games::where('status', 1)
         ->inRandomOrder()
         ->first();
-        return view('index', compact('name_score', 'name_scores', 'scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('', 'name_scores', 'scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
     }
 
     public function game(Request $request)
