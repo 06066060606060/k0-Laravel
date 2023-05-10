@@ -95,9 +95,9 @@
                                          </thead>
 
                                          <tbody class="divide-y divide-gray-700">
-
-                                         @foreach ($scores as $score)
-                                         @php $position++; @endphp
+                                        @php
+                                         foreach ($scores as $score)
+                                          $position++; 
                                               <tr class="dark:bg-gray-900">
                                                  <td
                                                      class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
@@ -107,11 +107,11 @@
                                                       {{ $score->user->name }}
                                                  </td>
                                                  <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
-                                                    @php $total1 = $score->data;
+                                                     $total1 = $score->data;
                                                          $total2 = $score->data2*100;
                                                          $total3 = $score->data3*1000;
                                                          $totalite = $total1+$total2+$total3;
-                                                    @endphp
+                                                    
                                                     <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold  bg-red-600 text-white max-w-[180px]">
                                                         <p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                                                         <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
@@ -124,6 +124,7 @@
                                                      
                                                  </td>
                                              </tr>
+                                             @endphp
                                          @empty
                                               <tr class="dark:bg-gray-900">
                                                  <td
@@ -146,7 +147,6 @@
                                                      </strong>
                                                  </td>
                                              </tr>
-                                         @endforeach
                                             
                                          </tbody>
                                      </table>
