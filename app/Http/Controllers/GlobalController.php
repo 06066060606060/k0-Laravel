@@ -53,7 +53,7 @@ $allgames = Games::orderBy('id', 'desc')
         $starred = Games::where('status', 1)
         ->inRandomOrder()
         ->first();
-        return view('index', compact('name_score', 'name_scores', 'scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('user_id', 'name_score', 'name_scores', 'scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
     }
 
     public function game(Request $request)
