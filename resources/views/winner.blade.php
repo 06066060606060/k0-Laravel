@@ -69,25 +69,25 @@
                                      <table class="min-w-full text-sm divide-y divide-gray-700">
                                          <thead class="bg-gray-800 ">
                                              <tr>
-                                                 <th
+                                                 <th style="width:10%;"
                                                      class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
                                                      <div class="items-center gap-2">
                                                          Position
                                                      </div>
                                                  </th>
-                                                 <th
+                                                 <th  style="width:30%;"
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                      <div class="flex items-center gap-2">
                                                          Pseudo
                                                      </div>
                                                  </th>
-                                                 <th
+                                                 <th  style="width:20%;"
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                      <div class="flex items-center gap-2">
                                                          Score
                                                      </div>
                                                  </th>
-                                                 <th
+                                                 <th  style="width:20%;"
                                                      class="px-4 py-2 font-bold text-left text-white whitespace-nowrap">
                                                      Gain
                                                  </th>
