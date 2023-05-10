@@ -95,7 +95,7 @@
                                                                  @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
                                                                      <button
                                                                          onclick="alert('Vous devez n\'avez pas assez de diamants !')"
-                                                                         class="relative flex justify-center w-24 px-4 py-2 mx-auto my-2 font-medium text-white group">
+                                                                         class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
                                                                          <span
                                                                              class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
                                                                          <span
