@@ -37,7 +37,7 @@
                                  <div class="relative inline-flex min-w-full">
                                  @else
                                  <div class="relative inline-flex" style="width:50%;">
-                                 @endif
+                                 @endif 
 
                                      <select name="category"
                                          class="w-full p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
