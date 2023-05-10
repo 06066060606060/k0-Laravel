@@ -1,5 +1,4 @@
 @extends('layouts.app')
-        $isMobile = GlobalController::isMobile();
 
 @section('main')
     <div data-barba="container">
