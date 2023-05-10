@@ -37,7 +37,7 @@
                                                  Joueurs :
                                              </th>
                                              <th scope="col"
-                                                 class="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
+                                                 class="flex px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
                                                  Gains :
                                              </th>
                                          </tr>
@@ -48,16 +48,16 @@
                                                  <td class="px-4 py-2 text-sm font-normal text-gray-200 whitespace-nowrap">
                                                      {{ $score->user->name }}
                                                  </td>
-                                                 <td class="px-4 py-2 text-sm font-normal text-gray-200 rate-container">
+                                                 <td class="flex px-4 py-2 text-sm font-normal text-gray-200 rate-container">
                                                  @if($score->data > 0)
-                                                     {{ $score->data }} <img src="img/diamond5.png" class="w-6 h-4">
+                                                     {{ $score->data }} <img src="img/diamond5.png" class="flex w-6 h-4">
 
                                                  @endif
                                                  @if($score->data2 > 0)
-                                                     {{ $score->data2 }} <img src="img/gem10.png" class="w-5 h-4">
+                                                     {{ $score->data2 }} <img src="img/gem10.png" class="flex w-5 h-4">
                                                  @endif
                                                  @if($score->data3 > 0)
-                                                     {{ $score->data3 }} <img src="img/coin10.png" class="w-5 h-4">
+                                                     {{ $score->data3 }} <img src="img/coin10.png" class="flex w-5 h-4">
                                                  @endif
                                                  </td>
                                              </tr>
