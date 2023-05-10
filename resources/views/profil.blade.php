@@ -267,7 +267,7 @@
                         @csrf
                         <input type="hidden" name="user_id" value="{{ backpack_auth()->user()->id }}">
                         <fieldset class="grid grid-cols-4 gap-6 p-6">
-                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
+                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
                                 <div class="col-span-full sm:col-span-3">
                                     <label for="lastname" class="text-sm text-gray-300">Nom</label>
                                     <input name="lastname" id="lastname" type="text" placeholder=""
