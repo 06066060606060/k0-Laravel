@@ -30,10 +30,10 @@
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
                                         <img alt="" class="inline-block object-center w-auto h-12"
-                                            src="{{ $commande->image }}">
+                                            src="">
                                         <div class="flex flex-col">
                                             <h2 class="pb-0 pl-4 font-semibold text-s">
-                                            {{ $commande->name }}
+                                            {{ $cadeaux_name }}
                                             </h2>
                                               <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $commande->user_id }}</span>
                                         </div>
