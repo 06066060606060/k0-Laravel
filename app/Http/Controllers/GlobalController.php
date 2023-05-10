@@ -108,7 +108,7 @@ class GlobalController extends Controller
         $scores = Scores::where('game_id', $concours->game_id)
         ->orderBy('id', 'desc')
         ->get();
-        return view('winner', compact('scores', 'concours', 'startdate', 'enddate'));
+        return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
     }
 
     public function store()
