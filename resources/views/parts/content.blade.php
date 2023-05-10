@@ -150,7 +150,7 @@
                                             <h2 class="pb-2 pl-4 font-semibold md:text-xl">
                                              {{-- {{ $concour->user->name }}  --}}
                                             </h2>
-                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{ $concour->cadeau->name }}</span>
+                                              <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">{{-- {{ $concour->cadeau->name }} --}}</span>
                                         </div>
                                     </div>
                                 </div>
