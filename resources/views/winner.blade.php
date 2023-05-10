@@ -112,6 +112,9 @@
                 $total3 = $score->data3*1000;
                 $totalite = $total1+$total2+$total3;
             @endphp
+                @if($isMobile == true)
+                <p class="hidden ml-1 md:block">{{ $score->total }} PTS</p>  
+                @else
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
                 <p class="hidden ml-1 md:block">{{ $score->total }} PTS</p>  
                 <!--<img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
@@ -120,9 +123,14 @@
                 <p class="hidden ml-1 md:block">+ {{ $score->data3 }}</p>  
                 <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
             </strong>
-            {{ $score->score }}
+            @endif
+            
         </td>
         <td class="whitespace-nowrap px-4 py-2 w-[250px]">
+            @if($isMobile == true)
+            <p class="hidden ml-1 md:block">500</p>  
+                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+            @else
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
                 <!--<p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  
                 <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
@@ -131,6 +139,7 @@
                 <p class="hidden ml-1 md:block">500</p>  
                 <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
+            @endif
         </td>
     </tr>
 @endforeach
