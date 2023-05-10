@@ -127,11 +127,7 @@ $allgames = Games::orderBy('id', 'desc')
     {
         $concours = Concours::All();
         $cadeaux = Cadeaux::all();
-        // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
-        $cmds = Commandes::select('commandes.*', 'cadeaux.name')
-        ->join('cadeaux', 'cadeaux.id', '=', 'commandes.user_id')
-        ->get();
-        return view('store', compact('cmds', 'cadeaux', 'concours'));
+        return view('store', compact('cadeaux', 'concours'));
     }
 
     public function search(Request $request)
