@@ -184,8 +184,8 @@ class GlobalController extends Controller
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
             $scores = Scores::where('user_id', $userid)
-                ->orderBy('id', 'asc')
-                ->limit('20')
+                ->orderBy('id', 'desc')
+                ->limit('100')
                 ->get();
             $orders = Commandes::where('user_id', $userid)
                 ->latest()
