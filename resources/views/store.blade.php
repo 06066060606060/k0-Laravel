@@ -175,12 +175,12 @@
                                                                              </div>
                                                                              <div class="bg-gray-700 rounded-b-md">
                                                                                  <div
-                                                                                     class="flex flex-col items-center pb-8 mx-24 mt-1">
+                                                                                     class="flex flex-col items-center pb-8 mx-20 mt-1">
                                                                                      <h1
                                                                                          class="flex py-2 text-sm font-medium text-white">
                                                                                          {{ $cadeau->prix }} <img
                                                                                              src="img/diamond5.png"
-                                                                                             class="flex w-8 h-6">
+                                                                                             class="flex w-7 h-5">
                                                                                          seronts retirés de votre solde.
                                                                                      </h1>
 
@@ -215,7 +215,7 @@
 
                                                                                      </div>
                                                                                      <h1
-                                                                                         class="text-xs font-medium text-gray-200">
+                                                                                         class="text-xs mt-4 font-medium text-gray-200">
                                                                                          Vérifiez d'avoir enregistré une
                                                                                          adresse de livraison avant de
                                                                                          confirmer.
