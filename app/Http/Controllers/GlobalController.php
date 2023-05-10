@@ -35,12 +35,6 @@ class GlobalController extends Controller
         $scores = Scores::select('scores.*', 'users.name')
         ->join('users', 'users.id', '=', 'scores.user_id')
         ->get();
-
-        // JOINT COMMANDE ET CADEAUX DERNIERS GAGNANTS PAGE BOUTIQUE
-        $commandes = Commandes::select('commandes.*', 'cadeaux.name')
-        ->join('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
-        ->get();
-    
         
 
 $allgames = Games::orderBy('id', 'desc')
@@ -57,7 +51,7 @@ $allgames = Games::orderBy('id', 'desc')
         $starred = Games::where('status', 1)
         ->inRandomOrder()
         ->first();
-        return view('index', compact('commandes', 'scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
     }
 
     public function game(Request $request)
@@ -133,7 +127,12 @@ $allgames = Games::orderBy('id', 'desc')
     {
         $concours = Concours::All();
         $cadeaux = Cadeaux::all();
-        return view('store', compact('cadeaux', 'concours'));
+        // JOINT COMMANDE ET CADEAUX DERNIERS GAGNANTS PAGE BOUTIQUE
+        $commandes = Commandes::select('commandes.*', 'cadeaux.name')
+        ->join('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
+        ->get();
+    
+        return view('store', compact('commandes' ,'cadeaux', 'concours'));
     }
 
     public function search(Request $request)
