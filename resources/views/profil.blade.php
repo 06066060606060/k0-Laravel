@@ -227,7 +227,7 @@
                                         {{ $score->data3 }} <img src="img/coin10.png" class="flex ml-1 mt-1 w-5 h-4">
                                         @endif
                                         </td>
-                                        <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
+                                        <td class="flex text-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
                                             <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
                                                 <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
                                             </strong>
