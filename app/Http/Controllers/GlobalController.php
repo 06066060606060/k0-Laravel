@@ -110,7 +110,10 @@ class GlobalController extends Controller
                 ->groupBy('user_id')
                 ->orderBy('total', 'desc')
                 ->get();
-        return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
+                //$scores = Scores::where('game_id', $concours->game_id)
+                //->orderBy('id', 'desc')
+                //->get();        
+                return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
     }
 
     public function store()
