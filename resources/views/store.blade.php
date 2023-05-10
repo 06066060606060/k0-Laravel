@@ -23,19 +23,19 @@
 
 
 
-                    @forelse ($commandes as $commande)
+                    @forelse ($cmds as $cmd)
                         <div class="swiper-slide">
                             <blockquote>
                                 <div
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
                                         <img alt="" class="inline-block object-center w-auto h-12"
-                                            src="">
+                                            src="{{ $cmd->image }}">
                                         <div class="flex flex-col">
                                             <h2 class="pb-0 pl-4 font-semibold text-s">
-                                            {{ $cadeaux_name }}
+                                            {{ $cmd->name }}
                                             </h2>
-                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $commande->user_id }}</span>
+                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $cmd->user_id }}</span>
                                         </div>
                                     </div>
                                 </div>
