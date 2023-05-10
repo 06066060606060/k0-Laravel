@@ -97,6 +97,7 @@ class GlobalController extends Controller
 
     public function winner()
     {
+        $position = 0;
         //Selectionne le concours
         $concours = Concours::All()->last();
         //Date début
