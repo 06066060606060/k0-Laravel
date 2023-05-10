@@ -116,9 +116,9 @@
                 <p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  
                 <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                 <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
-                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
-                <p class="hidden ml-1 md:block">+ {{ $score->data3 }}</p>  
                 <img src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
+                <p class="hidden ml-1 md:block">+ {{ $score->data3 }}</p>  
+                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
             {{ $score->score }}
         </td>
@@ -127,9 +127,9 @@
                 <!--<p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  
                 <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                 <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
-                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
+                <img src="{{ asset('img/gem10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
                 <p class="hidden ml-1 md:block">500</p>  
-                <img src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
+                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
         </td>
     </tr>
