@@ -216,15 +216,15 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $score->game->name }}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> 
+                                        <td class="flex px-4 py-2 text-gray-300 whitespace-nowrap"> 
                                         @if($score->data > 0)
-                                        {{ $score->data }} <img src="img/diamond5.png" class="w-6 h-4">
+                                        {{ $score->data }} <img src="img/diamond5.png" class="flex mr-1 mt-1 w-6 h-4">
                                         @endif
                                         @if($score->data2 > 0)
-                                        {{ $score->data2 }} <img src="img/gem10.png" class="w-5 h-4">
+                                        {{ $score->data2 }} <img src="img/gem10.png" class="flex mr-1 mt-1 w-5 h-4">
                                         @endif
                                         @if($score->data3 > 0)
-                                        {{ $score->data3 }} <img src="img/coin10.png" class="w-5 h-4">
+                                        {{ $score->data3 }} <img src="img/coin10.png" class="flex mr-1 mt-1 w-5 h-4">
                                         @endif
                                         </td>
                                         <td class="justify-center hidden w-auto py-2 mx-auto md:flex whitespace-nowrap">
