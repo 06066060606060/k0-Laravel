@@ -176,9 +176,12 @@
                                     @elseif($score->data3 > 0)
                                               <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data3 }}</span>
                                     @endif
+                                    @if($score->game_id == 39)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">POOL</span>
-                                    
-
+                                    @elseif($score->game_id == 46)
+                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoFRUITS</span>
+                                    @else
+                                    @endif
                                         </div>
                                     </div>
                                 </div>
