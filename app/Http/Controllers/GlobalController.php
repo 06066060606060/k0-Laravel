@@ -30,7 +30,7 @@ class GlobalController extends Controller
     {
         $concours = Concours::All();
         //DERNIERS GAGNANTS JEUX
-        $scores = Scores::All();
+        $scores = Scores::all();
         $winner = User::all();
         $name_scores = [];
 
