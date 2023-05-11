@@ -41,6 +41,7 @@ class GainsCrudController extends CrudController
     {
         
         CRUD::column('name')->label('nom');
+        CRUD::column('type')->label('type');
         CRUD::column('concours_id')->label('concours');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
@@ -59,6 +60,7 @@ class GainsCrudController extends CrudController
     {
         CRUD::setValidation(GainRequest::class);
         CRUD::field('name')->label('nom');
+        CRUD::field('type')->label('type');
         $this->crud->Field('concours_id')->label('concours');
        
 
