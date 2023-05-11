@@ -130,11 +130,7 @@ $position++;
         @endif
     </td>
     <td class="whitespace-nowrap px-4 py-2 w-[250px]">
-            @if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
-            @php
-                $gain_nom = $gain->name;
-            @endphp
-        @endif
+            
         @if($isMobile == true)
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
             <p class="ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  

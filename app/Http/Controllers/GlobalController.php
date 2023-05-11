@@ -122,6 +122,7 @@ $allgames = Games::orderBy('id', 'desc')
             if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
                 $userPosition = $i + 1;
                 $userScore = $score;
+                $gain_nom = $gain->name;
                 break;
             }
         }
