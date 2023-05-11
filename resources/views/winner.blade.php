@@ -139,37 +139,41 @@
         </td>
         <td class="whitespace-nowrap px-4 py-2 w-[250px]">
             @if($position == 1)
-            @php $gain_joueur = 500; @endphp
+            @php $gains->id = 1; @endphp
             @elseif($position == 2)
-            @php $gain_joueur = 200; @endphp
+            @php $gains->id = 2; @endphp
             @elseif($position == 3)
-            @php $gain_joueur = 100; @endphp
+            @php $gains->id = 3; @endphp
             @elseif($position > 3 && $position == 6)
-            @php $gain_joueur = 50; @endphp
+            @php $gains->id = 4; @endphp
             @elseif($position > 6 && $position == 15)
-            @php $gain_joueur = 20; @endphp
+            @php $gains->id = 5; @endphp
             @elseif($position > 15 && $position == 30)
-            @php $gain_joueur = 10; @endphp
+            @php $gains->id = 6; @endphp
             @elseif($position > 30 && $position == 150)
-            @php $gain_joueur = 50000; @endphp
+            @php $gains->id = 7; @endphp
             @elseif($position > 150 && $position == 300)
-            @php $gain_joueur = 25000; @endphp
+            @php $gains->id = 8; @endphp
            @elseif($position > 300 && $position == 600)
-            @php $gain_joueur = 10000; @endphp
+            @php $gains->id = 9; @endphp
            @elseif($position > 600 && $position == 1500)
-            @php $gain_joueur = 7000; @endphp
+            @php $gains->id = 10; @endphp
           @elseif($position > 1500 && $position == 3000)
-            @php $gain_joueur = 2000; @endphp
+            @php $gains->id = 11; @endphp
           @elseif($position > 3000)
-            @php $gain_joueur = 0; @endphp
+            @php $gains->id = 12; @endphp
              @endif
+             @php
+        $gain = $gains->where('id', $gain->id)->first();
+        $gain_nom = $gain ? $gain->nom : null;
+        @endphp
              @if($isMobile == true)
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
                 <!--<p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  
                 <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                 <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
                 <img src="{{ asset('img/gem10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
-                <p class="ml-1 md:block">{{ $gain_joueur }}</p>  
+                <p class="ml-1 md:block">{{ $gain_nom }}</p>  
                 <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
             @else
@@ -178,7 +182,7 @@
                 <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                 <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
                 <img src="{{ asset('img/gem10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
-                <p class="hidden ml-1 md:block">{{ $gain_joueur }}</p>  
+                <p class="hidden ml-1 md:block">{{ $gain_nom }}</p>  
                 <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
             @endif

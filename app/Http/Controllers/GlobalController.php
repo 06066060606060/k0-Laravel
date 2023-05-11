@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cadeaux;
 use App\Models\Commandes;
 use App\Models\Concours;
+use App\Models\Gains;
 use App\Models\Infosperso;
 use App\Models\User;
 use App\Models\Games;
@@ -30,7 +31,7 @@ class GlobalController extends Controller
     {
         $concours = Concours::All(); // TOUTES LES COMMANDES
         $winner = User::all(); //DERNIERS GAGNANTS JEUX
-
+        
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')
         ->join('users', 'users.id', '=', 'scores.user_id')
@@ -104,6 +105,7 @@ $allgames = Games::orderBy('id', 'desc')
 
     public function winner()
     {
+        $gains = Gains::all(); // récup tous les gains du concours
         $position = 0;
         //Selectionne le concours
         $concours = Concours::All()->last();
@@ -120,7 +122,7 @@ $allgames = Games::orderBy('id', 'desc')
                 //$scores = Scores::where('game_id', $concours->game_id)
                 //->orderBy('id', 'desc')
                 //->get();        
-                return view('winner', compact('position', 'scores', 'concours', 'startdate', 'enddate'));
+                return view('winner', compact('gains', 'position', 'scores', 'concours', 'startdate', 'enddate'));
     }
 
     public function store()
