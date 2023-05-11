@@ -119,7 +119,7 @@ $allgames = Games::orderBy('id', 'desc')
         $userScore = null;
         for ($i = 0; $i < count($scores); $i++) {
             $score = $scores[$i];
-            if($score->user_id == auth()->user()->id) {
+            if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
                 $userPosition = $i + 1;
                 $userScore = $score;
                 break;
