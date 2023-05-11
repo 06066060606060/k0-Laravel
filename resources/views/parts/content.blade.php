@@ -221,7 +221,7 @@
 </winner>
 
 @else
-
+@if(isset($starred))
 <container id="home">
     <section>
         <div
@@ -273,7 +273,7 @@
         </div>
     </section>
 </container>
-
+@endif
 <!-- CADEAU -->
 <div id="concept"></div>
 <container id="how" class="block py-16 mx-8 border-gray-600 max-w-7xl md:mx-auto">
