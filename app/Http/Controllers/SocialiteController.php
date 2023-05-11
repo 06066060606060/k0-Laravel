@@ -83,15 +83,15 @@ class SocialiteController extends Controller
             # 4. On connecte l'utilisateur
             backpack_auth()->login($user);
 
-            # 5. On redirige l'utilisateur vers /home
             if (backpack_auth()->check()) {
                 // Rediriger l'utilisateur vers la page d'accueil
                 $response = redirect('/')->with('success', 'Vous êtes déjà connecté.');
             
-                // Rafraîchir la page après la redirection
-                $response->headers->set('Refresh', '2;url=/');
+                // Ajouter un script JS qui rafraîchit la page
+                $response->setContent($response->content() . '<script>setTimeout(function(){location.reload()},2000)</script>');
                 return $response;
             }
+            
                         
          }
          abort(404);
