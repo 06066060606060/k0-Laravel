@@ -148,6 +148,57 @@ $position++;
                                             
                                          </tbody>
                                      </table>
+       
+       <h3>Classement</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Utilisateur</th>
+            <th>Score total</th>
+            <th>Gains potentiels</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($scores as $index => $score)
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td>{{ $score->user->username }}</td>
+                <td>{{ $score->total }}</td>
+                <td>
+                    @if($index == 0)
+                        {{ $gains->where('id', 1)->first()->name }}
+                    @elseif($index == 1)
+                        {{ $gains->where('id', 2)->first()->name }}
+                    @elseif($index == 2)
+                        {{ $gains->where('id', 3)->first()->name }}
+                    @elseif($index >= 3 && $index <= 5)
+                        {{ $gains->where('id', 4)->first()->name }}
+                    @elseif($index >= 6 && $index <= 14)
+                        {{ $gains->where('id', 5)->first()->name }}
+                    @elseif($index >= 15 && $index <= 29)
+                        {{ $gains->where('id', 6)->first()->name }}
+                    @elseif($index >= 30 && $index <= 149)
+                        {{ $gains->where('id', 7)->first()->name }}
+                    @elseif($index >= 150 && $index <= 299)
+                        {{ $gains->where('id', 8)->first()->name }}
+                    @elseif($index >= 300 && $index <= 599)
+                        {{ $gains->where('id', 9)->first()->name }}
+                    @elseif($index >= 600 && $index <= 1499)
+                        {{ $gains->where('id', 10)->first()->name }}
+                    @elseif($index >= 1500 && $index <= 2999)
+                        {{ $gains->where('id', 11)->first()->name }}
+                    @else
+                        {{ $gains->where('id', 12)->first()->name }}
+                    @endif
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+       
+       
+       
                                  </div>
 
                              </div>
