@@ -132,7 +132,7 @@ $position++;
     <td class="whitespace-nowrap px-4 py-2 w-[250px]">
             @if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
             @php
-                $gain_nom = $score->gain_nom;
+                $gain_nom = $gain->name;
             @endphp
         @endif
         @if($isMobile == true)
