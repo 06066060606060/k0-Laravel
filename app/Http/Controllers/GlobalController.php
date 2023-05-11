@@ -104,28 +104,31 @@ $allgames = Games::orderBy('id', 'desc')
     }
 
     public function winner()
-{
-    $gains = Gains::all(); // récup tous les gains du concours
-    //Selectionne le concours
-    $concours = Concours::All()->last();
-    //Score effectués ordre par id desc
-    $scores = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
-            ->where('game_id', $concours->game_id)
-            ->groupBy('user_id')
-            ->orderBy('total', 'desc')
-            ->get();
-    // Trouver la position de l'utilisateur dans le classement des scores
-    $userPosition = -2;
-    foreach($scores as $score) {
-        if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
-break;
+    {
+        $gains = Gains::all(); // récup tous les gains du concours
+        //Selectionne le concours
+        $concours = Concours::All()->last();
+        //Score effectués ordre par id desc
+        $scores = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
+                ->where('game_id', $concours->game_id)
+                ->groupBy('user_id')
+                ->orderBy('total', 'desc')
+                ->get();
+        // Trouver la position de l'utilisateur dans le classement des scores
+        $userPosition = 0;
+        $userScore = null;
+        for ($i = 0; $i < count($scores); $i++) {
+            $score = $scores[$i];
+            if($score->user_id == auth()->user()->id) {
+                $userPosition = $i + 1;
+                $userScore = $score;
+                break;
+            }
         }
-           $userPosition++;
-    }
-    $position = $userPosition;
-    $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
-    $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
-    $gain_id = 1;
+        $position = $userPosition;
+        $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
+        $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
+        $gain_id = 1;
     if($position == 1) {
         $gain_id = 1;
     } elseif($position == 2) {
