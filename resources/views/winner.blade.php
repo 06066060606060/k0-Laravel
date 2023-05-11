@@ -139,33 +139,33 @@
         </td>
         <td class="whitespace-nowrap px-4 py-2 w-[250px]">
             @if($position == 1)
-            @php $gains->id = 1; @endphp
+            @php $gain_id = 1; @endphp
             @elseif($position == 2)
-            @php $gains->id = 2; @endphp
+            @php $gain_id = 2; @endphp
             @elseif($position == 3)
-            @php $gains->id = 3; @endphp
+            @php $gain_id = 3; @endphp
             @elseif($position > 3 && $position == 6)
-            @php $gains->id = 4; @endphp
+            @php $gain_id = 4; @endphp
             @elseif($position > 6 && $position == 15)
-            @php $gains->id = 5; @endphp
+            @php $gain_id = 5; @endphp
             @elseif($position > 15 && $position == 30)
-            @php $gains->id = 6; @endphp
+            @php $gain_id = 6; @endphp
             @elseif($position > 30 && $position == 150)
-            @php $gains->id = 7; @endphp
+            @php $gain_id = 7; @endphp
             @elseif($position > 150 && $position == 300)
-            @php $gains->id = 8; @endphp
+            @php $gain_id = 8; @endphp
            @elseif($position > 300 && $position == 600)
-            @php $gains->id = 9; @endphp
+            @php $gain_id = 9; @endphp
            @elseif($position > 600 && $position == 1500)
-            @php $gains->id = 10; @endphp
+            @php $gain_id = 10; @endphp
           @elseif($position > 1500 && $position == 3000)
-            @php $gains->id = 11; @endphp
+            @php $gain_id = 11; @endphp
           @elseif($position > 3000)
-            @php $gains->id = 12; @endphp
+            @php $gain_id = 12; @endphp
              @endif
              @php
         $gain = $gains->where('id', $gain->id)->first();
-        $gain_nom = $gain ? $gain->nom : null;
+        $gain_nom = $gain ? $gain_id : null;
         @endphp
              @if($isMobile == true)
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
