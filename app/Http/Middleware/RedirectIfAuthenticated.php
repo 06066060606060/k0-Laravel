@@ -20,16 +20,13 @@ class RedirectIfAuthenticated
     public function handle(Request $request, Closure $next, ...$guards)
     {
         $guards = empty($guards) ? [null] : $guards;
-    
+
         foreach ($guards as $guard) {
             if (Auth::guard($guard)->check()) {
-                // Redirection vers la page d'administration avec une attente de 5 secondes
-                header('Refresh: 5; url=/admin');
-                return view('welcome')->with('message', 'Vous êtes redirigé vers la page d\'administration');
+                return redirect('/admin');
             }
         }
-    
+
         return $next($request);
     }
-    
 }
