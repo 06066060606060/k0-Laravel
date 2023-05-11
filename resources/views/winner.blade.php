@@ -199,7 +199,7 @@
     @case('Coins')
         <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
         @break
-@ends
+@endswitch
 
         </strong>
         @endif
