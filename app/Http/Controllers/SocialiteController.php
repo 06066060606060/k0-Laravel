@@ -88,3 +88,4 @@ public function callback (Request $request) {
      }
      abort(404);
 }
+}
