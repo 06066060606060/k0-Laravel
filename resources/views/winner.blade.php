@@ -102,56 +102,48 @@
 
 @foreach ($scores as $score)
 @php
-        if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
-break;
-        }
-           $position++;
+$position++;
 @endphp
-    <tr class="dark:bg-gray-900">
-        <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
-            {{ $position }}
-        </td>
-        <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
-            {{ $score->user->name }}
-        </td>
-        <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
-            @php 
-                $total1 = $score->total;
-                $total2 = $score->total2 * 100;
-                $total3 = $score->total3 * 1000;
-                $totalite = $total1+$total2+$total3;
+
+<tr class="dark:bg-gray-900">
+    <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
+        {{ $position }}
+    </td>
+    <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
+        {{ $score->user->name }}
+    </td>
+    <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
+        @php 
+            $total1 = $score->total;
+            $total2 = $score->total2 * 100;
+            $total3 = $score->total3 * 1000;
+            $totalite = $total1+$total2+$total3;
+        @endphp
+        @if($isMobile == true)
+        <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
+            <p class="ml-1 md:block">{{ $totalite }} </p><img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
+        </strong>
+        @else
+        <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
+            <p class="hidden ml-1 md:block">{{ $totalite }}</p> <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
+        </strong>
+        @endif
+    </td>
+    <td class="whitespace-nowrap px-4 py-2 w-[250px]">
+        @if($score->user_id == auth()->user()->id)
+            @php
+                $gain_nom = $score->gain_nom;
             @endphp
-                @if($isMobile == true)
-            <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
-                <p class="ml-1 md:block">{{ $totalite }} </p><img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
-                <!--<img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
-                <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
-                <img src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
-                <p class="hidden ml-1 md:block">+ {{ $score->data3 }}</p>  
-                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
-            </strong>
-                @else
-            <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
-                <p class="hidden ml-1 md:block">{{ $totalite }}</p> <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
-                <!--<img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
-                <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
-                <img src="{{ asset('img/gem5.png') }}" alt="coin" class="w-4 h-4 ml-2">
-                <p class="hidden ml-1 md:block">+ {{ $score->data3 }}</p>  
-                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
-            </strong>
-            @endif
-            
-        </td>
-        <td class="whitespace-nowrap px-4 py-2 w-[250px]">
-            
-             @if($isMobile == true)
-            <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
-                <!--<p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  
-                <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
-                <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
-                <img src="{{ asset('img/gem10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
-                <p class="ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  
-                <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+        @endif
+        @if($isMobile == true)
+        <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
+            <p class="ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  
+            <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+        </strong>
+        @else
+        <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
+            <p class="hidden ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  
+            <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
             @else
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
