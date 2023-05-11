@@ -170,7 +170,7 @@ trait AuthenticatesUsers
 
     $request->session()->regenerateToken();
 
-    return redirect('/?refresh=true')->with('status', 'Vous avez été déconnecté avec succès.');
+    return redirect('/refresh=true')->with('status', 'Vous avez été déconnecté avec succès.');
 }
 
     
