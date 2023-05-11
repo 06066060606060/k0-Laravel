@@ -40,9 +40,9 @@ class GainsCrudController extends CrudController
     protected function setupListOperation()
     {
         
-        CRUD::column('name')->label('nom');
-        CRUD::column('type')->label('type');
-        CRUD::column('concours_id')->label('concours');
+        CRUD::column('name')->label('Nom');
+        CRUD::column('type')->label('Type');
+        CRUD::column('concours_id')->label('Concours');
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -59,7 +59,7 @@ class GainsCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(GainRequest::class);
-        CRUD::field('name')->label('nom');
+        CRUD::field('name')->label('Nom');
         CRUD::addFields([
             [
                 'name' => 'type',
@@ -77,7 +77,7 @@ class GainsCrudController extends CrudController
                 ],
             ]
         ]);
-        $this->crud->Field('concours_id')->label('concours');
+        $this->crud->Field('concours_id')->label('Concours');
        
 
         /**
