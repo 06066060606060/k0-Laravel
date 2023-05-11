@@ -2,6 +2,16 @@
     use \App\Http\Controllers\GlobalController;
     $isMobile = GlobalController::isMobile();
 @endphp
+@if (backpack_auth()->check())
+    <?php header('Refresh: 1'); ?>
+    <script>
+        window.onload = function() {
+            if (performance.navigation.type === 0) {
+                location.reload();
+            }
+        };
+    </script>
+@endif
 @if($isMobile == true)
 @else
     <div class="z-0 one"></div>
