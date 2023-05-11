@@ -115,7 +115,7 @@ $allgames = Games::orderBy('id', 'desc')
             ->orderBy('total', 'desc')
             ->get();
     // Trouver la position de l'utilisateur dans le classement des scores
-    $userPosition = 0;
+    $userPosition = -2;
     foreach($scores as $score) {
         if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
 break;
