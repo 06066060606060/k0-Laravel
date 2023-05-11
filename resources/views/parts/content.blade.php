@@ -8,7 +8,7 @@
 @endif
 <script>
 if (window.location.search.includes('refresh=true')) {
-    window.location.search = '';
+    window.history.replaceState({}, document.title, window.location.pathname);
 }
 </script>
 @if (backpack_auth()->check())
