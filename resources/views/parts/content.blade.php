@@ -6,6 +6,11 @@
 @else
     <div class="z-0 one"></div>
 @endif
+<script>
+if (window.location.search.includes('refresh=true')) {
+    window.location.search = '';
+}
+</script>
 @if (backpack_auth()->check())
 <!-- JOUEZ UNE FOIS CONNECTE -->
 <container class="mx-auto max-w-7xl" id="win">
