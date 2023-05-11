@@ -60,7 +60,21 @@ class GainsCrudController extends CrudController
     {
         CRUD::setValidation(GainRequest::class);
         CRUD::field('name')->label('nom');
-        CRUD::field('type')->label('type');
+        CRUD::addFields([
+            [
+                'name' => 'type',
+                'label' => 'Type',
+                'type' => 'select_from_array',
+                'options' => [
+                    'Diamants' => 'Diamants',
+                    'Rubis' => 'Rubis',
+                    'Coins' => 'Coins',
+                ],
+                'attributes' => [
+                    'required' => true,
+                ],
+            ]
+        ]);
         $this->crud->Field('concours_id')->label('concours');
        
 
