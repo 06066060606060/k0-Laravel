@@ -99,7 +99,7 @@ trait ProcessOperation
            
          
         // return $processOutput;
-        return redirect('/');
+        return redirect('/admin');
         sleep(3);
     }
 }
