@@ -163,17 +163,17 @@ trait AuthenticatesUsers
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
-{
-    Auth::logout();
-
-    $request->session()->invalidate();
-
-    $request->session()->regenerateToken();
-
-    return redirect('/')->with('status', 'Vous avez été déconnecté avec succès.');
-    // Actualiser la page après la redirection
-    echo '<script>location.reload();</script>';
-}
+    {
+        Auth::logout();
+    
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+    
+        return redirect('/')->with('status', 'Vous avez été déconnecté avec succès.')
+                            ->header('Refresh', '0;url='.url('/'));
+    }
+    
 
 
     /**
