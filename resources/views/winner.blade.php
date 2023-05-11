@@ -158,7 +158,8 @@
         </strong>
         @else
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
-            <p class="hidden ml-1 md:block">@if($index == 0)
+            <p class="hidden ml-1 md:block">
+            @if($index == 0)
                         {{ $gains->where('id', 1)->first()->name }}
                     @elseif($index == 1)
                         {{ $gains->where('id', 2)->first()->name }}
@@ -183,7 +184,18 @@
                     @else
                         {{ $gains->where('id', 12)->first()->name }}
                     @endif</p>  
-            <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+
+@switch($gains->where('id', $index >= 3 && $index <= 5 ? 4 : ($index >= 6 && $index <= 14 ? 5 : ($index >= 15 && $index <= 29 ? 6 : ($index >= 30 && $index <= 149 ? 7 : ($index >= 150 && $index <= 299 ? 8 : ($index >= 300 && $index <= 599 ? 9 : ($index >= 600 && $index <= 1499 ? 10 : ($index >= 1500 && $index <= 2999 ? 11 : 12))))))))->first()->type)
+    @case('Diamant')
+        <img src="{{ asset('img/diamond5.png') }}" alt="diamond" class="w-4 h-4 ml-2">
+        @break
+    @case('Rubis')
+        <img src="{{ asset('img/gem5.png') }}" alt="gem" class="w-4 h-4 ml-2">
+        @break
+    @case('Coins')
+        <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+        @break
+@endswitch
         </strong>
         @endif
     </td>
