@@ -101,7 +101,6 @@
                                          <tbody class="divide-y divide-gray-700">
 
 @foreach ($scores as $score)
-    @php $position++; @endphp
     <tr class="dark:bg-gray-900">
         <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
             {{ $position }}
