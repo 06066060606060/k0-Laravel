@@ -117,10 +117,10 @@ $allgames = Games::orderBy('id', 'desc')
     // Trouver la position de l'utilisateur dans le classement des scores
     $userPosition = 1;
     foreach($scores as $score) {
-        if($score->user_id == auth()->user()->id) {
-            break;
+        if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
+break;
         }
-        $userPosition++;
+           $userPosition++;
     }
     $position = $userPosition;
     $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
