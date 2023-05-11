@@ -138,35 +138,7 @@
             
         </td>
         <td class="whitespace-nowrap px-4 py-2 w-[250px]">
-            @if($position == 1)
-            @php $gain_id = 1; @endphp
-            @elseif($position == 2)
-            @php $gain_id = 2; @endphp
-            @elseif($position == 3)
-            @php $gain_id = 3; @endphp
-            @elseif($position > 3 && $position == 6)
-            @php $gain_id = 4; @endphp
-            @elseif($position > 6 && $position == 15)
-            @php $gain_id = 5; @endphp
-            @elseif($position > 15 && $position == 30)
-            @php $gain_id = 6; @endphp
-            @elseif($position > 30 && $position == 150)
-            @php $gain_id = 7; @endphp
-            @elseif($position > 150 && $position == 300)
-            @php $gain_id = 8; @endphp
-           @elseif($position > 300 && $position == 600)
-            @php $gain_id = 9; @endphp
-           @elseif($position > 600 && $position == 1500)
-            @php $gain_id = 10; @endphp
-          @elseif($position > 1500 && $position == 3000)
-            @php $gain_id = 11; @endphp
-          @elseif($position > 3000)
-            @php $gain_id = 12; @endphp
-             @endif
-             @php
-        $gain = $gains->where('id', $gain->id)->first();
-        $gain_nom = $gain ? $gain_id : null;
-        @endphp
+            
              @if($isMobile == true)
             <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
                 <!--<p class="hidden ml-1 md:block">+ {{ $score->total }}</p>  
