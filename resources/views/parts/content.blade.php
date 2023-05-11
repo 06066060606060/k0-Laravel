@@ -10,9 +10,6 @@
 if (window.location.search.includes('refresh=true')) {
     window.location.search = '';
 }
-if (window.location.search.includes('refresh=true')) {
-    window.history.replaceState({}, document.title, window.location.pathname);
-}
 </script>
 @if (backpack_auth()->check())
 <!-- JOUEZ UNE FOIS CONNECTE -->
