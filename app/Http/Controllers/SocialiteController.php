@@ -86,12 +86,13 @@ class SocialiteController extends Controller
             # 5. On redirige l'utilisateur vers /home
             if (backpack_auth()->check()) {
                 // Rediriger l'utilisateur vers la page d'accueil
-                return redirect('/')->with('success', 'Vous êtes déjà connecté.');
+                $response = redirect('/')->with('success', 'Vous êtes déjà connecté.');
             
                 // Rafraîchir la page après la redirection
-                return redirect()->back();
+                $response->headers->set('Refresh', '2;url=/');
+                return $response;
             }
-            
+                        
          }
          abort(404);
     }
