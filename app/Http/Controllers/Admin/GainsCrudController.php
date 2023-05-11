@@ -69,6 +69,8 @@ class GainsCrudController extends CrudController
                     'Diamants' => 'Diamants',
                     'Rubis' => 'Rubis',
                     'Coins' => 'Coins',
+                    'Amazon' => 'Amazon',
+                    'Paypal' => 'Paypal',
                 ],
                 'attributes' => [
                     'required' => true,
