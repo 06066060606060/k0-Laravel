@@ -84,13 +84,13 @@ class SocialiteController extends Controller
             backpack_auth()->login($user);
 
             if (backpack_auth()->check()) {
-                // Rediriger l'utilisateur vers la page d'accueil
-                $response = redirect('/')->with('success', 'Vous êtes déjà connecté.');
+                // Stocker une variable de session pour indiquer que la page doit être actualisée
+                session()->flash('refresh', true);
             
-                // Ajouter un script JS qui rafraîchit la page
-                $response->setContent($response->content() . '<script>setTimeout(function(){location.reload()},2000)</script>');
-                return $response;
+                // Rediriger l'utilisateur vers la page d'accueil
+                return redirect('/')->with('success', 'Vous êtes déjà connecté.');
             }
+            
             
                         
          }
