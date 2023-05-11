@@ -105,6 +105,7 @@ $allgames = Games::orderBy('id', 'desc')
 
     public function winner()
     {
+        $gain = 0;
         $gains = Gains::all(); // récup tous les gains du concours
         $position = 0;
         //Selectionne le concours
@@ -122,7 +123,7 @@ $allgames = Games::orderBy('id', 'desc')
                 //$scores = Scores::where('game_id', $concours->game_id)
                 //->orderBy('id', 'desc')
                 //->get();        
-                return view('winner', compact('gains', 'position', 'scores', 'concours', 'startdate', 'enddate'));
+                return view('winner', compact('gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate'));
     }
 
     public function store()
