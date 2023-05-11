@@ -24,6 +24,7 @@ class Gains extends Model
     // protected $dates = [];
     protected $fillable = [
         'name',
+        'type',
         'concours_id',
     ];
 
