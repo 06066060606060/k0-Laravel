@@ -2,11 +2,6 @@
     use \App\Http\Controllers\GlobalController;
     $isMobile = GlobalController::isMobile();
 @endphp
-    <script>
-        setTimeout(function() {
-            location.reload();
-        }, 1000); // actualiser après 1 seconde
-    </script>
 @if($isMobile == true)
 @else
     <div class="z-0 one"></div>
