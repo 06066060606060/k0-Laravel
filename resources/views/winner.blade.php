@@ -150,7 +150,7 @@ break;
                 <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                 <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
                 <img src="{{ asset('img/gem10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
-                <p class="ml-1 md:block">{{ $gain_nom }}</p>  
+                <p class="ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  
                 <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
             @else
@@ -159,7 +159,7 @@ break;
                 <img src="{{ asset('img/diamond5.png') }}" alt="coin" class="w-4 h-4 ml-2"> 
                 <p class="hidden ml-1 md:block">+ {{ $score->data2 }}</p>  
                 <img src="{{ asset('img/gem10.png') }}" alt="coin" class="w-4 h-4 ml-2">-->
-                <p class="hidden ml-1 md:block">{{ $gain_nom }}</p>  
+                <p class="hidden ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  
                 <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
             </strong>
             @endif
