@@ -191,13 +191,13 @@
 
 @switch($type->first()->type)
     @case('Diamant')
-        <img src="{{ asset('img/diamond5.png') }}" alt="diamond" class="w-4 h-4 ml-2">
+        <img src="{{ asset('img/diamond5.png') }}" alt="diamond" class="flex w-4 h-4 ml-2">
         @break
     @case('Rubis')
-        <img src="{{ asset('img/gem5.png') }}" alt="gem" class="w-4 h-4 ml-2">
+        <img src="{{ asset('img/gem5.png') }}" alt="gem" class="flex w-4 h-4 ml-2">
         @break
     @case('Coins')
-        <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+        <img src="{{ asset('img/coin10.png') }}" alt="coin" class="flex w-4 h-4 ml-2">
         @break
 @endswitch
 
