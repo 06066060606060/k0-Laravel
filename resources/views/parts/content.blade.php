@@ -7,7 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 <script>
-if (window.location.search.includes('refresh=true')) {
+if (window.location.search.includes('/?refresh=true')) {
     window.history.replaceState({}, document.title, window.location.pathname);
 }
 </script>
