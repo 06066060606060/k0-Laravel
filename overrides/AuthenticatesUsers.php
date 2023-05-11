@@ -163,18 +163,21 @@ trait AuthenticatesUsers
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
-{
-    Auth::logout();
+    {
+        $this->guard()->logout();
 
-    $request->session()->invalidate();
+        $request->session()->invalidate();
 
-    $request->session()->regenerateToken();
+        $request->session()->regenerateToken();
 
-    return redirect('/refresh=true')->with('status', 'Vous avez été déconnecté avec succès.');
-}
+        if ($response = $this->loggedOut($request)) {
+            return $response;
+        }
 
-    
-
+        return $request->wantsJson()
+            ? new Response('', 204)
+            : redirect('/');
+    }
 
     /**
      * The user has logged out of the application.
