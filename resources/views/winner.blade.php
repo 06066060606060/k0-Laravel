@@ -100,14 +100,10 @@
 
                                          <tbody class="divide-y divide-gray-700">
 
-@foreach ($scores as $score)
-@php
-$position++;
-@endphp
-
+@foreach($scores as $index => $score)
 <tr class="dark:bg-gray-900">
     <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
-        {{ $position }}
+        {{ $index + 1 }}
     </td>
     <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
         {{ $score->user->name }}
@@ -121,11 +117,11 @@ $position++;
         @endphp
         @if($isMobile == true)
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
-            <p class="ml-1 md:block">{{ $totalite }} </p><img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
+            <p class="ml-1 md:block">{{ $score->total }}</p><img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
         </strong>
         @else
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
-            <p class="hidden ml-1 md:block">{{ $totalite }}</p> <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
+            <p class="hidden ml-1 md:block">{{ $score->total }}</p> <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
         </strong>
         @endif
     </td>
@@ -133,40 +129,7 @@ $position++;
             
         @if($isMobile == true)
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
-            <p class="ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  
-            <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
-        </strong>
-        @else
-        <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
-            <p class="hidden ml-1 md:block">{{ $gain_nom ?: 'N/A' }}</p>  
-            <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
-        </strong>
-        @endif
-    </td>
-</tr>
-@endforeach
-                                            
-                                         </tbody>
-                                     </table>
-       
-       <h3>Classement</h3>
-<table class="table">
-    <thead>
-        <tr>
-            <th>Position</th>
-            <th>Utilisateur</th>
-            <th>Score total</th>
-            <th>Gains potentiels</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach($scores as $index => $score)
-            <tr>
-                <td>{{ $index + 1 }}</td>
-                <td>{{ $score->user->username }}</td>
-                <td>{{ $score->total }}</td>
-                <td>
-                    @if($index == 0)
+            <p class="ml-1 md:block">@if($index == 0)
                         {{ $gains->where('id', 1)->first()->name }}
                     @elseif($index == 1)
                         {{ $gains->where('id', 2)->first()->name }}
@@ -190,15 +153,45 @@ $position++;
                         {{ $gains->where('id', 11)->first()->name }}
                     @else
                         {{ $gains->where('id', 12)->first()->name }}
-                    @endif
-                </td>
-            </tr>
-        @endforeach
-    </tbody>
-</table>
-       
-       
-       
+                    @endif</p>  
+            <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+        </strong>
+        @else
+        <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
+            <p class="hidden ml-1 md:block">@if($index == 0)
+                        {{ $gains->where('id', 1)->first()->name }}
+                    @elseif($index == 1)
+                        {{ $gains->where('id', 2)->first()->name }}
+                    @elseif($index == 2)
+                        {{ $gains->where('id', 3)->first()->name }}
+                    @elseif($index >= 3 && $index <= 5)
+                        {{ $gains->where('id', 4)->first()->name }}
+                    @elseif($index >= 6 && $index <= 14)
+                        {{ $gains->where('id', 5)->first()->name }}
+                    @elseif($index >= 15 && $index <= 29)
+                        {{ $gains->where('id', 6)->first()->name }}
+                    @elseif($index >= 30 && $index <= 149)
+                        {{ $gains->where('id', 7)->first()->name }}
+                    @elseif($index >= 150 && $index <= 299)
+                        {{ $gains->where('id', 8)->first()->name }}
+                    @elseif($index >= 300 && $index <= 599)
+                        {{ $gains->where('id', 9)->first()->name }}
+                    @elseif($index >= 600 && $index <= 1499)
+                        {{ $gains->where('id', 10)->first()->name }}
+                    @elseif($index >= 1500 && $index <= 2999)
+                        {{ $gains->where('id', 11)->first()->name }}
+                    @else
+                        {{ $gains->where('id', 12)->first()->name }}
+                    @endif</p>  
+            <img src="{{ asset('img/coin10.png') }}" alt="coin" class="w-4 h-4 ml-2">
+        </strong>
+        @endif
+    </td>
+</tr>
+@endforeach
+                                            
+                                         </tbody>
+                                     </table>   
                                  </div>
 
                              </div>
