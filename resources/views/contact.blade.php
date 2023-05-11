@@ -35,7 +35,7 @@
                                          @endif
                                          </label>
                                          <input @if (backpack_auth()->check())
-                                            value="{{ backpack_auth()->user()->name }}" disabled 
+                                            value="{{ backpack_auth()->user()->name }}" 
                                             @endif
                                           type="text" id="name" name="name" required
                                              class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200">
@@ -45,7 +45,7 @@
                                      <div class="relative">
                                          <label for="email" class="text-sm leading-7 text-gray-200">Email</label>
                                          <input @if (backpack_auth()->check())
-                                            value="{{ backpack_auth()->user()->email }}" disabled
+                                            value="{{ backpack_auth()->user()->email }}" 
                                             @endif type="email" id="email" name="email" required
                                              class="w-full px-3 py-1 text-base leading-8 text-gray-700 transition-colors duration-200 ease-in-out bg-gray-100 bg-opacity-50 border border-gray-300 rounded outline-none focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200">
                                      </div>
