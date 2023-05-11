@@ -83,16 +83,9 @@ class SocialiteController extends Controller
             # 4. On connecte l'utilisateur
             backpack_auth()->login($user);
 
-            if (backpack_auth()->check()) {
-                // Stocker une variable de session pour indiquer que la page doit être actualisée
-                session()->flash('refresh', true);
-            
-                // Rediriger l'utilisateur vers la page d'accueil
-                return redirect('/')->with('success', 'Vous êtes déjà connecté.');
-            }
-            
-            
-                        
+            # 5. On redirige l'utilisateur vers /home
+            if (backpack_auth()->check()) return redirect('/');
+
          }
          abort(404);
     }

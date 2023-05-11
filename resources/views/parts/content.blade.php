@@ -6,10 +6,6 @@
 @else
     <div class="z-0 one"></div>
 @endif
-@if(session('refresh'))
-    <script>window.onload = function() { location.reload(); }</script>
-@endif
-
 @if (backpack_auth()->check())
 <!-- JOUEZ UNE FOIS CONNECTE -->
 <container class="mx-auto max-w-7xl" id="win">
