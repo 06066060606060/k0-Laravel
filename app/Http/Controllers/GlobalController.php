@@ -192,9 +192,12 @@ $allgames = Games::orderBy('id', 'desc')
         }
         if ($request->filled('category')) {
             if ($request->filled('category')) {
-            $cadeaux = Cadeaux::where('category', $request->category)->get();
+                $cadeaux = Cadeaux::where('category', $request->category)
+                ->orderBy('prix', 'asc')
+                ->get();
+
         } else {
-            $cadeaux = Cadeaux::all();
+            $cadeaux = Cadeaux::orderBy('prix', 'asc')->get();
         }
     }
         return view('store', compact('cadeaux'));
