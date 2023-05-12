@@ -206,5 +206,8 @@
      </div>
      @else
      <script>alert('Pas de concours pour le moment');</script>
+     @php 
+     return redirect('/');
+     @endphp
      @endif
  @endsection
