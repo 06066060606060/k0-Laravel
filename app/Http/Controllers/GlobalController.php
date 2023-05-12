@@ -185,27 +185,27 @@ if ($now->gt($concours->date_fin)) {
         // Si le joueur est classé
         if ($user_position !== false) {
             // Déterminer l'identifiant du gain en fonction de la position
-            if($user_position == 0) {
+            if($user_position == 1) {
                 $gain_id = 1;
-            } elseif($user_position == 1) {
-                $gain_id = 2;
             } elseif($user_position == 2) {
+                $gain_id = 2;
+            } elseif($user_position == 3) {
                 $gain_id = 3;
-            } elseif($user_position > 2 && $user_position <= 5) {
+            } elseif($user_position > 3 && $user_position <= 6) {
                 $gain_id = 4;
-            } elseif($user_position > 5 && $user_position <= 16) {
+            } elseif($user_position > 6 && $user_position <= 15) {
                 $gain_id = 5;
-            } elseif($user_position > 16 && $user_position <= 31) {
+            } elseif($user_position > 15 && $user_position <= 30) {
                 $gain_id = 6;
-            } elseif($user_position > 31 && $user_position <= 151) {
+            } elseif($user_position > 30 && $user_position <= 150) {
                 $gain_id = 7;
-            } elseif($user_position > 151 && $user_position <= 301) {
+            } elseif($user_position > 150 && $user_position <= 300) {
                 $gain_id = 8;
-            } elseif($user_position > 301 && $user_position <= 601) {
+            } elseif($user_position > 300 && $user_position <= 600) {
                 $gain_id = 9;
-            } elseif($user_position > 601 && $user_position <= 1501) {
+            } elseif($user_position > 600 && $user_position <= 1500) {
                 $gain_id = 10;
-            } elseif($user_position > 1501 && $user_position <= 3001) {
+            } elseif($user_position > 1500 && $user_position <= 3000) {
                 $gain_id = 11;
             } else {
                 $gain_id = 12;
