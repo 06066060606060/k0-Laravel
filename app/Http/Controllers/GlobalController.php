@@ -185,6 +185,7 @@ if ($now->gt($concours->date_fin)) {
         // Si le joueur est classé
         if ($user_position !== false) {
             // Déterminer l'identifiant du gain en fonction de la position
+            $user_position++; // Ajout de 1 pour obtenir la position réelle dans le classement
             if($user_position == 1) {
                 $gain_id = 1;
             } elseif($user_position == 2) {
@@ -232,7 +233,7 @@ if ($now->gt($concours->date_fin)) {
         }
     }
     
-        $concours->delete(); // Supprime le concours de la table concours en toute fin
+    $concours->delete(); // Supprime le concours de la table concours en toute fin
 
        /* $date_debut = Carbon::now()->subHours(2);
         $date_fin = Carbon::now()->addDays(28);
