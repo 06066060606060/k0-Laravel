@@ -3,7 +3,7 @@
     <nav x-data="{ isOpen: false }" class="container py-6 pl-2 pr-4 mx-auto lg:flex lg:justify-between lg:items-center">
         <div class="flex items-center justify-between">
             <div>
-                <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400 prevent" href="/"><img
+                <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="https://gokdo.com"><img
                         src="./img/logo.png" class="w-auto h-16"></a>
             </div>
 
