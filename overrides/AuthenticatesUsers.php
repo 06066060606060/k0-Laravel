@@ -174,7 +174,7 @@ trait AuthenticatesUsers
         return $response;
     }
 
-    return redirect('/');
+    return redirect('https://gokdo.com/');
 }
 
 
