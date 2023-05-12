@@ -137,7 +137,7 @@ $allgames = Games::orderBy('id', 'desc')
                 $userScore = $score;
                 break;
             }
-        }    
+            
         $position = $userPosition;
         $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
         $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
@@ -203,7 +203,6 @@ $allgames = Games::orderBy('id', 'desc')
         $concours->delete(); // Supprime le concours de la table concours en toute fin
         }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
-    }
 }
 
     public function store()
