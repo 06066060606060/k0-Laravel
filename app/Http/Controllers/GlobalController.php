@@ -200,6 +200,7 @@ $allgames = Games::orderBy('id', 'desc')
                     // Enregistrement des données
                     $user->save();
                 }
+            }
         $concours->delete(); // Supprime le concours de la table concours en toute fin
         }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
