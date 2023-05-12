@@ -174,7 +174,9 @@ trait AuthenticatesUsers
             return $response;
         }
 
-        return redirect('/');
+        return $request->wantsJson()
+            ? new Response('', 204)
+            : redirect('/');
     }
 
     /**
@@ -185,7 +187,7 @@ trait AuthenticatesUsers
      */
     protected function loggedOut(Request $request)
     {
-        return redirect('/');
+        //
     }
 
     /**
