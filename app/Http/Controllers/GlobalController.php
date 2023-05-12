@@ -122,6 +122,7 @@ $allgames = Games::orderBy('id', 'desc')
     $concours = Concours::All()->last(); //Selectionne le concours
     $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
         //Score effectués ordre par id desc
+        if(isset($concours->id)){
         $scores = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
                 ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
                 ->groupBy('user_id') // groupé par id users
@@ -169,7 +170,93 @@ $allgames = Games::orderBy('id', 'desc')
         }
         $gain = $gains->where('id', $gain_id)->first();
         $gain_nom = $gain ? $gain->name : null;
+
+// SI DATE ACTUELLE > DATE FIN CONCOURS
+if ($now->gt($concours->date_fin)) {
+    // Récupère users selon le score et position
+    $users = User::whereIn('id', $scores->pluck('user_id'))->get();
+    
+    // Boucle pour la distribution
+    foreach($users as $user) {
+        $user_position = $scores->search(function($score) use($user) {
+            return $score->user_id === $user->id;
+        });
+        
+        // Si le joueur est classé
+        if ($user_position !== false) {
+            // Déterminer l'identifiant du gain en fonction de la position
+            if($user_position == 1) {
+                $gain_id = 1;
+            } elseif($user_position == 2) {
+                $gain_id = 2;
+            } elseif($user_position == 3) {
+                $gain_id = 3;
+            } elseif($user_position > 3 && $user_position <= 6) {
+                $gain_id = 4;
+            } elseif($user_position > 6 && $user_position <= 15) {
+                $gain_id = 5;
+            } elseif($user_position > 15 && $user_position <= 30) {
+                $gain_id = 6;
+            } elseif($user_position > 30 && $user_position <= 150) {
+                $gain_id = 7;
+            } elseif($user_position > 150 && $user_position <= 300) {
+                $gain_id = 8;
+            } elseif($user_position > 300 && $user_position <= 600) {
+                $gain_id = 9;
+            } elseif($user_position > 600 && $user_position <= 1500) {
+                $gain_id = 10;
+            } elseif($user_position > 1500 && $user_position <= 3000) {
+                $gain_id = 11;
+            } else {
+                $gain_id = 12;
+            }
+
+            // Obtenir le gain correspondant à l'identifiant
+            $gain = $gains->where('id', $gain_id)->first();
+            
+            // Ajouter le gain à l'utilisateur en fonction de son type
+            switch ($gain->type) {
+                case 'Diamants':
+                    $user->trophee1 += $gain->name;
+                    break;
+                case 'Rubis':
+                    $user->trophee2 += $gain->name;
+                    break;
+                case 'Coins':
+                    $user->trophee3 += $gain->name;
+                    break;
+            }
+            
+            // Enregistrer les modifications de l'utilisateur
+            $user->save();
+        }
+    }
+    
+        $concours->delete(); // Supprime le concours de la table concours en toute fin
+        Concours::truncate();
+        DB::statement('ALTER TABLE concours AUTO_INCREMENT = 1');
+
+        $date_debut = Carbon::now()->subHours(2);
+        $date_fin = Carbon::now()->addDays(28);
+
+        Concours::create([
+            'id' => 1,
+            'name' => 'Gagnez 500€',
+            'image' => 'uploads/157f2c7e7afb9ed5a973ae3b99201d1b.gif',
+            'type' => 'Maximum de points',
+            'description' => 'Tentez de remporter le concours en jouant sur le jeu Pool ! Le but pour monter dans le classement est très simple, il suffit de collecter Diamants, Rubis et Coins sur le jeu multijoueur Pool.',
+            'date_debut' => $date_debut,
+            'date_fin' => $date_fin,
+            'cadeau_id' => 1,
+            'game_id' => 39,
+            'active' => 1,
+            'created_at' => Carbon::now(),
+        ]);
+        }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
+    } else {
+        return view('winner');
+    }
 }
 
     public function store()
