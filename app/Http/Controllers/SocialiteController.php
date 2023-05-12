@@ -28,7 +28,7 @@ class SocialiteController extends Controller
         // On vérifie si le provider est autorisé
         if (in_array($provider, $this->providers)) {
  
-            return Socialite::driver($provider)->redirect(); // On redirige vers le provider
+            return redirect('/');
         }
         abort(404); // Si le provider n'est pas autorisé
     }
@@ -84,7 +84,7 @@ public function callback (Request $request) {
         backpack_auth()->login($user);
 
         # 5. On redirige l'utilisateur vers /home avec un message de succès
-        return redirect('/')->with('success', 'Vous êtes maintenant connecté avec ' . ucfirst($provider) . '.');
+        return redirect('/');
      }
      abort(404);
 }
