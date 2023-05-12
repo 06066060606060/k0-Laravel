@@ -71,7 +71,7 @@ class CheckIfAdmin
         if ($request->ajax() || $request->wantsJson()) {
             return response(trans('backpack::base.unauthorized'), 401);
         } else {
-            return redirect('/');
+            return redirect()->guest(backpack_url('login'));
         }
     }
 
@@ -85,7 +85,7 @@ class CheckIfAdmin
     public function handle($request, Closure $next)
     {
         if (backpack_auth()->guest()) {
-            return redirect('/');
+            return $this->respondToUnauthorizedRequest($request);
         }
 
         if (!$this->checkIfUserIsAdmin(backpack_user())) {

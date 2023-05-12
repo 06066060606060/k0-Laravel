@@ -22,7 +22,7 @@ Route::controller(GlobalController::class)->middleware('cache.headers:public;max
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
-Route::get('logout', 'logout');
+Route::get('admin/logout', 'logout');
 Route::get('jeux', 'games');
 Route::get('game', 'game');
 Route::get('pack', 'pack');
