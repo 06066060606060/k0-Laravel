@@ -6,7 +6,7 @@
         use \App\Http\Controllers\GlobalController;
         $isMobile = GlobalController::isMobile();
     @endphp
-    @if(!isset($concours))
+    @if(isset($concours))
     @if($isMobile == true)
     @else
         <div class="z-0 one"></div>
