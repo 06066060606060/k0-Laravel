@@ -6,7 +6,6 @@
         use \App\Http\Controllers\GlobalController;
         $isMobile = GlobalController::isMobile();
     @endphp
-    @if(isset($concours))
     @if($isMobile == true)
     @else
         <div class="z-0 one"></div>
@@ -204,8 +203,4 @@
              </div>
          </container>
      </div>
-     @else
-     <script>alert('Pas de concours pour le moment');</script>
-     <script>window.location.replace('/');</script>
-     @endif
  @endsection
