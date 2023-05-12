@@ -205,6 +205,23 @@ $allgames = Games::orderBy('id', 'desc')
         $concours->delete(); // Supprime le concours de la table concours en toute fin
         Concours::truncate();
         DB::statement('ALTER TABLE concours AUTO_INCREMENT = 1');
+
+        $date_debut = Carbon::now()->subHours(2);
+        $date_fin = Carbon::now()->addDays(28);
+
+        Concours::create([
+            'id' => 1,
+            'name' => 'Gagnez 500€',
+            'image' => 'uploads/157f2c7e7afb9ed5a973ae3b99201d1b.gif',
+            'type' => 'Maximum de points',
+            'description' => 'Tentez de remporter le concours en jouant sur le jeu Pool ! Le but pour monter dans le classement est très simple, il suffit de collecter Diamants, Rubis et Coins sur le jeu multijoueur Pool.',
+            'date_debut' => $date_debut,
+            'date_fin' => $date_fin,
+            'cadeau_id' => 1,
+            'game_id' => 39,
+            'active' => 1,
+            'created_at' => Carbon::now(),
+        ]);
         }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
