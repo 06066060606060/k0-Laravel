@@ -137,7 +137,7 @@ $allgames = Games::orderBy('id', 'desc')
                 $userScore = $score;
                 break;
             }
-            
+        }    
         $position = $userPosition;
         $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
         $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
