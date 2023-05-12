@@ -69,6 +69,7 @@ $allgames = Games::orderBy('id', 'desc')
         $rubis = null;
         $free = null;
         $parties = null;
+        return redirect('/');
     }
     
     $onegame = Games::where('id', $request->id)->get();
