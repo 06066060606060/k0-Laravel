@@ -56,20 +56,32 @@ $allgames = Games::orderBy('id', 'desc')
     }
 
     public function game(Request $request)
-    {
+{
+    if(backpack_auth()->check()){
         $userid = backpack_auth()->id();
         $username = backpack_auth()->user()->name;
         $rubis = backpack_auth()->user()->trophee2;
         $free = backpack_auth()->user()->global_score;
         $parties = backpack_auth()->user()->parties;
-        $onegame = Games::where('id', $request->id)->get();
-        $scores = Scores::where('game_id', $request->id)
-                 ->orderBy('id', 'desc')
-                 ->get();
-        $game = $onegame[0];
-
-        return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
+    } else {
+        $userid = null;
+        $username = null;
+        $rubis = null;
+        $free = null;
+        $parties = null;
     }
+    
+    $onegame = Games::where('id', $request->id)->get();
+
+    $scores = Scores::where('game_id', $request->id)
+             ->orderBy('id', 'desc')
+             ->get();
+
+    $game = $onegame[0];
+
+    return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
+}
+
 
     static function pages()
     {
