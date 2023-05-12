@@ -6,7 +6,6 @@
         use \App\Http\Controllers\GlobalController;
         $isMobile = GlobalController::isMobile();
     @endphp
-    @if(isset($concours))
     @if($isMobile == true)
     @else
         <div class="z-0 one"></div>
@@ -15,6 +14,16 @@
             class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
                 <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
+                        @if(isset($concours))
+                    <div>
+                        Pas de concours pour le moment...
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        @endsection
+                        @else 
                     <div>
                         <div class="relative w-full max-w-lg">
 
@@ -204,8 +213,5 @@
              </div>
          </container>
      </div>
-     @else
-     <script>alert('Pas de concours pour le moment');</script>
-     <script>window.location.replace('/');</script>
-     @endif
  @endsection
+ @endif
