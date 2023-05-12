@@ -204,7 +204,7 @@ $allgames = Games::orderBy('id', 'desc')
         }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     }
-
+}
 
     public function store()
     {
