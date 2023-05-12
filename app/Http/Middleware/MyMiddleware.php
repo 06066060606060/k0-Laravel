@@ -16,7 +16,7 @@ class MyMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-       @if(request()->path()=='admin/login')
+       if(request()->path()=='admin/login') {
        if (backpack_auth()->user()->role == 'admin') {
         return redirect('/');
         return $next($request);
@@ -26,7 +26,7 @@ class MyMiddleware
         } else{
             return redirect('/');
         }
-        @else {
+        } else {
             if (backpack_auth()->user()->role == 'admin') {
                 return $next($request);        
             } else if (backpack_auth()->user()->role == 'abo') {
@@ -35,6 +35,6 @@ class MyMiddleware
                     return redirect('/');
                 }
         }
-      
+        
     }
 }
