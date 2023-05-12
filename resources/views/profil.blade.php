@@ -35,10 +35,12 @@
 
                     <div class="flex flex-col md:items-center">
                         @php
+    @if(isset($scory->total) || isset($scorey->total2) || isset($scory->total3))
     $total1 = $scory->total;
     $total2 = $scory->total2 * 100;
     $total3 = $scory->total3 * 1000;
     $totalite = $total1 + $total2 + $total3;
+    @endif
 @endphp
 <p class="flex py-4 text-xs text-white border-b border-gray-500">
     Score Concours : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
