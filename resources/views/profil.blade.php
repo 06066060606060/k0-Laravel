@@ -42,10 +42,15 @@
     $totalite = $total1 + $total2 + $total3;
     } else {}
 @endphp
+@if(isset($scory->total) || isset($scorey->total2) || isset($scory->total3))
 <p class="flex py-4 text-xs text-white border-b border-gray-500">
     Score Concours : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
-
+@else
+<p class="flex py-4 text-xs text-white border-b border-gray-500">
+    Score Concours : 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
+</p>
+@endif
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
                         <div class="flex py-2">
                             <img src="img/diamond5.png" class="w-10 h-8">
