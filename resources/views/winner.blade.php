@@ -159,48 +159,30 @@
         @else
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
             <p class="hidden ml-1 md:block">
-          @if($index == 0)
-    {{ $gains->where('id', 1)->first()->name }}
+            @if($index == 0)
+{{ $gains->where('id', 1)->first()->name }} <img src="{{ $gains->where('id', 1)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 1)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index == 1)
-    {{ $gains->where('id', 2)->first()->name }}
+{{ $gains->where('id', 2)->first()->name }} <img src="{{ $gains->where('id', 2)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 2)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index == 2)
-    {{ $gains->where('id', 3)->first()->name }}
+{{ $gains->where('id', 3)->first()->name }} <img src="{{ $gains->where('id', 3)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 3)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 3 && $index <= 5)
-    {{ $gains->where('id', 4)->first()->name }}
+{{ $gains->where('id', 4)->first()->name }} <img src="{{ $gains->where('id', 4)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 4)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 6 && $index <= 14)
-    {{ $gains->where('id', 5)->first()->name }}
+{{ $gains->where('id', 5)->first()->name }} <img src="{{ $gains->where('id', 5)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 5)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 15 && $index <= 29)
-    {{ $gains->where('id', 6)->first()->name }}
+{{ $gains->where('id', 6)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 30 && $index <= 149)
-    {{ $gains->where('id', 7)->first()->name }}
+{{ $gains->where('id', 7)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 150 && $index <= 299)
-    {{ $gains->where('id', 8)->first()->name }}
+{{ $gains->where('id', 8)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 300 && $index <= 599)
-    {{ $gains->where('id', 9)->first()->name }}
+{{ $gains->where('id', 9)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 600 && $index <= 1499)
-    {{ $gains->where('id', 10)->first()->name }}
+{{ $gains->where('id', 10)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index >= 1500 && $index <= 2999)
-    {{ $gains->where('id', 11)->first()->name }}
-@else
-    {{ $gains->where('id', 12)->first()->name }}
-@endif
-
-@php
-    $type = $gains->where('id', $index >= 3 && $index <= 5 ? 4 : ($index >= 6 && $index <= 14 ? 5 : ($index >= 15 && $index <= 29 ? 6 : ($index >= 30 && $index <= 149 ? 7 : ($index >= 150 && $index <= 299 ? 8 : ($index >= 300 && $index <= 599 ? 9 : ($index >= 600 && $index <= 1499 ? 10 : ($index >= 1500 && $index <= 2999 ? 11 : 12))))))));
-@endphp
-
-@switch($type->first()->type)
-    @case('Diamant')
-        <img src="{{ asset('img/diamond5.png') }}" alt="diamond" class="flex w-4 h-4 ml-2">
-        @break
-    @case('Rubis')
-        <img src="{{ asset('img/gem5.png') }}" alt="gem" class="flex w-4 h-4 ml-2">
-        @break
-    @case('Coins')
-        <img src="{{ asset('img/coin10.png') }}" alt="coin" class="flex w-4 h-4 ml-2">
-        @break
-@endswitch
-
+{{ $gains->where('id', 11)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
+@elseif($index > 3000)
+{{ $gains->where('id', 12)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
         </strong>
         @endif
     </td>
