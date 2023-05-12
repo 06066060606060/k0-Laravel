@@ -122,6 +122,7 @@ $allgames = Games::orderBy('id', 'desc')
     $concours = Concours::All()->last(); //Selectionne le concours
     $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
         //Score effectués ordre par id desc
+        if(isset($concours)){
         $scores = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
                 ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
                 ->groupBy('user_id') // groupé par id users
@@ -203,6 +204,7 @@ $allgames = Games::orderBy('id', 'desc')
             }
         $concours->delete(); // Supprime le concours de la table concours en toute fin
         }
+    }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
 }
 
