@@ -45,7 +45,7 @@
                     @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos jeux</a>-->
                 @if (backpack_auth()->check())
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
-                    @click="isOpen = false"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
+                    @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
                 @else
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="/#video"
                     @click="isOpen = false"><i class="fa-solid fa-video"></i>&nbsp; Vidéo</a>
@@ -57,7 +57,7 @@
                         @click="isOpen = false" data-barba-prevent="self"><i class="fa-regular fa-gem"></i>&nbsp;
                         Pack</a>
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
-                        @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp; Profil</a>
+                        @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-user"></i>&nbsp; Profil</a>
                 @endif
 
             </div>
