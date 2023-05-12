@@ -274,7 +274,7 @@ public function getProfil()
         ];
         return response()->json($data);
     }
-}
+
 
          else {
             return redirect('/');
