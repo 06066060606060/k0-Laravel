@@ -11,7 +11,6 @@ document.getElementById('get-profil-button').addEventListener('click', function(
             document.getElementById('idjoueur').innerHTML = data.idjoueur; });
 });
 </script>
-    <div data-barba="container">
       @php
         use \App\Http\Controllers\GlobalController;
         $isMobile = GlobalController::isMobile();
@@ -333,7 +332,6 @@ document.getElementById('get-profil-button').addEventListener('click', function(
                     </form>
                 </div>
         </container>
-    </div>
     <script>
         function PopupUser() {
             console.log('okpop');
