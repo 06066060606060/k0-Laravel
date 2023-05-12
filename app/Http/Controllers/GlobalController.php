@@ -235,48 +235,48 @@ $allgames = Games::orderBy('id', 'desc')
         return $version;
     }
 
-    public function getProfil()
-    {
-        if (backpack_auth()->check()) {
-            $concours = Concours::first();
-            $idjoueur= backpack_auth()->user()->id;
-            $usermail = backpack_auth()->user()->email;
-            $userid = backpack_auth()->user()->id;
-            $scores = Scores::where('user_id', $userid)
-                ->orderBy('id', 'desc')
-                ->limit('100')
-                ->get();
-            $orders = Commandes::where('user_id', $userid)
-                ->latest()
-                ->limit('6')
-                ->get();
-            $infos = Infosperso::where('user_id', $userid)->get();
-            $paiements = Paiements::where('user_id', $userid)
-                ->latest()
-                ->limit('6')
-                ->get();
-            $scory = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
-                ->where('user_id', $idjoueur)
-                ->where('game_id', $concours->game_id)
-                ->groupBy('user_id')
-                ->limit('1')
-                ->first();
-    
-            // Convertir les données en JSON
-            $data = [
-                'concours' => $concours,
-                'idjoueur' => $idjoueur,
-                'scory' => $scory,
-                'scores' => $scores,
-                'orders' => $orders,
-                'infos' => $infos,
-                'paiements' => $paiements,
-            ];
-            return response()->json($data);
-        }
+public function getProfil()
+{
+    if (backpack_auth()->check()) {
+        $concours = Concours::first();
+        $idjoueur= backpack_auth()->user()->id;
+        $usermail = backpack_auth()->user()->email;
+        $userid = backpack_auth()->user()->id;
+        $scores = Scores::where('user_id', $userid)
+            ->orderBy('id', 'desc')
+            ->limit('100')
+            ->get();
+        $orders = Commandes::where('user_id', $userid)
+            ->latest()
+            ->limit('6')
+            ->get();
+        $infos = Infosperso::where('user_id', $userid)->get();
+        $paiements = Paiements::where('user_id', $userid)
+            ->latest()
+            ->limit('6')
+            ->get();
+        $scory = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
+            ->where('user_id', $idjoueur)
+            ->where('game_id', $concours->game_id)
+            ->groupBy('user_id')
+            ->limit('1')
+            ->first();
+
+        // Convertir les données en JSON
+        $data = [
+            'concours' => $concours,
+            'idjoueur' => $idjoueur,
+            'scory' => $scory,
+            'scores' => $scores,
+            'orders' => $orders,
+            'infos' => $infos,
+            'paiements' => $paiements,
+        ];
+        return response()->json($data);
     }
-    
-        } else {
+}
+
+         else {
             return redirect('/');
         }
     }
