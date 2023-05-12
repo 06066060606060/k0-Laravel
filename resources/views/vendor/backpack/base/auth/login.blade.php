@@ -4,7 +4,7 @@
     {!! RecaptchaV3::initJs() !!}
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
-            <a href="/" data-barba-prevent="self">
+            <a href="/" class="prevent">
                 <img class="w-auto pb-4 mx-auto h-1/6" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
