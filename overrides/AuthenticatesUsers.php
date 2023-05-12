@@ -171,10 +171,14 @@ trait AuthenticatesUsers
         $request->session()->regenerateToken();
 
         if ($response = $this->loggedOut($request)) {
-            return redirect('/');
+            return $response;
         }
 
-        return redirect('/');
+        if($request->wantsJson()){
+            return new Response('', 204);
+        } else {
+            return redirect('/?');
+        }
     }
 
     /**
