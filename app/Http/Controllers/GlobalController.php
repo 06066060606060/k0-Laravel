@@ -595,7 +595,7 @@ $allgames = Games::orderBy('id', 'desc')
         Session::flush();
         Auth::logout();
         //$request->session()->invalidate();
-        return view('index');
+        return redirect('/');
     }
 
     static function getUsers()
