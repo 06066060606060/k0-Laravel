@@ -204,8 +204,11 @@ $allgames = Games::orderBy('id', 'desc')
             }
         $concours->delete(); // Supprime le concours de la table concours en toute fin
         }
-    }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
+} else {
+    echo "<script>alert('Pas de concours pour le moment');</script>";
+    return redirect('/');
+}
 }
 
     public function store()
