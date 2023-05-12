@@ -177,7 +177,7 @@ $allgames = Games::orderBy('id', 'desc')
     public function store()
     {
         $concours = Concours::All();
-        $cadeaux = Cadeaux::all();
+        $cadeaux = Cadeaux::orderBy('prix', 'asc')->get();
         return view('store', compact('cadeaux', 'concours'));
     }
 
