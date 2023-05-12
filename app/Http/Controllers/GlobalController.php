@@ -129,7 +129,7 @@ $allgames = Games::orderBy('id', 'desc')
                 ->orderBy('total', 'desc') // ordre par score total plus grand au plus petit 
                 ->get(); // récupère le résultat
         // Trouver la position de l'utilisateur dans le classement des scores
-        $userPosition = -1;
+        $userPosition = 0;
         $userScore = null;
         for ($i = 0; $i < count($scores); $i++) {
             $score = $scores[$i];
