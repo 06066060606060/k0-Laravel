@@ -590,23 +590,17 @@ $allgames = Games::orderBy('id', 'desc')
         return redirect('/');
     }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        $this->guard()->logout();
-
+        Auth::guard('web')->logout();
+    
         $request->session()->invalidate();
-
+    
         $request->session()->regenerateToken();
-
-        if ($response = $this->loggedOut($request)) {
-            return $response;
-        }
-
-        return $request->wantsJson()
-            ? new Response('', 204)
-            : redirect('/');
+    
+        return redirect('/');
     }
-
+    
     static function getUsers()
     {
         //retrive all users
