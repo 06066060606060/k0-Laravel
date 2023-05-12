@@ -251,6 +251,103 @@ if ($now->gt($concours->date_fin)) {
             'active' => 1,
             'created_at' => Carbon::now(),
         ]);
+        DB::table('gains')->insert([
+            [
+            'id' => 1,
+            'name' => '500',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Coins'
+            ],
+            [
+            'id' => 2,
+            'name' => '200',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Coins'
+            ],
+            [
+            'id' => 3,
+            'name' => '100',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Coins'
+            ],
+            [
+            'id' => 4,
+            'name' => '50',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Rubis'
+            ],
+            [
+            'id' => 5,
+            'name' => '20',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Rubis'
+            ],
+            [
+            'id' => 6,
+            'name' => '10',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Rubis'
+            ],
+            [
+            'id' => 7,
+            'name' => '5',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Rubis'
+            ],
+            [
+            'id' => 8,
+            'name' => '2',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Rubis'
+            ],
+            [
+            'id' => 9,
+            'name' => '7000',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Diamants'
+            ],
+            [
+            'id' => 10,
+            'name' => '5000',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Diamants'
+            ],
+            [
+            'id' => 11,
+            'name' => '2000',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Diamants'
+            ],
+            [
+            'id' => 12,
+            'name' => '5000',
+            'concours_id' => 1,
+            'created_at' => $date_debut,
+            'updated_at' => $date_debut,
+            'type' => 'Diamants'
+            ]);
         }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
