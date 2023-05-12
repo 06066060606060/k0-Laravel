@@ -183,6 +183,7 @@
 {{ $gains->where('id', 11)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
 @elseif($index > 3000)
 {{ $gains->where('id', 12)->first()->name }} <img src="{{ $gains->where('id', 6)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 6)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="w-4 h-4 ml-2">
+@endif
         </strong>
         @endif
     </td>
