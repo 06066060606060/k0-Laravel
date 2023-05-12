@@ -5,7 +5,7 @@
     @include('parts.head')
 </head>
 
-<body class="overflow-x-hidden bg-gray-900 pattern" data-barba="wrapper">
+<body class="overflow-x-hidden bg-gray-900 pattern">
     <navbar>
         @include('parts.navbar')
     </navbar>
