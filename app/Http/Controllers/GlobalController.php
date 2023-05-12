@@ -233,7 +233,6 @@ if ($now->gt($concours->date_fin)) {
     }
     
         $concours->delete(); // Supprime le concours de la table concours en toute fin
-        Concours::truncate();
 
         $date_debut = Carbon::now()->subHours(2);
         $date_fin = Carbon::now()->addDays(28);
