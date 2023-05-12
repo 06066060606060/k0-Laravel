@@ -170,6 +170,8 @@ $allgames = Games::orderBy('id', 'desc')
     }
     $gain = $gains->where('id', $gain_id)->first();
     $gain_nom = $gain ? $gain->name : null;
+
+
     return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
 }
 
