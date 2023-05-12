@@ -22,7 +22,7 @@ barba.init(
                 spaceBetween: 24,
                 centeredSlides: true,
                 autoplay: {
-                    delay: 8000,
+                    delay: 3000,
                 },
                 breakpoints: {
                     640: {
@@ -60,7 +60,7 @@ barba.init(
                 spaceBetween: 24,
                 centeredSlides: true,
                 autoplay: {
-                    delay: 8000,
+                    delay: 3000,
                 },
                 breakpoints: {
                     640: {
