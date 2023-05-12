@@ -188,7 +188,7 @@ $allgames = Games::orderBy('id', 'desc')
         if ($request->filled('q')) {
         $cadeaux = Cadeaux::where('name', 'like', '%' . $q . '%')->get();
         } else {
-            $cadeaux = Cadeaux::all();
+            $cadeaux = Cadeaux::orderBy('prix', 'asc')->get();
         }
         if ($request->filled('category')) {
             if ($request->filled('category')) {
