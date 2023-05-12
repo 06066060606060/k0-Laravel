@@ -175,7 +175,7 @@ trait AuthenticatesUsers
         }
 
         if($request->wantsJson()){
-            return new Response('', 204);
+            return redirect('/?');
         } else {
             return redirect('/?');
         }
