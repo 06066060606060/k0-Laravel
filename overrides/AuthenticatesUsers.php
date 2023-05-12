@@ -174,11 +174,7 @@ trait AuthenticatesUsers
             return $response;
         }
 
-        if($request->wantsJson()){
-            return redirect('/?');
-        } else {
-            return redirect('/?');
-        }
+        return redirect('/');
     }
 
     /**
@@ -189,7 +185,7 @@ trait AuthenticatesUsers
      */
     protected function loggedOut(Request $request)
     {
-        //
+        return redirect('/');
     }
 
     /**
