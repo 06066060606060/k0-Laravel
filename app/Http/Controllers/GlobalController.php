@@ -234,7 +234,7 @@ if ($now->gt($concours->date_fin)) {
     
         $concours->delete(); // Supprime le concours de la table concours en toute fin
 
-        $date_debut = Carbon::now()->subHours(2);
+       /* $date_debut = Carbon::now()->subHours(2);
         $date_fin = Carbon::now()->addDays(28);
         // creer un nouveau concours
         Concours::create([
@@ -249,7 +249,7 @@ if ($now->gt($concours->date_fin)) {
             'game_id' => 39,
             'active' => 1,
             'created_at' => Carbon::now(),
-        ]);
+        ]);*/
         }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
