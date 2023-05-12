@@ -231,7 +231,7 @@ if ($now->gt($concours->date_fin)) {
             $user->save();
         }
     }
-}
+    
         $concours->delete(); // Supprime le concours de la table concours en toute fin
         Concours::truncate();
         DB::statement('ALTER TABLE concours AUTO_INCREMENT = 1');
