@@ -237,7 +237,7 @@ if ($now->gt($concours->date_fin)) {
 
         $date_debut = Carbon::now()->subHours(2);
         $date_fin = Carbon::now()->addDays(28);
-
+        // creer un nouveau concours
         Concours::create([
             'id' => 1,
             'name' => 'Gagnez 500€',
@@ -251,7 +251,8 @@ if ($now->gt($concours->date_fin)) {
             'active' => 1,
             'created_at' => Carbon::now(),
         ]);
-        DB::table('gains')->insert([
+        // Creer les nouveaux gain du nouveau concours
+        Gains::create(
             [
             'id' => 1,
             'name' => '500',
