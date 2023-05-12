@@ -4,7 +4,7 @@
 @section('content')
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-             <a href="/" class="prevent"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
+             <a href="/"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
