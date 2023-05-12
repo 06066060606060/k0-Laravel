@@ -54,10 +54,10 @@
                         @click="isOpen = false"><i class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>
                 @if (backpack_auth()->check())
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="pack"
-                        @click="isOpen = false" data-barba-prevent="self"><i class="fa-regular fa-gem"></i>&nbsp;
+                        @click="isOpen = false"><i class="fa-regular fa-gem"></i>&nbsp;
                         Pack</a>
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
-                        @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-user"></i>&nbsp; Profil</a>
+                        @click="isOpen = false"><i class="fa-solid fa-user"></i>&nbsp; Profil</a>
                 @endif
 
             </div>
