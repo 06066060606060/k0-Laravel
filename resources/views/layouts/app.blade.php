@@ -4,10 +4,7 @@
 <head>
     @include('parts.head')
 </head>
-@if(request()->path()=='concours')
-@else
 <body class="overflow-x-hidden bg-gray-900 pattern" data-barba="wrapper">
-@endif
     <navbar>
         @include('parts.navbar')
     </navbar>

@@ -238,7 +238,7 @@ $allgames = Games::orderBy('id', 'desc')
     public function getProfil()
     {
         if (backpack_auth()->check()) {
-            $concours = Concours::first(); // TOUTES LES COMMANDES
+            $concours = Concours::first();
             $idjoueur= backpack_auth()->user()->id;
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
@@ -255,18 +255,27 @@ $allgames = Games::orderBy('id', 'desc')
                 ->latest()
                 ->limit('6')
                 ->get();
-                $scory = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
+            $scory = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
                 ->where('user_id', $idjoueur)
                 ->where('game_id', $concours->game_id)
                 ->groupBy('user_id')
                 ->limit('1')
                 ->first();
-
-            
-            return view(
-                'profil',
-                compact('concours', 'idjoueur', 'scory', 'scores', 'orders', 'infos', 'paiements')
-            );
+    
+            // Convertir les données en JSON
+            $data = [
+                'concours' => $concours,
+                'idjoueur' => $idjoueur,
+                'scory' => $scory,
+                'scores' => $scores,
+                'orders' => $orders,
+                'infos' => $infos,
+                'paiements' => $paiements,
+            ];
+            return response()->json($data);
+        }
+    }
+    
         } else {
             return redirect('/');
         }

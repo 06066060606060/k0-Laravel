@@ -1,6 +1,16 @@
 @extends('layouts.app')
 
 @section('main')
+<script>
+document.getElementById('get-profil-button').addEventListener('click', function() {
+    fetch('{{ route('get.profil') }}')
+        .then(response => response.text())
+        .then(data => {
+// Mettre à jour la page avec les données
+            document.getElementById('concours').innerHTML = data.concours;
+            document.getElementById('idjoueur').innerHTML = data.idjoueur        });
+});
+</script>
     <div data-barba="container">
       @php
         use \App\Http\Controllers\GlobalController;
