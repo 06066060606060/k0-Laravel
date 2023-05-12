@@ -177,6 +177,7 @@ if ($now->gt($concours->date_fin)) {
     $users = User::whereIn('id', $scores->pluck('user_id'))->get();
     
     // Boucle pour la distribution
+    $user_position = 0;
     foreach($users as $user) {
         $user_position = $scores->search(function($score) use($user) {
             return $score->user_id === $user->id;
