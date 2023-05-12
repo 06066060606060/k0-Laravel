@@ -129,7 +129,7 @@
             
         @if($isMobile == true)
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
-            <p class="ml-1 md:block">            @if($index == 0)
+            <p class="flex ml-1">            @if($index == 0)
 {{ $gains->where('id', 1)->first()->name }} <img src="{{ $gains->where('id', 1)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 1)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="flex w-4 h-4 ml-2">
 @elseif($index == 1)
 {{ $gains->where('id', 2)->first()->name }} <img src="{{ $gains->where('id', 2)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 2)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="flex w-4 h-4 ml-2">
@@ -159,7 +159,7 @@
         </strong>
         @else
         <strong class="flex rounded md:px-3 py-1.5 text-xs font-bold bg-green-800 text-white max-w-[180px]">
-            <p class="flex ml-1 md:block">
+            <p class="flex ml-1">
             @if($index == 0)
 {{ $gains->where('id', 1)->first()->name }} <img src="{{ $gains->where('id', 1)->first()->type == 'Coins' ? asset('img/coin10.png') : ($gains->where('id', 1)->first()->type == 'Rubis' ? asset('img/gem5.png') : asset('img/diamond5.png')) }}" alt="gain" class="flex w-4 h-4 ml-2">
 @elseif($index == 1)
