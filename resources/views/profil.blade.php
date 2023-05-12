@@ -8,7 +8,7 @@ document.getElementById('get-profil-button').addEventListener('click', function(
         .then(data => {
 // Mettre à jour la page avec les données
             document.getElementById('concours').innerHTML = data.concours;
-            document.getElementById('idjoueur').innerHTML = data.idjoueur        });
+            document.getElementById('idjoueur').innerHTML = data.idjoueur; });
 });
 </script>
     <div data-barba="container">
