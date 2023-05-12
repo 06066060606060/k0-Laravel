@@ -19,6 +19,8 @@ class MyMiddleware
     
        if (backpack_auth()->user()->role == 'admin') {
         return redirect('/');
+        return $next($request);
+
     } else if (backpack_auth()->user()->role == 'abo') {
             return redirect('/');
         } else{
