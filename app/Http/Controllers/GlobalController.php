@@ -203,6 +203,8 @@ $allgames = Games::orderBy('id', 'desc')
                 }
             }
         $concours->delete(); // Supprime le concours de la table concours en toute fin
+        Concours::truncate();
+        DB::statement('ALTER TABLE concours AUTO_INCREMENT = 1');
         }
         return view('winner', compact('gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
 //} else {
