@@ -171,37 +171,67 @@ $allgames = Games::orderBy('id', 'desc')
         $gain = $gains->where('id', $gain_id)->first();
         $gain_nom = $gain ? $gain->name : null;
 
-        // SI DATE ACTUELLE > DATE FIN CONCOURS
-        if ($now->gt($concours->date_fin)) {
-            // Récupère users selon le score et position
-            $users = User::whereIn('id', $scores->pluck('user_id'))->get();
-
-            // Boucle pour la distribution
-            foreach($users as $user) {
-                $user_position = $scores->search(function($score) use($user) {
-                    return $score->user_id === $user->id;
-                });
-                // SI le joueur est classé
-                if ($user_position !== false) {
-                    // Gain = id du gain
-                    $gain = $gains->where('id', $gain_id)->first();
-                    
-                    // Gain ajouté selon son type
-                    switch ($gain->type) {
-                        case 'Diamants':
-                            $user->trophee1 += $gain->name;
-                            break;
-                        case 'Rubis':
-                            $user->trophee2 += $gain->name;
-                            break;
-                        case 'Coins':
-                            $user->trophee3 += $gain->name;
-                            break;
-                    }
-                    // Enregistrement des données
-                    $user->save();
-                }
+// SI DATE ACTUELLE > DATE FIN CONCOURS
+if ($now->gt($concours->date_fin)) {
+    // Récupère users selon le score et position
+    $users = User::whereIn('id', $scores->pluck('user_id'))->get();
+    
+    // Boucle pour la distribution
+    foreach($users as $user) {
+        $user_position = $scores->search(function($score) use($user) {
+            return $score->user_id === $user->id;
+        });
+        
+        // Si le joueur est classé
+        if ($user_position !== false) {
+            // Déterminer l'identifiant du gain en fonction de la position
+            if($user_position == 1) {
+                $gain_id = 1;
+            } elseif($user_position == 2) {
+                $gain_id = 2;
+            } elseif($user_position == 3) {
+                $gain_id = 3;
+            } elseif($user_position > 3 && $user_position <= 6) {
+                $gain_id = 4;
+            } elseif($user_position > 6 && $user_position <= 15) {
+                $gain_id = 5;
+            } elseif($user_position > 15 && $user_position <= 30) {
+                $gain_id = 6;
+            } elseif($user_position > 30 && $user_position <= 150) {
+                $gain_id = 7;
+            } elseif($user_position > 150 && $user_position <= 300) {
+                $gain_id = 8;
+            } elseif($user_position > 300 && $user_position <= 600) {
+                $gain_id = 9;
+            } elseif($user_position > 600 && $user_position <= 1500) {
+                $gain_id = 10;
+            } elseif($user_position > 1500 && $user_position <= 3000) {
+                $gain_id = 11;
+            } else {
+                $gain_id = 12;
             }
+
+            // Obtenir le gain correspondant à l'identifiant
+            $gain = $gains->where('id', $gain_id)->first();
+            
+            // Ajouter le gain à l'utilisateur en fonction de son type
+            switch ($gain->type) {
+                case 'Diamants':
+                    $user->trophee1 += $gain->name;
+                    break;
+                case 'Rubis':
+                    $user->trophee2 += $gain->name;
+                    break;
+                case 'Coins':
+                    $user->trophee3 += $gain->name;
+                    break;
+            }
+            
+            // Enregistrer les modifications de l'utilisateur
+            $user->save();
+        }
+    }
+}
         $concours->delete(); // Supprime le concours de la table concours en toute fin
         Concours::truncate();
         DB::statement('ALTER TABLE concours AUTO_INCREMENT = 1');
