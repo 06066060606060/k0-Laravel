@@ -221,8 +221,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Oups !</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <h5 class="modal-title" id="exampleModalLabel">Concours</h5>
       </div>
       <div class="modal-body">
         <p>Pas de concours pour le moment, vous serez prévenu lorsqu'un concours sera en place.</p>
