@@ -205,7 +205,30 @@
          </container>
      </div>
      @else
-     <script>alert('Pas de concours pour le moment');</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>     
+<script type="text/javascript">
+        $(document).ready(function(){
+            $('#exampleModal').modal('show');
+        });
+    </script>     
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Oups !</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>Pas de concours pour le moment, vous serez prévenu lorsqu'un concours sera en place.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+      </div>
+    </div>
+  </div>
+</div>
      <script>window.location.replace('/');</script>
      @endif
  @endsection
