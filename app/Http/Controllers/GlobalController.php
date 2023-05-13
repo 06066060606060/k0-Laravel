@@ -181,22 +181,21 @@ class GlobalController extends Controller
                     return $score->user_id === $user->id;
                 });
                 
-                // Si le joueur est classé
                 if ($user_position !== false) {
-                $dernier_gagnant = new Derniers_Gagnants_Concours;
-                $dernier_gagnant->name = $user->name;
-                if (isset($user->scores)) {
-                    $dernier_gagnant->score = $user->scores->sum(function ($score) {
-                        return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
-                    });
-                } else {
-                    $dernier_gagnant->score = 0;
-                }
-                $dernier_gagnant->gain = $gain->name;
-                $dernier_gagnant->date_gain = $now;
-                $dernier_gagnant->created_at = $now;
-                $dernier_gagnant->updated_at = $now;
-                $dernier_gagnant->save();
+                    $dernier_gagnant = new Derniers_Gagnants_Concours;
+                    $dernier_gagnant->name = $user->name;
+                    if (isset($user->scores)) {
+                        $dernier_gagnant->score = $user->scores->sum(function ($score) {
+                            return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
+                        });
+                    } else {
+                        $dernier_gagnant->score = 0;
+                    }
+                    $dernier_gagnant->gain = $concours->find($scores_sorted[$user_position]->concours_id)->gain;
+                    $dernier_gagnant->date_gain = $now;
+                    $dernier_gagnant->created_at = $now;
+                    $dernier_gagnant->updated_at = $now;
+                    $dernier_gagnant->save();
                    
                     // Déterminer l'identifiant du gain en fonction de la position
                     if($user_position == 0) {
