@@ -29,10 +29,7 @@ Route::get('pack', 'pack');
 Route::get('concours', 'winner');
 Route::get('cadeaux', 'store');
 Route::get('cadeaux', 'search')->name('searchfilter');
-Route::get('help', 'help');
-Route::get('rules', 'rules');
 Route::get('contact', 'contact');
-Route::post('contactus', 'contactus');
 Route::get('test', 'test');
 Route::get('aide', 'aide');
 Route::get('reglement', 'reglement');
@@ -43,9 +40,6 @@ Route::get('confidentialite-site', 'confidentialitesite');
 Route::middleware(['cors'])->group(function () {
     Route::get('game', [GlobalController::class, 'game']);
 });
-
-Route::get('legal' , [GlobalController::class, 'getLegal']);
-Route::get('confidentialite' , [GlobalController::class, 'getConf']);
 
 Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 
