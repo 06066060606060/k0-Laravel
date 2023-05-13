@@ -23,10 +23,10 @@
                          <a href="reglement" class="text-gray-400 hover:text-gray-500">Règlement</a>
                      </li>
                      <li>
-                         <a href="legal" class="text-gray-400 hover:text-gray-500">Mentions Legales</a>
+                         <a href="mentions-legales" class="text-gray-400 hover:text-gray-500">Mentions Legales</a>
                      </li>
                      <li>
-                         <a href="confidentialite" class="text-gray-400 hover:text-gray-500">Confidentialité</a>
+                         <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">Confidentialité</a>
                      </li>
                  </div>
              </div>

@@ -36,6 +36,8 @@ Route::post('contactus', 'contactus');
 Route::get('test', 'test');
 Route::get('aide', 'aide');
 Route::get('reglement', 'reglement');
+Route::get('mentions-legales', 'mentionslegales');
+Route::get('confidentialite-site', 'confidentialitesite');
 });
 
 Route::middleware(['cors'])->group(function () {

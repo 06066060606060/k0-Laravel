@@ -323,6 +323,16 @@ $allgames = Games::orderBy('id', 'desc')
         return view('reglement');
     }
 
+    public function mentionslegales()
+    {
+        return view('mentions-legales');
+    }
+
+    public function confidentialitesite()
+    {
+        return view('confidentialite-site');
+    }
+
     public function test()
     {
        $test = encrypt(time());
