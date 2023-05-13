@@ -12,7 +12,7 @@
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Règlement</h1>
                     </div>
     <header class="z-10 flex px-4 pt-6 pb-2 md:px-0 md:mx-auto max-w-7xl border-x-1 justify-evenly">
-		<h1 class="mb-4 text-2xl font-bold text-gray-100 md:text-5xl title-font">Règlement de Gokdo.com</h1>
+		<h1 class="mb-4 text-3xl font-bold text-gray-100 md:text-3xl title-font">Règlement de Gokdo.com</h1>
 	</header>
 	<section>
 		<h2>Accès à Gokdo.com</h2>
