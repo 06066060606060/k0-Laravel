@@ -33,37 +33,31 @@ class GlobalController extends Controller
         $winner = User::all(); //DERNIERS GAGNANTS JEUX
         
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
-        $scores = Scores::select('scores.*', 'users.name')
-        ->join('users', 'users.id', '=', 'scores.user_id')
-        ->get();
+        $scores = Scores::select('scores.*', 'users.name')->join('users', 'users.id', '=', 'scores.user_id')->get();
         
-
-$allgames = Games::orderBy('id', 'desc')
-        ->get();
-        $freegames = Games::where('type', 'Gratuit')
-            ->where('status', 0)
-            ->limit(6)
-            ->inRandomOrder()
-            ->get();
-        $boostergames = Games::where('type', 'Booster')
-            ->limit(6)
-            ->inRandomOrder()
-            ->get();
-        $starred = Games::where('status', 1)
-        ->inRandomOrder()
-        ->first();
+        // Tous les jeux
+        $allgames = Games::orderBy('id', 'desc')->get();
+        // Jeux Gratuits
+        $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
+        // Jeux Booster
+        $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
+        // Jeux mis en avant    
+        $starred = Games::where('status', 1)->inRandomOrder()->first();
         return view('index', compact('scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // Fonction quand un joueur clique sur un jeu
     public function game(Request $request)
-{
-    if(backpack_auth()->check()){
-        $userid = backpack_auth()->id();
-        $username = backpack_auth()->user()->name;
-        $rubis = backpack_auth()->user()->trophee2;
-        $free = backpack_auth()->user()->global_score;
-        $parties = backpack_auth()->user()->parties;
+    {
+    if(backpack_auth()->check()){ // loggué
+        $userid = backpack_auth()->id(); // retourne l'id
+        $username = backpack_auth()->user()->name; // retourne le pseudo
+        $rubis = backpack_auth()->user()->trophee2; // retourne les rubis
+        $free = backpack_auth()->user()->global_score; // retourne le score total
+        $parties = backpack_auth()->user()->parties; // retourne les parties
     } else {
+        // Sinon tout et null et on redirige à l'accueil
         $userid = null;
         $username = null;
         $rubis = null;
@@ -72,50 +66,53 @@ $allgames = Games::orderBy('id', 'desc')
         return redirect('/');
     }
     
+    // Selectionne le jeu auquel le membre joue
     $onegame = Games::where('id', $request->id)->get();
-
-    $scores = Scores::where('game_id', $request->id)
-             ->orderBy('id', 'desc')
-             ->get();
-
+    // Sélectionne les scores du jeu en cours
+    $scores = Scores::where('game_id', $request->id)->orderBy('id', 'desc')->get();
+    //Le jeu s'affiche 
     $game = $onegame[0];
 
     return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+    // Fonction qui retourne les pages crées en administration
     static function pages()
     {
         $pages = Pages::all();
         return $pages;
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // Fonction qui retourne les jeux mis en avant 
     static function starred()
     {
-        $starred = Games::where('status', 1)
-            ->inRandomOrder()
-            ->get();
+        $starred = Games::where('status', 1)->inRandomOrder()->get();
         return $starred;
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // Fonction qui retourne les jeux
     public function games()
     {
-        $freegames = Games::where('type', 'Gratuit')
-            ->inRandomOrder()
-            ->get();
-        $boostergames = Games::where('type', 'Booster')
-            ->inRandomOrder()
-            ->get();
+        $freegames = Games::where('type', 'Gratuit')->inRandomOrder()->get(); // Gratuits
+        $boostergames = Games::where('type', 'Booster')->inRandomOrder()->get(); // Booster
         return view('allgames', compact('freegames', 'boostergames'));
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    // Fonction qui retourne tout type jeu mélangés 
     static function getGames()
     {
-        $games1 = Games::where('type', 'Gratuit')->get();
-        $games2 = Games::where('type', 'Booster')->get();
-        $games = $games1->merge($games2);
+        $games1 = Games::where('type', 'Gratuit')->get(); // Gratuits
+        $games2 = Games::where('type', 'Booster')->get(); // Boosters
+        $games = $games1->merge($games2); // Mélange des deux
         return $games;
     }
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 
+    // Fonction du concours
     public function winner()
     {
     $gains = Gains::all(); // récup tous les gains du concours
@@ -129,8 +126,8 @@ $allgames = Games::orderBy('id', 'desc')
                 ->orderBy('total', 'desc') // ordre par score total plus grand au plus petit 
                 ->get(); // récupère le résultat
         // Trouver la position de l'utilisateur dans le classement des scores
-        $userPosition = 0;
-        $userScore = null;
+        $userPosition = 0; // défini la position à 0
+        $userScore = null; // défini un score vierge
         for ($i = 0; $i < count($scores); $i++) {
             $score = $scores[$i];
             if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
