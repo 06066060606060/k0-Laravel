@@ -228,7 +228,7 @@ class GlobalController extends Controller
 
                     $dernier_gagnant = new Derniers_Gagnants_Concours;
                     $dernier_gagnant->name = $user->name;
-                    $dernier_gagnant->score = $scores_sorted;
+                    $dernier_gagnant->score = $scores_sorted->where('user_id', $user->id)->first()->score;
                     $dernier_gagnant->gain = $gain->name;
                     $dernier_gagnant->date_gain = $now;
                     $dernier_gagnant->created_at = $now;
