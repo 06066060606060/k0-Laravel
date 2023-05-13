@@ -226,14 +226,20 @@ class GlobalController extends Controller
                             break;
                     }
 
-                    $dernier_gagnant = new Derniers_Gagnants_Concours;
-                    $dernier_gagnant->name = $user->name;
-                    $dernier_gagnant->score = $scores_sorted->where('user_id', $user->id)->first()->score;
-                    $dernier_gagnant->gain = $gain->name;
-                    $dernier_gagnant->date_gain = $now;
-                    $dernier_gagnant->created_at = $now;
-                    $dernier_gagnant->updated_at = $now;
-                    $dernier_gagnant->save();
+                    $score = $scores_sorted->where('user_id', $user->id)->first();
+if ($score) {
+    $dernier_gagnant = new Derniers_Gagnants_Concours;
+    $dernier_gagnant->name = $user->name;
+    $dernier_gagnant->score = $score->score;
+    $dernier_gagnant->gain = $gain->name;
+    $dernier_gagnant->date_gain = $now;
+    $dernier_gagnant->created_at = $now;
+    $dernier_gagnant->updated_at = $now;
+    $dernier_gagnant->save();
+}
+else {
+    // traitement à faire si la valeur du score est nulle
+}
 
                     // Enregistrer les modifications de l'utilisateur
                     $user->save();
@@ -259,7 +265,7 @@ class GlobalController extends Controller
             'created_at' => Carbon::now(),
         ]);*/
         }
-        return view('winner', compact('derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
+        return view('winner', compact('score', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
         return view('winner');
     }
