@@ -132,6 +132,7 @@
                                                                      <span class="relative">Inscription</span>
                                                                  </a>
                                                              @endif
+                                                             @if (backpack_auth()->check())
                                                              @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
                                                              <div x-cloak x-show="modelOpen"
                                                                  class="fixed inset-0 z-50 overflow-y-auto"
@@ -297,6 +298,7 @@
                                                                      </div>
                                                                  </div>
                                                              </div>
+                                                            @endif 
                                                             @endif
                                                          </div>
 
