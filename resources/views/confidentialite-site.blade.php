@@ -11,71 +11,108 @@
                     <div class="flex flex-col w-full mb-4 text-center">
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Confidentialité</h1>
                     </div>
+
     <header class="z-10 flex px-4 pt-6 pb-2 md:px-0 md:mx-auto max-w-7xl border-x-1 justify-evenly">
-		<h1 class="mb-4 text-3xl font-bold text-gray-100 md:text-3xl title-font">Règlement de Gokdo.com</h1>
+		<h1 class="mb-4 text-3xl font-bold text-gray-100 md:text-3xl title-font">Politique de confidentialité</h1>
 	</header>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Accès à Gokdo.com</h2>
-		<p class="leading-relaxed text-gray-300">Gokdo.com est accessible via une application Google Play ou en se rendant sur le site https://gokdo.com. C'est un site de jeu gratuit sans obligation d'achat.</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Le jeu GoFRUITS</h2>
-		<p class="leading-relaxed text-gray-300">Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS. <br>10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille de jeu est régénérée une fois le gain le plus haut trouvé, certaines cases de la grille GoFRUITS sont perdantes.</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Le jeu Pool</h2>
-		<p class="leading-relaxed text-gray-300">Il faut 10 Rubis pour faire une partie sur le jeu Pool. Le jeu multijoueurs Pool est 100% gagnant, il n'y a pas de case perdante. Le but du jeu Pool est de trouver le gain le plus élevé, si le gain le plus élevé est découvert alors une nouvelle grille est générée.</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Les concours mensuels</h2>
-		<p class="leading-relaxed text-gray-300">Chaque mois, un concours est en place sur Gokdo pour une durée déterminée qui peut être modifiée à tout moment. Chaque concours promet une dotation aux 3000 premiers du classement et leur distribuera un gain que ce soit Carte cadeau Amazon, versement paypal, Coins, Rubis, Diamants, à partir du 3001ème joueur, ils ne gagnent rien.</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Achats sur Gokdo.com</h2>
-		<p class="leading-relaxed text-gray-300">Les membres qui le désirent peuvent faire un achat via paypal ou carte bleu sur la section pack du menu du site, qui permet l'achat de Rubis supplémentaires. Gokdo reste un site de jeu gratuit sans obligation d'achat.</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Triche et manipulation frauduleuse</h2>
-		<p class="leading-relaxed text-gray-300">Toute triche ou manipulation frauduleuse du site ou du jeu entraine une suppression du compte membre sans préavis ni remboursement.</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">La page de cadeaux</h2>
-		<p class="leading-relaxed text-gray-300">Une page de cadeau est disponible et propose des cadeaux contre un échange de Diamants ou de Coins. Les cadeaux sont divers et variés et classés en catégories et par prix. L'envoi des commandes se fait au maximum sous 30 jours. Le webmaster peut supprimer les commandes de joueurs qui auraient enfreint le règlement.</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Contact avec l'équipe de Gokdo.com</h2>
-		<p class="leading-relaxed text-gray-300">Les joueurs peuvent contacter une fois par jour l'équipe de Gokdo via l'espace de contact dont le lien est situé en bas de page.</p>
-    <p class="leading-relaxed text-gray-300">Des mails peuvent être envoyés par l'administrateur au membre, les membres peuvent contacter le webmaster pour demander l'arrêt d'envoi de mails.</p>
-    </section>
-    <section class="mb-2 relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Evénements de jeu :</h2>
-    <p class="leading-relaxed text-gray-300">Selon les périodes de l'année, des événements de jeu peuvent être organisés sur Gokdo. Ces événements peuvent avoir la même forme que le concours mensuel ou être différents. Les règles spécifiques de chaque événement seront indiquées sur la page dédiée de Gokdo.</p>
-    </section>
-    <section class="mb-2 relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Propriété intellectuelle :</h2>
-    <p class="leading-relaxed text-gray-300">Tous les éléments présents sur le site Gokdo, tels que les textes, les images, les graphismes, les logos, les icônes, les sons et les logiciels, sont la propriété exclusive de Gokdo ou de ses partenaires et sont protégés par les lois françaises et internationales sur le droit d'auteur et la propriété intellectuelle.</p>
 
-    <p class="leading-relaxed text-gray-300">Toute reproduction, représentation, modification, publication, transmission, dénaturation, totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Gokdo.</p>
 
-    <p class="leading-relaxed text-gray-300">Toute utilisation non autorisée de ces éléments engage la responsabilité de l'utilisateur et constitue une violation des droits d'auteur et de propriété intellectuelle.</p>
-    </section>
-    <section class="mb-2 relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Responsabilité :</h2>
-    <p class="leading-relaxed text-gray-300">Gokdo ne peut être tenu responsable en cas de dysfonctionnement du site, de perturbation de l'accès au site, d'une utilisation frauduleuse ou abusive du site, de perte ou d'altération de données, ou de tout autre dommage direct ou indirect résultant de l'utilisation du site ou des jeux proposés sur le site.
-Gokdo ne peut également être tenu responsable en cas de mauvaise utilisation des jeux proposés sur le site ou de tout comportement frauduleux ou inapproprié des membres.</p>
-    </section>
-    <section class="mb-2 relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Modification du règlement :</h2>
-    <p class="leading-relaxed text-gray-300">Gokdo se réserve le droit de modifier à tout moment et sans préavis le présent règlement. Les membres seront informés de toute modification par un message affiché sur le site ou par courrier électronique.</p>
-    </section>
-    <section class="mb-2 relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Litiges et droit applicable :</h2>
-    <p class="leading-relaxed text-gray-300">En cas de litige, une solution amiable sera recherchée en priorité. À défaut, les tribunaux français seront seuls compétents. Le présent règlement est soumis à la loi française.</p>
-    </section>
-    <section class="relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Contact :</h2>
-    <p class="leading-relaxed text-gray-300">Pour toute question concernant le présent règlement, les membres peuvent contacter Gokdo en utilisant le formulaire de contact disponible sur le site.</p>
+Les informations personnelles que nous collectons :
 
+Lorsque vous visitez le https://gokdo.com, nous recueillons automatiquement certaines informations sur votre appareil, notamment des informations sur votre navigateur web, votre adresse IP, votre fuseau horaire et certains des cookies installés sur votre appareil. En outre, lorsque vous naviguez sur le site, nous recueillons des informations sur les pages web ou les produits individuels que vous consultez, sur les sites web ou les termes de recherche qui vous ont renvoyé au site et sur la manière dont vous interagissez avec le site. Nous désignons ces informations collectées automatiquement par le terme "informations sur les appareils". En outre, nous pourrions collecter les données personnelles que vous nous fournissez (y compris, mais sans s'y limiter, le nom, le prénom, l'adresse, les informations de paiement, etc.) lors de l'inscription afin de pouvoir exécuter le contrat.
+
+Pourquoi traitons-nous vos données ?
+
+Notre priorité absolue est la sécurité des données des clients et, à ce titre, nous ne pouvons traiter que des données minimales sur les utilisateurs, uniquement dans la mesure où cela est absolument nécessaire pour maintenir le site web. Les informations collectées automatiquement sont utilisées uniquement pour identifier les cas potentiels d'abus et établir des informations statistiques concernant l'utilisation du site web. Ces informations statistiques ne sont pas autrement agrégées de manière à identifier un utilisateur particulier du système.
+
+Vous pouvez visiter le site web sans nous dire qui vous êtes ni révéler d'informations, par lesquelles quelqu'un pourrait vous identifier comme un individu spécifique et identifiable. Toutefois, si vous souhaitez utiliser certaines fonctionnalités du site web, ou si vous souhaitez recevoir notre lettre d'information ou fournir d'autres détails en remplissant un formulaire, vous pouvez nous fournir des données personnelles, telles que votre e-mail, votre prénom, votre nom, votre ville de résidence, votre organisation, votre numéro de téléphone. Vous pouvez choisir de ne pas nous fournir vos données personnelles, mais il se peut alors que vous ne puissiez pas profiter de certaines fonctionnalités du site web. Par exemple, vous ne pourrez pas recevoir notre bulletin d'information ou nous contacter directement à partir du site web. Les utilisateurs qui ne savent pas quelles informations sont obligatoires sont invités à nous contacter via gokdo.com@gmail.com.
+
+Vos droits :
+
+Si vous êtes un résident européen, vous disposez des droits suivants liés à vos données personnelles :
+
+• Le droit d'être informé.
+
+• Le droit d'accès.
+
+• Le droit de rectification.
+
+• Le droit à l'effacement.
+
+• Le droit de restreindre le traitement.
+
+• Le droit à la portabilité des données.
+
+• Le droit d'opposition.
+
+• Les droits relatifs à la prise de décision automatisée et au profilage.
+
+Si vous souhaitez exercer ce droit, veuillez nous contacter via les coordonnées ci-dessous.
+
+En outre, si vous êtes un résident européen, nous notons que nous traitons vos informations afin d'exécuter les contrats que nous pourrions avoir avec vous (par exemple, si vous passez une commande par le biais du site), ou autrement pour poursuivre nos intérêts commerciaux légitimes énumérés ci-dessus. En outre, veuillez noter que vos informations pourraient être transférées en dehors de l'Europe, y compris au Canada et aux États-Unis.
+
+Liens vers d'autres sites web :
+
+Notre site web peut contenir des liens vers d'autres sites web qui ne sont pas détenus ou contrôlés par nous. Sachez que nous ne sommes pas responsables de ces autres sites web ou des pratiques de confidentialité des tiers. Nous vous encourageons à être attentif lorsque vous quittez notre site web et à lire les déclarations de confidentialité de chaque site web susceptible de collecter des informations personnelles.
+
+Sécurité de l'information :
+
+Nous sécurisons les informations que vous fournissez sur des serveurs informatiques dans un environnement contrôlé et sécurisé, protégé contre tout accès, utilisation ou divulgation non autorisés. Nous conservons des garanties administratives, techniques et physiques raisonnables pour nous protéger contre tout accès, utilisation, modification et divulgation non autorisés des données personnelles sous son contrôle et sa garde. Toutefois, aucune transmission de données sur Internet ou sur un réseau sans fil ne peut être garantie.
+
+Divulgation légale :
+
+Nous divulguerons toute information que nous collectons, utilisons ou recevons si la loi l'exige ou l'autorise, par exemple pour nous conformer à une citation à comparaître ou à une procédure judiciaire similaire, et lorsque nous pensons de bonne foi que la divulgation est nécessaire pour protéger nos droits, votre sécurité ou celle d'autrui, enquêter sur une fraude ou répondre à une demande du gouvernement.
+
+Informations de contact :
+
+Si vous souhaitez nous contacter pour comprendre davantage la présente politique ou si vous souhaitez nous contacter concernant toute question relative aux droits individuels et à vos informations personnelles, vous pouvez envoyer un courriel à gokdo.com@gmail.com.
+
+	<section class="mb-2 relative text-gray-600 body-font">
+		<p class="leading-relaxed text-gray-300">Le site web https://gokdo.com est détenu par GoKDO, qui est un contrôleur de données de vos données personnelles.
+Nous avons adopté cette politique de confidentialité, qui détermine la manière dont nous traitons les informations collectées par https://gokdo.com, qui fournit également les raisons pour lesquelles nous devons collecter certaines données personnelles vous concernant. Par conséquent, vous devez lire cette politique de confidentialité avant d'utiliser le site web de https://gokdo.com.
+Nous prenons soin de vos données personnelles et nous nous engageons à en garantir la confidentialité et la sécurité.</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Les informations personnelles que nous collectons :</h2>
+		<p class="leading-relaxed text-gray-300">Lorsque vous visitez le https://gokdo.com, nous recueillons automatiquement certaines informations sur votre appareil, notamment des informations sur votre navigateur web, votre adresse IP, votre fuseau horaire et certains des cookies installés sur votre appareil. En outre, lorsque vous naviguez sur le site, nous recueillons des informations sur les pages web ou les produits individuels que vous consultez, sur les sites web ou les termes de recherche qui vous ont renvoyé au site et sur la manière dont vous interagissez avec le site. Nous désignons ces informations collectées automatiquement par le terme "informations sur les appareils". En outre, nous pourrions collecter les données personnelles que vous nous fournissez (y compris, mais sans s'y limiter, le nom, le prénom, l'adresse, les informations de paiement, etc.) lors de l'inscription afin de pouvoir exécuter le contrat.</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Pourquoi traitons-nous vos données ?</h2>
+		<p class="leading-relaxed text-gray-300">Notre priorité absolue est la sécurité des données des clients et, à ce titre, nous ne pouvons traiter que des données minimales sur les utilisateurs, uniquement dans la mesure où cela est absolument nécessaire pour maintenir le site web. Les informations collectées automatiquement sont utilisées uniquement pour identifier les cas potentiels d'abus et établir des informations statistiques concernant l'utilisation du site web. Ces informations statistiques ne sont pas autrement agrégées de manière à identifier un utilisateur particulier du système.<br><br>
+    Vous pouvez visiter le site web sans nous dire qui vous êtes ni révéler d'informations, par lesquelles quelqu'un pourrait vous identifier comme un individu spécifique et identifiable. Toutefois, si vous souhaitez utiliser certaines fonctionnalités du site web, ou si vous souhaitez recevoir notre lettre d'information ou fournir d'autres détails en remplissant un formulaire, vous pouvez nous fournir des données personnelles, telles que votre e-mail, votre prénom, votre nom, votre ville de résidence, votre organisation, votre numéro de téléphone. Vous pouvez choisir de ne pas nous fournir vos données personnelles, mais il se peut alors que vous ne puissiez pas profiter de certaines fonctionnalités du site web. Par exemple, vous ne pourrez pas recevoir notre bulletin d'information ou nous contacter directement à partir du site web. Les utilisateurs qui ne savent pas quelles informations sont obligatoires sont invités à nous contacter via gokdo.com@gmail.com.</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Vos droits :</h2>
+		<p class="leading-relaxed text-gray-300">Si vous êtes un résident européen, vous disposez des droits suivants liés à vos données personnelles :
+<br><br>
+• Le droit d'être informé.<br>
+• Le droit d'accès.<br>
+• Le droit de rectification.<br>
+• Le droit à l'effacement.<br>
+• Le droit de restreindre le traitement.<br>
+• Le droit à la portabilité des données.<br>
+• Le droit d'opposition.<br>
+• Les droits relatifs à la prise de décision automatisée et au profilage.<br><br>
+
+Si vous souhaitez exercer ce droit, veuillez nous contacter via les coordonnées ci-dessous.<br>
+En outre, si vous êtes un résident européen, nous notons que nous traitons vos informations afin d'exécuter les contrats que nous pourrions avoir avec vous (par exemple, si vous passez une commande par le biais du site), ou autrement pour poursuivre nos intérêts commerciaux légitimes énumérés ci-dessus. En outre, veuillez noter que vos informations pourraient être transférées en dehors de l'Europe, y compris au Canada et aux États-Unis.</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Liens vers d'autres sites web :</h2>
+		<p class="leading-relaxed text-gray-300">Notre site web peut contenir des liens vers d'autres sites web qui ne sont pas détenus ou contrôlés par nous. Sachez que nous ne sommes pas responsables de ces autres sites web ou des pratiques de confidentialité des tiers. Nous vous encourageons à être attentif lorsque vous quittez notre site web et à lire les déclarations de confidentialité de chaque site web susceptible de collecter des informations personnelles.</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Sécurité de l'information :</h2>
+		<p class="leading-relaxed text-gray-300">Nous sécurisons les informations que vous fournissez sur des serveurs informatiques dans un environnement contrôlé et sécurisé, protégé contre tout accès, utilisation ou divulgation non autorisés. Nous conservons des garanties administratives, techniques et physiques raisonnables pour nous protéger contre tout accès, utilisation, modification et divulgation non autorisés des données personnelles sous son contrôle et sa garde. Toutefois, aucune transmission de données sur Internet ou sur un réseau sans fil ne peut être garantie.</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Divulgation légale :</h2>
+		<p class="leading-relaxed text-gray-300">Nous divulguerons toute information que nous collectons, utilisons ou recevons si la loi l'exige ou l'autorise, par exemple pour nous conformer à une citation à comparaître ou à une procédure judiciaire similaire, et lorsque nous pensons de bonne foi que la divulgation est nécessaire pour protéger nos droits, votre sécurité ou celle d'autrui, enquêter sur une fraude ou répondre à une demande du gouvernement.</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Informations de contact :</h2>
+		<p class="leading-relaxed text-gray-300">Si vous souhaitez nous contacter pour comprendre davantage la présente politique ou si vous souhaitez nous contacter concernant toute question relative aux droits individuels et à vos informations personnelles, vous pouvez envoyer un courriel à gokdo.com@gmail.com.</p>
+    </section>
                         </div>
                     </div>
                 </div>
