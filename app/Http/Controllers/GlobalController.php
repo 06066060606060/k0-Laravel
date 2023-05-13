@@ -241,6 +241,11 @@ class GlobalController extends Controller
                         // traitement à faire si la valeur du score est nulle ou non définie
                     }
                     
+
+                    // Enregistrer les modifications de l'utilisateur
+                    $user->save();
+                }
+            }
             
             $concours->delete(); // Supprime le concours de la table concours en toute fin
                 
