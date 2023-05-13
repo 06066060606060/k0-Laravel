@@ -35,6 +35,7 @@ Route::get('contact', 'contact');
 Route::post('contactus', 'contactus');
 Route::get('test', 'test');
 Route::get('aide', 'aide');
+Route::get('reglement', 'reglement');
 });
 
 Route::middleware(['cors'])->group(function () {

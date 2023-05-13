@@ -318,6 +318,11 @@ $allgames = Games::orderBy('id', 'desc')
         return view('aide');
     }
 
+    public function reglement()
+    {
+        return view('reglement');
+    }
+
     public function test()
     {
        $test = encrypt(time());
