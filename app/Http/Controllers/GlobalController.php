@@ -183,12 +183,15 @@ class GlobalController extends Controller
                 
                 // Si le joueur est classé
                 if ($user_position !== false) {
-                   
                 $dernier_gagnant = new Derniers_Gagnants_Concours;
                 $dernier_gagnant->name = $user->name;
-                $dernier_gagnant->score = $user->scores->sum(function ($score) {
-                    return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
-                });
+                if (isset($user->scores)) {
+                    $dernier_gagnant->score = $user->scores->sum(function ($score) {
+                        return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
+                    });
+                } else {
+                    $dernier_gagnant->score = 0;
+                }
                 $dernier_gagnant->gain = $gain->name;
                 $dernier_gagnant->date_gain = $now;
                 $dernier_gagnant->created_at = $now;
