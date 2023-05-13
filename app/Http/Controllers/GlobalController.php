@@ -423,18 +423,24 @@ $allgames = Games::orderBy('id', 'desc')
                 ->limit('6')
                 ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
-             //create notification
-             $admin = backpack_user()->find(1);
-             $admin->notify(
-                 new DatabaseNotification(
-                     ($type = 'success'), // info / success / warning / error
-                     ($message = 'Nouvelle commande'),
-                     ($messageLong = 'Nouvelle commande de cadeau par ' . $usermail),
-                     // rand(1, 99999)), // optional
-                     ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
-                     ($hrefText = 'Voir') // optional
-                 )
-             );
+            $admin = backpack_user()->find(1);
+
+            if ($admin) {
+                // Créer une nouvelle notification pour l'utilisateur
+                $notification = new DatabaseNotification(
+                    'success', // type
+                    'Nouvelle commande', // message
+                    'Nouvelle commande de cadeau par ' . $usermail, // messageLong
+                    '/admin/commandes', // href
+                    'Voir' // hrefText
+                );
+            
+                // Envoyer la notification à l'utilisateur
+                $admin->notify($notification);
+            } else {
+                // L'utilisateur n'a pas été trouvé, gérer cette situation en conséquence
+                // ...
+            }            
             return view(
                 'profil',
                 compact('scores', 'orders', 'infos', 'paiements')
