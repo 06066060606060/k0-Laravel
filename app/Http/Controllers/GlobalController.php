@@ -440,7 +440,8 @@ $allgames = Games::orderBy('id', 'desc')
             } else {
                 // L'utilisateur n'a pas été trouvé, gérer cette situation en conséquence
                 // ...
-            }            
+            }
+            
             return view(
                 'profil',
                 compact('scores', 'orders', 'infos', 'paiements')
