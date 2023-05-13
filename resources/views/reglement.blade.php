@@ -47,9 +47,6 @@
 		<p>Les joueurs peuvent contacter une fois par jour l'équipe de Gokdo via l'espace de contact dont le lien est situé en bas de page.</p>
     <p>Des mails peuvent être envoyés par l'administrateur au membre, les membres peuvent contacter le webmaster pour demander l'arrêt d'envoi de mails.</p>
     </section>
-	<h2>Evénements de jeu</h2>
-	<p>Selon les périodes de l'année, des événements de jeu peuvent être organisés sur Gokdo. Ces événements peuvent avoir la même forme que le concours mensuel ou être différents. Les règles spécifiques de chaque événement seront indiquées sur
-    </section>
     <section>
     <h2>Evénements de jeu :</h2>
 Selon les périodes de l'année, des événements de jeu peuvent être organisés sur Gokdo. Ces événements peuvent avoir la même forme que le concours mensuel ou être différents. Les règles spécifiques de chaque événement seront indiquées sur la page dédiée de Gokdo.
