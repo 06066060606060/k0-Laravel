@@ -20,7 +20,7 @@
                  <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">A propos</h2>
                  <div class="mb-10 list-none">
                      <li>
-                         <a href="rules" class="text-gray-400 hover:text-gray-500">Règlement</a>
+                         <a href="reglement" class="text-gray-400 hover:text-gray-500">Règlement</a>
                      </li>
                      <li>
                          <a href="legal" class="text-gray-400 hover:text-gray-500">Mentions Legales</a>
