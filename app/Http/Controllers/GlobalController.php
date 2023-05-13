@@ -450,9 +450,9 @@ $allgames = Games::orderBy('id', 'desc')
                 'profil',
                 compact('scores', 'orders', 'infos', 'paiements')
             );
-        }
+        
     
-        //test
+        //test 2
         } else {
             return redirect('/');
         }
