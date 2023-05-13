@@ -16,11 +16,11 @@
 	</header>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Accès à Gokdo.com</h2>
-		<p class="leading-relaxed text-gray-300">Gokdo.com est accessible via une application Google Play ou en se rendant sur le site https://gokdo.com. C'est un site de jeu sans obligation d'achat.</p>
+		<p class="leading-relaxed text-gray-300">Gokdo.com est accessible via une application Google Play ou en se rendant sur le site https://gokdo.com. C'est un site de jeu gratuit sans obligation d'achat.</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Le jeu GoFRUITS</h2>
-		<p class="leading-relaxed text-gray-300">Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS. 10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille est régénérée une fois le gain le plus haut trouvé, certains cases de la grille GoFRUITS sont perdantes.</p>
+		<p class="leading-relaxed text-gray-300">Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS. <br>10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille de jeu est régénérée une fois le gain le plus haut trouvé, certaines cases de la grille GoFRUITS sont perdantes.</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Le jeu Pool</h2>
@@ -36,11 +36,11 @@
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Triche et manipulation frauduleuse</h2>
-		<p class="leading-relaxed text-gray-300">Toute triche ou manipulation frauduleuse du site ou du jeu entraine une suppression du compte membre.</p>
+		<p class="leading-relaxed text-gray-300">Toute triche ou manipulation frauduleuse du site ou du jeu entraine une suppression du compte membre sans préavis ni remboursement.</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">La page de cadeaux</h2>
-		<p class="leading-relaxed text-gray-300">Une page de cadeau est disponible en échange de Diamants ou de Coins. Les cadeaux sont divers et variés et classés en catégories et par prix. L'envoi des commandes se fait au maximum sous 30 jours. Le webmaster peut supprimer les commandes de joueurs qui auraient enfreint le règlement.</p>
+		<p class="leading-relaxed text-gray-300">Une page de cadeau est disponible et propose des cadeaux contre un échange de Diamants ou de Coins. Les cadeaux sont divers et variés et classés en catégories et par prix. L'envoi des commandes se fait au maximum sous 30 jours. Le webmaster peut supprimer les commandes de joueurs qui auraient enfreint le règlement.</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Contact avec l'équipe de Gokdo.com</h2>
