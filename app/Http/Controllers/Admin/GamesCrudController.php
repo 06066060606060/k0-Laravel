@@ -135,6 +135,7 @@ class GamesCrudController extends CrudController
             'label'       => "Type de Jeux",
             'type'        => 'select_from_array',
             'options'     => [
+                'Event' => 'Event',
                 'Booster' => 'Booster',
                 'Gratuit' => 'Gratuit',
             ],
