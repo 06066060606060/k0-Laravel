@@ -229,6 +229,5 @@
     </div>
   </div>
 </div>
-     <script>window.location.replace('/');</script>
      @endif
  @endsection
