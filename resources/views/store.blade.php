@@ -90,7 +90,8 @@
                                                      </div>
                                                      <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
                                                          <div x-data="{ modelOpen: false }" class="flex justify-center">
-                                                            @if (backpack_auth()->check() && backpack_auth()->user()->trophee1 < $cadeau->prix)
+                                                            @if (backpack_auth()->check()
+                                                            @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
                                                                      <button @click="modelOpen =!modelOpen"
                                                                          class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
                                                                          <span
@@ -116,6 +117,7 @@
                                                                              class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
                                                                          <span class="relative">Echanger</span>
                                                                      </button>
+                                                                 @endif
                                                                  @endif
                                                                  @if (!backpack_auth()->check())
                                                                  <a href="admin/register"
