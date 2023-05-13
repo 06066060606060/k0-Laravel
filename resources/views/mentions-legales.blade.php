@@ -11,29 +11,7 @@
                     <div class="flex flex-col w-full mb-4 text-center">
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Mentions Légales</h1>
                     </div>
-
-    
- 
-
-Dénomination ou raison sociale* : LES JARDINS DE LA CIGALINE
-Siège social* : Chemin de Babaou, 04800 Gréoux-les-Bains
-Numéro de téléphone* : 06 77 08 88 69
-Nom du responsable de la rédaction/gestion du site* : ANGELINI LOIC
-Structure juridique : SARL
-SIRET : 502 647 407 000 19
-TVA : FR 21502647407
-APE :  8130Z
- 
-
-HEBERGEMENT
-Le site lesjardinsdelacigaline est hébergé par HOSTINGER, dont le siège social est situé HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre, joignable par le moyen suivant :https://www.hostinger.fr/contact.
-
- 
-
-CRÉATION
- 
-
-Agence : hÖi Anh                
+                
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Informations Principales</h2>
 		<p class="leading-relaxed text-gray-300">Dénomination ou raison sociale* : GOKDO
