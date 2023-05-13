@@ -49,7 +49,7 @@
                 @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
                 @else
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
-                @click="isOpen = false"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
+                @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
                 @endif
                 @else
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="/#video"
