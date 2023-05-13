@@ -170,7 +170,7 @@
                                                                                  class="flex justify-between w-full border-b">
                                                                                  <h1
                                                                                      class="py-6 mx-auto text-lg font-bold">
-                                                                                     Confirmez votre commande:
+                                                                                     Commande impossible !
                                                                                  </h1>
                                                                              </div>
                                                                              <div class="bg-gray-700 rounded-b-md">
@@ -178,10 +178,7 @@
                                                                                      class="flex flex-col items-center pb-8 mx-20 mt-1">
                                                                                      <h1
                                                                                          class="flex py-2 text-sm font-medium text-white">
-                                                                                         {{ $cadeau->prix }} <img
-                                                                                             src="img/diamond5.png"
-                                                                                             class="flex w-7 h-5">
-                                                                                         seronts retirés de votre solde.
+                                                                                         Vous n'avez pas assez de Diamants ou de Coins !
                                                                                      </h1>
 
                                                                                      <div class="flex justify-center">
@@ -196,30 +193,10 @@
                                                                                              <span
                                                                                                  class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
                                                                                              <span
-                                                                                                 class="relative">Annuler</span>
+                                                                                                 class="relative">Fermer</span>
                                                                                          </div>
 
-                                                                                         <button type="submit"
-                                                                                             class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
-                                                                                             <span
-                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
-                                                                                             <span
-                                                                                                 class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                                             <span
-                                                                                                 class="relative">Confirmer</span>
-                                                                                         </button>
-
                                                                                      </div>
-                                                                                     <h1
-                                                                                         class="text-xs mt-4 font-medium text-gray-200">
-                                                                                         reVérifiez d'avoir enregistré une
-                                                                                         adresse de livraison avant de
-                                                                                         confirmer.
-                                                                                     </h1>
                                                                                  </div>
                                                                              </div>
                                                                          </form>
