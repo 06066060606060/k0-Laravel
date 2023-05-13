@@ -226,21 +226,14 @@ class GlobalController extends Controller
                             break;
                     }
 
-                    $score = $scores_sorted->where('user_id', $user->id)->first();
-
-                    if (isset($score) && !empty($score->score)) {
                         $dernier_gagnant = new Derniers_Gagnants_Concours;
                         $dernier_gagnant->name = $user->name;
-                        $dernier_gagnant->score = $score->score;
+                        $dernier_gagnant->score = $userScore;
                         $dernier_gagnant->gain = $gain->name;
                         $dernier_gagnant->date_gain = $now;
                         $dernier_gagnant->created_at = $now;
                         $dernier_gagnant->updated_at = $now;
-                        $dernier_gagnant->save();
-                    } else {
-                        // traitement à faire si la valeur du score est nulle ou non définie
-                    }
-                    
+                        $dernier_gagnant->save();                    
 
                     // Enregistrer les modifications de l'utilisateur
                     $user->save();
