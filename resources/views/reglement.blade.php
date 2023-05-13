@@ -68,7 +68,7 @@ Gokdo ne peut également être tenu responsable en cas de mauvaise utilisation d
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Modification du règlement :</h2>
     <p>Gokdo se réserve le droit de modifier à tout moment et sans préavis le présent règlement. Les membres seront informés de toute modification par un message affiché sur le site ou par courrier électronique.</p>
     </section>
-    <section class="relative text-gray-600 body-font">
+    <section class="mb-2 relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Litiges et droit applicable :</h2>
     <p>En cas de litige, une solution amiable sera recherchée en priorité. À défaut, les tribunaux français seront seuls compétents. Le présent règlement est soumis à la loi française.</p>
     </section>
