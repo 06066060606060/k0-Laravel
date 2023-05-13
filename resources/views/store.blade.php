@@ -90,8 +90,7 @@
                                                      </div>
                                                      <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
                                                          <div x-data="{ modelOpen: false }" class="flex justify-center">
-                                                             @if (backpack_auth()->check())
-                                                                 @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
+                                                            @if (backpack_auth()->check() && backpack_auth()->user()->trophee1 < $cadeau->prix)
                                                                      <button @click="modelOpen =!modelOpen"
                                                                          class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
                                                                          <span
@@ -118,7 +117,7 @@
                                                                          <span class="relative">Echanger</span>
                                                                      </button>
                                                                  @endif
-                                                             @else
+                                                                 @if (!backpack_auth()->check())
                                                                  <a href="admin/register"
                                                                      class="relative flex justify-center w-24 px-5 pt-1 pb-2 mx-auto my-2 font-medium text-white group prevent">
                                                                      <span
@@ -132,8 +131,8 @@
                                                                      <span class="relative">Inscription</span>
                                                                  </a>
                                                              @endif
-                                                             @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
-                                                             <div x-cloak x-show="modelOpen"
+                                                             @if (backpack_auth()->check() && backpack_auth()->user()->trophee1 < $cadeau->prix)
+                                                            <div x-cloak x-show="modelOpen"
                                                                  class="fixed inset-0 z-50 overflow-y-auto"
                                                                  aria-labelledby="modal-title" role="dialog"
                                                                  aria-modal="true">
