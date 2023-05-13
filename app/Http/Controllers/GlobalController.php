@@ -424,7 +424,7 @@ $allgames = Games::orderBy('id', 'desc')
                 ->get();
             $infos = Infosperso::where('user_id', $userid)->get();
              //create notification
-             $admin = User::find(1);
+             $admin = backpack_user()->find(1);
              $admin->notify(
                  new DatabaseNotification(
                      ($type = 'success'), // info / success / warning / error
