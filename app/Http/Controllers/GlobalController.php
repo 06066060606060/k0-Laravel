@@ -228,13 +228,7 @@ class GlobalController extends Controller
 
                     $dernier_gagnant = new Derniers_Gagnants_Concours;
                     $dernier_gagnant->name = $user->name;
-                    if (isset($user->scores)) {
-                        $dernier_gagnant->score = $user->scores->sum(function ($score) {
-                            return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
-                        });
-                    } else {
-                        $dernier_gagnant->score = 0;
-                    }
+                    $dernier_gagnant->score = $scores_sorted;
                     $dernier_gagnant->gain = $gain->name;
                     $dernier_gagnant->date_gain = $now;
                     $dernier_gagnant->created_at = $now;
