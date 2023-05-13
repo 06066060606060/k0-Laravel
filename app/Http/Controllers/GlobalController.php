@@ -452,7 +452,7 @@ $allgames = Games::orderBy('id', 'desc')
             );
         }
     
-    
+        //test
         } else {
             return redirect('/');
         }
