@@ -369,6 +369,7 @@ $allgames = Games::orderBy('id', 'desc')
                 ->latest()
                 ->limit('6')
                 ->get();
+            $scory = null;
             if ($concours != null && $concours->game_id != null) {    
                 $scory = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
                 ->where('user_id', $idjoueur)
