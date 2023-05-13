@@ -226,14 +226,20 @@ class GlobalController extends Controller
                             break;
                     }
 
-                        $dernier_gagnant = new Derniers_Gagnants_Concours;
-                        $dernier_gagnant->name = $user->name;
-                        //$dernier_gagnant->score = $userScore;
-                        $dernier_gagnant->gain = $gain->name;
-                        $dernier_gagnant->date_gain = $now;
-                        $dernier_gagnant->created_at = $now;
-                        $dernier_gagnant->updated_at = $now;
-                        $dernier_gagnant->save();                    
+                    $dernier_gagnant = new Derniers_Gagnants_Concours;
+                    $dernier_gagnant->name = $user->name;
+                    if (isset($user->scores)) {
+                    $dernier_gagnant->score = $user->scores->sum(function ($score) {
+                            return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
+                        });
+                    } else {
+                        $dernier_gagnant->score = 0;
+                    }
+                    $dernier_gagnant->gain = $gain->name;
+                    $dernier_gagnant->date_gain = $now;
+                    $dernier_gagnant->created_at = $now;
+                    $dernier_gagnant->updated_at = $now;
+                    $dernier_gagnant->save();
 
                     // Enregistrer les modifications de l'utilisateur
                     $user->save();
