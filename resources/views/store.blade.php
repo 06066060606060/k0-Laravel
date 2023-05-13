@@ -92,8 +92,7 @@
                                                          <div x-data="{ modelOpen: false }" class="flex justify-center">
                                                              @if (backpack_auth()->check())
                                                                  @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
-                                                                     <button
-                                                                         onclick="alert('Vous devez n\'avez pas assez de diamants !')"
+                                                                     <button @click="modelOpen =!modelOpen"
                                                                          class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
                                                                          <span
                                                                              class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
@@ -133,7 +132,102 @@
                                                                      <span class="relative">Inscription</span>
                                                                  </a>
                                                              @endif
+                                                             @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
                                                              <div x-cloak x-show="modelOpen"
+                                                                 class="fixed inset-0 z-50 overflow-y-auto"
+                                                                 aria-labelledby="modal-title" role="dialog"
+                                                                 aria-modal="true">
+                                                                 <div
+                                                                     class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
+                                                                     <div x-cloak @click="modelOpen = false"
+                                                                         x-show="modelOpen"
+                                                                         x-transition:enter="transition ease-out duration-300 transform"
+                                                                         x-transition:enter-start="opacity-0"
+                                                                         x-transition:enter-end="opacity-100"
+                                                                         x-transition:leave="transition ease-in duration-200 transform"
+                                                                         x-transition:leave-start="opacity-100"
+                                                                         x-transition:leave-end="opacity-0"
+                                                                         class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60"
+                                                                         aria-hidden="true"></div>
+
+                                                                     <div x-cloak x-show="modelOpen"
+                                                                         x-transition:enter="transition ease-out duration-300 transform"
+                                                                         x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                                                         x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                                                                         x-transition:leave="transition ease-in duration-200 transform"
+                                                                         x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                                                                         x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                                                         class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
+
+                                                                         <form action="order" method="POST"
+                                                                             class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl ">
+                                                                             @csrf
+                                                                             <input type="hidden" name="price"
+                                                                                 value="{{ $cadeau->prix }}">
+                                                                             <input type="hidden" name="id"
+                                                                                 value="{{ $cadeau->id }}">
+                                                                             <div
+                                                                                 class="flex justify-between w-full border-b">
+                                                                                 <h1
+                                                                                     class="py-6 mx-auto text-lg font-bold">
+                                                                                     Confirmez votre commande:
+                                                                                 </h1>
+                                                                             </div>
+                                                                             <div class="bg-gray-700 rounded-b-md">
+                                                                                 <div
+                                                                                     class="flex flex-col items-center pb-8 mx-20 mt-1">
+                                                                                     <h1
+                                                                                         class="flex py-2 text-sm font-medium text-white">
+                                                                                         {{ $cadeau->prix }} <img
+                                                                                             src="img/diamond5.png"
+                                                                                             class="flex w-7 h-5">
+                                                                                         seronts retirés de votre solde.
+                                                                                     </h1>
+
+                                                                                     <div class="flex justify-center">
+                                                                                         <div @click="modelOpen = false"
+                                                                                             class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 mr-4 font-medium text-white group">
+                                                                                             <span
+                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-red-600 group-hover:bg-red-800 group-hover:skew-x-12"></span>
+                                                                                             <span
+                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-red-800 group-hover:bg-red-600 group-active:bg-red-700 group-hover:-skew-x-12"></span>
+                                                                                             <span
+                                                                                                 class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
+                                                                                             <span
+                                                                                                 class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
+                                                                                             <span
+                                                                                                 class="relative">Annuler</span>
+                                                                                         </div>
+
+                                                                                         <button type="submit"
+                                                                                             class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
+                                                                                             <span
+                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-green-600 group-hover:bg-green-800 group-hover:skew-x-12"></span>
+                                                                                             <span
+                                                                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-green-800 group-hover:bg-green-600 group-active:bg-green-700 group-hover:-skew-x-12"></span>
+                                                                                             <span
+                                                                                                 class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
+                                                                                             <span
+                                                                                                 class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
+                                                                                             <span
+                                                                                                 class="relative">Confirmer</span>
+                                                                                         </button>
+
+                                                                                     </div>
+                                                                                     <h1
+                                                                                         class="text-xs mt-4 font-medium text-gray-200">
+                                                                                         reVérifiez d'avoir enregistré une
+                                                                                         adresse de livraison avant de
+                                                                                         confirmer.
+                                                                                     </h1>
+                                                                                 </div>
+                                                                             </div>
+                                                                         </form>
+                                                                     </div>
+                                                                 </div>
+                                                             </div>
+                                                             @else
+                                                                                                                          <div x-cloak x-show="modelOpen"
                                                                  class="fixed inset-0 z-50 overflow-y-auto"
                                                                  aria-labelledby="modal-title" role="dialog"
                                                                  aria-modal="true">
@@ -226,6 +320,7 @@
                                                                      </div>
                                                                  </div>
                                                              </div>
+                                                            @endif
                                                          </div>
 
                                                      </div>
