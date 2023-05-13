@@ -451,7 +451,7 @@ $allgames = Games::orderBy('id', 'desc')
                 compact('scores', 'orders', 'infos', 'paiements')
             );
         }
-    }
+    
     
         } else {
             return redirect('/');
