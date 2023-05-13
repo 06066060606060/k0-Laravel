@@ -228,7 +228,7 @@ class GlobalController extends Controller
 
                         $dernier_gagnant = new Derniers_Gagnants_Concours;
                         $dernier_gagnant->name = $user->name;
-                        $dernier_gagnant->score = $userScore;
+                        //$dernier_gagnant->score = $userScore;
                         $dernier_gagnant->gain = $gain->name;
                         $dernier_gagnant->date_gain = $now;
                         $dernier_gagnant->created_at = $now;
@@ -259,7 +259,7 @@ class GlobalController extends Controller
             'created_at' => Carbon::now(),
         ]);*/
         }
-        return view('winner', compact('score', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
+        return view('winner', compact('derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
         return view('winner');
     }
