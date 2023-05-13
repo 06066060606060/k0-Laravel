@@ -182,20 +182,6 @@ class GlobalController extends Controller
                 });
                 
                 if ($user_position !== false) {
-                    $dernier_gagnant = new Derniers_Gagnants_Concours;
-                    $dernier_gagnant->name = $user->name;
-                    if (isset($user->scores)) {
-                        $dernier_gagnant->score = $user->scores->sum(function ($score) {
-                            return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
-                        });
-                    } else {
-                        $dernier_gagnant->score = 0;
-                    }
-                    $dernier_gagnant->gain = $concours->find($scores_sorted[$user_position]->concours_id)->gain;
-                    $dernier_gagnant->date_gain = $now;
-                    $dernier_gagnant->created_at = $now;
-                    $dernier_gagnant->updated_at = $now;
-                    $dernier_gagnant->save();
                    
                     // Déterminer l'identifiant du gain en fonction de la position
                     if($user_position == 0) {
@@ -226,7 +212,7 @@ class GlobalController extends Controller
         
                     // Obtenir le gain correspondant à l'identifiant
                     $gain = $gains->where('id', $gain_id)->first();
-                    
+
                     // Ajouter le gain à l'utilisateur en fonction de son type
                     switch ($gain->type) {
                         case 'Diamants':
@@ -239,7 +225,22 @@ class GlobalController extends Controller
                             $user->trophee3 += $gain->name;
                             break;
                     }
-                    
+
+                    $dernier_gagnant = new Derniers_Gagnants_Concours;
+                    $dernier_gagnant->name = $user->name;
+                    if (isset($user->scores)) {
+                        $dernier_gagnant->score = $user->scores->sum(function ($score) {
+                            return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
+                        });
+                    } else {
+                        $dernier_gagnant->score = 0;
+                    }
+                    $dernier_gagnant->gain = $gain->name;
+                    $dernier_gagnant->date_gain = $now;
+                    $dernier_gagnant->created_at = $now;
+                    $dernier_gagnant->updated_at = $now;
+                    $dernier_gagnant->save();
+
                     // Enregistrer les modifications de l'utilisateur
                     $user->save();
                 }
