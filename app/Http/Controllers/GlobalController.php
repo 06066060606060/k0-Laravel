@@ -176,7 +176,7 @@ class GlobalController extends Controller
             $users = User::whereIn('id', $scores_sorted->pluck('user_id'))->get();
             
             // Boucle pour la distribution
-            foreach($users as $user) {
+            foreach($users->with('scores') as $user) {
                 $user_position = $scores_sorted->search(function($score) use($user) {
                     return $score->user_id === $user->id;
                 });
