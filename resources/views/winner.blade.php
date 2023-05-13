@@ -228,7 +228,7 @@
         <p>Pas de concours pour le moment, vous serez prévenu lorsqu'un concours sera en place.</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" data-bs-target="/" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
       </div>
     </div>
   </div>
