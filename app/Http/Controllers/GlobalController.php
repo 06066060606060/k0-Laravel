@@ -415,49 +415,6 @@ $allgames = Games::orderBy('id', 'desc')
                 return back();
             }
             $orders = Commandes::where('user_id', $userid)
-<<<<<<< HEAD
-
-                ->latest()
-
-                ->limit('6')
-
-                ->get();
-
-            $paiements = Paiements::where('user_id', $userid)
-
-                ->latest()
-
-                ->limit('6')
-
-                ->get();
-
-            $infos = Infosperso::where('user_id', $userid)->get();
-
-             //create notification
-
-             $admin = backpack_user()->find(1);
-
-             $admin->notify(
-
-                 new DatabaseNotification(
-
-                     ($type = 'success'), // info / success / warning / error
-
-                     ($message = 'Nouvelle commande'),
-
-                     ($messageLong = 'Nouvelle commande de cadeau par ' . $usermail),
-
-                     // rand(1, 99999)), // optional
-
-                     ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
-
-                     ($hrefText = 'Voir') // optional
-
-                 )
-
-             );
-
-=======
     
                 ->latest()
     
@@ -489,13 +446,9 @@ $allgames = Games::orderBy('id', 'desc')
                     )
                 );
             }
->>>>>>> bc29d1dd8472b0173523823cb480c8eb0e4a7b4e
             return view(
-
                 'profil',
-
                 compact('scores', 'orders', 'infos', 'paiements')
-
             );
         }
     }
