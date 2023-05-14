@@ -31,8 +31,10 @@
 
 .accordion-title {
   cursor: pointer;
-  background-color: #eee;
+  background-color: transparent;
+  border:1px solid white;
   padding: 10px;
+  color:white;
   border: none;
   outline: none;
   transition: background-color 0.2s ease;
