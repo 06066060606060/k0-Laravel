@@ -205,32 +205,99 @@
          </container>
      </div>
      @else
-<!-- Inclure le CSS de Bootstrap depuis le CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+<center>Pas de concours actuellement.</center><br>
+<!-- WINNER -->
+<winner class="mx-auto max-w-7xl" id="win">
+    <section>
+        <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+            <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
+                DERNIERS GAGNANTS
+            </h2>
 
-<!-- Inclure le JavaScript de Bootstrap depuis le CDN (nécessite jQuery) -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
-<script type="text/javascript">
-        $(document).ready(function(){
-            $('#exampleModal').modal('show');
-        });
-    </script>     
-<center><img src="{{ asset('img/trophy.png') }}"/></center>
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Concours</h5>
-      </div>
-      <div class="modal-body">
-        <p>Pas de concours pour le moment, vous serez prévenu lorsqu'un concours sera en place.</p>
-      </div>
-      <div class="modal-footer">
-        <a href="/" class="btn btn-secondary">Fermer</a>
-      </div>
-    </div>
-  </div>
-</div>
+            <div class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
+                <div class="swiper-wrapper">
+
+
+
+                    @forelse ($lesderniers_gagnants_concours as $gagnant)
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                    <div class="flex">
+                                    @//if($score->data > 0)
+                                    @if($isMobile == true)
+                                        <img alt="" class="inline-block object-center w-auto h-9"
+                                            src="{{ asset('img/diamond5.png') }}">
+                                        @else
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="{{ asset('img/diamond5.png') }}">
+                                        @endif
+                                    @//elseif($score->data2 > 0)
+                                    @//if($isMobile == true)
+                                        <!--<img alt="" class="inline-block object-center w-auto h-9"
+                                            src="{{ asset('img/gem10.png') }}">-->
+                                        @//else
+                                        <!--<img alt="" class="inline-block object-center w-auto h-12"
+                                            src="{{ asset('img/gem10.png') }}">-->
+                                        @//endif
+                                    @//elseif($score->data3 > 0)
+                                    @//if($isMobile == true)
+                                        <!--<img alt="" class="inline-block object-center w-auto h-9"
+                                            src="{{ asset('img/coin10.png') }}">-->
+                                        @//else
+                                        <!--<img alt="" class="inline-block object-center w-auto h-12"
+                                            src="{{ asset('img/coin10.png') }}">-->
+                                        @//endif
+                                    @//endif
+                                        <div class="flex flex-col">
+                                        @if($isMobile == true)
+                                            <h2 class="pb-0 pl-4 font-semibold text-xs">                                        
+                                        @else
+                                            <h2 class="pb-0 pl-4 font-semibold text-s">
+                                        @endif
+                                            {{ $gagnant->name }}
+                                            </h2>
+                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $gagnant->gain }}</span>
+                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">{{ $gagnant->date_gain->format('d/m/Y') }}</span>
+                                    @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </blockquote>
+                         
+                        </div>
+                    @empty
+                        <div class="swiper-slide">
+                            <blockquote>
+                                <div
+                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+
+                                    <div class="flex">
+                                        <img alt="" class="inline-block object-center w-12 h-12"
+                                            src="./img/gem10.png">
+                                        <div class="flex">
+                                            <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                                Dummy<br>
+                                                <span href="#"
+                                                    class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10
+                                                    ✧</span>
+                                            </h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </blockquote>
+                        </div>
+                    @endforelse
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</winner>
+
      @endif
  @endsection
