@@ -225,6 +225,7 @@
                                 <div
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
+                                    @if($gagnant->type == "Diamants")
                                     @if($isMobile == true)
                                         <img alt="" class="inline-block object-center w-auto h-9"
                                             src="{{ asset('img/diamond5.png') }}">
@@ -232,6 +233,23 @@
                                         <img alt="" class="inline-block object-center w-auto h-12"
                                             src="{{ asset('img/diamond5.png') }}">
                                         @endif
+                                    @elseif($gagnant->type == "Rubis")
+                                    @if($isMobile == true)
+                                        <img alt="" class="inline-block object-center w-auto h-9"
+                                            src="{{ asset('img/gem10.png') }}">
+                                        @else
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="{{ asset('img/gem10.png') }}">
+                                        @endif
+                                    @elseif($gagnant->type == "Coins")
+                                    @if($isMobile == true)
+                                        <img alt="" class="inline-block object-center w-auto h-9"
+                                            src="{{ asset('img/coin10.png') }}">
+                                        @else
+                                        <img alt="" class="inline-block object-center w-auto h-12"
+                                            src="{{ asset('img/coin10.png') }}">
+                                        @endif
+                                    @endif
                                     
                                         <div class="flex flex-col">
                                         @if($isMobile == true)
