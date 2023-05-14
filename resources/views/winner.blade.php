@@ -212,7 +212,7 @@
         <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
                 GAGNANTS DERNIERS CONCOURS
-            </h2>
+            </h2> 
 
             <div class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
                 <div class="swiper-wrapper">
