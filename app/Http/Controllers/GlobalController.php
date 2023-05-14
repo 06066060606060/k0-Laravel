@@ -268,7 +268,8 @@ class GlobalController extends Controller
         }
         return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
-        return view('winner');
+        return view('winner', compact('lesderniers_gagnants_concours'));
+
     }
 }
 
