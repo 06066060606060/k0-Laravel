@@ -118,7 +118,8 @@ class GlobalController extends Controller
     {
     $gains = Gains::all(); // récup tous les gains du concours
     $concours = Concours::All()->last(); //Selectionne le concours
-    $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le concours
+    $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
+    $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
     $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
         //Score effectués ordre par id desc
         if(isset($concours->id)){
@@ -265,7 +266,7 @@ class GlobalController extends Controller
             'created_at' => Carbon::now(),
         ]);*/
         }
-        return view('winner', compact('derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
+        return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
         return view('winner');
     }
