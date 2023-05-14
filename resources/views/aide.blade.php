@@ -33,15 +33,11 @@
   cursor: pointer;
   background-color: transparent;
   border:1px solid white;
+  margin-bottom:10px;
   padding: 10px;
   color:white;
-  border: none;
   outline: none;
   transition: background-color 0.2s ease;
-}
-
-.accordion-title:hover {
-  background-color: #ccc;
 }
 </style>
 <script>
