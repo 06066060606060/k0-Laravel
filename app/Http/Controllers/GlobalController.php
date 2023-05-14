@@ -237,6 +237,7 @@ class GlobalController extends Controller
                         $dernier_gagnant->score = 0;
                     }
                     $dernier_gagnant->gain = $gain->name;
+                    $dernier_gagnant->type = $gain->type;
                     $dernier_gagnant->date_gain = $now;
                     $dernier_gagnant->created_at = $now;
                     $dernier_gagnant->updated_at = $now;
