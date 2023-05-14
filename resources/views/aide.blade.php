@@ -12,6 +12,45 @@
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Espace Aide</h1>
                     </div>
                     <div class="mx-auto lg:w-1/2 md:w-2/3">
+                    <div class="accordion-section">
+                    <h2 class="accordion-title">Titre de la section 1</h2>
+                    <div class="accordion-content">
+                    Contenu de la section 1
+                    </div>
+                    </div>
+                    <div class="accordion-section">
+                    <h2 class="accordion-title">Titre de la section 2</h2>
+                    <div class="accordion-content">
+                    Contenu de la section 2
+                    </div>
+                    </div>
+                    <style>
+                    .accordion-section:not(:first-of-type) .accordion-content {
+  display: none;
+}
+
+.accordion-title {
+  cursor: pointer;
+  background-color: #eee;
+  padding: 10px;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-title:hover {
+  background-color: #ccc;
+}
+</style>
+<script>
+$(document).ready(function() {
+  $('.accordion-title').click(function() {
+    $(this).parent().siblings().find('.accordion-content').slideUp();
+    $(this).siblings('.accordion-content').slideToggle();
+  });
+});
+</script>
+
                         <div class="tabs">
                             <ul class="tab-titles text-white">
                                 <li class="active">
