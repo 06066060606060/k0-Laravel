@@ -225,7 +225,6 @@
                                 <div
                                     class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
-                                    @//if($score->data > 0)
                                     @if($isMobile == true)
                                         <img alt="" class="inline-block object-center w-auto h-9"
                                             src="{{ asset('img/diamond5.png') }}">
@@ -233,23 +232,7 @@
                                         <img alt="" class="inline-block object-center w-auto h-12"
                                             src="{{ asset('img/diamond5.png') }}">
                                         @endif
-                                    @//elseif($score->data2 > 0)
-                                    @//if($isMobile == true)
-                                        <!--<img alt="" class="inline-block object-center w-auto h-9"
-                                            src="{{ asset('img/gem10.png') }}">-->
-                                        @//else
-                                        <!--<img alt="" class="inline-block object-center w-auto h-12"
-                                            src="{{ asset('img/gem10.png') }}">-->
-                                        @//endif
-                                    @//elseif($score->data3 > 0)
-                                    @//if($isMobile == true)
-                                        <!--<img alt="" class="inline-block object-center w-auto h-9"
-                                            src="{{ asset('img/coin10.png') }}">-->
-                                        @//else
-                                        <!--<img alt="" class="inline-block object-center w-auto h-12"
-                                            src="{{ asset('img/coin10.png') }}">-->
-                                        @//endif
-                                    @//endif
+                                    
                                         <div class="flex flex-col">
                                         @if($isMobile == true)
                                             <h2 class="pb-0 pl-4 font-semibold text-xs">                                        
