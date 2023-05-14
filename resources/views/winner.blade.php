@@ -255,12 +255,12 @@
                                         @if($isMobile == true)
                                             <h2 class="pb-0 pl-4 font-semibold text-xs">                                        
                                         @else
-                                            <h2 class="pb-0 pl-4 font-semibold text-xs">
+                                            <h2 class="pb-0 pl-4 font-semibold text-s">
                                         @endif
                                             {{ $gagnant->name }}
                                             </h2>
                                               <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $gagnant->gain }}</span>
-                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">{{ $gagnant->created_at->format('d/m/Y') }}</span>
+                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">{{ $gagnant->created_at->format('d/m/Y') }}</span>
                                     
                                         </div>
                                     </div>
