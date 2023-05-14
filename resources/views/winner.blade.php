@@ -255,7 +255,7 @@
                                         @if($isMobile == true)
                                             <h2 class="pb-0 pl-4 font-semibold text-xs">                                        
                                         @else
-                                            <h2 class="pb-0 pl-4 font-semibold text-s">
+                                            <h2 class="pb-0 pl-4 font-semibold text-xs">
                                         @endif
                                             {{ $gagnant->name }}
                                             </h2>
