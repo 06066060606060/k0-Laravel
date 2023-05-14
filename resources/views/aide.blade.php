@@ -11,7 +11,7 @@
                     <div class="flex flex-col w-full mb-4 text-center">
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Espace Aide</h1>
                     </div>
-                    <div class="mx-auto lg:w-1/2 md:w-2/3">
+                    <div class="mx-auto lg:w-1/1 md:w-1/1">
                     <div class="accordion-section">
                     <h2 class="accordion-title">Titre de la section 1</h2>
                     <div class="accordion-content">
