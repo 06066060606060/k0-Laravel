@@ -12,19 +12,28 @@
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Espace Aide</h1>
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
-                    <div class="accordion-section bg-gray-800 bg-opacity-40">
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title">Comment jouer au jeu GoFRUITS ?</h2>
-                    <div class="accordion-content mb-6">
+                    <div class="accordion-content mb-4 mt-4">
                         <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                         </center>
                     </div>
                     </div>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40">
-                    <h2 class="accordion-title">Comment jouer au jeu POOL ?</h2>
-                    <div class="accordion-content">
-                    Contenu de la section 2
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
+                    <h2 class="accordion-title">Comment acheter des Rubis ?</h2>
+                    <div class="accordion-content mb-4 mt-4">
+                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </center>
                     </div>
                     </div>
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
+                    <h2 class="accordion-title">Comment choisir un cadeau ?</h2>
+                    <div class="accordion-content mb-4 mt-4">
+                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </center>
+                    </div>
+                    </div>
+                    
                     <style>
                     .accordion-section:not(:first-of-type) .accordion-content {
   display: none;
@@ -48,42 +57,6 @@ $(document).ready(function() {
 });
 </script>
 
-                        <div class="tabs">
-                            <ul class="tab-titles text-white">
-                                <li class="active">
-                                    <h2><a href="#tab1">> Comment jouer au jeu GoFRUITS ?</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="#tab2">> Comment jouer au jeu Pool ?</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="#tab3">> Comment acheter des Rubis ?</a></h2>
-                                </li>
-                                <li>
-                                    <h2><a href="#tab4">> Comment choisir un cadeau ?</a></h2>
-                                </li>
-                            </ul>
-                            <div class="tab-content mt-4">
-                                <div class="tab-pane active" id="tab1">
-                                    <p>
-                                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                        </center>
-                                    </p>
-                                </div>
-                                <div class="tab-pane" id="tab2">
-                                    <p><center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                        </center></p>
-                                </div>
-                                <div class="tab-pane" id="tab3">
-                                    <p><center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                        </center></p>
-                                </div>
-                                <div class="tab-pane" id="tab4">
-                                    <p><center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                                        </center></p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>
