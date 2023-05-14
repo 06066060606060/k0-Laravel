@@ -205,7 +205,7 @@
          </container>
      </div>
      @else
-<center>Pas de concours actuellement.</center><br>
+<div class="text-gray-200 mt-12 mb-10 text-center text-3xl">Pas de concours actuellement.</div><br>
 <!-- WINNER -->
 <winner class="mx-auto max-w-7xl" id="win">
     <section>
