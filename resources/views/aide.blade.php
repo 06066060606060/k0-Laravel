@@ -4,7 +4,7 @@
 
 <div data-barba="container">
     @php use \App\Http\Controllers\GlobalController; @endphp
-    <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+    <div class="mb-4 px-2 py-4 mx-8 rounded-lg lg:mx-8 xl:mx-auto max-w-7xl sm:px-16 md:px-24 lg:py-18">
         <div class="flex flex-col max-w-5xl pb-8 mx-auto mb-8 overflow-hidden rounded">
             <section class="relative text-gray-600 body-font">
                 <div class="container px-5 py-8 mx-auto">
@@ -12,13 +12,13 @@
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Espace Aide</h1>
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
-                    <div class="accordion-section">
+                    <div class="accordion-section bg-gray-800 bg-opacity-40">
                     <h2 class="accordion-title">Titre de la section 1</h2>
                     <div class="accordion-content">
                     Contenu de la section 1
                     </div>
                     </div>
-                    <div class="accordion-section">
+                    <div class="accordion-section bg-gray-800 bg-opacity-40">
                     <h2 class="accordion-title">Titre de la section 2</h2>
                     <div class="accordion-content">
                     Contenu de la section 2
