@@ -13,13 +13,14 @@
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
                     <div class="accordion-section bg-gray-800 bg-opacity-40">
-                    <h2 class="accordion-title">Titre de la section 1</h2>
-                    <div class="accordion-content">
-                    Contenu de la section 1
+                    <h2 class="accordion-title">Comment jouer au jeu GoFRUITS ?</h2>
+                    <div class="accordion-content mb-6">
+                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </center>
                     </div>
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40">
-                    <h2 class="accordion-title">Titre de la section 2</h2>
+                    <h2 class="accordion-title">Comment jouer au jeu POOL ?</h2>
                     <div class="accordion-content">
                     Contenu de la section 2
                     </div>
@@ -32,8 +33,6 @@
 .accordion-title {
   cursor: pointer;
   background-color: transparent;
-  border:1px solid white;
-  margin-bottom:10px;
   padding: 10px;
   color:white;
   outline: none;
