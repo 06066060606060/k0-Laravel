@@ -52,11 +52,13 @@ $nameLength = strlen($name);
 // Vérifier si le nombre de caractères est supérieur ou égal à 4
 if ($nameLength >= 4) {
 $nameShort = substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
-} else {
-$nameShort = substr($name, 0, $nameLength); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
-}
 $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
 $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
+} else {
+$nameShort = substr($name, 0, $nameLength); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
+$randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+$nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
+}
 
 # 1. On récupère l'utilisateur à partir de l'adresse email
 $user = User::where("email", $email)->first();
