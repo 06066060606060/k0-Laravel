@@ -68,9 +68,15 @@ $(document).ready(function() {
         $('.accordion-content').hide(); // Masquer tous les contenus des sections
 
         $('.accordion-title').click(function() {
-            $(this).parent().siblings().find('.accordion-content').slideUp();
-            $(this).siblings('.accordion-content').slideToggle();
+            var content = $(this).siblings('.accordion-content');
+            if (content.is(':visible')) {
+                content.slideUp();
+            } else {
+                $('.accordion-content').slideUp();
+                content.slideDown();
+            }
         });
     });
 </script>
+
 @endsection
