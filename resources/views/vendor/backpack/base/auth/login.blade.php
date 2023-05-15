@@ -1,6 +1,6 @@
 @extends(backpack_view('layouts.plain'))
 
-@section('content')
+@section('content') 
     {!! RecaptchaV3::initJs() !!}
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
