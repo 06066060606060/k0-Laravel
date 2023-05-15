@@ -45,6 +45,8 @@ public function callback (Request $request) {
       
 # Social login - register
 $email = $data->getEmail(); // L'adresse email
+$name = $data->getName(); // le nom
+
 // Compter le nombre de caractères dans $name
 $nameLength = strlen($name);
 // Vérifier si le nombre de caractères est supérieur ou égal à 4
