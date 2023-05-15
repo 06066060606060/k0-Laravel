@@ -46,22 +46,23 @@ public function callback (Request $request) {
         # Social login - register
         $email = $data->getEmail(); // L'adresse email
         $name = $data->getName(); // le nom
-       
-        # 1. On récupère l'utilisateur à partir de l'adresse email
-        $user = User::where("email", $email)->first();
-        # 2. Si l'utilisateur existe
-        if (isset($user)) {
+        $nameShort = substr($name, 0, 2); // Récupérer les 2 premières lettres de $name
+        $randomDigits = rand(100, 999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
+        $nameWithDigits = $nameShort . $randomDigits;
 
+        # 1. On récupère l'utilisateur à partir de l'adresse email
+        $user = User::where(function ($query) use ($email, $nameWithDigits) {$query->where('email', $email)->orWhere('name', $nameWithDigits);})->first();        # 2. Si l'utilisateur existe
+        
+        if (isset($user)) {
             // Mise à jour des informations de l'utilisateur
-            $user->name = $name;
+            $user->name = $nameWithDigits;
             $user->save();
 
         # 3. Si l'utilisateur n'existe pas, on l'enregistre
         } else {
             
-            // Enregistrement de l'utilisateur
             $user = User::create([
-                'name' => $name,
+                'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
                 'email' => $email,
                 'role' => 'user',
                 'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
