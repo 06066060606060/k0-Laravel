@@ -1,0 +1,58 @@
+#1672098985
+ls
+#1672098996
+cd game
+#1672099000
+node -v
+#1672099022
+unzip Phaser.zip
+#1672099042
+cp Phaser /
+#1672099069
+cp -r  Phaser/* ../
+#1672099087
+rm -R Phaser
+#1672099116
+unzip Phaser.zip
+#1673023149
+ls
+#1673023152
+ls -lah
+#1673023162
+cd game/
+#1673023163
+ls
+#1673023168
+ls -lah
+#1673023173
+cd ..
+#1673023175
+ls
+#1673020351
+ls
+#1673020377
+cd ..
+#1673020378
+ls
+#1673020382
+cd gikdoct/
+#1673020383
+ls
+#1673020390
+zim game
+#1673020394
+zip /game
+#1673020403
+zip game
+#1673020409
+zi
+#1673020411
+zip
+#1673020453
+zip -0 -b game game.zip
+#1673020549
+zip -r filename.zip game
+#1673022905
+ls
+#1673022910
+npm install jquery --save
