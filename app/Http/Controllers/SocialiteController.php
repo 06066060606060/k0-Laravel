@@ -46,9 +46,10 @@ public function callback (Request $request) {
         # Social login - register
         $email = $data->getEmail(); // L'adresse email
         $name = $data->getName(); // le nom
-        $nameShort = substr($name, 0, 3); // Récupérer les 2 premières lettres de $name
-        $randomDigits = rand(1, 99999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
-        $nameWithDigits = 'Mi987'; // créé la combinaison
+        $nameShort = substr($name, 0, 4); // Récupérer les 2 premières lettres de $name
+        $randomDigits = rand(1, 9999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
+        $nameWithDigits = $nameShort . $randomDigits; // créé la combinaison
+
         
         # 1. On récupère l'utilisateur à partir de l'adresse email
         $user = User::where("email", $email)->first();
@@ -59,12 +60,7 @@ public function callback (Request $request) {
 
         # 3. Si l'utilisateur n'existe pas, on l'enregistre
         } else {
-            $user_nameu = User::where("name", $nameWithDigits)->first();
-            // si le nom existe
-            if(!empty($user_nameu->name)){
-            $randomDigits2 = rand(1, 99999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
-            $nameWithDigits = $nameShort . $randomDigits2; // créé la combinaison
-            } else {
+            
             $user = User::create([
                 'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
                 'email' => $email,
@@ -84,7 +80,7 @@ public function callback (Request $request) {
             );
             
         }
-    }
+
         # 4. On connecte l'utilisateur
         backpack_auth()->login($user);
 
