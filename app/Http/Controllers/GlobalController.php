@@ -735,13 +735,22 @@ class GlobalController extends Controller
             return redirect('/')->with('error', 'Utilisateur non trouvé.');
         }
 
+        // Création de la notification
+        $admin = User::where('role', 'admin')->first();
+        $admin->notify(
+            new DatabaseNotification(
+                'info', // Type de notification : info / success / warning / error
+                'Désinscription',
+                'Désinscription de : ' . $thisuser->email
+            )
+        );
+
         $thisuser->delete();
         $request->session()->flush();
         Auth::logout();
 
         return redirect('/')->with('success', 'Utilisateur supprimé avec succès.');
     }
-
 
     public function logout()
     {
