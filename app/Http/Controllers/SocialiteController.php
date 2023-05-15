@@ -55,7 +55,6 @@ public function callback (Request $request) {
         
         if (isset($user)) {
             // Mise à jour des informations de l'utilisateur
-            $user->name = $nameWithDigits;
             $user->save();
 
         # 3. Si l'utilisateur n'existe pas, on l'enregistre
