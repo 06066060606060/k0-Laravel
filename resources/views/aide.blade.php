@@ -63,22 +63,17 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Placez le script juste avant la balise </body> -->
 <script>
     $(document).ready(function() {
-        $('.accordion-content').hide(); // Masquer tous les contenus des sections
-
-        $('.accordion-title').click(function() {
-            var content = $(this).siblings('.accordion-content');
-            if (content.is(':visible')) {
-                content.slideUp();
-            } else {
-                $('.accordion-content').slideUp();
-                content.slideDown();
-            }
+        // écouter le clic sur les titres des onglets
+        $('.tab-titles a').click(function(e) {
+            e.preventDefault();
+            // afficher le contenu associé
+            $($(this).attr('href')).show().siblings('.tab-pane').hide();
+            // activer la classe 'active' sur l'onglet sélectionné
+            $(this).parent('li').addClass('active').siblings().removeClass('active');
         });
+        // afficher le premier onglet par défaut
     });
 </script>
 @endsection
