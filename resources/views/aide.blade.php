@@ -65,16 +65,12 @@ $(document).ready(function() {
 </div>
 <script>
     $(document).ready(function() {
-        // écouter le clic sur les titres des onglets
-        $('.tab-titles a').click(function(e) {
-            e.preventDefault();
-            // afficher le contenu associé
-            $($(this).attr('href')).show().siblings('.tab-pane').hide();
-            // activer la classe 'active' sur l'onglet sélectionné
-            $(this).parent('li').addClass('active').siblings().removeClass('active');
+        $('.accordion-content').hide(); // Masquer tous les contenus des sections
+
+        $('.accordion-title').click(function() {
+            $(this).parent().siblings().find('.accordion-content').slideUp();
+            $(this).siblings('.accordion-content').slideToggle();
         });
-        // afficher le premier onglet par défaut
-        $('.tab-titles li:first-child a').click();
     });
 </script>
 @endsection
