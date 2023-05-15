@@ -727,15 +727,21 @@ class GlobalController extends Controller
         }
     }
 
-    public function deleteUser(Request $id)
+    public function deleteUser(Request $request, $id)
     {
-        $thisuser = User::where('id', $id)->get();
-        $thisuser[0]->delete();
-        Session::flush();
+        $thisuser = User::where('id', $id)->first();
+
+        if (!$thisuser) {
+            return redirect('/')->with('error', 'Utilisateur non trouvé.');
+        }
+
+        $thisuser->delete();
+        $request->session()->flush();
         Auth::logout();
-        //$request->session()->invalidate();
-        return redirect('/');
+
+        return redirect('/')->with('success', 'Utilisateur supprimé avec succès.');
     }
+
 
     public function logout()
     {
