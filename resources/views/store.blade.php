@@ -82,7 +82,7 @@
                                                      <div class="text-center mx-4">
                                                          @if ($isMobile == true)
                                                          <h2 name="name"
-                                                             class="py-1 text-s font-bold text-green-600 title-font ">
+                                                             class="py-1 text-xs font-bold text-green-600 title-font ">
                                                              {{ $cadeau->name }}</h2>
                                                         @else
                                                         <h2 name="name"
