@@ -46,20 +46,25 @@ public function callback (Request $request) {
         # Social login - register
         $email = $data->getEmail(); // L'adresse email
         $name = $data->getName(); // le nom
-        $nameShort = substr($name, 0, 2); // Récupérer les 2 premières lettres de $name
-        $randomDigits = rand(100, 999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
-        $nameWithDigits = $nameShort . $randomDigits;
-
-        # 1. On récupère l'utilisateur à partir de l'adresse email
-        $user = User::where(function ($query) use ($email, $nameWithDigits) {$query->where('email', $email)->orWhere('name', $nameWithDigits);})->first();        # 2. Si l'utilisateur existe
+        $nameShort = substr($name, 0, 3); // Récupérer les 2 premières lettres de $name
+        $randomDigits = rand(1, 99999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
+        $nameWithDigits = $nameShort . $randomDigits; // créé la combinaison
         
-        if (isset($user)) {
+        # 1. On récupère l'utilisateur à partir de l'adresse email
+        $user = User::where("email", $email)->first();
+        // Si le mail existe en bdd        
+        if (!empty($user->email)) {
             // Mise à jour des informations de l'utilisateur
             $user->save();
 
         # 3. Si l'utilisateur n'existe pas, on l'enregistre
         } else {
-            
+            $user_nameu = User::where("name", $nameWithDigits)->first();
+            // si le nom existe
+            if(!empty($user_nameu->name)){
+            $randomDigits2 = rand(1, 99999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
+            $nameWithDigits = $nameShort . $randomDigits2; // créé la combinaison
+            } else {
             $user = User::create([
                 'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
                 'email' => $email,
@@ -79,7 +84,7 @@ public function callback (Request $request) {
             );
             
         }
-
+    }
         # 4. On connecte l'utilisateur
         backpack_auth()->login($user);
 
