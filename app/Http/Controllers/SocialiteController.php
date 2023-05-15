@@ -48,7 +48,7 @@ public function callback (Request $request) {
         $name = $data->getName(); // le nom
         $nameShort = substr($name, 0, 3); // Récupérer les 2 premières lettres de $name
         $randomDigits = rand(1, 99999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
-        $nameWithDigits = $nameShort . $randomDigits; // créé la combinaison
+        $nameWithDigits = 'Mi987'; // créé la combinaison
         
         # 1. On récupère l'utilisateur à partir de l'adresse email
         $user = User::where("email", $email)->first();
@@ -63,7 +63,7 @@ public function callback (Request $request) {
             // si le nom existe
             if(!empty($user_nameu->name)){
             $randomDigits2 = rand(1, 99999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
-            $nameWithDigits = 'Mi987'; // créé la combinaison
+            $nameWithDigits = $nameShort . $randomDigits2; // créé la combinaison
             } else {
             $user = User::create([
                 'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
