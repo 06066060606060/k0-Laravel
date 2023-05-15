@@ -70,7 +70,7 @@ $user2 = User::where("name", $nameWithDigits)->first();
 if (!empty($user->email)) {
     // Mise à jour des informations de l'utilisateur
     $user->save();
-} elseif (empty($user->email) && isset($user2) && $user2->name != $nameWithDigits) {
+} elseif (empty($user->email) && $user2 !== null && $user2->name != $nameWithDigits) {
     // Si le mail n'existe pas et que le pseudo est différent de $randomDigits, on inscrit l'utilisateur
     $user = User::create([
         'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
@@ -95,7 +95,7 @@ if (!empty($user->email)) {
         $randomDigits = rand(1, 99999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
         $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
         $user3 = User::where("name", $nameWithDigits)->first();
-    } while (!empty($user3));
+    } while ($user3 !== null);
 
     // Inscrire l'utilisateur avec le nouveau pseudo unique
     $user = User::create([
