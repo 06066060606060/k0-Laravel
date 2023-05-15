@@ -92,8 +92,8 @@ if (!empty($user->email)) {
     do {
         $randomDigits = rand(1, 99999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
         $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
-        $user2 = User::where("name", $nameWithDigits)->first();
-    } while (!empty($user2));
+        $user3 = User::where("name", $nameWithDigits)->first();
+    } while (!empty($user3));
 
     // Inscrire l'utilisateur avec le nouveau pseudo unique
     $user = User::create([
