@@ -58,7 +58,7 @@ $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
 $nameShort = substr($name, 0, 3); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
 $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
 $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
-elseif ($nameLength == 2) {
+} elseif ($nameLength == 2) {
     $nameShort = substr($name, 0, 2); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
     $randomDigits = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT); // Générer 4 chiffres aléatoires (entre 1 et 9999)
     $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
