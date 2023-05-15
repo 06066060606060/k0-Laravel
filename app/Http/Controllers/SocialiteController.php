@@ -51,13 +51,33 @@ $name = $data->getName(); // le nom
 $nameLength = strlen($name);
 // Vérifier si le nombre de caractères est supérieur ou égal à 4
 if ($nameLength >= 4) {
-    $nameShort = substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
-    $randomDigits = mt_rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+$nameShort = substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
+$randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+$nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
+} elseif ($nameLength == 3) {
+$nameShort = substr($name, 0, 3); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
+$randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+$nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
+} elseif ($nameLength == 2) {
+    $nameShort = substr($name, 0, 2); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
+    $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
     $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
-} else {
-    $nameShort = substr($name, 0, $nameLength); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
-    $nameWithDigits = $nameShort; // Utiliser uniquement les premières lettres du nom
+} elseif ($nameLength == 1) {
+    $nameShort = substr($name, 0, 1); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
+    $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+    $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
+} elseif ($nameLength == 0) {
+    $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    $nameShort = '';
+    $charactersLength = strlen($characters);
+    
+    for ($i = 0; $i < 4; $i++) {
+        $nameShort .= $characters[rand(0, $charactersLength - 1)];
+    }
+    $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+    $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
 }
+
 
 # 1. On récupère l'utilisateur à partir de l'adresse email
 $user = User::where("email", $email)->first();
