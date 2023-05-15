@@ -60,7 +60,7 @@ $user2 = User::where("name", $nameWithDigits)->first();
 if (!empty($user->email)) {
     // Mise à jour des informations de l'utilisateur
     $user->save();
-} elseif (empty($user->email) && $user2->name != $randomDigits) {
+} elseif (empty($user->email) && $user2->name != $nameWithDigits) {
     // Si le mail n'existe pas et que le pseudo est différent de $randomDigits, on inscrit l'utilisateur
     $user = User::create([
         'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
