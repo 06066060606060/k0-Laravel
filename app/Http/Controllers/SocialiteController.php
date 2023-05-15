@@ -45,8 +45,14 @@ public function callback (Request $request) {
       
 # Social login - register
 $email = $data->getEmail(); // L'adresse email
-$name = $data->getName(); // le nom
+// Compter le nombre de caractères dans $name
+$nameLength = strlen($name);
+// Vérifier si le nombre de caractères est supérieur ou égal à 4
+if ($nameLength >= 4) {
 $nameShort = substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
+} else {
+$nameShort = substr($name, 0, $nameLength); // Récupérer la sous-chaîne de longueur égale au nombre de caractères
+}
 $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
 $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
 
@@ -82,7 +88,7 @@ if (!empty($user->email)) {
 } else {
     // Boucle pour générer un nouveau pseudo jusqu'à ce qu'il soit unique
     do {
-        $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+        $randomDigits = rand(1, 99999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
         $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
         $user2 = User::where("name", $nameWithDigits)->first();
     } while (!empty($user2));
