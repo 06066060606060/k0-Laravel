@@ -49,6 +49,8 @@ $name = $data->getName(); // le nom
 
 // Compter le nombre de caractères dans $name
 $nameLength = strlen($name);
+$nameShort = '';
+
 // Vérifier si le nombre de caractères est supérieur ou égal à 4
 if ($nameLength >= 4) {
 $nameShort = substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
