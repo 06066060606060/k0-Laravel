@@ -80,9 +80,16 @@
                                                      onerror="this.src='/img/empty.png'">
                                                  <div class="w-full">
                                                      <div class="text-center mx-4">
+                                                         @if ($isMobile == true)
                                                          <h2 name="name"
+                                                             class="py-1 text-s font-bold text-green-600 title-font ">
+                                                             {{ $cadeau->name }}</h2>
+                                                        @else
+                                                        <h2 name="name"
                                                              class="py-1 text-l font-bold text-green-600 title-font ">
                                                              {{ $cadeau->name }}</h2>
+
+                                                        @endif
                                                          <div style="display:inline;">
                                                              <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-2 mt-0">
                                                              <p name="prix" class="mt-2 text-m" style="display:inline;">x {{ $cadeau->prix }}</p>
