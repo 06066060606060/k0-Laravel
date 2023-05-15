@@ -92,7 +92,11 @@
                                                         @endif
                                                          <div style="display:inline;">
                                                              <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-2 mt-0">
+                                                             @if($isMobile == true)
+                                                             <p name="prix" class="mt-2 text-xs" style="display:inline;">x {{ $cadeau->prix }}</p>
+                                                            @else
                                                              <p name="prix" class="mt-2 text-m" style="display:inline;">x {{ $cadeau->prix }}</p>
+                                                            @endif
                                                          </div>
                                                      </div>
                                                      <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
