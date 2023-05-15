@@ -53,14 +53,35 @@ public function callback (Request $request) {
         
         # 1. On récupère l'utilisateur à partir de l'adresse email
         $user = User::where("email", $email)->first();
+        # 1. On récupère l'utilisateur à partir du pseudo
+        $user2 = User::where("name", $nameWithDigits)->first();
+
         // Si le mail existe en bdd        
         if (!empty($user->email)) {
             // Mise à jour des informations de l'utilisateur
             $user->save();
 
-        # 3. Si l'utilisateur n'existe pas, on l'enregistre
-        } else {
+        # 3. Si l'utilisateur n'existe pas && le pseudo est différend d'un enregistré en bdd on l'enregistre
+        } elseif (empty($user->email) && $user->name != $randomDigits) {            
+            $user = User::create([
+                'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
+                'email' => $email,
+                'role' => 'user',
+                'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
+                'parties' => '10', // on ajoute 10 parties gratuites
+                'trophee1' => '150' // On offre 150 diamants
+            ]);
+            //create notification
+            $admin = User::where('role', 'admin')->first();
+            $admin->notify(
+                new DatabaseNotification(
+                    ($type = 'info'), // info / success / warning / error
+                    ($message = 'Nouvelle Inscription'),
+                    ($messageLong = 'Nouvelle Inscription: ' . $email)
+                )
+            );
             
+        } else { 
             $user = User::create([
                 'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
                 'email' => $email,
