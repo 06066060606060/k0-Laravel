@@ -43,64 +43,69 @@ public function callback (Request $request) {
         // Les informations provenant du provider
         $data = Socialite::driver($provider)->stateless()->user();
       
-        # Social login - register
-        $email = $data->getEmail(); // L'adresse email
-        $name = $data->getName(); // le nom
-        $nameShort = substr($name, 0, 4); // Récupérer les 2 premières lettres de $name
-        $randomDigits = rand(1, 9999); // Générer 3 chiffres aléatoires (entre 100 et 999)            
-        $nameWithDigits = $nameShort . $randomDigits; // créé la combinaison
+# Social login - register
+$email = $data->getEmail(); // L'adresse email
+$name = $data->getName(); // le nom
+$nameShort = substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
+$randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+$nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
 
-        
-        # 1. On récupère l'utilisateur à partir de l'adresse email
-        $user = User::where("email", $email)->first();
-        # 1. On récupère l'utilisateur à partir du pseudo
+# 1. On récupère l'utilisateur à partir de l'adresse email
+$user = User::where("email", $email)->first();
+
+# 2. On récupère l'utilisateur à partir du pseudo
+$user2 = User::where("name", $nameWithDigits)->first();
+
+// Si le mail existe en bdd
+if (!empty($user->email)) {
+    // Mise à jour des informations de l'utilisateur
+    $user->save();
+} elseif (empty($user->email) && $user2->name != $randomDigits) {
+    // Si le mail n'existe pas et que le pseudo est différent de $randomDigits, on inscrit l'utilisateur
+    $user = User::create([
+        'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
+        'email' => $email,
+        'role' => 'user',
+        'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
+        'parties' => '10', // on ajoute 10 parties gratuites
+        'trophee1' => '150' // On offre 150 diamants
+    ]);
+    //create notification
+    $admin = User::where('role', 'admin')->first();
+    $admin->notify(
+        new DatabaseNotification(
+            ($type = 'info'), // info / success / warning / error
+            ($message = 'Nouvelle Inscription'),
+            ($messageLong = 'Nouvelle Inscription: ' . $email)
+        )
+    );
+} else {
+    // Boucle pour générer un nouveau pseudo jusqu'à ce qu'il soit unique
+    do {
+        $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+        $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
         $user2 = User::where("name", $nameWithDigits)->first();
+    } while (!empty($user2));
 
-        // Si le mail existe en bdd        
-        if (!empty($user->email)) {
-            // Mise à jour des informations de l'utilisateur
-            $user->save();
-
-        # 3. Si l'utilisateur n'existe pas && le pseudo est différend d'un enregistré en bdd on l'enregistre
-        } elseif (empty($user->email) && $user->name != $randomDigits) {            
-            $user = User::create([
-                'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
-                'email' => $email,
-                'role' => 'user',
-                'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
-                'parties' => '10', // on ajoute 10 parties gratuites
-                'trophee1' => '150' // On offre 150 diamants
-            ]);
-            //create notification
-            $admin = User::where('role', 'admin')->first();
-            $admin->notify(
-                new DatabaseNotification(
-                    ($type = 'info'), // info / success / warning / error
-                    ($message = 'Nouvelle Inscription'),
-                    ($messageLong = 'Nouvelle Inscription: ' . $email)
-                )
-            );
-            
-        } else { 
-            $user = User::create([
-                'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
-                'email' => $email,
-                'role' => 'user',
-                'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
-                'parties' => '10', // on ajoute 10 parties gratuites
-                'trophee1' => '150' // On offre 150 diamants
-            ]);
-            //create notification
-            $admin = User::where('role', 'admin')->first();
-            $admin->notify(
-                new DatabaseNotification(
-                    ($type = 'info'), // info / success / warning / error
-                    ($message = 'Nouvelle Inscription'),
-                    ($messageLong = 'Nouvelle Inscription: ' . $email)
-                )
-            );
-            
-        }
+    // Inscrire l'utilisateur avec le nouveau pseudo unique
+    $user = User::create([
+        'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
+        'email' => $email,
+        'role' => 'user',
+        'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
+        'parties' => '10', // on ajoute 10 parties gratuites
+        'trophee1' => '150' // On offre 150 diamants
+    ]);
+    //create notification
+    $admin = User::where('role', 'admin')->first();
+    $admin->notify(
+        new DatabaseNotification(
+            ($type = 'info'), // info / success / warning / error
+            ($message = 'Nouvelle Inscription'),
+            ($messageLong = 'Nouvelle Inscription: ' . $email)
+        )
+    );
+ }
 
         # 4. On connecte l'utilisateur
         backpack_auth()->login($user);
