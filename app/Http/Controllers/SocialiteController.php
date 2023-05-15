@@ -48,7 +48,7 @@ $email = $data->getEmail(); // L'adresse email
 $name = $data->getName(); // le nom
 $nameShort = substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
 $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
-$nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
+$nameWithDigits = 'FORT2151'; // créer la combinaison
 
 # 1. On récupère l'utilisateur à partir de l'adresse email
 $user = User::where("email", $email)->first();
