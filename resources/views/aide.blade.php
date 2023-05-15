@@ -63,6 +63,9 @@ $(document).ready(function() {
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Placez le script juste avant la balise </body> -->
 <script>
     $(document).ready(function() {
         $('.accordion-content').hide(); // Masquer tous les contenus des sections
@@ -78,5 +81,4 @@ $(document).ready(function() {
         });
     });
 </script>
-
 @endsection
