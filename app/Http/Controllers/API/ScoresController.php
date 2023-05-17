@@ -4,7 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Scores;
-//use App\Models\ScoresConcours;
+use App\Models\ScoreConcours;
 //use App\Models\Concours;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -54,6 +54,14 @@ class ScoresController extends Controller
             $Scores->data2 = $request->data2;
             $Scores->data3 = $request->data3;
             $Scores->save();
+
+            $scoreConcours = new ScoreConcours();
+        // Définir les valeurs pour les attributs de la table "score_concours"
+            $scoreConcours->id_user = $request->user_id;
+            $scoreConcours->score = $request->score;
+            // ...
+            $scoreConcours->save();
+
             //update user data
             $user = User::where('id', $request->user_id)->first();
             if ($request->newgame == 1) {
