@@ -66,30 +66,32 @@ class ScoresController extends Controller
             $user->save();
 
             // Si concours ou non
-            $concours = Concours::all();
-            if ($concours->isNotEmpty()) { // si concours
-                // on verifie que Score Concours existe avec un enregistrement pour le user
-                $scoreconcours = ScoreConcours::where('id_user', $user->id)->first();
-                if ($scoreconcours) { // On update
-                    // Sommes des score à enregistrer au concours
-                    $data = floatval($request->data);
-                    $data2 = floatval($request->data2);
-                    $data3 = floatval($request->data3);
-                    $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
-                    // On actualise tout cela 
-                    $scoreconcours->score = $scoreconcours->score + $totalrequestvalue;
-                    $scoreconcours->save();
-                } else { // On create
-                    $data = floatval($request->data);
-                    $data2 = floatval($request->data2);
-                    $data3 = floatval($request->data3);
-                    $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
-                    $scoreconcours = ScoreConcours::create([
-                        'id_user' => $user->id,
-                        'score' => $totalrequestvalue;
-                    ]);
-                }
-            } else {}
+$concours = Concours::all();
+if ($concours->isNotEmpty()) { // si concours
+    // on verifie que Score Concours existe avec un enregistrement pour le user
+    $scoreconcours = ScoreConcours::where('id_user', $user->id)->first();
+    if ($scoreconcours) { // On update
+        // Sommes des score à enregistrer au concours
+        $data = floatval($request->data);
+        $data2 = floatval($request->data2);
+        $data3 = floatval($request->data3);
+        $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
+        // On actualise tout cela 
+        $scoreconcours->score = $scoreconcours->score + $totalrequestvalue;
+        $scoreconcours->save();
+    } else { // On create
+        $data = floatval($request->data);
+        $data2 = floatval($request->data2);
+        $data3 = floatval($request->data3);
+        $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
+        $scoreconcours = ScoreConcours::create([
+            'id_user' => $user->id,
+            'score' => $totalrequestvalue
+        ]);
+    }
+} else {
+    // Code pour le cas où il n'y a pas de concours
+}
 
 
             return response()->json($Scores);
