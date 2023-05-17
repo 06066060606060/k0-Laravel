@@ -8,6 +8,7 @@ use App\Models\Concours;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class ScoresController extends Controller
 {
@@ -53,6 +54,41 @@ class ScoresController extends Controller
             $Scores->data2 = $request->data2;
             $Scores->data3 = $request->data3;
             $Scores->save();
+
+            // Si concours ou non
+$concours = Concours::all();
+if ($concours->isNotEmpty()) { // si concours
+    // on verifie que la table score_concours existe avec un enregistrement pour le user
+    $scoreconcoursExists = DB::table('score_concours')
+        ->where('id_user', $user->id)
+        ->exists();
+
+    if ($scoreconcoursExists) { // On update
+        // Sommes des score à enregistrer au concours
+        $data = floatval($request->data);
+        $data2 = floatval($request->data2);
+        $data3 = floatval($request->data3);
+        $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
+
+        // On actualise tout cela 
+        DB::table('score_concours')
+            ->where('id_user', $user->id)
+            ->increment('score', $totalrequestvalue);
+    } else { // On create
+        $data = floatval($request->data);
+        $data2 = floatval($request->data2);
+        $data3 = floatval($request->data3);
+        $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
+
+        DB::table('score_concours')->insert([
+            'id_user' => $user->id,
+            'score' => $totalrequestvalue
+        ]);
+    }
+} else {
+    // Code pour le cas où il n'y a pas de concours
+}
+
             //update user data
             $user = User::where('id', $request->user_id)->first();
             if ($request->newgame == 1) {
