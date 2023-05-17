@@ -64,26 +64,32 @@ class ScoresController extends Controller
             $user->trophee3 = $user->trophee3 + $request->data3;
             $user->save();
 
-            // Si concours ou non
+// Si concours ou non
 $concours = Concours::all();
 if ($concours->isNotEmpty()) { // si concours
-    // on verifie que Score Concours existe avec un enregistrement pour le user
-    $scoreconcours = ScoreConcours::where('id_user', $user->id)->first();
-    if ($scoreconcours) { // On update
+    // on verifie que la table score_concours existe avec un enregistrement pour le user
+    $scoreconcoursExists = DB::table('score_concours')
+        ->where('id_user', $user->id)
+        ->exists();
+
+    if ($scoreconcoursExists) { // On update
         // Sommes des score à enregistrer au concours
         $data = floatval($request->data);
         $data2 = floatval($request->data2);
         $data3 = floatval($request->data3);
         $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
+
         // On actualise tout cela 
-        $scoreconcours->score = $scoreconcours->score + $totalrequestvalue;
-        $scoreconcours->save();
+        DB::table('score_concours')
+            ->where('id_user', $user->id)
+            ->increment('score', $totalrequestvalue);
     } else { // On create
         $data = floatval($request->data);
         $data2 = floatval($request->data2);
         $data3 = floatval($request->data3);
         $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
-        $scoreconcours = ScoreConcours::create([
+
+        DB::table('score_concours')->insert([
             'id_user' => $user->id,
             'score' => $totalrequestvalue
         ]);
@@ -91,6 +97,7 @@ if ($concours->isNotEmpty()) { // si concours
 } else {
     // Code pour le cas où il n'y a pas de concours
 }
+
 
 
             return response()->json($Scores);
