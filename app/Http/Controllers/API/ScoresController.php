@@ -66,7 +66,7 @@ class ScoresController extends Controller
             $user->save();
 
             // Si concours ou non
-            /*$concours = Concours::all();
+            $concours = Concours::all();
             if ($concours->isNotEmpty()) { // si concours
                 // on verifie que Score Concours existe avec un enregistrement pour le user
                 $scoreconcours = ScoreConcours::where('id_user', $user->id)->first();
@@ -80,8 +80,15 @@ class ScoresController extends Controller
                     $scoreconcours->score = $scoreconcours->score + $totalrequestvalue;
                     $scoreconcours->save();
                 } else { // On create
-
-                }*/
+                    $data = floatval($request->data);
+                    $data2 = floatval($request->data2);
+                    $data3 = floatval($request->data3);
+                    $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
+                    $scoreconcours = ScoreConcours::create([
+                        'id_user' => $user->id,
+                        'score' => $totalrequestvalue;
+                    ]);
+                }
             } else {}
 
 
