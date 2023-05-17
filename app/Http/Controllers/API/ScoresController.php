@@ -4,8 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Scores;
-use App\Models\ScoreConcours;
-//use App\Models\Concours;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -55,13 +53,6 @@ class ScoresController extends Controller
             $Scores->data3 = $request->data3;
             $Scores->save();
 
-            $scoreConcours = new ScoreConcours();
-        // Définir les valeurs pour les attributs de la table "score_concours"
-            $scoreConcours->id_user = $request->user_id;
-            $scoreConcours->score = $request->score;
-            // ...
-            $scoreConcours->save();
-
             //update user data
             $user = User::where('id', $request->user_id)->first();
             if ($request->newgame == 1) {
@@ -72,26 +63,6 @@ class ScoresController extends Controller
             $user->trophee2 = $user->trophee2 + $request->data2;
             $user->trophee3 = $user->trophee3 + $request->data3;
             $user->save();
-
-            // Si concours ou non
-            /*$concours = Concours::all();
-            if ($concours->isNotEmpty()) { // si concours
-                // on verifie que Score Concours existe avec un enregistrement pour le user
-                $scoreconcours = ScoreConcours::where('id_user', $user->id)->first();
-                if ($scoreconcours) { // On update
-                    // Sommes des score à enregistrer au concours
-                    $data = floatval($request->data);
-                    $data2 = floatval($request->data2);
-                    $data3 = floatval($request->data3);
-                    $totalrequestvalue = $data + $data2 * 100 + $data3 * 1000;
-                    // On actualise tout cela 
-                    $scoreconcours->score = $scoreconcours->score + $totalrequestvalue;
-                    $scoreconcours->save();
-                } else { // On create
-
-                }*/
-            } else {}
-
 
             return response()->json($Scores);
         } else {
