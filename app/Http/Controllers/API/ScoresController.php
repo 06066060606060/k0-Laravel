@@ -55,21 +55,14 @@ class ScoresController extends Controller
             $Scores->data3 = $request->data3;
             $Scores->save();
 
-            // Si concours ou non
-        $adata = floatval($request->data);
-        $adata2 = floatval($request->data2);
-        $adata3 = floatval($request->data3);
-        $totalrequestvalue = $adata + $adata2 * 100 + $adata3 * 1000;
+         
 
         DB::table('score_concours')->insert([
-            'id_user' => $user->id,
-            'score' => $totalrequestvalue,
+            'id_user' => '10',
+            'score' => 20
         ]);
-    }
-} else {
-    // Code pour le cas où il n'y a pas de concours
-}
 
+        
             //update user data
             $user = User::where('id', $request->user_id)->first();
             if ($request->newgame == 1) {
