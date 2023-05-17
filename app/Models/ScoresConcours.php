@@ -15,7 +15,7 @@ class ScoresConcours extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'scores_concours';
+    protected $table = 'score_concours';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
