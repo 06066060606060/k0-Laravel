@@ -4,7 +4,6 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\Models\Scores;
-use App\Models\ScoresConcours;
 use App\Models\Concours;
 use App\Models\User;
 use Illuminate\Http\Request;
