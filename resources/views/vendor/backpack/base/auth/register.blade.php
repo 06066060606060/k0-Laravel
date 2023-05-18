@@ -70,6 +70,7 @@ use App\Models\User;
                                 $code = $lettres . $chiffres; // combinaison ajoutée
                                 $user_verif = User::where("name", $code)->first(); // vérif bdd users table
                             } while ($user_verif !== null);
+                            echo $user_verif;
                             @endphp
                                 <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
                                 @if ($errors->has('name'))
