@@ -63,15 +63,14 @@ use App\Models\User;
                             <div>
                             
                             @php
+                            $code = null;
                             do {
-                                // boucle qui vérifie en bdd si le pseudo généré existe ou non
-                                $lettres = strtoupper(Str::random(4)); // génère 4 caractères
-                                $chiffres = rand(1000, 9999); // Génère ensuite 4 chiffres
-                                $code = $lettres . $chiffres; // combinaison ajoutée
-                                $user_verif = User::where("name", $code)->first(); // vérif bdd users table
-                            } while ($user_verif !== null);
+                            $lettres = strtoupper(Str::random(4));
+                            $chiffres = rand(1000, 9999);
+                            $code = $lettres . $chiffres;
+                            $user_verif = User::where('name', $code)->first();
+                            } while ($user_verif !== null); 
                             @endphp
-                            {{ $user_verif }}
                                 <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
