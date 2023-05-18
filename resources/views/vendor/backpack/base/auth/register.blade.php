@@ -58,9 +58,9 @@ use Illuminate\Support\Facades\DB;
                         <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> Inscription Classique</label>
                         <span id="content">
                         <div class="form-group">
-                            <label class="control-label" for="name">Pseudo</label>
+                            <!--<label class="control-label" for="name">Pseudo</label>
 
-                            <div>
+                            <div>-->
                             
                             @php
                             $code = null;
@@ -71,13 +71,13 @@ use Illuminate\Support\Facades\DB;
                             $user_verif = DB::table('users')->where('name', $code)->first();
                             } while ($user_verif !== null);     
                             @endphp
-                                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
-                                @if ($errors->has('name'))
-                                    <span class="invalid-feedback">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                                <input type="hidden" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
+                                @if //($errors->has('name'))
+                                    <!--<span class="invalid-feedback">
+                                        <strong>{{ //$errors->first('name') }}</strong>
+                                    </span>-->
                                 @endif
-                            </div>
+                            <!--</div>-->
                         </div>
 
                         <div class="form-group">
