@@ -72,11 +72,7 @@ use Illuminate\Support\Facades\DB;
                             } while ($user_verif !== null);     
                             @endphp
                                 <input type="hidden" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
-                                @if //($errors->has('name'))
-                                    <!--<span class="invalid-feedback">
-                                        <strong>{{ //$errors->first('name') }}</strong>
-                                    </span>-->
-                                @endif
+                               
                             <!--</div>-->
                         </div>
 
