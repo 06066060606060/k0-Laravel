@@ -1,5 +1,6 @@
 @php
 use Illuminate\Support\Str;
+use App\Models\User;
 @endphp
 @extends(backpack_view('layouts.plain'))
  {!! RecaptchaV3::initJs() !!}
@@ -60,13 +61,17 @@ use Illuminate\Support\Str;
                             <label class="control-label" for="name">Pseudo</label>
 
                             <div>
+                            
                             @php
-                            $lettres = strtoupper(Str::random(4));
-                            $chiffres = rand(1000, 9999);   
-                            $code = $lettres . $chiffres;
+                            do {
+                                // boucle qui vérifie en bdd si le pseudo généré existe ou non
+                                $lettres = strtoupper(Str::random(4)); // génère 4 caractères
+                                $chiffres = rand(1000, 9999); // Génère ensuite 4 chiffres
+                                $code = $lettres . $chiffres; // combinaison ajoutée
+                                $user_verif = User::where("name", $code)->first(); // vérif bdd users table
+                            } while ($user_verif !== null);
                             @endphp
                                 <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
-
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
                                         <strong>{{ $errors->first('name') }}</strong>
