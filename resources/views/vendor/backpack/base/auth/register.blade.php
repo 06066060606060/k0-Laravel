@@ -1,10 +1,10 @@
-@php
-use Illuminate\Support\Str;
-use App\Models\User;
-@endphp
 @extends(backpack_view('layouts.plain'))
  {!! RecaptchaV3::initJs() !!}
 @section('content')
+@php
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
+@endphp
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
              <a href="/"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
@@ -68,8 +68,10 @@ use App\Models\User;
                             $lettres = strtoupper(Str::random(4));
                             $chiffres = rand(1000, 9999);
                             $code = $lettres . $chiffres;
-                            $user_verif = User::where('name', $code)->first();
+                            $user_verif = DB::table('users')->where('name', $code)->first();
                             } while ($user_verif !== null); 
+                        dd($user_verif);
+    
                             @endphp
                                 <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
                                 @if ($errors->has('name'))
