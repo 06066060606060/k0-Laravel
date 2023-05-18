@@ -1,4 +1,6 @@
-
+@php
+use Illuminate\Support\Str;
+@endphp
 @extends(backpack_view('layouts.plain'))
  {!! RecaptchaV3::initJs() !!}
 @section('content')
@@ -59,8 +61,8 @@
 
                             <div>
                             @php
-                            $lettres = strtoupper(str_random(4));
-                            $chiffres = rand(1000, 9999);
+                            $lettres = strtoupper(Str::random(4));
+                            $chiffres = rand(1000, 9999);   
                             $code = $lettres . $chiffres;
                             @endphp
                                 <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
