@@ -67,11 +67,9 @@ use Illuminate\Support\Facades\DB;
                             do {
                             $lettres = strtoupper(Str::random(4));
                             $chiffres = rand(1000, 9999);
-                            $code = 'Admin';
+                            $code = $lettres . $chiffres;
                             $user_verif = DB::table('users')->where('name', $code)->first();
-                            } while ($user_verif !== null); 
-                        dd($user_verif);
-
+                            } while ($user_verif !== null);     
                             @endphp
                                 <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
                                 @if ($errors->has('name'))
