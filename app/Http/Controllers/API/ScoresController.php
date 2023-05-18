@@ -53,12 +53,6 @@ class ScoresController extends Controller
             $Scores->data3 = $request->data3;
             $Scores->save();
 
-            $totalsum = $request->data + ($request->data2*100) + ($request->data3*1000);
-            DB::table('score_concours')->insert([
-                'id_user' => $request->user_id,
-                'score' => $totalsum,
-            ]);
-
             //update user data
             $user = User::where('id', $request->user_id)->first();
             if ($request->newgame == 1) {
