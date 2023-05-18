@@ -58,7 +58,12 @@
                             <label class="control-label" for="name">Pseudo</label>
 
                             <div>
-                                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ old('name') }}">
+                            @php
+                            $lettres = strtoupper(str_random(4));
+                            $chiffres = rand(1000, 9999);
+                            $code = $lettres . $chiffres;
+                            @endphp
+                                <input type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
 
                                 @if ($errors->has('name'))
                                     <span class="invalid-feedback">
