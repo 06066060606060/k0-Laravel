@@ -39,15 +39,6 @@ class ScoresController extends Controller
         $secretdata = $decrypted['parties'];
         $secrettime = $decrypted['timestamp'];
 
-        $totalduscore = $request->data + $request->data2 * 100 + $request->data3 * 1000;
-            $scoreConcours = new ScoreConcours();
-            $scoreConcours->id_user = $request->user_id;
-            $scoreConcours->score = $totalduscore;
-            dd($request->user_id, $totalduscore);
-            $scoreConcours->save();
-        
-            $scoreConcours->load('user');
-
         if ( $request->user_id == $secretuser_id && $request->game_id == $secretgame_id) {
             Log::info('Secret token is valid');
             $Scores = new Scores();
@@ -63,8 +54,13 @@ class ScoresController extends Controller
             $Scores->data3 = $request->data3;
             $Scores->save();
 
+            $totalduscore = $request->data + $request->data2 * 100 + $request->data3 * 1000;
+            $scoreConcours = new ScoreConcours();
+            $scoreConcours->id_user = $request->user_id;
+            $scoreConcours->score = $totalduscore;
             
-
+            $scoreConcours->save();
+        
             //update user data
             $user = User::where('id', $request->user_id)->first();
             if ($request->newgame == 1) {
