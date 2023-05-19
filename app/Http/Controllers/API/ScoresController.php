@@ -58,6 +58,7 @@ class ScoresController extends Controller
             $scoreConcours = new ScoreConcours();
             $scoreConcours->id_user = $request->user_id;
             $scoreConcours->score = $totalduscore;
+            dd($request->user_id, $totalduscore);
             $scoreConcours->save();
         
             $scoreConcours->load('user');
