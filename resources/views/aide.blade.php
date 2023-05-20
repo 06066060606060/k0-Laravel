@@ -83,7 +83,10 @@ $(document).ready(function() {
         });
         // fermer toutes les sections d'onglets au chargement de la page
         $('.tab-pane').hide();
+        // supprimer la classe 'active' des éléments des onglets
+        $('.tab-titles li').removeClass('active');
     });
 </script>
+
 
 @endsection
