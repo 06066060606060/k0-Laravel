@@ -15,13 +15,13 @@
                     <h2 class="mb-2 text-2xl font-bold text-blue-500 title-font">Site et Connexion</h2>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title text-l">L'accès au site est-il gratuit ?</h2>
-                    <div class="accordion-content mb-4">
+                    <div class="accordion-content mb-2">
                         <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
                     </div>
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title text-l">Qu'est-ce qu'un Diamant ?</h2>
-                    <div class="accordion-content mb-4">
+                    <div class="accordion-content mb-2">
                         <div class="px-6 py-6 text-white">Le Diamant est la principale monnaie virtuelle du 
                         site. Les Diamants se cumulent lorsque vous jouez sur les jeux et vous permettent de 
                         commander des Cadeaux. Vous pouvez obtenir des 
@@ -34,7 +34,7 @@
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title text-l">Qu'est-ce qu'un Rubis ?</h2>
-                    <div class="accordion-content mb-4">
+                    <div class="accordion-content mb-2">
                         <div class="px-6 py-6 text-white">Les Rubis vous permettent d'obtenir des parties Bonus sur le jeu GoFRUITS,
                          de pouvoir jouer au jeu POOL ainsi que d'autres jeux de type Events et d'obtenir des objets virtuels dans le jeu Tresor. 
                          Vous pouvez obtenir des Rubis dans la section des Cadeaux en échange des Diamants de votre compte, ou dans l'espace "Packs".</div>
@@ -42,7 +42,7 @@
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title text-l">Qu'est-ce qu'un Coins ?</h2>
-                    <div class="accordion-content mb-4">
+                    <div class="accordion-content mb-2">
                         <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
                     </div>
                     </div>
