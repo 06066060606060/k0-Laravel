@@ -12,6 +12,8 @@
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Espace Aide</h1>
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
+                    <h2 class="text-2xl">Jeux</h2>
+
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title">Comment jouer au jeu GoFRUITS ?</h2>
                     <div class="accordion-content mb-4">
