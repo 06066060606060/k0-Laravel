@@ -12,7 +12,15 @@
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Espace Aide</h1>
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
-                    <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">Jeux</h2>
+                    <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">Site et Connexion</h2>
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
+                    <h2 class="accordion-title">L'accès au site est-il gratuit ?</h2>
+                    <div class="accordion-content mb-4">
+                        L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !
+                    </div>
+                    </div>
+
+                    <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">Les jeux</h2>
 
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title">Comment jouer au jeu GoFRUITS ?</h2>
