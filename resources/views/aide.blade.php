@@ -13,13 +13,13 @@
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
                     <h2 class="mb-2 text-2xl font-bold text-blue-500 title-font">Site et Connexion</h2>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title text-l">L'accès au site est-il gratuit ?</h2>
                     <div class="accordion-content mb-2">
                         <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
                     </div>
                     </div>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title text-l">Qu'est-ce qu'un Diamant ?</h2>
                     <div class="accordion-content mb-2">
                         <div class="px-6 py-6 text-white">Le Diamant est la principale monnaie virtuelle du 
@@ -32,7 +32,7 @@
                         les Diamants n'ont aucune valeur monétaire.</div>
                     </div>
                     </div>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title text-l">Qu'est-ce qu'un Rubis ?</h2>
                     <div class="accordion-content mb-2">
                         <div class="px-6 py-6 text-white">Les Rubis vous permettent d'obtenir des parties Bonus sur le jeu GoFRUITS,
