@@ -73,20 +73,22 @@ $(document).ready(function() {
 </div>
 <script>
     $(document).ready(function() {
-        // écouter le clic sur les titres des onglets
-        $('.tab-titles a').click(function(e) {
-            e.preventDefault();
-            // afficher le contenu associé
-            $($(this).attr('href')).show().siblings('.tab-pane').hide();
-            // activer la classe 'active' sur l'onglet sélectionné
-            $(this).parent('li').addClass('active').siblings().removeClass('active');
-        });
         // fermer toutes les sections d'onglets au chargement de la page
-        $('.tab-pane').hide();
-        // supprimer la classe 'active' des éléments des onglets
-        $('.tab-titles li').removeClass('active');
+        $('.accordion-content').hide();
+        
+        // écouter le clic sur les titres des onglets
+        $('.accordion-title').click(function(e) {
+            e.preventDefault();
+            
+            // fermer toutes les sections d'onglets
+            $('.accordion-content').hide();
+            
+            // afficher le contenu associé
+            $(this).siblings('.accordion-content').show();
+        });
     });
 </script>
+
 
 
 @endsection
