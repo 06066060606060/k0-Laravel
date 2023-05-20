@@ -43,7 +43,8 @@
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title text-l">Qu'est-ce qu'un Coins ?</h2>
                     <div class="accordion-content mb-2">
-                        <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
+                        <div class="px-6 py-6 text-white">Le Coin est la monnaie secondaire du site, 1 Coin = 1€. Vous pouvez cumuler vos Coins en les gagnants sur le jeu POOL, le concours ou encore les jeux Events.
+                        Une boutique dédiée spécialement aux Coins est disponible dans la page "Cadeaux" en cliquant sur l'onglet "COINS", vous pourrez alors échanger contre des bons Amazon mais également des versements Paypal.</div>
                     </div>
                     </div>
 
