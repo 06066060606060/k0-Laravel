@@ -81,7 +81,9 @@ $(document).ready(function() {
             // activer la classe 'active' sur l'onglet sélectionné
             $(this).parent('li').addClass('active').siblings().removeClass('active');
         });
-        // afficher le premier onglet par défaut
+        // fermer toutes les sections d'onglets au chargement de la page
+        $('.tab-pane').hide();
     });
 </script>
+
 @endsection
