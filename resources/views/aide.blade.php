@@ -48,34 +48,6 @@
                     </div>
                     </div>
 
-
-
-                    <h2 class="mb-2 text-2xl font-bold text-blue-500 title-font">Site et Connexion</h2>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
-                    <h2 class="accordion-title text-l">L'accès au site est-il gratuit ?</h2>
-                    <div class="accordion-content mb-4">
-                        <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
-                    </div>
-                    </div>
-
-
-                    <h2 class="mb-2 text-2xl font-bold text-blue-500 title-font">Site et Connexion</h2>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
-                    <h2 class="accordion-title text-l">L'accès au site est-il gratuit ?</h2>
-                    <div class="accordion-content mb-4">
-                        <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
-                    </div>
-                    </div>
-
-
-                    <h2 class="mb-2 text-2xl font-bold text-blue-500 title-font">Site et Connexion</h2>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
-                    <h2 class="accordion-title text-l">L'accès au site est-il gratuit ?</h2>
-                    <div class="accordion-content mb-4">
-                        <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
-                    </div>
-                    </div>
-
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">Les jeux</h2>
 
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
@@ -93,20 +65,16 @@
                         </center>
                     </div>
                     </div>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
-                    <h2 class="accordion-title">Comment acheter des Rubis ?</h2>
+
+                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
+                    <h2 class="accordion-title">Comment participer au concours ?</h2>
                     <div class="accordion-content mb-4">
-                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </center>
+                    <div class="px-6 py-6 text-white">Lorsqu'un concours est en place, il vous suffit de vous rendre sur la page "Concours" afin de voir quel jeu vous permettra de récolter des points de concours.
+                    Le concours est défini d'une date de départ et une date de fin, les 3000 premiers joueurs classés au concours seront récompensé lorsque le concours sera terminé.
+                    Les gains alloués au concours peuvent être des bons Amazon, des versements Paypal, des Coins, Rubis ou Diamants. Dans tous les cas le concours sera gratuit sans obligation d'achat.</div>
                     </div>
                     </div>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
-                    <h2 class="accordion-title">Comment choisir un cadeau ?</h2>
-                    <div class="accordion-content mb-4">
-                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </center>
-                    </div>
-                    </div>
+
                     
                     <style>
                     .accordion-section:not(:first-of-type) .accordion-content {
