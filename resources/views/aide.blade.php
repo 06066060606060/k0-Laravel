@@ -16,7 +16,7 @@
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title">L'accès au site est-il gratuit ?</h2>
                     <div class="accordion-content mb-4">
-                        <div class="px-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
+                        <div class="px-6 py-6 text-white">L'accès au site est entièrement gratuit. Vous n'avez à payer que votre connexion à Internet ; il n'y a aucun frais supplémentaire. Gokdo est un site de jeux gratuits sans obligation d'achat !</div>
                     </div>
                     </div>
 
