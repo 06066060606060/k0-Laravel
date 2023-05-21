@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('jackpot_tresor', function (Blueprint $table) {
             $table->id();
+            $table->integer('jackpot');
+            $table->string('dernier_gagnant');
+            $table->timestamp('date_gagnant')->nullable();
             $table->timestamps();
         });
     }
