@@ -14,7 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->integer('support1_exp')->default(0)->change();
+            $table->integer('support2_exp')->default(0)->change();
+            $table->integer('support3_exp')->default(0)->change();
+            $table->integer('support4_exp')->default(0)->change();
+            $table->integer('support5_exp')->default(0)->change();
+            $table->integer('support6_exp')->default(0)->change();
         });
     }
 
