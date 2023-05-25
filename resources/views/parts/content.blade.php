@@ -406,8 +406,8 @@
                         <i class="fa-solid fa-user fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Inscrivez-vous gratuitement</h2>
-                        <p class="leading-relaxed text-gray-300">L'inscription est rapide, gratuite et on vous offre 150 diamants pour bien commencer.</p>
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('content.c5')}}</h2>
+                        <p class="leading-relaxed text-gray-300">{{__('content.c6')}}</p>
                     </div>
                 </div>
             </div>
@@ -424,9 +424,8 @@
                         <i class="fa-solid fa-gamepad fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Jouez vos parties gratuites
-                            quotidiennes</h2>
-                        <p class="leading-relaxed text-gray-300">Chaque jour, vous avez la possibilité de jouer gratuitement 10 parties sur la grille GoFRUITS en multijoueur, avec la possibilité de gagner des lots instantanés. Vos scores vous donnent la possibilité de participer à notre concours mensuel, où le gros lot de 500€ (500 Coins) est en jeu ! Cette offre est une excellente occasion de profiter d'un jeu amusant tout en ayant la chance de gagner de superbes prix.</p>
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('content.c7')}}</h2>
+                        <p class="leading-relaxed text-gray-300">{{__('content.c8')}}</p>
                     </div>
                 </div>
             </div>
@@ -443,9 +442,9 @@
                         <i class="fa-regular fa-gem fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gagnez des Diamants, Rubis, Coins
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('content.c9')}}
                         </h2>
-                        <p class="leading-relaxed text-gray-300">Pool est une grille de jeux instantanées que vous pouvez jouer pour booster vos chances de participer au concours mensuel. De plus, vous avez la possibilité de remporter des Diamants, Rubis et Coins en jouant à ce jeu ! En cumulant vos scores, vous pouvez améliorer vos chances de remporter le gros lot de 500€ (500 Coins) offert dans le concours mensuel. Cette offre est une excellente opportunité pour les joueurs de s'amuser tout en ayant la chance de gagner de superbes récompenses.</p>
+                        <p class="leading-relaxed text-gray-300">{{__('content.c10')}}</p>
                     </div>
                 </div>
             </div>
@@ -462,8 +461,8 @@
                         <i class="fa-solid fa-gift fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Convertissez les en cadeaux</h2>
-                        <p class="leading-relaxed text-gray-300">Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.</p>
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('content.c11')}}</h2>
+                        <p class="leading-relaxed text-gray-300">{{__('content.c12')}}</p>
                     </div>
                 </div>
             </div>
@@ -477,14 +476,9 @@
         <div
             class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
             <div class="flex flex-col w-full mb-0 text-left">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('content.c13')}}</h1>
                 <p class="mb-8 mx-0 text-base leading-relaxed text-gray-300 lg:w-3/3">
-                Notre site GoKDO vous offre la possibilité de jouer gratuitement à des jeux divertissants et 
-                de remporter des cadeaux ! <br><a href="admin/register" class="text-blue-500 prevent">L'inscription est gratuite</a> et vous bénéficiez même de 150 Diamants 
-                offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en 
-                ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, 
-                vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de 
-                gagner de superbes prix.
+                {{__('content.c14')}} <br><a href="admin/register" class="text-blue-500 prevent">{{__('content.c15')}}</a> {{__('content.c16')}}
                 </p>
             <center>
             <iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </center>
