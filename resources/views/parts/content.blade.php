@@ -7,6 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 @if (backpack_auth()->check())
+@if($countevent > 0)
 <container class="mx-auto max-w-7xl" id="win">
     <section>
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
@@ -116,7 +117,7 @@
         </div>
     </section>
 </container>
-
+@endif
 
 <!-- JOUEZ UNE FOIS CONNECTE -->
 <container class="mx-auto max-w-7xl" id="win">
