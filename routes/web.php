@@ -20,12 +20,12 @@ use Mcamara\LaravelLocalization\LaravelLocalization;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::group(['prefix' => LaravelLocalization::setLocale()
-'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
-], function()
-{
+Route::group([
+    'prefix' => LaravelLocalization::setLocale(),
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+], function() {
 Route::controller(GlobalController::class)->group(function(){
-    // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
+// Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
