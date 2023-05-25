@@ -13,8 +13,8 @@ return [
     |
     */
 
-    'accueil1' => 'PLAY NOW FREE',
-    'accueil2' => 'Play Now',
-    'accueil3' => 'Win Prizes',
+    'c1' => 'PLAY NOW FREE',
+    'c2' => 'Play Now',
+    'c3' => 'Win Prizes',
 
 ];
