@@ -25,9 +25,7 @@ Route::controller(GlobalController::class)->group(function(){
         if (isset($lang) && in_array($lang, config('app.available_locales'))) {
             app()->setLocale($lang);
         }
-    
-        return view('index');
-    });
+});
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
