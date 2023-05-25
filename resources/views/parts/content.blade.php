@@ -143,7 +143,7 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($allgame->prix == 0)
-                                10 par 24h
+                                10 {{__('content.c20')}}
                                 @else
                                 {{ $allgame->prix }}
                                 @endif
