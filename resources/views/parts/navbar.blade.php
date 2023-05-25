@@ -138,13 +138,14 @@
                 </a>
                 <div>
     <form action="{{ route('lang.switch', app()->getLocale()) }}" method="POST" id="lang-form">
-        @csrf
-        <select name="locale" onchange="document.getElementById('lang-form').submit()">
-            <option value="en" {{ app()->getLocale() === 'en' ? 'selected' : '' }}>English</option>
-            <option value="fr" {{ app()->getLocale() === 'fr' ? 'selected' : '' }}>Français</option>
-            <!-- Ajoutez plus d'options pour les autres langues que vous souhaitez supporter -->
-        </select>
-    </form>
+    @csrf
+    <select name="locale" onchange="document.getElementById('lang-form').submit()">
+        <option value="en" {{ app()->getLocale() === 'en' ? 'selected' : '' }}>English</option>
+        <option value="fr" {{ app()->getLocale() === 'fr' ? 'selected' : '' }}>Français</option>
+        <!-- Ajoutez plus d'options pour les autres langues que vous souhaitez supporter -->
+    </select>
+</form>
+
 </div>
 
             @endif
