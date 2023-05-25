@@ -1,9 +1,17 @@
- if (session()->has('locale')) {
-        $locale = session()->get('locale');
-    } else {
-        $locale = config('app.fallback_locale');
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class LocalizationController extends Controller
+{
+    public function changeLanguage($locale)
+    {
+        // Stocker la langue choisie dans la variable de session
+        session()->put('locale', $locale);
+
+        // Rediriger l'utilisateur vers la page précédente
+        return redirect()->back();
     }
-
-    app()->setLocale($locale);
-
-    return $next($request);
+}
