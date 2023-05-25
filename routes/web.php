@@ -20,8 +20,9 @@ use App\Http\Middleware\Cors;
 |
 */
 Route::controller(GlobalController::class)->group(function(){
-Route::match(['get', 'post'], 'lang/{locale}', 'LocalizationController@changeLanguage')->name('lang.switch');
-
+    Route::prefix('lang')->group(function () {
+        Route::get('/{locale}', [LocalizationController::class, 'changeLanguage'])->name('lang.switch');
+    });
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
