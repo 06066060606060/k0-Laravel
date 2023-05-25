@@ -3,7 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\MailController;
-use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\SocialiteController;
@@ -20,9 +19,6 @@ use App\Http\Middleware\Cors;
 |
 */
 Route::controller(GlobalController::class)->group(function(){
-    Route::prefix('lang')->group(function () {
-        Route::match(['get', 'post'], '/{locale}', [LocalizationController::class, 'changeLanguage'])->name('lang.switch');
-    });
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
