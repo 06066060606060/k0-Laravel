@@ -4,15 +4,18 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-public function handle($request, Closure $next)
+class SetLocale
 {
-    if (session()->has('locale')) {
-        $locale = session()->get('locale');
-    } else {
-        $locale = config('app.fallback_locale');
+    public function handle($request, Closure $next)
+    {
+        if (session()->has('locale')) {
+            $locale = session()->get('locale');
+        } else {
+            $locale = config('app.fallback_locale');
+        }
+
+        app()->setLocale($locale);
+
+        return $next($request);
     }
-
-    app()->setLocale($locale);
-
-    return $next($request);
 }
