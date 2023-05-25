@@ -32,4 +32,7 @@ return [
     'c17' => 'Event Game',
     'c18' => 'Multiplayer Games',
     'c19' => 'Play',
+    'c20' => 'by Day',
+    'c21' => 'LATEST WINNERS',
+
 ];

@@ -32,4 +32,8 @@ return [
     'c17' => 'Jeu Event',
     'c18' => 'Jeux Multijoueurs',
     'c19' => 'Jouer',
+    'c20' => 'par 24h',
+    'c21' => 'DERNIERS GAGNANTS',
+
+
 ];
