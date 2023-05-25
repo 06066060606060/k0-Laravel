@@ -357,7 +357,7 @@
                     <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JEU 100% GAGNANT
                     </span>
                     @else
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{ __('accueil.accueil_1') }} JOUEZ GRATUITEMENT A
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{ __('accueil.accueil_1') }}
                     </span>
                     @endif                    
                     <h1
