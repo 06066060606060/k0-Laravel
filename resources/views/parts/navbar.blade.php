@@ -136,6 +136,8 @@
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
                     <span class="relative">Connexion</span>
                 </a>
+                {{ app()->getLocale() }}
+
                 <div>
     <form action="{{ route('lang.switch', app()->getLocale()) }}" method="POST" id="lang-form">
     @csrf
