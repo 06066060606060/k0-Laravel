@@ -32,8 +32,4 @@ return [
     'c17' => 'Jeu Event',
     'c18' => 'Jeux Multijoueurs',
     'c19' => 'Jouer',
-
-
-
-
 ];
