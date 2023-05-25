@@ -103,13 +103,13 @@
 
             </div>
                         <div class="flex-wrap m-full">
-                @forelse ($allgames as $allgame)
+                @forelse ($eventsgames as $eventsgame)
                     <div class="w-1/1 p-4 lg:w-1/1">
                      
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                         <a href="game?id={{ $allgame->id }}">
                             <div class="absolute top-0 right-0 w-16 h-16">
-                                @if($allgame->prix == 0)
+                                @if($eventsgame->prix == 0)
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @else
@@ -117,12 +117,12 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($allgame->prix == 0)
-                                10 par 24h
+                                1 par 24h
                                 @else
-                                {{ $allgame->prix }}
+                                {{ $eventsgame->prix }}
                                 @endif
-                                @if($allgame->prix > 0)
-                                @if ($allgame->type_prix == 'Diamants' && $allgame->prix == 0)
+                                @if($eventsgame->prix > 0)
+                                @if ($allgame->type_prix == 'Diamants' && $eventsgame->prix == 0)
                                  <img src="img/diamond5.png" class="w-4" style="display:inline;">
                                 @elseif ($allgame->type_prix == 'Rubis')
                                  <img src="img/gem10.png" class="w-4" style="display:inline;">
@@ -132,7 +132,7 @@
                                  @endif
                                 </div>
                             </div>
-                            @php $imagesb =  $allgame->image[0] ?? null; @endphp
+                            @php $imagesb =  $eventsgame->image[0] ?? null; @endphp
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
                                 src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
@@ -142,7 +142,7 @@
                                     {{ $allgame->name }}</h2>
                                 <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">
                                     {{ $allgame->category }}</h1>
-                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->description }}</p>
                                     <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span

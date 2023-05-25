@@ -42,6 +42,8 @@ class GlobalController extends Controller
         $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
         // Jeux Booster
         $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
+        // jeux event
+        $eventsgames = Games::where('type', 'Events')->where('status', 0)->limit(6)->inRandomOrder()->get();
         // Jeux mis en avant    
         $starred = Games::where('status', 1)->inRandomOrder()->first();
         return view('index', compact('scores', 'freegames', 'boostergames', 'starred', 'allgames', 'winner', 'concours'));
