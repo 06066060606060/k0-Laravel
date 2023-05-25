@@ -19,6 +19,8 @@ use App\Http\Middleware\Cors;
 |
 */
 Route::controller(GlobalController::class)->group(function(){
+Route::get('lang/{locale}', 'LocalizationController@changeLanguage')->name('lang.switch');
+
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
