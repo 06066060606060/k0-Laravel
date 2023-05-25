@@ -16,6 +16,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/socialite": "^5.5",
         "manadinho/fast-debugger": "^1.0",
+        "mcamara/laravel-localization": "^1.8",
         "nesbot/carbon": "^2.64",
         "pestopancake/laravel-backpack-database-notifications": "^1.0",
         "spatie/laravel-cookie-consent": "^3.2",
