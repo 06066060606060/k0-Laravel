@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Middleware;
-
 use Closure;
 use App\Http\Controllers\LocalizationController;
 
@@ -11,7 +10,7 @@ class SetLocale
     public function handle($request, Closure $next)
     {
         if (session()->has('locale')) {
-            $locale = session()->get('locale');
+            $locale = config('app.locale');
         } else {
             $locale = config('app.fallback_locale');
         }
