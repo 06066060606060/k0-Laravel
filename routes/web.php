@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GlobalController;
 use App\Http\Controllers\MailController;
+use App\Http\Controllers\LocalizationController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\SocialiteController;
