@@ -1,5 +1,5 @@
 <?php
-
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Middleware\Cors;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
@@ -8,8 +8,6 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\StripePaymentController;
-use LaravelLocalization;
-
 
 /*
 |--------------------------------------------------------------------------
