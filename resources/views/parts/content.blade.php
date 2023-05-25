@@ -13,7 +13,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeu Event</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('content.c17')}}</h1>
                 
             </div>
             <div class="flex-wrap m-full">
@@ -67,7 +67,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Jouer</span>
+                                        <span class="relative">{{__('content.c19')}}</span>
                                     </a>
                                 
                             </div>
@@ -125,7 +125,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux Multijoueurs</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('content.c18')}}</h1>
                 
             </div>
             <div class="flex flex-wrap -m-4">
@@ -179,7 +179,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Jouer</span>
+                                        <span class="relative">{{__('content.c19')}}</span>
                                     </a>
                                 
                             </div>

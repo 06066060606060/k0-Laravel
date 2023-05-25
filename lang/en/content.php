@@ -29,5 +29,8 @@ return [
     'c14' => 'Our GoKDO site offers you the opportunity to play entertaining games for free and win gifts!',
     'c15' => "Registration is free",
     'c16' => "and you even get 150 Diamonds for free when you sign up. This offer is a great opportunity to have fun while having the chance to win interesting gifts. By playing on our site, you can enjoy an exciting gaming experience while increasing your chances of winning great prizes."
+    'c17' => 'Event Game',
+    'c18' => 'Multiplayer Games',
+    'c19' => 'Play',
 
 ];

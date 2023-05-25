@@ -29,6 +29,9 @@ return [
     'c14' => 'Notre site GoKDO vous offre la possibilité de jouer gratuitement à des jeux divertissants et de remporter des cadeaux !',
     'c15' => "L'inscription est gratuite",
     'c16' => "et vous bénéficiez même de 150 Diamants offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de gagner de superbes prix.",
+    'c17' => 'Jeu Event',
+    'c18' => 'Jeux Multijoueurs',
+    'c19' => 'Jouer',
 
 
 
