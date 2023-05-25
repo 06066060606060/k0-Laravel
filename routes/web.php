@@ -19,7 +19,15 @@ use App\Http\Middleware\Cors;
 |
 */
 Route::controller(GlobalController::class)->group(function(){
-    // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
+
+    Route::get('/{lang?}', function ($lang = null) {
+
+        if (isset($lang) && in_array($lang, config('app.available_locales'))) {
+            app()->setLocale($lang);
+        }
+    
+        return view('index');
+    });
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
