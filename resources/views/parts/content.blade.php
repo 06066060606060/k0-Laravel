@@ -391,7 +391,7 @@
 <container id="how" class="block py-16 mx-8 border-gray-600 max-w-7xl md:mx-auto">
     <section class="text-gray-400 body-font">
         <div class="flex flex-col items-center">
-            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('accueil.accueil3')}}</h1>
+            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('content.c3')}}</h1>
         </div>
         <div class="container flex flex-wrap px-5 py-8 mx-auto">
             <div class="relative flex pt-10 pb-20 mx-auto sm:items-center md:w-2/3">
