@@ -13,7 +13,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{ __('Jeu Event') }}</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeu Event</h1>
                 
             </div>
             <div class="flex-wrap m-full">
@@ -31,7 +31,7 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($eventsgame->prix == 0)
-                                {{ __('1 par 24h') }}
+                                1 par 24h
                                 @else
                                 {{ $eventsgame->prix }}
                                 @endif
@@ -67,7 +67,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">{{__('Jouer')}}</span>
+                                        <span class="relative">Jouer</span>
                                     </a>
                                 
                             </div>
@@ -80,7 +80,7 @@
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-red-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
-                                    {{__('Aucun jeu')}}
+                                    Aucun jeu
                                 </div>
                             </div>
                             <img alt="gallery"
@@ -125,7 +125,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux Multijoueurs')}}</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux Multijoueurs</h1>
                 
             </div>
             <div class="flex flex-wrap -m-4">
@@ -143,7 +143,7 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($allgame->prix == 0)
-                                {{__('10 par 24h')}}
+                                10 par 24h
                                 @else
                                 {{ $allgame->prix }}
                                 @endif
@@ -179,7 +179,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">{{__('Jouer')}}</span>
+                                        <span class="relative">Jouer</span>
                                     </a>
                                 
                             </div>
@@ -234,7 +234,7 @@
     <section>
         <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
-                {{__('DERNIERS GAGNANTS')}}
+                DERNIERS GAGNANTS
             </h2>
 
             <div class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
@@ -354,10 +354,10 @@
                 <div
                     class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
                     @if($starred->name != 'GoFRUITS')
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('JEU 100% GAGNANT')}}
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JEU 100% GAGNANT
                     </span>
                     @else
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('JOUEZ GRATUITEMENT A')}}
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JOUEZ GRATUITEMENT A
                     </span>
                     @endif                    
                     <h1
@@ -375,8 +375,8 @@
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">{{__('Jouez
-                                    Maintenant')}}</span>
+                                <span class="relative">Jouez
+                                    Maintenant</span>
                             </a>
                     </div>
 
@@ -391,7 +391,7 @@
 <container id="how" class="block py-16 mx-8 border-gray-600 max-w-7xl md:mx-auto">
     <section class="text-gray-400 body-font">
         <div class="flex flex-col items-center">
-            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Gagnez des cadeaux')}}</h1>
+            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagnez des cadeaux</h1>
         </div>
         <div class="container flex flex-wrap px-5 py-8 mx-auto">
             <div class="relative flex pt-10 pb-20 mx-auto sm:items-center md:w-2/3">
