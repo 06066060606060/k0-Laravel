@@ -16,5 +16,6 @@ return [
     'c1' => 'PLAY NOW FREE',
     'c2' => 'Play Now',
     'c3' => 'Win Prizes',
+    'c4' => '100% WINNING GAME!',
 
 ];

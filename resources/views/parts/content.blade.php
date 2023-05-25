@@ -354,10 +354,10 @@
                 <div
                     class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
                     @if($starred->name != 'GoFRUITS')
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JEU 100% GAGNANT
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('content.c4')}}
                     </span>
                     @else
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JOUEZ GRATUITEMENT A
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('content.c1')}}
                     </span>
                     @endif                    
                     <h1
@@ -375,8 +375,7 @@
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">Jouez
-                                    Maintenant</span>
+                                <span class="relative">{{__('content.c2')}}</span>
                             </a>
                     </div>
 

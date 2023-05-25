@@ -16,5 +16,6 @@ return [
     'c1' => 'JOUEZ GRATUITEMENT A',
     'c2' => 'Jouez Maintenant',
     'c3' => 'Gagnez des cadeaux',
+    'c4' => 'JEU 100% GAGNANT !',
 
 ];
