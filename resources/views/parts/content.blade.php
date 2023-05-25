@@ -13,7 +13,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeu Event</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{ __('Jeu Event') }}</h1>
                 
             </div>
             <div class="flex-wrap m-full">
@@ -31,7 +31,7 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($eventsgame->prix == 0)
-                                1 par 24h
+                                {{ __('1 par 24h') }}
                                 @else
                                 {{ $eventsgame->prix }}
                                 @endif
@@ -67,7 +67,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Jouer</span>
+                                        <span class="relative">{{__('Jouer')}}</span>
                                     </a>
                                 
                             </div>
@@ -80,7 +80,7 @@
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-red-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
-                                    Aucun jeu
+                                    {{__('Aucun jeu')}}
                                 </div>
                             </div>
                             <img alt="gallery"
@@ -125,7 +125,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux Multijoueurs</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux Multijoueurs')}}</h1>
                 
             </div>
             <div class="flex flex-wrap -m-4">
