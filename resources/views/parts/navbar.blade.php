@@ -32,37 +32,37 @@
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="/"
                     @click="isOpen = false">
                     @if (backpack_auth()->check())
-                    <i class="fa-solid fa-gamepad"></i>&nbsp; Jeux</a>
+                    <i class="fa-solid fa-gamepad"></i>&nbsp; {{__('header.h2')}}</a>
                 @else
-                    <i class="fa-solid fa-house"></i>&nbsp; Accueil</a>
+                    <i class="fa-solid fa-house"></i>&nbsp; {{__('header.h3')}}</a>
                 @endif
                 @if (backpack_auth()->check())
                 @else
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="/#concept"
-                    @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Concept</a>
+                    @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; {{__('header.h4')}}</a>
                 @endif
                 <!--<a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="jeux"
                     @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos jeux</a>-->
                 @if (backpack_auth()->check())
                 @if(isset($concours))
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
-                @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
+                @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; {{__('header.h5')}}</a>
                 @else
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
-                @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; Concours</a>
+                @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; {{__('header.h5')}}</a>
                 @endif
                 @else
                 <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="/#video"
-                    @click="isOpen = false"><i class="fa-solid fa-video"></i>&nbsp; Vidéo</a>
+                    @click="isOpen = false"><i class="fa-solid fa-video"></i>&nbsp; {{__('header.h6')}}</a>
                 @endif
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="cadeaux"
-                        @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-gift"></i>&nbsp; Cadeaux</a>
+                        @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-gift"></i>&nbsp; {{__('header.h7')}}</a>
                 @if (backpack_auth()->check())
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="pack"
                         @click="isOpen = false" data-barba-prevent="self"><i class="fa-regular fa-gem"></i>&nbsp;
-                        Pack</a>
+                        {{__('header.h8')}}</a>
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
-                        @click="isOpen = false"  data-barba-prevent="self"><i class="fa-solid fa-user"></i>&nbsp; Profil</a>
+                        @click="isOpen = false"  data-barba-prevent="self"><i class="fa-solid fa-user"></i>&nbsp; {{__('header.h9')}}</a>
                 @endif
 
             </div>
@@ -100,11 +100,11 @@
                                         <a href="admin"
                                             class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white"
                                             target="_blank">
-                                            Administration</a>
+                                            {{__('header.h10')}}</a>
                                     @endif
                                     <a href="admin/logout"
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white prevent" data-barba-prevent="self">
-                                        Déconnexion </a>
+                                        {{__('header.h11')}} </a>
                                 </div>
 
                             </div>
@@ -122,7 +122,7 @@
                         class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-600 -rotate-12"></span>
                     <span
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-400 -rotate-12"></span>
-                    <span class="relative">Inscription</span>
+                    <span class="relative">{{__('header.h12')}}</span>
                 </a>
                 <a href="admin/login"
                     class="relative flex justify-center w-24 px-5 py-1 my-2 mt-2 font-medium text-white shadow-lg prevent lg:ml-8 group">
@@ -134,7 +134,7 @@
                         class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-blue-600 -rotate-12"></span>
                     <span
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
-                    <span class="relative">Connexion</span>
+                    <span class="relative">{{__('header.h13')}}</span>
                 </a>
             @endif
         </div>
@@ -144,7 +144,7 @@
     <div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
         <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
             <p class="pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0">
-                Bienvenue {{ backpack_auth()->user()->name }}</p>
+                {{__('header.h14')}} {{ backpack_auth()->user()->name }}</p>
             <div class="flex items-center pr-4 mt-1">
                 <div class="flex px-2">
                     <img src="img/diamond5.png" class="w-8 h-6">
