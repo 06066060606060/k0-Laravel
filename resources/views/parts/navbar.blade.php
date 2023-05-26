@@ -57,11 +57,11 @@
                             <li>
                                 <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
                                     data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
-                                    @if(ucfirst($properties['native'])) == "English")  
+                                    @if(ucfirst($properties['native']) == "English")  
                                     <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" width="16">
-                                    @elseif(ucfirst($properties['native'])) == "Français")
+                                    @elseif(ucfirst($properties['native']) == "Français")
                                     <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français"  width="16">
-                                    @elseif(ucfirst($properties['native'])) == "Español")
+                                    @elseif(ucfirst($properties['native']) == "Español")
                                     <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" width="16">
                                     @else
                                     @endif
