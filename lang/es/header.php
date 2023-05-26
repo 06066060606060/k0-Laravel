@@ -34,5 +34,4 @@ return [
 'c19' => 'Jugar',
 'c20' => 'por 24h',
 'c21' => 'ÚLTIMOS GANADORES',
-
 ];
