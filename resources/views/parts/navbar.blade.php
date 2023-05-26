@@ -136,11 +136,13 @@
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
                     <span class="relative">{{__('header.h13')}}</span>
                 </a>
-                <select name="lang" id="langSelect">
-                    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                        <option value="{{ $localeCode }}">{{ $properties['native'] }}</option>
-                    @endforeach
-                </select>
+<select name="lang" id="langSelect" onchange="this.form.submit()">
+    @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+        <option value="{{ $localeCode }}" {{ app()->getLocale() === $localeCode ? 'selected' : '' }}>
+            {{ $properties['native'] }}
+        </option>
+    @endforeach
+</select>
 
             @endif
         </div>
