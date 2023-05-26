@@ -23,9 +23,9 @@ return [
 'h8' => 'Packs',
 'h9' => 'Perfil',
 'h10' => 'Administración',
-'h11' => 'Cerrar sesión',
+'h11' => 'Salir',
 'h12' => 'Registro',
-'h13' => 'Inicio de sesión',
+'h13' => 'Conexión',
 'h14' => 'Bienvenido'
 
 
