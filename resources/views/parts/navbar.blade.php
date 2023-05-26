@@ -136,22 +136,18 @@
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
                     <span class="relative">{{__('header.h13')}}</span>
                 </a>
-                <form action="{{ route('changeLocale') }}" method="post" id="langForm">
-                    @csrf
-                    <select name="lang" id="langSelect" onchange="submitForm()">
+                <div class="dropdown">
+                    <button class="dropdown-toggle" type="button" id="langDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ LaravelLocalization::getCurrentLocaleNative() }}
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="langDropdown">
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <option value="{{ $localeCode }}" {{ app()->getLocale() === $localeCode ? 'selected' : '' }}>
+                            <a class="dropdown-item" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
                                 {{ $properties['native'] }}
-                            </option>
+                            </a>
                         @endforeach
-                    </select>
-                </form>
-
-                <script>
-                    function submitForm() {
-                        document.getElementById('langForm').submit();
-                    }
-                </script>
+                    </div>
+                </div>
 
 
             @endif
