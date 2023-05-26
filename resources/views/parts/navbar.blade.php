@@ -157,7 +157,7 @@
                     @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                         <li>
                             <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}"
-                                class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
+                                data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
                                 {{ $properties['native'] }}
                             </a>
                         </li>
