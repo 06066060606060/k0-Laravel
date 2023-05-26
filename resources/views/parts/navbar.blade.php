@@ -26,10 +26,7 @@
         </div>
 
         <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
-            class="absolute inset-x-0 z-50 w-screen px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
-            <div class="flex flex-col pb-4 space-y-4 align-baseline mynav lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
-                                <div x-data="{ isOpen: false }" class="relative inline-block mb-2">
+                        <div x-data="{ isOpen: false }" class="relative inline-block mb-2">
                     <!-- Dropdown toggle button -->
                     <button @click="isOpen = !isOpen"
                         class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
@@ -58,6 +55,10 @@
                         @endforeach
                     </ul>
                 </div>
+        <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
+            class="absolute inset-x-0 z-50 w-screen px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+            <div class="flex flex-col pb-4 space-y-4 align-baseline mynav lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
+                
                 
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="/"
                     @click="isOpen = false">
