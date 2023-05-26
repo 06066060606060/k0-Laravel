@@ -31,11 +31,11 @@
                     <button @click="isOpen = !isOpen"
                         class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
                         <span class="mr-1">@if(ucfirst(LaravelLocalization::getCurrentLocaleNative()) == "English")  
-                        <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English">
+                        <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English">&nbsp;
                         @elseif(ucfirst(LaravelLocalization::getCurrentLocaleNative()) == "Français")
-                        <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français">
+                        <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français">&nbsp;
                         @elseif(ucfirst(LaravelLocalization::getCurrentLocaleNative()) == "Español")
-                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español">
+                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español">&nbsp;
                         @else
                         @endif
                         </span>
