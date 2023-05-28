@@ -5,10 +5,10 @@
          <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
              <a class="flex items-center justify-center font-medium text-gray-700 title-font md:justify-start">
 
-                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('footer.f1')}}</h2>
+                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Jeux en ligne Multijoueurs</h2>
              </a>
-             <p class="mt-2 text-sm text-gray-400">{{__('footer.f2')}}<br>
-                 {{__('footer.f3')}}
+             <p class="mt-2 text-sm text-gray-400">Gagnez des cadeaux en jouant !<br>
+                 GoKDO est un site de jeux gratuits sans obligation d'achat.
              </p>
          </div>
          <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
@@ -17,27 +17,27 @@
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
              </div>
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('footer.f4')}}</h2>
+                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">A Propos</h2>
                  <div class="mb-10 list-none">
                      <li>
-                         <a href="reglement" class="text-gray-400 hover:text-gray-500">{{__('footer.f5')}}</a>
+                         <a href="reglement" class="text-gray-400 hover:text-gray-500">Règlement</a>
                      </li>
                      <li>
-                         <a href="mentions-legales" class="text-gray-400 hover:text-gray-500">{{__('footer.f6')}}</a>
+                         <a href="mentions-legales" class="text-gray-400 hover:text-gray-500">Mentions Légales</a>
                      </li>
                      <li>
-                         <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">{{__('footer.f7')}}</a>
+                         <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">Confidentialité</a>
                      </li>
                  </div>
              </div>
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('footer.f8')}}</h2>
+                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Plus</h2>
                  <div class="mb-10 list-none">
                      <li>
-                         <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('footer.f9')}}</a>
+                         <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">Aide</a>
                      </li>
                      <li>
-                         <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('footer.f10')}}</a>
+                         <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">Nous Contacter</a>
                      </li>
 
                  </div>
@@ -46,7 +46,7 @@
      </div>
      <div class="bg-gray-700">
          <div class="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-             <p class="text-sm text-center text-gray-400 sm:text-left">© 2023 GoKDO - {{__('footer.f11')}}
+             <p class="text-sm text-center text-gray-400 sm:text-left">© 2023 GoKDO - Tous Droits Réservés
              </p>
              <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                  <a href="https://www.facebook.com/gokdocom" class="text-gray-400">
