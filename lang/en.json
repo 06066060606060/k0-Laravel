@@ -1,5 +1,4 @@
 {
-    // Page Navbar
     "Jeux": "Games",
     "Accueil": "Home",
     "Concept": "Concept",
@@ -12,7 +11,6 @@
     "Inscription": "Sign up",
     "Connexion": "Login",
     "Bienvenue": "Welcome",    
-    // Page Footer
     "Jeux en ligne Multijoueurs": "Online Multiplayer Games",
     "Gagnez des cadeaux en jouant !": "Win prizes by playing!",
     "GoKDO est un site de jeux gratuits sans obligation d'achat.": "GoKDO is a free gaming website with no purchase obligation.",
