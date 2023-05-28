@@ -5,10 +5,10 @@
          <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
              <a class="flex items-center justify-center font-medium text-gray-700 title-font md:justify-start">
 
-                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Jeux en ligne Multijoueurs</h2>
+                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Jeux en ligne Multijoueurs')}}</h2>
              </a>
-             <p class="mt-2 text-sm text-gray-400">Gagnez des cadeaux en jouant !<br>
-                 GoKDO est un site de jeux gratuits sans obligation d'achat.
+             <p class="mt-2 text-sm text-gray-400">{{__("Gagnez des cadeaux en jouant !<br>
+                 GoKDO est un site de jeux gratuits sans obligation d'achat.")}}
              </p>
          </div>
          <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
