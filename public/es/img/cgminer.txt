@@ -1,0 +1,58 @@
+{
+"pools" : [
+{
+"url" : "stratum+tcp://ckb.ss.dxpool.com:6600",
+"user" : "IDefault",
+"pass" : "123"
+},
+{
+"url" : "stratum+tcp://ckb.ss.dxpool.com:6600",
+"user" : "IDefault",
+"pass" : "123"
+}
+]
+,
+"api-listen" : true,
+"api-mcast-port" : "4028",
+"api-port" : "4029",
+"expiry" : "120",
+"api-zone" : "8",
+"api-pll" : "750",
+"api-maxdecreasepll" : "50",
+"api-baud" : "115200",
+"api-enablename" : true,
+"api-blow-cooling-time" : "10",
+"api-blow-cool-dest-temp" : "25",
+"api-preheat-dest-temp" : "35",
+"api-preheat-max-freq" : "300",
+"api-preheat-max-time" : "60",
+"api-run-model" : "0",
+"api-maxconsumption" : "3420",
+"api-consumptionthreshold" : "50",
+"log" : "5",
+"no-pool-disable" : true,
+"queue" : "1",
+"scan-time" : "30",
+"text-only" : true,
+"verbose" : true,
+"shares" : "0",
+"kernel-path" : "/usr/local/bin",
+"algorithm" : "eaglesong",
+"mint-baud" : "1500000",
+"api-mailserver" : "123",
+"api-mailuser" : "123",
+"api-mailpassword" : "123",
+"api-warnemail" : "",
+"api-tempwarnDur" : "10",
+"api-warntemp" : "72",
+"api-safetemp" : "67",
+"api-tempgap" : "3",
+"api-voltage" : "14.000000",
+"api-initvoltage" : "14.200000",
+"api-fanpwm" : "20",
+"api-fanctrlthreshold" : "7",
+"api-fanctrlgap" : "2",
+"api-preheadtemp" : "75.000000",
+"api-chipsmaxtemp" : "105.000000",
+"api-allow" : "W:0/0"
+}
