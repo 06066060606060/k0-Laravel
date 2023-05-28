@@ -13,7 +13,7 @@
                     </div>
                 
 	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('mentions.ml2')}}</h2>
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('mentions.ml2')}}</h2> 
 		<p class="leading-relaxed text-gray-300">{{__('mentions.ml3')}} : GOKDO
         <br>{{__('mentions.ml4')}} : En cours de création...
         <br>{{__('mentions.ml5')}} : Auto-entrepreneur
