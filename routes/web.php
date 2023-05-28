@@ -76,4 +76,4 @@ Route::get("redirect/{provider}",[SocialiteController::class, 'redirect'])->name
 
 // Le callback du provider
 Route::get("callback/{provider}",[SocialiteController::class, 'callback'])->name('socialite.callback');
-});
+})->where('locale', '(fr|en|es)'); // Définissez les langues prises en charge ici
