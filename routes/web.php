@@ -21,7 +21,7 @@ use App\Http\Controllers\StripePaymentController;
 */
 Route::group([
     'prefix' => LaravelLocalization::setLocale(),
-    'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
+    'middleware' => ['localeSessionRedirect', 'localizationRedirect']
 ], function() {
 Route::controller(GlobalController::class)->group(function(){
 // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
