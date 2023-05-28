@@ -7,8 +7,8 @@
 
                  <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Jeux en ligne Multijoueurs')}}</h2>
              </a>
-             <p class="mt-2 text-sm text-gray-400">{{__("Gagnez des cadeaux en jouant !<br>
-                 GoKDO est un site de jeux gratuits sans obligation d'achat.")}}
+             <p class="mt-2 text-sm text-gray-400">{{__("Gagnez des cadeaux en jouant !")}}<br>
+                 {{__("GoKDO est un site de jeux gratuits sans obligation d'achat.")}}
              </p>
          </div>
          <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
