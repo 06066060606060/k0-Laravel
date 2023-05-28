@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 return [
 
@@ -55,9 +54,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/' . LaravelLocalization::setLocale()),
+    'url' => env('APP_URL', 'http://localhost'),
 
-'asset_url' => env('ASSET_URL'),
+    'asset_url' => env('ASSET_URL'),
 
     /*
     |--------------------------------------------------------------------------
@@ -83,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'fr',
+    'locale' => ['fr', 'en', 'es'],
 
     /*
     |--------------------------------------------------------------------------
