@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Facade;
-use Illuminate\Support\Facades\App;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 return [
 
@@ -55,9 +55,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://localhost/' . LaravelLocalization::setLocale()),
 
-    'asset_url' => '/' . App::getLocale() . env('ASSET_URL'),
+'asset_url' => env('ASSET_URL'),
 
     /*
     |--------------------------------------------------------------------------
