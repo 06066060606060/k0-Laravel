@@ -57,7 +57,7 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'asset_url' => '/' . app()->getLocale() . env('ASSET_URL'),
+    'asset_url' => '/' . App::getLocale() . env('ASSET_URL'),
 
     /*
     |--------------------------------------------------------------------------
