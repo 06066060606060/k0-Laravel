@@ -17,27 +17,27 @@
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
              </div>
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">A Propos</h2>
+                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('A Propos')}}</h2>
                  <div class="mb-10 list-none">
                      <li>
-                         <a href="reglement" class="text-gray-400 hover:text-gray-500">Règlement</a>
+                         <a href="reglement" class="text-gray-400 hover:text-gray-500">{{__('Règlement')}}</a>
                      </li>
                      <li>
-                         <a href="mentions-legales" class="text-gray-400 hover:text-gray-500">Mentions Légales</a>
+                         <a href="mentions-legales" class="text-gray-400 hover:text-gray-500">{{__('Mentions Légales')}}</a>
                      </li>
                      <li>
-                         <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">Confidentialité</a>
+                         <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">{{__('Confidentialité')}}</a>
                      </li>
                  </div>
              </div>
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">Plus</h2>
+                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Plus')}}</h2>
                  <div class="mb-10 list-none">
                      <li>
-                         <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">Aide</a>
+                         <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a>
                      </li>
                      <li>
-                         <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">Nous Contacter</a>
+                         <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
                      </li>
 
                  </div>
@@ -46,7 +46,7 @@
      </div>
      <div class="bg-gray-700">
          <div class="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-             <p class="text-sm text-center text-gray-400 sm:text-left">© 2023 GoKDO - Tous Droits Réservés
+             <p class="text-sm text-center text-gray-400 sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}}
              </p>
              <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                  <a href="https://www.facebook.com/gokdocom" class="text-gray-400">
