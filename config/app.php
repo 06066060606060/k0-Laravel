@@ -100,7 +100,7 @@ return [
 
     'available_locales' => [
         'English' => 'en',
-        'Russian' => 'ru',
+        'Spanish' => 'es',
         'French' => 'fr',
       ],
 
