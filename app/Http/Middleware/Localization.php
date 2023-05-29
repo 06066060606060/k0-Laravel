@@ -5,7 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Session;
+use App\Models\Session as AppSession; // Rename the conflicting Session class
+use Illuminate\Support\Facades\Session; // Use full namespace for Session facade
 
 class Localization
 {
