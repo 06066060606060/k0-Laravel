@@ -3,9 +3,9 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use App\Models\Session;
+use App\Models\Session as AppSession; // Rename the conflicting Session class
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Session; // Use full namespace for Session facade
 
 class Localization
 {
@@ -13,13 +13,13 @@ class Localization
      * Handle an incoming request.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
-     * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
+     * @param  \Closure  $next
+     * @return mixed
      */
     public function handle(Request $request, Closure $next)
     {
         if (Session::has('locale')) {
-            App::setLocale(ok::get('locale'));
+            App::setLocale(Session::get('locale')); // Use full namespace for App facade
         }
         return $next($request);
     }
