@@ -263,7 +263,7 @@
                                                                                          {{ $cadeau->prix }} <img
                                                                                              src="img/diamond5.png"
                                                                                              class="flex w-7 h-5">
-                                                                                         {{__('seronts retirés de votre solde.')}}
+                                                                                         {{__('seront retirés de votre solde.')}}
                                                                                      </h1>
 
                                                                                      <div class="flex justify-center">
