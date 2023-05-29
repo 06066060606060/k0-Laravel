@@ -20,8 +20,7 @@
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le jeu GoFRUITS')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS.
-    10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille de jeu est régénérée une fois le gain le plus haut trouvé, certaines cases de la grille GoFRUITS sont perdantes.")}}</p>
+		<p class="leading-relaxed text-gray-300">{{__("Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS. 10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille de jeu est régénérée une fois le gain le plus haut trouvé, certaines cases de la grille GoFRUITS sont perdantes.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le jeu POOL')}}</h2>
