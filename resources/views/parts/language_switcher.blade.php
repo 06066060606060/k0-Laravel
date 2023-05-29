@@ -11,7 +11,14 @@
             @endif
         @else
             <a class="ml-1 underline ml-2 mr-2" data-barba-prevent="self" href="language/{{ $available_locale }}">
-                <span>{{ $locale_name }}</span>
+            @if($available_locale == 'en')
+                <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-6 h-6 mr-1">
+            @elseif($available_locale == 'es')
+                <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-6 h-6 mr-1">
+            @elseif($available_locale == 'fr')
+                <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-6 h-6 mr-1">
+            @else
+            @endif
             </a>
         @endif
     @endforeach
