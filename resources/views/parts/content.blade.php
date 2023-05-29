@@ -13,7 +13,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeu Event</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeu Event')}}</h1>
                 
             </div>
             <div class="flex-wrap m-full">
@@ -31,7 +31,7 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($eventsgame->prix == 0)
-                                1 par 24h
+                                1 {{__('par 24h')}}
                                 @else
                                 {{ $eventsgame->prix }}
                                 @endif
@@ -67,7 +67,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Jouer</span>
+                                        <span class="relative">{{__('Jouer')}}</span>
                                     </a>
                                 
                             </div>
@@ -80,7 +80,7 @@
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-red-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
-                                    Aucun jeu
+                                    {{__('Aucun jeu')}}
                                 </div>
                             </div>
                             <img alt="gallery"
@@ -125,7 +125,7 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux Multijoueurs</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux Multijoueurs')}}</h1>
                 
             </div>
             <div class="flex flex-wrap -m-4">
@@ -143,7 +143,7 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($allgame->prix == 0)
-                                10 par 24h
+                                10 {{__('par 24h')}}
                                 @else
                                 {{ $allgame->prix }}
                                 @endif
@@ -179,7 +179,7 @@
                                             class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                         <span
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                        <span class="relative">Jouer</span>
+                                        <span class="relative">{{__('Jouer')}}</span>
                                     </a>
                                 
                             </div>
@@ -192,7 +192,7 @@
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 <div
                                     class="border z-20 absolute transform rotate-45 select-none bg-red-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
-                                    Aucun jeu
+                                    {{__('Aucun jeu')}}
                                 </div>
                             </div>
                             <img alt="gallery"
@@ -234,7 +234,7 @@
     <section>
         <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
-                DERNIERS GAGNANTS
+                {{__('DERNIERS GAGNANTS')}}
             </h2>
 
             <div class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
@@ -354,10 +354,10 @@
                 <div
                     class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
                     @if($starred->name != 'GoFRUITS')
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JEU 100% GAGNANT !
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('JEU 100% GAGNANT !')}}
                     </span>
                     @else
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> JOUEZ GRATUITEMENT A
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('JOUEZ GRATUITEMENT A')}}
                     </span>
                     @endif                    
                     <h1
@@ -375,7 +375,7 @@
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">Jouez Maintenant</span>
+                                <span class="relative">{{__('Jouez Maintenant')}}</span>
                             </a>
                     </div>
 
@@ -390,7 +390,7 @@
 <container id="how" class="block py-16 mx-8 border-gray-600 max-w-7xl md:mx-auto">
     <section class="text-gray-400 body-font">
         <div class="flex flex-col items-center">
-            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Gagnez des cadeaux</h1>
+            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Gagnez des cadeaux')}}</h1>
         </div>
         <div class="container flex flex-wrap px-5 py-8 mx-auto">
             <div class="relative flex pt-10 pb-20 mx-auto sm:items-center md:w-2/3">
@@ -406,8 +406,8 @@
                         <i class="fa-solid fa-user fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Inscrivez-vous gratuitement</h2>
-                        <p class="leading-relaxed text-gray-300">L'inscription est rapide, gratuite et on vous offre 150 diamants pour bien commencer.</p>
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Inscrivez-vous gratuitement')}}</h2>
+                        <p class="leading-relaxed text-gray-300">{{__("L'inscription est rapide, gratuite et on vous offre 150 diamants pour bien commencer.")}}</p>
                     </div>
                 </div>
             </div>
@@ -424,8 +424,8 @@
                         <i class="fa-solid fa-gamepad fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Jouez vos parties gratuites quotidiennes</h2>
-                        <p class="leading-relaxed text-gray-300">Chaque jour, vous avez la possibilité de jouer gratuitement 10 parties sur la grille GoFRUITS en multijoueur, avec la possibilité de gagner des lots instantanés. Vos scores vous donnent la possibilité de participer à notre concours mensuel, où le gros lot de 500€ (500 Coins) est en jeu ! Cette offre est une excellente occasion de profiter d'un jeu amusant tout en ayant la chance de gagner de superbes prix.</p>
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Jouez vos parties gratuites quotidiennes')}}</h2>
+                        <p class="leading-relaxed text-gray-300">{{__("Chaque jour, vous avez la possibilité de jouer gratuitement 10 parties sur la grille GoFRUITS en multijoueur, avec la possibilité de gagner des lots instantanés. Vos scores vous donnent la possibilité de participer à notre concours mensuel, où le gros lot de 500€ (500 Coins) est en jeu ! Cette offre est une excellente occasion de profiter d'un jeu amusant tout en ayant la chance de gagner de superbes prix.")}}</p>
                     </div>
                 </div>
             </div>
@@ -442,9 +442,9 @@
                         <i class="fa-regular fa-gem fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gagnez des Diamants, Rubis, Coins
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Gagnez des Diamants, Rubis, Coins')}}
                         </h2>
-                        <p class="leading-relaxed text-gray-300">Pool est une grille de jeux instantanées que vous pouvez jouer pour booster vos chances de participer au concours mensuel. De plus, vous avez la possibilité de remporter des Diamants, Rubis et Coins en jouant à ce jeu ! En cumulant vos scores, vous pouvez améliorer vos chances de remporter le gros lot de 500€ (500 Coins) offert dans le concours mensuel. Cette offre est une excellente opportunité pour les joueurs de s'amuser tout en ayant la chance de gagner de superbes récompenses.</p>
+                        <p class="leading-relaxed text-gray-300">{{__("Pool est une grille de jeux instantanées que vous pouvez jouer pour booster vos chances de participer au concours mensuel. De plus, vous avez la possibilité de remporter des Diamants, Rubis et Coins en jouant à ce jeu ! En cumulant vos scores, vous pouvez améliorer vos chances de remporter le gros lot de 500€ (500 Coins) offert dans le concours mensuel. Cette offre est une excellente opportunité pour les joueurs de s'amuser tout en ayant la chance de gagner de superbes récompenses.")}}</p>
                     </div>
                 </div>
             </div>
@@ -461,8 +461,8 @@
                         <i class="fa-solid fa-gift fa-2x"></i>
                     </div>
                     <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Convertissez les en cadeaux</h2>
-                        <p class="leading-relaxed text-gray-300">Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.</p>
+                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Convertissez les en cadeaux')}}</h2>
+                        <p class="leading-relaxed text-gray-300">{{__("Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.")}}</p>
                     </div>
                 </div>
             </div>
@@ -476,9 +476,9 @@
         <div
             class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
             <div class="flex flex-col w-full mb-0 text-left">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Jeux gratuits</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux gratuits')}}</h1>
                 <p class="mb-8 mx-0 text-base leading-relaxed text-gray-300 lg:w-3/3">
-                Notre site GoKDO vous offre la possibilité de jouer gratuitement à des jeux divertissants et de remporter des cadeaux ! <br><a href="admin/register" class="text-blue-500 prevent">L'inscription est gratuite</a> et vous bénéficiez même de 150 Diamants offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de gagner de superbes prix.
+                {{__("Notre site GoKDO vous offre la possibilité de jouer gratuitement à des jeux divertissants et de remporter des cadeaux !")}} <br><a href="admin/register" class="text-blue-500 prevent">{{__("L'inscription est gratuite")}}</a> {{__("et vous bénéficiez même de 150 Diamants offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de gagner de superbes prix.")}}
                 </p>
             <center>
             <iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </center>
