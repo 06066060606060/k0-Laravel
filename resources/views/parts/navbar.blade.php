@@ -6,7 +6,17 @@
                 <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/"><img
                         src="./img/logo.png" class="w-auto h-16"></a>
             </div>
-
+<div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
+    @foreach($available_locales as $locale_name => $available_locale)
+        @if($available_locale === $current_locale)
+            <span class="ml-2 mr-2 text-gray-700">{{ $locale_name }}</span>
+        @else
+            <a class="ml-1 underline ml-2 mr-2" href="language/{{ $available_locale }}">
+                <span>{{ $locale_name }}</span>
+            </a>
+        @endif
+    @endforeach
+</div>
             <!-- Mobile menu button -->
             <div class="flex lg:hidden">
                 <button x-cloak @click="isOpen = !isOpen" type="button"
