@@ -19,9 +19,12 @@ class Localization
      */
     public function handle(Request $request, Closure $next)
     {
-        if (Session::has('locale')) {
-            App::setLocale(Session::get('locale')); // Use full namespace for App facade
+        $availableLocales = config('app.available_locales');
+        
+        if (Session::has('locale') && in_array(Session::get('locale'), $availableLocales)) {
+            App::setLocale(Session::get('locale'));
         }
+        
         return $next($request);
     }
 }
