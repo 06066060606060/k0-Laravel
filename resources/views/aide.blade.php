@@ -28,16 +28,13 @@
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title text-l">{{__("Qu'est-ce qu'un Rubis ?")}}</h2>
                     <div class="accordion-content mb-2">
-                        <div class="px-6 py-6 text-white">{{__("Les Rubis vous permettent d'obtenir des parties Bonus sur le jeu GoFRUITS,
-                         de pouvoir jouer au jeu POOL ainsi que d'autres jeux de type Events et d'obtenir des objets virtuels dans le jeu Tresor. 
-                         Vous pouvez obtenir des Rubis dans la section des Cadeaux en échange des Diamants de votre compte, ou dans l'espace 'Packs'.")}}</div>
+                        <div class="px-6 py-6 text-white">{{__("Les Rubis vous permettent d'obtenir des parties Bonus sur le jeu GoFRUITS, de pouvoir jouer au jeu POOL ainsi que d'autres jeux de type Events et d'obtenir des objets virtuels dans le jeu Tresor. Vous pouvez obtenir des Rubis dans la section des Cadeaux en échange des Diamants de votre compte, ou dans l'espace 'Packs'.")}}</div>
                     </div>
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title text-l">{{__("Qu'est-ce qu'un Coins ?")}}</h2>
                     <div class="accordion-content mb-2">
-                        <div class="px-6 py-6 text-white">{{__("Le Coin est la monnaie secondaire du site, 1 Coin = 1€. Vous pouvez cumuler vos Coins en les gagnants sur le jeu POOL, le concours ou encore les jeux Events.
-                        Une boutique dédiée spécialement aux Coins est disponible dans la page 'Cadeaux' en cliquant sur l'onglet 'COINS', vous pourrez alors échanger contre des bons Amazon mais également des versements Paypal.")}}</div>
+                        <div class="px-6 py-6 text-white">{{__("Le Coin est la monnaie secondaire du site, 1 Coin = 1€. Vous pouvez cumuler vos Coins en les gagnants sur le jeu POOL, le concours ou encore les jeux Events. Une boutique dédiée spécialement aux Coins est disponible dans la page 'Cadeaux' en cliquant sur l'onglet 'COINS', vous pourrez alors échanger contre des bons Amazon mais également des versements Paypal.")}}</div>
                     </div>
                     </div>
 
@@ -62,9 +59,7 @@
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title">{{__('Comment participer au concours ?')}}</h2>
                     <div class="accordion-content mb-4">
-                    <div class="px-6 py-6 text-white">{{__("Lorsqu'un concours est en place, il vous suffit de vous rendre sur la page 'Concours' afin de voir quel jeu vous permettra de récolter des points de concours.
-                    Le concours est défini d'une date de départ et une date de fin, les 3000 premiers joueurs classés au concours seront récompensé lorsque le concours sera terminé.
-                    Les gains alloués au concours peuvent être des bons Amazon, des versements Paypal, des Coins, Rubis ou Diamants. Dans tous les cas le concours sera gratuit sans obligation d'achat.")}}</div>
+                    <div class="px-6 py-6 text-white">{{__("Lorsqu'un concours est en place, il vous suffit de vous rendre sur la page 'Concours' afin de voir quel jeu vous permettra de récolter des points de concours. Le concours est défini d'une date de départ et une date de fin, les 3000 premiers joueurs classés au concours seront récompensé lorsque le concours sera terminé. Les gains alloués au concours peuvent être des bons Amazon, des versements Paypal, des Coins, Rubis ou Diamants. Dans tous les cas le concours sera gratuit sans obligation d'achat.")}}</div>
                     </div>
                     </div>
 
