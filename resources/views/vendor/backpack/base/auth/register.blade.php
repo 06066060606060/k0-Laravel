@@ -55,7 +55,7 @@ use Illuminate\Support\Facades\DB;
                         #show:checked~#content{display:block;}
                         </style>
                         <input type=checkbox id="show">
-                        <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> {{__('Inscription Classique')}}</label>
+                        <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> Inscription Classique</label>
                         <span id="content">
                         <div class="form-group">
                             <!--<label class="control-label" for="name">Pseudo</label>
