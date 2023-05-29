@@ -22,6 +22,8 @@ Route::get('/{locale?}', function ($locale = null) {
     if (isset($locale) && in_array($locale, config('app.available_locales'))) {
         app()->setLocale($locale);
     }
+    
+    return view('index', compact('scores', 'freegames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
 });
 
 Route::controller(GlobalController::class)->group(function(){
