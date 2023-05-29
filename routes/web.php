@@ -23,7 +23,7 @@ Route::get('/{locale?}', function ($locale = null) {
         app()->setLocale($locale);
     }
     
-    return view('index', compact('scores', 'freegames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+    return view('getAll');
 });
 
 Route::controller(GlobalController::class)->group(function(){
