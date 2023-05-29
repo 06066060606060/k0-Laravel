@@ -23,7 +23,7 @@ Route::get('/{locale?}', function ($locale = null) {
         app()->setLocale($locale);
     }
     
-    return view('getAll');
+    return view('');
 });
 
 Route::controller(GlobalController::class)->group(function(){
