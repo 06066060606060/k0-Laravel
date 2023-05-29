@@ -9,24 +9,24 @@
             <section class="relative text-gray-600 body-font">
                 <div class="container px-5 py-8 mx-auto">
                     <div class="flex flex-col w-full mb-4 text-center">
-                        <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">Mentions Légales</h1>
+                        <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Mentions Légales')}}</h1>
                     </div>
                 
 	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Informations Principales</h2> 
-		<p class="leading-relaxed text-gray-300">Dénomination ou raison sociale : GOKDO
-        <br>Nom du responsable de la rédaction/gestion du site : En cours de création...
-        <br>Structure juridique : Auto-entrepreneur
-        <br>SIRET : En cours de création...
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Informations Principales')}}</h2> 
+		<p class="leading-relaxed text-gray-300">{{__('Dénomination ou raison sociale :')}} GOKDO
+        <br>{{__('Nom du responsable de la rédaction/gestion du site :')}} {{__('En cours de création...')}}
+        <br>{{__('Structure juridique :')}} {{__('Auto-entrepreneur')}}
+        <br>SIRET : {{__('En cours de création...')}}
         </p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Hébergement</h2>
-		<p class="leading-relaxed text-gray-300">Le site GoKDO est hébergé par HOSTINGER, dont le siège social est situé HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre, joignable par le moyen suivant :https://www.hostinger.fr/contact.</p>
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Hébergement')}}</h2>
+		<p class="leading-relaxed text-gray-300">{{__("Le site GoKDO est hébergé par HOSTINGER, dont le siège social est situé HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre, joignable par le moyen suivant :https://www.hostinger.fr/contact.")}}</p>
 	</section>
 	<section class="relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Création</h2>
-		<p class="leading-relaxed text-gray-300">Site développé et conçu par Micky XBMOD</p>
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Création')}}</h2>
+		<p class="leading-relaxed text-gray-300">{{__('Site développé et conçu par Micky XBMOD')}}</p>
 	</section>
                         </div>
                     </div>
