@@ -1,5 +1,6 @@
 <?php
 use App\Http\Middleware\Cors;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\GlobalController;
