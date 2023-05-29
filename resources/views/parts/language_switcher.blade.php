@@ -23,7 +23,7 @@
                         x-transition:leave="transition ease-in duration-100"
                         x-transition:leave-start="opacity-100 scale-100"
                         x-transition:leave-end="opacity-0 scale-90"
-                        class="absolute flex z-20 w-48 py-2 mt-2 bg-gray-800 border border-gray-500 rounded-md shadow-xl left-0 lg:right-0">
+                        class="absolute block z-20 w-48 py-2 mt-2 bg-gray-800 border border-gray-500 rounded-md shadow-xl left-0 lg:right-0">
 
         @foreach($available_locales as $locale_name => $available_locale)
             @if($available_locale === $current_locale)
