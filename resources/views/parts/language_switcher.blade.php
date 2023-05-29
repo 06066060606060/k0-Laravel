@@ -9,11 +9,9 @@
         @endif
     @endforeach
 </div>
-
-
 <div x-data="{ isOpen: false }" class="relative inline-block">
     <!-- Dropdown toggle button -->
-    <button @click="isOpen = !isOpen" class="flex items-center p-2 mt-4 text-gray-700 bg-gray-200 border border-transparent rounded-md focus:outline-none">
+    <button @click="isOpen = !isOpen" class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
         @if($current_locale === 'en')
             <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
         @elseif($current_locale === 'fr')
@@ -24,7 +22,15 @@
         <span>{{ ucfirst($current_locale) }}</span>
     </button>
     <!-- Dropdown menu -->
-    <ul x-show="isOpen" @click.away="isOpen = false" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="opacity-0 scale-90" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-90" class="absolute z-10 w-40 py-2 mt-2 bg-white border border-gray-200 rounded-md shadow-xl left-0">
+                    <ul x-show="isOpen" @click.away="isOpen = false"
+                        x-transition:enter="transition ease-out duration-100"
+                        x-transition:enter-start="opacity-0 scale-90"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-100"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-90"
+                        class="absolute flex z-20 w-48 py-2 mt-2 bg-gray-800 border border-gray-500 rounded-md shadow-xl left-0 lg:right-0">
+
         @foreach($available_locales as $locale_name => $available_locale)
             @if($available_locale === $current_locale)
                 <li class="px-4 py-2 text-gray-700 cursor-not-allowed">
