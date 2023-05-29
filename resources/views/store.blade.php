@@ -14,11 +14,11 @@
          <container class="block min-h-screen px-4 mx-auto text-white max-w-7xl">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
-                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Espace cadeaux</h1>
+                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">{{__('Espace cadeaux')}}</h1>
                      <section class="text-gray-300 body-font">
                          <div class="flex flex-col w-full mb-4 text-center">
-                                 <p class="flex mx-auto text-base leading-relaxed">Echangez vos 
-                                Diamants et vos Coins contre de magnifique cadeaux.<br></p>
+                                 <p class="flex mx-auto text-base leading-relaxed">{{__('Echangez vos 
+                                Diamants et vos Coins contre de magnifique cadeaux.')}}<br></p>
                              </div>
                          <div class="sm:flex-1">
                              <form action="{{ route('searchfilter') }}" method="get">
@@ -42,14 +42,14 @@
                                      <select name="category"
                                          class="w-full p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
                                          onchange="submit()">
-                                         <option value="" {{ $category == ''  ? 'selected' : '' }} >Toutes les catégories</option>
+                                         <option value="" {{ $category == ''  ? 'selected' : '' }} >{{__('Toutes les catégories')}}</option>
                                          <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
                                          <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
-                                         <option value="Cryptomonnaie" {{ $category == 'Cryptomonnaie'  ? 'selected' : '' }}>Cryptomonnaie</option>
-                                         <option value="Electroménager" {{ $category == 'Electroménager'  ? 'selected' : '' }}>Electroménager</option>
-                                         <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>High Tech</option>
-                                         <option value="Jeux Vidéo" {{ $category == 'Jeux Vidéo'  ? 'selected' : '' }}>Jeux Vidéo</option>
-                                         <option value="Rubis" {{ $category == 'Rubis'  ? 'selected' : '' }}>Rubis</option>
+                                         <option value="Cryptomonnaie" {{ $category == 'Cryptomonnaie'  ? 'selected' : '' }}>{{__('Cryptomonnaie')}}</option>
+                                         <option value="Electroménager" {{ $category == 'Electroménager'  ? 'selected' : '' }}>{{__('Electroménager')}}</option>
+                                         <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>{{__('High Tech')}}</option>
+                                         <option value="Jeux Vidéo" {{ $category == 'Jeux Vidéo'  ? 'selected' : '' }}>{{__('Jeux Vidéo')}}</option>
+                                         <option value="Rubis" {{ $category == 'Rubis'  ? 'selected' : '' }}>{{__('Rubis')}}</option>
                                      </select>
                                      <div class="absolute inset-y-0 right-0 flex items-center px-2 pt-2 text-gray-500 transition pointer-events-none hover:text-gray-700">
                                          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -113,7 +113,7 @@
                                                                              class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-red-700 -rotate-12"></span>
                                                                          <span
                                                                              class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
-                                                                         <span class="relative">Echanger</span>
+                                                                         <span class="relative">{{__('Echanger')}}</span>
                                                                      </button>
                                                                  @else
                                                                      <button @click="modelOpen =!modelOpen"
@@ -126,7 +126,7 @@
                                                                              class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
                                                                          <span
                                                                              class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                         <span class="relative">Echanger</span>
+                                                                         <span class="relative">{{__('Echanger')}}</span>
                                                                      </button>
                                                                  @endif
                                                              @else
@@ -140,7 +140,7 @@
                                                                          class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
                                                                      <span
                                                                          class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                                                     <span class="relative">Inscription</span>
+                                                                     <span class="relative">{{__('Inscription')}}</span>
                                                                  </a>
                                                              @endif
                                                              @if (backpack_auth()->check())
@@ -182,7 +182,7 @@
                                                                                  class="flex justify-between w-full border-b">
                                                                                  <h1
                                                                                      class="py-6 mx-auto text-lg font-bold">
-                                                                                     Commande impossible !
+                                                                                     {{__('Commande impossible !')}}
                                                                                  </h1>
                                                                              </div>
                                                                              <div class="bg-gray-700 rounded-b-md">
@@ -190,7 +190,7 @@
                                                                                      class="flex flex-col items-center pb-8 mx-20 mt-1">
                                                                                      <h1
                                                                                          class="flex py-2 text-sm font-medium text-white">
-                                                                                         Vous n'avez pas assez de Diamants ou de Coins !
+                                                                                         {{__("Vous n'avez pas assez de Diamants ou de Coins !")}}
                                                                                      </h1>
 
                                                                                      <div class="flex justify-center">
@@ -205,7 +205,7 @@
                                                                                              <span
                                                                                                  class="cursor-pointer absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
                                                                                              <span
-                                                                                                 class="cursor-pointer relative">Fermer</span>
+                                                                                                 class="cursor-pointer relative">{{__('Fermer')}}</span>
                                                                                          </div>
 
                                                                                      </div>
@@ -253,7 +253,7 @@
                                                                                  class="flex justify-between w-full border-b">
                                                                                  <h1
                                                                                      class="py-6 mx-auto text-lg font-bold">
-                                                                                     Confirmez votre commande:
+                                                                                     {{__('Confirmez votre commande:')}}
                                                                                  </h1>
                                                                              </div>
                                                                              <div class="bg-gray-700 rounded-b-md">
@@ -264,7 +264,7 @@
                                                                                          {{ $cadeau->prix }} <img
                                                                                              src="img/diamond5.png"
                                                                                              class="flex w-7 h-5">
-                                                                                         seronts retirés de votre solde.
+                                                                                         {{__('seronts retirés de votre solde.')}}
                                                                                      </h1>
 
                                                                                      <div class="flex justify-center">
@@ -279,7 +279,7 @@
                                                                                              <span
                                                                                                  class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-red-500 -rotate-12"></span>
                                                                                              <span
-                                                                                                 class="relative">Annuler</span>
+                                                                                                 class="relative">{{__('Annuler')}}</span>
                                                                                          </div>
 
                                                                                          <button type="submit"
@@ -293,15 +293,13 @@
                                                                                              <span
                                                                                                  class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
                                                                                              <span
-                                                                                                 class="relative">Confirmer</span>
+                                                                                                 class="relative">{{__('Confirmer')}}</span>
                                                                                          </button>
 
                                                                                      </div>
                                                                                      <h1
                                                                                          class="text-xs mt-4 font-medium text-gray-200">
-                                                                                         Vérifiez d'avoir enregistré une
-                                                                                         adresse de livraison avant de
-                                                                                         confirmer.
+                                                                                         {{__("Vérifiez d'avoir enregistré une adresse de livraison avant de confirmer.")}}
                                                                                      </h1>
                                                                                  </div>
                                                                              </div>
