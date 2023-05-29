@@ -1,7 +1,14 @@
 <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
     @foreach($available_locales as $locale_name => $available_locale)
         @if($available_locale === $current_locale)
-            <span class="ml-2 mr-2 text-gray-700">{{ $locale_name }}</span>
+            @if($current_locale == 'en')
+                <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
+            @elseif($current_locale == 'es')
+                <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
+            @elseif($current_locale == 'fr')
+                <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
+            @else
+            @endif
         @else
             <a class="ml-1 underline ml-2 mr-2" data-barba-prevent="self" href="language/{{ $available_locale }}">
                 <span>{{ $locale_name }}</span>
