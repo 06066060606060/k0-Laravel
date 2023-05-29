@@ -17,8 +17,7 @@
                      <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">{{__('Espace cadeaux')}}</h1>
                      <section class="text-gray-300 body-font">
                          <div class="flex flex-col w-full mb-4 text-center">
-                                 <p class="flex mx-auto text-base leading-relaxed">{{__('Echangez vos 
-                                Diamants et vos Coins contre de magnifique cadeaux.')}}<br></p>
+                                 <p class="flex mx-auto text-base leading-relaxed">{{__('Echangez vos Diamants et vos Coins contre de magnifique cadeaux.')}}<br></p>
                              </div>
                          <div class="sm:flex-1">
                              <form action="{{ route('searchfilter') }}" method="get">
