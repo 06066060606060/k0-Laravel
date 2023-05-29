@@ -19,7 +19,6 @@
         @elseif($current_locale === 'es')
             <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
         @endif
-        <span>{{ ucfirst($current_locale) }}</span>
     </button>
     <!-- Dropdown menu -->
                     <ul x-show="isOpen" @click.away="isOpen = false"
@@ -53,7 +52,6 @@
                         @elseif($available_locale === 'es')
                             <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
                         @endif
-                        {{ $locale_name }}
                     </a>
                 </li>
             @endif
