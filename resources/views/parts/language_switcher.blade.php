@@ -2,11 +2,11 @@
     @foreach($available_locales as $locale_name => $available_locale)
         @if($available_locale === $current_locale)
             @if($current_locale == 'en')
-                <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
+                <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-6 h-6 mr-1">
             @elseif($current_locale == 'es')
-                <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
+                <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-6 h-6 mr-1">
             @elseif($current_locale == 'fr')
-                <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
+                <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-6 h-6 mr-1">
             @else
             @endif
         @else
