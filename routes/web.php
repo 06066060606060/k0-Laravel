@@ -18,12 +18,10 @@ use App\Http\Controllers\StripePaymentController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/{locale?}', function ($locale = null) {
-    if (isset($locale) && in_array($locale, config('app.available_locales'))) {
-        app()->setLocale($locale);
-    }
-    
-    return view('');
+Route::get('language/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
 });
 
 Route::controller(GlobalController::class)->group(function(){
