@@ -62,7 +62,7 @@ use Illuminate\Support\Facades\DB;
                         #show:checked~#content{display:block;}
                         </style>
                         <input type=checkbox id="show">
-                        <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> {{ $iclassique }}</label>
+                        <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> {{ echo $iclassique; }}</label>
                         <span id="content">
                         <div class="form-group">
                             <!--<label class="control-label" for="name">Pseudo</label>
@@ -148,7 +148,7 @@ use Illuminate\Support\Facades\DB;
             @endif
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a> /
             <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
-               <div class="text-center"><br>{{ $rules }}
+               <div class="text-center"><br>{{ echo $rules; }}
                 </div></div>
             </div>
           
