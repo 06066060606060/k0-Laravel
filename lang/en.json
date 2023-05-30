@@ -197,8 +197,12 @@
     "Adresse": "Address",
     "Code Postal": "Postal code",
     "Ville": "City",
-    "Enregistrer": "Save"           
-
-
-
+    "Enregistrer": "Save",           
+    "Valider": "Validate",
+    "Confirmer la suppression": "Confirm deletion",
+    "Annuler": "Cancel",
+    "Confirmer": "Confirm",
+    "LES GAGNANTS": "THE WINNERS",
+    "Joueurs": "Players",
+    "Gains": "Prizes"
   }

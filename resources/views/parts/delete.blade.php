@@ -1,6 +1,6 @@
 <div x-data="{ modelOpen: false }">
     <button @click="modelOpen =!modelOpen" class="text-sm text-gray-200 hover:text-red-600">
-        Valider
+        {{__('Valider')}}
     </button>
 
     <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto" aria-labelledby="modal-title"
@@ -20,17 +20,17 @@
                 x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
                 class="inline-block w-full max-w-xl p-8 my-20 overflow-hidden text-left transition-all transform bg-white rounded-lg shadow-xl 2xl:max-w-2xl">
 
-                <h1 class="text-xl font-medium text-center text-gray-800" >Confirmer la suppression?</h1>
+                <h1 class="text-xl font-medium text-center text-gray-800" >{{__('Confirmer la suppression')}}?</h1>
                 <div class="items-center space-x-4 bloc">
           
                     <div class="flex pt-6 justify-evenly">
                         <button @click="modelOpen = false" class="h-12 px-6 my-4 text-gray-100 bg-gray-700 rounded-lg focus:outline-none hover:text-gray-200">
-                            Annuler
+                            {{__('Annuler')}}
                         </button>
                         <form class="mx-3" action="/deleteuser/{{ backpack_auth()->user()->id }}" method="post">
                             @csrf
                             <button type="submit"  class="h-12 px-6 my-4 text-gray-100 bg-red-700 rounded-lg focus:outline-none hover:text-gray-200">
-                                Valider
+                                {{__('Confirmer')}}
                             </button>
                         </form>
                     </div>

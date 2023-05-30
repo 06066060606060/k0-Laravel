@@ -28,17 +28,17 @@
                          <div class="container flex flex-col-reverse xl:flex-row">
                              <div class="w-full px-4 py-4 bg-gray-900 rounded-md xl:w-1/4 xl:mr-4">
                              <div id="points" class="py-2 text-sm font-normal text-gray-200"> &nbsp;</div>
-                                 <h1 class="font-extrabold text-md text-gray-50">LES GAGNANTS:</h1>
+                                 <h1 class="font-extrabold text-md text-gray-50">{{__('LES GAGNANTS')}}:</h1>
                                  <table class="min-w-full divide-y divide-gray-200">
                                      <thead>
                                          <tr>
                                              <th scope="col"
                                                  class="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 Joueurs :
+                                                 {{__('Joueurs')}} :
                                              </th>
                                              <th scope="col"
                                                  class="flex px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 Gains :
+                                                 {{__('Gains')}} :
                                              </th>
                                          </tr>
                                      </thead>
@@ -73,7 +73,18 @@
                              <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe>
                                 @else
+                                @if(app()->getLocale() == 'en') 
+                                <script>alert('You must be logged in to play a game!')</script>
+                                @elseif(app()->getLocale() == 'fr')
                                 <script>alert('Vous devez être connecté pour jouer à un jeu !')</script>
+                                @elseif(app()->getLocale() == 'de')
+                                <script>alert('Sie müssen angemeldet sein, um ein Spiel zu spielen!')</script>
+                                @elseif(app()->getLocale() == 'es')
+                                <script>alert('¡Debes iniciar sesión para jugar a un juego!')</script>
+                                @elseif(app()->getLocale() == 'it')
+                                <script>alert("Devi effettuare l'accesso per giocare a un gioco!")</script>                                
+                                @else
+                                @endif
                                 @endif
                          </div>
                   
