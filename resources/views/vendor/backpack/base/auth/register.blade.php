@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\DB;
                elseif($locale == 'fr') { $rules = "En vous iscrivant vous acceptez le <a href='https://gokdo.com/reglement'>règlement</a>"; $iclassique = 'Inscription Classique'; }
                elseif($locale == 'es') { $rules = "Al registrarte, aceptas el <a href='https://gokdo.com/reglement'>reglamento</a>"; $iclassique = 'Registro Clásico'; }
                elseif($locale == 'de') { $rules = "Durch Ihre Anmeldung akzeptieren Sie die <a href='https://gokdo.com/reglement'>Bestimmungen</a>"; $iclassique = 'Klassische Anmeldung'; }
-               elseif($locale == 'it') { $rules = "Iscrivendoti, accetti il <a href='https://gokdo.com/reglement">regolamento</a>"; $iclassique = 'Registrazione Classica'; }
+               elseif($locale == 'it') { $rules = "Iscrivendoti, accetti il <a href='https://gokdo.com/reglement'>regolamento</a>"; $iclassique = 'Registrazione Classica'; }
+               else {}
 @endphp 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
