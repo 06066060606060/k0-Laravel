@@ -5,6 +5,13 @@
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 @endphp
+@php $locale = app()->getLocale();
+               if($locale == 'en') { $rules = 'By signing up, you accept the <a href="https://gokdo.com/reglement">rules</a>'; $iclassique = 'Classic Registration'; }
+               elseif($locale == 'fr') { $rules = 'En vous iscrivant vous acceptez le <a href="https://gokdo.com/reglement">règlement</a>'; $iclassique = 'Inscription Classique'; }
+               elseif($locale == 'es') { $rules = 'Al registrarte, aceptas el <a href="https://gokdo.com/reglement">reglamento</a>'; $iclassique = 'Registro Clásico'; }
+               elseif($locale == 'de') { $rules = 'Durch Ihre Anmeldung akzeptieren Sie die <a href="https://gokdo.com/reglement">Bestimmungen</a>'; $iclassique = 'Klassische Anmeldung'; }
+               elseif($locale == 'it') { $rules = 'Iscrivendoti, accetti il <a href="https://gokdo.com/reglement">regolamento</a>'; $iclassique = 'Registrazione Classica'; }
+@endphp 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
              <a href="/"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
@@ -55,7 +62,7 @@ use Illuminate\Support\Facades\DB;
                         #show:checked~#content{display:block;}
                         </style>
                         <input type=checkbox id="show">
-                        <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> Inscription Classique</label>
+                        <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> {{ $iclassique }}</label>
                         <span id="content">
                         <div class="form-group">
                             <!--<label class="control-label" for="name">Pseudo</label>
@@ -141,13 +148,7 @@ use Illuminate\Support\Facades\DB;
             @endif
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a> /
             <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
-               <div class="text-center"><br>@php $locale = app()->getLocale();
-               if($locale == 'en') { echo 'By signing up, you accept the <a href="https://gokdo.com/reglement">rules</a>'; }
-               elseif($locale == 'fr') { echo 'En vous iscrivant vous acceptez le <a href="https://gokdo.com/reglement">règlement</a>'; }
-               elseif($locale == 'es') { echo 'Al registrarte, aceptas el <a href="https://gokdo.com/reglement">reglamento</a>'; }
-               elseif($locale == 'de') { echo 'Durch Ihre Anmeldung akzeptieren Sie die <a href="https://gokdo.com/reglement">Bestimmungen</a>'; }
-               elseif($locale == 'it') { echo 'Iscrivendoti, accetti il <a href="https://gokdo.com/reglement">regolamento</a>'; }
-            @endphp 
+               <div class="text-center"><br>{{ $rules }}
                 </div></div>
             </div>
           
