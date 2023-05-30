@@ -6,11 +6,11 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 @endphp
 @php $locale = app()->getLocale();
-               if($locale == 'en') { $rules = "By signing up, you accept the <a href='https://gokdo.com/reglement'>rules</a>"; $iclassique = 'Classic Registration'; }
-               elseif($locale == 'fr') { $rules = "En vous iscrivant vous acceptez le <a href='https://gokdo.com/reglement'>règlement</a>"; $iclassique = 'Inscription Classique'; }
-               elseif($locale == 'es') { $rules = "Al registrarte, aceptas el <a href='https://gokdo.com/reglement'>reglamento</a>"; $iclassique = 'Registro Clásico'; }
-               elseif($locale == 'de') { $rules = "Durch Ihre Anmeldung akzeptieren Sie die <a href='https://gokdo.com/reglement'>Bestimmungen</a>"; $iclassique = 'Klassische Anmeldung'; }
-               elseif($locale == 'it') { $rules = "Iscrivendoti, accetti il <a href='https://gokdo.com/reglement'>regolamento</a>"; $iclassique = 'Registrazione Classica'; }
+               if($locale == 'en') { $rules = "By signing up, you accept the"; $rules2 = "rules"; $iclassique = 'Classic Registration'; }
+               elseif($locale == 'fr') { $rules = "En vous iscrivant vous acceptez le"; $rules2 = "règlement"; $iclassique = 'Inscription Classique'; }
+               elseif($locale == 'es') { $rules = "Al registrarte, aceptas el"; $rules2="reglamento"; $iclassique = 'Registro Clásico'; }
+               elseif($locale == 'de') { $rules = "Durch Ihre Anmeldung akzeptieren Sie die"; $rules2="Bestimmungen"; $iclassique = 'Klassische Anmeldung'; }
+               elseif($locale == 'it') { $rules = "Iscrivendoti, accetti il"; $rules2 = "regolamento"; $iclassique = 'Registrazione Classica'; }
                else {}
 @endphp 
     <div class="row justify-content-center">
@@ -149,7 +149,7 @@ use Illuminate\Support\Facades\DB;
             @endif
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a> /
             <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
-               <div class="text-center"><br>{{ $rules }}
+               <div class="text-center"><br>{{ $rules }} <a href='https://gokdo.com/reglement'>{{ $rules2 }}</a>
                 </div></div>
             </div>
           
