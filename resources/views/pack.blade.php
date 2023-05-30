@@ -13,6 +13,14 @@
     <script
         src="{{ Setting::get('paypal_link').'&locale=es_ES' }}"
         data-sdk-integration-source="button-factory"></script>
+    @elseif(app()->getLocale() == 'it')
+    <script
+        src="{{ Setting::get('paypal_link').'&locale=it_IT' }}"
+        data-sdk-integration-source="button-factory"></script>
+    @elseif(app()->getLocale() == 'de')
+    <script
+        src="{{ Setting::get('paypal_link').'&locale=de_DE' }}"
+        data-sdk-integration-source="button-factory"></script>
     @endif
     <div data-barba="container">
     @php
