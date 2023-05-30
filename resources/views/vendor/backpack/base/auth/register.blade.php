@@ -142,8 +142,13 @@ use Illuminate\Support\Facades\DB;
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a> /
             <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
                <div class="text-center"><br>@php $locale = app()->getLocale();
-echo "La locale en cours est : " . $locale;
-@endphp En vous iscrivant vous acceptez le <a href="https://gokdo.com/reglement">règlement</a></div></div>
+               if($locale == 'en') { echo 'By signing up, you accept the <a href="https://gokdo.com/reglement">rules</a>'; }
+               elseif($locale == 'fr') { echo 'En vous iscrivant vous acceptez le <a href="https://gokdo.com/reglement">règlement</a>'; }
+               elseif($locale == 'es') { echo 'Al registrarte, aceptas el <a href="https://gokdo.com/reglement">reglamento</a>'; }
+               elseif($locale == 'de') { echo 'Durch Ihre Anmeldung akzeptieren Sie die <a href="https://gokdo.com/reglement">Bestimmungen</a>'; }
+               elseif($locale == 'it') { echo 'Iscrivendoti, accetti il <a href="https://gokdo.com/reglement">regolamento</a>'; }
+            @endphp 
+                </div></div>
             </div>
           
         </div>
