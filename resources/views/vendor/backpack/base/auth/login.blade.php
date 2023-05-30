@@ -2,6 +2,14 @@
 
 @section('content') 
     {!! RecaptchaV3::initJs() !!}
+@php $locale = app()->getLocale();
+               if($locale == 'en') { $iclassic = 'Classic Login'; }
+               elseif($locale == 'fr') { $iclassic = 'Connexion Classique'; }
+               elseif($locale == 'es') { $iclassic = 'Conexión clásico'; }
+               elseif($locale == 'de') { $iclassic = 'Klassische Anmeldung'; }
+               elseif($locale == 'it') { $iclassic = 'Accesso Classico'; }
+               else {}
+@endphp     
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="/"> 
@@ -58,7 +66,7 @@
                         </style>
                         <input type=checkbox id="show">
                         <label for="show"class="border btn btn-block" style="cursor:pointer;"><i class="fa fa-user"></i>
-                            &nbsp;&nbsp; Connexion Classique</label>
+                            &nbsp;&nbsp; {{ $iclassic }}</label>
                         <span id="content">
 
 
