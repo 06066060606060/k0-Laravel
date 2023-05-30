@@ -8,7 +8,7 @@
     @endphp
         @if (session('success'))
             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 6000, PopupUser())">
-                <div id="popmenu" class="px-4 py-2 text-gray-100 btnmenu">Transaction confirmé</div>
+                <div id="popmenu" class="px-4 py-2 text-gray-100 btnmenu">{{__('Transaction confirmée')}}</div>
             </div>
         @endif
         <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
@@ -44,14 +44,14 @@
 @endphp
 @if(isset($scory->total) || isset($scorey->total2) || isset($scory->total3))
 <p class="flex py-4 text-xs text-white border-b border-gray-500">
-    Score Concours : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
+    {{__('Score Concours')}} : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
 @else
 <p class="flex py-4 text-xs text-white border-b border-gray-500">
-    Score Concours : 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
+    {{__('Score Concours')}} : 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
 @endif
-                        <h3 class="pt-1 pb-2 text-lg font-bold text-white">Mes Butins</h3>
+                        <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
                         <div class="flex py-2">
                             <img src="img/diamond5.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
@@ -76,7 +76,7 @@
                                 </div>
 
                                 <div class="px-4 pb-1 ml-1">
-                                    <span class="text-xs font-semibold text-red-400">Supprimer mon compte</span>
+                                    <span class="text-xs font-semibold text-red-400">{{__('Supprimer mon compte')}}</span>
                                     @include('parts.delete')
                                 </div>
                             </div>
@@ -88,21 +88,21 @@
             </div>
             <div class="flex flex-col w-full py-2">
 
-                <h1 class="pt-0 text-lg font-bold text-white">Mes recharges:</h1>
+                <h1 class="pt-0 text-lg font-bold text-white">{{__('Mes recharges')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
                         <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Type
+                                        {{__('Type')}}
                                     </th>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Prix
+                                        {{__('Prix')}}
                                     </th>
 
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Status
+                                        {{__('Status')}}
                                     </th>
                                 </tr>
                             </thead>
@@ -122,12 +122,12 @@
                                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                                 <p
                                                     class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-red-400 md:flex">
-                                                    En attente</p>
+                                                    {{__('En attente')}}</p>
                                             </td>
                                         @elseif ($paiement->status == 'Oui')
                                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-blue-400">
-                                                    Payé</p>
+                                                    {{__('Payée')}}</p>
                                             </td>
                                         @endif
 
@@ -135,7 +135,7 @@
                                 @empty
                                     <tr>
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            Aucune recharge effectuée
+                                            {{__('Aucune recharge effectuée')}}
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
@@ -147,21 +147,21 @@
                         </table>
                     </div>
                 </div>
-                <h1 class="pt-3 text-lg font-bold text-white">Mes commandes:</h1>
+                <h1 class="pt-3 text-lg font-bold text-white">{{__('Mes commandes')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
                         <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Cadeau
+                                        {{__('Cadeau')}}
                                     </th>
                                     <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Coût
+                                        {{__('Coût')}}
                                     </th>
                                     <th
                                         class="px-4 py-2 font-bold text-left text-gray-900 md:block whitespace-nowrap">
-                                        Status
+                                        {{__('Status')}}
                                     </th>
                                 </tr>
                             </thead>
@@ -178,17 +178,17 @@
                                         @if ($order->status == 'Oui')
                                             <td class="px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-green-400">
-                                                    Confirmé</p>
+                                                    {{__('Confirmée')}}</p>
                                          </td>
                                              @elseif ($order->status == 'Annulé')
                                             <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-orange-400">
-                                                    Annulé</p>
+                                                    {{__('Annulée')}}</p>
                                             </td>
                                         @else
                                             <td class="px-4 py-2 text-gray-300 md:flex whitespace-nowrap">
                                                 <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-purple-400">
-                                                    Expédié</p>
+                                                    {{__('Expédiée')}}</p>
                                             </td>
                                        
                                         @endif
@@ -197,7 +197,7 @@
                                 @empty
                                     <tr>
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            Aucun article
+                                            {{__('Aucun article')}}
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
@@ -210,7 +210,7 @@
                     </div>
                 </div>
 
-                <h1 class="py-4 text-lg font-bold text-white">Mes scores:</h1>
+                <h1 class="py-4 text-lg font-bold text-white">{{__('Mes scores')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
                     @if($isMobile == true)
@@ -221,13 +221,13 @@
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Jeux
+                                        {{__('Jeux')}}
                                     </th>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        Score
+                                        {{__('Score')}}
                                     </th>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
-                                        Date
+                                        {{__('Date')}}
                                     </th>
                                 </tr>
                             </thead>
@@ -259,7 +259,7 @@
                                 @empty
                                     <tr>
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            Aucun Score enregistré
+                                            {{__('Aucun score enregistré')}}
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;</td>
 
@@ -275,7 +275,7 @@
 
                 </div>
 
-                <h1 class="pt-4 text-lg font-bold text-white">Mon adresse de livraison:</h1>
+                <h1 class="pt-4 text-lg font-bold text-white">{{__('Mon adresse de livraison')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
                     <form action="save_address" class="container flex flex-col mx-auto" method="POST">
                         @csrf
@@ -283,31 +283,31 @@
                         <fieldset class="grid grid-cols-4 gap-6 p-6">
                             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
                                 <div class="col-span-full sm:col-span-3">
-                                    <label for="lastname" class="text-sm text-gray-300">Nom</label>
+                                    <label for="lastname" class="text-sm text-gray-300">{{__('Nom')}}</label>
                                     <input name="lastname" id="lastname" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->nom ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-3">
-                                    <label for="firstname" class="text-sm text-gray-300">Prénom</label>
+                                    <label for="firstname" class="text-sm text-gray-300">{{__('Prénom')}}</label>
                                     <input name="firstname" id="firstname" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->prenom ?? null }}">
                                 </div>
                                 <div class="col-span-full">
-                                    <label for="address" class="text-sm text-gray-300">Adresse</label>
+                                    <label for="address" class="text-sm text-gray-300">{{__('Adresse')}}</label>
                                     <input name="address" id="address" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->adresse ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
-                                    <label for="zip" class="text-sm text-gray-300">Code Postal</label>
+                                    <label for="zip" class="text-sm text-gray-300">{{__('Code Postal')}}</label>
                                     <input name="zip" id="zip" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->codepostal ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
-                                    <label for="city" class="text-sm text-gray-300">Ville</label>
+                                    <label for="city" class="text-sm text-gray-300">{{__('Ville')}}</label>
                                     <input name="city" id="city" type="text" placeholder=""
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->ville ?? null }}">
@@ -315,7 +315,7 @@
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="" class="text-sm text-gray-300"> &nbsp;</label>
                                     <button type="submit"
-                                        class="w-full px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Enregistrer
+                                        class="w-full px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">{{__('Enregistrer')}}
                                     </button>
                                 </div>
                             </div>
