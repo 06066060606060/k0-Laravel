@@ -141,7 +141,9 @@ use Illuminate\Support\Facades\DB;
             @endif
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a> /
             <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
-               <div class="text-center"><br>En vous iscrivant vous acceptez le <a href="https://gokdo.com/reglement">règlement</a></div></div>
+               <div class="text-center"><br>@php $locale = app()->getLocale();
+echo "La locale en cours est : " . $locale;
+@endphp En vous iscrivant vous acceptez le <a href="https://gokdo.com/reglement">règlement</a></div></div>
             </div>
           
         </div>
