@@ -1,10 +1,15 @@
 @extends('layouts.app')
 
 @section('main')
+    @if(app()->getLocale() == 'en') 
+    <script
+        src="{{ Setting::get('paypal_link').'&locale=en_US' }}"
+        data-sdk-integration-source="button-factory"></script>
+    @elseif(app()->getLocale() == 'fr')
     <script
         src="{{ Setting::get('paypal_link') }}"
         data-sdk-integration-source="button-factory"></script>
-
+    @endif
     <div data-barba="container">
     @php
         use \App\Http\Controllers\GlobalController;
