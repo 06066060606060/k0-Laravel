@@ -17,8 +17,8 @@
         <container class="block px-4 mx-auto text-white max-w-7xl">
             <div class="container px-5 pt-8 mx-auto">
                 <div class="flex flex-col w-full mb-10 text-center">
-                    <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">Tous nos packs</h1>
-                    <p class="mx-auto text-base leading-relaxed">Acheter des rubis supplémentaires !</p>
+                    <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">{{__('Tous nos packs')}}</h1>
+                    <p class="mx-auto text-base leading-relaxed">{{__('Acheter des rubis supplémentaires !')}}</p>
                 </div>
                 <div class="flex flex-wrap justify-center -m-4">
                     @forelse ($packs as $pack)
@@ -31,7 +31,7 @@
                                     <div class="absolute top-0 right-0 w-16 h-16">
                                         <div
                                             class="border z-20 absolute transform select-none rotate-45 bg-red-500 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                            Promo {{ $pack->prix_promo }} €
+                                            {{__('Promo')}} {{ $pack->prix_promo }} €
                                         </div>
                                     </div>
                                 @else 
@@ -69,7 +69,7 @@
                                                 class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-green-700 -rotate-12"></span>
                                             <span
                                                 class="absolute bottom-0 right-0 hidden w-10 h-20 mx-4 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-500 -rotate-12"></span>
-                                            <span class="relative">Acheter</span>
+                                            <span class="relative">{{__('Acheter')}}</span>
                                         </button>
 
                                         {{-- <form action="setorderpack" method="POST">
@@ -105,7 +105,7 @@
                                                     class="inline-block w-full max-w-xl pt-24 mx-4 overflow-hidden transition-all transform">
                                                     <div
                                                         class="flex flex-col justify-center px-4 my-4 bg-white rounded-md shadow-2xl">
-                                                    <h1 class="pt-2 text-2xl font-bold text-center text-gray-900">Modes de paiements:</h1>
+                                                    <h1 class="pt-2 text-2xl font-bold text-center text-gray-900">{{__('Modes de paiement')}}:</h1>
                                                         <div class="pt-4 paypal-button">
                                                             <div style="text-align: center;">
                                                                 <div id="paypal-button-container{{ $pack->id }}"></div>
