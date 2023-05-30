@@ -9,6 +9,10 @@
     <script
         src="{{ Setting::get('paypal_link') }}"
         data-sdk-integration-source="button-factory"></script>
+    @elseif(app()->getLocale() == 'es')
+    <script
+        src="{{ Setting::get('paypal_link').'&locale=es_ES' }}"
+        data-sdk-integration-source="button-factory"></script>
     @endif
     <div data-barba="container">
     @php
