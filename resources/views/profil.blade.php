@@ -315,7 +315,7 @@
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="state" class="text-sm text-gray-300">{{__('Pays')}}</label>
                                     <select id="state" name="state" class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
-                                    
+                   <option value="" {{ $infos[0]->pays == NULL ? 'selected' : '' }}>{{__("Choisissez un pays")}}</option>                     
     <option value="Afghanistan" {{ $infos[0]->pays == 'Afghanistan' ? 'selected' : '' }}>{{__("Afghanistan")}}</option>
     <option value="Afrique du Sud" {{ $infos[0]->pays == 'Afrique du Sud' ? 'selected' : '' }}>{{__("Afrique du Sud")}}</option>
     <option value="Albanie" {{ $infos[0]->pays == 'Albanie' ? 'selected' : '' }}>{{__("Albanie")}}</option>
