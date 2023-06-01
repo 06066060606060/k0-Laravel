@@ -327,23 +327,23 @@
                                     <select name="pays" class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
                                       @if(app()->getLocale() == 'fr') 
                                       @foreach ($countries as $key => $value)
-                                          <option value="{{ $key }}">{{ $key }}</option>
+                                          <option value="{{ $key }}" @if ($infos[0]->pays == $key) selected @endif>{{ $key }}</option>
                                       @endforeach
                                       @elseif(app()->getLocale() == 'en') 
                                       @foreach ($countries as $key => $value)
-                                          <option value="{{ $value }}">{{ $value }}</option>
+                                          <option value="{{ $value }}" @if ($infos[0]->pays == $value) selected @endif>{{ $value }}</option>
                                       @endforeach
                                       @elseif(app()->getLocale() == 'de') 
                                       @foreach ($countriesde as $keyde => $valuede)
-                                          <option value="{{ $valuede }}">{{ $valuede }}</option>
+                                          <option value="{{ $valuede }}" @if ($infos[0]->pays == $valuede) selected @endif>{{ $valuede }}</option>
                                       @endforeach
                                       @elseif(app()->getLocale() == 'es') 
                                       @foreach ($countrieses as $keyes => $valuees)
-                                          <option value="{{ $valuees }}">{{ $valuees }}</option>
+                                          <option value="{{ $valuees }}" @if ($infos[0]->pays == $valuees) selected @endif>{{ $valuees }}</option>
                                       @endforeach
                                       @elseif(app()->getLocale() == 'it') 
                                       @foreach ($countriesit as $keyit => $valueit)
-                                          <option value="{{ $valueit }}">{{ $valueit }}</option>
+                                          <option value="{{ $valueit }}" @if ($infos[0]->pays == $valueit) selected @endif>{{ $valueit }}</option>
                                       @endforeach
                                       @else
                                       @endif
