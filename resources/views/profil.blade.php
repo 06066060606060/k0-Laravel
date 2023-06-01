@@ -315,13 +315,38 @@
                                 @php
                                     $countriesJson = file_get_contents(resource_path('lang/pays.json'));
                                     $countries = json_decode($countriesJson, true);
+                                    $countriesJsonde = file_get_contents(resource_path('lang/paysde.json'));
+                                    $countriesde = json_decode($countriesJsonde, true);
+                                    $countriesJsones = file_get_contents(resource_path('lang/payses.json'));
+                                    $countrieses = json_decode($countriesJsones, true);
+                                    $countriesJsonit = file_get_contents(resource_path('lang/paysit.json'));
+                                    $countriesit = json_decode($countriesJsonit, true);
                                 @endphp
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="state" class="text-sm text-gray-300">{{__('Pays')}}</label>
                                     <select name="pays" class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
+                                      @if(app()->getLocale() == 'fr') 
                                       @foreach ($countries as $key => $value)
                                           <option value="{{ $key }}">{{ $key }}</option>
                                       @endforeach
+                                      @elseif(app()->getLocale() == 'en') 
+                                      @foreach ($countries as $key => $value)
+                                          <option value="{{ $value }}">{{ $value }}</option>
+                                      @endforeach
+                                      @elseif(app()->getLocale() == 'de') 
+                                      @foreach ($countriesde as $keyde => $valuede)
+                                          <option value="{{ $valuede }}">{{ $valuede }}</option>
+                                      @endforeach
+                                      @elseif(app()->getLocale() == 'es') 
+                                      @foreach ($countrieses as $keyes => $valuees)
+                                          <option value="{{ $valuees }}">{{ $valuees }}</option>
+                                      @endforeach
+                                      @elseif(app()->getLocale() == 'it') 
+                                      @foreach ($countriesit as $keyit => $valueit)
+                                          <option value="{{ $valueit }}">{{ $valueit }}</option>
+                                      @endforeach
+
+
                                     </select>
 
                                     <input name="state" id="state" type="text" placeholder=""
