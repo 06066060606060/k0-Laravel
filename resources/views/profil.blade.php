@@ -313,6 +313,12 @@
                                         value="{{ $infos[0]->ville ?? null }}">
                                 </div>
                                 <div class="col-span-full sm:col-span-2">
+                                    <label for="state" class="text-sm text-gray-300">{{__('Pays')}}</label>
+                                    <input name="state" id="state" type="text" placeholder=""
+                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
+                                        value="{{ $infos[0]->pays ?? null }}">
+                                </div>
+                                <div class="col-span-full">
                                     <label for="" class="text-sm text-gray-300"> &nbsp;</label>
                                     <button type="submit"
                                         class="w-full px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">{{__('Enregistrer')}}
