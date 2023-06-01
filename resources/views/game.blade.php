@@ -66,6 +66,17 @@
                                  </table>
                              </div>
                              @if (backpack_auth()->check())
+                             <script>
+                                var locale = "{{ app()->getLocale() }}";
+                                function sendMessageToIframe() {
+                                    var iframe = document.getElementById('gameBody');
+                                    if (iframe) {
+                                        iframe.contentWindow.postMessage({ locale: locale }, '*');
+                                    }
+                                }
+                                window.addEventListener('DOMContentLoaded', sendMessageToIframe);
+                            </script>
+
                              @php
                               $link =  $game->link ?? null;
                               $secret =  encrypt(['userid' => $userid, '&tk=' . csrf_token(), 'rubis' => $rubis, 'gameid' => $game->id, 'free_game' => $free, 'parties' => $parties, 'timestamp' => time()]);
