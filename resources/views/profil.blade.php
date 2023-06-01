@@ -313,6 +313,8 @@
                                         value="{{ $infos[0]->ville ?? null }}">
                                 </div>
                                 @php
+                                    $countriesJsonfr = file_get_contents(resource_path('lang/paysfr.json'));
+                                    $countriesfr = json_decode($countriesJsonfr, true);
                                     $countriesJson = file_get_contents(resource_path('lang/pays.json'));
                                     $countries = json_decode($countriesJson, true);
                                     $countriesJsonde = file_get_contents(resource_path('lang/paysde.json'));
@@ -326,8 +328,8 @@
                                     <label for="state" class="text-sm text-gray-300">{{__('Pays')}}</label>
                                     <select name="pays" class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
                                       @if(app()->getLocale() == 'fr') 
-                                      @foreach ($countries as $key => $value)
-                                          <option value="{{ $key }}" @if ($infos[0]->pays == $key) selected @endif>{{ $key }}</option>
+                                      @foreach ($countriesfr as $keyfr => $valuefr)
+                                          <option value="{{ $keyfr }}" @if ($infos[0]->pays == $keyfr) selected @endif>{{ $keyfr }}</option>
                                       @endforeach
                                       @elseif(app()->getLocale() == 'en') 
                                       @foreach ($countries as $key => $value)
