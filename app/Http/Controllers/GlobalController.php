@@ -649,6 +649,7 @@ class GlobalController extends Controller
                     'adresse' => $request->address,
                     'codepostal' => $request->zip,
                     'ville' => $request->city,
+                    'pays' => $request->state,
                 ]);
                 $paiements = Paiements::where('user_id', $userid)->get();
                 return back();
