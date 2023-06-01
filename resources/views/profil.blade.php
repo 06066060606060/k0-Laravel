@@ -362,7 +362,7 @@
     <option value="Corée du Nord" {{ $infos[0]->pays == 'Corée du Nord' ? 'selected' : '' }}>{{__("Corée du Nord")}}</option>
     <option value="Corée du Sud" {{ $infos[0]->pays == 'Corée du Sud' ? 'selected' : '' }}>{{__("Corée du Sud")}}</option>
     <option value="Costa Rica" {{ $infos[0]->pays == 'Costa Rica' ? 'selected' : '' }}>{{__("Costa Rica")}}</option>
-    <option value="Côte d'Ivoire" {{ $infos[0]->pays == 'Côte d'Ivoire' ? 'selected' : '' }}>{{__("Côte d'Ivoire")}}</option>
+    <option value="Côte d'Ivoire" {{ $infos[0]->pays == "Côte d'Ivoire" ? 'selected' : '' }}>{{__("Côte d'Ivoire")}}</option>
     <option value="Croatie" {{ $infos[0]->pays == 'Croatie' ? 'selected' : '' }}>{{__("Croatie")}}</option>
     <option value="Cuba" {{ $infos[0]->pays == 'Cuba' ? 'selected' : '' }}>{{__("Cuba")}}</option>
     <option value="Danemark" {{ $infos[0]->pays == 'Danemark' ? 'selected' : '' }}>{{__("Danemark")}}</option>
