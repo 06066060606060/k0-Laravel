@@ -313,7 +313,7 @@
                                         value="{{ $infos[0]->ville ?? null }}">
                                 </div>
                                 @php
-                                    $countriesJson = file_get_contents('lang/pays.json');
+                                    $countriesJson = file_get_contents('./lang/pays.json');
                                     $countries = json_decode($countriesJson, true);
                                 @endphp
                                 <div class="col-span-full sm:col-span-2">
