@@ -334,12 +334,6 @@
                                         @endforeach
                                     </select>
                                 </div>
-
-
-                                    <input name="state" id="state" type="text" placeholder=""
-                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
-                                        value="{{ $infos[0]->pays ?? null }}">
-                                </div>
                                 <div class="col-span-full">
                                     <label for="" class="text-sm text-gray-300"> &nbsp;</label>
                                     <button type="submit"
