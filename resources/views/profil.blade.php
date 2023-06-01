@@ -326,7 +326,7 @@
                                 @endphp
                                 <div class="col-span-full sm:col-span-2">
                                     <label for="state" class="text-sm text-gray-300">{{__('Pays')}}</label>
-                                    <select name="pays" class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
+                                    <select name="state" class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
                                       @if(app()->getLocale() == 'fr') 
                                       @foreach ($countriesfr as $keyfr => $valuefr)
                                           <option value="{{ $valuefr }}" @if ($infos[0]->pays == $valuefr) selected @endif>{{ $valuefr }}</option>
