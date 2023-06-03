@@ -56,6 +56,10 @@ class CadeauxCrudController extends CrudController
         
  
             CRUD::column('name')->label('Titre');
+            CRUD::column('name_en')->label('Titre anglais');
+            CRUD::column('name_de')->label('Titre allemand');
+            CRUD::column('name_es')->label('Titre espagnol');
+            CRUD::column('name_it')->label('Titre italien');
             $this->getFieldsData();
             $this->crud->addColumn([
                 'name'    => 'category',
@@ -107,6 +111,10 @@ class CadeauxCrudController extends CrudController
         ]);
         CRUD::setValidation(CadeauxRequest::class);
         CRUD::field('name')->label('Titre');
+        CRUD::field('name_en')->label('Titre anglais');
+        CRUD::field('name_de')->label('Titre allemand');
+        CRUD::field('name_es')->label('Titre espagnol');
+        CRUD::field('name_it')->label('Titre italien');
         CRUD::addField([ // Photo
             'name'      => 'image',
             'key' => 'image_up',
