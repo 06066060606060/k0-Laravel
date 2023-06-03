@@ -59,6 +59,10 @@ class GamesCrudController extends CrudController
             CRUD::column('name')->label('Nom');
             $this->getFieldsData();
             CRUD::column('description');
+            CRUD::column('description_en');
+            CRUD::column('description_de');
+            CRUD::column('description_es');
+            CRUD::column('description_it');
             $this->crud->addColumn([
                 'name'    => 'status',
                 'label'   => 'En vedette',
@@ -144,6 +148,10 @@ class GamesCrudController extends CrudController
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
         CRUD::field('description')->type('textarea');
+        CRUD::field('description_it')->type('textarea');
+        CRUD::field('description_de')->type('textarea');
+        CRUD::field('description_es')->type('textarea');
+        CRUD::field('description_it')->type('textarea');
         CRUD::field('link')->label('Lien');
         $this->crud->addField([   // select_from_array
             'name'        => 'category',
