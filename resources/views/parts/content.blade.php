@@ -56,7 +56,19 @@
                                     {{ $eventsgame->name }}</h2>
                                 <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">
                                     {{ $eventsgame->category }}</h1>
+                                @php $locale = app()->getLocale(); @endphp
+                                @if($locale=='fr')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->description }}</p>
+                                @elseif($locale=='en')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->description_en }}</p>
+                                @elseif($locale=='de')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->description_de }}</p>
+                                @elseif($locale=='es')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->description_es }}</p>
+                                @elseif($locale=='it')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->description_it }}</p>
+                                @else
+                                @endif
                                     <a href="game?id={{ $eventsgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $eventsgame->id }}';"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span
