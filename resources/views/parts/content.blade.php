@@ -185,11 +185,11 @@
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
                                 @elseif($locale=='en')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_en }}</p>
-                                @elseif($locale=='en')
+                                @elseif($locale=='de')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_de }}</p>
-                                @elseif($locale=='en')
+                                @elseif($locale=='es')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_es }}</p>
-                                @elseif($locale=='en')
+                                @elseif($locale=='it')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_it }}</p>
                                 @else
                                 @endif
