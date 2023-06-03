@@ -72,7 +72,19 @@
                                     src="{{ asset('storage/' . $images) }}" onerror="this.src='/img/empty.png'">
                                 <div class="w-full">
                                     <h2 class="py-1 mx-2 text-xl font-bold text-blue-600 title-font">{{ $pack->name }}</h2>
+                                    @php $locale = app()->getLocale(); @endphp
+                                    @if($locale=='fr')
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description }}</p>
+                                    @elseif($locale=='en')
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_en }}</p>
+                                    @elseif($locale=='de')
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_de }}</p>
+                                    @elseif($locale=='es')
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_es }}</p>
+                                    @elseif($locale=='it')
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_it }}</p>
+                                    @else
+                                    @endif
 
                                     <div x-data="{ modelOpen: false }" class="flex justify-center" id="poppaie">
 
