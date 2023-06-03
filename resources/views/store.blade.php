@@ -135,6 +135,8 @@
                                                             {{ $cadeau->name_it }}</h2>
 
                                                         @endif
+                                                        @else
+                                                        @endif
 
                                                          <div style="display:inline;">
                                                              <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
