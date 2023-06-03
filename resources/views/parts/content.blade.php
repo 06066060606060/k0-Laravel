@@ -180,7 +180,19 @@
                                     {{ $allgame->name }}</h2>
                                 <h1 class="text-lg font-medium text-gray-700 md:mb-1 title-font">
                                     {{ $allgame->category }}</h1>
+                                @php $locale = app()->getLocale(); @endphp
+                                @if($locale=='fr')    
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
+                                @elseif($locale=='en')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_en }}</p>
+                                @elseif($locale=='en')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_de }}</p>
+                                @elseif($locale=='en')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_es }}</p>
+                                @elseif($locale=='en')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_it }}</p>
+                                @else
+                                @endif
                                     <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span
