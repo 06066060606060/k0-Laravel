@@ -19,7 +19,7 @@ class Packs extends Model
     // protected $primaryKey = 'id';
     public $timestamps = false;
     protected $guarded = ['id'];
-   protected $fillable = ['name', 'image', 'description', 'prix', 'promo', 'active', 'prix_promo', 'gain', 'type'];
+   protected $fillable = ['name', 'image', 'description', 'description_en', 'description_de', 'description_es', 'description_it', 'prix', 'promo', 'active', 'prix_promo', 'gain', 'type'];
     // protected $hidden = [];
     // protected $dates = [];
 
