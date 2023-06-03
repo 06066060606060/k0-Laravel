@@ -79,16 +79,63 @@
                                                      onerror="this.src='/img/empty.png'">
                                                  <div class="w-full">
                                                      <div class="text-center mx-4">
-                                                         @if ($isMobile == true)
-                                                         <h2 name="name"
-                                                             class="py-1 text-xs font-bold text-green-600 title-font ">
-                                                             {{ $cadeau->name }}</h2>
+                                                         @php $locale = app()->getLocale(); @endphp
+                                                        @if($locale=='fr')
+                                                        @if ($isMobile == true)
+                                                        <h2 name="name"
+                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name }}</h2>
                                                         @else
                                                         <h2 name="name"
-                                                             class="py-1 text-l font-bold text-green-600 title-font ">
-                                                             {{ $cadeau->name }}</h2>
+                                                            class="py-1 text-l font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name }}</h2>
 
                                                         @endif
+                                                        @elseif($locale=='en')
+                                                        @if ($isMobile == true)
+                                                        <h2 name="name"
+                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_en }}</h2>
+                                                        @else
+                                                        <h2 name="name"
+                                                            class="py-1 text-l font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_en }}</h2>
+
+                                                        @endif
+                                                        @elseif($locale=='de')
+                                                        @if ($isMobile == true)
+                                                        <h2 name="name"
+                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_de }}</h2>
+                                                        @else
+                                                        <h2 name="name"
+                                                            class="py-1 text-l font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_de }}</h2>
+
+                                                        @endif
+                                                        @elseif($locale=='es')
+                                                        @if ($isMobile == true)
+                                                        <h2 name="name"
+                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_es }}</h2>
+                                                        @else
+                                                        <h2 name="name"
+                                                            class="py-1 text-l font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_es }}</h2>
+
+                                                        @endif
+                                                        @elseif($locale=='it')
+                                                        @if ($isMobile == true)
+                                                        <h2 name="name"
+                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_it }}</h2>
+                                                        @else
+                                                        <h2 name="name"
+                                                            class="py-1 text-l font-bold text-green-600 title-font ">
+                                                            {{ $cadeau->name_it }}</h2>
+
+                                                        @endif
+
                                                          <div style="display:inline;">
                                                              <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              @if($isMobile == true)
