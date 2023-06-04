@@ -23,26 +23,34 @@
                         <h1 class="py-6 mx-auto text-blue-600 text-lg font-bold">SELECT LANGUAGE</h1>
                     </div>
                     <div class="bg-gray-700 rounded-b-md">
-                        <div class="flex flex-col items-center pb-8 mx-20 mt-1">
-                            <ul>
-                <li>
-                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/en">
-                            <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
-                    </a>
-                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/fr">
-                            <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
-                    </a>
-                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/de">
-                            <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
-                    </a>
-                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/es">
-                            <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-4 h-4 mr-1">
-                    </a>
-                     <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/it">
-                            <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-4 h-4 mr-1">
-                    </a>
-                </li>
-                    </ul>
+                        <div class="flex items-center justify-center pb-8 mx-20 mt-1">
+                            <ul class="flex flex-wrap justify-center">
+                                <li>
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/en">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/fr">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/de">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/es">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-4 h-4 mr-1">
+                                    </a>
+                                </li>
+                                <li>
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/it">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-4 h-4 mr-1">
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
