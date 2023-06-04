@@ -191,7 +191,7 @@ class GlobalController extends Controller
                 foreach ($users as $user) {
                     $user_position = $scores_sorted->search(function ($score) use ($user) {
                         return $score->id_user === $user->id;
-                    });
+                    })->toArray();
                     
                     if ($user_position !== false) {
                         // Déterminer l'identifiant du gain en fonction de la position
@@ -277,7 +277,7 @@ class GlobalController extends Controller
                 'created_at' => Carbon::now(),
             ]);*/
             }
-            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom','score'));
+            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom'));
         } else {
             return view('winner', compact('lesderniers_gagnants_concours'));
         }
