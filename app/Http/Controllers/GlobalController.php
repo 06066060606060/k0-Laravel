@@ -15,6 +15,7 @@ use App\Models\Packs;
 use Carbon\Carbon;
 use App\Models\Paiements;
 use App\Models\Scores;
+use App\Models\ScoresConcours;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -128,16 +129,16 @@ class GlobalController extends Controller
     $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
         //Score effectués ordre par id desc
         if(isset($concours->id)){
-        $scores = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
+        $scoresconcours = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
                 ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
-                ->groupBy('user_id') // groupé par id users
+                ->groupBy('id_user') // groupé par id users
                 ->orderBy('total', 'desc') // ordre par score total plus grand au plus petit 
                 ->get(); // récupère le résultat
         // Trouver la position de l'utilisateur dans le classement des scores
         $userPosition = 0; // défini la position à 0
         $userScore = null; // défini un score vierge
-        for ($i = 0; $i < count($scores); $i++) {
-            $score = $scores[$i];
+        for ($i = 0; $i < count($scoresconcours); $i++) {
+            $score = $scoresconcours[$i];
             if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
                 $userPosition = $i + 1;
                 $userScore = $score;
@@ -254,6 +255,7 @@ class GlobalController extends Controller
             }
             
             $concours->delete(); // Supprime le concours de la table concours en toute fin
+            $scoreconcours->delete(); // Supprime le concours de la table concours en toute fin
                 
        /* $date_debut = Carbon::now()->subHours(2);
         $date_fin = Carbon::now()->addDays(28);
