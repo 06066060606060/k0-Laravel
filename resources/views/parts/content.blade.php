@@ -383,7 +383,18 @@
                     <h1
                         class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                         {{ $starred->name }}</h1>
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
+                    @if ($locale=='fr')
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>                        
+                    @elseif ($locale=='en')
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_en }}</p>                        
+                    @elseif ($locale=='de')
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_de }}</p>                        
+                    @elseif ($locale=='es')
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_es }}</p>                        
+                    @elseif ($locale=='it')
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_it }}</p>                        
+                    @else
+                    @endif
                     <div class="">
                             <a href="admin/register"
                                 class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
