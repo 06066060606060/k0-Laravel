@@ -6,6 +6,60 @@
 @else
     <div class="z-0 one"></div>
 @endif
+<div id="languageModal" class="modal">
+        <div class="modal-content">
+            <h2>SELECT LANGUAGE:</h2>
+            <ul>
+                <li><a href="#" onclick="setLanguage('en')">English</a></li>
+                <li><a href="#" onclick="setLanguage('de')">German</a></li>
+                <li><a href="#" onclick="setLanguage('fr')">French</a></li>
+                <li><a href="#" onclick="setLanguage('es')">Spanish</a></li>
+                <li><a href="#" onclick="setLanguage('it')">Italian</a></li>
+            </ul>
+        </div>
+    </div>
+<script>
+// Attendre le chargement complet du document
+document.addEventListener('DOMContentLoaded', function() {
+    // Vérifier si la modale a déjà été affichée (par exemple, en utilisant un cookie ou une session)
+    var languageModalShown = getCookie('languageModalShown'); // Vous devez définir la fonction getCookie appropriée
+    
+    // Si la modale n'a pas été affichée, l'afficher
+    if (!languageModalShown) {
+        var languageModal = document.getElementById('languageModal');
+        languageModal.style.display = 'block';
+    }
+});
+
+// Fonction pour définir la langue sélectionnée
+function setLanguage(language) {
+    // Vous pouvez stocker la langue dans un cookie ou une session ici (par exemple, en utilisant une requête AJAX)
+    
+    // Exemple de stockage de la langue dans un cookie pendant 30 jours
+    setCookie('selectedLanguage', language, 30); // Vous devez définir la fonction setCookie appropriée
+    
+    // Masquer la modale
+    var languageModal = document.getElementById('languageModal');
+    languageModal.style.display = 'none';
+}
+
+// Fonction pour récupérer la valeur d'un cookie
+function getCookie(name) {
+    var value = '; ' + document.cookie;
+    var parts = value.split('; ' + name + '=');
+    if (parts.length === 2) {
+        return parts.pop().split(';').shift();
+    }
+}
+
+// Fonction pour définir un cookie
+function setCookie(name, value, days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    var expires = 'expires=' + date.toUTCString();
+    document.cookie = name + '=' + value + ';' + expires + ';path=/';
+}
+</script>
 @if (backpack_auth()->check())
 @if($countevent>0)
 <container class="mx-auto max-w-7xl" id="win">
