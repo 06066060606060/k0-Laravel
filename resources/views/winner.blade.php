@@ -112,7 +112,7 @@
 
                                          <tbody class="divide-y divide-gray-700">
 
-@foreach($scores as $index => $score)
+@foreach($scoresconcours as $index => $score)
 <tr class="dark:bg-gray-900">
     <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
         {{ $index + 1 }}
