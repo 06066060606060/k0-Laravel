@@ -17,12 +17,17 @@ class Localization
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next)
+    public function handle($request, Closure $next)
     {
         $availableLocales = config('app.available_locales');
         
-        if (Session::has('locale') && in_array(Session::get('locale'), $availableLocales)) {
-            App::setLocale(Session::get('locale'));
+        $userPreferredLanguages = $request->getLanguages();
+        
+        foreach ($userPreferredLanguages as $language) {
+            if (in_array($language, $availableLocales)) {
+                App::setLocale($language);
+                break;
+            }
         }
         
         return $next($request);
