@@ -7,7 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 
-<div x-data="{ modelOpen: false }" x-init="checkModalStatus(); setTimeout(() => { modelOpen = false; }, 3000)">
+<div x-data="{ modelOpen: false }" x-init="checkModalStatus()">
 
     <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
