@@ -122,165 +122,167 @@ class GlobalController extends Controller
     // Fonction du concours
     public function winner()
     {
-    $gains = Gains::all(); // récup tous les gains du concours
-    $concours = Concours::All()->last(); //Selectionne le concours
-    $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
-    $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
-    $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
+        $gains = Gains::all(); // récup tous les gains du concours
+        $concours = Concours::All()->last(); //Selectionne le concours
+        $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
+        $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
+        $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
+        
         //Score effectués ordre par id desc
-        if(isset($concours->id)){
-        $scoresconcours = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
+        if (isset($concours->id)) {
+            $scoresconcours = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
                 ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
                 ->groupBy('id_user') // groupé par id users
                 ->orderBy('total', 'desc') // ordre par score total plus grand au plus petit 
                 ->get(); // récupère le résultat
-        // Trouver la position de l'utilisateur dans le classement des scores
-        $userPosition = 0; // défini la position à 0
-        $userScore = null; // défini un score vierge
-        for ($i = 0; $i < count($scoresconcours); $i++) {
-            $score = $scoresconcours[$i];
-            if($score && $score->id_user && auth()->user() && $score->id_user == auth()->user()->id) {
-                $userPosition = $i + 1;
-                $userScore = $score;
-                break;
-            }
-        }    
-        $position = $userPosition;
-        $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
-        $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
-        $gain_id = 1;
-        if($position == 1) {
-            $gain_id = 1;
-        } elseif($position == 2) {
-            $gain_id = 2;
-        } elseif($position == 3) {
-            $gain_id = 3;
-        } elseif($position > 3 && $position <= 6) {
-            $gain_id = 4;
-        } elseif($position > 6 && $position <= 15) {
-            $gain_id = 5;
-        } elseif($position > 15 && $position <= 30) {
-            $gain_id = 6;
-        } elseif($position > 30 && $position <= 150) {
-            $gain_id = 7;
-        } elseif($position > 150 && $position <= 300) {
-            $gain_id = 8;
-        } elseif($position > 300 && $position <= 600) {
-            $gain_id = 9;
-        } elseif($position > 600 && $position <= 1500) {
-            $gain_id = 10;
-        } elseif($position > 1500 && $position <= 3000) {
-            $gain_id = 11;
-        } else {
-            $gain_id = 12;
-        }
-        $gain = $gains->where('id', $gain_id)->first();
-        $gain_nom = $gain ? $gain->name : null;
-
-        if ($now->gt($concours->date_fin)) {
-            // Récupère users selon le score et position
-            $scores_sorted = $scoresconcours->sortByDesc('score'); // Tri par ordre décroissant de score
-            $users = User::whereIn('id', $scores_sorted->pluck('id_user'))->get();
             
-            // Boucle pour la distribution
-            foreach($users as $user) {
-                $user_position = $scores_sorted->search(function($score) use($user) {
-                    return $score->id_user === $user->id;
-                });
-                
-                if ($user_position !== false) {
-                   
-                    // Déterminer l'identifiant du gain en fonction de la position
-                    if($user_position == 0) {
-                        $gain_id = 1;
-                    } elseif($user_position == 1) {
-                        $gain_id = 2;
-                    } elseif($user_position == 2) {
-                        $gain_id = 3;
-                    } elseif($user_position > 2 && $user_position <= 5) {
-                        $gain_id = 4;
-                    } elseif($user_position > 5 && $user_position <= 14) {
-                        $gain_id = 5;
-                    } elseif($user_position > 14 && $user_position <= 29) {
-                        $gain_id = 6;
-                    } elseif($user_position > 29 && $user_position <= 149) {
-                        $gain_id = 7;
-                    } elseif($user_position > 149 && $user_position <= 299) {
-                        $gain_id = 8;
-                    } elseif($user_position > 299 && $user_position <= 599) {
-                        $gain_id = 9;
-                    } elseif($user_position > 599 && $user_position <= 1499) {
-                        $gain_id = 10;
-                    } elseif($user_position > 1499 && $user_position <= 2999) {
-                        $gain_id = 11;
-                    } else {
-                        $gain_id = 12;
-                    }
-        
-                    // Obtenir le gain correspondant à l'identifiant
-                    $gain = $gains->where('id', $gain_id)->first();
-
-                    // Ajouter le gain à l'utilisateur en fonction de son type
-                    switch ($gain->type) {
-                        case 'Diamants':
-                            $user->trophee1 += $gain->name;
-                            break;
-                        case 'Rubis':
-                            $user->trophee2 += $gain->name;
-                            break;
-                        case 'Coins':
-                            $user->trophee3 += $gain->name;
-                            break;
-                    }
-
-                    $dernier_gagnant = new Derniers_Gagnants_Concours;
-                    $dernier_gagnant->name = $user->name;
-                    if (isset($user->scores)) {
-                    $dernier_gagnant->score = $user->scores->sum(function ($score) {
-                            return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
-                        });
-                    } else {
-                        $dernier_gagnant->score = 0;
-                    }
-                    $dernier_gagnant->gain = $gain->name;
-                    $dernier_gagnant->type = $gain->type;
-                    $dernier_gagnant->date_gain = $now;
-                    $dernier_gagnant->created_at = $now;
-                    $dernier_gagnant->updated_at = $now;
-                    $dernier_gagnant->save();
-
-                    // Enregistrer les modifications de l'utilisateur
-                    $user->save();
+            // Trouver la position de l'utilisateur dans le classement des scores
+            $userPosition = 0; // défini la position à 0
+            $userScore = null; // défini un score vierge
+            for ($i = 0; $i < count($scoresconcours); $i++) {
+                $score = $scoresconcours[$i];
+                if ($score && $score->id_user && auth()->user() && $score->id_user == auth()->user()->id) {
+                    $userPosition = $i + 1;
+                    $userScore = $score;
+                    break;
                 }
             }
             
-            $concours->delete(); // Supprime le concours de la table concours en toute fin
-            $scoreconcours->delete(); // Supprime le concours de la table concours en toute fin
+            $position = $userPosition;
+            $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
+            $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
+            $gain_id = 1;
+            
+            if ($position == 1) {
+                $gain_id = 1;
+            } elseif ($position == 2) {
+                $gain_id = 2;
+            } elseif ($position == 3) {
+                $gain_id = 3;
+            } elseif ($position > 3 && $position <= 6) {
+                $gain_id = 4;
+            } elseif ($position > 6 && $position <= 15) {
+                $gain_id = 5;
+            } elseif ($position > 15 && $position <= 30) {
+                $gain_id = 6;
+            } elseif ($position > 30 && $position <= 150) {
+                $gain_id = 7;
+            } elseif ($position > 150 && $position <= 300) {
+                $gain_id = 8;
+            } elseif ($position > 300 && $position <= 600) {
+                $gain_id = 9;
+            } elseif ($position > 600 && $position <= 1500) {
+                $gain_id = 10;
+            } elseif ($position > 1500 && $position <= 3000) {
+                $gain_id = 11;
+            } else {
+                $gain_id = 12;
+            }
+            
+            $gain = $gains->where('id', $gain_id)->first();
+            $gain_nom = $gain ? $gain->name : null;
+            
+            if ($now->gt($concours->date_fin)) {
+                // Récupère users selon le score et position
+                $scores_sorted = $scoresconcours->sortByDesc('score'); // Tri par ordre décroissant de score
+                $users = User::whereIn('id', $scores_sorted->pluck('id_user'))->get();
                 
-       /* $date_debut = Carbon::now()->subHours(2);
-        $date_fin = Carbon::now()->addDays(28);
-        // creer un nouveau concours
-        Concours::create([
-            'id' => 1,
-            'name' => 'Gagnez 500€',
-            'image' => 'uploads/157f2c7e7afb9ed5a973ae3b99201d1b.gif',
-            'type' => 'Maximum de points',
-            'description' => 'Tentez de remporter le concours en jouant sur le jeu Pool ! Le but pour monter dans le classement est très simple, il suffit de collecter Diamants, Rubis et Coins sur le jeu multijoueur Pool.',
-            'date_debut' => $date_debut,
-            'date_fin' => $date_fin,
-            'cadeau_id' => 1,
-            'game_id' => 39,
-            'active' => 1,
-            'created_at' => Carbon::now(),
-        ]);*/
+                // Boucle pour la distribution
+                foreach ($users as $user) {
+                    $user_position = $scores_sorted->search(function ($score) use ($user) {
+                        return $score->id_user === $user->id;
+                    });
+                    
+                    if ($user_position !== false) {
+                        // Déterminer l'identifiant du gain en fonction de la position
+                        if ($user_position == 0) {
+                            $gain_id = 1;
+                        } elseif ($user_position == 1) {
+                            $gain_id = 2;
+                        } elseif ($user_position == 2) {
+                            $gain_id = 3;
+                        } elseif ($user_position > 2 && $user_position <= 5) {
+                            $gain_id = 4;
+                        } elseif ($user_position > 5 && $user_position <= 14) {
+                            $gain_id = 5;
+                        } elseif ($user_position > 14 && $user_position <= 29) {
+                            $gain_id = 6;
+                        } elseif ($user_position > 29 && $user_position <= 149) {
+                            $gain_id = 7;
+                        } elseif ($user_position > 149 && $user_position <= 299) {
+                            $gain_id = 8;
+                        } elseif ($user_position > 299 && $user_position <= 599) {
+                            $gain_id = 9;
+                        } elseif ($user_position > 599 && $user_position <= 1499) {
+                            $gain_id = 10;
+                        } elseif ($user_position > 1499 && $user_position <= 2999) {
+                            $gain_id = 11;
+                        } else {
+                            $gain_id = 12;
+                        }
+                        
+                        // Obtenir le gain correspondant à l'identifiant
+                        $gain = $gains->where('id', $gain_id)->first();
+                        
+                        // Ajouter le gain à l'utilisateur en fonction de son type
+                        switch ($gain->type) {
+                            case 'Diamants':
+                                $user->trophee1 += $gain->name;
+                                break;
+                            case 'Rubis':
+                                $user->trophee2 += $gain->name;
+                                break;
+                            case 'Coins':
+                                $user->trophee3 += $gain->name;
+                                break;
+                        }
+                        
+                        $dernier_gagnant = new Derniers_Gagnants_Concours;
+                        $dernier_gagnant->name = $user->name;
+                        if (isset($user->scores)) {
+                            $dernier_gagnant->score = $user->scores->sum(function ($score) {
+                                return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
+                            });
+                        } else {
+                            $dernier_gagnant->score = 0;
+                        }
+                        $dernier_gagnant->gain = $gain->name;
+                        $dernier_gagnant->type = $gain->type;
+                        $dernier_gagnant->date_gain = $now;
+                        $dernier_gagnant->created_at = $now;
+                        $dernier_gagnant->updated_at = $now;
+                        $dernier_gagnant->save();
+                        
+                        // Enregistrer les modifications de l'utilisateur
+                        $user->save();
+                    }
+                }
+                
+                $concours->delete(); // Supprime le concours de la table concours en toute fin
+                    
+           /* $date_debut = Carbon::now()->subHours(2);
+            $date_fin = Carbon::now()->addDays(28);
+            // creer un nouveau concours
+            Concours::create([
+                'id' => 1,
+                'name' => 'Gagnez 500€',
+                'image' => 'uploads/157f2c7e7afb9ed5a973ae3b99201d1b.gif',
+                'type' => 'Maximum de points',
+                'description' => 'Tentez de remporter le concours en jouant sur le jeu Pool ! Le but pour monter dans le classement est très simple, il suffit de collecter Diamants, Rubis et Coins sur le jeu multijoueur Pool.',
+                'date_debut' => $date_debut,
+                'date_fin' => $date_fin,
+                'cadeau_id' => 1,
+                'game_id' => 39,
+                'active' => 1,
+                'created_at' => Carbon::now(),
+            ]);*/
+            }
+            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom'));
+        } else {
+            return view('winner', compact('lesderniers_gagnants_concours'));
         }
-        return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom'));
-    } else {
-        return view('winner', compact('lesderniers_gagnants_concours'));
-
     }
-}
-
+    
     public function store()
     {
         $concours = Concours::All();
