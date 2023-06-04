@@ -82,7 +82,7 @@ return [
     |
     */
 
-    'locale' => 'fr',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -99,11 +99,11 @@ return [
 
 
     'available_locales' => [
-        'en' => 'English',
-        'de' => 'German',
-        'fr' => 'French',
-        'es' => 'Spanish',
-        'it' => 'Italian',
+        'English' => 'en', 
+        'German' => 'de',
+        'French' => 'fr',
+        'Spanish' => 'es',
+        'Italian' => 'it',
     ],
 
     /*
