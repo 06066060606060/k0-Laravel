@@ -7,11 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 
-<div x-data="{ modelOpen: false }">
-    <!-- Dropdown toggle button -->
-    <button @click="modelOpen = true" class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
-        SELECT LANGUAGE
-    </button>
+<div x-data="{ modelOpen: false }" x-init="checkModalStatus(); modelOpen = true">
 
     <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
@@ -57,6 +53,14 @@
             </div>
         </div>
     </div>
+    <script>
+        function checkModalStatus() {
+            const modalDisplayed = localStorage.getItem('modalDisplayed');
+            if (!modalDisplayed) {
+                localStorage.setItem('modalDisplayed', 'true');
+            }
+        }
+    </script>
 </div>
 
 
