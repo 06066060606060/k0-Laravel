@@ -7,7 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 
-<div x-data="{ modelOpen: false }" x-init="modelOpen = true">
+<div x-data="{ modelOpen: false }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
 
     <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
@@ -22,27 +22,27 @@
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
                             <ul class="flex flex-wrap justify-center">
                                 <li>
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/en">
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/en" @click="localStorage.setItem('languageSelected', true)">
                                         <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-10 h-10 mr-1">
                                     </a>
                                 </li>
                                 <li>
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/fr">
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/fr" @click="localStorage.setItem('languageSelected', true)">
                                         <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-10 h-10 mr-1">
                                     </a>
                                 </li>
                                 <li>
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/de">
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/de" @click="localStorage.setItem('languageSelected', true)">
                                         <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-10 h-10 mr-1">
                                     </a>
                                 </li>
                                 <li>
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/es">
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/es" @click="localStorage.setItem('languageSelected', true)">
                                         <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-10 h-10 mr-1">
                                     </a>
                                 </li>
                                 <li>
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/it">
+                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/it" @click="localStorage.setItem('languageSelected', true)">
                                         <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-10 h-10 mr-1">
                                     </a>
                                 </li>
