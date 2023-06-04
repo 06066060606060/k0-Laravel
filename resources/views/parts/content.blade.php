@@ -25,12 +25,20 @@
                     <div class="bg-gray-700 rounded-b-md">
                         <div class="flex flex-col items-center pb-8 mx-20 mt-1">
                             <ul>
-                                <li><a href="#" onclick="setLanguage('en')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">English</a></li>
-                                <li><a href="#" onclick="setLanguage('de')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">German</a></li>
-                                <li><a href="#" onclick="setLanguage('fr')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">French</a></li>
-                                <li><a href="#" onclick="setLanguage('es')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">Spanish</a></li>
-                                <li><a href="#" onclick="setLanguage('it')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">Italian</a></li>
-                            </ul>
+                             <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/{{ $available_locale }}">
+                        @if($available_locale === 'en')
+                            <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
+                        @elseif($available_locale === 'fr')
+                            <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
+                        @elseif($available_locale === 'es')
+                            <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
+                        @elseif($available_locale === 'de')
+                            <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-4 h-4 mr-1">
+                        @elseif($available_locale === 'it')
+                            <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-4 h-4 mr-1">
+                        @endif
+                    </a>
+                    </ul>
                         </div>
                     </div>
                 </div>
