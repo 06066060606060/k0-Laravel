@@ -61,8 +61,8 @@
             if (!modalDisplayed) {
                 localStorage.setItem('modalDisplayed', 'true');
                 modelOpen = true;
-            } else if (languageSelected) {
-                modelOpen = false;
+            } else if (!languageSelected) {
+                modelOpen = true;
             }
         }
         
