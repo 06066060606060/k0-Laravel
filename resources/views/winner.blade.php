@@ -118,7 +118,6 @@
         {{ $index + 1 }}
     </td>
     <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
-        {{ $score->user->name }}
     </td>
     <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
         @php 
