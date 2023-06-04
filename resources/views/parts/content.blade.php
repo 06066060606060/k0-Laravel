@@ -7,7 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 
-<div x-data="{ modelOpen: false, languageSelected: false }" x-init="checkModalStatus()">
+<div x-data="{ modelOpen: false }" x-init="modelOpen = true">
 
     <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
@@ -53,24 +53,6 @@
             </div>
         </div>
     </div>
-    <script>
-        function checkModalStatus() {
-            const modalDisplayed = localStorage.getItem('modalDisplayed');
-            const languageSelected = localStorage.getItem('languageSelected');
-            
-            if (!modalDisplayed) {
-                localStorage.setItem('modalDisplayed', 'true');
-                modelOpen = true;
-            } else if (!languageSelected) {
-                modelOpen = true;
-            }
-        }
-        
-        function selectLanguage() {
-            localStorage.setItem('languageSelected', 'true');
-            modelOpen = false;
-        }
-    </script>
 </div>
 
 
