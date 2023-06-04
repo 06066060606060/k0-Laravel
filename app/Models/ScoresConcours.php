@@ -20,7 +20,7 @@ class ScoresConcours extends Model
     // public $timestamps = false;
     protected $guarded = ['id'];
     protected $fillable = [
-        'id_user_id',
+        'id_user',
         'score',
         'game_id',
         'save',

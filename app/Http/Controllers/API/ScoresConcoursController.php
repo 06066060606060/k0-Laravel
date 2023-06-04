@@ -17,8 +17,8 @@ class ScoresConcoursController extends Controller
      */
     public function index()
     {
-        $Scores = ScoresConcours::all();
-        return response()->json($Scores);
+        $ScoresConcours = ScoresConcours::all();
+        return response()->json($ScoresConcours);
     }
 
     /**

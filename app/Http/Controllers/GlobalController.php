@@ -191,7 +191,7 @@ class GlobalController extends Controller
                 foreach ($users as $user) {
                     $user_position = $scores_sorted->search(function ($score) use ($user) {
                         return $score->id_user === $user->id;
-                    })->toArray();
+                    });
                     
                     if ($user_position !== false) {
                         // Déterminer l'identifiant du gain en fonction de la position
