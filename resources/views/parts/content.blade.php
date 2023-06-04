@@ -8,10 +8,9 @@
 @endif
 
 <div x-data="{ modelOpen: false }" x-init="checkModalStatus()">
-
     <!-- Modale -->
-    <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
-        <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
+    <div x-show.transition.duration.300ms="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
+       <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
             <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
             <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
                 <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
@@ -58,8 +57,8 @@
             const modalDisplayed = localStorage.getItem('modalDisplayed');
             if (!modalDisplayed) {
                 localStorage.setItem('modalDisplayed', 'true');
-                const modelOpen = document.querySelector('[x-data]').__x.$data.modelOpen;
-                modelOpen = true;
+                const modelOpen = document.querySelector('[x-data]').__x.$data;
+                modelOpen.modelOpen = true;
             }
         }
     </script>
