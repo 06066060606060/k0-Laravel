@@ -7,7 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 
-<div x-data="{ modelOpen: false }" x-init="checkModalStatus(); modelOpen = true">
+<div x-data="{ modelOpen: false }" x-init="checkModalStatus(); setTimeout(() => { modelOpen = false; }, 3000)">
 
     <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
@@ -58,6 +58,8 @@
             const modalDisplayed = localStorage.getItem('modalDisplayed');
             if (!modalDisplayed) {
                 localStorage.setItem('modalDisplayed', 'true');
+                const modelOpen = document.querySelector('[x-data]').__x.$data.modelOpen;
+                modelOpen = true;
             }
         }
     </script>
