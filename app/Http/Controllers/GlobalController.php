@@ -179,7 +179,7 @@ class GlobalController extends Controller
 
         if ($now->gt($concours->date_fin)) {
             // Récupère users selon le score et position
-            $scores_sorted = $scores->sortByDesc('score'); // Tri par ordre décroissant de score
+            $scores_sorted = $scoresconcours->sortByDesc('score'); // Tri par ordre décroissant de score
             $users = User::whereIn('id', $scores_sorted->pluck('id_user'))->get();
             
             // Boucle pour la distribution
