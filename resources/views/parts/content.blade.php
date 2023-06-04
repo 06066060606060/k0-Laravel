@@ -383,6 +383,7 @@
                     <h1
                         class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                         {{ $starred->name }}</h1>
+                    @php $locale = app()->getLocale(); @endphp
                     @if ($locale=='fr')
                     <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>                        
                     @elseif ($locale=='en')
