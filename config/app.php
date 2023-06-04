@@ -99,11 +99,11 @@ return [
 
 
     'available_locales' => [
-        'English' => 'en',
-        'German' => 'de',
-        'French' => 'fr',
-        'Spanish' => 'es',
-        'Italian' => 'it',
+        'en' => 'English',
+        'de' => 'German',
+        'fr' => 'French',
+        'es' => 'Spanish',
+        'it' => 'Italian',
     ],
 
     /*
