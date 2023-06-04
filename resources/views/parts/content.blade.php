@@ -52,6 +52,7 @@
             </div>
         </div>
     </div>
+</div>
     <script>
         function checkModalStatus() {
             const modalDisplayed = localStorage.getItem('modalDisplayed');
@@ -62,7 +63,6 @@
             }
         }
     </script>
-</div>
 
 
 
