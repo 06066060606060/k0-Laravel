@@ -62,12 +62,8 @@
                 localStorage.setItem('modalDisplayed', 'true');
             } else {
                 // Une langue a déjà été choisie, donc on ferme la modale
-                modelOpen = false;
+                localStorage.setItem('languageSelected', 'true');
             }
-        }
-        
-        function selectLanguage() {
-            localStorage.setItem('languageSelected', 'true');
         }
     </script>
 </div>
