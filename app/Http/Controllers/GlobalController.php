@@ -274,7 +274,7 @@ class GlobalController extends Controller
             'created_at' => Carbon::now(),
         ]);*/
         }
-        return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scores', 'concours', 'startdate', 'enddate', 'gain_nom'));
+        return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom'));
     } else {
         return view('winner', compact('lesderniers_gagnants_concours'));
 
