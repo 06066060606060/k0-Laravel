@@ -37,12 +37,12 @@
                                 </li>
                                 <li>
                                     <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/de">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-10 h-10 mr-1">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-10 h-10 mr-1">
                                     </a>
                                 </li>
                                 <li>
                                     <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/es">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-10 h-10 mr-1">
+                                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-10 h-10 mr-1">
                                     </a>
                                 </li>
                                 <li>
