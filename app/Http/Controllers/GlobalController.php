@@ -139,7 +139,7 @@ class GlobalController extends Controller
         $userScore = null; // défini un score vierge
         for ($i = 0; $i < count($scoresconcours); $i++) {
             $score = $scoresconcours[$i];
-            if($score && $score->user_id && auth()->user() && $score->user_id == auth()->user()->id) {
+            if($score && $score->id_user && auth()->user() && $score->id_user == auth()->user()->id) {
                 $userPosition = $i + 1;
                 $userScore = $score;
                 break;
@@ -180,12 +180,12 @@ class GlobalController extends Controller
         if ($now->gt($concours->date_fin)) {
             // Récupère users selon le score et position
             $scores_sorted = $scores->sortByDesc('score'); // Tri par ordre décroissant de score
-            $users = User::whereIn('id', $scores_sorted->pluck('user_id'))->get();
+            $users = User::whereIn('id', $scores_sorted->pluck('id_user'))->get();
             
             // Boucle pour la distribution
             foreach($users as $user) {
                 $user_position = $scores_sorted->search(function($score) use($user) {
-                    return $score->user_id === $user->id;
+                    return $score->id_user === $user->id;
                 });
                 
                 if ($user_position !== false) {
