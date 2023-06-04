@@ -6,31 +6,39 @@
 @else
     <div class="z-0 one"></div>
 @endif
-<div x-data="{ modelOpen: false }">
-    <!-- Votre contenu principal ici -->
-    <h1>Bienvenue sur notre site !</h1>
 
-    <!-- Bouton pour ouvrir la modale -->
-    <button @click="modelOpen = true" class="button">Ouvrir la modale</button>
+<div x-data="{ modelOpen: false }">
+    <!-- Dropdown toggle button -->
+    <button @click="modelOpen = true" class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
+        SELECT LANGUAGE
+    </button>
 
     <!-- Modale -->
-    <div x-show="modelOpen" class="modal">
-        <div class="modal-content">
-            <!-- Contenu de la modale -->
-            <h2>SELECT LANGUAGE:</h2>
-            <ul>
-                <li><a href="#" onclick="setLanguage('en')">English</a></li>
-                <li><a href="#" onclick="setLanguage('de')">German</a></li>
-                <li><a href="#" onclick="setLanguage('fr')">French</a></li>
-                <li><a href="#" onclick="setLanguage('es')">Spanish</a></li>
-                <li><a href="#" onclick="setLanguage('it')">Italian</a></li>
-            </ul>
-
-            <!-- Bouton pour fermer la modale -->
-            <button @click="modelOpen = false" class="button">Fermer</button>
+    <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
+        <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
+            <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
+                <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
+                    <div class="flex justify-between w-full border-b">
+                        <h1 class="py-6 mx-auto text-lg font-bold">SELECT LANGUAGE</h1>
+                    </div>
+                    <div class="bg-gray-700 rounded-b-md">
+                        <div class="flex flex-col items-center pb-8 mx-20 mt-1">
+                            <ul>
+                                <li><a href="#" onclick="setLanguage('en')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">English</a></li>
+                                <li><a href="#" onclick="setLanguage('de')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">German</a></li>
+                                <li><a href="#" onclick="setLanguage('fr')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">French</a></li>
+                                <li><a href="#" onclick="setLanguage('es')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">Spanish</a></li>
+                                <li><a href="#" onclick="setLanguage('it')" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">Italian</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 
 @if (backpack_auth()->check())
