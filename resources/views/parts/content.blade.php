@@ -58,8 +58,8 @@
             const modalDisplayed = localStorage.getItem('modalDisplayed');
             if (!modalDisplayed) {
                 localStorage.setItem('modalDisplayed', 'true');
-                const modelOpen = document.querySelector('[x-data]').__x.$data;
-                modelOpen.modelOpen = true;
+            } else {
+                closeModal();
             }
         }
 
