@@ -163,26 +163,26 @@ trait AuthenticatesUsers
      * @return \Illuminate\Http\Response
      */
     public function logout(Request $request)
-    {
-        $currentLocale = app()->getLocale();
+{
+    $currentLocale = session('locale'); // Récupérer la langue actuelle depuis la session
 
-        session(['locale' => $currentLocale]);
-        
-        $this->guard()->logout();
+    $this->guard()->logout();
 
-        $request->session()->invalidate();
+    $request->session()->invalidate();
 
-        $request->session()->regenerateToken();
+    $request->session()->regenerateToken();
 
-        
-        if ($response = $this->loggedOut($request)) {
-            return $response;
-        }
+    $request->session()->put('locale', $currentLocale); // Réinitialiser la langue dans la nouvelle session
 
-        return $request->wantsJson()
-            ? new Response('', 204)
-            : redirect('/');
+    if ($response = $this->loggedOut($request)) {
+        return $response;
     }
+
+    return $request->wantsJson()
+        ? new Response('', 204)
+        : redirect('/');
+}
+
 
     /**
      * The user has logged out of the application.
