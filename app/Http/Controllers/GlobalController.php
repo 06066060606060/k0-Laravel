@@ -124,7 +124,7 @@ class GlobalController extends Controller
     {
         $gains = Gains::all(); // récup tous les gains du concours
         $concours = Concours::All()->last(); //Selectionne le concours
-        $lesscoresdeconcours = ScoresConcours::where('game_id', $concours->game_id)->get();
+        $lesscoresdeconcours = ScoresConcours::where('game_id', $concours->id)->get();
         $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
         $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
         $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
