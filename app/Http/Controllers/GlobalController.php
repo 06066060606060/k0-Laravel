@@ -179,11 +179,13 @@ class GlobalController extends Controller
             } else {
                 $gain_id = 12;
             }
-            
+
             $gain = $gains->where('id', $gain_id)->first();
             $gain_nom = $gain ? $gain->name : null;
             
             if ($now->gt($concours->date_fin)) {
+                // Supprime les derniers gagnants 
+                Derniers_Gagnants_Concours::truncate();
                 // Récupère users selon le score et position
                 $scores_sorted = $scoresconcours->sortByDesc('score'); // Tri par ordre décroissant de score
                 $users = User::whereIn('id', $scores_sorted->pluck('id_user'))->get();
@@ -237,8 +239,6 @@ class GlobalController extends Controller
                                 $user->trophee3 += $gain->name;
                                 break;
                         }
-                        // Supprime les derniers gagnants 
-                        Derniers_Gagnants_Concours::truncate();
                         // Ajoute les nouveaux derniers gagnants
                         $dernier_gagnant = new Derniers_Gagnants_Concours;
                         $dernier_gagnant->name = $user->name;
