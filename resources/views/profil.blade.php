@@ -40,7 +40,7 @@
     $totalite = $total1;
     } else {}
 @endphp
-@if(isset($scory->total) || isset($scorey->total2) || isset($scory->total3))
+@if(isset($scory->total))
 <p class="flex py-4 text-xs text-white border-b border-gray-500">
     {{__('Score Concours')}} : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
