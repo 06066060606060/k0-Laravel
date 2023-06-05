@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\App;
+use Mcamara\LaravelLocalization\LaravelLocalization;
 
 // ...
 
