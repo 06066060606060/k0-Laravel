@@ -259,7 +259,10 @@ class GlobalController extends Controller
                     }
                 }
                 Concours::where('id', 10)->update(['active' => 0]);
+                DB::statement('SET FOREIGN_KEY_CHECKS=0');
                 ScoresConcours::truncate();    
+                DB::statement('SET FOREIGN_KEY_CHECKS=1');
+
             }
             return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom'));
         } else {
