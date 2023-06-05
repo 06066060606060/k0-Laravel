@@ -182,7 +182,10 @@ class GlobalController extends Controller
 
             $gain = $gains->where('id', $gain_id)->first();
             $gain_nom = $gain ? $gain->name : null;
-            
+
+            // Supprime les derniers gagnants 
+            Derniers_Gagnants_Concours::truncate();
+
             if ($now->gt($concours->date_fin)) {
                 // Récupère users selon le score et position
                 $scores_sorted = $scoresconcours->sortByDesc('score'); // Tri par ordre décroissant de score
@@ -252,8 +255,6 @@ class GlobalController extends Controller
                         $dernier_gagnant->date_gain = $now;
                         $dernier_gagnant->created_at = $now;
                         $dernier_gagnant->updated_at = $now;
-                        // Supprime les derniers gagnants 
-                        Derniers_Gagnants_Concours::truncate();
                         $dernier_gagnant->save();
                         
                         // Enregistrer les modifications de l'utilisateur
