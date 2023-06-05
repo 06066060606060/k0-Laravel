@@ -385,10 +385,10 @@ class GlobalController extends Controller
                 ->get();
             $scory = null;
             if ($concours != null && $concours->game_id != null) {    
-                $scory = Scores::selectRaw('user_id, SUM(data) + SUM(data2*100) + SUM(data3*1000) AS total')
-                ->where('user_id', $idjoueur)
+                $scory = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
+                ->where('id_user', $idjoueur)
                 ->where('game_id', $concours->game_id)
-                ->groupBy('user_id')
+                ->groupBy('id_user')
                 ->limit('1')
                 ->first();
             }
