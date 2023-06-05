@@ -237,7 +237,9 @@ class GlobalController extends Controller
                                 $user->trophee3 += $gain->name;
                                 break;
                         }
-                        
+                        // Supprime les derniers gagnants 
+                        Derniers_Gagnants_Concours::truncate();
+                        // Ajoute les nouveaux derniers gagnants
                         $dernier_gagnant = new Derniers_Gagnants_Concours;
                         $dernier_gagnant->name = $user->name;
                         if (isset($user->scores)) {
@@ -258,7 +260,9 @@ class GlobalController extends Controller
                         $user->save();
                     }
                 }
+                // Désactive le concours en cours
                 Concours::where('id', 10)->update(['active' => 0]);
+                // Supprime tous les scores concours
                 ScoresConcours::query()->delete();
             }
             return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom'));
