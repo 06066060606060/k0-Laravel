@@ -164,8 +164,10 @@ trait AuthenticatesUsers
      */
     public function logout(Request $request)
     {
-        session(['locale' => $currentLocale]);
+        $currentLocale = app()->getLocale();
 
+        session(['locale' => $currentLocale]);
+        
         $this->guard()->logout();
 
         $request->session()->invalidate();
