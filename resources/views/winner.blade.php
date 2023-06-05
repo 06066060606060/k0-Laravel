@@ -111,7 +111,13 @@
                                          </thead>
 
                                          <tbody class="divide-y divide-gray-700">
-
+@if(empty($scoresconcours))
+<tr class="dark:bg-gray-900">
+    <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap" colspan="4">
+        {{ $index + 1 }}
+    </td>
+</tr>
+@else
 @foreach($scoresconcours as $index => $score)
 <tr class="dark:bg-gray-900">
     <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap">
@@ -203,7 +209,8 @@
     </td>
 </tr>
 @endforeach
-                                            
+@endif
+
                                          </tbody>
                                      </table>   
                                  </div>
