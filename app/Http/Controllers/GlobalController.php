@@ -264,7 +264,7 @@ class GlobalController extends Controller
                 // Supprime tous les scores concours
                 ScoresConcours::query()->delete();
             }
-            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom'));
+            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
         } else {
             return view('winner', compact('lesderniers_gagnants_concours'));
         }
