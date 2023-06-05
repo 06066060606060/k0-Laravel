@@ -123,6 +123,7 @@ class GlobalController extends Controller
     public function winner()
     {
         $gains = Gains::all(); // récup tous les gains du concours
+        $lesscoresdeconcours = ScoresConcours::All();
         $concours = Concours::All()->last(); //Selectionne le concours
         $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
         $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
@@ -259,7 +260,7 @@ class GlobalController extends Controller
                 }
                 
                 $concours->delete(); // Supprime le concours de la table concours en toute fin
-                    
+                ScoresConcours::truncate();    
            /* $date_debut = Carbon::now()->subHours(2);
             $date_fin = Carbon::now()->addDays(28);
             // creer un nouveau concours
