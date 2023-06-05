@@ -35,11 +35,9 @@
 
                     <div class="flex flex-col md:items-center">
                         @php
-    if(isset($scory->total) || isset($scorey->total2) || isset($scory->total3)){
+    if(isset($scory->total)){
     $total1 = $scory->total;
-    $total2 = $scory->total2 * 100;
-    $total3 = $scory->total3 * 1000;
-    $totalite = $total1 + $total2 + $total3;
+    $totalite = $total1;
     } else {}
 @endphp
 @if(isset($scory->total) || isset($scorey->total2) || isset($scory->total3))
