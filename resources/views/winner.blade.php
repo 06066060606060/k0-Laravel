@@ -114,7 +114,7 @@
 @if(empty($scoresconcours))
 <tr class="dark:bg-gray-900">
     <td class="px-4 py-2 font-bold text-center text-white whitespace-nowrap" colspan="4">
-        {{ $index + 1 }}
+    Pas de participant actuellement
     </td>
 </tr>
 @else
