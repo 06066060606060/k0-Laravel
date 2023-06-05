@@ -188,8 +188,6 @@ class GlobalController extends Controller
                 $scores_sorted = $scoresconcours->sortByDesc('score'); // Tri par ordre décroissant de score
                 $users = User::whereIn('id', $scores_sorted->pluck('id_user'))->get();
                 
-                // Supprime les derniers gagnants 
-                Derniers_Gagnants_Concours::truncate();
                 // Boucle pour la distribution
                 foreach ($users as $user) {
                     $user_position = $scores_sorted->search(function ($score) use ($user) {
@@ -254,6 +252,8 @@ class GlobalController extends Controller
                         $dernier_gagnant->date_gain = $now;
                         $dernier_gagnant->created_at = $now;
                         $dernier_gagnant->updated_at = $now;
+                        // Supprime les derniers gagnants 
+                        Derniers_Gagnants_Concours::truncate();
                         $dernier_gagnant->save();
                         
                         // Enregistrer les modifications de l'utilisateur
