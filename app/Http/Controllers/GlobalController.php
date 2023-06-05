@@ -130,7 +130,10 @@ class GlobalController extends Controller
         $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
         
         //Score effectués ordre par id desc
-        if (isset($concours->id)) {
+        if (isset($concours->active==1)) {
+            // Supprime les derniers gagnants 
+            Derniers_Gagnants_Concours::truncate();
+
             $scoresconcours = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
                 ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
                 ->groupBy('id_user') // groupé par id users
@@ -182,9 +185,6 @@ class GlobalController extends Controller
 
             $gain = $gains->where('id', $gain_id)->first();
             $gain_nom = $gain ? $gain->name : null;
-
-            // Supprime les derniers gagnants 
-            Derniers_Gagnants_Concours::truncate();
 
             if ($now->gt($concours->date_fin)) {
                 // Récupère users selon le score et position
