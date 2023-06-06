@@ -9,7 +9,7 @@
 
 <script>
     if (localStorage.getItem('languageSelected')) {
-        document.write('');
+        document.write('lole');
     }
 </script>
 
