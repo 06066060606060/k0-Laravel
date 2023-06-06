@@ -7,7 +7,17 @@
     <div class="z-0 one"></div>
 @endif
 
-<div x-data="{ modelOpen: false }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
+<script>
+    if (localStorage.getItem('languageSelected')) {
+        document.write('');
+    }
+</script>
+
+<!-- Code HTML qui sera affiché indépendamment de l'existence de la clé dans le localStorage -->
+
+<script>
+    if (!localStorage.getItem('languageSelected')) {
+        document.write('<div x-data="{ modelOpen: false }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
 
     <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
@@ -84,7 +94,11 @@
             </div>
         </div>
     </div>
-</div>
+</div>');
+    }
+</script>
+
+
 
 
 
