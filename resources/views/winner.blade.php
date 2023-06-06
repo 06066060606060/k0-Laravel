@@ -114,7 +114,7 @@
 @if($lesscoresdeconcours <= 0)
 <tr class="dark:bg-gray-900">
     <td class="px-4 py-2 text-center text-white whitespace-nowrap" colspan="4">
-    Pas de participant actuellement
+    {{__('Pas de participant actuellement')}}
     </td>
 </tr>
 @else
