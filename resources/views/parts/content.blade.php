@@ -9,6 +9,7 @@
 
 <div x-data="{ modelOpen: false }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
 
+    <template x-if="!localStorage.getItem('languageSelected')">
     <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
         <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
@@ -84,6 +85,7 @@
             </div>
         </div>
     </div>
+    </template>
 </div>
 
 
