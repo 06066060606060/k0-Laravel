@@ -1,4 +1,10 @@
- <div x-data="{ isOpen: false }" class="relative inline-block mb-2 mr-4">
+<style>
+    .x-cloak {
+        display: none !important;
+    }
+</style>
+
+<div x-data="{ isOpen: false }" x-cloak class="relative inline-block mb-2 mr-4">
                     <!-- Dropdown toggle button -->
                     <button @click="isOpen = !isOpen"
                         class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
