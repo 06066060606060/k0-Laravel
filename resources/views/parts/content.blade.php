@@ -9,7 +9,8 @@
 
 <script>
     if (localStorage.getItem('languageSelected')) {
-        document.write('lole');
+        console.log('Le language est deja selectionne');
+        document.write('');
     }
 </script>
 
@@ -17,6 +18,7 @@
 
 <script>
     if (!localStorage.getItem('languageSelected')) {
+        console.log('la langue est pas selectionee');
         document.write('<div x-data="{ modelOpen: false }" x-init="modelOpen = !localStorage.getItem(\'languageSelected\')">
 
     <!-- Modale -->
