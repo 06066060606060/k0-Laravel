@@ -652,6 +652,7 @@ class GlobalController extends Controller
                 $infos->adresse = $request->address;
                 $infos->codepostal = $request->zip;
                 $infos->ville = $request->city;
+                $infos->pays = $request->state;                
                 $infos->save();
                 $scores = Scores::where('user_id', $userid)->get();
                 $orders = Commandes::where('user_id', $userid)
