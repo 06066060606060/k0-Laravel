@@ -142,6 +142,7 @@ class GamesCrudController extends CrudController
                 'Event' => 'Event',
                 'Booster' => 'Booster',
                 'Gratuit' => 'Gratuit',
+                'Solo' => 'Solo',
             ],
             'allows_null' => false,
             'default'     => 'Gratuit',
