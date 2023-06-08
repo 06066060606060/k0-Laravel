@@ -69,22 +69,6 @@
                               $link =  $game->link ?? null;
                               $secret =  encrypt(['userid' => $userid, '&tk=' . csrf_token(), 'rubis' => $rubis, 'gameid' => $game->id, 'free_game' => $free, 'parties' => $parties, 'timestamp' => time()]);
                              @endphp
-                             <script>
-                             const fullscreenButton = document.getElementById('fullscreenButton');
-                                const gameIframe = document.getElementById('gameBody');
-
-                                fullscreenButton.addEventListener('click', () => {
-                                if (gameIframe.requestFullscreen) {
-                                    gameIframe.requestFullscreen();
-                                } else if (gameIframe.mozRequestFullScreen) {
-                                    gameIframe.mozRequestFullScreen();
-                                } else if (gameIframe.webkitRequestFullscreen) {
-                                    gameIframe.webkitRequestFullscreen();
-                                } else if (gameIframe.msRequestFullscreen) {
-                                    gameIframe.msRequestFullscreen();
-                                }
-                                });
-                                </script>
                              <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe><br>
                                  <button id="fullscreenButton">JOUER EN MODE PLEIN ECRAN</button>
@@ -137,5 +121,20 @@
                 //    });
               //  });
     </script>
+<script>
+                             const fullscreenButton = document.getElementById('fullscreenButton');
+                                const gameIframe = document.getElementById('gameBody');
 
+                                fullscreenButton.addEventListener('click', () => {
+                                if (gameIframe.requestFullscreen) {
+                                    gameIframe.requestFullscreen();
+                                } else if (gameIframe.mozRequestFullScreen) {
+                                    gameIframe.mozRequestFullScreen();
+                                } else if (gameIframe.webkitRequestFullscreen) {
+                                    gameIframe.webkitRequestFullscreen();
+                                } else if (gameIframe.msRequestFullscreen) {
+                                    gameIframe.msRequestFullscreen();
+                                }
+                                });
+                                </script>
  @endsection
