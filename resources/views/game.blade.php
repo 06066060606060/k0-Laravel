@@ -72,6 +72,16 @@
                              @endphp
                              <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe>
+                                <script>
+                                const iframe = document.getElementById('gameBody');
+const buttonFullscreen = document.querySelector('#button_fullscreen');
+
+buttonFullscreen.addEventListener('click', () => {
+  if (iframe) {
+    iframe.contentWindow.postMessage({ fullscreen: true }, '*');
+  }
+});
+</script>
                                 @else
                                 @if(app()->getLocale() == 'en') 
                                 <script>alert('You must be logged in to play a game!')</script>
