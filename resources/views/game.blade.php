@@ -73,12 +73,22 @@
                              <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe>
                                 <script>
-                                const iframe = document.getElementById('gameBody');
-const buttonFullscreen = document.querySelector('#button_fullscreen');
+                                window.addEventListener('message', (event) => {
+  const { fullscreen } = event.data;
 
-buttonFullscreen.addEventListener('click', () => {
-  if (iframe) {
-    iframe.contentWindow.postMessage({ fullscreen: true }, '*');
+  if (fullscreen) {
+    const iframe = document.getElementById('gameBody');
+    if (iframe) {
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+      }
+    }
   }
 });
 </script>
