@@ -74,8 +74,7 @@
                                 <button class="w-full px-2 py-2 rounded-md text-white bg-blue-600 border-gray-700 active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75" id="fullscreenButton">JOUER EN MODE PLEIN ECRAN</button>
                             </div> 
                             <div class="display-block mt-4">
-<iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-auto overflow-hidden -mt-1 rounded-md" scrolling="no" style="display: block; max-width: 100%;"></iframe>
-
+                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1 rounded-md" scrolling="no"></iframe>
                             </div>
                             </div>
 
