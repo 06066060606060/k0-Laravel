@@ -11,27 +11,6 @@
     @else
         <div class="z-0 one"></div>
     @endif
-    <script>
-                                window.addEventListener('message', (event) => {
-  const { fullscreen } = event.data;
-
-  if (fullscreen) {
-    const iframe = document.getElementById('gameBody');
-    if (iframe) {
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) {
-        iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) {
-        iframe.msRequestFullscreen();
-      }
-    }
-  }
-});
-</script>
-   
          <container class="block px-4 mx-auto text-white max-w-7xl">
     
              <div class="container pt-4 mx-auto lg:px-5">
@@ -90,8 +69,26 @@
                               $link =  $game->link ?? null;
                               $secret =  encrypt(['userid' => $userid, '&tk=' . csrf_token(), 'rubis' => $rubis, 'gameid' => $game->id, 'free_game' => $free, 'parties' => $parties, 'timestamp' => time()]);
                              @endphp
+                             <script>
+                             const fullscreenButton = document.getElementById('fullscreenButton');
+                                const gameIframe = document.getElementById('gameBody');
+
+                                fullscreenButton.addEventListener('click', () => {
+                                if (gameIframe.requestFullscreen) {
+                                    gameIframe.requestFullscreen();
+                                } else if (gameIframe.mozRequestFullScreen) {
+                                    gameIframe.mozRequestFullScreen();
+                                } else if (gameIframe.webkitRequestFullscreen) {
+                                    gameIframe.webkitRequestFullscreen();
+                                } else if (gameIframe.msRequestFullscreen) {
+                                    gameIframe.msRequestFullscreen();
+                                }
+                                });
+                                </script>
                              <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1"
-                                 scrolling="no"></iframe>
+                                 scrolling="no"></iframe><br>
+                                 <button id="fullscreenButton">JOUER EN MODE PLEIN ECRAN</button>
+
                                 
                                 @else
                                 @if(app()->getLocale() == 'en') 
