@@ -466,7 +466,7 @@
                                 {{ $sologame->prix }}
                                 @endif
                                 @if($sologame->prix > 0)
-                                @if ($sologame->type_prix == 'Diamants' && $sologame->prix == 0)
+                                @if ($sologame->type_prix == 'Diamants')//&& $sologame->prix == 0)
                                  <img src="img/diamond5.png" class="w-4" style="display:inline;">
                                 @elseif ($sologame->type_prix == 'Rubis')
                                  <img src="img/gem10.png" class="w-4" style="display:inline;">
