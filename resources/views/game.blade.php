@@ -71,7 +71,7 @@
                              @endphp
                              <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1"
                                  scrolling="no"></iframe><br>
-                                 <button id="fullscreenButton">JOUER EN MODE PLEIN ECRAN</button>
+                                 <div><button id="fullscreenButton">JOUER EN MODE PLEIN ECRAN</button></div>
 
                                 
                                 @else
