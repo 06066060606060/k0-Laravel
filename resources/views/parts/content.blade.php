@@ -276,6 +276,8 @@
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">POOL</span>
                                     @elseif($score->game_id == 46)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoFRUITS</span>
+                                    @elseif($score->game_id == 49)
+                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">PLINKO</span>
                                     @else
                                     @endif
                                         </div>
