@@ -437,6 +437,128 @@
     </section>
 </container>
 
+<!-- JOUEZ UNE FOIS CONNECTE -->
+<container class="mx-auto max-w-7xl" id="win">
+    <section>
+        <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+
+            <div class="flex flex-col w-full text-center">
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux en Solo')}}</h1>
+                
+            </div>
+            <div class="flex flex-wrap -m-4">
+                @forelse ($allgames as $allgame)
+                    <div class="w-1/2 p-4 lg:w-1/2">
+                     
+                        <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
+                        <a href="game?id={{ $allgame->id }}">
+                            <div class="absolute top-0 right-0 w-16 h-16">
+                                @if($allgame->prix == 0)
+                                <div
+                                    class="border z-20 absolute transform rotate-45 select-none bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                @else
+                                <div
+                                    class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                @endif
+                                @if($allgame->prix == 0)
+                                10 {{__('par 24h')}}
+                                @else
+                                {{ $allgame->prix }}
+                                @endif
+                                @if($allgame->prix > 0)
+                                @if ($allgame->type_prix == 'Diamants' && $allgame->prix == 0)
+                                 <img src="img/diamond5.png" class="w-4" style="display:inline;">
+                                @elseif ($allgame->type_prix == 'Rubis')
+                                 <img src="img/gem10.png" class="w-4" style="display:inline;">
+                                @else
+                                 <img src="img/coin10.png" class="w-4" style="display:inline;">
+                                 @endif
+                                 @endif
+                                </div>
+                            </div>
+                            @php $imagesb =  $allgame->image[0] ?? null; @endphp
+                            <img alt="gallery"
+                                class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
+                                src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
+                            <div
+                                class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
+                                <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
+                                    {{ $allgame->name }}</h2>
+                                @php $locale = app()->getLocale(); @endphp
+                                @if($locale=='fr')    
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
+                                @elseif($locale=='en')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_en }}</p>
+                                @elseif($locale=='de')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_de }}</p>
+                                @elseif($locale=='es')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_es }}</p>
+                                @elseif($locale=='it')
+                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_it }}</p>
+                                @else
+                                @endif
+                                    <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';"
+                                        class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                        <span
+                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                        <span
+                                            class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                        <span
+                                            class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                        <span
+                                            class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                        <span class="relative">{{__('Jouer')}}</span>
+                                    </a>
+                                
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                @empty
+                    <div class="p-4 lg:w-1/3 sm:w-1/2">
+                        <div class="relative flex overflow-hidden">
+                            <div class="absolute top-0 right-0 w-16 h-16">
+                                <div
+                                    class="border z-20 absolute transform rotate-45 select-none bg-red-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
+                                    {{__('Aucun jeu')}}
+                                </div>
+                            </div>
+                            <img alt="gallery"
+                                class="absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
+                                src="./img/empty.png">
+                            <div
+                                class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0">
+                                <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font">
+                                </h2>
+                                <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">Shooting Stars</h1>
+                                <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed
+                                    sriracha leggings
+                                    jianbing microdosing tousled waistcoat.</p>
+                                <a href="game"
+                                    class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">Jouer</a>
+                            </div>
+                        </div>
+                    </div>
+                @endforelse
+
+            </div>
+            <!--<a href="jeux"
+                class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
+                <span
+                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                <span
+                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                <span
+                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                <span
+                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                <span class="relative">Voir la liste complète</span>
+            </a>-->
+        </div>
+    </section>
+</container>
+
+
 @else
 
 <container id="home">
