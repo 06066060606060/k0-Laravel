@@ -38,7 +38,7 @@ class GlobalController extends Controller
         $scores = Scores::select('scores.*', 'users.name')->join('users', 'users.id', '=', 'scores.user_id')->get();
         
         // Tous les jeux
-        $allgames = Games::where('type', '<>', 'Event')->orderBy('id', 'desc')->get();
+        $allgames = Games::whereNotIn('type', ['Event', 'Solo'])->orderBy('id', 'desc')->get();
         // Jeux Gratuits
         $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
         // Jeux Booster
