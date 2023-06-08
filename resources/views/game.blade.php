@@ -34,11 +34,11 @@
                                          <tr>
                                              <th scope="col"
                                                  class="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 {{__('Joueurs')}} :
+                                                 {{__('Joueurs')}}
                                              </th>
                                              <th scope="col"
                                                  class="flex px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 {{__('Gains')}} :
+                                                 {{__('Gains')}}
                                              </th>
                                          </tr>
                                      </thead>
