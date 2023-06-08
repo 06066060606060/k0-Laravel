@@ -138,7 +138,7 @@
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
                                     {{ $eventsgame->name }}</h2>
-                                @if($isMobile == true)
+                                @if($isMobile == false)
                                 @php $locale = app()->getLocale(); @endphp
                                 @if($locale=='fr')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->description }}</p>
@@ -367,7 +367,7 @@
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
                                     {{ $allgame->name }}</h2>
-                                @if($isMobile == true)    
+                                @if($isMobile == false)    
                                 @php $locale = app()->getLocale(); @endphp
                                 @if($locale=='fr')    
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
@@ -490,6 +490,7 @@
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
                                     {{ $sologame->name }}</h2>
+                                @if($isMobile == false)    
                                 @php $locale = app()->getLocale(); @endphp
                                 @if($locale=='fr')    
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $sologame->description }}</p>
@@ -502,6 +503,7 @@
                                 @elseif($locale=='it')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $sologame->description_it }}</p>
                                 @else
+                                @endif
                                 @endif
                                     <a href="game?id={{ $sologame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $sologame->id }}';"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
