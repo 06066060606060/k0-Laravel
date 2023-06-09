@@ -278,12 +278,14 @@
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">POOL</span>
                                     @elseif($score->game_id == 46)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoFRUITS</span>
-                                    @elseif($score->game_id == 49)
+                                    @elseif($score->game_id == 51)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">PLINKO</span>
                                     @elseif($score->game_id == 50)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoWIN</span>
-                                    @elseif($score->game_id == 51)
+                                    @elseif($score->game_id == 49)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">BINGO</span>
+                                    @elseif($score->game_id == 52)
+                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoSCRATCH</span>
                                     @else
                                     @endif
                                         </div>
