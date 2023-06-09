@@ -140,30 +140,41 @@
               //  });
     </script>
 <script>
-                             const fullscreenButton = document.getElementById('fullscreenButton');
-                                const gameIframe = document.getElementById('gameBody');
+const fullscreenButton = document.getElementById('fullscreenButton');
+const gameIframe = document.getElementById('gameBody');
 
-                                fullscreenButton.addEventListener('click', () => {
-                                if (gameIframe.requestFullscreen) {
-                                    gameIframe.requestFullscreen();
-                                } else if (gameIframe.mozRequestFullScreen) {
-                                    gameIframe.mozRequestFullScreen();
-                                } else if (gameIframe.webkitRequestFullscreen) {
-                                    gameIframe.webkitRequestFullscreen();
-                                } else if (gameIframe.msRequestFullscreen) {
-                                    gameIframe.msRequestFullscreen();
-                                }
-                                });
+fullscreenButton.addEventListener('click', () => {
+  if (gameIframe.requestFullscreen) {
+    gameIframe.requestFullscreen();
+  } else if (gameIframe.mozRequestFullScreen) {
+    gameIframe.mozRequestFullScreen();
+  } else if (gameIframe.webkitRequestFullscreen) {
+    gameIframe.webkitRequestFullscreen();
+  } else if (gameIframe.msRequestFullscreen) {
+    gameIframe.msRequestFullscreen();
+  }
+
+  lockScreenOrientation(); // Verrouiller l'orientation de l'écran après avoir mis en plein écran
+});
+
+// Fonction pour verrouiller l'orientation de l'écran en mode paysage
+function lockScreenOrientation() {
+  const lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
+
+  if (lockOrientation) {
+    lockOrientation('landscape');
+  }
+}
 
 // Fonction pour détecter l'orientation de l'appareil
 function detectOrientation() {
-    if (window.orientation === 90 || window.orientation === -90) {
-        // Paysage
-        document.documentElement.classList.add('landscape-mode');
-    } else {
-        // Portrait
-        document.documentElement.classList.remove('landscape-mode');
-    }
+  if (window.orientation === 90 || window.orientation === -90) {
+    // Paysage
+    document.documentElement.classList.add('landscape-mode');
+  } else {
+    // Portrait
+    document.documentElement.classList.remove('landscape-mode');
+  }
 }
 
 // Écouteur d'événement pour détecter le changement d'orientation
@@ -171,6 +182,5 @@ window.addEventListener('orientationchange', detectOrientation);
 
 // Appel initial pour détecter l'orientation lors du chargement de la page
 detectOrientation();
-
 </script>
  @endsection
