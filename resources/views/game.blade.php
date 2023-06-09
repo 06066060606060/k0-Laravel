@@ -122,15 +122,18 @@
             gameIframe.msRequestFullscreen();
         }
 
-        // Verrouiller en mode paysage sur les appareils mobiles
-        if (screen.orientation && screen.orientation.lock) {
-            screen.orientation.lock('landscape').catch((error) => {
-                console.log('Échec du verrouillage en mode paysage:', error);
-            });
-        } else if (screen.lockOrientation) {
-            screen.lockOrientation('landscape');
+        // Vérifier si l'appareil est un iPhone
+        const isiPhone = /iPhone/i.test(navigator.userAgent);
+
+        // Vérifier si l'appareil est en mode portrait
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+        // Afficher un message demandant de basculer en mode paysage sur iPhone en mode portrait
+        if (isiPhone && isPortrait) {
+            alert("Veuillez basculer votre appareil en mode paysage pour une meilleure expérience.");
         }
     });
 </script>
+
 
  @endsection
