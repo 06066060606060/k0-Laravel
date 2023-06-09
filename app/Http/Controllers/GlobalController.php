@@ -44,7 +44,7 @@ class GlobalController extends Controller
         // Jeux Booster
         $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
         // JEux Solo
-        $sologames = Games::where('type', 'Solo')->limit(6)->inRandomOrder()->get();
+        $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'desc')->get();
 
         // jeux event
         $eventsgames = Games::where('type', 'Event')->get();
