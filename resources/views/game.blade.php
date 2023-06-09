@@ -143,5 +143,23 @@
                                     gameIframe.msRequestFullscreen();
                                 }
                                 });
-                                </script>
+
+// Fonction pour détecter l'orientation de l'appareil
+function detectOrientation() {
+    if (window.orientation === 90 || window.orientation === -90) {
+        // Paysage
+        document.documentElement.classList.add('landscape-mode');
+    } else {
+        // Portrait
+        document.documentElement.classList.remove('landscape-mode');
+    }
+}
+
+// Écouteur d'événement pour détecter le changement d'orientation
+window.addEventListener('orientationchange', detectOrientation);
+
+// Appel initial pour détecter l'orientation lors du chargement de la page
+detectOrientation();
+
+</script>
  @endsection
