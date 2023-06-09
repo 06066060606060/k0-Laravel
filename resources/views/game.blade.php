@@ -11,17 +11,10 @@
     @else
         <div class="z-0 one"></div>
     @endif
-    <style>
-    /* Styles pour le mode paysage en plein écran */
-.landscape-mode #gameBody {
-    /* Ajoutez ici les styles spécifiques pour le mode paysage */
-    width: 100vh;
-    height: 100vw;
-    transform: rotate(-90deg) translateX(-100%);
-    transform-origin: top right;
-    overflow: hidden;
-}
-    </style>
+    @if($isMobile == true)
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    @else
+    @endif
          <container class="block px-4 mx-auto text-white max-w-7xl">
     
              <div class="container pt-4 mx-auto lg:px-5">
@@ -81,14 +74,13 @@
                               $secret =  encrypt(['userid' => $userid, '&tk=' . csrf_token(), 'rubis' => $rubis, 'gameid' => $game->id, 'free_game' => $free, 'parties' => $parties, 'timestamp' => time()]);
                              @endphp
                              <div class="w-full">
-                                <div class="display-block">
-                                    <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
-                                </div> 
-                                <div class="display-block mt-6">
-                                    <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" scrolling="no"></iframe>
-                                </div>
+                             <div class="display-block">
+                                <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
+                            </div> 
+                            <div class="display-block mt-6">
+                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" scrolling="no"></iframe>
                             </div>
-
+                            </div>
 
 
                                 
@@ -115,72 +107,30 @@
          </container>
      </div>
 
-  <script> 
-  
-
-// $(document).ready(function () {
-                  //  $('#butsave').on('click', function () {
-                  //      var value = $('#diff').val();
-                    //        $.ajax({
-                     //           url: 'score',
-                     //           headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                       //         method: 'POST',
-                       //         type: 'json',
-                       //         data: {
-                        //            value,
-                        //        },
-                        //        success: function (response) {
-                      //              console.log(response);
-                          //      },
-                      //          error: function (error) {
-                      //             console.log(error);
-                      //          }
-                     //       });
-                //    });
-              //  });
-    </script>
 <script>
-const fullscreenButton = document.getElementById('fullscreenButton');
-const gameIframe = document.getElementById('gameBody');
+    const fullscreenButton = document.getElementById('fullscreenButton');
+    const gameIframe = document.getElementById('gameBody');
 
-fullscreenButton.addEventListener('click', () => {
-  if (gameIframe.requestFullscreen) {
-    gameIframe.requestFullscreen();
-  } else if (gameIframe.mozRequestFullScreen) {
-    gameIframe.mozRequestFullScreen();
-  } else if (gameIframe.webkitRequestFullscreen) {
-    gameIframe.webkitRequestFullscreen();
-  } else if (gameIframe.msRequestFullscreen) {
-    gameIframe.msRequestFullscreen();
-  }
+    fullscreenButton.addEventListener('click', () => {
+        if (gameIframe.requestFullscreen) {
+            gameIframe.requestFullscreen();
+        } else if (gameIframe.mozRequestFullScreen) {
+            gameIframe.mozRequestFullScreen();
+        } else if (gameIframe.webkitRequestFullscreen) {
+            gameIframe.webkitRequestFullscreen();
+        } else if (gameIframe.msRequestFullscreen) {
+            gameIframe.msRequestFullscreen();
+        }
 
-  lockScreenOrientation(); // Verrouiller l'orientation de l'écran après avoir mis en plein écran
-});
-
-// Fonction pour verrouiller l'orientation de l'écran en mode paysage
-function lockScreenOrientation() {
-  const lockOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-
-  if (lockOrientation) {
-    lockOrientation('landscape');
-  }
-}
-
-// Fonction pour détecter l'orientation de l'appareil
-function detectOrientation() {
-  if (window.orientation === 90 || window.orientation === -90) {
-    // Paysage
-    document.documentElement.classList.add('landscape-mode');
-  } else {
-    // Portrait
-    document.documentElement.classList.remove('landscape-mode');
-  }
-}
-
-// Écouteur d'événement pour détecter le changement d'orientation
-window.addEventListener('orientationchange', detectOrientation);
-
-// Appel initial pour détecter l'orientation lors du chargement de la page
-detectOrientation();
+        // Verrouiller en mode paysage sur les appareils mobiles
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch((error) => {
+                console.log('Échec du verrouillage en mode paysage:', error);
+            });
+        } else if (screen.lockOrientation) {
+            screen.lockOrientation('landscape');
+        }
+    });
 </script>
+
  @endsection
