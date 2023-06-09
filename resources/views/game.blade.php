@@ -131,6 +131,9 @@
             screen.lockOrientation('landscape');
         }
 
+
+        var currentLocale = '{{ app()->getLocale() }}';
+
         // Vérifier si l'appareil est un iPhone
         const isiPhone = /iPhone/i.test(navigator.userAgent);
 
@@ -139,7 +142,17 @@
 
         // Afficher un message demandant de basculer en mode paysage sur iPhone en mode portrait
         if (isiPhone && isPortrait) {
+            if(currentLocale == 'fr'){
             alert("Veuillez basculer votre appareil en mode paysage pour une meilleure expérience.");
+            } else if (currentLocale == 'en'){
+            alert("Please rotate your device to landscape mode for a better experience.");
+            } else if (currentLocale == 'de'){
+            alert("Bitte drehen Sie Ihr Gerät in den Querformatmodus für ein besseres Erlebnis.");
+            } else if (currentLocale == 'es'){
+            alert("Por favor, gire su dispositivo al modo horizontal para una mejor experiencia.");
+            } else if (currentLocale == 'it'){
+            alert("Si prega di ruotare il dispositivo in modalità orizzontale per un'esperienza migliore.");
+            }
         }
     });
 </script>
