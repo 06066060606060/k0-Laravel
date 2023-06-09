@@ -467,7 +467,7 @@
                                     class="border z-20 absolute transform rotate-45 select-none bg-orange-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                 @endif
                                 @if($sologame->prix == 0)
-                                10 {{__('par 24h')}}
+                                1 {{__('par 24h')}}
                                 @else
                                 {{ $sologame->prix }}
                                 @endif
