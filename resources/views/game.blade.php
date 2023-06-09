@@ -11,6 +11,17 @@
     @else
         <div class="z-0 one"></div>
     @endif
+    <style>
+    /* Styles pour le mode paysage en plein écran */
+.landscape-mode #gameBody {
+    /* Ajoutez ici les styles spécifiques pour le mode paysage */
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg) translateX(-100%);
+    transform-origin: top right;
+    overflow: hidden;
+}
+    </style>
          <container class="block px-4 mx-auto text-white max-w-7xl">
     
              <div class="container pt-4 mx-auto lg:px-5">
