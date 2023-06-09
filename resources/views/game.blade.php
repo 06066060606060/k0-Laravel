@@ -122,6 +122,15 @@
             gameIframe.msRequestFullscreen();
         }
 
+        // Verrouiller en mode paysage sur les appareils mobiles
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch((error) => {
+                console.log('Échec du verrouillage en mode paysage:', error);
+            });
+        } else if (screen.lockOrientation) {
+            screen.lockOrientation('landscape');
+        }
+
         // Vérifier si l'appareil est un iPhone
         const isiPhone = /iPhone/i.test(navigator.userAgent);
 
@@ -134,6 +143,5 @@
         }
     });
 </script>
-
 
  @endsection
