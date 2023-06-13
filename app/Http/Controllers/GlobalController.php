@@ -79,7 +79,7 @@ class GlobalController extends Controller
     // Selectionne le jeu auquel le membre joue
     $onegame = Games::where('id', $request->id)->get();
     // Sélectionne les scores du jeu en cours
-    $scores = Scores::where('game_id', $request->id)->orderBy('id', 'desc')->get();
+    $scores = Scores::where('game_id', $request->id)->orderBy('id', 'desc')->take(14)->get();
     //Le jeu s'affiche 
     $game = $onegame[0];
 
