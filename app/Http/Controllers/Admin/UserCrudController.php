@@ -48,7 +48,7 @@ class UserCrudController extends CrudController
         CRUD::column('parties')->label('Parties payées');
         CRUD::column('trophee1')->label('Diamants');
         CRUD::column('trophee2')->label('Rubis');
-        CRUD::column('trophee3')->label('Piéces');
+        CRUD::column('trophee3')->label('Pièces');
         CRUD::column('role')->type('select_from_array')->options([
             'admin' => 'Administrateur',
             'user' => 'Utilisateur',
@@ -125,9 +125,9 @@ class UserCrudController extends CrudController
         CRUD::field('trophee2')->label('Rubis')->type('number');
         $this->crud->addField([   // select_from_array
             'name'        => 'trophee3',
-            'label'       => "Piéces",
+            'label'       => "Pièces",
             'type'        => 'number',
-            'attributes' => ["step" => "0.1"], // allow decimals
+            'attributes' => ["step" => "0.01"], // allow decimals
             ]);
 
         $this->crud->addField([   // select_from_array
