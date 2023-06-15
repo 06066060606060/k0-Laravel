@@ -733,8 +733,6 @@
                 <p class="mb-8 mx-0 text-base leading-relaxed text-gray-300 lg:w-3/3">
                 {{__("Notre site GoKDO vous offre la possibilité de jouer gratuitement à des jeux divertissants et de remporter des cadeaux !")}} <br><a href="admin/register" class="text-blue-500 prevent">{{__("L'inscription est gratuite")}}</a> {{__("et vous bénéficiez même de 150 Diamants offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de gagner de superbes prix.")}}
                 </p>
-            <center>
-            <iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>            </center>
             </div>
         </div>    
     </section>
