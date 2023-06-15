@@ -78,16 +78,9 @@
                                 <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
                             </div> 
                             <div class="display-block mt-6">
-    @if($isMobile == true)
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" style="height:200px;" scrolling="no"></iframe>
-    @else
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" style="height:517px;" scrolling="no"></iframe>
-    @endif
+                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" scrolling="no"></iframe>
                             </div>
-                            <div class="display-block mt-6 text-left py-6 px-6 bg-gray-900 text-white rounded-md">
-                            Le but de ce jeu à niveau est de choisir une pelle et un support, dès que des points d'intérrogation apparaissent sur la map, visez les, une jauge apparait, lancez lorsque la barre atteint le millieu de la jauge, et remontez votre pelle afin de découvrir soit un trésor, soit de la poussière.
-                            </div>
-                            </div>
+                           </div>
 
 
                                 
