@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <!-- Primary Meta Tags -->
   <meta name="title" content="Gokdo">
-  <meta name="description" content="" />
+<meta name="description" content="{{__("Jouez gratuitement à nos jeux multijoueurs et remportez des euros et des cadeaux ! Profitez de parties gratuites chaque jour sur notre site de jeux en ligne sans obligation d'achat. Plongez dans l'univers captivant de nos jeux, défiez vos amis et tentez votre chance pour gagner de superbes récompenses. Inscrivez-vous maintenant et vivez l'excitation des jeux gratuits et des compétitions en ligne.")}}">
   <meta name="keywords" content="" />
   <link rel="shortcut icon" href="https://gokdo.com/img/favicon.png" type="image/x-icon" />
   <!-- Open Graph / Facebook -->
