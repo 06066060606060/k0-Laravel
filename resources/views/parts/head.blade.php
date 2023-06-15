@@ -19,6 +19,9 @@
   <meta property="twitter:description" content="">
   <meta property="twitter:image" content="https://gokdo.com/img/logo-sm.png">
 
+  <link rel="canonical" href="https://gokdo.com" />
+
+
   <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
