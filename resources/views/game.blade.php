@@ -80,6 +80,9 @@
                             <div class="display-block mt-6">
                                 <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" scrolling="no"></iframe>
                             </div>
+                            <div class="display-block mt-6 border-white text-white">
+                            Le but de ce jeu à niveau est de choisir une pelle et un support, dès que des points d'intérrogation apparaissent sur la map, visez les, une jauge apparait, lancez lorsque la barre atteint le millieu de la jauge, et remontez votre pelle afin de découvrir soit un trésor, soit de la poussière.
+                            </div>
                             </div>
 
 
