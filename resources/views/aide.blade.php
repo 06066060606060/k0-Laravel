@@ -39,23 +39,6 @@
                     </div>
 
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__('Les jeux')}}</h2>
-
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
-                    <h2 class="accordion-title">{{__('Comment jouer au jeu GoFRUITS ?')}}</h2>
-                    <div class="accordion-content mb-4">
-                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/3-BmXAOkgvI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </center>
-                    </div>
-                    </div>
-                    
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
-                    <h2 class="accordion-title">{{__('Comment jouer au jeu POOL ?')}}</h2>
-                    <div class="accordion-content mb-4">
-                        <center><iframe width="100%" height="400" src="https://www.youtube.com/embed/5QpEaOpxOa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        </center>
-                    </div>
-                    </div>
-
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title">{{__('Comment participer au concours ?')}}</h2>
                     <div class="accordion-content mb-4">
