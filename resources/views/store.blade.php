@@ -321,12 +321,12 @@
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
                                                                                         <input type="radio" name="prix-type" id="prix-type-diamond" value="diamond" checked>&nbsp;
                                                                                         {{ $cadeau->prix }} &nbsp;<img src="img/diamond5.png" class="flex w-7 h-5">&nbsp;
-                                                                                        {{ __('seront retirés de votre solde.') }}
+                                                                                        {{ __("je choisis d'utiliser mes diamants.") }}
                                                                                     </h1>
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
                                                                                         <input type="radio" name="prix-type" id="prix-type-coin" value="coin">&nbsp;
                                                                                         {{ $cadeau->prix_coins }} &nbsp;<img src="img/coin10.png" class="flex w-7 h-5">&nbsp;
-                                                                                        {{ __('seront retirés de votre solde.') }}
+                                                                                        {{ __("je choisis d'utiliser mes coins.") }}
                                                                                     </h1>
 
                                                                                      <div class="flex justify-center">
