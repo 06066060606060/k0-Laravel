@@ -74,6 +74,7 @@ class CadeauxCrudController extends CrudController
             ]);
             CRUD::column('description');
             CRUD::column('prix');
+            CRUD::column('prix_coins');
             $this->crud->addColumn([
                 'name'    => 'active',
                 'label'   => 'En Stock',
@@ -156,6 +157,7 @@ class CadeauxCrudController extends CrudController
            'inline'      => true, // show the radios all on the same line?
         ],);
         CRUD::field('prix')->type('number'); 
+        CRUD::field('prix_coins')->type('number')->decimals(2);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
         

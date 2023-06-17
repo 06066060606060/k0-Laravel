@@ -29,6 +29,7 @@ class Cadeaux extends Model
         'category',
         'description',
         'prix',
+        'prix_coins',
         'active',
         
      ];
