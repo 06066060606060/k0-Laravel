@@ -317,20 +317,22 @@
                                                                              <div class="bg-gray-700 rounded-b-md">
                                                                                  <div
                                                                                      class="flex flex-col items-center pb-8 mx-20 mt-1">
-                                                                                     <h1
-                                                                                         class="flex py-2 text-sm font-medium text-white">
-                                                                                         {{ $cadeau->prix }} &nbsp;<img
-                                                                                             src="img/diamond5.png"
-                                                                                             class="flex w-7 h-5">&nbsp;
-                                                                                         {{__('seront retirés de votre solde.')}}
-                                                                                     </h1>
-                                                                                    <h1
-                                                                                         class="flex py-2 text-sm font-medium text-white">
-                                                                                         {{ $cadeau->prix_coins }} &nbsp;<img
-                                                                                             src="img/coin10.png"
-                                                                                             class="flex w-7 h-5">&nbsp;
-                                                                                         {{__('seront retirés de votre solde.')}}
-                                                                                     </h1>
+                                                                                     <div>
+                                                                                        <input type="radio" name="prix-type" id="prix-type-diamond" value="diamond" checked>
+                                                                                        <h1 class="flex py-2 text-sm font-medium text-white">
+                                                                                            {{ $cadeau->prix }} &nbsp;<img src="img/diamond5.png" class="flex w-7 h-5">&nbsp;
+                                                                                            {{ __('seront retirés de votre solde.') }}
+                                                                                        </h1>
+                                                                                    </div>
+
+                                                                                    <div>
+                                                                                        <input type="radio" name="prix-type" id="prix-type-coin" value="coin">
+                                                                                        <h1 class="flex py-2 text-sm font-medium text-white">
+                                                                                            {{ $cadeau->prix_coins }} &nbsp;<img src="img/coin10.png" class="flex w-7 h-5">&nbsp;
+                                                                                            {{ __('seront retirés de votre solde.') }}
+                                                                                        </h1>
+                                                                                    </div>
+
                                                                                      <div class="flex justify-center">
                                                                                          <div @click="modelOpen = false"
                                                                                              class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 mr-4 font-medium text-white group">
