@@ -264,7 +264,7 @@
                                                                  </div>
                                                              </div>
                                                              @else
-                                                                                                                          <div x-cloak x-show="modelOpen"
+                                                                <div x-cloak x-show="modelOpen"
                                                                  class="fixed inset-0 z-50 overflow-y-auto"
                                                                  aria-labelledby="modal-title" role="dialog"
                                                                  aria-modal="true">
