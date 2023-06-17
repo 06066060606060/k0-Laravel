@@ -157,7 +157,7 @@ class CadeauxCrudController extends CrudController
            'inline'      => true, // show the radios all on the same line?
         ],);
         CRUD::field('prix')->type('number'); 
-        CRUD::field('prix_coins')->type('number')->decimals(2);
+        CRUD::field('prix_coins')->type('number')->decimals(2)->attributes(['step' => '0.01']);
         /**
          * Fields can be defined using the fluent syntax or array syntax:
         
