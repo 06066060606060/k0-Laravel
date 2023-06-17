@@ -78,7 +78,11 @@
                                                      src="./storage/{{ $image }}"
                                                      onerror="this.src='/img/empty.png'">
                                                  <div class="w-full">
+                                                @if($isMobile == true)
+                                                     <div class="text-center mx-1">
+                                                @else
                                                      <div class="text-center mx-4">
+                                                @endif
                                                          @php $locale = app()->getLocale(); @endphp
                                                         @if($locale=='fr')
                                                         @if ($isMobile == true)
