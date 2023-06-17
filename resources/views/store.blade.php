@@ -322,13 +322,15 @@
                                                                                          {{ $cadeau->prix }} <img
                                                                                              src="img/diamond5.png"
                                                                                              class="flex w-7 h-5">
-                                                                                         {{__('seront retirés de votre solde.')}}<br>
+                                                                                         {{__('seront retirés de votre solde.')}}
+                                                                                     </h1>
+                                                                                    <h1
+                                                                                         class="flex py-2 text-sm font-medium text-white">
                                                                                          {{ $cadeau->prix_coins }} <img
                                                                                              src="img/coin10.png"
                                                                                              class="flex w-7 h-5">
                                                                                          {{__('seront retirés de votre solde.')}}
                                                                                      </h1>
-
                                                                                      <div class="flex justify-center">
                                                                                          <div @click="modelOpen = false"
                                                                                              class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 mr-4 font-medium text-white group">
