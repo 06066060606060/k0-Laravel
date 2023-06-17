@@ -159,7 +159,7 @@
                                                      <div class="relative flex justify-center w-24 px-5 py-1 mx-auto">
                                                          <div x-data="{ modelOpen: false }" class="flex justify-center">
                                                              @if (backpack_auth()->check())
-                                                                 @if (backpack_auth()->user()->trophee1 < $cadeau->prix)
+                                                                 @if (backpack_auth()->user()->trophee1 < $cadeau->prix && backpack_auth()->user()->trophee3 < $cadeau->prix_coins)
                                                                      <button @click="modelOpen =!modelOpen"
                                                                          class="relative flex justify-center w-24 px-5 py-1 mx-auto my-2 font-medium text-white group">
                                                                          <span
