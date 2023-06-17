@@ -319,16 +319,16 @@
                                                                                      class="flex flex-col items-center pb-8 mx-20 mt-1">
                                                                                      <h1
                                                                                          class="flex py-2 text-sm font-medium text-white">
-                                                                                         {{ $cadeau->prix }} <img
+                                                                                         {{ $cadeau->prix }} &nbsp;<img
                                                                                              src="img/diamond5.png"
-                                                                                             class="flex w-7 h-5">
+                                                                                             class="flex w-7 h-5">&nbsp;
                                                                                          {{__('seront retirés de votre solde.')}}
                                                                                      </h1>
                                                                                     <h1
                                                                                          class="flex py-2 text-sm font-medium text-white">
-                                                                                         {{ $cadeau->prix_coins }} <img
+                                                                                         {{ $cadeau->prix_coins }} &nbsp;<img
                                                                                              src="img/coin10.png"
-                                                                                             class="flex w-7 h-5">
+                                                                                             class="flex w-7 h-5">&nbsp;
                                                                                          {{__('seront retirés de votre solde.')}}
                                                                                      </h1>
                                                                                      <div class="flex justify-center">
