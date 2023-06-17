@@ -317,7 +317,7 @@
                                                                              <div class="bg-gray-700 rounded-b-md">
                                                                                  <div
                                                                                      class="flex flex-col items-center pb-8 mx-20 mt-1">
-                                                                                     Choisissez si vous préférez payer en Diamants ou en Coins avant de confirmer.<br>
+                                                                                    <div class="text-sm pt-2 pb-2">Choisissez si vous préférez payer en Diamants ou en Coins avant de confirmer.</div>
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
                                                                                         <input type="radio" name="prix-type" id="prix-type-diamond" value="diamond" checked>&nbsp;
                                                                                         {{ $cadeau->prix }} &nbsp;<img src="img/diamond5.png" class="flex w-7 h-5">&nbsp;
