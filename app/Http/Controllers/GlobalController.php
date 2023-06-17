@@ -403,7 +403,7 @@ class GlobalController extends Controller
             return redirect('/');
         }
     }
-
+    // achat en boutique lorsque le joueur confirme sa commande en boutique
     public function setOrder(Request $request)
     {
         if (backpack_auth()->check()) {
