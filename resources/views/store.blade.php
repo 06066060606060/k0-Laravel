@@ -142,12 +142,12 @@
                                                              @if($isMobile == true)
                                                              <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix" class="mt-2 text-xs" style="display:inline;">x {{ $cadeau->prix }}</p>
-                                                             <br>OU <img src="./img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
+                                                             <br><b>ou</b> <img src="./img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix_coins" class="mt-2 text-xs" style="display:inline;">x {{ $cadeau->prix_coins }}</p>
                                                             @else
                                                              <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix" class="mt-2 text-m" style="display:inline;">x {{ $cadeau->prix }}</p>
-                                                             <br>OU <img src="./img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
+                                                             <br><b>ou</b> <img src="./img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix_coins" class="mt-2 text-m" style="display:inline;">x {{ $cadeau->prix_coins }}</p>
                                                             @endif
                                                          </div>
