@@ -413,7 +413,6 @@ class GlobalController extends Controller
             $order->cadeau_id = $request->id;
             $order->user_id = $userid;
             $order->status = 'Oui';
-            
             if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
                 $order->prix = $request->price;
             } elseif ($request->input('prix-type') == 'coin') { // si le paiement est fait via coins
