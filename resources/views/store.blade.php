@@ -318,16 +318,23 @@
                                                                                  <div
                                                                                      class="flex flex-col items-center pb-8 mx-20 mt-1">
                                                                                     <div class="text-sm pt-2 pb-2 text-white">{{__('Choisissez si vous préférez payer en Diamants ou en Coins avant de confirmer.')}}</div>
+                                                                                    @if (backpack_auth()->user()->trophee1 < $cadeau->prix)                                                                                    
+                                                                                    @else
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
                                                                                         <input type="radio" name="prix-type" id="prix-type-diamond" value="diamond" checked>&nbsp;
                                                                                         {{ $cadeau->prix }} &nbsp;<img src="img/diamond5.png" class="flex w-7 h-5">&nbsp;
                                                                                         {{ __("je choisis d'utiliser mes diamants") }}
+
                                                                                     </h1>
+                                                                                    @endif
+                                                                                    @if (backpack_auth()->user()->trophee1 < $cadeau->prix_coins)                                                                                    
+                                                                                    @else
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
                                                                                         <input type="radio" name="prix-type" id="prix-type-coin" value="coin">&nbsp;
                                                                                         {{ $cadeau->prix_coins }} &nbsp;<img src="img/coin10.png" class="flex w-7 h-5">&nbsp;
                                                                                         {{ __("je choisis d'utiliser mes coins") }}
                                                                                     </h1>
+                                                                                    @endif
 
                                                                                      <div class="flex justify-center">
                                                                                          <div @click="modelOpen = false"
