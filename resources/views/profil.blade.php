@@ -173,11 +173,11 @@
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                          @if($order->prix == NULL)
                                          <span class="inline-flex items-center">
-                                         {{ $order->cadeau->prix_coins }} <img src="img/coin10.png" class="w-5 h-4">
+                                         {{ $order->cadeau->prix_coins }} &nbsp;<img src="img/coin10.png" class="w-5 h-4">
                                          </span>
                                          @else
                                          <span class="inline-flex items-center">
-                                         {{ $order->cadeau->prix }} <img src="img/diamond5.png" class="w-5 h-4">
+                                         {{ $order->cadeau->prix }} &nbsp;<img src="img/diamond5.png" class="w-5 h-4">
                                          </span>
                                          @endif
                                         </td>
