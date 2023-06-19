@@ -330,7 +330,12 @@
                                                                                     @if (backpack_auth()->user()->trophee1 < $cadeau->prix_coins)                                                                                    
                                                                                     @else
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
-                                                                                        <input type="radio" name="prix-type" id="prix-type-coin" value="coin">&nbsp;
+                                                                                        <input type="radio" 
+                                                                                        @if (backpack_auth()->user()->trophee1 < $cadeau->prix) 
+                                                                                        checked
+                                                                                        @else
+                                                                                        @endif                                                                                 
+                                                                                        name="prix-type" id="prix-type-coin" value="coin">&nbsp;
                                                                                         {{ $cadeau->prix_coins }} &nbsp;<img src="img/coin10.png" class="flex w-7 h-5">&nbsp;
                                                                                         {{ __("je choisis d'utiliser mes coins") }}
                                                                                     </h1>
