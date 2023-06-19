@@ -405,68 +405,74 @@ class GlobalController extends Controller
     }
     // achat en boutique lorsque le joueur confirme sa commande en boutique
     public function setOrder(Request $request)
-    {
-        if (backpack_auth()->check()) {
-            $usermail = backpack_auth()->user()->email;
-            $userid = backpack_auth()->user()->id;
-            $order = new Commandes();
-            $order->cadeau_id = $request->id;
-            $order->user_id = $userid;
-            $order->status = 'Oui';
-            $order->prix = $request->prix;
-            $order->save();
-            $scores = Scores::where('user_id', $userid)->get();
+{
+    if (backpack_auth()->check()) {
+        $usermail = backpack_auth()->user()->email;
+        $userid = backpack_auth()->user()->id;
+        $order = new Commandes();
+        $order->cadeau_id = $request->id;
+        $order->user_id = $userid;
+        $order->status = 'Oui';
+        if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
+        $order->prix = $request->price;
+        } else if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
+        $order->prix_coins = $request->price_coins;
+        }
+        $order->save();
+        $scores = Scores::where('user_id', $userid)->get();
+
+        if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
             if (backpack_auth()->user()->trophee1 >= $request->price) {
-                backpack_auth()
-                    ->user()
-                    ->update([
-                        'trophee1' =>
-                            backpack_auth()->user()->trophee1 -
-                            $request->price,
-                    ]);
-                Commandes::where('user_id', $userid)
-                    ->where('id', $request->id)
-                    ->update(['status' => 'Oui']);
+                backpack_auth()->user()->update([
+                    'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                ]);
             } else {
                 return back();
             }
-            $orders = Commandes::where('user_id', $userid)
-    
-                ->latest()
-    
-                ->limit('6')
-    
-                ->get();
-    
-            $paiements = Paiements::where('user_id', $userid)
-    
-                ->latest()
-    
-                ->limit('6')
-    
-                ->get();
-    
-            $infos = Infosperso::where('user_id', $userid)->get();
-    
-            //create notification
-            $admin = backpack_user()->find(1);
-            if (isset($admin)) {
-                $admin->notify(
-                    new DatabaseNotification(
-                        ($type = 'success'), // info / success / warning / error
-                        ($message = 'Nouvelle commande'),
-                        ($messageLong = 'Nouvelle commande de cadeau par ' . $usermail),
-                        // rand(1, 99999)), // optional
-                        ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
-                        ($hrefText = 'Voir') // optional
-                    )
-                );
+        } elseif ($request->input('prix-type') == 'coin') { // si le paiement est fait via coins
+            if (backpack_auth()->user()->trophee3 >= $request->price_coins) {
+                backpack_auth()->user()->update([
+                    'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
+                ]);
+            } else {
+                return back();
             }
-            return view(
-                'profil',
-                compact('scores', 'orders', 'infos', 'paiements')
+        }
+
+        Commandes::where('user_id', $userid)
+            ->where('id', $request->id)
+            ->update(['status' => 'Oui']);
+
+        $orders = Commandes::where('user_id', $userid)
+            ->latest()
+            ->limit('6')
+            ->get();
+
+        $paiements = Paiements::where('user_id', $userid)
+            ->latest()
+            ->limit('6')
+            ->get();
+
+        $infos = Infosperso::where('user_id', $userid)->get();
+
+        // create notification
+        $admin = backpack_user()->find(1);
+        if (isset($admin)) {
+            $admin->notify(
+                new DatabaseNotification(
+                    ($type = 'success'), // info / success / warning / error
+                    ($message = 'Nouvelle commande'),
+                    ($messageLong = 'Nouvelle commande de cadeau par ' . $usermail),
+                    // rand(1, 99999)), // optional
+                    ($href = '/admin/commandes'), // optional, e.g. backpack_url('/example')
+                    ($hrefText = 'Voir') // optional
+                )
             );
-        
+        }
+        return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
+    }
+}
+    
     
         //test 2
         } else {
