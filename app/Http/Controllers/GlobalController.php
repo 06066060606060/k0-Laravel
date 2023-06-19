@@ -433,17 +433,78 @@ class GlobalController extends Controller
     
             if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
                 if (backpack_auth()->user()->trophee1 >= $request->price) {
+                    if($request->name == '1 Rubis' || $request->name == '1 Rubin' || $request->name == '1 Ruby' || $request->name == '1 Rubí' 
+                    || $request->name == '1 Rubino')
+                    {        
                     backpack_auth()->user()->update([
                         'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                        'trophee2' => backpack_auth()->user()->trophee2 + 1,
                     ]);
+                    } else if($request->name == '2 Rubis' || $request->name == '2 Rubine' || $request->name == '2 Rubies' 
+                    || $request->name == '2 Rubíes' || $request->name == '2 Rubini')
+                    {
+                        backpack_auth()->user()->update([
+                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                            'trophee2' => backpack_auth()->user()->trophee2 + 2,
+                        ]);    
+                    } else if($request->name == '10 Rubis' || $request->name == '10 Rubine' || $request->name == '10 Rubies' 
+                    || $request->name == '10 Rubíes' || $request->name == '10 Rubini')
+                    {
+                        backpack_auth()->user()->update([
+                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                            'trophee2' => backpack_auth()->user()->trophee2 + 10,
+                        ]);    
+                    } else if($request->name == '20 Rubis' || $request->name == '20 Rubine' || $request->name == '20 Rubies' 
+                    || $request->name == '20 Rubíes' || $request->name == '20 Rubini')
+                    {
+                        backpack_auth()->user()->update([
+                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                            'trophee2' => backpack_auth()->user()->trophee2 + 20,
+                        ]);    
+                    } else {
+                        backpack_auth()->user()->update([
+                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                        ]);
+                    }
                 } else {
                     return back();
                 }
             } elseif ($request->input('prix-type') == 'coin') { // si le paiement est fait via coins
                 if (backpack_auth()->user()->trophee3 >= $request->price_coins) {
-                    backpack_auth()->user()->update([
-                        'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
-                    ]);
+                    if (backpack_auth()->user()->trophee1 >= $request->price) {
+                        if($request->name == '1 Rubis' || $request->name == '1 Rubin' || $request->name == '1 Ruby' || $request->name == '1 Rubí' 
+                        || $request->name == '1 Rubino')
+                        {        
+                        backpack_auth()->user()->update([
+                            'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
+                            'trophee2' => backpack_auth()->user()->trophee2 + 1,
+                        ]);
+                        } else if($request->name == '2 Rubis' || $request->name == '2 Rubine' || $request->name == '2 Rubies' 
+                        || $request->name == '2 Rubíes' || $request->name == '2 Rubini')
+                        {
+                            backpack_auth()->user()->update([
+                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
+                                'trophee2' => backpack_auth()->user()->trophee2 + 2,
+                            ]);    
+                        } else if($request->name == '10 Rubis' || $request->name == '10 Rubine' || $request->name == '10 Rubies' 
+                        || $request->name == '10 Rubíes' || $request->name == '10 Rubini')
+                        {
+                            backpack_auth()->user()->update([
+                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
+                                'trophee2' => backpack_auth()->user()->trophee2 + 10,
+                            ]);    
+                        } else if($request->name == '20 Rubis' || $request->name == '20 Rubine' || $request->name == '20 Rubies' 
+                        || $request->name == '20 Rubíes' || $request->name == '20 Rubini')
+                        {
+                            backpack_auth()->user()->update([
+                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
+                                'trophee2' => backpack_auth()->user()->trophee2 + 20,
+                            ]);    
+                        } else {
+                            backpack_auth()->user()->update([
+                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
+                            ]);
+                        }
                 } else {
                     return back();
                 }
