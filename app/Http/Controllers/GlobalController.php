@@ -412,16 +412,20 @@ class GlobalController extends Controller
             $order = new Commandes();
             $order->cadeau_id = $request->id;
             $order->user_id = $userid;
-            if($request->name == '1 Rubis' || $request->name == '1 Rubin' || $request->name == '1 Ruby' || $request->name == '1 Rubí' 
-            || $request->name == '1 Rubino' || $request->name == '2 Rubis' || $request->name == '2 Rubine' || $request->name == '2 Rubies' 
-            || $request->name == '2 Rubíes' || $request->name == '2 Rubini' || $request->name == '10 Rubis' || $request->name == '10 Rubine' 
-            || $request->name == '10 Rubies' || $request->name == '10 Rubíes' || $request->name == '10 Rubini' || $request->name == '20 Rubis' 
-            || $request->name == '20 Rubine' || $request->name == '20 Rubies' || $request->name == '20 Rubíes' || $request->name == '20 Rubini')
-            {
-            $order->status = 'Envoyé';
+            
+            $validNames = [
+                '1 Rubis', '1 Rubin', '1 Ruby', '1 Rubí', '1 Rubino',
+                '2 Rubis', '2 Rubine', '2 Rubies', '2 Rubíes', '2 Rubini',
+                '10 Rubis', '10 Rubine', '10 Rubies', '10 Rubíes', '10 Rubini',
+                '20 Rubis', '20 Rubine', '20 Rubies', '20 Rubíes', '20 Rubini'
+            ];
+            
+            if (in_array($request->name, $validNames)) {
+                $order->status = 'Envoyé';
             } else {
-            $order->status = 'Oui';
+                $order->status = 'Oui';
             }
+            
             if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
                 $order->prix = $request->price;
             } elseif ($request->input('prix-type') == 'coin') { // si le paiement est fait via coins
@@ -430,102 +434,81 @@ class GlobalController extends Controller
             
             $order->save();
             $scores = Scores::where('user_id', $userid)->get();
-    
+            
             if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
-                if (backpack_auth()->user()->trophee1 >= $request->price) {
-                    if($request->name == '1 Rubis' || $request->name == '1 Rubin' || $request->name == '1 Ruby' || $request->name == '1 Rubí' 
-                    || $request->name == '1 Rubino')
-                    {        
+                if (in_array($request->name, ['1 Rubis', '1 Rubin', '1 Ruby', '1 Rubí', '1 Rubino'])) {
                     backpack_auth()->user()->update([
                         'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
                         'trophee2' => backpack_auth()->user()->trophee2 + 1,
                     ]);
-                    } else if($request->name == '2 Rubis' || $request->name == '2 Rubine' || $request->name == '2 Rubies' 
-                    || $request->name == '2 Rubíes' || $request->name == '2 Rubini')
-                    {
+                } elseif (in_array($request->name, ['2 Rubis', '2 Rubine', '2 Rubies', '2 Rubíes', '2 Rubini'])) {
+                    backpack_auth()->user()->update([
+                        'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                        'trophee2' => backpack_auth()->user()->trophee2 + 2,
+                    ]);
+                } elseif (in_array($request->name, ['10 Rubis', '10 Rubine', '10 Rubies', '10 Rubíes', '10 Rubini'])) {
+                    backpack_auth()->user()->update([
+                        'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                        'trophee2' => backpack_auth()->user()->trophee2 + 10,
+                    ]);
+                } elseif (in_array($request->name, ['20 Rubis', '20 Rubine', '20 Rubies', '20 Rubíes', '20 Rubini'])) {
+                    backpack_auth()->user()->update([
+                        'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                        'trophee2' => backpack_auth()->user()->trophee2 + 20,
+                    ]);
+                } else {
+                    backpack_auth()->user()->update([
+                        'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                    ]);
+                }
+            } elseif ($request->input('prix-type') == 'coin') { // si le paiement est fait via coins
+                if (backpack_auth()->user()->trophee3 >= $request->price_coins) {
+                    if (in_array($request->name, ['1 Rubis', '1 Rubin', '1 Ruby', '1 Rubí', '1 Rubino'])) {
                         backpack_auth()->user()->update([
-                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                            'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
+                            'trophee2' => backpack_auth()->user()->trophee2 + 1,
+                        ]);
+                    } elseif (in_array($request->name, ['2 Rubis', '2 Rubine', '2 Rubies', '2 Rubíes', '2 Rubini'])) {
+                        backpack_auth()->user()->update([
+                            'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
                             'trophee2' => backpack_auth()->user()->trophee2 + 2,
-                        ]);    
-                    } else if($request->name == '10 Rubis' || $request->name == '10 Rubine' || $request->name == '10 Rubies' 
-                    || $request->name == '10 Rubíes' || $request->name == '10 Rubini')
-                    {
+                        ]);
+                    } elseif (in_array($request->name, ['10 Rubis', '10 Rubine', '10 Rubies', '10 Rubíes', '10 Rubini'])) {
                         backpack_auth()->user()->update([
-                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                            'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
                             'trophee2' => backpack_auth()->user()->trophee2 + 10,
-                        ]);    
-                    } else if($request->name == '20 Rubis' || $request->name == '20 Rubine' || $request->name == '20 Rubies' 
-                    || $request->name == '20 Rubíes' || $request->name == '20 Rubini')
-                    {
+                        ]);
+                    } elseif (in_array($request->name, ['20 Rubis', '20 Rubine', '20 Rubies', '20 Rubíes', '20 Rubini'])) {
                         backpack_auth()->user()->update([
-                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                            'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
                             'trophee2' => backpack_auth()->user()->trophee2 + 20,
-                        ]);    
+                        ]);
                     } else {
                         backpack_auth()->user()->update([
-                            'trophee1' => backpack_auth()->user()->trophee1 - $request->price,
+                            'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
                         ]);
                     }
                 } else {
                     return back();
                 }
-            } elseif ($request->input('prix-type') == 'coin') { // si le paiement est fait via coins
-                if (backpack_auth()->user()->trophee3 >= $request->price_coins) {
-                    if (backpack_auth()->user()->trophee1 >= $request->price) {
-                        if($request->name == '1 Rubis' || $request->name == '1 Rubin' || $request->name == '1 Ruby' || $request->name == '1 Rubí' 
-                        || $request->name == '1 Rubino')
-                        {        
-                        backpack_auth()->user()->update([
-                            'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
-                            'trophee2' => backpack_auth()->user()->trophee2 + 1,
-                        ]);
-                        } else if($request->name == '2 Rubis' || $request->name == '2 Rubine' || $request->name == '2 Rubies' 
-                        || $request->name == '2 Rubíes' || $request->name == '2 Rubini')
-                        {
-                            backpack_auth()->user()->update([
-                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
-                                'trophee2' => backpack_auth()->user()->trophee2 + 2,
-                            ]);    
-                        } else if($request->name == '10 Rubis' || $request->name == '10 Rubine' || $request->name == '10 Rubies' 
-                        || $request->name == '10 Rubíes' || $request->name == '10 Rubini')
-                        {
-                            backpack_auth()->user()->update([
-                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
-                                'trophee2' => backpack_auth()->user()->trophee2 + 10,
-                            ]);    
-                        } else if($request->name == '20 Rubis' || $request->name == '20 Rubine' || $request->name == '20 Rubies' 
-                        || $request->name == '20 Rubíes' || $request->name == '20 Rubini')
-                        {
-                            backpack_auth()->user()->update([
-                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
-                                'trophee2' => backpack_auth()->user()->trophee2 + 20,
-                            ]);    
-                        } else {
-                            backpack_auth()->user()->update([
-                                'trophee3' => backpack_auth()->user()->trophee3 - $request->price_coins,
-                            ]);
-                        }
-                } else {
-                    return back();
-                }
             }
-    
+            
             Commandes::where('user_id', $userid)
                 ->where('id', $request->id)
                 ->update(['status' => 'Oui']);
-    
+            
             $orders = Commandes::where('user_id', $userid)
                 ->latest()
                 ->limit(6)
                 ->get();
-    
+            
             $paiements = Paiements::where('user_id', $userid)
                 ->latest()
                 ->limit(6)
                 ->get();
-    
+            
             $infos = Infosperso::where('user_id', $userid)->get();
-    
+            
             // create notification
             $admin = backpack_user()->find(1);
             if (isset($admin)) {
@@ -545,7 +528,7 @@ class GlobalController extends Controller
             return redirect('/');
         }
     }
-    
+        
     public function setOrderpack(Request $request)
     {
         if (backpack_auth()->check()) {
