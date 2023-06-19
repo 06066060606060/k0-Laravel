@@ -170,7 +170,12 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{ $order->cadeau->name }}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $order->cadeau->prix }}
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
+                                         @if($order->prix == NULL)
+                                         {{ $order->cadeau->prix_coins }} <img src="img/coin10.png" class="w-5 h-4">
+                                         @else
+                                         {{ $order->cadeau->prix }} <img src="img/diamond5.png" class="w-5 h-4">
+                                         @endif
                                         </td>
                                         </td>
                                         @if ($order->status == 'Oui')
