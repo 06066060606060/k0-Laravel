@@ -412,7 +412,16 @@ class GlobalController extends Controller
             $order = new Commandes();
             $order->cadeau_id = $request->id;
             $order->user_id = $userid;
+            if($request->name == '1 Rubis' || $request->name == '1 Rubin' || $request->name == '1 Ruby' || $request->name == '1 Rubí' 
+            || $request->name == '1 Rubino' || $request->name == '2 Rubis' || $request->name == '2 Rubine' || $request->name == '2 Rubies' 
+            || $request->name == '2 Rubíes' || $request->name == '2 Rubini' || $request->name == '10 Rubis' || $request->name == '10 Rubine' 
+            || $request->name == '10 Rubies' || $request->name == '10 Rubíes' || $request->name == '10 Rubini' || $request->name == '20 Rubis' 
+            || $request->name == '20 Rubine' || $request->name == '20 Rubies' || $request->name == '20 Rubíes' || $request->name == '20 Rubini')
+            {
+            $order->status = 'Envoyé';
+            } else {
             $order->status = 'Oui';
+            }
             if ($request->input('prix-type') == 'diamond') { // si le paiement est fait via diamants
                 $order->prix = $request->price;
             } elseif ($request->input('prix-type') == 'coin') { // si le paiement est fait via coins

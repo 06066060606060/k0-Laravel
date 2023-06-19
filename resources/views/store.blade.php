@@ -310,7 +310,8 @@
                                                                                  value="{{ $cadeau->prix }}">
                                                                              <input type="hidden" name="price_coins"
                                                                                  value="{{ $cadeau->prix_coins }}">
-
+                                                                             <input type="hideen" name="name"
+                                                                             value="{{ $cadeau->name }}">
                                                                              <input type="hidden" name="id"
                                                                                  value="{{ $cadeau->id }}">
                                                                              <div
