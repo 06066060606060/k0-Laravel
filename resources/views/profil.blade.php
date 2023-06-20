@@ -331,6 +331,8 @@
                         @endfor
                     </select>
                 </div>
+                                <hr class="col-span-full">
+
                                 <div class="col-span-full">
                                     <label for="address" class="text-sm text-gray-300">{{__('Adresse')}}</label>
                                     <input name="address" id="address" type="text" placeholder=""
