@@ -302,7 +302,8 @@
                                         value="{{ $infos[0]->prenom ?? null }}">
                                 </div>
                                 <hr>
-                                <div>Votre date de naissance</div>
+                                <div class="col-span-full">
+                                Votre date de naissance</div>
                                 <div class="col-span-full sm:col-span-2">
                     <label for="day" class="text-sm text-gray-300">{{__('Jour')}}</label>
                     <select id="day" name="day"
