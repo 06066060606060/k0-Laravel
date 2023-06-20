@@ -301,6 +301,33 @@
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->prenom ?? null }}">
                                 </div>
+                                <div class="col-span-full sm:col-span-2">
+                    <label for="day" class="text-sm text-gray-300">{{__('Jour')}}</label>
+                    <select id="day" name="day"
+                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
+                        @for ($day = 1; $day <= 31; $day++)
+                            <option value="{{ sprintf('%02d', $day) }}">{{ sprintf('%02d', $day) }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <div class="col-span-full sm:col-span-2">
+                    <label for="month" class="text-sm text-gray-300">{{__('Mois')}}</label>
+                    <select id="month" name="month"
+                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
+                        @for ($month = 1; $month <= 12; $month++)
+                            <option value="{{ sprintf('%02d', $month) }}">{{ sprintf('%02d', $month) }}</option>
+                        @endfor
+                    </select>
+                </div>
+                <div class="col-span-full sm:col-span-2">
+                    <label for="year" class="text-sm text-gray-300">{{__('Année')}}</label>
+                    <select id="year" name="year"
+                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400">
+                        @for ($year = 1920; $year <= 2007; $year++)
+                            <option value="{{ $year }}">{{ $year }}</option>
+                        @endfor
+                    </select>
+                </div>
                                 <div class="col-span-full">
                                     <label for="address" class="text-sm text-gray-300">{{__('Adresse')}}</label>
                                     <input name="address" id="address" type="text" placeholder=""
