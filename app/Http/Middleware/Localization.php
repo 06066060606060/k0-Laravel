@@ -28,13 +28,12 @@ class Localization
     } else {
         // Récupérer la langue préférée du navigateur
         $negotiator = new LanguageNegotiator();
-        $browserLocale = $negotiator->getPreferredLanguage($request->server->get('HTTP_ACCEPT_LANGUAGE'));
+        $browserLocales = $negotiator->getBest($request->server->get('HTTP_ACCEPT_LANGUAGE'), $availableLocales);
 
-        // Définir la langue du navigateur comme langue par défaut si elle est disponible
-        if (in_array($browserLocale, $availableLocales)) {
-            App::setLocale($browserLocale);
+        // Utiliser la langue par défaut de l'application si aucune langue du navigateur n'est disponible
+        if ($browserLocales !== null) {
+            App::setLocale($browserLocales->getType());
         } else {
-            // Utiliser la langue par défaut de l'application si la langue du navigateur n'est pas disponible
             App::setLocale(config('app.fallback_locale'));
         }
     }
