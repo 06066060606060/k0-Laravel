@@ -334,6 +334,11 @@ class GlobalController extends Controller
         return view('aide');
     }
 
+    public function partenaires()
+    {
+        return view('partenaires');
+    }
+
     public function reglement()
     {
         return view('reglement');
