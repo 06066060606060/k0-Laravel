@@ -19,6 +19,8 @@
   <meta property="twitter:description" content="">
   <meta property="twitter:image" content="https://gokdo.com/img/logo-sm.png">
 
+  <meta name="coverage" content="Worldwide" />
+
   <link rel="canonical" href="https://gokdo.com" />
   
   //fontawesome
