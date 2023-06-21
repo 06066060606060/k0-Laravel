@@ -61,39 +61,20 @@
   transition: background-color 0.2s ease;
 }
 </style>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
 <script>
-$(document).ready(function() {
-  $('.accordion-title').click(function() {
-    $(this).parent().siblings().find('.accordion-content').slideUp();
-    $(this).siblings('.accordion-content').slideToggle();
-  });
-});
-</script>
-
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
-</div>
-<script>
-    $(document).ready(function() {
-        // fermer toutes les sections d'onglets au chargement de la page
-        $('.accordion-content').hide();
-        
-        // écouter le clic sur les titres des onglets
-        $('.accordion-title').click(function(e) {
-            e.preventDefault();
-            
-            // fermer toutes les sections d'onglets
-            $('.accordion-content').hide();
-            
-            // afficher le contenu associé
-            $(this).siblings('.accordion-content').show();
+    document.addEventListener("DOMContentLoaded", function () {
+        let accordionTitles = document.querySelectorAll(".accordion-title");
+        accordionTitles.forEach(function (title) {
+            title.addEventListener("click", function () {
+                let content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
         });
     });
 </script>
-
-
-
 @endsection
