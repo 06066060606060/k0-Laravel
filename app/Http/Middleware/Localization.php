@@ -18,13 +18,25 @@ class Localization
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {
-        $availableLocales = config('app.available_locales');
-        
-        if (Session::has('locale') && in_array(Session::get('locale'), $availableLocales)) {
-            App::setLocale(Session::get('locale'));
+{
+    $availableLocales = config('app.available_locales');
+    
+    // Vérifier si la langue est déjà définie dans la session
+    if (Session::has('locale') && in_array(Session::get('locale'), $availableLocales)) {
+        App::setLocale(Session::get('locale'));
+    } else {
+        // Récupérer la langue préférée du navigateur
+        $browserLocale = $request->getPreferredLanguage($availableLocales);
+
+        // Définir la langue du navigateur comme langue par défaut si elle est disponible
+        if (in_array($browserLocale, $availableLocales)) {
+            App::setLocale($browserLocale);
+        } else {
+            // Utiliser la langue par défaut de l'application si la langue du navigateur n'est pas disponible
+            App::setLocale(config('app.fallback_locale'));
         }
-        
-        return $next($request);
     }
+    
+    return $next($request);
+}
 }
