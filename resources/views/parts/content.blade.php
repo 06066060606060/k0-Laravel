@@ -17,7 +17,7 @@
             <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
                 <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
                     <div class="flex justify-between w-full border-b">
-                        <h1 class="py-6 mx-auto text-blue-600 text-lg font-bold">SELECT LANGUAGE</h1>
+                        <h1 class="py-6 mx-auto text-white text-lg font-bold">SELECT LANGUAGE</h1>
                     </div>
                     <div class="bg-gray-700 rounded-b-md">
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">

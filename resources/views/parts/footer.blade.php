@@ -46,7 +46,7 @@
      </div>
      <div class="bg-gray-700">
          <div class="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-             <p class="text-sm text-center text-gray-400 sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}}
+             <p class="text-sm text-center text-white sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}}
              </p>
              <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                  <a href="https://www.facebook.com/gokdocom" class="text-gray-400">
