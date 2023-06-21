@@ -596,7 +596,7 @@
                                 </video>
                                 @else
                                 <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                    src="{{ $gifUrl }}" onerror="this.src='/img/empty.png'">
+                                    src="{{ $gifUrl }}" width="920" height="420" onerror="this.src='/img/empty.png'">
                                 @endif
                             </div>
                         </div>
