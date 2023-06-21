@@ -585,11 +585,19 @@
                         <div class="relative w-full max-w-lg">
 
                             <div class="relative">
-                                @php $imagesd =  $starred->image[0] ?? null; @endphp
+                                @php $imagesd =  $starred->image[0] ?? null; 
+                                $imgUrl = asset('storage/' . $imagesd);
+                                $gifUrl = str_replace(".mp4", ".gif", $imgUrl);
+                                @endphp
+                                @if($isMobile == true)
                                 <video class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero" autoplay loop>
                                 <source src="{{ asset('storage/' . $imagesd) }}" type="video/mp4">
                                 Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
                                 </video>
+                                @else
+                                <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
+                                    src="{{ $gifUrl }}" onerror="this.src='/img/empty.png'">
+                                @endif
                             </div>
                         </div>
                     </div>
