@@ -4,7 +4,7 @@
         <div class="flex items-center justify-between">
             <div>
                 <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/"><img
-                        src="./img/logo.png" alt="Gokdo" height="16" class="w-auto h-16"></a>
+                        src="./img/logo.png" alt="Gokdo" width="139" height="16" class="w-auto h-16"></a>
             </div>
             @include('parts/language_switcher')
 
