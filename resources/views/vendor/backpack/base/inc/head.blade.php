@@ -2,7 +2,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" defer></script>
 
     @if (config('backpack.base.meta_robots_content'))<meta name="robots" content="{{ config('backpack.base.meta_robots_content', 'index, follow') }}"> @endif
     <link rel="shortcut icon" href=".././img/favicon.png" type="image/x-icon" />
@@ -32,7 +32,7 @@
 
     @yield('after_styles')
     @stack('after_styles')
-    @vite('resources/js/app.js')
+    <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" defer></script>
     {{-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --}}
     {{-- WARNING: Respond.js doesn't work if you view the page via file:// --}}
     <!--[if lt IE 9]>
