@@ -42,6 +42,7 @@ Route::get('aide', 'aide');
 Route::get('reglement', 'reglement');
 Route::get('mentions-legales', 'mentionslegales');
 Route::get('confidentialite-site', 'confidentialitesite');
+Route::get('partenaires', 'partenaires');
 });
 
 Route::middleware(['cors'])->group(function () {
