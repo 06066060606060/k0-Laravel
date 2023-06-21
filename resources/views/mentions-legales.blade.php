@@ -14,10 +14,8 @@
                 
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Informations Principales')}}</h2> 
-		<p class="leading-relaxed text-gray-300">{{__('Dénomination ou raison sociale :')}} GOKDO
-        <br>{{__('Nom du responsable de la rédaction/gestion du site :')}} {{__('En cours de création...')}}
-        <br>{{__('Structure juridique :')}} {{__('Auto-entrepreneur')}}
-        <br>SIRET : {{__('En cours de création...')}}
+		<p class="leading-relaxed text-gray-300">GOKDO
+        <br>{{__('Iakovou Tompazi, Limassol, Chypre')}}
         </p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
