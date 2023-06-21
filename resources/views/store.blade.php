@@ -334,7 +334,7 @@
 
                                                                                     </h1>
                                                                                     @endif
-                                                                                    @if (backpack_auth()->user()->trophee1 < $cadeau->prix_coins)                                                                                    
+                                                                                    @if (backpack_auth()->user()->trophee3 < $cadeau->prix_coins)                                                                                    
                                                                                     @else
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
                                                                                         <input type="radio" 
