@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Primary Meta Tags -->
   <meta name="title" content="Gokdo">
 <meta name="description" content="{{__("Jouez gratuitement à nos jeux multijoueurs, gagnez de l'argent et des cadeaux ! Plongez dans notre univers captivant, défiez vos amis et remportez de superbes récompenses. Participez à nos concours pour des gains énormes. Inscrivez-vous maintenant et vivez l'excitation des jeux gratuits en ligne !")}}">
