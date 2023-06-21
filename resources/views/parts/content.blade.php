@@ -131,8 +131,8 @@
                                 </div>
                             </div>
                             @php $imagesb =  $eventsgame->image[0] ?? null;
-                                $imgUrl = asset('storage/' . $imagesb);
-                                $gifUrl = str_replace(".mp4", ".gif", $imgUrl);
+                                $imgiUrl = asset('storage/' . $imagesb);
+                                $gifiUrl = str_replace(".mp4", ".gif", $imgiUrl);
                              @endphp
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
