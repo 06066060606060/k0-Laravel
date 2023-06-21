@@ -586,7 +586,7 @@
 
                             <div class="relative">
                                 @php $imagesd =  $starred->image[0] ?? null; @endphp
-                                <video class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero" controls>
+                                <video class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero" autoplay loop>
                                 <source src="{{ asset('storage/' . $imagesd) }}" type="video/mp4">
                                 Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
                                 </video>
