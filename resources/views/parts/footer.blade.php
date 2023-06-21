@@ -19,6 +19,7 @@
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
                  <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('A Propos')}}</h2>
                  <div class="mb-10 list-none">
+                 <ul>
                      <li>
                          <a href="reglement" class="text-gray-400 hover:text-gray-500">{{__('Règlement')}}</a>
                      </li>
@@ -28,18 +29,20 @@
                      <li>
                          <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">{{__('Confidentialité')}}</a>
                      </li>
+                  </ul>   
                  </div>
              </div>
              <div class="w-full px-4 lg:w-1/4 md:w-1/2">
                  <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Plus')}}</h2>
                  <div class="mb-10 list-none">
+                 <ul>
                      <li>
                          <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a>
                      </li>
                      <li>
                          <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
                      </li>
-
+                </ul>
                  </div>
              </div>
          </div>
