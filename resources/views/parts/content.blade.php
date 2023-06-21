@@ -586,8 +586,10 @@
 
                             <div class="relative">
                                 @php $imagesd =  $starred->image[0] ?? null; @endphp
-                                <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                    src="{{ asset('storage/' . $imagesd) }}" onerror="this.src='/img/empty.png'">
+                                <video class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero" controls>
+                                <source src="{{ asset('storage/' . $imagesd) }}" type="video/mp4">
+                                Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
+                                </video>
                             </div>
                         </div>
                     </div>
