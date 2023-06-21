@@ -9,10 +9,10 @@
             <div>
             @if($isMobile == true)
                 <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/"><img
-                        src="./img/logo_mobile.webp" alt="Gokdo" width="59" height="16" class="w-auto h-16"></a>
+                        src="./img/logo_mobile.webp" alt="Gokdo" width="354" height="96" class="w-auto h-16"></a>
             @else
                 <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/"><img
-                        src="./img/logo.png" alt="Gokdo" width="139" height="16" class="w-auto h-16"></a>
+                        src="./img/logo.png" alt="Gokdo" class="w-auto h-16"></a>
             @endif
             </div>
             @include('parts/language_switcher')
