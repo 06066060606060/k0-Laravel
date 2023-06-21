@@ -41,7 +41,7 @@ class Localization
             } else {
                 App::setLocale(config('app.fallback_locale'));
             }
-        }
+        } 
         
         return $next($request);
     }
