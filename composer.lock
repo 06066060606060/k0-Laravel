@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da25b91a54db71352e74cf72890466a5",
+    "content-hash": "1bbaf237a4417bddcab327f26271460a",
     "packages": [
         {
             "name": "backpack/backupmanager",
@@ -7383,28 +7383,28 @@
         },
         {
             "name": "willdurand/negotiation",
-            "version": "3.1.0",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/willdurand/Negotiation.git",
-                "reference": "68e9ea0553ef6e2ee8db5c1d98829f111e623ec2"
+                "reference": "2ba90aa46b5e77f87b55f149cfd544b8434941d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/68e9ea0553ef6e2ee8db5c1d98829f111e623ec2",
-                "reference": "68e9ea0553ef6e2ee8db5c1d98829f111e623ec2",
+                "url": "https://api.github.com/repos/willdurand/Negotiation/zipball/2ba90aa46b5e77f87b55f149cfd544b8434941d9",
+                "reference": "2ba90aa46b5e77f87b55f149cfd544b8434941d9",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.1.0"
+                "php": ">=5.4.0"
             },
             "require-dev": {
-                "symfony/phpunit-bridge": "^5.0"
+                "phpunit/phpunit": "~4.5"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.0-dev"
+                    "dev-master": "2.3-dev"
                 }
             },
             "autoload": {
@@ -7433,9 +7433,9 @@
             ],
             "support": {
                 "issues": "https://github.com/willdurand/Negotiation/issues",
-                "source": "https://github.com/willdurand/Negotiation/tree/3.1.0"
+                "source": "https://github.com/willdurand/Negotiation/tree/2.x"
             },
-            "time": "2022-01-30T20:08:53+00:00"
+            "time": "2017-05-04T12:15:48+00:00"
         }
     ],
     "packages-dev": [

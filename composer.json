@@ -21,7 +21,7 @@
         "spatie/laravel-cookie-consent": "^3.2",
         "stripe/stripe-php": "^9.9",
         "symfony/process": "^6.2",
-        "willdurand/negotiation": "*"
+        "willdurand/negotiation": "2.3"
     },
     "require-dev": {
         "backpack/generators": "^3.3",

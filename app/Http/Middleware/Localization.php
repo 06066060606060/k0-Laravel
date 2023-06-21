@@ -19,31 +19,26 @@ class Localization
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
-    {
-        $availableLocales = config('app.available_locales');
-        
-        // Vérifier si la langue est déjà définie dans la session
-        if (Session::has('locale') && in_array(Session::get('locale'), $availableLocales)) {
-            App::setLocale(Session::get('locale'));
+{
+    $availableLocales = config('app.available_locales');
+    
+    // Vérifier si la langue est déjà définie dans la session
+    if (Session::has('locale') && in_array(Session::get('locale'), $availableLocales)) {
+        App::setLocale(Session::get('locale'));
+    } else {
+        // Récupérer la langue préférée du navigateur
+        $negotiator = new LanguageNegotiator();
+        $browserLocale = $negotiator->getPreferredLanguage($request->server->get('HTTP_ACCEPT_LANGUAGE'));
+
+        // Définir la langue du navigateur comme langue par défaut si elle est disponible
+        if (in_array($browserLocale, $availableLocales)) {
+            App::setLocale($browserLocale);
         } else {
-            // Récupérer les langues préférées du navigateur
-            $negotiator = new LanguageNegotiator();
-            $browserLocales = $negotiator->getAcceptedLanguages($request->header('Accept-Language'));
-    
-            // Chercher la première langue préférée du navigateur disponible dans la configuration
-            foreach ($browserLocales as $browserLocale) {
-                if (in_array($browserLocale, $availableLocales)) {
-                    App::setLocale($browserLocale);
-                    break;
-                }
-            }
-    
-            // Utiliser la langue par défaut de l'application si aucune langue du navigateur n'est disponible
-            if (!App::getLocale()) {
-                App::setLocale(config('app.fallback_locale'));
-            }
+            // Utiliser la langue par défaut de l'application si la langue du navigateur n'est pas disponible
+            App::setLocale(config('app.fallback_locale'));
         }
-        
-        return $next($request);
-    }    
+    }
+    
+    return $next($request);
+}
 }
