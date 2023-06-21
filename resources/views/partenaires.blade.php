@@ -12,6 +12,8 @@
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Partenaires')}}</h1>
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
+                    <a href="https://www.lesmeilleurs-jeux.net" title="Meilleurs jeux" target="_blank"><img src="https://www.lesmeilleurs-jeux.net/images/ban/ban1.gif" alt="Meilleurs jeux" /></a>
+
                     </div>
 
                     
