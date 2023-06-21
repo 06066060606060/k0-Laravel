@@ -130,10 +130,13 @@
                                  @endif
                                 </div>
                             </div>
-                            @php $imagesb =  $eventsgame->image[0] ?? null; @endphp
+                            @php $imagesb =  $eventsgame->image[0] ?? null;
+                                $imgUrl = asset('storage/' . $imagesb);
+                                $gifUrl = str_replace(".mp4", ".gif", $imgUrl);
+                             @endphp
                             <img alt="gallery"
                                 class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
-                                src="{{ asset('storage/' . $imagesb) }}" onerror="this.src='/img/empty.png'">
+                                src="{{ $gifiUrl }}" onerror="this.src='/img/empty.png'">
                             <div
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
