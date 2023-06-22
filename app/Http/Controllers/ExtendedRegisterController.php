@@ -35,23 +35,20 @@ class ExtendedRegisterController extends RegisterController
     }
 
     protected function create(array $data)
-    {
-        $user_model_fqn = config('backpack.base.user_model_fqn');
-        $user = new $user_model_fqn();
+{
+    $user_model_fqn = config('backpack.base.user_model_fqn');
+    $user = new $user_model_fqn();
 
-        $createdUser = $user->create([
-            'name' => $data['name'],
-            backpack_authentication_column() => $data[backpack_authentication_column()],
-            'password' => bcrypt($data['password']),
-        ]);
+    $createdUser = $user->create([
+        'name'                             => $data['name'],
+        backpack_authentication_column()   => $data[backpack_authentication_column()],
+        'password'                         => bcrypt($data['password']),
+        'parrain'                          => $data['parrain'], // Ajoutez cette ligne
+    ]);
 
-        if (isset($data['parrain'])) {
-            $createdUser->parrain = $data['parrain'];
-            $createdUser->save();
-        }
+    return $createdUser;
+}
 
-        return $createdUser;
-    }
 
     public function register(Request $request)
 {
