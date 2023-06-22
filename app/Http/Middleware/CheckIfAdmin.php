@@ -19,7 +19,9 @@ class CheckIfAdmin
             //$user->role = 'user'; 
             //$user->parties = '10';
             //$user->trophee1 = '150';
-         //   $user->parrain = $parrain; // On offre 150 diamants
+            $parrain = $request->input('parrain');
+            $user->parrain = $parrain; // On offre 150 diamants
+         
             $user->save();
 
             //create notification
