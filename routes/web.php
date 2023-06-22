@@ -27,18 +27,16 @@ Route::controller(GlobalController::class)->group(function(){
         session()->put('locale', $locale);
         return redirect()->back();
     });
-    Route::get('admin/register', function (Illuminate\Http\Request $request) {
-        $le_parrain = $request->query('parrain');
-    
+    Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
     
         if ($parrainExiste) {
             // Si le parrain existe, rediriger vers la méthode "setParrainageLink" du contrôleur
-            return app(ParrainageController::class)->setParrainageLink($request, $le_parrain);
+            return app(ParrainageController::class)->setParrainageLink(request(), $le_parrain);
         } else {
-            // Si le parrain n'existe pas, rediriger vers "/"
-            return redirect('/');
+            // Si le parrain n'existe pas, rediriger vers une autre page ou afficher un message d'erreur
+            return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
     
