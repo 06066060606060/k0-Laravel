@@ -11,7 +11,7 @@ class CheckIfAdmin
 {
     private function checkIfUserIsAdmin($user, $request)
     {
-       // $parrain = $request->input('parrain');
+        $parrain = $request->input('parrain');
         if ($user->role == 'admin') {
             // dd('admin');
             return true;
@@ -22,7 +22,6 @@ class CheckIfAdmin
          //   $user->parrain = $parrain; // On offre 150 diamants
             $user->save();
 
-           // $request->session()->forget('parrain');
             //create notification
             $admin = backpack_user()->where('role', 'admin')->first();
             $admin->notify(
@@ -35,6 +34,7 @@ class CheckIfAdmin
                    // ($hrefText = 'Go to custom URL') // optional
                 )
             );
+            $user->parrain = $parrain;
 
             
             return true;
