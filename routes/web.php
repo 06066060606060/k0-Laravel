@@ -28,7 +28,18 @@ Route::controller(GlobalController::class)->group(function(){
         return redirect()->back();
     });
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
-Route::get('/{le_parrain}', [ParrainageController::class, 'setParrainageLink'])->name('parrainage.link');
+    Route::get('/{le_parrain}', function ($le_parrain) {
+        // Vérifier si le parrain existe dans la table "users"
+        $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
+    
+        if ($parrainExiste) {
+            // Si le parrain existe, rediriger vers la méthode "setParrainageLink" du contrôleur
+            return app(ParrainageController::class)->setParrainageLink(request(), $le_parrain);
+        } else {
+            // Si le parrain n'existe pas, rediriger vers une autre page ou afficher un message d'erreur
+            return redirect()->route('backpack.auth.register');
+        }
+    })->name('parrainage.link');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
