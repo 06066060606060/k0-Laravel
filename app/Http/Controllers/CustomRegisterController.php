@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Validator; // Mettez à jour l'utilisation de Validator
 
-class ExtendedRegisterController extends Controller
+class CustomRegisterController extends Controller
 {
     protected $data = []; // the information we send to the view
 
