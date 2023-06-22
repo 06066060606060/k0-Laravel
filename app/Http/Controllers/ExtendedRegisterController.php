@@ -40,10 +40,7 @@ class ExtendedRegisterController extends RegisterController
 
     protected function create(array $data)
 {
-    $user_model_fqn = config('backpack.base.user_model_fqn');
-    $user = new $user_model_fqn();
-
-    $createdUser = $user->create([
+    $createdUser = User::create([
         'name'                             => $data['name'],
         backpack_authentication_column()   => $data[backpack_authentication_column()],
         'password'                         => bcrypt($data['password']),
