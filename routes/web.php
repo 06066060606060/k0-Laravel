@@ -39,7 +39,7 @@ Route::controller(GlobalController::class)->group(function(){
             return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
-    
+
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
