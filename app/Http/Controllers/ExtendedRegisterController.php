@@ -39,37 +39,40 @@ class ExtendedRegisterController extends RegisterController
     }
 
     protected function create(array $data)
-    {
-        $user_model_fqn = config('backpack.base.user_model_fqn');
-        $user = new $user_model_fqn();
+{
+    $user_model_fqn = config('backpack.base.user_model_fqn');
+    $user = new $user_model_fqn();
 
-        return $user->create([
-            'name'                             => $data['name'],
-            backpack_authentication_column()   => $data[backpack_authentication_column()],
-            'password'                         => bcrypt($data['password']),
-            'parrain'                          => $data['parrain'],
-        ]);
-    }
+    $createdUser = $user->create([
+        'name'                             => $data['name'],
+        backpack_authentication_column()   => $data[backpack_authentication_column()],
+        'password'                         => bcrypt($data['password']),
+        'parrain'                          => $data['parrain'],
+    ]);
+
+    dd($createdUser); // Ajout de la ligne de dd
+
+    return $createdUser;
+}
+
 
     public function register(Request $request)
-    {
-        dd('test');
-        // if registration is closed, deny access
-        if (! config('backpack.base.registration_open')) {
-            abort(403, trans('backpack::base.registration_closed'));
-        }
-    
-        $this->validator($request->all())->validate();
-    
-        $user = $this->create($request->all());
-    
-        event(new Registered($user));
-        $this->guard()->login($user);
-    
-        dd($user); // Débogage : affiche les informations de l'utilisateur créé
-    
-        //return redirect($this->redirectPath());
+{
+    // if registration is closed, deny access
+    if (! config('backpack.base.registration_open')) {
+        abort(403, trans('backpack::base.registration_closed'));
     }
+
+    $this->validator($request->all())->validate();
+
+    $user = $this->create($request->all());
+
+    event(new Registered($user));
+    $this->guard()->login($user);
+
+    return redirect($this->redirectPath());
+}
+
     
     /**
      * Get the guard to be used during registration.
