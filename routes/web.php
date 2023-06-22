@@ -21,7 +21,7 @@ use App\Http\Controllers\Auth\CustomRegisterController;
 |
 */
 
-Route::post('/register', [CustomRegisterController::class, 'register'])->name('register');
+Route::post('/admin/register', [CustomRegisterController::class, 'register'])->name('register');
 
 Route::controller(GlobalController::class)->group(function(){
     Route::get('language/{locale}', function ($locale) {
