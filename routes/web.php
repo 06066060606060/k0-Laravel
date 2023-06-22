@@ -29,6 +29,8 @@ Route::controller(GlobalController::class)->group(function(){
         session()->put('locale', $locale);
         return redirect()->back();
     });
+    Route::post('register', [CustomAuthController::class, 'register'])->name('backpack.auth.register');
+
     Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -41,7 +43,6 @@ Route::controller(GlobalController::class)->group(function(){
             return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
-Route::post('register', [CustomAuthController::class, 'register'])->name('backpack.auth.register');    
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
