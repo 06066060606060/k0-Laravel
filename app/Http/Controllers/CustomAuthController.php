@@ -1,27 +1,30 @@
 <?php
-use Backpack\CRUD\app\Http\Controllers\AuthController;
+
+namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-public function register(Request $request)
+class CustomAuthController extends Controller
 {
-    $parrain = Session::get('parrain'); // Récupérer le parrain de la session
+    public function register(Request $request)
+    {
+        $parrain = Session::get('parrain'); // Récupérer le parrain de la session
 
-    // Appel de la méthode register du contrôleur parent pour effectuer le reste du processus d'inscription
-$response = parent::register($request);
+        // Appel de la méthode register du contrôleur parent pour effectuer le reste du processus d'inscription
+        $response = parent::register($request);
 
-// Récupérer l'utilisateur nouvellement créé
-$user = $response->original;
+        // Récupérer l'utilisateur nouvellement créé
+        $user = $response->original;
 
-// Récupérer le parrain de la session
-$parrain = Session::get('parrain');
+        // Récupérer le parrain de la session
+        $parrain = Session::get('parrain');
 
-// Mettre à jour la colonne "parrain" de l'utilisateur nouvellement créé
-$user->parrain = $parrain;
-$user->save();
+        // Mettre à jour la colonne "parrain" de l'utilisateur nouvellement créé
+        $user->parrain = $parrain;
+        $user->save();
 
-// Retourner la réponse originale
-return $response;
-
-    return parent::register($request);
+        // Retourner la réponse originale
+        return $response;
+    }
 }
