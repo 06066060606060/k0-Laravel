@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Backpack\CRUD\app\Library\Auth\RegistersUsers;
@@ -94,10 +94,11 @@ public function register(Request $request)
     }
 
 
-    public function showRegistrationForm(Request $request)
+    public function showRegistrationForm()
     {
-        $parrain = $request->input('parrain');
+    $parrain = request()->input('parrain');
 
-        return view('vendor.backpack.base.auth.register', compact('parrain'));
+    return view('vendor.backpack.base.auth.register', compact('parrain'));
     }
+
 }
