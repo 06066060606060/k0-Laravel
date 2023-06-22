@@ -147,6 +147,8 @@ use Illuminate\Support\Facades\DB;
                     </form>
                     @if(!empty(request()->input('parrain')))
                     Parrain : {{ request()->input('parrain') }}
+                    @else
+                    @endif
                       @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
                 <br>
             @endif
