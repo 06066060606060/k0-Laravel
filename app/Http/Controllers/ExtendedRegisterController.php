@@ -50,8 +50,7 @@ class ExtendedRegisterController extends RegisterController
         'parrain'                          => $data['parrain'],
     ]);
 
-    dd($createdUser); // Ajout de la ligne de dd
-
+    var_dump($createdUser);
     return $createdUser;
 }
 
