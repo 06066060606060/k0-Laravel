@@ -36,6 +36,6 @@ class ExtendedRegisterController extends RegisterController
     }
     public function showRegistrationForm()
     {
-        return view('register');
+        return view('auth.register');
     }
 }
