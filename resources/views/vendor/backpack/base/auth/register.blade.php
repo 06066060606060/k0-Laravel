@@ -20,10 +20,6 @@ use Illuminate\Support\Facades\DB;
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
-                       <script>
-    alert("{{ request()->input('parrain') }}");
-</script>
-
                         <input type="hidden" name="parrain" value="{{ request()->input('parrain') }}">
                         <div class"form-group">
                         <div>
@@ -149,6 +145,8 @@ use Illuminate\Support\Facades\DB;
                         </div>
                         </span>
                     </form>
+                    @if(!empty(request()->input('parrain')))
+                    Parrain : {{ request()->input('parrain') }}
                       @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
                 <br>
             @endif
