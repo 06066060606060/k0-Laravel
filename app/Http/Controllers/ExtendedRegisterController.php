@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
@@ -14,16 +13,7 @@ class ExtendedRegisterController extends RegisterController
     protected $data = []; // the information we send to the view
 
     use RegistersUsers;
-    public function __construct()
-    {
-        $guard = backpack_guard_name();
 
-        $this->middleware("guest:$guard");
-
-        // Where to redirect users after login / registration.
-        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
-            : config('backpack.base.route_prefix', 'dashboard');
-    }
     public function validator(array $data)
     {
         $user_model_fqn = config('backpack.base.user_model_fqn');
@@ -41,9 +31,12 @@ class ExtendedRegisterController extends RegisterController
 
     protected function create(array $data)
 {
-    $createdUser = User::create([
+    $user_model_fqn = config('backpack.base.user_model_fqn');
+    $user = new $user_model_fqn();
+
+    $createdUser = $user->create([
         'name'                             => $data['name'],
- //       backpack_authentication_column()   => $data[backpack_authentication_column()],
+        backpack_authentication_column()   => $data[backpack_authentication_column()],
         'password'                         => bcrypt($data['password']),
         'parrain'                          => $data['parrain'],
     ]);
