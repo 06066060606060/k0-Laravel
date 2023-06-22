@@ -57,7 +57,7 @@ class ExtendedRegisterController extends RegisterController
 }
 
 
-    public function register(Request $request)
+public function register(Request $request)
 {
     // if registration is closed, deny access
     if (! config('backpack.base.registration_open')) {
@@ -66,13 +66,21 @@ class ExtendedRegisterController extends RegisterController
 
     $this->validator($request->all())->validate();
 
-    $user = $this->create($request->all());
+    $data = $request->all();
+
+    // Vérifier si le paramètre "parrain" existe et l'assigner à l'utilisateur créé
+    if ($request->has('parrain')) {
+        $data['parrain'] = $request->input('parrain');
+    }
+
+    $user = $this->create($data);
 
     event(new Registered($user));
     $this->guard()->login($user);
 
     return redirect($this->redirectPath());
 }
+
 
     
     /**
