@@ -23,7 +23,9 @@ return new class extends Migration
      *
      * @return void
      */
-    Schema::table('users', function (Blueprint $table) {
-        $table->renameColumn('parrain', 'parrain_temp');
-    });
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->renameColumn('parrain', 'parrain_temp');
+        });}
 };
