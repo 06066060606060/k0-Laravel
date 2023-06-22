@@ -11,7 +11,7 @@ class CheckIfAdmin
 {
     private function checkIfUserIsAdmin($user, $request)
     {
-        $parrain = $request->input('parrain');
+        //$parrain = $request->input('parrain');
         if ($user->role == 'admin') {
             // dd('admin');
             return true;
@@ -34,7 +34,7 @@ class CheckIfAdmin
                    // ($hrefText = 'Go to custom URL') // optional
                 )
             );
-            $user->parrain = $parrain;
+            //$user->parrain = $parrain;
 
             
             return true;
