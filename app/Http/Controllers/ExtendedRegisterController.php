@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Backpack\CRUD\app\Library\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Input;
 use Backpack\CRUD\app\Http\Controllers\Auth\RegisterController;
 
 class ExtendedRegisterController extends RegisterController
@@ -81,9 +80,10 @@ class ExtendedRegisterController extends RegisterController
         return backpack_auth();
     }
 
-    public function showRegistrationForm()
+    public function showRegistrationForm(Request $request)
     {
-        $parrain = Input::get('parrain');
+        $parrain = $request->input('parrain');
         return view('vendor.backpack.base.auth.register', compact('parrain'));
     }
+
 }
