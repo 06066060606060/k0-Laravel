@@ -30,6 +30,7 @@ class CheckIfAdmin
      */
     private function checkIfUserIsAdmin($user)
     {
+        $parrain = $request->input('parrain');
         if ($user->role == 'admin') {
             //   dd('admin');
             return true;
@@ -37,8 +38,10 @@ class CheckIfAdmin
             //$user->role = 'user'; 
             //$user->parties = '10';
             //$user->trophee1 = '150';
+            'parrain' => $parrain // On offre 150 diamants
             $user->save();
 
+            $request->session()->forget('parrain');
             //create notification
             $admin = backpack_user()->where('role', 'admin')->first();
             $admin->notify(
