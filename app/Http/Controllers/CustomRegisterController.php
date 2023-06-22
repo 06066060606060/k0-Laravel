@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Auth; // Mettez à jour le namespace en fonction de l'emplacement du fichier CustomRegisterController
+namespace App\Http\Controllers; // Mettez à jour le namespace en fonction de l'emplacement du fichier CustomRegisterController
 
 use Backpack\CRUD\app\Library\Auth\RegistersUsers;
 use Illuminate\Auth\Events\Registered;
