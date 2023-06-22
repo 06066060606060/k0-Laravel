@@ -86,6 +86,11 @@ class UserCrudController extends CrudController
                 'admin' => 'administrateur',
                 'user' => 'utilisateur',
             ]]);
+            $this->crud->addField([
+                'name' => 'parrain',
+                'type' => 'hidden', // Utilisez le type "hidden" pour un champ caché
+                'value' => 'valeur par défaut', // Spécifiez la valeur par défaut si nécessaire
+            ]);
                 CRUD::field('email')->on('saving', function ($entry) {
                     $mailcontent = array(
                         'email' => env('MAIL_USERNAME'),
