@@ -16,6 +16,6 @@ class ParrainageController extends Controller
         Session::put('parrain', $le_parrain);
         
         // Redirigez vers la page d'inscription ou toute autre page pertinente
-        return redirect()->route('inscription');
+        return redirect()->route('admin/register');
     }
 }
