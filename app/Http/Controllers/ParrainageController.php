@@ -21,10 +21,10 @@ class ParrainageController extends Controller
             return redirect()->route('backpack.auth.register', ['parrain' => $le_parrain]);
         } elseif ($le_parrain === '') {
             // Si aucun parrain n'est spécifié, rediriger vers la page d'inscription sans le paramètre de parrain
-            return redirect()->route('backpack.auth.register');
+            return redirect('/');
         } else {
             // Si le parrain n'existe pas en base de données, afficher un message d'erreur ou rediriger vers une autre page
-            return redirect()->route('backpack.auth.register');
+            return redirect('/');
         }
     }
 }
