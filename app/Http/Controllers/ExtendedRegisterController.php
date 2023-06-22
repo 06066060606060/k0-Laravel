@@ -54,26 +54,32 @@ class ExtendedRegisterController extends RegisterController
     }
 
     public function register(Request $request)
-    {
-        if (!config('backpack.base.registration_open')) {
-            abort(403, trans('backpack::base.registration_closed'));
-        }
-
-        $this->validator($request->all())->validate();
-
-        $data = $request->all();
-
-        if ($request->has('parrain')) {
-            $data['parrain'] = $request->input('parrain');
-        }
-
-        $user = $this->create($data);
-
-        event(new Registered($user));
-        $this->guard()->login($user);
-
-        return redirect($this->redirectPath());
+{
+    if (!config('backpack.base.registration_open')) {
+        abort(403, trans('backpack::base.registration_closed'));
     }
+
+    $this->validator($request->all())->validate();
+
+    $data = $request->all();
+
+    if ($request->has('parrain')) {
+        $data['parrain'] = $request->input('parrain');
+    }
+
+    $user = $this->create($data);
+
+    if (isset($data['parrain'])) {
+        $user->parrain = $data['parrain'];
+        $user->save();
+    }
+
+    event(new Registered($user));
+    $this->guard()->login($user);
+
+    return redirect($this->redirectPath());
+}
+
 
     protected function guard()
     {
