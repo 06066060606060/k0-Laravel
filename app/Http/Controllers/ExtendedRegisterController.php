@@ -11,7 +11,7 @@ class ExtendedRegisterController extends RegisterController
 {
     public function validator(array $data)
     {
-        $validator = parent::validator($data);
+        $validator = RegisterController::validator($data);
     
         $validator->addRules([
             'parrain' => ['nullable', 'exists:users,id'],
@@ -23,7 +23,7 @@ class ExtendedRegisterController extends RegisterController
 
     protected function create(array $data)
 {
-    $user = parent::create($data);
+    $user = RegisterController::create($data);
 
     $parrain = $data['parrain'] ?? null;
 
