@@ -92,6 +92,11 @@ public function register(Request $request)
     {
         return backpack_auth();
     }
-    
+
+
+    public function showRegistrationForm()
+    {
+    return view('vendor.backpack.base.auth.register');
+    }
 
 }

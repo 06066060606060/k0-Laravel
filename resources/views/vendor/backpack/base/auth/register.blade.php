@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\DB;
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
+                        @php
+                        $parrain = request()->input('parrain');
+                        @endphp
                         <input type="hidden" name="parrain" value="{{ $parrain }}">
                         <div class"form-group">
                         <div>
