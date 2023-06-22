@@ -64,7 +64,8 @@ class ExtendedRegisterController extends RegisterController
 
         event(new Registered($user));
         $this->guard()->login($user);
-
+        $user = $this->create($request->all());
+    dd($user);
         return redirect($this->redirectPath());
     }
 
