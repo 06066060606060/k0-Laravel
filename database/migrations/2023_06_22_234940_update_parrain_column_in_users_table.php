@@ -12,16 +12,21 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('parrain')->nullable(false)->change();
-        });
-    }
+{
+    Schema::table('users', function (Blueprint $table) {
+        $table->string('parrain')->nullable(false)->change();
+    });
+}
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->unsignedBigInteger('parrain')->nullable()->change();
+            //
         });
     }
 };
