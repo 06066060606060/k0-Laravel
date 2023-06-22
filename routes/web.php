@@ -8,7 +8,7 @@ use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
-use App\Controllers\ExtendedRegisterController;
+use App\Http\Controllers\ExtendedRegisterController;
 
 Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/admin/register', [ExtendedRegisterController::class, 'register']);
