@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Backpack\CRUD\app\Library\Auth\RegistersUsers;
-use Backpack\CRUD\app\Library\CrudPanel\Traits\Input;
+use Illuminate\Support\Facades\Input;
 use Backpack\CRUD\app\Http\Controllers\Auth\RegisterController;
 
 class ExtendedRegisterController extends RegisterController
