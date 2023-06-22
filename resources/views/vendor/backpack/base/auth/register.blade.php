@@ -20,6 +20,9 @@ use Illuminate\Support\Facades\DB;
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
+                        <script>
+                        alert({{ session('parrain')}});
+                        </script>
                         <input type="hidden" name="parrain" value="{{ session('parrain') }}">
                         <div class"form-group">
                         <div>
