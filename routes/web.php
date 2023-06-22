@@ -11,7 +11,7 @@ use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
 Route::group(['middleware' => ['web']], function () {
-    Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('register.auth.register');
+    Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register']);
 });
 
