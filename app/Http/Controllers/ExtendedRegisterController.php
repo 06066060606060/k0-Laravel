@@ -57,7 +57,7 @@ class ExtendedRegisterController extends RegisterController
     }
 
     $this->validator($request->all())->validate();
-
+    
     $data = $request->all();
 
     if ($request->has('parrain')) {
