@@ -5,23 +5,23 @@ use Illuminate\Support\Facades\Session;
 
 public function register(Request $request)
 {
-    // Récupérer les données du formulaire d'inscription
-    $data = $request->all();
+    $parrain = Session::get('parrain'); // Récupérer le parrain de la session
 
-    // Vérifier si un parrain est spécifié dans la requête
-    if ($request->has('parrain')) {
-        // Récupérer le pseudo du parrain depuis la requête
-        $parrain = $request->input('parrain');
+    // Appel de la méthode register du contrôleur parent pour effectuer le reste du processus d'inscription
+$response = parent::register($request);
 
-        // Ajouter le parrain à la liste des données à enregistrer dans la table "users"
-        $data['parrain'] = $parrain;
-    }
+// Récupérer l'utilisateur nouvellement créé
+$user = $response->original;
 
-    // Enregistrer l'utilisateur dans la table "users"
-    $user = User::create($data);
+// Récupérer le parrain de la session
+$parrain = Session::get('parrain');
 
-    // Autres actions d'inscription...
+// Mettre à jour la colonne "parrain" de l'utilisateur nouvellement créé
+$user->parrain = $parrain;
+$user->save();
 
-    // Rediriger vers la page de succès ou toute autre page appropriée
-    return redirect()->route('registration.success');
+// Retourner la réponse originale
+return $response;
+
+    return parent::register($request);
 }
