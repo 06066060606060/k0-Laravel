@@ -11,7 +11,7 @@ use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
 Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
-Route::post('/admin/register', [ExtendedRegisterController::class, 'register']);
+Route::post('/admin/register', [ExtendedRegisterController::class, 'backpack.auth.register']);
 
 Route::controller(GlobalController::class)->group(function(){
     Route::get('language/{locale}', function ($locale) {
