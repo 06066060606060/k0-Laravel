@@ -28,13 +28,15 @@ Route::controller(GlobalController::class)->group(function(){
         return redirect()->back();
     });
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
-    Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
+    Route::get('admin/register', function (Request $request) {
+        $le_parrain = $request->query('parrain'); // Récupérer la valeur du paramètre "parrain" de l'URL
+        
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
     
         if ($parrainExiste) {
             // Si le parrain existe, rediriger vers la méthode "setParrainageLink" du contrôleur
-            return app(ParrainageController::class)->setParrainageLink(request(), $le_parrain);
+            return app(ParrainageController::class)->setParrainageLink($request, $le_parrain);
         } else {
             // Si le parrain n'existe pas, rediriger vers une autre page ou afficher un message d'erreur
             return redirect()->route('backpack.auth.register');
