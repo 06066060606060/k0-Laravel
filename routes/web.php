@@ -27,7 +27,7 @@ Route::controller(GlobalController::class)->group(function(){
         return redirect()->back();
     });
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
-Route::get('/{name}', 'ParrainageController@setParrainageLink')->name('parrainage.link');
+Route::get('/{le_parrain}', 'ParrainageController@setParrainageLink')->name('parrainage.link');
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
