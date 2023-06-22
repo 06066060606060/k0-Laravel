@@ -1,10 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Backpack\CRUD\app\Http\Controllers\Auth\RegisterController;
 
 class ExtendedRegisterController extends RegisterController
 {
