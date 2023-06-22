@@ -4,8 +4,9 @@ namespace App\Controllers;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
 use Illuminate\Auth\Events\Registered;
+use App\Http\Controllers\Auth\RegisterController;
 
-class ExtendedRegisterController extends \Illuminate\Auth\RegisterController
+class ExtendedRegisterController extends RegisterController
 {
     public function validator(array $data)
     {
