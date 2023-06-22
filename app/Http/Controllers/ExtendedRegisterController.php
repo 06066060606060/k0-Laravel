@@ -53,6 +53,7 @@ class ExtendedRegisterController extends RegisterController
 
     public function register(Request $request)
     {
+        dd('test');
         // if registration is closed, deny access
         if (! config('backpack.base.registration_open')) {
             abort(403, trans('backpack::base.registration_closed'));
@@ -83,7 +84,6 @@ class ExtendedRegisterController extends RegisterController
 
     public function showRegistrationForm()
     {
-        dd('Test');
         return view('vendor.backpack.base.auth.register');
     }
 }
