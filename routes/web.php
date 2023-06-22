@@ -8,7 +8,7 @@ use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
-use App\Http\Controllers\ExtendedRegisterController;
+use App\Http\Controllers\Auth\ExtendedRegisterController;
 
 /*
 |--------------------------------------------------------------------------
