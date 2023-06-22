@@ -9,13 +9,19 @@ class ParrainageController extends Controller
 {
     public function setParrainageLink(Request $request, $le_parrain)
     {
-        // Stockez le nom d'utilisateur dans le localstorage ou tout autre moyen de stockage approprié
-        // Voici un exemple d'utilisation de la méthode "put" pour stocker dans le localstorage
-        
-        // Assurez-vous d'inclure la bibliothèque Illuminate\Support\Facades\Session en haut du fichier        
-        Session::put('parrain', $le_parrain);
-        
-        // Redirigez vers la page d'inscription ou toute autre page pertinente
-        return redirect()->route('backpack.auth.register', ['parrain' => $le_parrain]);
+        // Vérifier si le parrain existe dans la table "users"
+        $parrainExiste = User::where('name', $le_parrain)->exists();
+    
+        if ($parrainExiste) {
+            // Stocker le parrain dans la session
+            Session::put('parrain', $le_parrain);
+    
+            // Rediriger vers la page d'inscription avec le parrain comme paramètre
+            return redirect()->route('backpack.auth.register', ['parrain' => $le_parrain]);
+        } else {
+            // Rediriger vers la page d'inscription sans le paramètre de parrain
+            return redirect()->route('backpack.auth.register');
+        }
     }
+    
 }
