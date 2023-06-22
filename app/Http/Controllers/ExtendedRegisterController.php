@@ -94,7 +94,7 @@ public function register(Request $request)
     }
 
 
-    public function showRegistrationForm()
+    public function showRegistrationForm(Request $request)
     {
         $parrain = $request->input('parrain');
 
