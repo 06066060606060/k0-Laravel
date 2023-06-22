@@ -28,7 +28,7 @@ Route::controller(GlobalController::class)->group(function(){
         return redirect()->back();
     });
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
-    Route::get('/{le_parrain}', function ($le_parrain) {
+    Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
     
