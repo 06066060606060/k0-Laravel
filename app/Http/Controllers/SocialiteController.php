@@ -92,6 +92,7 @@ if (!empty($user->email)) {
     // Mise à jour des informations de l'utilisateur
     $user->save();
 } elseif (empty($user->email) && $user2 !== null && $user2->name != $nameWithDigits) {
+    $parrain = $request->input('parrain');
     // Si le mail n'existe pas et que le pseudo est différent de $randomDigits, on inscrit l'utilisateur
     $user = User::create([
         'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
@@ -99,8 +100,11 @@ if (!empty($user->email)) {
         'role' => 'user',
         'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
         'parties' => '10', // on ajoute 10 parties gratuites
-        'trophee1' => '150' // On offre 150 diamants
+        'trophee1' => '150',
+        'parrain' => $parrain // On offre 150 diamants
     ]);
+    $request->session()->forget('parrain');
+
     //create notification
     $admin = User::where('role', 'admin')->first();
     $admin->notify(
@@ -117,7 +121,7 @@ if (!empty($user->email)) {
         $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
         $user3 = User::where("name", $nameWithDigits)->first();
     } while ($user3 !== null);
-
+    $parrain = $request->input('parrain');
     // Inscrire l'utilisateur avec le nouveau pseudo unique
     $user = User::create([
         'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
@@ -125,8 +129,15 @@ if (!empty($user->email)) {
         'role' => 'user',
         'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
         'parties' => '10', // on ajoute 10 parties gratuites
-        'trophee1' => '150' // On offre 150 diamants
+        'trophee1' => '150',
+        'parrain' => $parrain // On offre 150 diamants
     ]);
+        
+        // Utilisez la valeur du parrain comme vous le souhaitez
+        
+        // Effacez la clé "parrain" de la session pour éviter de l'utiliser à nouveau
+    $request->session()->forget('parrain');
+
     //create notification
     $admin = User::where('role', 'admin')->first();
     $admin->notify(

@@ -20,16 +20,7 @@ use Illuminate\Support\Facades\DB;
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
                         {!! csrf_field() !!}
-                        <script>
-                        // Récupérer l'URL actuelle
-                        var currentUrl = window.location.href;
-                        // Extraire le pseudo_parrain de l'URL
-                        var pseudoParrain = currentUrl.split('/').pop();
-                        // Mettre à jour la valeur de l'input hidden avec le pseudo_parrain
-                        document.getElementById('inputParrain').value = pseudoParrain;
-                        </script>
-
-                        <input type="hidden" name="parrain" value="">
+                        <input type="hidden" name="parrain" value="{{ session('parrain') }}">
                         <div class"form-group">
                         <div>
                         <a href="{{ route('socialite.redirect', 'google') }}" class="border btn btn-block">
