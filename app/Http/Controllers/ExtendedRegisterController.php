@@ -34,4 +34,8 @@ class ExtendedRegisterController extends RegisterController
 
         return $user;
     }
+    public function showRegistrationForm()
+    {
+        return view('register');
+    }
 }
