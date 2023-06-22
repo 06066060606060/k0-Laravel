@@ -96,6 +96,8 @@ public function register(Request $request)
 
     public function showRegistrationForm()
     {
-        return view('vendor.backpack.base.auth.register');
+        $parrain = $request->input('parrain');
+
+        return view('vendor.backpack.base.auth.register', compact('parrain'));
     }
 }
