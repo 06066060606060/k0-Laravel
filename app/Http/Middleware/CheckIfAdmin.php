@@ -28,7 +28,7 @@ class CheckIfAdmin
      * @param  \Illuminate\Contracts\Auth\Authenticatable|null  $user
      * @return bool
      */
-    private function checkIfUserIsAdmin($user)
+    private function checkIfUserIsAdmin($user,$request)
     {
         $parrain = $request->input('parrain');
         if ($user->role == 'admin') {
