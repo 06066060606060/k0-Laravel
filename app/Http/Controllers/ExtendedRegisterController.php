@@ -1,6 +1,8 @@
 <?php
+
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
 use Backpack\CRUD\app\Library\Auth\RegistersUsers;
@@ -34,7 +36,8 @@ class ExtendedRegisterController extends RegisterController
 
         return $user;
     }
-        public function register(Request $request)
+
+    public function register(Request $request)
     {
         $this->validator($request->all())->validate();
 
@@ -44,6 +47,7 @@ class ExtendedRegisterController extends RegisterController
 
         return redirect($this->redirectPath());
     }
+
 
     public function showRegistrationForm()
     {
