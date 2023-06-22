@@ -8,8 +8,6 @@ use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
-use App\Http\Controllers\CustomAuthController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +27,6 @@ Route::controller(GlobalController::class)->group(function(){
         session()->put('locale', $locale);
         return redirect()->back();
     });
-    Route::post('register', [CustomAuthController::class, 'register'])->name('backpack.auth.register');
-
     Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
