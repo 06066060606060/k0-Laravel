@@ -16,6 +16,6 @@ class ParrainageController extends Controller
         Session::put('parrain', $le_parrain);
         
         // Redirigez vers la page d'inscription ou toute autre page pertinente
-        return redirect('https://gokdo.com/admin/register');
+        return redirect()->route('backpack.auth.register', ['parrain' => $le_parrain]);
     }
 }
