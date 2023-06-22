@@ -34,6 +34,17 @@ class ExtendedRegisterController extends RegisterController
 
         return $user;
     }
+        public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        $this->guard()->login($user);
+
+        return redirect($this->redirectPath());
+    }
+
     public function showRegistrationForm()
     {
         return view('vendor.backpack.base.auth.register');
