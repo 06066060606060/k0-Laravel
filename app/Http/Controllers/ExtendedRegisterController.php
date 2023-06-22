@@ -57,18 +57,19 @@ class ExtendedRegisterController extends RegisterController
         if (! config('backpack.base.registration_open')) {
             abort(403, trans('backpack::base.registration_closed'));
         }
-
+    
         $this->validator($request->all())->validate();
-
+    
         $user = $this->create($request->all());
-
+    
         event(new Registered($user));
         $this->guard()->login($user);
-        $user = $this->create($request->all());
-    dd($user);
+    
+        dd($user); // Débogage : affiche les informations de l'utilisateur créé
+    
         //return redirect($this->redirectPath());
     }
-
+    
     /**
      * Get the guard to be used during registration.
      *
