@@ -1,11 +1,11 @@
 <?php
-
 namespace App\Http\Controllers;
 
+use Backpack\CRUD\app\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
-class CustomAuthController extends Controller
+class CustomAuthController extends AuthController
 {
     public function register(Request $request)
     {
@@ -25,6 +25,8 @@ class CustomAuthController extends Controller
         $user->save();
 
         // Retourner la réponse originale
-        return $response;
+        return parent::register($request);
     }
+
+    // Autres méthodes du contrôleur...
 }
