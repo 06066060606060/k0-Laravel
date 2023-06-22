@@ -36,6 +36,7 @@ class User extends Authenticatable
         'trophee1',
         'trophee2',
         'trophee3',
+        'parrain',
     ];
 
     /**
