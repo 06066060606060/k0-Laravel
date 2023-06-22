@@ -8,7 +8,6 @@ use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
-use App\Http\Controllers\CustomRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +19,6 @@ use App\Http\Controllers\CustomRegisterController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::post('/admin/register', [CustomRegisterController::class, 'register'])->name('register');
-
 Route::controller(GlobalController::class)->group(function(){
     Route::get('language/{locale}', function ($locale) {
         app()->setLocale($locale);
