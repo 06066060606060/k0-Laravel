@@ -8,7 +8,7 @@ use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
-use App\Http\Controllers\Auth\ExtendedRegisterController;
+use App\Http\Controllers\Auth\CustomRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ use App\Http\Controllers\Auth\ExtendedRegisterController;
 |
 */
 
-Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('register');
+Route::post('/admin/register', [CustomRegisterController::class, 'register'])->name('register');
 
 Route::controller(GlobalController::class)->group(function(){
     Route::get('language/{locale}', function ($locale) {
