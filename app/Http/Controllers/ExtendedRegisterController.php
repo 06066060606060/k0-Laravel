@@ -43,12 +43,11 @@ class ExtendedRegisterController extends RegisterController
 {
     $createdUser = User::create([
         'name'                             => $data['name'],
-        backpack_authentication_column()   => $data[backpack_authentication_column()],
+ //       backpack_authentication_column()   => $data[backpack_authentication_column()],
         'password'                         => bcrypt($data['password']),
         'parrain'                          => $data['parrain'],
     ]);
 
-    var_dump($createdUser);
     return $createdUser;
 }
 
