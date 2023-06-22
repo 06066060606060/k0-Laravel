@@ -12,7 +12,7 @@ use App\Http\Controllers\ExtendedRegisterController;
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
-    Route::post('/admin/register', [ExtendedRegisterController::class, 'register']);
+    Route::post('/register', [ExtendedRegisterController::class, 'register']);
 });
 
 Route::controller(GlobalController::class)->group(function(){

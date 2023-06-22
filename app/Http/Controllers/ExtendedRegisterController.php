@@ -13,7 +13,16 @@ class ExtendedRegisterController extends RegisterController
     protected $data = []; // the information we send to the view
 
     use RegistersUsers;
+    public function __construct()
+    {
+        $guard = backpack_guard_name();
 
+        $this->middleware("guest:$guard");
+
+        // Where to redirect users after login / registration.
+        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo
+            : config('backpack.base.route_prefix', 'dashboard');
+    }
     public function validator(array $data)
     {
         $user_model_fqn = config('backpack.base.user_model_fqn');
