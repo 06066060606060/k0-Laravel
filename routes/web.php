@@ -28,8 +28,8 @@ Route::controller(GlobalController::class)->group(function(){
         return redirect()->back();
     });
     // Route::get('/', 'getAll')->name('getAll')->middleware('App\Http\Middleware\MyMiddleware');
-    Route::get('admin/register', function (Request $request) {
-        $le_parrain = $request->query('parrain'); // Récupérer la valeur du paramètre "parrain" de l'URL
+    Route::get('admin/register', function (\Illuminate\Http\Request $request) {
+        $le_parrain = $request->input('parrain'); // Récupérer la valeur du paramètre "parrain" de l'URL
         
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -42,6 +42,7 @@ Route::controller(GlobalController::class)->group(function(){
             return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
+    
 Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
