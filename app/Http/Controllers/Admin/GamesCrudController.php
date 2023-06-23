@@ -34,30 +34,17 @@ class GamesCrudController extends CrudController
     }
 
     function getFieldsData()
-{
-    $this->crud->addColumn([
-        'name' => 'image',
-        'label' => 'Miniature',
-        'type' => 'image',
-        'prefix' => 'storage/',
-        'height' => '80px',
-        'width' => 'auto',
-    ]);
+    {
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Miniature',
+            'type' => 'image',
+            'prefix' => 'storage/',
+            'height' => '80px',
+            'width' => 'auto',
 
-    // Récupérer les options de la colonne 'image'
-    $columnOptions = $this->crud->columnDetails('image')['options'];
-
-    // Modifier le nom du fichier si la fin est .mp4
-    if (isset($columnOptions['name']) && substr($columnOptions['name'], -4) === '.mp4') {
-        $columnOptions['name'] = substr_replace($columnOptions['name'], '.gif', -4);
-        // Vous pouvez également modifier d'autres options si nécessaire
-        // $columnOptions['prefix'] = str_replace('.mp4', '.gif', $columnOptions['prefix']);
+        ]);
     }
-
-    // Mettre à jour les options de la colonne 'image'
-    $this->crud->modifyColumn('image', ['options' => $columnOptions]);
-}
-
     /**
      * Define what happens when the List operation is loaded.
      * 
