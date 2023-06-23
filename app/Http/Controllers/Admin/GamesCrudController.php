@@ -34,29 +34,32 @@ class GamesCrudController extends CrudController
     }
 
     function getFieldsData()
-{
-    $this->crud->addColumn([
-        'name' => 'image',
-        'label' => 'Miniature',
-        'type' => 'image',
-        'prefix' => 'storage/',
-        'height' => '80px',
-        'width' => 'auto',
-    ]);
-
-    // Récupérer les données du tableau 'columns' de l'objet CrudPanel
-    $columns = $this->crud->columns;
-
-    // Parcourir les colonnes et remplacer .mp4 par .gif pour la colonne 'image'
-    foreach ($columns as &$column) {
-        if ($column['name'] === 'image') {
-            $column['name'] = str_replace('.mp4', '.gif', $column['name']);
-            // Vous pouvez également remplacer 'prefix' si nécessaire
-            // $column['prefix'] = str_replace('.mp4', '.gif', $column['prefix']);
+    {
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Miniature',
+            'type' => 'image',
+            'prefix' => 'storage/',
+            'height' => '80px',
+            'width' => 'auto',
+        ]);
+    
+        // Récupérer les détails de la colonne 'image'
+        $columnDetails = $this->crud->getColumns();
+    
+        // Parcourir les détails des colonnes et remplacer .mp4 par .gif pour la colonne 'image'
+        foreach ($columnDetails as &$details) {
+            if ($details['name'] === 'image') {
+                $details['name'] = str_replace('.mp4', '.gif', $details['name']);
+                // Vous pouvez également remplacer 'prefix' si nécessaire
+                // $details['prefix'] = str_replace('.mp4', '.gif', $details['prefix']);
+            }
         }
+    
+        // Mettre à jour les détails de la colonne 'image'
+        $this->crud->setColumns($columnDetails);
     }
-
-}
+    
 
       /**
      * Define what happens when the List operation is loaded.
