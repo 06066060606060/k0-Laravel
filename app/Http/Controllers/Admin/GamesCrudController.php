@@ -6,7 +6,6 @@ use App\Http\Requests\GamesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Illuminate\Support\Facades\Log;  //use
-use Backpack\CRUD\app\Library\CrudPanel\CrudColumn;
 
 /**
  * Class GamesCrudController
@@ -34,6 +33,7 @@ class GamesCrudController extends CrudController
         CRUD::setEntityNameStrings('jeux', 'jeux');
   
     }
+    use Backpack\CRUD\app\Library\CrudPanel\CrudColumn;
 
     function getFieldsData()
     {
