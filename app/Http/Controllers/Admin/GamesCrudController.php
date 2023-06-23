@@ -38,14 +38,25 @@ class GamesCrudController extends CrudController
         $this->crud->addColumn([
             'name' => 'image',
             'label' => 'Miniature',
-            'type' => 'image,video',
+            'type' => 'image',
             'prefix' => 'storage/',
             'height' => '80px',
             'width' => 'auto',
 
         ]);
+          // Récupérer les données de la colonne 'image'
+    $columnData = $this->crud->getColumnDetails('image');
+
+    // Parcourir les données et remplacer .mp4 par .gif
+    foreach ($columnData as &$data) {
+        $data['name'] = str_replace('.mp4', '.gif', $data['name']);
+        // Vous pouvez également remplacer 'prefix' si nécessaire
+        // $data['prefix'] = str_replace('.mp4', '.gif', $data['prefix']);
     }
-    /**
+
+    // Mettre à jour les données de la colonne 'image'
+    $this->crud->setColumnDetails('image', $columnData);
+}   /**
      * Define what happens when the List operation is loaded.
      * 
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
