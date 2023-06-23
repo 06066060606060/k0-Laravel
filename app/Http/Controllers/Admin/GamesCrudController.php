@@ -38,7 +38,7 @@ class GamesCrudController extends CrudController
         $this->crud->addColumn([
             'name' => 'image',
             'label' => 'Miniature',
-            'type' => 'image',
+            'type' => 'image,video',
             'prefix' => 'storage/',
             'height' => '80px',
             'width' => 'auto',
