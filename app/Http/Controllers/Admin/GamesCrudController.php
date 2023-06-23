@@ -34,17 +34,27 @@ class GamesCrudController extends CrudController
     }
 
     function getFieldsData()
-{
-    $this->crud->addColumn([
-        'name' => 'media',
-        'label' => 'Miniature',
-        'type' => 'file',
-        'prefix' => 'storage/',
-        'height' => '80px',
-        'width' => 'auto',
-        'accept' => 'image/*,video/*', // Accepter les fichiers de type image et vidéo
-    ]);
-}
+    {
+        // Colonne pour les images
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Image',
+            'type' => 'image',
+            'prefix' => 'storage/',
+            'height' => '80px',
+            'width' => 'auto',
+        ]);
+    
+        // Colonne pour les vidéos
+        $this->crud->addColumn([
+            'name' => 'video',
+            'label' => 'Vidéo',
+            'type' => 'video',
+            'width' => '100px',
+            // Autres paramètres spécifiques aux vidéos...
+        ]);
+    }
+    
 
     /**
      * Define what happens when the List operation is loaded.
