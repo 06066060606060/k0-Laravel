@@ -46,19 +46,20 @@ class GamesCrudController extends CrudController
             'width' => 'auto',
         ]);
     
-        // Récupérer les options de la colonne 'image'
-        $columnOptions = $this->crud->getField('image')->options;
+        // Récupérer les détails de la colonne 'image'
+        $columnDetails = $this->crud->getColumnDetails('image');
     
-        // Modifier les options de colonne si le format est .mp4
-        if (isset($columnOptions['name']) && strpos($columnOptions['name'], '.mp4') !== false) {
-            $columnOptions['name'] = str_replace('.mp4', '.gif', $columnOptions['name']);
-            // Vous pouvez également modifier d'autres options si nécessaire
-            // $columnOptions['prefix'] = str_replace('.mp4', '.gif', $columnOptions['prefix']);
+        // Modifier les détails de colonne si le format est .mp4
+        if (isset($columnDetails['name']) && strpos($columnDetails['name'], '.mp4') !== false) {
+            $columnDetails['name'] = str_replace('.mp4', '.gif', $columnDetails['name']);
+            // Vous pouvez également modifier d'autres détails si nécessaire
+            // $columnDetails['prefix'] = str_replace('.mp4', '.gif', $columnDetails['prefix']);
         }
     
-        // Mettre à jour les options de la colonne 'image'
-        $this->crud->modifyField('image', ['options' => $columnOptions]);
+        // Mettre à jour les détails de la colonne 'image'
+        $this->crud->modifyColumn('image', $columnDetails);
     }
+    
     
     
 
