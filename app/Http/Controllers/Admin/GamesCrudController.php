@@ -3,11 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\GamesRequest;
-use Illuminate\Support\Facades\Log;  //use
-use Backpack\CRUD\app\Library\CrudPanel\CrudColumn;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-
+use Illuminate\Support\Facades\Log;  //use
 /**
  * Class GamesCrudController
  * @package App\Http\Controllers\Admin
@@ -34,41 +32,33 @@ class GamesCrudController extends CrudController
         CRUD::setEntityNameStrings('jeux', 'jeux');
   
     }
-    
-    function getFieldsData()
-    {
-        $this->crud->addColumn([
-            'name' => 'image',
-            'label' => 'Miniature',
-            'type' => 'image',
-            'prefix' => 'storage/',
-            'height' => '80px',
-            'width' => 'auto',
-        ]);
-    
-        // Récupérer les colonnes du CrudPanel
-        $columns = $this->crud->getColumns();
-    
-        // Parcourir les colonnes et modifier les options si le format est .mp4
-        foreach ($columns as &$column) {
-            if ($column['name'] === 'image') {
-                if (isset($column['options']['name']) && strpos($column['options']['name'], '.mp4') !== false) {
-                    $column['options']['name'] = str_replace('.mp4', '.gif', $column['options']['name']);
-                    // Vous pouvez également modifier d'autres options si nécessaire
-                    // $column['options']['prefix'] = str_replace('.mp4', '.gif', $column['options']['prefix']);
-                }
-            }
-        }
-    
-        // Mettre à jour les colonnes dans l'objet CrudPanel
-        $this->crud->setColumns($columns);
-    }
-    
-    
-    
-    
 
-      /**
+    function getFieldsData()
+{
+    $this->crud->addColumn([
+        'name' => 'image',
+        'label' => 'Miniature',
+        'type' => 'image',
+        'prefix' => 'storage/',
+        'height' => '80px',
+        'width' => 'auto',
+    ]);
+
+    // Récupérer les options de la colonne 'image'
+    $columnOptions = $this->crud->columnDetails('image')['options'];
+
+    // Modifier le nom du fichier si la fin est .mp4
+    if (isset($columnOptions['name']) && substr($columnOptions['name'], -4) === '.mp4') {
+        $columnOptions['name'] = substr_replace($columnOptions['name'], '.gif', -4);
+        // Vous pouvez également modifier d'autres options si nécessaire
+        // $columnOptions['prefix'] = str_replace('.mp4', '.gif', $columnOptions['prefix']);
+    }
+
+    // Mettre à jour les options de la colonne 'image'
+    $this->crud->modifyColumn('image', ['options' => $columnOptions]);
+}
+
+    /**
      * Define what happens when the List operation is loaded.
      * 
      * @see  https://backpackforlaravel.com/docs/crud-operation-list-entries
