@@ -35,31 +35,31 @@ class GamesCrudController extends CrudController
   
     }
 
-function getFieldsData()
-{
-    $this->crud->addColumn([
-        'name' => 'image',
-        'label' => 'Miniature',
-        'type' => 'image',
-        'prefix' => 'storage/',
-        'height' => '80px',
-        'width' => 'auto',
-    ]);
-
-    // Récupérer les options de colonne pour la colonne 'image'
-    $columnOptions = $this->crud->fields['image']->options;
-
-    // Modifier les options de colonne si le format est .mp4
-    if (isset($columnOptions['name']) && strpos($columnOptions['name'], '.mp4') !== false) {
-        $columnOptions['name'] = str_replace('.mp4', '.gif', $columnOptions['name']);
-        // Vous pouvez également modifier d'autres options si nécessaire
-        // $columnOptions['prefix'] = str_replace('.mp4', '.gif', $columnOptions['prefix']);
+    function getFieldsData()
+    {
+        $this->crud->addColumn([
+            'name' => 'image',
+            'label' => 'Miniature',
+            'type' => 'image',
+            'prefix' => 'storage/',
+            'height' => '80px',
+            'width' => 'auto',
+        ]);
+    
+        // Récupérer les options de la colonne 'image'
+        $columnOptions = $this->crud->getField('image')->options;
+    
+        // Modifier les options de colonne si le format est .mp4
+        if (isset($columnOptions['name']) && strpos($columnOptions['name'], '.mp4') !== false) {
+            $columnOptions['name'] = str_replace('.mp4', '.gif', $columnOptions['name']);
+            // Vous pouvez également modifier d'autres options si nécessaire
+            // $columnOptions['prefix'] = str_replace('.mp4', '.gif', $columnOptions['prefix']);
+        }
+    
+        // Mettre à jour les options de la colonne 'image'
+        $this->crud->modifyField('image', ['options' => $columnOptions]);
     }
-
-    // Mettre à jour les options de colonne pour la colonne 'image'
-    $this->crud->fields['image']->options = $columnOptions;
-}
-
+    
     
 
       /**
