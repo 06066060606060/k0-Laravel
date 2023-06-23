@@ -46,8 +46,8 @@ class GamesCrudController extends CrudController
             'width' => 'auto',
         ]);
     
-        // Récupérer les détails de la colonne 'image'
-        $columns = $this->crud->columns;
+        // Récupérer les colonnes du CrudPanel
+        $columns = $this->crud->getColumns();
     
         // Parcourir les colonnes et modifier les options si le format est .mp4
         foreach ($columns as &$column) {
@@ -61,7 +61,7 @@ class GamesCrudController extends CrudController
         }
     
         // Mettre à jour les colonnes dans l'objet CrudPanel
-        $this->crud->columns = $columns;
+        $this->crud->setColumns($columns);
     }
     
     
