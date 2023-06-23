@@ -112,9 +112,11 @@
                                                 <tr>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap rate-container">
-
-                                                        @php $imagesx =   $star->image[0] ?? null; @endphp
-                                                        <img src="{{ asset('storage/' . $imagesx) }}" class="w-32 h-auto">
+                                                         @php $imagesb =  $star->image[0] ?? null;
+                                                            $imgiUrl = asset('storage/' . $imagesb);
+                                                            $gifiUrl = str_replace(".mp4", ".gif", $imgiUrl);
+                                                        @endphp                         
+                                                        <img src="{{ $gifiUrl }}" class="w-32 h-auto">
                                                     </td>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
