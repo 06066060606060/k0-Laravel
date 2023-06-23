@@ -29,7 +29,6 @@ class Localization
             // Récupérer la langue préférée du navigateur
             $acceptHeader = AcceptHeader::fromString($request->server->get('HTTP_ACCEPT_LANGUAGE'));
             $browserLocales = $acceptHeader->get('language');
-            dd($request->server->get('HTTP_ACCEPT_LANGUAGE'));
     
             // Utiliser la langue par défaut de l'application si aucune langue du navigateur n'est disponible
             if (!empty($browserLocales)) {
