@@ -56,7 +56,7 @@ class GamesCrudController extends CrudController
         }
     }
 
-
+}
 
       /**
      * Define what happens when the List operation is loaded.
