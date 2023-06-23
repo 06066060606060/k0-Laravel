@@ -6,6 +6,8 @@ use App\Http\Requests\GamesRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 use Illuminate\Support\Facades\Log;  //use
+use Backpack\CRUD\app\Library\CrudPanel\CrudColumn;
+
 /**
  * Class GamesCrudController
  * @package App\Http\Controllers\Admin
@@ -33,32 +35,31 @@ class GamesCrudController extends CrudController
   
     }
 
-    function getFieldsData()
-    {
-        $this->crud->addColumn([
-            'name' => 'image',
-            'label' => 'Miniature',
-            'type' => 'image',
-            'prefix' => 'storage/',
-            'height' => '80px',
-            'width' => 'auto',
-        ]);
-    
-        // Récupérer les détails de la colonne 'image'
-        $columnDetails = $this->crud->getColumns();
-    
-        // Parcourir les détails des colonnes et remplacer .mp4 par .gif pour la colonne 'image'
-        foreach ($columnDetails as &$details) {
-            if ($details['name'] === 'image') {
-                $details['name'] = str_replace('.mp4', '.gif', $details['name']);
-                // Vous pouvez également remplacer 'prefix' si nécessaire
-                // $details['prefix'] = str_replace('.mp4', '.gif', $details['prefix']);
-            }
-        }
-    
-        // Mettre à jour les détails de la colonne 'image'
-        $this->crud->setColumns($columnDetails);
+function getFieldsData()
+{
+    $this->crud->addColumn([
+        'name' => 'image',
+        'label' => 'Miniature',
+        'type' => 'image',
+        'prefix' => 'storage/',
+        'height' => '80px',
+        'width' => 'auto',
+    ]);
+
+    // Récupérer les options de colonne pour la colonne 'image'
+    $columnOptions = $this->crud->fields['image']->options;
+
+    // Modifier les options de colonne si le format est .mp4
+    if (isset($columnOptions['name']) && strpos($columnOptions['name'], '.mp4') !== false) {
+        $columnOptions['name'] = str_replace('.mp4', '.gif', $columnOptions['name']);
+        // Vous pouvez également modifier d'autres options si nécessaire
+        // $columnOptions['prefix'] = str_replace('.mp4', '.gif', $columnOptions['prefix']);
     }
+
+    // Mettre à jour les options de colonne pour la colonne 'image'
+    $this->crud->fields['image']->options = $columnOptions;
+}
+
     
 
       /**
