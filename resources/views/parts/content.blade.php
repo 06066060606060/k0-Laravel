@@ -6,7 +6,9 @@
 @else
     <div class="z-0 one"></div>
 @endif
-
+@php
+dd($request->server->get('HTTP_ACCEPT_LANGUAGE'));
+@endphp
 <div x-data="{ modelOpen: false }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
 
     <template x-if="!localStorage.getItem('languageSelected')">
