@@ -22,8 +22,11 @@
                  <div class="flex flex-col w-full mb-20 text-center">
                      <section class="p-4 overflow-hidden text-gray-100 bg-gray-800 rounded-md">
                          <div class="flex justify-between">
-                             @php $imagesb =  $game->image[0] ?? null; @endphp
-                             <img src="./storage/{{ $imagesb }}" alt="" class="block w-32 pl-1 mb-4 rounded-md"
+                         @php $imagesb =  $game->image[0] ?? null;
+                                $imgiUrl = asset('storage/' . $imagesb);
+                                $gifiUrl = str_replace(".mp4", ".gif", $imgiUrl);
+                             @endphp                            
+                             <img src="{{ $gifiUrl }}" alt="" class="block w-32 pl-1 mb-4 rounded-md"
                                  onerror="this.src='/img/empty.png'">
                              <h1 class="block pt-2 pr-2 text-4xl font-extrabold text-gray-50">{{ $game->name }}</h1>
                          </div>
