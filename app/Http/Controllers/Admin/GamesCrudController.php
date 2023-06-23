@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Log;  //use
 use Backpack\CRUD\app\Library\CrudPanel\CrudColumn;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
-use CrudColumn;
 
 /**
  * Class GamesCrudController
@@ -35,7 +34,7 @@ class GamesCrudController extends CrudController
         CRUD::setEntityNameStrings('jeux', 'jeux');
   
     }
-
+    
     function getFieldsData()
     {
         $this->crud->addColumn([
