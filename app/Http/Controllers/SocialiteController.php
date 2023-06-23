@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+
+
 use Socialite;
 
-
 use App\Models\User;
-
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class SocialiteController extends Controller
@@ -151,7 +150,7 @@ if (!empty($user->email)) {
  }
 
         # 4. On connecte l'utilisateur
-        Auth::login($user);
+        backpack_auth()->login($user);
 
         # 5. On redirige l'utilisateur vers /home avec un message de succès
         return redirect('/');
