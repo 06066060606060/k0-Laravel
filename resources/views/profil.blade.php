@@ -79,10 +79,10 @@
                                 </div>
                             </div>
                         </div>
-                    @if(!isset(backpack_auth()->user()->parrain))
+                    @if(isset($leparrain))
                     @else
                     <p class="flex py-4 text-xs text-white border-b border-gray-500">
-                        {{__('Parrain')}} : {{ backpack_auth()->user()->parrain }}
+                        {{__('Parrain')}} : {{ $leparrain }}
                     </p>
                     @endif
                     </div>

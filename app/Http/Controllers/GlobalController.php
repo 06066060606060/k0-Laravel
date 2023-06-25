@@ -375,6 +375,7 @@ class GlobalController extends Controller
         if (backpack_auth()->check()) {
             $concours = Concours::first(); // TOUTES LES COMMANDES
             $idjoueur= backpack_auth()->user()->id;
+            $leparrain= backpack_auth()->user()->parrain;
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
             $scores = Scores::where('user_id', $userid)
@@ -402,7 +403,7 @@ class GlobalController extends Controller
             
             return view(
                 'profil',
-                compact('concours', 'idjoueur', 'scory', 'scores', 'orders', 'infos', 'paiements')
+                compact('leparrain', 'concours', 'idjoueur', 'scory', 'scores', 'orders', 'infos', 'paiements')
             );
         } else {
             return redirect('/');
