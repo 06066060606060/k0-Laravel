@@ -298,31 +298,22 @@
                           @endif
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
-                                    <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                    <th style="width:50%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         {{__('Pseudo')}}
                                     </th>
-                                    <th style="width:33%;" class="px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
-                                        {{__('Date')}}
-                                    </th>
-                                    <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                    <th style="width:50%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         {{__('Gain')}}
                                     </th>
                                 </tr>
                             </thead>
 
                             <tbody class="divide-y divide-gray-500">
-                                @forelse ($scores as $score)
+                                @forelse($joueursParraines as $joueur)
                                     <tr>
-                                        <td style="width:33%;" class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{ $score->game->name }}
+                                        <td style="width:50%;" class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                            {{ $joueur->name }}
                                         </td>
-                                        <td style="width:33%;">
-                                            <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
-                                                <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
-                                            </strong>
-
-                                        </td>
-                                        <td style="width:33%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
+                                        <td style="width:50%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
                                         20 <img src="img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
                                         </td>
                                     </tr>
@@ -331,8 +322,6 @@
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
                                             {{__('Aucun filleul enregistré')}}
                                         </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;</td>
-
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;
                                         </td>
                                     </tr>
