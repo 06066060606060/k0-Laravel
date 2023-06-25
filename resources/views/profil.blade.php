@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                         </div>
-                    @if(isset($leparrain))
+                    @if(!isset($leparrain))
                     @else
                     <p class="flex py-4 text-xs text-white border-b border-gray-500">
                         {{__('Parrain')}} : {{ $leparrain }}
