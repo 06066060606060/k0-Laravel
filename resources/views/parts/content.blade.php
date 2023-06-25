@@ -96,11 +96,11 @@
         <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
 
             <div class="flex flex-col w-full text-center">
-                <h1 class="mb-4 text-xl font-bold text-gray-100 md:text-5xl title-font">{{__('Parrainage')}}</h1>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
                 
             </div>
             <div class="flex-wrap m-full">
-            {{__('Remportez')}} 20 <img src='img/gem10.png' class='w-6 h-3'> {{__('par ami parrainé !')}} <br>
+            {{__('Remportez')}} 20 <img src='img/gem10.png' class='display-inline w-6 h-3'> {{__('par ami parrainé !')}} <br>
             {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}
             <i>{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
             </div>
