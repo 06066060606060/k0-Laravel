@@ -101,7 +101,7 @@
             <table class="mt-2 mx-auto m-full text-s">
                 <tbody>
                     <tr>
-                        <td class="pr-4">
+                        <td>
                         @if($isMobile == true)
                             <i class="fas fa-2x fa-user-group text-white"></i>
                         @else
