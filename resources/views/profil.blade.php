@@ -288,6 +288,64 @@
 
                 </div>
 
+                <h1 class="py-4 text-lg font-bold text-white">{{__('Mes filleuls')}}:</h1>
+                <div class="flex flex-col w-full mt-0 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
+                    <div class="overflow-x-auto rounded-t-lg">
+                    @if($isMobile == true)
+                                     <table style="width:500px;" class="min-w-full py-2 text-sm divide-y divide-gray-200">
+                          @else
+                                     <table style="width:500px;" class="min-w-full py-2 text-sm divide-y divide-gray-200">
+                          @endif
+                            <thead class="bg-gray-100 rounded-t-lg">
+                                <tr>
+                                    <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                        {{__('Pseudo')}}
+                                    </th>
+                                    <th style="width:33%;" class="px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
+                                        {{__('Date')}}
+                                    </th>
+                                    <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
+                                        {{__('Gain')}}
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody class="divide-y divide-gray-500">
+                                @forelse ($scores as $score)
+                                    <tr>
+                                        <td style="width:33%;" class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                            {{ $score->game->name }}
+                                        </td>
+                                        <td style="width:33%;">
+                                            <strong class="flex md:px-3 py-1.5 text-xs font-bold  text-white max-w-[180px]">
+                                                <p class="ml-2 ">{{ $score->created_at->format('d/m H:i') }}</p> 
+                                            </strong>
+
+                                        </td>
+                                        <td style="width:33%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
+                                        20 <img src="img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+                                        </td>
+                                    </tr>
+                                @empty
+                                    <tr>
+                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
+                                            {{__('Aucun filleul enregistré')}}
+                                        </td>
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;</td>
+
+                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;
+                                        </td>
+                                    </tr>
+                                @endforelse
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
                 <h1 class="pt-4 text-lg font-bold text-white">{{__('Mon adresse de livraison')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
                     <form action="save_address" class="container flex flex-col mx-auto" method="POST">
