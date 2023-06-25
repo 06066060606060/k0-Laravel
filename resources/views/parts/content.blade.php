@@ -101,7 +101,7 @@
             </div>
             <div class="flex-wrap m-full">
             {{__('Remportez')}} 20 <img src='img/gem5' class='w-8 h-6'> {{__('par ami parrainé !')}} <br>
-            {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ backpack_auth()->user->name }}
+            {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}
             <i>{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
             </div>
         </div>
