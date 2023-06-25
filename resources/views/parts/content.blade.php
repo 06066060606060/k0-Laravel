@@ -97,24 +97,19 @@
 
             <div class="flex flex-col w-full text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
-            </div>
-            
-            <div class="flex-wrap m-full">
-            
+            </div>            
             <table class="mt-2 mx-auto w-full">
                 <tbody>
                     <tr>
                         <td class="pr-4">
                             <i class="fas fa-3x fa-user-group text-white"></i>
                         </td>
-                        <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé!')}}<br>
+                        <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
                         <b>{{__('Votre lien de parrainage :')}}</b> https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
                         <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
                     </tr>
                 </tbody>
             </table>
-
-            </div>
         </div>
     </section>
 </container>
