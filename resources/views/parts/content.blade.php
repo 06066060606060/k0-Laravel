@@ -97,16 +97,35 @@
 
             <div class="flex flex-col w-full text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
-                
             </div>
+            
             <div class="flex-wrap m-full">
-            {{__('Remportez')}} 20 <img src='img/gem10.png' class='display-inline w-6 h-3'> {{__('par ami parrainé !')}} <br>
-            {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}
-            <i>{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
+                {{__('Remportez')}} 20 <img src='img/gem10.png' class='display-inline w-6 h-3 align-middle' alt='Gem 10'> {{__('par ami parrainé!')}} <br>
+                {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}
+                <i>{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
             </div>
+            
+            <table class="mt-8 mx-auto">
+                <tbody>
+                    <tr>
+                        <td class="pr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </td>
+                        <td class="pl-4 text-white">{{__('Texte de la première ligne')}}</td>
+                    </tr>
+                    <tr>
+                        <td class="pr-4">
+                            <i class="fas fa-user text-white"></i>
+                        </td>
+                        <td class="pl-4 text-white">{{__('Texte de la deuxième ligne')}}</td>
+                    </tr>
+                    <!-- Ajoutez autant de lignes que nécessaire -->
+                </tbody>
+            </table>
         </div>
     </section>
 </container>
+
 
 @if($countevent>0)
 <container class="mx-auto max-w-7xl" id="win">
