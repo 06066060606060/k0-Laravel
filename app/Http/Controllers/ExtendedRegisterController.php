@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Validator;
@@ -69,6 +71,7 @@ class ExtendedRegisterController extends RegisterController
     if (isset($data['parrain'])) {
         $user->parrain = $data['parrain'];
         $user->save();
+        User::where('name', $data['parrain'])->update(['trophee2' => DB::raw('trophee2 + 20')]);
     }
 
     event(new Registered($user));
