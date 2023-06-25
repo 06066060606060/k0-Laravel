@@ -19,7 +19,7 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
     use HasUuids;
     public $timestamps = true;
-   
+
     /**
      * The attributes that are mass assignable.
      *
@@ -68,6 +68,6 @@ class User extends Authenticatable
         return 'notifications admin';
     }
 
-   
-   
+
+
 }

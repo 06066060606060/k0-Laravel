@@ -8,6 +8,13 @@ use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
+use App\Http\Controllers\ExtendedRegisterController;
+
+Route::group(['middleware' => ['web']], function () {
+    Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
+    Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
+    Route::post('/register', [ExtendedRegisterController::class, 'register']);
+});
 
 Route::controller(GlobalController::class)->group(function(){
     Route::get('language/{locale}', function ($locale) {
