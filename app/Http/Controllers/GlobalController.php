@@ -376,11 +376,8 @@ class GlobalController extends Controller
             $concours = Concours::first(); // TOUTES LES COMMANDES
             $idjoueur= backpack_auth()->user()->id;
             $leparrain= backpack_auth()->user()->parrain;
-            if ($leparrain) {
-                $joueursParraines = User::where('parrain', $leparrain)->get();
-            } else {
-                $joueursParraines = collect(); // Si $leparrain est vide, initialisez la collection vide
-            }
+            $leparrainne= backpack_auth()->user()->name;
+            $joueursParraines = User::where('parrain', $leparrainne)->get();
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
             $scores = Scores::where('user_id', $userid)
