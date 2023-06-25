@@ -98,7 +98,7 @@
             <div class="flex flex-col w-full text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
             </div>            
-            <table class="mt-2 mx-auto w-full">
+            <table class="mt-2 mx-auto m-full">
                 <tbody>
                     <tr>
                         <td class="pr-4">
