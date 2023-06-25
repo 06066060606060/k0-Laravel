@@ -102,17 +102,17 @@
             <div class="flex-wrap m-full">
             
             <table class="mt-8 mx-auto w-full">
-    <tbody>
-        <tr>
-            <td class="pr-4">
-                <i class="fas fa-3x fa-user-group text-white"></i>
-            </td>
-            <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-6 h-3 align-middle' alt='Gem 10'> {{__('par ami parrainé!')}}<br>
-            {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
-            <i>{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
-        </tr>
-    </tbody>
-</table>
+                <tbody>
+                    <tr>
+                        <td class="pr-4">
+                            <i class="fas fa-3x fa-user-group text-white"></i>
+                        </td>
+                        <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-6 h-3 align-middle' alt='Gem 10'> {{__('par ami parrainé!')}}<br>
+                        {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
+                        <i style="color: red; font-size: 12px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
+                    </tr>
+                </tbody>
+            </table>
 
             </div>
         </div>
