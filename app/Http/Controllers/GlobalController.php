@@ -33,7 +33,7 @@ class GlobalController extends Controller
     {
         $concours = Concours::All(); // TOUTES LES COMMANDES
         $winner = User::all(); //DERNIERS GAGNANTS JEUX
-        
+        $lejoueur = backpack_auth()->user()->name;
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')->join('users', 'users.id', '=', 'scores.user_id')->get();
         
@@ -53,7 +53,7 @@ class GlobalController extends Controller
         ->count();
         // Jeux mis en avant    
         $starred = Games::where('status', 1)->inRandomOrder()->first();
-        return view('index', compact('scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
