@@ -108,8 +108,8 @@
                             <i class="fas fa-3x fa-user-group text-white"></i>
                         </td>
                         <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-6 h-3 align-middle' alt='Gem 10'> {{__('par ami parrainé!')}}<br>
-                        {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
-                        <i style="color: red; font-size: 12px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
+                        <b>{{__('Votre lien de parrainage :')}}</b> https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
+                        <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
                     </tr>
                 </tbody>
             </table>
