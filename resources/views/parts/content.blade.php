@@ -100,10 +100,6 @@
             </div>
             
             <div class="flex-wrap m-full">
-                {{__('Remportez')}} 20 <img src='img/gem10.png' class='display-inline w-6 h-3 align-middle' alt='Gem 10'> {{__('par ami parrainé!')}} <br>
-                {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}
-                <i>{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
-            </div>
             
             <table class="mt-8 mx-auto">
                 <tbody>
@@ -118,6 +114,7 @@
                     </tr>
                 </tbody>
             </table>
+            </div>
         </div>
     </section>
 </container>
