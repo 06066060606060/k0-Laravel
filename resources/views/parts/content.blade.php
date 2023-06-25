@@ -101,7 +101,7 @@
             
             <div class="flex-wrap m-full">
             
-            <table class="mt-8 mx-auto w-full">
+            <table class="mt-2 mx-auto w-full">
                 <tbody>
                     <tr>
                         <td class="pr-4">
