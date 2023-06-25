@@ -105,7 +105,7 @@
                 <tbody>
                     <tr>
                         <td class="pr-4" colspan="3">
-                            <i class="fas fa-user-group text-white"></i>
+                            <i class="fas fa-user-group text-white text-4xl"></i>
                         </td>
                     </tr>
                     <tr>
