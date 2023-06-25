@@ -91,6 +91,23 @@
 
 
 @if (backpack_auth()->check())
+<container class="mx-auto max-w-7xl" id="win">
+    <section>
+        <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+
+            <div class="flex flex-col w-full text-center">
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Parrainage')}}</h1>
+                
+            </div>
+            <div class="flex-wrap m-full">
+            {{__('Remportez')}} 20 <img src='img/gem5' class='w-8 h-6'> {{__('par ami parrainé !')}} <br>
+            {{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ backpack_auth()->user->name }}
+            <i>{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
+            </div>
+        </div>
+    </section>
+</container>
+
 @if($countevent>0)
 <container class="mx-auto max-w-7xl" id="win">
     <section>
