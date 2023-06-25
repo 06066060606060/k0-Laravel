@@ -102,7 +102,11 @@
                 <tbody>
                     <tr>
                         <td class="pr-4">
+                        @if($isMobile == true)
+                            <i class="fas fa-2x fa-user-group text-white"></i>
+                        @else
                             <i class="fas fa-3x fa-user-group text-white"></i>
+                        @endif
                         </td>
                         <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
                         <b>{{__('Votre lien de parrainage :')}}</b> https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
