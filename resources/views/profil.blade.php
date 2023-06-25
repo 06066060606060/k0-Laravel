@@ -62,7 +62,7 @@
                             <img src="img/coin10.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
-                        @if(!isset($leparrain))
+                        @if(empty($leparrain))
                         @else
                             <p class="flex py-4 text-xs text-white border-t border-gray-500">
                               <b>  {{__('Parrain :')}} &nbsp;</b> {{ $leparrain }}
