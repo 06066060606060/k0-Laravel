@@ -104,12 +104,14 @@
             <table class="mt-8 mx-auto">
                 <tbody>
                     <tr>
-                        <td class="pr-4">
+                        <td class="pr-4" colspan="3">
                             <i class="fas fa-user-group text-white"></i>
                         </td>
+                    </tr>
+                    <tr>
                         <td class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png' class='display-inline w-6 h-3 align-middle' alt='Gem 10'> {{__('par ami parrainé!')}}</td>
-                        <td class="pl-4 text-white">{{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}</td>                      
-                        <td class="pl-4 text-white"><i>{{__("Toute triche sera synonyme d'exclusion du site")}}</td>
+                    </tr><tr><td class="pl-4 text-white">{{__('Votre lien de parrainage :')}} https://gokdo.com/admin/register?parrain={{ $lejoueur }}</td>                      
+                    </tr><tr><td class="pl-4 text-white"><i>{{__("Toute triche sera synonyme d'exclusion du site")}}</td>
                     </tr>
                 </tbody>
             </table>
