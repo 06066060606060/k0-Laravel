@@ -104,8 +104,8 @@
             <table class="mt-8 mx-auto w-full">
                 <tbody>
                     <tr>
-                        <td class="pr-4" colspan="3">
-                            <i class="fas fa-user-group text-white text-4xl"></i>
+                        <td class="pr-4" cellspan="2">
+                            <i class="fas fa-user-group text-white text-5xl"></i>
                         </td>
                     </tr>
                     <tr>
