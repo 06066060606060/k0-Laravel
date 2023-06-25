@@ -62,6 +62,13 @@
                             <img src="img/coin10.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
+                        @if(!isset($leparrain))
+                        @else
+                            <p class="flex py-4 text-xs text-white border-t border-gray-500">
+                                {{__('Parrain')}} : {{ $leparrain }}
+                            </p>
+                        @endif
+
                         <div class="flex py-2">
                             <div
                                 class="flex w-full max-w-sm py-2 bg-gray-800 border border-gray-700 rounded-lg shadow-md">
@@ -72,13 +79,6 @@
                                             d="M20 3.36667C10.8167 3.36667 3.3667 10.8167 3.3667 20C3.3667 29.1833 10.8167 36.6333 20 36.6333C29.1834 36.6333 36.6334 29.1833 36.6334 20C36.6334 10.8167 29.1834 3.36667 20 3.36667ZM19.1334 33.3333V22.9H13.3334L21.6667 6.66667V17.1H27.25L19.1334 33.3333Z" />
                                     </svg>
                                 </div>
-                                @if(!isset($leparrain))
-                                @else
-                                <p class="flex py-4 text-xs text-white border-t border-gray-500">
-                                    {{__('Parrain')}} : {{ $leparrain }}
-                                </p>
-                                @endif
-
                                 <div class="px-4 pb-1 ml-1">
                                     <span class="text-xs font-semibold text-red-400">{{__('Supprimer mon compte')}}</span>
                                     @include('parts.delete')
