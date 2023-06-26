@@ -157,7 +157,7 @@ use Illuminate\Support\Facades\DB;
     @if($parrain)
         <center><b>{{__('Parrain :')}} {{ request()->input('parrain') }} </b></center>
     @else
-        <div class="alert alert-danger">
+        <div class="alert alert-danger mb-0 mt-4 text-center">
             Le parrain indiqué n'existe pas.
         </div>
     @endif
