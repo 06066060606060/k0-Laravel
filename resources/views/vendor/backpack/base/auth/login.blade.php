@@ -3,12 +3,25 @@
 @section('content') 
     {!! RecaptchaV3::initJs() !!}
 @php $locale = app()->getLocale();
-               if($locale == 'en') { $iclassic = 'Classic Login'; }
-               elseif($locale == 'fr') { $iclassic = 'Connexion Classique'; }
-               elseif($locale == 'es') { $iclassic = 'Conexión clásico'; }
-               elseif($locale == 'de') { $iclassic = 'Klassische Anmeldung'; }
-               elseif($locale == 'it') { $iclassic = 'Accesso Classico'; }
-               else {}
+switch ($locale) {
+    case 'en':
+        $iclassic = 'Classic Login';
+        break;
+    case 'fr':
+        $iclassic = 'Connexion Classique';
+        break;
+    case 'es':
+        $iclassic = 'Conexión clásico';
+        break;
+    case 'de':
+        $iclassic = 'Klassische Anmeldung';
+        break;
+    case 'it':
+        $iclassic = 'Accesso Classico';
+        break;
+    default:
+        break;
+}
 @endphp     
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
