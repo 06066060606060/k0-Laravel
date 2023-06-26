@@ -123,11 +123,11 @@
                                     @endif
                                 </div>
                             </div>
-                                                       @if ($errors->has('parrain'))
-                                <div class="alert alert-danger">
-                                    Le parrain indiqué n'existe pas.
-                                </div>
-                            @endif
+                                    @if ($errors->has('parrain'))
+                                        <span class="invalid-feedback">
+                                            <strong>{{ $errors->first('parrain') }}</strong>
+                                        </span>
+                                    @endif
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="btn btn-block btn-primary">
