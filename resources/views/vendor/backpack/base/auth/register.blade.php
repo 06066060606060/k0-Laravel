@@ -137,7 +137,7 @@ use Illuminate\Support\Facades\DB;
                         </div>
                         @if ($errors->has('parrain'))
                             <span class="invalid-feedback">
-                            <strong>{{ $errors->first('parrain') }}</strong>
+                            <strong>Le parrain entré n'existe pas !</strong>
                             </span>
                         @endif
                         <div class="form-group">
