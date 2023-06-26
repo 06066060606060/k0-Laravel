@@ -124,6 +124,11 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                           @if ($errors->has('parrain'))
+                                <div class="alert alert-danger">
+                                    Le parrain indiqué n'existe pas.
+                                </div>
+                            @endif
                                 <div>
                                     <button type="submit" class="btn btn-block btn-primary">
                                         {{ trans('backpack::base.login') }}
