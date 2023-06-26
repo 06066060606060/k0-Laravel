@@ -123,11 +123,6 @@
                                     @endif
                                 </div>
                             </div>
-                                    @if ($errors->has('parrain'))
-                                        <span class="invalid-feedback">
-                                            <strong>{{ $errors->first('parrain') }}</strong>
-                                        </span>
-                                    @endif
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="btn btn-block btn-primary">
