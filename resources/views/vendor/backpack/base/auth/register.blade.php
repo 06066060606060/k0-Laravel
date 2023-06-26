@@ -125,7 +125,7 @@ use Illuminate\Support\Facades\DB;
                                 @endif
                             </div>
                         </div>
- <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
                             <div class="col-md-6">
                                 {!! RecaptchaV3::field('register') !!}
                                 @if ($errors->has('g-recaptcha-response'))
@@ -151,9 +151,18 @@ use Illuminate\Support\Facades\DB;
                         </span>
                     </form>
                     @if(!empty(request()->input('parrain')))
-                    <center><b>{{__('Parrain :')}} {{ request()->input('parrain') }} </b></center>
-                    @else
-                    @endif
+    <?php
+        $parrain = \App\Models\User::where('name', request()->input('parrain'))->first();
+    ?>
+    @if($parrain)
+        <center><b>{{__('Parrain :')}} {{ request()->input('parrain') }} </b></center>
+    @else
+        <div class="alert alert-danger">
+            Le parrain indiqué n'existe pas.
+        </div>
+    @endif
+@endif
+
                       @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
                 <br>
             @endif
