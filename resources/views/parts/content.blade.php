@@ -139,6 +139,8 @@
 </container>
 @endif
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+@php $locale = app()->getLocale(); @endphp
+@if($locale=='fr')
 <script>
     document.getElementById("copyLink").addEventListener("click", function(event) {
         event.preventDefault();
@@ -168,7 +170,128 @@
             });
     });
 </script>
-
+@elseif($locale=='en')
+<script>
+    document.getElementById("copyLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        var link = this.href;
+        navigator.clipboard.writeText(link)
+            .then(function() {
+                Toastify({
+                    text: "Link copied !",
+                    duration: 3000, // Durée d'affichage de la notification en millisecondes (3 secondes)
+                    close: true,
+                    gravity: "top", // Position de la notification
+                    position: "right", // Alignement horizontal de la notification
+                    backgroundColor: "linear-gradient(to right, #4bb543, #006400)", // Couleur de fond de la notification
+                    className: "toastify-custom", // Classe CSS personnalisée pour la notification
+                }).showToast();
+            })
+            .catch(function() {
+                Toastify({
+                    text: "Error when copy link",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#ff6347",
+                    className: "toastify-custom",
+                }).showToast();
+            });
+    });
+</script>
+@elseif($locale=='es')
+<script>
+    document.getElementById("copyLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        var link = this.href;
+        navigator.clipboard.writeText(link)
+            .then(function() {
+                Toastify({
+                    text: "¡Enlace copiado!",
+                    duration: 3000, // Durée d'affichage de la notification en millisecondes (3 secondes)
+                    close: true,
+                    gravity: "top", // Position de la notification
+                    position: "right", // Alignement horizontal de la notification
+                    backgroundColor: "linear-gradient(to right, #4bb543, #006400)", // Couleur de fond de la notification
+                    className: "toastify-custom", // Classe CSS personnalisée pour la notification
+                }).showToast();
+            })
+            .catch(function() {
+                Toastify({
+                    text: "Error al copiar!",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#ff6347",
+                    className: "toastify-custom",
+                }).showToast();
+            });
+    });
+</script>
+@elseif($locale=='de')
+<script>
+    document.getElementById("copyLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        var link = this.href;
+        navigator.clipboard.writeText(link)
+            .then(function() {
+                Toastify({
+                    text: "Link kopiert!",
+                    duration: 3000, // Durée d'affichage de la notification en millisecondes (3 secondes)
+                    close: true,
+                    gravity: "top", // Position de la notification
+                    position: "right", // Alignement horizontal de la notification
+                    backgroundColor: "linear-gradient(to right, #4bb543, #006400)", // Couleur de fond de la notification
+                    className: "toastify-custom", // Classe CSS personnalisée pour la notification
+                }).showToast();
+            })
+            .catch(function() {
+                Toastify({
+                    text: "Fehler beim Kopieren!",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#ff6347",
+                    className: "toastify-custom",
+                }).showToast();
+            });
+    });
+</script>
+@elseif($locale=='it')
+<script>
+    document.getElementById("copyLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        var link = this.href;
+        navigator.clipboard.writeText(link)
+            .then(function() {
+                Toastify({
+                    text: "Link copiato!",
+                    duration: 3000, // Durée d'affichage de la notification en millisecondes (3 secondes)
+                    close: true,
+                    gravity: "top", // Position de la notification
+                    position: "right", // Alignement horizontal de la notification
+                    backgroundColor: "linear-gradient(to right, #4bb543, #006400)", // Couleur de fond de la notification
+                    className: "toastify-custom", // Classe CSS personnalisée pour la notification
+                }).showToast();
+            })
+            .catch(function() {
+                Toastify({
+                    text: "Errore durante la copia!",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#ff6347",
+                    className: "toastify-custom",
+                }).showToast();
+            });
+    });
+</script>
+@else
+@endif
 @if($countevent>0)
 <container class="mx-auto max-w-7xl" id="win">
     <section>
