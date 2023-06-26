@@ -3,25 +3,8 @@
 @section('content') 
     {!! RecaptchaV3::initJs() !!}
 @php $locale = app()->getLocale();
-switch ($locale) {
-    case 'en':
-        $iclassic = 'Classic Login';
-        break;
-    case 'fr':
-        $iclassic = 'Connexion Classique';
-        break;
-    case 'es':
-        $iclassic = 'Conexión clásico';
-        break;
-    case 'de':
-        $iclassic = 'Klassische Anmeldung';
-        break;
-    case 'it':
-        $iclassic = 'Accesso Classico';
-        break;
-    default:
-        break;
-}
+// Titre Multi-langue Connexion Classique
+switch($locale){case'en':$iclassic='Classic Login';break;case'fr':$iclassic='Connexion Classique';break;case'es':$iclassic='Conexión clásico';break;case'de':$iclassic='Klassische Anmeldung';break;case'it':$iclassic='Accesso Classico';break;default:break;}
 @endphp     
     <div class="row justify-content-center ">
         <div class="col-12 col-md-8 col-lg-4">
