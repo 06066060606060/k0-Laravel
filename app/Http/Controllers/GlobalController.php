@@ -33,8 +33,13 @@ class GlobalController extends Controller
     {
         $concours = Concours::All(); // TOUTES LES COMMANDES
         $winner = User::all(); //DERNIERS GAGNANTS JEUX
-        $lejoueur = backpack_auth()->user()->name;
-        // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
+        if (backpack_auth()->check() && backpack_auth()->user()) {
+            $lejoueur = backpack_auth()->user()->name;
+        } else {
+            // Gérer le cas où l'utilisateur n'est pas authentifié ou n'a pas de nom
+            $lejoueur = null; // ou une valeur par défaut appropriée
+        }
+                // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')->join('users', 'users.id', '=', 'scores.user_id')->get();
         
         // Tous les jeux
