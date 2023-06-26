@@ -138,19 +138,37 @@
     </section>
 </container>
 @endif
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script>
     document.getElementById("copyLink").addEventListener("click", function(event) {
         event.preventDefault();
         var link = this.href;
         navigator.clipboard.writeText(link)
             .then(function() {
-                alert("Le lien a été copié !");
+                Toastify({
+                    text: "Le lien a été copié !",
+                    duration: 3000, // Durée d'affichage de la notification en millisecondes (3 secondes)
+                    close: true,
+                    gravity: "top", // Position de la notification
+                    position: "right", // Alignement horizontal de la notification
+                    backgroundColor: "linear-gradient(to right, #4bb543, #006400)", // Couleur de fond de la notification
+                    className: "toastify-custom", // Classe CSS personnalisée pour la notification
+                }).showToast();
             })
             .catch(function() {
-                alert("Erreur lors de la copie du lien.");
+                Toastify({
+                    text: "Erreur lors de la copie du lien.",
+                    duration: 3000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#ff6347",
+                    className: "toastify-custom",
+                }).showToast();
             });
     });
 </script>
+
 @if($countevent>0)
 <container class="mx-auto max-w-7xl" id="win">
     <section>

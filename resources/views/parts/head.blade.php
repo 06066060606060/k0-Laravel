@@ -21,7 +21,8 @@
 
   <meta name="coverage" content="Worldwide" />
   <link rel="canonical" href="https://gokdo.com" />
-  
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
   <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
   <style>
