@@ -478,6 +478,22 @@
                                     @elseif($score->data3 > 0)
                                               <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data3 }}</span>
                                     @endif
+                                    @if($isMobile == true)
+                                    @if($score->game_id == 39)
+                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">POOL</span>
+                                    @elseif($score->game_id == 46)
+                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">GoFRUITS</span>
+                                    @elseif($score->game_id == 51)
+                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">PLINKO</span>
+                                    @elseif($score->game_id == 50)
+                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">GoWIN</span>
+                                    @elseif($score->game_id == 49)
+                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">BINGO</span>
+                                    @elseif($score->game_id == 52)
+                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">GoSCRATCH</span>
+                                    @else
+                                    @endif
+                                    @else
                                     @if($score->game_id == 39)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">POOL</span>
                                     @elseif($score->game_id == 46)
@@ -491,6 +507,7 @@
                                     @elseif($score->game_id == 52)
                                     <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoSCRATCH</span>
                                     @else
+                                    @endif
                                     @endif
                                         </div>
                                     </div>
