@@ -106,7 +106,7 @@
                             <i class="fas fa-2x fa-user-group text-white"></i>
                         </td>
                         <td style="display:inline-block;" class="pl-2 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
-                        <b>{{__('Votre lien de parrainage :')}}</b> https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
+                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}" id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                         <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
                     </tr>
                 </tbody>
@@ -129,7 +129,7 @@
                             <i class="fas fa-3x fa-user-group text-white"></i>
                         </td>
                         <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
-                        <b>{{__('Votre lien de parrainage :')}}</b> https://gokdo.com/admin/register?parrain={{ $lejoueur }}<br>
+                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}" id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                         <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
                     </tr>
                 </tbody>
@@ -138,6 +138,19 @@
     </section>
 </container>
 @endif
+<script>
+    document.getElementById("copyLink").addEventListener("click", function(event) {
+        event.preventDefault();
+        var link = this.href;
+        navigator.clipboard.writeText(link)
+            .then(function() {
+                alert("Le lien a été copié !");
+            })
+            .catch(function() {
+                alert("Erreur lors de la copie du lien.");
+            });
+    });
+</script>
 @if($countevent>0)
 <container class="mx-auto max-w-7xl" id="win">
     <section>
