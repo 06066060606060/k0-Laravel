@@ -16,5 +16,6 @@ return [
     'failed' => 'Erreur de login ou mots de passe.',
     'password' => 'Le mot de passe est incorrect.',
     'throttle' => 'Trop de tentative. Reessayer dans :seconds seconds.',
+    'parrain' => 'Le parrain entré n\'existe pas !',
 
 ];
