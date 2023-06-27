@@ -17,11 +17,11 @@
                     {{__('Venez discuter entre membres du site GoKDO.com sur notre serveur Discord.')}} 
                     </div>
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__("Espace d'entraide")}}</h2>
-                    <div class="text-white">
+                    <div class="text-white mb-4">
                     {{__("Cet espace vous permet également de vous entraider entre joueurs.")}} <br>
                     </div>
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__('Comment se rendre sur le serveur ?')}}</h2>
-                    <div class="text-white">
+                    <div class="text-white mb-4">
                     {{__("Il vous suffit de télécharger Discord sur PC ou sur votre Mobile, de vous inscrire. Une fois que vous détenez un compte Discord, il vous suffira de cliquer sur le logo ci-dessous et vous pourrez alors communiquer avec l'équipe et les membres du site.")}}
                     </div>
                     SERVER CREATION IN PROGRESS...
