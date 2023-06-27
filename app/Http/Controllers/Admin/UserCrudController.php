@@ -47,10 +47,6 @@ class UserCrudController extends CrudController
         CRUD::column('trophee1')->label('Diamants');
         CRUD::column('trophee2')->label('Rubis');
         CRUD::column('trophee3')->label('Pièces');
-        CRUD::column('role')->type('select_from_array')->options([
-            'admin' => 'Administrateur',
-            'user' => 'Utilisateur',
-        ]);
         $this->crud->enableExportButtons();
        
 
