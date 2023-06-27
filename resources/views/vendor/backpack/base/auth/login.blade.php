@@ -1,6 +1,7 @@
 @extends(backpack_view('layouts.plain'))
 
 @section('content') 
+    {!! RecaptchaV3::initJs() !!}
 @php $locale = app()->getLocale();
 // Titre Multi-langue Connexion Classique
 switch($locale){case'en':$iclassic='Classic Login';break;case'fr':$iclassic='Connexion Classique';break;case'es':$iclassic='Conexión clásico';break;case'de':$iclassic='Klassische Anmeldung';break;case'it':$iclassic='Accesso Classico';break;default:break;}
@@ -108,16 +109,16 @@ switch($locale){case'en':$iclassic='Classic Login';break;case'fr':$iclassic='Con
                                     </div>
                                 </div>
                             </div>
-                           <!-- <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
+                            <div class="form-group{{ $errors->has('g-recaptcha-response') ? ' has-error' : '' }}">
                                 <div class="col-md-6">
-                                    {!! RecaptchaV3::field('login') !!}
+                                    {!! RecaptchaV3::field('register') !!}
                                     @if ($errors->has('g-recaptcha-response'))
                                         <span class="help-block">
                                             <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
                                         </span>
                                     @endif
                                 </div>
-                            </div>-->
+                            </div>
                             <div class="form-group">
                                 <div>
                                     <button type="submit" class="btn btn-block btn-primary">
