@@ -105,13 +105,6 @@
                                     </button>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div>
-                                    <a class="btn btn-link" href="{{ route('backpack.auth.password.reset') }}">
-                                        {{ trans('backpack::base.forgot_your_password') }}
-                                    </a>
-                                </div>
-                            </div>
                         </span>
                     </form>
                     @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
