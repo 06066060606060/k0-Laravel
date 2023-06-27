@@ -4,26 +4,14 @@
     {!! RecaptchaV3::initJs() !!}
     @php
         $locale = app()->getLocale();
-        // Titre Multi-langue Connexion Classique
-        switch($locale){
-            case 'en':
-                $iclassic = 'Classic Login';
-                break;
-            case 'fr':
-                $iclassic = 'Connexion Classique';
-                break;
-            case 'es':
-                $iclassic = 'Conexión clásico';
-                break;
-            case 'de':
-                $iclassic = 'Klassische Anmeldung';
-                break;
-            case 'it':
-                $iclassic = 'Accesso Classico';
-                break;
-            default:
-                break;
-        }
+        $localizedTitles = [
+            'en' => 'Classic Login',
+            'fr' => 'Connexion Classique',
+            'es' => 'Conexión clásico',
+            'de' => 'Klassische Anmeldung',
+            'it' => 'Accesso Classico',
+        ];
+        $iclassic = $localizedTitles[$locale] ?? '';
     @endphp
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
@@ -49,7 +37,6 @@
                                 <a href="{{ route('socialite.redirect', 'facebook') }}" class="btn btn-block btn-primary">
                                     <div class="flex justify-center">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="w-6 h-6 mx-2">
-                                            <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
                                             <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
                                         </svg>
                                         <span class="py-1 text-sm"> {{ trans('backpack::base.login') }} Facebook</span>
