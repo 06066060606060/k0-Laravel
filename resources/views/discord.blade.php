@@ -13,8 +13,8 @@
                     </div>
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
                     <h2 class="mb-2 text-2xl font-bold text-blue-500 title-font">{{__('Discutez entre joueurs')}}</h2>
-                    <div class="text-white">
-                    {{__('Venez discuter entre membres du site GoKDO.com sur notre serveur Discord.')}} <br>
+                    <div class="text-white mb-4">
+                    {{__('Venez discuter entre membres du site GoKDO.com sur notre serveur Discord.')}} 
                     </div>
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__("Espace d'entraide")}}</h2>
                     <div class="text-white">
