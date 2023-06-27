@@ -21,10 +21,10 @@
                     {{__("Cet espace vous permet également de vous entraider entre joueurs.")}} <br>
                     </div>
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__('Comment se rendre sur le serveur ?')}}</h2>
-                    <div class="text-white mb-4">
+                    <div class="text-white mb-8">
                     {{__("Il vous suffit de télécharger")}} <a href="https://discord.com/downloa" target="_blank" style="color:yellow; font-weight:bold;">{{__('Discord sur PC')}}</a> {{__('ou')}} <a href="https://play.google.com/store/apps/details?id=com.discord" target="_blank" style="color:yellow; font-weight:bold;">{{__('sur votre Mobile')}}</a>{{__(", de vous inscrire. Une fois que vous détenez un compte Discord, il vous suffira de cliquer sur le logo ci-dessous et vous pourrez alors communiquer avec l'équipe et les membres du site.")}}
                     </div>
-                    <div class="center text-center mt-4"><i class="fab fa-10x fa-discord" style="color:yellow;"></i><br><a href="#" style="color:yellow; font-weight:bold;" class="text-4xl">{{__('REJOINS-NOUS')}}</a></div>
+                    <div class="center text-center mt-8"><i class="fab fa-10x fa-discord" style="color:yellow;"></i><br><a href="#" style="color:yellow; font-weight:bold;" class="text-4xl">{{__('REJOINS-NOUS')}}</a></div>
                 </div>
             </section>
         </div>
