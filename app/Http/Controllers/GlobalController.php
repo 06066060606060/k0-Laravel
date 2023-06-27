@@ -122,8 +122,10 @@ class GlobalController extends Controller
     {
         $games1 = Games::where('type', 'Gratuit')->get(); // Gratuits
         $games2 = Games::where('type', 'Booster')->get(); // Boosters
-        $games = $games1->merge($games2); // Mélange des deux
-        return $games;
+        $games3 = Games::where('type', 'Event')->get(); // Gratuits
+        $games4 = Games::where('type', 'Solo')->get(); // Gratuits
+        $games = $games1->merge($games2)->merge($games3)->merge($games4); // Fusion de toutes les collections
+        return $games;        
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
