@@ -71,7 +71,7 @@ trait AuthenticatesUsers
         $request->validate([
             $this->username() => 'required|string',
             'password' => 'required|string',
-            'g-recaptcha-response' => 'required|recaptchav3:register,0.3'
+            'g-recaptcha-response' => 'required|recaptchav3:register,0.1'
         ]);
     }
 
