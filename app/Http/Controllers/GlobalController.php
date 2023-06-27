@@ -341,6 +341,11 @@ class GlobalController extends Controller
         return view('aide');
     }
 
+    public function discord()
+    {
+        return view('discord');
+    }
+
     public function partenaires()
     {
         return view('partenaires');

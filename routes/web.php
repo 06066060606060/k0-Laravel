@@ -46,6 +46,7 @@ Route::get('cadeaux', 'search')->name('searchfilter');
 Route::get('contact', 'contact');
 Route::get('test', 'test');
 Route::get('aide', 'aide');
+Route::get('discord', 'discord');
 Route::get('reglement', 'reglement');
 Route::get('mentions-legales', 'mentionslegales');
 Route::get('confidentialite-site', 'confidentialitesite');
