@@ -22,7 +22,7 @@
                     </div>
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__('Comment se rendre sur le serveur ?')}}</h2>
                     <div class="text-white mb-4">
-                    {{__("Il vous suffit de télécharger Discord sur PC ou sur votre Mobile, de vous inscrire. Une fois que vous détenez un compte Discord, il vous suffira de cliquer sur le logo ci-dessous et vous pourrez alors communiquer avec l'équipe et les membres du site.")}}
+                    {{__("Il vous suffit de télécharger <a href='https://discord.com/download'>Discord sur PC</a> ou <a href='https://play.google.com/store/apps/details?id=com.discord'sur votre Mobile</a>, de vous inscrire. Une fois que vous détenez un compte Discord, il vous suffira de cliquer sur le logo ci-dessous et vous pourrez alors communiquer avec l'équipe et les membres du site.")}}
                     </div>
                     SERVER CREATION IN PROGRESS...
                 </div>
