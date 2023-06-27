@@ -14,16 +14,15 @@
                     <div class="mx-auto lg:w-1/1 md:w-1/1">
                     <h2 class="mb-2 text-2xl font-bold text-blue-500 title-font">{{__('Discutez entre joueurs')}}</h2>
                     <div class="text-white">
-                    {{__('Venez discuter entre membres du site GoKDO.com sur notre serveur Discord.')}}
+                    {{__('Venez discuter entre membres du site GoKDO.com sur notre serveur Discord.')}} <br>
                     </div>
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__("Espace d'entraide")}}</h2>
                     <div class="text-white">
-                    {{__("Cet espace vous permet également de vous entraider entre joueurs.")}}
+                    {{__("Cet espace vous permet également de vous entraider entre joueurs.")}} <br>
                     </div>
                     <h2 class="mb-1 text-2xl font-bold text-blue-500 title-font">{{__('Comment se rendre sur le serveur ?')}}</h2>
                     <div class="text-white">
-                    {{__("Il vous suffit de télécharger Discord sur PC ou sur votre Mobile, de vous inscrire.<br>
-                    Une fois que vous détenez un compte Discord, il vous suffira de cliquer sur le logo ci-dessous et vous pourrez alors communiquer avec l'équipe et les membres du site.")}}
+                    {{__("Il vous suffit de télécharger Discord sur PC ou sur votre Mobile, de vous inscrire. Une fois que vous détenez un compte Discord, il vous suffira de cliquer sur le logo ci-dessous et vous pourrez alors communiquer avec l'équipe et les membres du site.")}}
                     </div>
                     SERVER CREATION IN PROGRESS...
                 </div>
