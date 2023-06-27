@@ -44,8 +44,6 @@ class UserCrudController extends CrudController
     {
         CRUD::column('name');
         CRUD::column('email');
-        CRUD::column('global_score')->label('Parties gratuites');
-        CRUD::column('parties')->label('Parties payées');
         CRUD::column('trophee1')->label('Diamants');
         CRUD::column('trophee2')->label('Rubis');
         CRUD::column('trophee3')->label('Pièces');
