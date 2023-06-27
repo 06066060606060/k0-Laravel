@@ -71,6 +71,8 @@
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
                         @click="isOpen = false"  data-barba-prevent="self"><i class="fa-solid fa-user"></i>&nbsp; {{__('Profil')}}</a>
                 @endif
+                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="discord"
+                        @click="isOpen = false"  data-barba-prevent="self"><i class="fa-solid fa-discord"></i>&nbsp; {{__('Discord')}}</a>
 
             </div>
 
