@@ -91,6 +91,8 @@
 
 
 @if (backpack_auth()->check())
+@if($count > 2)
+@else
 @if($isMobile == true)
 <container class="mx-auto max-w-7xl" id="win">
     <section>
@@ -105,13 +107,9 @@
                         <td class="pr-2">
                             <i class="fas fa-2x fa-user-group text-white"></i>
                         </td>
-                        @if($count > 2)
-                            <td style='display:inline-block;' class='pl-2 text-white'>Limite de 3 parrainages atteinte</td>
-                        @else
                         <td style="display:inline-block;" class="pl-2 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
                         <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}" data-barba-prevent="self" id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                         <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
-                        @endif
                     </tr>
                 </tbody>
             </table>
@@ -132,19 +130,16 @@
                         <td class="pr-4">
                             <i class="fas fa-3x fa-user-group text-white"></i>
                         </td>
-                        @if($count > 2)
-                            <td style='display:inline-block;' class='pl-4 text-white'>Limite de 3 parrainages atteinte</td>
-                        @else
                         <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
                         <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}" data-barba-prevent="self" id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                         <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
-                        @endif
                     </tr>
                 </tbody>
             </table>
         </div>
     </section>
 </container>
+@endif
 @endif
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 @php $locale = app()->getLocale(); @endphp
