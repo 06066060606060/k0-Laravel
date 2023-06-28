@@ -131,7 +131,16 @@
 @else
             <p class="py-0 ml-4 mr-2 text-gray-200 lg:ml-8 md:pb-0 marquee">
 @endif
-   <i class="fas fa-solid fa-rocket pr-2 fa-lg" style="color: yellow;"></i> {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Packs de notre menu.") !!}</p>
+@php
+    $randomNumbers = rand(1, 2);
+@endphp
+   <i class="fas fa-solid fa-rocket pr-2 fa-lg" style="color: yellow;"></i> 
+   @if($randomNumbers == 1)
+   {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Packs de notre menu.") !!}
+   @elseif($randomNumbers == 2)
+   {!! __("<b>Le saviez-vous :</b> 1 <img src='img/coin10.png' class='w-5 h-5 inline-block'> équivaut en réalité sur le site Gokdo.com à 1€, vous pouvez les cumuler dans certains jeux ou sur le concours.") !!}
+    @endif
+   </p>
         </div>
     </div>
 </div>
