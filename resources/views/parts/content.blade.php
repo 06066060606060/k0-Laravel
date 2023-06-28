@@ -131,7 +131,7 @@
 @else
             <p class="py-0 ml-4 mr-2 font-bold text-gray-200 lg:ml-8 md:pb-0 marquee">
 @endif
-    {!! __("Le saviez-vous : Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> Rubis vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.") !!}</p>
+    {!! __("Le saviez-vous : Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.") !!}</p>
 
         </div>
     </div>
