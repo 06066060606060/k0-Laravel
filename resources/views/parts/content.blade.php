@@ -119,7 +119,7 @@
     }
 }
 </style>
-<div class="py-2 mx-8 mb-4 bg-orange-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
+<div class="py-0 mx-8 mb-4 bg-orange-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
     <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
         <div class="marquee-container">
             <p class="pb-2 ml-4 mr-2 font-bold text-gray-200 lg:ml-8 md:pb-0 marquee">
