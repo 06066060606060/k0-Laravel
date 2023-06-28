@@ -96,6 +96,7 @@
     animation: marquee 20s linear infinite;
     white-space: nowrap;
     overflow: hidden;
+    width: 100%; /* Ajout de cette ligne pour limiter la largeur */
 }
 
 @keyframes marquee {
