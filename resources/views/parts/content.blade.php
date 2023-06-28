@@ -120,9 +120,9 @@
 }
 </style>
 @if($isMobile == true)
-<div class="py-0 mx-8 mb-4 bg-orange-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
+<div class="py-0 mx-8 mb-4 bg-gray-500 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
 @else
-<div class="py-2 mx-8 mb-4 bg-orange-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
+<div class="py-2 mx-8 mb-4 bg-gray-500 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
 @endif
     <div class="flex flex-wrap items-center justify-center py-0 mx-auto md:justify-between max-w-7xl">
         <div class="marquee-container">
@@ -131,7 +131,7 @@
 @else
             <p class="py-0 ml-4 mr-2 font-bold text-gray-200 lg:ml-8 md:pb-0 marquee">
 @endif
-   <i class="fas fa-rss fa-sm"></i> {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.") !!}</p>
+   <i class="fas fa-rss fa-lg pr-4" style="color:yellow;"></i> {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.") !!}</p>
 
         </div>
     </div>
