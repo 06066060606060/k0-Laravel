@@ -37,8 +37,8 @@ class GlobalController extends Controller
             $lejoueur = backpack_auth()->user()->name;
             $count = User::where('parrain', backpack_auth()->user()->name)->count();
         } else {
-            // Gérer le cas où l'utilisateur n'est pas authentifié ou n'a pas de nom
             $lejoueur = null; // ou une valeur par défaut appropriée
+            $count = 0; // ou une valeur par défaut appropriée
         }
                 // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')->join('users', 'users.id', '=', 'scores.user_id')->get();
