@@ -91,8 +91,9 @@
 
 
 @if (backpack_auth()->check())
-@if(isset($count) && $count > 2)
-@else
+@if(isset($count))
+    @if($count > 2)
+    @else
 @if($isMobile == true)
 <container class="mx-auto max-w-7xl" id="win">
     <section>
@@ -139,6 +140,7 @@
         </div>
     </section>
 </container>
+@endif
 @endif
 @endif
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
