@@ -115,7 +115,7 @@
 /* Réduire la durée de l'animation pour les appareils mobiles */
 @media (max-width: 768px) {
     .marquee {
-        animation-duration: 10s;
+        animation-duration: 13s;
     }
 }
 </style>
