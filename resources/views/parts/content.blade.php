@@ -105,7 +105,7 @@
                         <td class="pr-2">
                             <i class="fas fa-2x fa-user-group text-white"></i>
                         </td>
-                        @if($count > 2)
+                        @if($count >= 3)
                             <td style='display:inline-block;' class='pl-2 text-white'>Limite de 3 parrainages atteinte</td>
                         @else
                         <td style="display:inline-block;" class="pl-2 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
