@@ -91,6 +91,28 @@
 
 
 @if (backpack_auth()->check())
+<style>
+.marquee {
+    animation: marquee 20s linear infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+</style>
+<div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
+    <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
+        <p class="pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0 marquee">
+            {{__('Le saviez-vous : Les Rubis vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.')}}</p>
+    </div>
+</div>
 @if(isset($count))
     @if($count > 2)
     @else
