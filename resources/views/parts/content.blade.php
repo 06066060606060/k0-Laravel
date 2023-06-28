@@ -105,9 +105,6 @@
                         <td class="pr-2">
                             <i class="fas fa-2x fa-user-group text-white"></i>
                         </td>
-                        @php
-                         $count = \App\Models\User::where('parrain', $lejoueur)->count();
-                        @endphp
                         @if($count > 2)
                             <td style='display:inline-block;' class='pl-2 text-white'>Limite de 3 parrainages atteinte</td>
                         @else

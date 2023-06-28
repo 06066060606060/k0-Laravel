@@ -35,6 +35,8 @@ class GlobalController extends Controller
         $winner = User::all(); //DERNIERS GAGNANTS JEUX
         if (backpack_auth()->check() && backpack_auth()->user()) {
             $lejoueur = backpack_auth()->user()->name;
+            $count = User::where('parrain', $lejoueur)->count();
+
         } else {
             // Gérer le cas où l'utilisateur n'est pas authentifié ou n'a pas de nom
             $lejoueur = null; // ou une valeur par défaut appropriée
@@ -58,7 +60,7 @@ class GlobalController extends Controller
         ->count();
         // Jeux mis en avant    
         $starred = Games::where('status', 1)->inRandomOrder()->first();
-        return view('index', compact('lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
