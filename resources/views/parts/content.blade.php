@@ -131,7 +131,7 @@
 @else
             <p class="py-0 ml-4 mr-2 text-gray-200 lg:ml-8 md:pb-0 marquee">
 @endif
-   <i class="fas fa-rocket fa-lg pr-2" style="color:pink;"></i> {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.") !!}</p>
+   <i class="fad fa-gift fa-lg" style="--fa-primary-color: #fff700; --fa-secondary-color: #ff0000; --fa-secondary-opacity: 1;"></i> {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.") !!}</p>
 
         </div>
     </div>
