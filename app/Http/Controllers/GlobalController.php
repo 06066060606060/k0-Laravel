@@ -67,9 +67,9 @@ class GlobalController extends Controller
         $nombreAleatoire = rand(1, 2);
     
         if ($nombreAleatoire === 1) {
-            return "<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Pack de notre menu.";
+            return "<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Packs de notre menu.";
         } elseif ($nombreAleatoire === 2) {
-            return "<b>Le saviez-vous :</b> 1 <img src='img/coin10.png' class='w-5 h-5 inline-block'> est équivalent à 1€";
+            return "<b>Le saviez-vous :</b> 1 <img src='img/coin10.png' class='w-5 h-5 inline-block'> sur Gokdo est en faite équivalent à 1€";
         }
     
         // En cas de valeur inattendue, retourner un message d'erreur ou une valeur par défaut
