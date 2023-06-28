@@ -59,22 +59,9 @@ class GlobalController extends Controller
         ->count();
         // Jeux mis en avant    
         $starred = Games::where('status', 1)->inRandomOrder()->first();
-        $randomInfo = $this->afficherInformationAleatoire(); // Appel de la fonction afficherInformationAleatoire()
-
-        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours', 'randomInfo'));
+        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
-    private function afficherInformationAleatoire() {
-        $nombreAleatoire = rand(1, 2);
     
-        if ($nombreAleatoire === 1) {
-            return "<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Packs de notre menu.";
-        } elseif ($nombreAleatoire === 2) {
-            return "<b>Le saviez-vous :</b> 1 <img src='img/coin10.png' class='w-5 h-5 inline-block'> sur Gokdo est en faite équivalent à 1€";
-        }
-    
-        // En cas de valeur inattendue, retourner un message d'erreur ou une valeur par défaut
-        return "Erreur : Information non disponible.";
-    }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Fonction quand un joueur clique sur un jeu
