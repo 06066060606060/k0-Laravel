@@ -107,7 +107,7 @@
                         <td class="pr-2">
                             <i class="fas fa-2x fa-user-group text-white"></i>
                         </td>
-                        <td style="display:inline-block;" class="pl-2 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
+                        <td style="display:inline-block;" class="pl-2 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé ! (MAX : 3)')}}<br>
                         <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}" data-barba-prevent="self" id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                         <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
                     </tr>
@@ -130,7 +130,7 @@
                         <td class="pr-4">
                             <i class="fas fa-3x fa-user-group text-white"></i>
                         </td>
-                        <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé !')}}<br>
+                        <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20 <img src='img/gem10.png'  style='display:inline-block;' class=' w-5 h-5 align-middle' alt='Gem 10'> {{__('par ami parrainé ! (MAX : 3)')}}<br>
                         <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}" data-barba-prevent="self" id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                         <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i></td>
                     </tr>
