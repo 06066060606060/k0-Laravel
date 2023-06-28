@@ -153,7 +153,8 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
     @if($parrain)
         @php $count = \App\Models\User::where('parrain', request()->input('parrain'))->count(); @endphp
         @if ($count > 2) 
-@php return redirect('https://gokdo.com/admin/register'); @endphp
+@php header("Location: https://gokdo.com/admin/register");
+exit; @endphp
         @else 
         <center><b>{{__('Parrain :')}} {{ request()->input('parrain') }} </b></center>
         @endif
