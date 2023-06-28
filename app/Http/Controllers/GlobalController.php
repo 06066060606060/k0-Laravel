@@ -35,8 +35,7 @@ class GlobalController extends Controller
         $winner = User::all(); //DERNIERS GAGNANTS JEUX
         if (backpack_auth()->check() && backpack_auth()->user()) {
             $lejoueur = backpack_auth()->user()->name;
-            $count = User::where('parrain', $lejoueur)->count();
-
+            $count = User::where('parrain', backpack_auth()->user()->name)->count();
         } else {
             // Gérer le cas où l'utilisateur n'est pas authentifié ou n'a pas de nom
             $lejoueur = null; // ou une valeur par défaut appropriée
