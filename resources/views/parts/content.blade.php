@@ -91,7 +91,7 @@
 
 
 @if (backpack_auth()->check())
-@if($count > 2)
+@if(isset($count) && $count > 2)
 @else
 @if($isMobile == true)
 <container class="mx-auto max-w-7xl" id="win">
