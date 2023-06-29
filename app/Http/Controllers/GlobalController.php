@@ -431,6 +431,9 @@ class GlobalController extends Controller
         if (backpack_auth()->check()) {
             $usermail = backpack_auth()->user()->email;
             $userid = backpack_auth()->user()->id;
+            $leparrain= backpack_auth()->user()->parrain;
+            $leparrainne= backpack_auth()->user()->name;
+            $joueursParraines = User::where('parrain', $leparrainne)->get();
             $order = new Commandes();
             $order->cadeau_id = $request->id;
             $order->user_id = $userid;
@@ -545,7 +548,7 @@ class GlobalController extends Controller
                     )
                 );
             }
-            return view('profil', compact('scores', 'orders', 'infos', 'paiements'));
+            return view('profil', compact('scores', 'orders', 'infos', 'paiements', 'leparrain', 'leparrainne', 'joueursParraines'));
         } else {
             return redirect('/');
         }
