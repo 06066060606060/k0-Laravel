@@ -7,10 +7,16 @@
     <div class="z-0 one"></div>
 @endif
 
-<div x-data="{ modelOpen: false }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
+<div x-data="{ modelOpen: false, languages: [
+    {code: 'en', name: 'English', flag: 'gb'},
+    {code: 'fr', name: 'Français', flag: 'fr'},
+    {code: 'de', name: 'German', flag: 'de'},
+    {code: 'es', name: 'Español', flag: 'es'},
+    {code: 'it', name: 'Italian', flag: 'it'}
+    ], isMobile: $isMobile }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
 
-    <template x-if="!localStorage.getItem('languageSelected')">
-    <!-- Modale -->
+<template x-if="!localStorage.getItem('languageSelected')">
+<!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
         <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
             <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
@@ -22,62 +28,15 @@
                     <div class="bg-gray-700 rounded-b-md">
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
                             <ul class="flex flex-wrap justify-center">
-                                <li>
-                                @if($isMobile == true)
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/en" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" width="8" height="8" class="w-8 h-8 mr-1">
-                                    </a>
-                                @else 
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/en" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" width="10" height="10" class="w-10 h-10 mr-1">
-                                    </a>
-                                @endif
-                                </li>
-                                <li>
-                                @if($isMobile == true)
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/fr" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" width="8" height="8" class="w-8 h-8 mr-1">
-                                    </a>
-                                @else 
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/fr" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" width="10" height="10" class="w-10 h-10 mr-1">
-                                    </a>
-                                @endif
-                                </li>
-                                <li>
-                                @if($isMobile == true)
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/de" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" width="8" height="8" class="w-8 h-8 mr-1">
-                                    </a>
-                                @else 
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/de" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" width="10" height="10" class="w-10 h-10 mr-1">
-                                    </a>
-                                @endif
-                                </li>
-                                <li>
-                                @if($isMobile == true)
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/es" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" width="8" height="8" class="w-8 h-8 mr-1">
-                                    </a>
-                                @else 
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/es" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" width="10" height="10" class="w-10 h-10 mr-1">
-                                    </a>
-                                @endif
-
-                                </li>
-                                <li>
-                                @if($isMobile == true)
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/it" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" width="8" height="8" class="w-8 h-8 mr-1">
-                                    </a>
-                                @else 
-                                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/it" @click="localStorage.setItem('languageSelected', true)">
-                                        <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" width="10" height="10" class="w-10 h-10 mr-1">
-                                    </a>
-                                @endif
-                                </li>
+                                <template x-for="lang in languages" :key="lang.code">
+                                    <li>
+                                        <a rel="alternate" data-barba-prevent="self" 
+                                        :class="`block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white`" 
+                                        :href="`language/${lang.code}`" @click="localStorage.setItem('languageSelected', true)">
+                                            <img :src="`https://flagicons.lipis.dev/flags/4x3/${lang.flag}.svg`" :alt="lang.name" :width="isMobile ? 8 : 10" :height="isMobile ? 8 : 10" :class="isMobile ? 'w-8 h-8 mr-1' : 'w-10 h-10 mr-1'">
+                                        </a>
+                                    </li>
+                                </template>
                             </ul>
                         </div>
                     </div>
@@ -85,9 +44,8 @@
             </div>
         </div>
     </div>
-    </template>
+</template>
 </div>
-
 
 
 @if (backpack_auth()->check())
