@@ -9,7 +9,7 @@
     <button @click="isOpen = !isOpen" aria-haspopup="true" :aria-expanded="isOpen ? 'true' : 'false'"
         class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
         <span class="mr-1">@if($current_locale === 'en')
-            <img src="https://flagicons.lipis.dev/flags/4x3/en.svg" alt="English" class="w-4 h-4 mr-1">
+            <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
         @elseif($current_locale === 'fr')
             <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
         @elseif($current_locale === 'es')
