@@ -607,71 +607,58 @@
 
 <container id="home">
     <section>
-        <div
-            class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 ">
+        <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
                 <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
-                    <div>
-                        <div class="relative w-full max-w-lg">
-
-                            <div class="relative">
-                                @php $imagesd =  $starred->image[0] ?? null; 
+                    <div class="relative w-full max-w-lg">
+                        <div class="relative">
+                            @php
+                                $imagesd =  $starred->image[0] ?? null;
                                 $imgUrl = asset('storage/' . $imagesd);
                                 $gifUrl = str_replace(".mp4", ".gif", $imgUrl);
-                                @endphp
-                                @if($isMobile == true)
+                            @endphp
+                            @if($isMobile)
                                 <video class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero" autoplay loop>
-                                <source src="{{ asset('storage/' . $imagesd) }}" type="video/mp4">
-                                Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
+                                    <source src="{{ asset('storage/' . $imagesd) }}" type="video/mp4">
+                                    Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
                                 </video>
-                                @else
-                                <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                    src="{{ $gifUrl }}" width="920" height="420" onerror="this.src='/img/empty.png'">
-                                @endif
-                            </div>
+                            @else
+                                <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero" src="{{ $gifUrl }}" width="920" height="420" onerror="this.src='/img/empty.png'">
+                            @endif
                         </div>
                     </div>
                 </div>
-                <div
-                    class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                    @if($starred->name != 'GoFRUITS')
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('JEU 100% GAGNANT !')}}
+                <div class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
+                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md">
+                        @if($starred->name != 'GoFRUITS')
+                            {{__('JEU 100% GAGNANT !')}}
+                        @else
+                            {{__('JOUEZ GRATUITEMENT A')}}
+                        @endif
                     </span>
-                    @else
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md"> {{__('JOUEZ GRATUITEMENT A')}}
-                    </span>
-                    @endif                    
-                    <h1
-                        class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
+                    <h1 class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                         {{ $starred->name }}</h1>
                     @php $locale = app()->getLocale(); @endphp
                     @if ($locale=='fr')
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>                        
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
                     @elseif ($locale=='en')
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_en }}</p>                        
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_en }}</p>
                     @elseif ($locale=='de')
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_de }}</p>                        
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_de }}</p>
                     @elseif ($locale=='es')
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_es }}</p>                        
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_es }}</p>
                     @elseif ($locale=='it')
-                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_it }}</p>                        
-                    @else
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_it }}</p>
                     @endif
-                    <div class="">
-                            <a href="admin/register"
-                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                <span
-                                    class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                <span
-                                    class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                <span
-                                    class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">{{__('Jouez Maintenant')}}</span>
-                            </a>
+                    <div>
+                        <a href="admin/register" class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
+                            <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                            <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                            <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                            <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                            <span class="relative">{{__('Jouez Maintenant')}}</span>
+                        </a>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -686,79 +673,47 @@
             <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Gagnez des cadeaux')}}</h1>
         </div>
         <div class="container flex flex-wrap px-5 py-8 mx-auto">
-            <div class="relative flex pt-10 pb-20 mx-auto sm:items-center md:w-2/3">
-                <div class="absolute inset-0 flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-gray-200 pointer-events-none"></div>
-                </div>
-                <div
-                    class="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font">
-                    1</div>
-                <div class="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
-                    <div
-                        class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-indigo-100 rounded-full">
-                        <i class="fa-solid fa-user fa-2x"></i>
+            @php $steps = [
+                [
+                    'icon' => 'fa-solid fa-user fa-2x',
+                    'title' => __('Inscrivez-vous gratuitement'),
+                    'description' => __("L'inscription est rapide, gratuite et on vous offre 150 diamants pour bien commencer.")
+                ],
+                [
+                    'icon' => 'fa-solid fa-gamepad fa-2x',
+                    'title' => __('Jouez vos parties gratuites quotidiennes'),
+                    'description' => __("Chaque jour, vous avez la possibilité de jouer gratuitement 10 parties sur la grille GoFRUITS en multijoueur, avec la possibilité de gagner des lots instantanés. Vos scores vous donnent la possibilité de participer à notre concours mensuel, où le gros lot de 500€ (500 Coins) est en jeu ! Cette offre est une excellente occasion de profiter d'un jeu amusant tout en ayant la chance de gagner de superbes prix.")
+                ],
+                [
+                    'icon' => 'fa-regular fa-gem fa-2x',
+                    'title' => __('Gagnez des Diamants, Rubis, Coins'),
+                    'description' => __("Pool est une grille de jeux instantanées que vous pouvez jouer pour booster vos chances de participer au concours mensuel. De plus, vous avez la possibilité de remporter des Diamants, Rubis et Coins en jouant à ce jeu ! En cumulant vos scores, vous pouvez améliorer vos chances de remporter le gros lot de 500€ (500 Coins) offert dans le concours mensuel. Cette offre est une excellente opportunité pour les joueurs de s'amuser tout en ayant la chance de gagner de superbes récompenses.")
+                ],
+                [
+                    'icon' => 'fa-solid fa-gift fa-2x',
+                    'title' => __('Convertissez les en cadeaux'),
+                    'description' => __("Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.")
+                ]
+            ]; @endphp
+            @foreach($steps as $index => $step)
+                <div class="relative flex pb-{{ $index == count($steps) - 1 ? '10' : '20' }} mx-auto sm:items-center md:w-2/3">
+                    <div class="absolute inset-0 flex items-center justify-center w-6 h-full">
+                        <div class="w-1 h-full bg-gray-200 pointer-events-none"></div>
                     </div>
-                    <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Inscrivez-vous gratuitement')}}</h2>
-                        <p class="leading-relaxed text-gray-300">{{__("L'inscription est rapide, gratuite et on vous offre 150 diamants pour bien commencer.")}}</p>
+                    <div class="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font">
+                        {{ $index + 1 }}
                     </div>
-                </div>
-            </div>
-            <div class="relative flex pb-20 mx-auto sm:items-center md:w-2/3">
-                <div class="absolute inset-0 flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-gray-200 pointer-events-none"></div>
-                </div>
-                <div
-                    class="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font">
-                    2</div>
-                <div class="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
-                    <div
-                        class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-indigo-100 rounded-full">
-                        <i class="fa-solid fa-gamepad fa-2x"></i>
-                    </div>
-                    <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Jouez vos parties gratuites quotidiennes')}}</h2>
-                        <p class="leading-relaxed text-gray-300">{{__("Chaque jour, vous avez la possibilité de jouer gratuitement 10 parties sur la grille GoFRUITS en multijoueur, avec la possibilité de gagner des lots instantanés. Vos scores vous donnent la possibilité de participer à notre concours mensuel, où le gros lot de 500€ (500 Coins) est en jeu ! Cette offre est une excellente occasion de profiter d'un jeu amusant tout en ayant la chance de gagner de superbes prix.")}}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="relative flex pb-20 mx-auto sm:items-center md:w-2/3">
-                <div class="absolute inset-0 flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-gray-200 pointer-events-none"></div>
-                </div>
-                <div
-                    class="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font">
-                    3</div>
-                <div class="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
-                    <div
-                        class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-indigo-100 rounded-full">
-                        <i class="fa-regular fa-gem fa-2x"></i>
-                    </div>
-                    <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Gagnez des Diamants, Rubis, Coins')}}
-                        </h2>
-                        <p class="leading-relaxed text-gray-300">{{__("Pool est une grille de jeux instantanées que vous pouvez jouer pour booster vos chances de participer au concours mensuel. De plus, vous avez la possibilité de remporter des Diamants, Rubis et Coins en jouant à ce jeu ! En cumulant vos scores, vous pouvez améliorer vos chances de remporter le gros lot de 500€ (500 Coins) offert dans le concours mensuel. Cette offre est une excellente opportunité pour les joueurs de s'amuser tout en ayant la chance de gagner de superbes récompenses.")}}</p>
+                    <div class="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
+                        <div class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-indigo-100 rounded-full">
+                            <i class="{{ $step['icon'] }}"></i>
+                        </div>
+                        <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
+                            <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{ $step['title'] }}</h2>
+                            <p class="leading-relaxed text-gray-300">{{ $step['description'] }}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="relative flex pb-10 mx-auto sm:items-center md:w-2/3">
-                <div class="absolute inset-0 flex items-center justify-center w-6 h-full">
-                    <div class="w-1 h-full bg-gray-200 pointer-events-none"></div>
-                </div>
-                <div
-                    class="relative z-10 inline-flex items-center justify-center flex-shrink-0 w-6 h-6 mt-10 text-sm font-medium text-white bg-blue-500 rounded-full sm:mt-0 title-font">
-                    4</div>
-                <div class="flex flex-col items-start flex-grow pl-6 md:pl-8 sm:items-center sm:flex-row">
-                    <div
-                        class="inline-flex items-center justify-center flex-shrink-0 w-24 h-24 text-blue-500 bg-indigo-100 rounded-full">
-                        <i class="fa-solid fa-gift fa-2x"></i>
-                    </div>
-                    <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                        <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Convertissez les en cadeaux')}}</h2>
-                        <p class="leading-relaxed text-gray-300">{{__("Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.")}}</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </section>
 </container>
