@@ -31,37 +31,43 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
-        $concours = Concours::All(); // TOUTES LES COMMANDES
-        $winner = User::all(); //DERNIERS GAGNANTS JEUX
+        $concours = Concours::all(); // TOUTES LES COMMANDES
+        
+        $winner = User::latest()->get(); //DERNIERS GAGNANTS JEUX
+        
+        $lejoueur = null;
+        $count = 0;
+        
         if (backpack_auth()->check() && backpack_auth()->user()) {
             $lejoueur = backpack_auth()->user()->name;
             $count = User::where('parrain', backpack_auth()->user()->name)->count();
-        } else {
-            $lejoueur = null; // ou une valeur par défaut appropriée
-            $count = 0; // ou une valeur par défaut appropriée
         }
-                // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
+        
+        // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')->join('users', 'users.id', '=', 'scores.user_id')->get();
         
         // Tous les jeux
         $allgames = Games::whereNotIn('type', ['Event', 'Solo'])->orderBy('id', 'desc')->get();
+        
         // Jeux Gratuits
         $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
+        
         // Jeux Booster
         $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
-        // JEux Solo
+        
+        // Jeux Solo
         $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'asc')->get();
-
-        // jeux event
+        
+        // Jeux event
         $eventsgames = Games::where('type', 'Event')->get();
-        $countevent = Games::where('type', '=', 'Event')
-        ->where('status', '=', 1)
-        ->count();
-        // Jeux mis en avant    
+        $countevent = Games::where('type', 'Event')->where('status', 1)->count();
+        
+        // Jeux mis en avant
         $starred = Games::where('status', 1)->inRandomOrder()->first();
+        
         return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
-    
+        
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Fonction quand un joueur clique sur un jeu
