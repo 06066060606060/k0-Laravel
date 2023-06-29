@@ -299,110 +299,89 @@
             <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
                 {{__('DERNIERS GAGNANTS')}}
             </h2>
-
             <div class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
                 <div class="swiper-wrapper">
-
-
-
                     @forelse ($scores as $score)
                         <div class="swiper-slide">
                             <blockquote>
-                                <div
-                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                <div class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
-                                    @if($score->data > 0)
-                                    @if($isMobile == true)
-                                        <img alt="" class="inline-block object-center w-auto h-9"
-                                            src="{{ asset('img/diamond5.png') }}">
-                                        @else
-                                        <img alt="" class="inline-block object-center w-auto h-12"
-                                            src="{{ asset('img/diamond5.png') }}">
-                                        @endif
-                                    @elseif($score->data2 > 0)
-                                    @if($isMobile == true)
-                                        <img alt="" class="inline-block object-center w-auto h-9"
-                                            src="{{ asset('img/gem10.png') }}">
-                                        @else
-                                        <img alt="" class="inline-block object-center w-auto h-12"
-                                            src="{{ asset('img/gem10.png') }}">
-                                        @endif
-                                    @elseif($score->data3 > 0)
-                                    @if($isMobile == true)
-                                        <img alt="" class="inline-block object-center w-auto h-9"
-                                            src="{{ asset('img/coin10.png') }}">
-                                        @else
-                                        <img alt="" class="inline-block object-center w-auto h-12"
-                                            src="{{ asset('img/coin10.png') }}">
-                                        @endif
-                                    @endif
+                                        @php
+                                            $image = '';
+                                            $amount = 0;
+                                            $gameName = '';
+                                            $gameId = $score->game_id;
+                                            if ($score->data > 0) {
+                                                $image = 'diamond5.png';
+                                                $amount = $score->data;
+                                            } elseif ($score->data2 > 0) {
+                                                $image = 'gem10.png';
+                                                $amount = $score->data2;
+                                            } elseif ($score->data3 > 0) {
+                                                $image = 'coin10.png';
+                                                $amount = $score->data3;
+                                            }
+
+                                            if ($isMobile) {
+                                                if ($gameId == 39) {
+                                                    $gameName = 'POOL';
+                                                } elseif ($gameId == 46) {
+                                                    $gameName = 'GoFRUITS';
+                                                } elseif ($gameId == 51) {
+                                                    $gameName = 'PLINKO';
+                                                } elseif ($gameId == 50) {
+                                                    $gameName = 'GoWIN';
+                                                } elseif ($gameId == 49) {
+                                                    $gameName = 'BINGO';
+                                                } elseif ($gameId == 52) {
+                                                    $gameName = 'GoSCRATCH';
+                                                }
+                                            } else {
+                                                if ($gameId == 39) {
+                                                    $gameName = 'POOL';
+                                                } elseif ($gameId == 46) {
+                                                    $gameName = 'GoFRUITS';
+                                                } elseif ($gameId == 51) {
+                                                    $gameName = 'PLINKO';
+                                                } elseif ($gameId == 50) {
+                                                    $gameName = 'GoWIN';
+                                                } elseif ($gameId == 49) {
+                                                    $gameName = 'BINGO';
+                                                } elseif ($gameId == 52) {
+                                                    $gameName = 'GoSCRATCH';
+                                                }
+                                            }
+                                        @endphp
+                                        <img alt="" class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}" src="{{ asset('img/'.$image) }}">
                                         <div class="flex flex-col">
-                                        @if($isMobile == true)
-                                            <h2 class="pb-0 pl-4 font-semibold text-xs">                                        
-                                        @else
-                                            <h2 class="pb-0 pl-4 font-semibold text-s">
-                                        @endif
-                                            {{ $score->name }}
-                                            </h2>
-                                    @if($score->data > 0)
-                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data }}</span>
-                                    @elseif($score->data2 > 0)
-                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data2 }}</span>
-                                    @elseif($score->data3 > 0)
-                                              <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->data3 }}</span>
-                                    @endif
-                                    @if($isMobile == true)
-                                    @if($score->game_id == 39)
-                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">POOL</span>
-                                    @elseif($score->game_id == 46)
-                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">GoFRUITS</span>
-                                    @elseif($score->game_id == 51)
-                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">PLINKO</span>
-                                    @elseif($score->game_id == 50)
-                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">GoWIN</span>
-                                    @elseif($score->game_id == 49)
-                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">BINGO</span>
-                                    @elseif($score->game_id == 52)
-                                    <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">GoSCRATCH</span>
-                                    @else
-                                    @endif
-                                    @else
-                                    @if($score->game_id == 39)
-                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">POOL</span>
-                                    @elseif($score->game_id == 46)
-                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoFRUITS</span>
-                                    @elseif($score->game_id == 51)
-                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">PLINKO</span>
-                                    @elseif($score->game_id == 50)
-                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoWIN</span>
-                                    @elseif($score->game_id == 49)
-                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">BINGO</span>
-                                    @elseif($score->game_id == 52)
-                                    <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">GoSCRATCH</span>
-                                    @else
-                                    @endif
-                                    @endif
+                                            @if($isMobile)
+                                                <h2 class="pb-0 pl-4 font-semibold text-xs">{{ $score->name }}</h2>
+                                            @else
+                                                <h2 class="pb-0 pl-4 font-semibold text-s">{{ $score->name }}</h2>
+                                            @endif
+                                            @if($amount > 0)
+                                                <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $amount }}</span>
+                                            @endif
+                                            @if($isMobile)
+                                                <span href="#" class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">{{ $gameName }}</span>
+                                            @else
+                                                <span href="#" class="ml-4 text-s font-bold text-orange-600 lg:mb-0">{{ $gameName }}</span>
+                                            @endif
                                         </div>
                                     </div>
                                 </div>
                             </blockquote>
-                         
                         </div>
                     @empty
                         <div class="swiper-slide">
                             <blockquote>
-                                <div
-                                    class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-
+                                <div class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
-                                        <img alt="" class="inline-block object-center w-12 h-12"
-                                            src="./img/gem10.png">
+                                        <img alt="" class="inline-block object-center w-12 h-12" src="./img/gem10.png">
                                         <div class="flex">
                                             <h2 class="pb-2 pl-4 font-semibold md:text-xl">
                                                 Dummy<br>
-                                                <span href="#"
-                                                    class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10
-                                                    ✧</span>
+                                                <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10 ✧</span>
                                             </h2>
                                         </div>
                                     </div>
@@ -410,15 +389,12 @@
                             </blockquote>
                         </div>
                     @endforelse
-
-
-
-
                 </div>
             </div>
         </div>
     </section>
 </winner>
+
 
 <!-- JOUEZ UNE FOIS CONNECTE -->
 <container class="mx-auto max-w-7xl" id="win">
