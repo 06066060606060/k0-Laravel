@@ -287,6 +287,7 @@
                     </div>
 
                 </div>
+@if (backpack_auth()->check())
 
                 <h1 class="py-4 text-lg font-bold text-white">{{__('Mes filleuls :')}}</h1>
                 <div class="flex flex-col w-full mt-0 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
@@ -333,7 +334,7 @@
                     </div>
 
                 </div>
-
+@endif
 
                 <h1 class="pt-4 text-lg font-bold text-white">{{__('Mon adresse de livraison')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
