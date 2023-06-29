@@ -37,17 +37,17 @@
         class="absolute block z-20 w-14 py-2 mt-2 bg-gray-800 border border-gray-500 rounded-md shadow-xl left-0 lg:right-0">
         <!-- repeat for each locale -->
         @foreach($available_locales as $locale_name => $available_locale)
-            @if($available_locale === $current_locale)
-                <li class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
-                    <img src="https://flagicons.lipis.dev/flags/4x3/{{ $available_locale }}.svg" alt="{{ $locale_name }}" class="w-4 h-4 mr-1">
-                </li>
-            @else
-                <li>
-                    <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/{{ $available_locale }}">
-                        <img src="https://flagicons.lipis.dev/flags/4x3/{{ $available_locale }}.svg" alt="{{ $locale_name }}" class="w-4 h-4 mr-1">
-                    </a>
-                </li>
-            @endif
+        @if($available_locale === $current_locale)
+            <li class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white">
+                <img src="https://flagicons.lipis.dev/flags/4x3/{{ $available_locale === 'en' ? 'gb' : $available_locale }}.svg" alt="{{ $locale_name }}" class="w-4 h-4 mr-1">
+            </li>
+        @else
+            <li>
+                <a rel="alternate" data-barba-prevent="self" class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white" href="language/{{ $available_locale }}">
+                    <img src="https://flagicons.lipis.dev/flags/4x3/{{ $available_locale === 'en' ? 'gb' : $available_locale }}.svg" alt="{{ $locale_name }}" class="w-4 h-4 mr-1">
+                </a>
+            </li>
+        @endif
         @endforeach
     </ul>
 </nav>
