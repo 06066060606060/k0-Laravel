@@ -11,18 +11,6 @@ use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
 
-Route::group([
-    'prefix' => '{locale}', 
-    'where' => ['locale' => implode('|', config('app.locales'))], 
-    'middleware' => 'localization'], function() {
-
-    Route::get('/', function () {
-        return view('index');
-    });
-
-    // autres routes ici
-});
-
 Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
@@ -47,6 +35,7 @@ Route::controller(GlobalController::class)->group(function(){
             return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
+Route::get('/', 'getAll')->name('getAll');
 Route::get('index', 'getAll')->name('getAll');
 Route::get('logout', 'logout');
 Route::get('jeux', 'games');
