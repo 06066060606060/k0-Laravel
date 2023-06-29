@@ -59,7 +59,7 @@
 .marquee {
     animation: marquee 20s linear infinite;
     white-space: nowrap;
-    display: inline-block; /* Utiliser "display: inline-block" pour s'ajuster à la taille du contenu */
+    display: inline-block;
 }
 
 @keyframes marquee {
@@ -71,39 +71,35 @@
     }
 }
 
-/* Réduire la durée de l'animation pour les appareils mobiles */
 @media (max-width: 768px) {
     .marquee {
         animation-duration: 13s;
     }
 }
 </style>
-@if($isMobile == true)
-<div class="py-0 mx-8 mb-4 bg-gray-500 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
-@else
-<div class="py-2 mx-8 mb-4 bg-gray-500 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
-@endif
+
+@php
+    $containerClass = $isMobile ? 'py-0' : 'py-2';
+    $textClass = $isMobile ? 'py-2' : 'py-0';
+@endphp
+
+<div class="{{ $containerClass }} mx-8 mb-4 bg-gray-500 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
     <div class="flex flex-wrap items-center justify-center py-0 mx-auto md:justify-between max-w-7xl">
         <div class="marquee-container">
-@if($isMobile == true)
-            <p class="py-2 ml-4 mr-2 font-bold text-gray-200 lg:ml-8 md:pb-0 marquee">
-@else
-            <p class="py-0 ml-4 mr-2 text-gray-200 lg:ml-8 md:pb-0 marquee">
-@endif
-@php
-    $randomNumbers = rand(1, 2);
-@endphp
-   <i class="fas fa-solid fa-rocket pr-2 fa-lg" style="color: yellow;"></i> 
-   @if($randomNumbers == 1)
-   {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Packs de notre menu.") !!}
-   @elseif($randomNumbers == 2)
-   {!! __("<b>Le saviez-vous :</b> 1 <img src='img/coin10.png' class='w-5 h-5 inline-block'> équivaut en réalité sur le site Gokdo.com à 1€, vous pouvez les cumuler dans certains jeux ou sur le concours.") !!}
-    @endif
-   </p>
+            <p class="{{ $textClass }} ml-4 mr-2 text-gray-200 lg:ml-8 md:pb-0 marquee">
+                <i class="fas fa-solid fa-rocket pr-2 fa-lg" style="color: yellow;"></i>
+                @php
+                    $randomNumbers = rand(1, 2);
+                @endphp
+                @if($randomNumbers == 1)
+                    {!! __("<b>Le saviez-vous :</b> Les <img src='img/gem10.png' class='w-5 h-5 inline-block'> vous permettent de jouer plus de parties, vous pouvez en acheter via le lien Packs de notre menu.") !!}
+                @elseif($randomNumbers == 2)
+                    {!! __("<b>Le saviez-vous :</b> 1 <img src='img/coin10.png' class='w-5 h-5 inline-block'> équivaut en réalité sur le site Gokdo.com à 1€, vous pouvez les cumuler dans certains jeux ou sur le concours.") !!}
+                @endif
+            </p>
         </div>
     </div>
 </div>
-
 
 @if(isset($count))
     @if($count > 2)
