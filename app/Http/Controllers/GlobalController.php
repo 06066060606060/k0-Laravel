@@ -386,6 +386,8 @@ class GlobalController extends Controller
 
     public function getProfil()
     {
+        $joueursParraines = []; // Initialisation de la variable
+
         if (backpack_auth()->check()) {  
             $concours = Concours::first(); // TOUTES LES COMMANDES
             $idjoueur= backpack_auth()->user()->id;
