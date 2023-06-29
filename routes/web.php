@@ -16,12 +16,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
 });
 
-Route::controller(GlobalController::class)->group(function(){
-    Route::get('language/{locale}', function ($locale) {
-        app()->setLocale($locale);
-        session()->put('locale', $locale);
-        return redirect()->back();
-    });
+
     Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -34,56 +29,50 @@ Route::controller(GlobalController::class)->group(function(){
             return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
-Route::get('/', 'getAll')->name('getAll');
-Route::get('index', 'getAll')->name('getAll');
-Route::get('logout', 'logout');
-Route::get('jeux', 'games');
-Route::get('game', 'game');
-Route::get('pack', 'pack');
-Route::get('concours', 'winner');
-Route::get('cadeaux', 'store');
-Route::get('cadeaux', 'search')->name('searchfilter');
-Route::get('contact', 'contact');
-Route::get('test', 'test');
-Route::get('aide', 'aide');
-Route::get('discord', 'discord');
-Route::get('reglement', 'reglement');
-Route::get('mentions-legales', 'mentionslegales');
-Route::get('confidentialite-site', 'confidentialitesite');
-Route::get('partenaires', 'partenaires');
-});
-
-Route::middleware(['cors'])->group(function () {
-    Route::get('game', [GlobalController::class, 'game']);
-});
-
-Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
-
-Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
-Route::post('setorderpack', [GlobalController::class, 'setOrderpack'])->name('setOrderpack');
-
-Route::get('order', [GlobalController::class, 'getProfil'])->name('getProfil');
-Route::get('orderpack', [GlobalController::class, 'getProfil']);
-
-Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
-Route::post('confirm_orderpack', [GlobalController::class, 'confirmOrderpack'])->name('confirmOrderpack');
-// Route::get('order', [GlobalController::class, 'getOrder'])->name('getOrder');
-Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
-
-Route::get('delete_order',  [GlobalController::class, 'getProfil']);
-Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
-
-Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
-Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
-
-Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
-
-Route::post('contactmail' , [MailController::class, 'sendMessage']);
-
-Route::get('processtart' , [ProcessController::class, 'execute']);
-
-// La redirection vers le provider
-Route::get("redirect/{provider}",[SocialiteController::class, 'redirect'])->name('socialite.redirect');
-
-// Le callback du provider
-Route::get("callback/{provider}",[SocialiteController::class, 'callback'])->name('socialite.callback');
+    Route::prefix('{locale}')->group(function () {
+        // Changement de langue
+        Route::get('/', function () {
+            return redirect()->route('getAll');
+        });
+        Route::get('language/{locale}', function ($locale) {
+            app()->setLocale($locale);
+            session()->put('locale', $locale);
+            return redirect()->back();
+        });
+        Route::get('/', 'GlobalController@getAll')->name('getAll');
+        Route::get('index', 'GlobalController@getAll')->name('getAll');
+        Route::get('logout', 'GlobalController@logout');
+        Route::get('jeux', 'GlobalController@games');
+        Route::get('game', 'GlobalController@game');
+        Route::get('pack', 'GlobalController@pack');
+        Route::get('concours', 'GlobalController@winner');
+        Route::get('cadeaux', 'GlobalController@store');
+        Route::get('cadeaux', 'GlobalController@search')->name('searchfilter');
+        Route::get('contact', 'GlobalController@contact');
+        Route::get('test', 'GlobalController@test');
+        Route::get('aide', 'GlobalController@aide');
+        Route::get('discord', 'GlobalController@discord');
+        Route::get('reglement', 'GlobalController@reglement');
+        Route::get('mentions-legales', 'GlobalController@mentionslegales');
+        Route::get('confidentialite-site', 'GlobalController@confidentialitesite');
+        Route::get('partenaires', 'GlobalController@partenaires');
+    
+        // Autres routes
+        Route::get('profil', 'GlobalController@getProfil')->name('getProfil');
+        Route::post('order', 'GlobalController@setOrder')->name('setOrder');
+        Route::post('setorderpack', 'GlobalController@setOrderpack')->name('setOrderpack');
+        Route::get('order', 'GlobalController@getProfil')->name('getProfil');
+        Route::get('orderpack', 'GlobalController@getProfil');
+        Route::post('confirm_order', 'GlobalController@confirmOrder')->name('confirmOrder');
+        Route::post('confirm_orderpack', 'GlobalController@confirmOrderpack')->name('confirmOrderpack');
+        Route::post('delete_order', 'GlobalController@deleteOrder')->name('deleteOrder');
+        Route::get('delete_order', 'GlobalController@getProfil');
+        Route::get('delete_orderpack', 'GlobalController@getProfil');
+        Route::post('delete_orderpack', 'GlobalController@deleteOrderpack')->name('deleteOrderpack');
+        Route::post('save_address', 'GlobalController@saveAddress')->name('saveAddress');
+        Route::post('deleteuser/{id}', 'GlobalController@deleteUser')->name('deleteUser');
+        Route::post('contactmail', [MailController::class, 'sendMessage']);
+        Route::get('processtart', [ProcessController::class, 'execute']);
+        Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
+        Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+    });
