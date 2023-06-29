@@ -34,62 +34,56 @@ Route::controller(GlobalController::class)->group(function(){
             return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
-
-    // Ajoutez le préfixe de langue à toutes les routes
-    Route::group(['prefix' => '{locale}', 'middleware' => ['Localization']], function () {
-        Route::get('/', 'getAll')->name('getAll');
-        Route::get('index', 'getAll')->name('getAll');
-        Route::get('logout', 'logout');
-        Route::get('jeux', 'games');
-        Route::get('game', 'game');
-        Route::get('pack', 'pack');
-        Route::get('concours', 'winner');
-        Route::get('cadeaux', 'store');
-        Route::get('cadeaux', 'search')->name('searchfilter');
-        Route::get('contact', 'contact');
-        Route::get('test', 'test');
-        Route::get('aide', 'aide');
-        Route::get('discord', 'discord');
-        Route::get('reglement', 'reglement');
-        Route::get('mentions-legales', 'mentionslegales');
-        Route::get('confidentialite-site', 'confidentialitesite');
-        Route::get('partenaires', 'partenaires');
-    });
+Route::get('/', 'getAll')->name('getAll');
+Route::get('index', 'getAll')->name('getAll');
+Route::get('logout', 'logout');
+Route::get('jeux', 'games');
+Route::get('game', 'game');
+Route::get('pack', 'pack');
+Route::get('concours', 'winner');
+Route::get('cadeaux', 'store');
+Route::get('cadeaux', 'search')->name('searchfilter');
+Route::get('contact', 'contact');
+Route::get('test', 'test');
+Route::get('aide', 'aide');
+Route::get('discord', 'discord');
+Route::get('reglement', 'reglement');
+Route::get('mentions-legales', 'mentionslegales');
+Route::get('confidentialite-site', 'confidentialitesite');
+Route::get('partenaires', 'partenaires');
 });
 
 Route::middleware(['cors'])->group(function () {
     Route::get('game', [GlobalController::class, 'game']);
 });
 
-Route::group(['prefix' => '{locale}', 'middleware' => ['Localization']], function () {
-    Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
+Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 
-    Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
-    Route::post('setorderpack', [GlobalController::class, 'setOrderpack'])->name('setOrderpack');
+Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
+Route::post('setorderpack', [GlobalController::class, 'setOrderpack'])->name('setOrderpack');
 
-    Route::get('order', [GlobalController::class, 'getProfil'])->name('getProfil');
-    Route::get('orderpack', [GlobalController::class, 'getProfil']);
+Route::get('order', [GlobalController::class, 'getProfil'])->name('getProfil');
+Route::get('orderpack', [GlobalController::class, 'getProfil']);
 
-    Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
-    Route::post('confirm_orderpack', [GlobalController::class, 'confirmOrderpack'])->name('confirmOrderpack');
+Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
+Route::post('confirm_orderpack', [GlobalController::class, 'confirmOrderpack'])->name('confirmOrderpack');
+// Route::get('order', [GlobalController::class, 'getOrder'])->name('getOrder');
+Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
 
-    Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
+Route::get('delete_order',  [GlobalController::class, 'getProfil']);
+Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
 
-    Route::get('delete_order',  [GlobalController::class, 'getProfil']);
-    Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
+Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
+Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
 
-    Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
-    Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
+Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
 
-    Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
+Route::post('contactmail' , [MailController::class, 'sendMessage']);
 
-    Route::post('contactmail', [MailController::class, 'sendMessage']);
+Route::get('processtart' , [ProcessController::class, 'execute']);
 
-    Route::get('processtart', [ProcessController::class, 'execute']);
+// La redirection vers le provider
+Route::get("redirect/{provider}",[SocialiteController::class, 'redirect'])->name('socialite.redirect');
 
-    // La redirection vers le provider
-    Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
-
-    // Le callback du provider
-    Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-});
+// Le callback du provider
+Route::get("callback/{provider}",[SocialiteController::class, 'callback'])->name('socialite.callback');
