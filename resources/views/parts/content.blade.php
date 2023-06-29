@@ -13,10 +13,10 @@
     {code: 'de', name: 'German', flag: 'de'},
     {code: 'es', name: 'Español', flag: 'es'},
     {code: 'it', name: 'Italian', flag: 'it'}
-    ], isMobile: $isMobile }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
+    ], isMobile: window.innerWidth <= 768 }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
 
 <template x-if="!localStorage.getItem('languageSelected')">
-<!-- Modale -->
+    <!-- Modale -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
         <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
             <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
@@ -46,6 +46,7 @@
     </div>
 </template>
 </div>
+
 
 
 @if (backpack_auth()->check())
