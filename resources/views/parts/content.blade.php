@@ -410,65 +410,48 @@
                             <a href="game?id={{ $allgame->id }}">
                                 <div class="absolute top-0 right-0 w-16 h-16">
                                     @php
-                                        $price = $allgame->prix;
-                                        $imagePath = '';
-                                        $priceLabel = '';
-                                        if ($price == 0) {
-                                            $imagePath = 'img/diamond5.png';
-                                            $priceLabel = __('10 par 24h');
-                                        } else {
-                                            if ($allgame->type_prix == 'Diamants' && $price == 0) {
-                                                $imagePath = 'img/diamond5.png';
-                                            } elseif ($allgame->type_prix == 'Rubis') {
-                                                $imagePath = 'img/gem10.png';
-                                            } else {
-                                                $imagePath = 'img/coin10.png';
-                                            }
-                                            $priceLabel = $price;
-                                        }
-                                        $imagesbb = $allgame->image[0] ?? null;
-                                        $imgibUrl = asset('storage/' . $imagesbb);
-                                        $gifibUrl = str_replace(".mp4", ".gif", $imgibUrl);
+                                        $borderColor = $allgame->prix == 0 ? 'blue-700' : 'orange-800';
+                                        $price = $allgame->prix == 0 ? '10 ' . __('par 24h') : $allgame->prix;
+                                        $imagePath = $allgame->type_prix == 'Diamants' && $allgame->prix == 0 ? 'img/diamond5.png' : 'img/coin10.png';
                                     @endphp
-                                    <div class="border z-20 absolute transform rotate-45 select-none bg-{{ $price == 0 ? 'blue-700' : 'orange-800' }} text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                        {{ $priceLabel }}
-                                        @if ($price > 0)
-                                            @if ($allgame->type_prix == 'Diamants' && $price == 0)
-                                                <img src="img/diamond5.png" class="w-4" style="display:inline;">
-                                            @elseif ($allgame->type_prix == 'Rubis')
-                                                <img src="img/gem10.png" class="w-4" style="display:inline;">
-                                            @else
-                                                <img src="img/coin10.png" class="w-4" style="display:inline;">
-                                            @endif
+                                    <div class="border z-20 absolute transform rotate-45 select-none bg-{{ $borderColor }} text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
+                                        {{ $price }}
+                                        @if ($allgame->prix > 0)
+                                            <img src="{{ $imagePath }}" class="w-4" style="display:inline;">
                                         @endif
                                     </div>
-                                    <img alt="gallery" class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse" src="{{ $gifibUrl }}" onerror="this.src='/img/empty.png'">
-                                    <div class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
-                                        <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
-                                            {{ $allgame->name }}
-                                        </h2>
-                                        @if ($isMobile == false)
-                                            @php $locale = app()->getLocale(); @endphp
-                                            @if ($locale == 'fr')
-                                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description }}</p>
-                                            @elseif ($locale == 'en')
-                                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_en }}</p>
-                                            @elseif ($locale == 'de')
-                                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_de }}</p>
-                                            @elseif ($locale == 'es')
-                                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_es }}</p>
-                                            @elseif ($locale == 'it')
-                                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $allgame->description_it }}</p>
-                                            @endif
-                                        @endif
-                                        <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
-                                            <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                                            <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                                            <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                                            <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                            <span class="relative">{{__('Jouer')}}</span>
-                                        </a>
-                                    </div>
+                                </div>
+                                @php
+                                    $imagesbb = $allgame->image[0] ?? null;
+                                    $imgibUrl = asset('storage/' . $imagesbb);
+                                    $gifibUrl = str_replace(".mp4", ".gif", $imgibUrl);
+                                    $locale = app()->getLocale();
+                                    $description = '';
+                                    if ($locale == 'fr') {
+                                        $description = $allgame->description;
+                                    } elseif ($locale == 'en') {
+                                        $description = $allgame->description_en;
+                                    } elseif ($locale == 'de') {
+                                        $description = $allgame->description_de;
+                                    } elseif ($locale == 'es') {
+                                        $description = $allgame->description_es;
+                                    } elseif ($locale == 'it') {
+                                        $description = $allgame->description_it;
+                                    }
+                                @endphp
+                                <img alt="gallery" class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse" src="{{ $gifibUrl }}" onerror="this.src='/img/empty.png'">
+                                <div class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
+                                    <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">{{ $allgame->name }}</h2>
+                                    @if ($isMobile == false && !empty($description))
+                                        <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $description }}</p>
+                                    @endif
+                                    <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                        <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                                        <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                                        <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                                        <span class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                                        <span class="relative">{{__('Jouer')}}</span>
+                                    </a>
                                 </div>
                             </a>
                         </div>
