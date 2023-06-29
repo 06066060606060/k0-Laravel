@@ -1,14 +1,15 @@
- @php
-    use \App\Http\Controllers\GlobalController;
-    $isMobile = GlobalController::isMobile();
+@php
+use \App\Http\Controllers\GlobalController;
+$isMobile = GlobalController::isMobile();
 @endphp
-<header class="z-10 flex px-4 pt-6 pb-2 md:px-0 md:mx-auto max-w-7xl border-x-1 justify-evenly">
 
+<header class="z-10 flex px-4 pt-6 pb-2 md:px-0 md:mx-auto max-w-7xl border-x-1 justify-evenly">
     <nav x-data="{ isOpen: false }" class="container py-6 pl-2 pr-4 mx-auto lg:flex lg:justify-between lg:items-center">
         <div class="flex items-center justify-between">
             <div>
-                <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/"><img
-                        src="./img/logo_mobile.webp" alt="Gokdo" width="354" height="96" class="w-auto h-16"></a>
+                <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/">
+                    <img src="./img/logo_mobile.webp" alt="Gokdo" width="354" height="96" class="w-auto h-16">
+                </a>
             </div>
             @include('parts/language_switcher')
 
@@ -34,49 +35,60 @@
         <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
             class="absolute inset-x-0 z-50 w-screen px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
             <div class="flex flex-col pb-4 space-y-4 align-baseline mynav lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
-                
-                
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="/"
                     @click="isOpen = false">
                     @if (backpack_auth()->check())
-                    <i class="fa-solid fa-gamepad"></i>&nbsp; {{__('Jeux')}}</a>
-                @else
-                    <i class="fa-solid fa-house"></i>&nbsp; {{__('Accueil')}}</a>
-                @endif
+                        <i class="fa-solid fa-gamepad"></i>&nbsp; {{__('Jeux')}}
+                    @else
+                        <i class="fa-solid fa-house"></i>&nbsp; {{__('Accueil')}}
+                    @endif
+                </a>
                 @if (backpack_auth()->check())
                 @else
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="/#concept"
-                    @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; {{__('Concept')}}</a>
+                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
+                        href="/#concept" @click="isOpen = false">
+                        <i class="fa-solid fa-gamepad"></i>&nbsp; {{__('Concept')}}
+                    </a>
                 @endif
                 <!--<a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="jeux"
                     @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos jeux</a>-->
                 @if (backpack_auth()->check())
-                @if(isset($concours))
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
-                @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}</a>
+                    @if(isset($concours))
+                        <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
+                            href="concours" @click="isOpen = false" data-barba-prevent="self">
+                            <i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}
+                        </a>
+                    @else
+                        <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
+                            href="concours" @click="isOpen = false" data-barba-prevent="self">
+                            <i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}
+                        </a>
+                    @endif
                 @else
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="concours"
-                @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}</a>
-                @endif
-                @else
-                <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase" href="/#video"
-                    @click="isOpen = false"><i class="fa-solid fa-video"></i>&nbsp; {{__('Vidéo')}}</a>
+                    <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
+                        href="/#video" @click="isOpen = false">
+                        <i class="fa-solid fa-video"></i>&nbsp; {{__('Vidéo')}}
+                    </a>
                 @endif
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="cadeaux"
-                        @click="isOpen = false" data-barba-prevent="self"><i class="fa-solid fa-gift"></i>&nbsp; {{__('Cadeaux')}}</a>
+                    @click="isOpen = false" data-barba-prevent="self">
+                    <i class="fa-solid fa-gift"></i>&nbsp; {{__('Cadeaux')}}
+                </a>
                 @if (backpack_auth()->check())
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="pack"
-                        @click="isOpen = false" data-barba-prevent="self"><i class="fa-regular fa-gem"></i>&nbsp;
-                        {{__('Packs')}}</a>
+                        @click="isOpen = false" data-barba-prevent="self">
+                        <i class="fa-regular fa-gem"></i>&nbsp; {{__('Packs')}}
+                    </a>
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
-                        @click="isOpen = false"  data-barba-prevent="self"><i class="fa-solid fa-user"></i>&nbsp; {{__('Profil')}}</a>
+                        @click="isOpen = false"  data-barba-prevent="self">
+                        <i class="fa-solid fa-user"></i>&nbsp; {{__('Profil')}}
+                    </a>
                 @endif
-                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="discord"
-                        @click="isOpen = false"  data-barba-prevent="self"><i class="fab fa-discord"></i>&nbsp; {{__('Discord')}}</a>
-
+                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="discord"
+                    @click="isOpen = false"  data-barba-prevent="self">
+                    <i class="fab fa-discord"></i>&nbsp; {{__('Discord')}}
+                </a>
             </div>
-
-
 
             @if (backpack_auth()->check())
                 <div :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']"
@@ -112,10 +124,10 @@
                                             Administration</a>
                                     @endif
                                     <a href="admin/logout"
-                                        class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white prevent" data-barba-prevent="self">
+                                        class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white prevent"
+                                        data-barba-prevent="self">
                                         {{__('Déconnexion')}} </a>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -149,6 +161,7 @@
         </div>
     </nav>
 </header>
+
 @if (backpack_auth()->check())
     <div class="py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl">
         <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
@@ -160,7 +173,7 @@
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                 </div>
                 <div class="flex px-2">
-                        <img src="img/gem10.png" class="w-8 h-6">
+                    <img src="img/gem10.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
                 </div>
                 <div class="flex px-2">
@@ -174,16 +187,14 @@
 @endif
 
 <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-
-  const currentLocation = location.href;
-  const menuItem = document.querySelectorAll('.mynav a');
-  const menuLength = menuItem.length;
-  for (let i = 0; i < menuLength; i++) {
-    if (menuItem[i].href === currentLocation) {
-      menuItem[i].className = 'text-sm font-bold lg:mx-4 text-blue-600';
-    }
-  }
-});
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentLocation = location.href;
+        const menuItem = document.querySelectorAll('.mynav a');
+        const menuLength = menuItem.length;
+        for (let i = 0; i < menuLength; i++) {
+            if (menuItem[i].href === currentLocation) {
+                menuItem[i].className = 'text-sm font-bold lg:mx-4 text-blue-600';
+            }
+        }
+    });
 </script>
