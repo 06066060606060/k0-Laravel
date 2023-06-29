@@ -17,11 +17,16 @@ Route::group(['middleware' => ['web']], function () {
 });
 
 Route::controller(GlobalController::class)->group(function(){
-    Route::get('language/{locale}', function ($locale) {
-        app()->setLocale($locale);
-        session()->put('locale', $locale);
+    Route::get('{locale?}', function ($locale = null) {
+        if ($locale && in_array($locale, config('app.available_locales'))) {
+            app()->setLocale($locale);
+            session()->put('locale', $locale);
+        }
+
         return redirect()->back();
-    });
+    })->where('locale', implode('|', config('app.available_locales')));
+});
+
     Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
         // Vérifier si le parrain existe dans la table "users"
         $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
