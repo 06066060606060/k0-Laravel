@@ -345,7 +345,7 @@ class GlobalController extends Controller
     public function contact($lang)
     {
     $url = url($lang . '/contact');
-    return view($lang . '.contact', compact('lang', 'url'));
+    return view($lang . '/contact', compact('lang', 'url'));
     }
 
     public function aide()
