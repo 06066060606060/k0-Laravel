@@ -1,5 +1,6 @@
 <?php
 
+
 use App\Http\Middleware\Cors;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
@@ -8,6 +9,8 @@ use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\ProcessController;
 use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
+use App\Http\Controllers\GlobalController;
+
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
