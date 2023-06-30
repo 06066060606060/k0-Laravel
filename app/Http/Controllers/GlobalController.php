@@ -339,7 +339,7 @@ class GlobalController extends Controller
     {
         $lang = App::getLocale();
         $url = url($lang . '/contact');
-        return view($lang . '/contact', compact('lang', 'url'));
+        return view($url, compact('lang', 'url'));
     }
 
     public function contactus()
