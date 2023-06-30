@@ -43,7 +43,7 @@
                             <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a>
                         </li>
                         <li>
-                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
+                            <a href="{{ route('contact', ['lang' => $lang]) }}" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
                         </li>
                     </ul>
                 </div>
