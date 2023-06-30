@@ -20,7 +20,11 @@ Route::group(['prefix' => 'en'], function () {
     });
 
     Route::controller(GlobalController::class)->group(function () {
-        
+        Route::get('language/{locale}', function ($locale) {
+            app()->setLocale($locale);
+            session()->put('locale', $locale);
+            return redirect()->back();
+        });
         Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
             $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
 
