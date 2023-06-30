@@ -335,12 +335,7 @@ class GlobalController extends Controller
         return view('help');
     }
 
-    public function contact()
-    {
-        $lang = App::getLocale();
-        $url = url($lang . '/contact');
-        return view($url);
-    }
+    
 
     public function contact($lang)
     {
