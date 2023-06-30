@@ -2,25 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\User;
-use App\Models\Gains;
-use App\Models\Games;
-use App\Models\Packs;
-use App\Models\Pages;
-use App\Models\Scores;
 use App\Models\Cadeaux;
-use App\Models\Concours;
 use App\Models\Commandes;
-use App\Models\Paiements;
+use App\Models\Concours;
+use App\Models\Derniers_Gagnants_Concours;
+use App\Models\Gains;
 use App\Models\Infosperso;
-use Illuminate\Http\Request;
+use App\Models\User;
+use App\Models\Games;
+use App\Models\Pages;
+use App\Models\Packs;
+use Carbon\Carbon;
+use App\Models\Paiements;
+use App\Models\Scores;
 use App\Models\ScoresConcours;
-use Illuminate\Support\Facades\App;
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-use App\Models\Derniers_Gagnants_Concours;
-use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class GlobalController extends Controller
 {
@@ -335,10 +334,14 @@ class GlobalController extends Controller
         return view('help');
     }
 
-    public function contact($lang)
+    public function contact()
     {
-    $url = url($lang . '/contact');
-    return view($lang . '.contact', compact('lang', 'url'));
+        return view('contact');
+    }
+
+    public function contactus()
+    {
+        return view('contactus');
     }
 
     public function aide()
