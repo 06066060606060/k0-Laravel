@@ -30,8 +30,6 @@ class GlobalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    $lang = App::getLocale();
-
     public function getAll()
     {
         $concours = Concours::all(); // TOUTES LES COMMANDES
@@ -339,6 +337,7 @@ class GlobalController extends Controller
 
     public function contact()
     {
+        $lang = App::getLocale();
         $url = url($lang . '/contact');
         return view('contact');
     }
