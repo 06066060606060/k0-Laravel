@@ -335,13 +335,11 @@ class GlobalController extends Controller
         return view('help');
     }
 
-    
-
-    public function contact($lang)
-    {
-    $url = url($lang . '/contact');
-    return view($url, compact('lang', 'url'));
-    }
+   public function contact($lang)
+{
+$url = url($lang . '/contact');
+return view($lang . '.contact', compact('lang', 'url'));
+}
 
     public function aide()
     {
