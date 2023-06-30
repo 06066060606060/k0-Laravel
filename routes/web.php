@@ -1,6 +1,5 @@
 <?php
 
-
 use App\Http\Middleware\Cors;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MailController;
@@ -45,7 +44,7 @@ Route::group(['prefix' => 'en'], function () {
         Route::get('concours', 'winner');
         Route::get('cadeaux', 'store');
         Route::get('cadeaux', 'search')->name('searchfilter');
-        Route::get('{lang}/contact', 'GlobalController@contact');
+        Route::get('{lang}/contact', 'ContactController@contact');
         Route::get('test', 'test');
         Route::get('aide', 'aide');
         Route::get('discord', 'discord');
