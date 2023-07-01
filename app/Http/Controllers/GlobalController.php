@@ -369,11 +369,6 @@ class GlobalController extends Controller
         return view('mentions-legales');
     }
 
-    public function showAmp()
-    {
-        return view('confidentialite-site.amp');
-    }
-
     public function confidentialitesite()
     {
         return view('confidentialite-site');

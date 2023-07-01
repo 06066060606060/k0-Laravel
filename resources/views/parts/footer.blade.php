@@ -29,11 +29,8 @@
                         <li>
                             <a href="mentions-legales" class="text-gray-400 hover:text-gray-500">{{__('Mentions Légales')}}</a>
                         </li>
-                        <li>@if($isMobile == true)
-                        <a href="{{ route('confidentialiteSite.showAmp') }}" class="text-gray-400 hover:text-gray-500">{{__('Confidentialité')}}</a>
-                        @else                        
+                        <li>
                             <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">{{__('Confidentialité')}}</a>
-                        @endif
                         </li>
                     </ul>
                 </div>

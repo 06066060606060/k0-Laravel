@@ -50,7 +50,6 @@ Route::get('aide', 'aide');
 Route::get('discord', 'discord');
 Route::get('reglement', 'reglement');
 Route::get('mentions-legales', 'mentionslegales');
-Route::get('/amp/confidentialite-site', 'ConfidentialiteSiteController@showAmp')->name('confidentialiteSite.showAmp');
 Route::get('confidentialite-site', 'confidentialitesite');
 Route::get('partenaires', 'partenaires');
 });
