@@ -82,11 +82,12 @@ class GlobalController extends Controller
         $isMobile = self::isMobile(); // Utilisez self::isMobile() pour appeler la méthode statique
         
         if ($isMobile) {
-            return view('index_amp', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+            return view('index_amp', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours', 'isMobile'));
         } else {
             return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
         }
     }
+
             
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
