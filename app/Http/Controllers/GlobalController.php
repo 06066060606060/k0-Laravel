@@ -79,7 +79,7 @@ class GlobalController extends Controller
         
         $starred = Games::where('status', 1)->inRandomOrder()->first();
         
-        $isMobile = $this->isMobile(); // Déplacez cette ligne ici
+        $isMobile = GlobalController::isMobile(); // Utilisez le nom de la classe pour accéder à la méthode statique
         
         if ($isMobile) {
             return view('index_amp', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
