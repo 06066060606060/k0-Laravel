@@ -29,6 +29,29 @@ class GlobalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    static function isMobile(): bool
+    {
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        $mobileAgents = [
+            'Android',
+            'iPhone',
+            'iPod',
+            'BlackBerry',
+            'Windows Phone',
+            'Opera Mini',
+            'IEMobile',
+            'Mobile Safari'
+        ];
+
+        foreach ($mobileAgents as $agent) {
+            if (stripos($userAgent, $agent) !== false) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     $isMobile = $this->isMobile();
 
      public function getAll()
@@ -894,28 +917,5 @@ class GlobalController extends Controller
     {
        $sommecoins = User::All()->sum('trophee3');
         return number_format($sommecoins, 0, ',', ' ');
-    }
-
-    static function isMobile(): bool
-    {
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        $mobileAgents = [
-            'Android',
-            'iPhone',
-            'iPod',
-            'BlackBerry',
-            'Windows Phone',
-            'Opera Mini',
-            'IEMobile',
-            'Mobile Safari'
-        ];
-
-        foreach ($mobileAgents as $agent) {
-            if (stripos($userAgent, $agent) !== false) {
-                return true;
-            }
-        }
-
-        return false;
     }
 }
