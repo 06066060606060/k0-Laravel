@@ -9,7 +9,6 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
-$isMobile = GlobalController::isMobile();
 
 
 Route::group(['middleware' => ['web']], function () {
@@ -36,13 +35,9 @@ Route::controller(GlobalController::class)->group(function(){
             return redirect()->route('backpack.auth.register');
         }
     })->name('parrainage.link');
-    if ($isMobile == true) {
-        Route::get('/', 'getAll')->name('getAll_amp');
-        Route::get('index', 'getAll')->name('getAll_amp');
-    } else {
-        Route::get('/', 'getAll')->name('getAll');
-        Route::get('index', 'getAll')->name('getAll');
-    }Route::get('logout', 'logout');
+Route::get('/', 'getAll')->name('getAll');
+Route::get('index', 'getAll')->name('getAll');
+Route::get('logout', 'logout');
 Route::get('jeux', 'games');
 Route::get('game', 'game');
 Route::get('pack', 'pack');
