@@ -371,11 +371,9 @@ class GlobalController extends Controller
 
     public function showAmp()
     {
-        // Logique spécifique à la version AMP de la page de confidentialité
-
-        return view('confidentialite-site-amp');
+        return view('confidentialite-site.amp');
     }
-    
+
     public function confidentialitesite()
     {
         return view('confidentialite-site');
