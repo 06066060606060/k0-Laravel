@@ -20,6 +20,7 @@ use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+$isMobile = $this->isMobile();
 
 class GlobalController extends Controller
 {
@@ -65,7 +66,11 @@ class GlobalController extends Controller
         // Jeux mis en avant
         $starred = Games::where('status', 1)->inRandomOrder()->first();
         
-        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        if ($isMobile == true) {
+            return view('index_amp', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        } else {
+            return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        }
     }
         
 /////////////////////////////////////////////////////////////////////////////////////////////////////
