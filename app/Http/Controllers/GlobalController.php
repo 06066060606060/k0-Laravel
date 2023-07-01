@@ -29,33 +29,12 @@ class GlobalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    static function isMobile(): bool
-    {
-        $userAgent = $_SERVER['HTTP_USER_AGENT'];
-        $mobileAgents = [
-            'Android',
-            'iPhone',
-            'iPod',
-            'BlackBerry',
-            'Windows Phone',
-            'Opera Mini',
-            'IEMobile',
-            'Mobile Safari'
-        ];
-
-        foreach ($mobileAgents as $agent) {
-            if (stripos($userAgent, $agent) !== false) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
     public function getAll()
     {
-        $concours = Concours::all();
-        $winner = User::latest()->get();
+        $concours = Concours::all(); // TOUTES LES COMMANDES
+        
+        $winner = User::latest()->get(); //DERNIERS GAGNANTS JEUX
+        
         $lejoueur = null;
         $count = 0;
         
@@ -64,31 +43,31 @@ class GlobalController extends Controller
             $count = User::where('parrain', backpack_auth()->user()->name)->count();
         }
         
+        // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')->join('users', 'users.id', '=', 'scores.user_id')->get();
         
+        // Tous les jeux
         $allgames = Games::whereNotIn('type', ['Event', 'Solo'])->orderBy('id', 'desc')->get();
         
+        // Jeux Gratuits
         $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
         
+        // Jeux Booster
         $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
         
+        // Jeux Solo
         $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'asc')->get();
         
+        // Jeux event
         $eventsgames = Games::where('type', 'Event')->get();
         $countevent = Games::where('type', 'Event')->where('status', 1)->count();
         
+        // Jeux mis en avant
         $starred = Games::where('status', 1)->inRandomOrder()->first();
         
-        $isMobile = self::isMobile(); // Utilisez self::isMobile() pour appeler la méthode statique
-        
-        if ($isMobile) {
-            return view('index_amp', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours', 'isMobile'));
-        } else {
-            return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
-        }
+        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
-
-            
+        
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Fonction quand un joueur clique sur un jeu
@@ -909,5 +888,28 @@ class GlobalController extends Controller
     {
        $sommecoins = User::All()->sum('trophee3');
         return number_format($sommecoins, 0, ',', ' ');
+    }
+
+    static function isMobile(): bool
+    {
+        $userAgent = $_SERVER['HTTP_USER_AGENT'];
+        $mobileAgents = [
+            'Android',
+            'iPhone',
+            'iPod',
+            'BlackBerry',
+            'Windows Phone',
+            'Opera Mini',
+            'IEMobile',
+            'Mobile Safari'
+        ];
+
+        foreach ($mobileAgents as $agent) {
+            if (stripos($userAgent, $agent) !== false) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
