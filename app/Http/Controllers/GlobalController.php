@@ -20,8 +20,7 @@ use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-$globalController = new GlobalController();
-$isMobile = $globalController->isMobile();
+
 class GlobalController extends Controller
 {
     /**
@@ -30,7 +29,9 @@ class GlobalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getAll()
+    $isMobile = $this->isMobile();
+
+     public function getAll()
     {
         $concours = Concours::all(); // TOUTES LES COMMANDES
         
