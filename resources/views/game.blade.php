@@ -43,7 +43,9 @@
                             </div> 
                             <div class="display-block mt-6">
                             @if($isMobile == true)
+                                @if($windowWidth == 320 && $windowHeight == 480)
                                 <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
+                                @endif
                             @else
                                 <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" scrolling="no"></iframe>
                             @endif
