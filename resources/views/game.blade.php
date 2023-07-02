@@ -42,14 +42,18 @@
                                 <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
                             </div> 
                             <div class="display-block mt-6">
-                            @if($isMobile == true)
-                            <script>
-                                // Exécution côté client, JavaScript
-                                var screenWidthInches = window.innerWidth / window.devicePixelRatio;
-                                var screenHeightInches = window.innerHeight / window.devicePixelRatio;
-                            </script>
+                           @if($isMobile == true)
+                                <script>
+                                    // Exécution côté client, JavaScript
+                                    var screenWidthInches = window.innerWidth / window.devicePixelRatio;
+                                    var screenHeightInches = window.innerHeight / window.devicePixelRatio;
+                                </script>
 
-                            @if ($isMobile && $screenWidthInches == 6.5)
+                                @php
+                                    $screenWidthInches = '<script>document.write(screenWidthInches);</script>';
+                                    $screenHeightInches = '<script>document.write(screenHeightInches);</script>';
+                                @endphp
+                            @if ($isMobile && $screenWidthInches == 6.5) 
                             <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
                                 @else
                                 @endif
