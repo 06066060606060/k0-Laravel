@@ -49,7 +49,7 @@
                                 $agent = new Agent();
                                 $screenWidthInches = $agent->device()->screenWidth();
                                 @endphp
-                            {{ $screenWidhtInches }}
+                            {{ $screenWidthInches }}
                                 
                             @if ($isMobile && $screenWidthInches == 360) 
                             <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
