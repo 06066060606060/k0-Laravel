@@ -74,6 +74,8 @@ class GlobalController extends Controller
     public function game(Request $request)
     {
     if(backpack_auth()->check()){ // loggué
+        $windowWidth = 0;
+        $windowHeight = 0;
         $userid = backpack_auth()->id(); // retourne l'id
         $username = backpack_auth()->user()->name; // retourne le pseudo
         $rubis = backpack_auth()->user()->trophee2; // retourne les rubis
@@ -96,7 +98,7 @@ class GlobalController extends Controller
     //Le jeu s'affiche 
     $game = $onegame[0];
 
-    return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
+    return view('game', compact('windowWidth', 'windowHeight', 'game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
