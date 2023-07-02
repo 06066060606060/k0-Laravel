@@ -47,6 +47,7 @@
                                     // Exécution côté client, JavaScript
                                     var screenWidthInches = window.innerWidth / window.devicePixelRatio;
                                     var screenHeightInches = window.innerHeight / window.devicePixelRatio;
+                                    alert(screenWidthInches);
                                 </script>
 
                                 @php
