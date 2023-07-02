@@ -8,16 +8,27 @@
     <!-- Dropdown toggle button -->
     <button @click="isOpen = !isOpen" aria-haspopup="true" :aria-expanded="isOpen ? 'true' : 'false'"
         class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
-        <span class="mr-1">@if($current_locale === 'en')
-            <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
+        <span class="mr-1">
+            @if($current_locale === 'en')
+            <a href="https://gokdo.com/language/en">
+                <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
+            </a>
         @elseif($current_locale === 'fr')
+        <a href="https://gokdo.com/language/fr">
             <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
+        </a>
         @elseif($current_locale === 'es')
+        <a href="https://gokdo.com/language/es">
             <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
-        @elseif($current_locale === 'de')
+        </a>
+        <a href="https://gokdo.com/language/de">
             <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-4 h-4 mr-1">
+        </a>
+        @elseif($current_locale === 'de')
         @elseif($current_locale === 'it')
+        <a href="https://gokdo.com/language/it">
             <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-4 h-4 mr-1">
+        </a>
         @endif</span>
         <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
