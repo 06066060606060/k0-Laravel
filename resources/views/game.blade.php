@@ -4,6 +4,8 @@
      <div data-barba="container">
              @php
         use \App\Http\Controllers\GlobalController;
+        use Jenssegers\Agent\Agent;
+
 
         $isMobile = GlobalController::isMobile();
     @endphp
@@ -46,6 +48,7 @@
                                 @php
                                 $agent = new Agent();
                                 $screenWidthInches = $agent->device()->screenWidth();
+                                {{ $screenWidhtInches }}
                                 @endphp
                             @if ($isMobile && $screenWidthInches == 360) 
                             <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
