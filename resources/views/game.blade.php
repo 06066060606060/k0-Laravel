@@ -43,14 +43,14 @@
                             </div> 
                             <div class="display-block mt-6">
                             @if($isMobile == true)
-                                @php
-                                    // Taille de l'écran en pouces
-                                    $screenWidthInches = floor(window.innerWidth / window.devicePixelRatio);
-                                    $screenHeightInches = floor(window.innerHeight / window.devicePixelRatio);
-                                @endphp
+                            <script>
+                                // Exécution côté client, JavaScript
+                                var screenWidthInches = window.innerWidth / window.devicePixelRatio;
+                                var screenHeightInches = window.innerHeight / window.devicePixelRatio;
+                            </script>
 
-                                @if ($screenWidthInches == 6.5)
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
+                            @if ($isMobile && $screenWidthInches == 6.5)
+                            <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
                                 @else
                                 @endif
                             @else
