@@ -32,45 +32,6 @@
                          </div>
 
                          <div class="container flex flex-col-reverse xl:flex-row">
-                             <div class="w-full px-4 py-4 bg-gray-900 rounded-md xl:w-1/4 xl:mr-4">
-                             <div id="points" class="py-2 text-sm font-normal text-gray-200"> &nbsp;</div>
-                                 <h1 class="font-extrabold text-md text-gray-50">{{__('LES GAGNANTS')}}</h1>
-                                 <table class="min-w-full divide-y divide-gray-200">
-                                     <thead>
-                                         <tr>
-                                             <th scope="col"
-                                                 class="px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 {{__('Joueurs')}}
-                                             </th>
-                                             <th scope="col"
-                                                 class="flex px-4 py-2 text-xs font-medium tracking-wider text-gray-500 uppercase">
-                                                 {{__('Gains')}}
-                                             </th>
-                                         </tr>
-                                     </thead>
-                                     <tbody>
-                                         @foreach ($scores as $score)
-                                             <tr>
-                                                 <td class="px-4 py-2 text-sm font-normal text-gray-200 whitespace-nowrap">
-                                                     {{ $score->user->name }}
-                                                 </td>
-                                                 <td class="flex px-4 py-2 text-sm font-normal text-gray-200 rate-container">
-                                                 @if($score->data > 0)
-                                                     {{ $score->data }} <img src="img/diamond5.png" class="flex w-6 h-4 ml-2 mt-1">
-
-                                                 @endif
-                                                 @if($score->data2 > 0)
-                                                     {{ $score->data2 }} <img src="img/gem10.png" class="flex w-5 h-4 ml-2 mt-1">
-                                                 @endif
-                                                 @if($score->data3 > 0)
-                                                     {{ $score->data3 }} <img src="img/coin10.png" class="flex w-5 h-4 ml-2 mt-1">
-                                                 @endif
-                                                 </td>
-                                             </tr>
-                                         @endforeach
-                                     </tbody>
-                                 </table>
-                             </div>
                              @if (backpack_auth()->check())
                              @php
                               $link =  $game->link ?? null;
