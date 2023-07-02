@@ -4,8 +4,6 @@
      <div data-barba="container">
              @php
         use \App\Http\Controllers\GlobalController;
-        use Jenssegers\Agent\Agent;
-
 
         $isMobile = GlobalController::isMobile();
     @endphp
@@ -44,27 +42,7 @@
                                 <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
                             </div> 
                             <div class="display-block mt-6">
-                           @if($isMobile == true)
-                           <script>
-                               // Capture de la largeur de l'écran
-                            var largeurEcran = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-                            // Affichage de la largeur via une alerte
-                            alert("La largeur de l'écran est de : " + largeurEcran + " pixels.");
-                                </script>
-                            @if ($isMobile) 
-                            <style>
-                            #gameBody {
-                            width: 100%;
-                            height: 100%;
-                            }
-                            </style>
-                            <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="overflow-hidden -mt-1"  scrolling="no"></iframe>
-                                @else
-                                @endif
-                            @else
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" scrolling="no"></iframe>
-                            @endif
+                               <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full h-[667px] overflow-hidden -mt-1" scrolling="no"></iframe>
                             </div>
                            </div>
 
