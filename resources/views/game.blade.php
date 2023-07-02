@@ -44,10 +44,10 @@
                             <div class="display-block mt-6">
                            @if($isMobile == true)
                                 <script>
-  var screenSizeInches = Math.sqrt(screen.width * screen.width + screen.height * screen.height) / window.devicePixelRatio;
-  alert("Taille de l'écran : " + screenSizeInches + " pouces");
+    // Client-side execution, JavaScript
+    var screenWidthPixels = screen.width;
+    alert("Width of the screen: " + screenWidthPixels + " pixels");
 </script>
-
 
                                 @php
                                     $screenWidthInches = '<script>document.write(screenWidthInches);</script>';
