@@ -47,13 +47,19 @@
                            @if($isMobile == true)
                            <script>
                                // Capture de la largeur de l'écran
-var largeurEcran = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+                            var largeurEcran = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-// Affichage de la largeur via une alerte
-alert("La largeur de l'écran est de : " + largeurEcran + " pixels.");
+                            // Affichage de la largeur via une alerte
+                            alert("La largeur de l'écran est de : " + largeurEcran + " pixels.");
                                 </script>
                             @if ($isMobile) 
-                            <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
+                            <style>
+                            #gameBody {
+                            width: 100%;
+                            height: 100%;
+                            }
+                            </style>
+                            <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="overflow-hidden -mt-1"  scrolling="no"></iframe>
                                 @else
                                 @endif
                             @else
