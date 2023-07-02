@@ -26,6 +26,8 @@
 
 <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2586911043865582"
+     crossorigin="anonymous"></script>
 
   <style>
   @charset "UTF-8";
