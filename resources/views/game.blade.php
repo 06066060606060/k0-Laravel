@@ -43,26 +43,13 @@
                             </div> 
                             <div class="display-block mt-6">
                             @if($isMobile == true)
-                                <script>
-                                    function getWindowDimensions() {
-                                        var windowWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-                                        var windowHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-                                        return { width: windowWidth, height: windowHeight };
-                                    }
+                                @php
+                                    // Taille de l'écran en pouces
+                                    $screenWidthInches = floor(window.innerWidth / window.devicePixelRatio);
+                                    $screenHeightInches = floor(window.innerHeight / window.devicePixelRatio);
+                                @endphp
 
-                                    var windowDimensions = getWindowDimensions();
-                                    var windowWidth = windowDimensions.width;
-                                    var windowHeight = windowDimensions.height;
-                                </script>
-                                @if($windowWidth == 320 && $windowHeight == 480)
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
-                                @elseif($windowWidth == 360 && $windowHeight == 640)
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
-                                @elseif($windowWidth == 375 && $windowHeight == 667)
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
-                                @elseif($windowWidth == 414 && $windowHeight == 736)
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
-                                @elseif($windowWidth == 720 && $windowHeight == 1280)
+                                @if ($screenWidthInches == 6.5)
                                 <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
                                 @else
                                 @endif
