@@ -44,16 +44,13 @@
                             <div class="display-block mt-6">
                            @if($isMobile == true)
                                 <script>
-    // Client-side execution, JavaScript
-    var screenWidthPixels = screen.width;
-    alert("Width of the screen: " + screenWidthPixels + " pixels");
-</script>
-
+                                    // Client-side execution, JavaScript
+                                    var screenWidthPixels = screen.width;
+                                </script>
                                 @php
-                                    $screenWidthInches = '<script>document.write(screenWidthInches);</script>';
-                                    $screenHeightInches = '<script>document.write(screenHeightInches);</script>';
+                                    $screenWidthInches = '<script>document.write(screenWidthPixels);</script>';
                                 @endphp
-                            @if ($isMobile && $screenWidthInches == 6.5) 
+                            @if ($isMobile && $screenWidthInches == 360) 
                             <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" style="height:300px;" scrolling="no"></iframe>
                                 @else
                                 @endif
