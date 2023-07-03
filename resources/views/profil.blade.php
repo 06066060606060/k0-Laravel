@@ -16,7 +16,7 @@
                 <card
                     class="relative w-full p-4 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 md:mb-0 md:mr-4">
                     <div class="flex items-center pt-2 pb-4 border-b border-gray-500">
-                        <img alt="Developer" src="img/avatar.png"
+                        <img alt="Developer" src="/img/avatar.png"
                             class="object-cover w-16 h-16 border border-gray-400 rounded-full" />
 
                         <div class="ml-3">
@@ -51,15 +51,15 @@
 @endif
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
                         <div class="flex py-2">
-                            <img src="img/diamond5.png" class="w-10 h-8">
+                            <img src="/img/diamond5.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                         </div>
                         <div class="flex py-2">
-                            <img src="img/gem10.png" class="w-10 h-8">
+                            <img src="/img/gem10.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
                         </div>
                         <div class="flex py-2">
-                            <img src="img/coin10.png" class="w-10 h-8">
+                            <img src="/img/coin10.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
                         @if(empty($leparrain))
@@ -179,11 +179,11 @@
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
                                          @if($order->prix == NULL)
                                          <span class="inline-flex items-center">
-                                         {{ $order->cadeau->prix_coins }} &nbsp;<img src="img/coin10.png" class="w-5 h-4">
+                                         {{ $order->cadeau->prix_coins }} &nbsp;<img src="/img/coin10.png" class="w-5 h-4">
                                          </span>
                                          @else
                                          <span class="inline-flex items-center">
-                                         {{ $order->cadeau->prix }} &nbsp;<img src="img/diamond5.png" class="w-5 h-4">
+                                         {{ $order->cadeau->prix }} &nbsp;<img src="/img/diamond5.png" class="w-5 h-4">
                                          </span>
                                          @endif
                                         </td>
@@ -253,13 +253,13 @@
                                         </td>
                                         <td style="width:33%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
                                         @if($score->data > 0)
-                                        {{ $score->data }} <img src="img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
+                                        {{ $score->data }} <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
                                         @endif
                                         @if($score->data2 > 0)
-                                        {{ $score->data2 }} <img src="img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+                                        {{ $score->data2 }} <img src="/img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
                                         @endif
                                         @if($score->data3 > 0)
-                                        {{ $score->data3 }} <img src="img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+                                        {{ $score->data3 }} <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
                                         @endif
                                         </td>
                                         <td style="width:33%;">
@@ -313,7 +313,7 @@
                                             {{ $joueur->name }}
                                         </td>
                                         <td style="width:50%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
-                                        20 <img src="img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+                                        20 <img src="/img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
                                         </td>
                                     </tr>
                                 @empty
