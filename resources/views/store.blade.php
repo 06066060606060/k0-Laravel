@@ -75,7 +75,7 @@
                                                  @php $image =  $cadeau->image ?? null; @endphp
                                                  <img alt="gallery"
                                                      class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                                     src="./storage/{{ $image }}"
+                                                     src="/storage/{{ $image }}"
                                                      onerror="this.src='/img/empty.png'">
                                                  <div class="w-full">
                                                 @if($isMobile == true)
