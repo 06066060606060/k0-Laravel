@@ -77,7 +77,7 @@
                             <div
                                 class="flex flex-col items-center h-full text-center bg-gray-800 border border-gray-700 rounded-lg hover:bg-gray-700">
                                 <img alt="gallery" class="inset-0 object-cover object-center w-full h-full rounded-t-md"
-                                    src="img/empty.jpg">
+                                    src="/img/empty.jpg">
                                 <div class="w-full">
                                     <h2 class="py-1 text-xl font-bold text-blue-600 title-font ">Aucun</h2>
                                     <h3 class="mb-1 text-gray-300">Null</h3>
@@ -119,11 +119,11 @@
                                     <div class="w-full">
                                         <h3 class="pt-1 pb-1 mb-1 text-gray-300 bg-orange-800"><b>{{ $boostergame->prix }}</b> 
                                         @if ($boostergame->type_prix == 'Diamants')
-                                        <img src="img/diamond5.png" class="w-4" style="display:inline;">
+                                        <img src="/img/diamond5.png" class="w-4" style="display:inline;">
                                         @elseif ($boostergame->type_prix == 'Rubis')
-                                        <img src="img/gem10.png" class="w-4" style="display:inline;">
+                                        <img src="/img/gem10.png" class="w-4" style="display:inline;">
                                         @else
-                                        <img src="img/coin10.png" class="w-4" style="display:inline;">
+                                        <img src="/img/coin10.png" class="w-4" style="display:inline;">
                                         @endif
                                         </h3>
                                         <h2 class="py-1 text-xl font-bold text-orange-600 title-font ">
