@@ -60,11 +60,9 @@ Route::controller(GlobalController::class)->group(function () {
 
 Route::prefix('{locale?}')->middleware('set-language')->group(function () {
     Route::middleware(['cors'])->group(function () {
-        Route::get('game', [GlobalController::class, 'game'])->name('game');
-
         // Route pour le jeu avec un paramètre "id" spécifique (ex: id=46)
-        Route::get('game', [GlobalController::class, 'game'])->name('specific-game');
-        });
+        Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
+    });
 
     Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 
