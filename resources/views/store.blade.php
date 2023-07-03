@@ -144,14 +144,14 @@
 
                                                          <div style="display:inline;">
                                                              @if($isMobile == true)
-                                                             <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
+                                                             <img src="/img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix" class="mt-2 text-xs" style="display:inline;">x {{ $cadeau->prix }}</p>
-                                                             <br><p class="mt-2 text-xs font-bold" style="display:inline;">{{__('ou')}}</p></b> <img src="./img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
+                                                             <br><p class="mt-2 text-xs font-bold" style="display:inline;">{{__('ou')}}</p></b> <img src="/img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix_coins" class="mt-2 text-xs" style="display:inline;">x {{ $cadeau->prix_coins }}</p>
                                                             @else
-                                                             <img src="./img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
+                                                             <img src="/img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix" class="mt-2 text-m" style="display:inline;">x {{ $cadeau->prix }}</p>
-                                                             <br><p class="mt-2 text-s font-bold" style="display:inline;">{{__('ou')}}</p> <img src="./img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
+                                                             <br><p class="mt-2 text-s font-bold" style="display:inline;">{{__('ou')}}</p> <img src="/img/coin10.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
                                                              <p name="prix_coins" class="mt-2 text-m" style="display:inline;">x {{ $cadeau->prix_coins }}</p>
                                                             @endif
                                                          </div>
@@ -329,7 +329,7 @@
                                                                                     @else
                                                                                     <h1 class="flex py-2 text-sm font-medium text-white">
                                                                                         <input type="radio" name="prix-type" id="prix-type-diamond" value="diamond" checked>&nbsp;
-                                                                                        {{ $cadeau->prix }} &nbsp;<img src="img/diamond5.png" class="flex w-7 h-5">&nbsp;
+                                                                                        {{ $cadeau->prix }} &nbsp;<img src="/img/diamond5.png" class="flex w-7 h-5">&nbsp;
                                                                                         {{ __("je choisis d'utiliser mes diamants") }}
 
                                                                                     </h1>
@@ -343,7 +343,7 @@
                                                                                         @else
                                                                                         @endif                                                                                 
                                                                                         name="prix-type" id="prix-type-coin" value="coin">&nbsp;
-                                                                                        {{ $cadeau->prix_coins }} &nbsp;<img src="img/coin10.png" class="flex w-7 h-5">&nbsp;
+                                                                                        {{ $cadeau->prix_coins }} &nbsp;<img src="/img/coin10.png" class="flex w-7 h-5">&nbsp;
                                                                                         {{ __("je choisis d'utiliser mes coins") }}
                                                                                     </h1>
                                                                                     @endif
