@@ -257,7 +257,7 @@
                                         @if($isMobile == false)
                                             <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->$descriptionField }}</p>
                                         @endif
-                                        <a href="game?id={{ $eventsgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $eventsgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                        <a href="{{ $locale }}/game/{{ $eventsgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='{{ $locale }}/game/{{ $eventsgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                             <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                             <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
                                             <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
@@ -445,7 +445,7 @@
                                     @if ($isMobile == false && !empty($description))
                                         <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $description }}</p>
                                     @endif
-                                    <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                    <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='{{ $locale }}/game/{{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
                                         <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
@@ -578,7 +578,7 @@
                                 <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed
                                     sriracha leggings
                                     jianbing microdosing tousled waistcoat.</p>
-                                <a href="game"
+                                <a href="/"
                                     class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">Jouer</a>
                             </div>
                         </div>
