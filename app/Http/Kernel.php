@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\SetLanguage;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -67,5 +68,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'cors' => \App\Http\Middleware\Cors::class, // added
         'timestamp' => \App\Http\Middleware\TimestampProtection::class,
+        'set-language' => SetLanguage::class
     ];
 }

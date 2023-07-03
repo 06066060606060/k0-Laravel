@@ -30,9 +30,9 @@
                             <ul class="flex flex-wrap justify-center">
                                 <template x-for="lang in languages" :key="lang.code">
                                     <li>
-                                        <a rel="alternate" data-barba-prevent="self" 
-                                        :class="`block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white`" 
-                                        :href="`language/${lang.code}`" @click="localStorage.setItem('languageSelected', true)">
+                                        <a rel="alternate" data-barba-prevent="self"
+                                        :class="`block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white`"
+                                        :href="`/language/${lang.code}`" @click="localStorage.setItem('languageSelected', true)">
                                             <img :src="`https://flagicons.lipis.dev/flags/4x3/${lang.flag}.svg`" :alt="lang.name" :width="isMobile ? 8 : 10" :height="isMobile ? 8 : 10" :class="isMobile ? 'w-8 h-8 mr-1' : 'w-10 h-10 mr-1'">
                                         </a>
                                     </li>
@@ -486,12 +486,12 @@
 
             <div class="flex flex-col w-full text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux en Solo')}}</h1>
-                
+
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($sologames as $sologame)
                     <div class="w-1/2 p-4 lg:w-1/2">
-                     
+
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                         <a href="game?id={{ $sologame->id }}">
                             <div class="absolute top-0 right-0 w-16 h-16">
@@ -526,9 +526,9 @@
                                 class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                 <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">
                                     {{ $sologame->name }}</h2>
-                                @if($isMobile == false)    
+                                @if($isMobile == false)
                                 @php $locale = app()->getLocale(); @endphp
-                                @if($locale=='fr')    
+                                @if($locale=='fr')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $sologame->description }}</p>
                                 @elseif($locale=='en')
                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $sologame->description_en }}</p>
@@ -553,7 +553,7 @@
                                             class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
                                         <span class="relative">{{__('Jouer')}}</span>
                                     </a>
-                                
+
                             </div>
                         </div>
                         </a>
