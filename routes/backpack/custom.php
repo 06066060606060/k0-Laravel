@@ -1,14 +1,20 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\MyMiddleware;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GlobalController;
 
 // --------------------------
 // Custom Backpack Routes
 // --------------------------
 // This route file is loaded automatically by Backpack\Base.
 // Routes you generate using Backpack\Generators will be placed here.
-
+Route::controller(GlobalController::class)->group(function () {
+    Route::get('/language/{locale}', function ($locale) {
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
+        return redirect('/' . $locale);
+    });
 Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
     'middleware' => array_merge(
@@ -28,3 +34,4 @@ Route::group([
     Route::crud('paiements', 'PaiementsCrudController');
     Route::crud('gains', 'GainsCrudController');
 }); // this should be the absolute last line of this file
+});
