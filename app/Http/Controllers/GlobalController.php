@@ -89,12 +89,16 @@ class GlobalController extends Controller
         return redirect('/');
     }
     
-    // Selectionne le jeu auquel le membre joue
     $onegame = Games::where('id', $request->id)->get();
-    // Sélectionne les scores du jeu en cours
+
+if ($onegame->isEmpty()) {
+    // Le jeu n'a pas été trouvé, vous pouvez gérer cette situation comme vous le souhaitez
+    return redirect('/'); // Rediriger vers l'accueil par exemple
+}
+
     $scores = Scores::where('game_id', $request->id)->orderBy('id', 'desc')->take(17)->get();
     //Le jeu s'affiche 
-    $game = $onegame[0];
+    $game = $onegame->first();// Sélectionne les scores du jeu en cours
 
     return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
 }
