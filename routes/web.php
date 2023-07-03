@@ -42,6 +42,7 @@ Route::controller(GlobalController::class)->group(function () {
         Route::get('index', 'getAll')->name('getAll');
         Route::get('logout', 'logout');
         Route::get('jeux', 'games');
+        Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
         Route::get('pack', 'pack');
         Route::get('concours', 'winner');
         Route::get('cadeaux', 'store');
