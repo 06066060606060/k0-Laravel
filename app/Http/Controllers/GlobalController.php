@@ -90,15 +90,12 @@ class GlobalController extends Controller
     }
     
     // Selectionne le jeu auquel le membre joue
-    $onegame = Games::where('id', $request->id)->first();
+    $onegame = Games::where('id', $request->id)->get();
     // Sélectionne les scores du jeu en cours
     $scores = Scores::where('game_id', $request->id)->orderBy('id', 'desc')->take(17)->get();
     //Le jeu s'affiche 
-    if ($onegame) {
-        $game = $onegame;
-    }else{
+    $game = $onegame[0];
 
-    }
     return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
