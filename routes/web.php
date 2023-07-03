@@ -60,9 +60,8 @@ Route::controller(GlobalController::class)->group(function () {
 
 Route::prefix('{locale?}')->middleware('set-language')->group(function () {
     Route::middleware(['cors'])->group(function () {
-        Route::get('game', [GlobalController::class, 'game']);
+        Route::get('game', [GlobalController::class, 'game'])->name('game');
     });
-    Route::get('game', [GlobalController::class, 'game'])->name('game');
 
     Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 
