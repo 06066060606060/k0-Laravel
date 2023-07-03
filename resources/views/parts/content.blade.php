@@ -227,7 +227,7 @@
                     @forelse ($eventsgames as $eventsgame)
                         <div class="w-1/1 p-4 lg:w-1/1">
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                                <a href="game?id={{ $eventsgame->id }}">
+                                <a href="/game?id={{ $eventsgame->id }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
                                         <div class="border z-20 absolute transform rotate-45 select-none bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                             @if($eventsgame->prix == 0)
@@ -257,7 +257,7 @@
                                         @if($isMobile == false)
                                             <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->$descriptionField }}</p>
                                         @endif
-                                        <a href="game?id={{ $eventsgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $eventsgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                        <a href="/game?id={{ $eventsgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $eventsgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                             <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                             <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
                                             <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
@@ -281,7 +281,7 @@
                                     <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font"></h2>
                                     <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">Shooting Stars</h1>
                                     <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                    <a href="game" class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">{{__('Jouer')}}</a>
+                                    <a href="/game" class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">{{__('Jouer')}}</a>
                                 </div>
                             </div>
                         </div>
@@ -407,7 +407,7 @@
                 @forelse ($allgames as $allgame)
                     <div class="w-1/2 p-4 lg:w-1/2">
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                            <a href="game?id={{ $allgame->id }}">
+                            <a href="/game?id={{ $allgame->id }}">
                                 <div class="absolute top-0 right-0 w-16 h-16">
                                     @php
                                         $borderColor = $allgame->prix == 0 ? 'blue-700' : 'orange-800';
@@ -445,7 +445,7 @@
                                     @if ($isMobile == false && !empty($description))
                                         <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $description }}</p>
                                     @endif
-                                    <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                    <a href="/game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
                                         <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
@@ -469,7 +469,7 @@
                                 <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font"></h2>
                                 <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">Shooting Stars</h1>
                                 <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                <a href="game" class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">Jouer</a>
+                                <a href="/game" class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">Jouer</a>
                             </div>
                         </div>
                     </div>
@@ -493,7 +493,7 @@
                     <div class="w-1/2 p-4 lg:w-1/2">
 
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                        <a href="game?id={{ $sologame->id }}">
+                        <a href="/game?id={{ $sologame->id }}">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 @if($sologame->prix == 0)
                                 <div
@@ -541,7 +541,7 @@
                                 @else
                                 @endif
                                 @endif
-                                    <a href="game?id={{ $sologame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $sologame->id }}';"
+                                    <a href="/game?id={{ $sologame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='game?id={{ $sologame->id }}';"
                                         class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span
                                             class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
@@ -578,7 +578,7 @@
                                 <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk cold-pressed
                                     sriracha leggings
                                     jianbing microdosing tousled waistcoat.</p>
-                                <a href="game"
+                                <a href="/game"
                                     class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">Jouer</a>
                             </div>
                         </div>
