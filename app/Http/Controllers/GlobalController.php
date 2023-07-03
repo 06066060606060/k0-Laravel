@@ -73,31 +73,43 @@ class GlobalController extends Controller
     // Fonction quand un joueur clique sur un jeu
     public function game(Request $request)
     {
-    if(backpack_auth()->check()){ // loggué
-        $userid = backpack_auth()->id(); // retourne l'id
-        $username = backpack_auth()->user()->name; // retourne le pseudo
-        $rubis = backpack_auth()->user()->trophee2; // retourne les rubis
-        $free = backpack_auth()->user()->global_score; // retourne le score total
-        $parties = backpack_auth()->user()->parties; // retourne les parties
-    } else {
-        // Sinon tout et null et on redirige à l'accueil
-        $userid = null;
-        $username = null;
-        $rubis = null;
-        $free = null;
-        $parties = null;
-        return redirect('/');
+        if (backpack_auth()->check()) { // loggué
+            $userid = backpack_auth()->id(); // retourne l'id
+            $username = backpack_auth()->user()->name; // retourne le pseudo
+            $rubis = backpack_auth()->user()->trophee2; // retourne les rubis
+            $free = backpack_auth()->user()->global_score; // retourne le score total
+            $parties = backpack_auth()->user()->parties; // retourne les parties
+        } else {
+            // Sinon, tout est nul et on redirige vers l'accueil
+            $userid = null;
+            $username = null;
+            $rubis = null;
+            $free = null;
+            $parties = null;
+            return redirect('/');
+        }
+    
+        $gameId = $request->query('id');
+    
+        if ($gameId) {
+            // Traitement spécifique pour le jeu avec l'identifiant $gameId
+            $onegame = Games::where('id', $gameId)->get();
+            $game = $onegame->first();
+    
+            if (!$game) {
+                // Gérer le cas où aucun jeu n'a été trouvé avec l'identifiant donné
+                return redirect('/'); // Rediriger vers l'accueil ou une autre page
+            }
+    
+            $scores = Scores::where('game_id', $gameId)->orderBy('id', 'desc')->take(17)->get();
+    
+            return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
+        } else {
+            // Traitement par défaut pour la page de jeu
+            return redirect('/'); // Rediriger vers l'accueil ou une autre page
+        }
     }
     
-    // Selectionne le jeu auquel le membre joue
-    $onegame = Games::where('id', $request->id)->get();
-    // Sélectionne les scores du jeu en cours
-    $scores = Scores::where('game_id', $request->id)->orderBy('id', 'desc')->take(17)->get();
-    //Le jeu s'affiche 
-    $game = $onegame[0];
-
-    return view('game', compact('game', 'scores', 'userid', 'username', 'rubis', 'free', 'parties'));
-}
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
     // Fonction qui retourne les pages crées en administration
