@@ -91,9 +91,5 @@ class ExtendedRegisterController extends RegisterController
         return view('vendor.backpack.base.auth.register');
     }
 
-    public function showLoginForm()
-    {
-        return view('vendor.backpack.base.auth.login');
-    }
-
+    
 }

@@ -17,8 +17,6 @@ Route::prefix('{locale?}')->middleware(['web', 'set-language'])->group(function 
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
         // Updated route for login
-    Route::get('admin/login', [ExtendedRegisterController::class, 'showLoginForm'])->name('backpack.auth.login');
-    Route::post('admin/login', [ExtendedRegisterController::class, 'login'])->name('backpack.auth.login');
 });
 
 Route::controller(GlobalController::class)->group(function () {
