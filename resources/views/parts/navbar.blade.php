@@ -169,15 +169,15 @@ $isMobile = GlobalController::isMobile();
                 {{__('Bienvenue')}} {{ backpack_auth()->user()->name }}</p>
             <div class="flex items-center pr-4 mt-1">
                 <div class="flex px-2">
-                    <img src="img/diamond5.png" class="w-8 h-6">
+                    <img src="/img/diamond5.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                 </div>
                 <div class="flex px-2">
-                    <img src="img/gem10.png" class="w-8 h-6">
+                    <img src="/img/gem10.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
                 </div>
                 <div class="flex px-2">
-                    <img src="img/coin10.png" class="w-8 h-6">
+                    <img src="/img/coin10.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                 </div>
             </div>
