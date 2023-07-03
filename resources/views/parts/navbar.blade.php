@@ -119,12 +119,12 @@ $isMobile = GlobalController::isMobile();
                                     class="absolute z-20 w-48 py-2 mt-2 bg-gray-800 border border-gray-500 rounded-md shadow-xl left:0 lg:right-0"
                                     style="display: none;">
                                     @if (backpack_auth()->user()->role == 'admin')
-                                        <a href="admin"
+                                        <a href="/admin"
                                             class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white"
                                             target="_blank">
                                             Administration</a>
                                     @endif
-                                    <a href="admin/logout"
+                                    <a href="/admin/logout"
                                         class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white prevent"
                                         data-barba-prevent="self">
                                         {{__('Déconnexion')}} </a>
@@ -146,7 +146,7 @@ $isMobile = GlobalController::isMobile();
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-green-400 -rotate-12"></span>
                     <span class="relative">{{__('Inscription')}}</span>
                 </a>
-                <a href="admin/login"
+                <a href="/admin/login"
                     class="relative flex justify-center w-24 px-5 py-1 my-2 mt-2 font-medium text-white shadow-lg prevent lg:ml-8 group">
                     <span
                         class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-blue-500 group-hover:bg-blue-700 group-hover:skew-x-12"></span>

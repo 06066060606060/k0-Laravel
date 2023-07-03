@@ -13,7 +13,7 @@ Route::controller(GlobalController::class)->group(function () {
     Route::get('/language/{locale}', function ($locale) {
         app()->setLocale($locale);
         session()->put('locale', $locale);
-        return redirect('/');
+        return redirect('/' . $locale);
     });
 Route::group([
     'prefix'     => config('backpack.base.route_prefix', 'admin'),
