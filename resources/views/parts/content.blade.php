@@ -436,12 +436,10 @@
 
             <div class="flex flex-col w-full text-center">
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux en Solo')}}</h1>
-
             </div>
             <div class="flex flex-wrap -m-4">
                 @forelse ($sologames as $sologame)
                     <div class="w-1/2 p-4 lg:w-1/2">
-
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                         <a href="{{ $locale }}/game/{{ $sologame->id }}">
                             <div class="absolute top-0 right-0 w-16 h-16">
