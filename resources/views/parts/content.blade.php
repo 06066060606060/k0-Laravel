@@ -177,7 +177,7 @@
                     @forelse ($eventsgames as $eventsgame)
                         <div class="w-1/1 p-4 lg:w-1/1">
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                                <a href="game?id={{ $eventsgame->id }}">
+                                <a href="{{ $locale }}/game/{{ $eventsgame->id }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
                                         <div class="border z-20 absolute transform rotate-45 select-none bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                             @if($eventsgame->prix == 0)
@@ -357,7 +357,7 @@
                 @forelse ($allgames as $allgame)
                     <div class="w-1/2 p-4 lg:w-1/2">
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                            <a href="game?id={{ $allgame->id }}">
+                            <a href="{{ $locale }}/game/{{ $allgame->id }}">
                                 <div class="absolute top-0 right-0 w-16 h-16">
                                     @php
                                         $borderColor = $allgame->prix == 0 ? 'blue-700' : 'orange-800';
@@ -395,7 +395,7 @@
                                     @if ($isMobile == false && !empty($description))
                                         <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $description }}</p>
                                     @endif
-                                    <a href="game?id={{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='{{ $locale }}/game/{{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                    <a href="{{ $locale }}/game/{{ $allgame->id }}" onclick="event.preventDefault(); window.location.reload(true); window.location.href='{{ $locale }}/game/{{ $allgame->id }}';" class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                         <span class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
                                         <span class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
@@ -443,7 +443,7 @@
                     <div class="w-1/2 p-4 lg:w-1/2">
 
                         <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                        <a href="game?id={{ $sologame->id }}">
+                        <a href="{{ $locale }}/game/{{ $sologame->id }}">
                             <div class="absolute top-0 right-0 w-16 h-16">
                                 @if($sologame->prix == 0)
                                 <div
