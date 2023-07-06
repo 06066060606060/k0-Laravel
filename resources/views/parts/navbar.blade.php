@@ -76,9 +76,9 @@ $isMobile = GlobalController::isMobile();
                     <i class="fa-solid fa-gift"></i>&nbsp; {{__('Cadeaux')}}
                 </a>
                 @if (backpack_auth()->check())
-                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="pack"
+                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600"  style="color:yellow;" href="pack"
                         @click="isOpen = false" data-barba-prevent="self">
-                        <i class="fa-regular fa-gem"></i>&nbsp; {{__('Packs')}}
+                        <i class="fa-regular fa-gem" style="color:yellow;"></i>&nbsp; {{__('Packs')}}
                     </a>
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
                         @click="isOpen = false"  data-barba-prevent="self">
