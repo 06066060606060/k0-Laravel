@@ -21,11 +21,11 @@ $diffInDays = $createdAt->diffInDays(now());
             <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
                 <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
                     <div class="flex justify-between w-full border-b">
-                        <h1 class="py-6 mx-auto text-white text-lg font-bold">Titre de la modale</h1>
+                        <h1 class="py-6 mx-auto text-white text-lg font-bold">Période gratuite expirée</h1>
                     </div>
                     <div class="bg-gray-700 rounded-b-md">
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
-                            <p class="text-white">Contenu de la modale</p>
+                            <p class="text-white">Pour seulement 5€, vous pourrez continuer à profiter de nos jeux pendant 1 MOIS !</p>
                         </div>
                         <div class="flex justify-end">
                             <button class="px-4 py-2 mr-4 text-sm font-medium text-gray-300 bg-gray-700 rounded-md hover:bg-gray-600" @click="modalOpen = false">Fermer</button>
