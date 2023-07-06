@@ -13,7 +13,7 @@
     {code: 'de', name: 'German', flag: 'de'},
     {code: 'es', name: 'Español', flag: 'es'},
     {code: 'it', name: 'Italian', flag: 'it'}
-    ], isMobile: window.innerWidth <= 768 }" x-init="checkSubscription()">
+    ], isMobile: window.innerWidth <= 768 }" x-init="checkSubscription('{{ backpack_auth()->user()->created_at }}')">
 
 <template x-if="modelOpen">
     <!-- Modal -->
@@ -29,8 +29,8 @@ function formatDate(dateString) {
     const formattedDate = new Date(dateParts[0], parseInt(dateParts[1], 10) - 1, dateParts[2]).toLocaleDateString(undefined, options);
     return formattedDate;
 }
-function checkSubscription() {
-    const createdDate = '{{ backpack_auth()->user()->created_at }}'; // Récupérez la date de création du compte de l'utilisateur depuis la base de données et passez-la ici
+
+function checkSubscription(createdDate) {
     const currentDate = new Date().toISOString().split('T')[0];
     const daysDiff = Math.floor((new Date(currentDate) - new Date(createdDate)) / (1000 * 60 * 60 * 24));
 
@@ -43,10 +43,14 @@ function checkSubscription() {
     }
 }
 
-window.addEventListener('load', checkSubscription);
+window.addEventListener('load', () => {
+    const createdDate = '{{ backpack_auth()->user()->created_at }}';
+    checkSubscription(createdDate);
+});
 </script>
 </div>
 @endif
+
 
 
 <div x-data="{ modelOpen: false, languages: [
