@@ -26,6 +26,7 @@ $diffInDays = $createdAt->diffInDays(now());
                     <div class="bg-gray-700 rounded-b-md">
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
                             <p class="text-white">Pour seulement 5€, vous pourrez continuer à profiter de nos jeux pendant 1 MOIS !</p>
+                            <p class="text-red">Les comptes expirés qui n'auront pas régler leur abonnement mensuel au dela de 25 jours seront automatiquement supprimés !</p>
                         </div>
                         <div class="flex justify-end">
                             <button class="px-4 py-2 mr-4 text-sm font-medium text-gray-300 bg-gray-700 rounded-md hover:bg-gray-600" @click="modalOpen = false">Fermer</button>
