@@ -30,6 +30,44 @@ $diffInDays = $createdAt->diffInDays(now());
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
                             <p class="text-white">Cliquez-sur le bouton ci-dessous pour choisir votre mode de paiement:</p>
                         </div>
+          <div x-cloak x-show="modelOpen" class="fixed inset-0 z-50 overflow-y-auto"
+                                            aria-labelledby="modal-title" role="dialog" aria-modal="true">
+                                            <div
+                                                class="flex items-end justify-center px-4 text-center md:items-center sm:block sm:p-0">
+                                                <div x-cloak @click="modelOpen = false" x-show="modelOpen"
+                                                    x-transition:enter="transition ease-out duration-300 transform"
+                                                    x-transition:enter-start="opacity-0"
+                                                    x-transition:enter-end="opacity-100"
+                                                    x-transition:leave="transition ease-in duration-200 transform"
+                                                    x-transition:leave-start="opacity-100"
+                                                    x-transition:leave-end="opacity-0"
+                                                    class="fixed inset-0 transition-opacity bg-gray-900 bg-opacity-60"
+                                                    aria-hidden="true"></div>
+                                                <div x-cloak x-show="modelOpen"
+                                                    x-transition:enter="transition ease-out duration-300 transform"
+                                                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
+                                                    x-transition:leave="transition ease-in duration-200 transform"
+                                                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
+                                                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                                    class="inline-block w-full max-w-xl pt-24 mx-4 overflow-hidden transition-all transform">
+                                                    <div
+                                                        class="flex flex-col justify-center px-4 my-4 bg-white rounded-md shadow-2xl">
+                                                    <h1 class="pt-2 text-2xl font-bold text-center text-gray-900">{{__('Modes de paiement')}}:</h1>
+                                                        <div class="pt-4 paypal-button">
+                                                            <div style="text-align: center;">
+                                                                <div id="paypal-button-container{{ $pack->id }}"></div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
                             <p class="text-red-600 bg-white rounded-md py-4 mx-4 font-bold text-lg">Les comptes expirés qui n'auront pas régler leur abonnement mensuel au dela de 10 jours à partir de la lecture de ce message seront automatiquement supprimés !</p>
                         </div>
