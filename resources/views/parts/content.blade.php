@@ -6,6 +6,7 @@
 @else
     <div class="z-0 one"></div>
 @endif
+@if (backpack_auth()->check())
 @if (backpack_auth()->user()->role == 'admin')
 <div x-data="{ modelOpen: false, languages: [
     {code: 'en', name: 'English', flag: 'gb'},
@@ -50,7 +51,7 @@ window.addEventListener('load', () => {
 </script>
 </div>
 @endif
-
+@endif
 
 
 <div x-data="{ modelOpen: false, languages: [
