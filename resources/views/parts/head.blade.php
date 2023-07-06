@@ -24,6 +24,8 @@
 <link rel="canonical" href="https://gokdo.com" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
+<link rel="stylesheet" href="{{ asset('css/appcss.min.css') }}">
+
 <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
 
@@ -91,4 +93,3 @@ detectMultipleWindows();
 @php
 } else { }
 @endphp
-<link rel="stylesheet" href="{{ asset('css/appcss.min.css') }}">
