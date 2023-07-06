@@ -7,40 +7,28 @@
     <div class="z-0 one"></div>
 @endif
 @if (backpack_auth()->check())
-@if (backpack_auth()->user()->role == 'admin')
-<div x-data="{ 
-    modelOpen: false, 
-    languages: [
-        {code: 'en', name: 'English', flag: 'gb'},
-        {code: 'fr', name: 'Français', flag: 'fr'},
-        {code: 'de', name: 'German', flag: 'de'},
-        {code: 'es', name: 'Español', flag: 'es'},
-        {code: 'it', name: 'Italian', flag: 'it'}
-    ], 
-    isMobile: window.innerWidth <= 768, 
-    checkSubscription(createdDate) {
-        const currentDate = new Date().toISOString().split('T')[0];
-        const daysDiff = Math.floor((new Date(currentDate) - new Date(createdDate)) / (1000 * 60 * 60 * 24));
-        if (daysDiff >= 15) {
-            const subscriptionModalShown = localStorage.getItem('subscriptionModalShown');
-            if (!subscriptionModalShown) {
-                localStorage.setItem('subscriptionModalShown', true);
-                this.modelOpen = true;
-            }
-        }
-    }
-}" x-init="checkSubscription('{{ backpack_auth()->user()->created_at }}')">
+@php
+$createdAt = backpack_auth()->user()->created_at;
+$diffInDays = $createdAt->diffInDays(now());
+@endphp
+@if($diffInDays >= 15)
+<div x-data="{ modelOpen: false, languages: [
+    {code: 'en', name: 'English', flag: 'gb'},
+    {code: 'fr', name: 'Français', flag: 'fr'},
+    {code: 'de', name: 'German', flag: 'de'},
+    {code: 'es', name: 'Español', flag: 'es'},
+    {code: 'it', name: 'Italian', flag: 'it'}
+    ], isMobile: window.innerWidth <= 768 }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
 
-<template x-if="modelOpen">
-    <!-- Modal -->
-    <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
+<template x-if="!localStorage.getItem('languageSelected')">
     <!-- Modale -->
+    <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
         <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
             <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
             <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
                 <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
                     <div class="flex justify-between w-full border-b">
-                        <h1 class="py-6 mx-auto text-white text-lg font-bold">SELECT LANGUAGE</h1>
+                        <h1 class="py-6 mx-auto text-white text-lg font-bold">Période gratuite de 15 jours expirée</h1>
                     </div>
                     <div class="bg-gray-700 rounded-b-md">
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
@@ -56,14 +44,15 @@
                                 </template>
                             </ul>
                         </div>
+                        <p class="text-white text-center">C'est fini.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
-
 </div>
+
 @endif
 @endif
 
