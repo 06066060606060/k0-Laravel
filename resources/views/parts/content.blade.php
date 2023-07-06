@@ -13,46 +13,30 @@ $createdAt = backpack_auth()->user()->created_at;
 $diffInDays = $createdAt->diffInDays(now());
 @endphp
 @if($diffInDays >= 15)
-<div x-data="{ modelOpen: false, languages: [
-    {code: 'en', name: 'English', flag: 'gb'},
-    {code: 'fr', name: 'Français', flag: 'fr'},
-    {code: 'de', name: 'German', flag: 'de'},
-    {code: 'es', name: 'Español', flag: 'es'},
-    {code: 'it', name: 'Italian', flag: 'it'}
-    ], isMobile: window.innerWidth <= 768 }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
-
-<template x-if="!localStorage.getItem('languageSelected')">
+<div x-data="{ modalOpen: true }">
     <!-- Modale -->
-    <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
+    <div x-show="modalOpen" class="fixed inset-0 z-50 overflow-y-auto">
         <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
             <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
             <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
                 <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
                     <div class="flex justify-between w-full border-b">
-                        <h1 class="py-6 mx-auto text-white text-lg font-bold">Période gratuite de 15 jours expirée</h1>
+                        <h1 class="py-6 mx-auto text-white text-lg font-bold">Titre de la modale</h1>
                     </div>
                     <div class="bg-gray-700 rounded-b-md">
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
-                            <ul class="flex flex-wrap justify-center">
-                                <template x-for="lang in languages" :key="lang.code">
-                                    <li>
-                                        <a rel="alternate" data-barba-prevent="self"
-                                        :class="`block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white`"
-                                        :href="`/language/${lang.code}`" @click="localStorage.setItem('languageSelected', true)">
-                                            <img :src="`https://flagicons.lipis.dev/flags/4x3/${lang.flag}.svg`" :alt="lang.name" :width="isMobile ? 8 : 10" :height="isMobile ? 8 : 10" :class="isMobile ? 'w-8 h-8 mr-1' : 'w-10 h-10 mr-1'">
-                                        </a>
-                                    </li>
-                                </template>
-                            </ul>
+                            <p class="text-white">Contenu de la modale</p>
                         </div>
-                        <p class="text-white text-center">C'est fini.</p>
+                        <div class="flex justify-end">
+                            <button class="px-4 py-2 mr-4 text-sm font-medium text-gray-300 bg-gray-700 rounded-md hover:bg-gray-600" @click="modalOpen = false">Fermer</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</template>
 </div>
+
 @endif
 @endif
 @endif
