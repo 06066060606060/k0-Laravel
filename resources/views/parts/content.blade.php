@@ -7,7 +7,7 @@
     <div class="z-0 one"></div>
 @endif
 @if (backpack_auth()->check())
-@if(backpack_auth()->user()->role == 'Admin');
+@if (backpack_auth()->user()->role == 'admin')
 @php
 $createdAt = backpack_auth()->user()->created_at;
 $diffInDays = $createdAt->diffInDays(now());
