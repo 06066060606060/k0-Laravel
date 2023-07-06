@@ -87,7 +87,7 @@ $isMobile = GlobalController::isMobile();
                 @endif
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="discord"
                     @click="isOpen = false"  data-barba-prevent="self">
-                    <i class="fa fa-solid fa-messages"></i>&nbsp; {{__('Chat')}}
+                    <i class="fa-solid fa-comment"></i>&nbsp; {{__('Chat')}}
                 </a>
             </div>
 
