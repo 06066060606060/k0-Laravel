@@ -35,7 +35,7 @@ $diffInDays = $createdAt->diffInDays(now());
                                                     <h1 class="pt-2 text-2xl font-bold text-center text-gray-900">{{__('Modes de paiement')}}:</h1>
                                                         <div class="pt-4 paypal-button">
                                                             <div style="text-align: center;">
-                                                                <div id="paypal-button-container"></div>
+                                                                <div id="paypal-button-container1"></div>
                                                             </div>
                                                         </div>
 
