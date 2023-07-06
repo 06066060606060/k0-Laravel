@@ -31,7 +31,7 @@ $diffInDays = $createdAt->diffInDays(now());
                             <p class="text-white">Cliquez-sur le bouton ci-dessous pour choisir votre mode de paiement:</p>
                         </div>
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
-                            <p class="text-red-600 bg-white rounded-md py-4 mx-4 font-bold text-lg">Les comptes expirés qui n'auront pas régler leur abonnement mensuel au dela de 25 jours seront automatiquement supprimés !</p>
+                            <p class="text-red-600 bg-white rounded-md py-4 mx-4 font-bold text-lg">Les comptes expirés qui n'auront pas régler leur abonnement mensuel au dela de 10 jours à partir de la lecture de ce message seront automatiquement supprimés !</p>
                         </div>
 
                         <div class="flex justify-end">
