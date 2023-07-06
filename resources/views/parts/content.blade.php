@@ -8,13 +8,28 @@
 @endif
 @if (backpack_auth()->check())
 @if (backpack_auth()->user()->role == 'admin')
-<div x-data="{ modelOpen: false, languages: [
-    {code: 'en', name: 'English', flag: 'gb'},
-    {code: 'fr', name: 'Français', flag: 'fr'},
-    {code: 'de', name: 'German', flag: 'de'},
-    {code: 'es', name: 'Español', flag: 'es'},
-    {code: 'it', name: 'Italian', flag: 'it'}
-    ], isMobile: window.innerWidth <= 768 }" x-init="checkSubscription('{{ backpack_auth()->user()->created_at }}')">
+<div x-data="{ 
+    modelOpen: false, 
+    languages: [
+        {code: 'en', name: 'English', flag: 'gb'},
+        {code: 'fr', name: 'Français', flag: 'fr'},
+        {code: 'de', name: 'German', flag: 'de'},
+        {code: 'es', name: 'Español', flag: 'es'},
+        {code: 'it', name: 'Italian', flag: 'it'}
+    ], 
+    isMobile: window.innerWidth <= 768, 
+    checkSubscription(createdDate) {
+        const currentDate = new Date().toISOString().split('T')[0];
+        const daysDiff = Math.floor((new Date(currentDate) - new Date(createdDate)) / (1000 * 60 * 60 * 24));
+        if (daysDiff >= 15) {
+            const subscriptionModalShown = localStorage.getItem('subscriptionModalShown');
+            if (!subscriptionModalShown) {
+                localStorage.setItem('subscriptionModalShown', true);
+                this.modelOpen = true;
+            }
+        }
+    }
+}" x-init="checkSubscription('{{ backpack_auth()->user()->created_at }}')">
 
 <template x-if="modelOpen">
     <!-- Modal -->
@@ -48,32 +63,6 @@
     </div>
 </template>
 
-<script>
-function formatDate(dateString) {
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    const dateParts = dateString.split(' ')[0].split('-');
-    const formattedDate = new Date(dateParts[0], parseInt(dateParts[1], 10) - 1, dateParts[2]).toLocaleDateString(undefined, options);
-    return formattedDate;
-}
-
-function checkSubscription(createdDate) {
-    const currentDate = new Date().toISOString().split('T')[0];
-    const daysDiff = Math.floor((new Date(currentDate) - new Date(createdDate)) / (1000 * 60 * 60 * 24));
-
-    if (daysDiff >= 15) {
-        const subscriptionModalShown = localStorage.getItem('subscriptionModalShown');
-        if (!subscriptionModalShown) {
-            localStorage.setItem('subscriptionModalShown', true);
-            modelOpen = true;
-        }
-    }
-}
-
-window.addEventListener('load', () => {
-    const createdDate = '{{ backpack_auth()->user()->created_at }}';
-    checkSubscription(createdDate);
-});
-</script>
 </div>
 @endif
 @endif
