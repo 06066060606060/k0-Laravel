@@ -46,9 +46,9 @@ class GlobalController extends Controller
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
         $scores = Scores::select('scores.*', 'users.name')
         ->join('users', 'users.id', '=', 'scores.user_id')
-        ->orderBy('scores.id', 'desc')
-        ->limit(10)
-        ->get();        
+        ->take(10)
+        ->get();
+            
         // Tous les jeux
         $allgames = Games::whereNotIn('type', ['Event', 'Solo'])->orderBy('id', 'desc')->get();
         
