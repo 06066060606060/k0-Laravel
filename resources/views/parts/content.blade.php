@@ -19,7 +19,32 @@
 <template x-if="modelOpen">
     <!-- Modal -->
     <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
-        <!-- Reste du code du modal ici -->
+    <!-- Modale -->
+        <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
+            <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
+            <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
+                <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
+                    <div class="flex justify-between w-full border-b">
+                        <h1 class="py-6 mx-auto text-white text-lg font-bold">SELECT LANGUAGE</h1>
+                    </div>
+                    <div class="bg-gray-700 rounded-b-md">
+                        <div class="flex items-center justify-center pb-8 mx-20 mt-8">
+                            <ul class="flex flex-wrap justify-center">
+                                <template x-for="lang in languages" :key="lang.code">
+                                    <li>
+                                        <a rel="alternate" data-barba-prevent="self"
+                                        :class="`block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white`"
+                                        :href="`/language/${lang.code}`" @click="localStorage.setItem('languageSelected', true)">
+                                            <img :src="`https://flagicons.lipis.dev/flags/4x3/${lang.flag}.svg`" :alt="lang.name" :width="isMobile ? 8 : 10" :height="isMobile ? 8 : 10" :class="isMobile ? 'w-8 h-8 mr-1' : 'w-10 h-10 mr-1'">
+                                        </a>
+                                    </li>
+                                </template>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
