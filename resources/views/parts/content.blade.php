@@ -40,6 +40,75 @@ $diffInDays = $createdAt->diffInDays(now());
                                                         </div>
 
                                                     </div>
+                                                    <script>
+                            packid = {!! json_encode($pack->id) !!};
+                            packprice = document.getElementById('packname' + packid).value;
+                            packname = {!! json_encode($pack->name) !!};
+                            packgain = {!! json_encode($pack->gain) !!};
+                            packtype = {!! json_encode($pack->type) !!};
+                            function initButton(id) {
+                                packid = id;
+                                packprice = document.getElementById('price' + id).value;
+                                packname = document.getElementById('packname' + id).value;
+                                packgain = document.getElementById('packgain' + id).value;
+                                packtype = document.getElementById('packtype' + id).value;
+                                console.log(packid, packprice, packname);
+                            }
+
+                            paypal.Buttons({
+
+                                createOrder: function(data, actions) {
+
+                                    return actions.order.create({
+                                        purchase_units: [{
+                                            description: packname,
+                                            amount: {
+                                                value: packprice
+                                            }
+                                        }]
+                                    });
+                                },
+                                onApprove: function(data, actions) {
+                                    // Capturez ici la commande
+                                    return actions.order.capture().then(function(orderData) {
+                                       
+                                        //console.log(orderData.payer.name.given_name);
+                                        console.log(orderData.payer.email_address);
+                                        console.log(orderData.id);
+                                         $.ajax({
+                                            // url: 'http://127.0.0.1:8000/setorderpack',
+                                             url: 'setorderpack',
+                                             headers: {
+                                                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                            },
+                                             method: 'POST',
+                                             type: 'json',
+                                             data: {
+                                                 pack_id: packid,
+                                                 pack_name: packname,
+                                                 pack_price: packprice,
+                                                 transaction: orderData.id,
+                                                 gain: packgain,
+                                                 type: packtype,
+                                             },
+                                             success: function (response) {
+                                                 console.log(response);
+                                             },
+                                             error: function (error) {
+                                                 console.log(error);
+                                            }
+                                         });
+                                        // alert("Paiement effectué avec succès");
+                                           //  window.location.href = "http://127.0.0.1:8000/profil";
+                                          window.location.href = "profil";
+                                    });
+                                },
+                                onError: function(err) {
+                                    console.log(err);
+                                    alert("Une erreur est survenue");
+                                }
+                            }).render('#paypal-button-container' + packid);
+                        </script>
                         <div class="flex items-center justify-center pb-8 mx-20 mt-8">
                             <p class="text-red-600 bg-white rounded-md py-4 mx-4 font-bold text-lg">Les comptes expirés qui n'auront pas régler leur abonnement mensuel au dela de 10 jours à partir de la lecture de ce message seront automatiquement supprimés !</p>
                         </div>
