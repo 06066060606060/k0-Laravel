@@ -12,7 +12,7 @@ use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
 
-Route::prefix('{locale?}')->middleware(['web', 'set-language'])->group(function () {
+Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
@@ -20,12 +20,46 @@ Route::prefix('{locale?}')->middleware(['web', 'set-language'])->group(function 
 });
 
 Route::controller(GlobalController::class)->group(function () {
-    Route::get('/language/{locale}', function ($locale) {
+    Route::get('/language/{locale}', function ($locale, Illuminate\Http\Request $request) {
         app()->setLocale($locale);
         session()->put('locale', $locale);
-        return redirect('/' . $locale);
+        $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
+        return redirect($redirectTo);
     });
-    Route::prefix('{locale?}')->middleware('set-language')->group(function () {
+    Route::middleware('set-language')->group(function () {
+        Route::domain('{locale?}.' . config('app.url'))->group(function () {
+            Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
+                // Vérifier si le parrain existe dans la table "users"
+                $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
+
+                if ($parrainExiste) {
+                    // Si le parrain existe, rediriger vers la méthode "setParrainageLink" du contrôleur
+                    return app(ParrainageController::class)->setParrainageLink(request(), $le_parrain);
+                } else {
+                    // Si le parrain n'existe pas, rediriger vers une autre page ou afficher un message d'erreur
+                    return redirect()->route('backpack.auth.register');
+                }
+            })->name('parrainage.link');
+
+            Route::get('/', 'getAll')->name('getAll');
+            Route::get('index', 'getAll')->name('getAll');
+            Route::get('logout', 'logout');
+            Route::get('jeux', 'games');
+            Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
+            Route::get('pack', 'pack');
+            Route::get('concours', 'winner');
+            Route::get('cadeaux', 'store');
+            Route::get('cadeaux', 'search')->name('searchfilter');
+            Route::get('contact', 'contact');
+            Route::get('test', 'test');
+            Route::get('aide', 'aide');
+            Route::get('discord', 'discord');
+            Route::get('reglement', 'reglement');
+            Route::get('mentions-legales', 'mentionslegales');
+            Route::get('confidentialite-site', 'confidentialitesite');
+            Route::get('partenaires', 'partenaires');
+        });
+
         Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
             // Vérifier si le parrain existe dans la table "users"
             $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -59,7 +93,7 @@ Route::controller(GlobalController::class)->group(function () {
     });
 });
 
-Route::prefix('{locale?}')->middleware('set-language')->group(function () {
+Route::domain('{locale?}.' . config('app.url'))->middleware('set-language')->group(function () {
     Route::middleware(['cors'])->group(function () {
         // Route pour le jeu avec un paramètre "id" spécifique (ex: id=46)
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');

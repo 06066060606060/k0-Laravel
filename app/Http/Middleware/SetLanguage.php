@@ -17,10 +17,15 @@ class SetLanguage
      */
     public function handle(Request $request, Closure $next)
     {
-        $urlLocale = $request->route()->parameter('locale');
+        $urlLocale = explode('.', $request->host())[0];
+        $languages = ['en', 'fr', 'de', 'es', 'it'];
+        $isLanguageSubdomain = in_array($urlLocale, $languages);
+        if (!$isLanguageSubdomain) {
+            $urlLocale = null;
+        }
         $sessionLocale = app()->getLocale();
         if (empty($urlLocale) || !in_array($urlLocale, config('app.available_locales'))) {
-            $redirectTo = '/' . $sessionLocale . $request->getPathInfo();
+            $redirectTo = $request->getScheme() . '://' . $sessionLocale . '.' . env('APP_DOMAIN') . $request->getPathInfo();
             return redirect($redirectTo);
         } elseif ($urlLocale != $sessionLocale) {
             app()->setLocale($urlLocale);
