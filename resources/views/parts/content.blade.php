@@ -6,60 +6,6 @@
 @else
     <div class="z-0 one"></div>
 @endif
-@if (backpack_auth()->check())
-@if (backpack_auth()->user()->role == 'admin')
-@php
-$createdAt = backpack_auth()->user()->created_at;
-$diffInDays = $createdAt->diffInDays(now());
-@endphp
-@if($diffInDays >= 15)
-<div x-data="{ modalOpen: true }">
-    <!-- Modale -->
-    <div x-show="modalOpen" class="fixed inset-0 z-50 overflow-y-auto">
-        <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60" aria-hidden="true"></div>
-            <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
-                <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
-                    <div class="flex justify-between w-full border-b">
-                        <h1 class="py-6 mx-auto text-white text-lg font-bold">Période gratuite expirée</h1>
-                    </div>
-                    <div class="bg-gray-700 rounded-b-md">
-                        <div class="flex items-center justify-center pb-8 mx-20 mt-8">
-                            <p class="text-white">Pour seulement 5€, vous pourrez continuer à profiter de nos jeux pendant 1 MOIS !</p>
-                        </div>
-                        <div class="flex items-center justify-center pb-8 mx-20 mt-8">
-                            <p class="text-white">Cliquez-sur le bouton ci-dessous pour choisir votre mode de paiement:</p>
-                        </div>
-                                                    <div
-                                                        class="flex flex-col justify-center px-4 my-4 bg-white rounded-md shadow-2xl">
-                                                    <h1 class="pt-2 text-2xl font-bold text-center text-gray-900">{{__('Modes de paiement')}}:</h1>
-                                                        <div class="pt-4 paypal-button">
-                                                            <div style="text-align: center;">
-                                                                <div id="paypal-button-container1"></div>
-                                                            </div>
-                                                        </div>
-
-                                                    </div>
-                                                    
-                        <div class="flex items-center justify-center pb-8 mx-20 mt-8">
-                            <p class="text-red-600 bg-white rounded-md py-4 mx-4 font-bold text-lg">Les comptes expirés qui n'auront pas régler leur abonnement mensuel au dela de 10 jours à partir de la lecture de ce message seront automatiquement supprimés !</p>
-                        </div>
-
-                        <div class="flex justify-end">
-                            <button class="px-4 py-2 mr-4 text-sm font-medium text-gray-300 bg-gray-700 rounded-md hover:bg-gray-600" @click="modalOpen = false">Fermer</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-@endif
-@endif
-@endif
-
-
 <div x-data="{ modelOpen: false, languages: [
     {code: 'en', name: 'English', flag: 'gb'},
     {code: 'fr', name: 'Français', flag: 'fr'},
