@@ -79,7 +79,6 @@ $isMobile = GlobalController::isMobile();
                   @if($isMobile == true)
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-red-600"  style="color:red;" href="pack"
                         @click="isOpen = false" data-barba-prevent="self">
-                        @if($isMobile == true)
                         <i class="fa-regular fa-gem" style="color:red;"></i>&nbsp; {{__('Packs')}}
                         </a>
 @else
