@@ -39,6 +39,10 @@
 		<p class="leading-relaxed text-gray-300">{{__("Toute triche ou manipulation frauduleuse du site ou du jeu entraine une suppression du compte membre sans préavis ni remboursement.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Inactivité')}}</h2>
+		<p class="leading-relaxed text-gray-300">{{__("Les membres du site Gokdo qui ne se seront pas connecter au moins une fois dans les 6 mois suivants leur dernière connexion verront leur compte supprimé, étant considéré comme Inactif. Aucun remboursement ni autre manipulation ne pourra être demandée, un e-mail d'information visant à lui rapeller de se connecter pour éviter la suppression de son compte lui sera envoyé 1 mois avant afin de l'en avertir.")}}</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('La page de cadeaux')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Une page de cadeau est disponible et propose des cadeaux contre un échange de Diamants ou de Coins. Les cadeaux sont divers et variés et classés en catégories et par prix. L'envoi des commandes se fait au maximum sous 30 jours. Le webmaster peut supprimer les commandes de joueurs qui auraient enfreint le règlement.")}}</p>
 	</section>
