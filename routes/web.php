@@ -41,6 +41,13 @@ Route::controller(GlobalController::class)->group(function () {
                 }
             })->name('parrainage.link');
 
+            // La redirection vers le provider
+            Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
+
+            // Le callback du provider
+            Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
+
             Route::get('/', 'getAll')->name('getAll');
             Route::get('index', 'getAll')->name('getAll');
             Route::get('logout', 'logout');
@@ -110,12 +117,6 @@ Route::controller(GlobalController::class)->group(function () {
     Route::post('contactmail', [MailController::class, 'sendMessage']);
 
     });
-
-// La redirection vers le provider
-Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
-
-// Le callback du provider
-Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
 
 });
 
