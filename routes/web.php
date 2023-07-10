@@ -129,3 +129,7 @@ Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->nam
 
 // Le callback du provider
 Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
+Route::get('/', function () {
+    return redirect()->route('getAll'); // Rediriger vers la route 'getAll' ou toute autre route souhaitée
+});
