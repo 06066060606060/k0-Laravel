@@ -42,7 +42,7 @@ Route::controller(GlobalController::class)->group(function () {
                 }
             })->name('parrainage.link');
 
-            Route::get('/', [GlobalController::class, 'getAll'])->name('getAll');
+            Route::get('/', 'getAll')->name('getAll');
             Route::get('index', 'getAll')->name('getAll');
             Route::get('logout', 'logout');
             Route::get('jeux', 'games');
