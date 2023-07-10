@@ -131,7 +131,7 @@ class SocialiteController extends Controller
             backpack_auth()->login($user);
 
             # 5. On redirige l'utilisateur vers /home avec un message de succès
-            return redirect('/');
+            return redirect('gokdo.com/');
         }
         abort(404);
     }
