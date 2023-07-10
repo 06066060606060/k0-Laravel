@@ -12,9 +12,21 @@ use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
 
-
+Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
+    Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
+    Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
+    Route::post('/register', [ExtendedRegisterController::class, 'register']);
+        // Updated route for login
+});
 
 Route::controller(GlobalController::class)->group(function () {
+    Route::get('/language/{locale}', function ($locale, Illuminate\Http\Request $request) {
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
+        $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
+        return redirect($redirectTo);
+    });
+
     Route::middleware('set-language')->group(function () {
         Route::domain('{locale?}.' . config('app.url'))->group(function () {
             Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
@@ -30,7 +42,7 @@ Route::controller(GlobalController::class)->group(function () {
                 }
             })->name('parrainage.link');
 
-            Route::get('/', 'getAll')->name('getAll');
+            Route::get('/', [GlobalController::class, 'getAll'])->name('getAll');
             Route::get('index', 'getAll')->name('getAll');
             Route::get('logout', 'logout');
             Route::get('jeux', 'games');
