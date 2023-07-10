@@ -64,130 +64,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
 
 @if (backpack_auth()->check())
 
-    @isset($count)
-        @if($count <= 2)
-            @if($isMobile)
-                <container class="mx-auto max-w-7xl" id="win">
-                    <section>
-                        <div
-                            class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-                            <div class="flex flex-col w-full text-center">
-                                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
-                            </div>
-                            <table class="mt-2 mx-auto m-full text-xs">
-                                <tbody>
-                                <tr>
-                                    <td class="pr-2">
-                                        <i class="fas fa-2x fa-user-group text-white"></i>
-                                    </td>
-                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Remportez')}} 20
-                                        <img src='img/gem10.png' style='display:inline-block;'
-                                             class=' w-5 h-5 align-middle'
-                                             alt='Gem 10'> {{__('par ami parrainé ! (MAX : 3)')}}<br>
-                                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
-                                              data-barba-prevent="self"
-                                              id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
-                                        <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-                </container>
-            @else
-                <container class="mx-auto max-w-7xl" id="win">
-                    <section>
-                        <div
-                            class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-                            <div class="flex flex-col w-full text-center">
-                                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
-                            </div>
-                            <table class="mt-2 mx-auto m-full text-s">
-                                <tbody>
-                                <tr>
-                                    <td class="pr-4">
-                                        <i class="fas fa-3x fa-user-group text-white"></i>
-                                    </td>
-                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20
-                                        <img src='img/gem10.png' style='display:inline-block;'
-                                             class=' w-5 h-5 align-middle'
-                                             alt='Gem 10'> {{__('par ami parrainé ! (MAX : 3)')}}<br>
-                                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
-                                              data-barba-prevent="self"
-                                              id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
-                                        <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </section>
-                </container>
-            @endif
-        @endif
-    @endisset
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-    @php
-        $locale = app()->getLocale();
-        $notificationText = '';
-        $errorText = '';
-        switch ($locale) {
-            case 'fr':
-                $notificationText = "Le lien a été copié !";
-                $errorText = "Erreur lors de la copie du lien.";
-                break;
-            case 'en':
-                $notificationText = "Link copied !";
-                $errorText = "Error when copy link";
-                break;
-            case 'es':
-                $notificationText = "¡Enlace copiado!";
-                $errorText = "Error al copiar!";
-                break;
-            case 'de':
-                $notificationText = "Link kopiert!";
-                $errorText = "Fehler beim Kopieren!";
-                break;
-            case 'it':
-                $notificationText = "Link copiato!";
-                $errorText = "Errore durante la copia!";
-                break;
-            default:
-                break;
-        }
-    @endphp
-
-    <script>
-        document.getElementById("copyLink").addEventListener("click", function (event) {
-            event.preventDefault();
-            var link = this.href;
-            navigator.clipboard.writeText(link)
-                .then(function () {
-                    Toastify({
-                        text: "{{ $notificationText }}",
-                        duration: 3000,
-                        close: true,
-                        gravity: "top",
-                        position: "right",
-                        backgroundColor: "linear-gradient(to right, #4bb543, #006400)",
-                        className: "toastify-custom",
-                    }).showToast();
-                })
-                .catch(function () {
-                    Toastify({
-                        text: "{{ $errorText }}",
-                        duration: 3000,
-                        close: true,
-                        gravity: "top",
-                        position: "right",
-                        backgroundColor: "#ff6347",
-                        className: "toastify-custom",
-                    }).showToast();
-                });
-        });
-    </script>
     @php
         $locale = app()->getLocale();
         $descriptionField = 'description_' . $locale;
@@ -287,6 +163,119 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
         </container>
     @endif
 
+    <!-- WINNER 
+    <winner class="mx-auto max-w-7xl" id="win">
+        <section>
+            <div
+                class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
+                    {{__('DERNIERS GAGNANTS')}}
+                </h2>
+                <div
+                    class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
+                    <div class="swiper-wrapper">
+                        @forelse ($scores as $score)
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <div
+                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                        <div class="flex">
+                                            @php
+                                                $image = '';
+                                                $amount = 0;
+                                                $gameName = '';
+                                                $gameId = $score->game_id;
+                                                if ($score->data > 0) {
+                                                    $image = 'diamond5.png';
+                                                    $amount = $score->data;
+                                                } elseif ($score->data2 > 0) {
+                                                    $image = 'gem10.png';
+                                                    $amount = $score->data2;
+                                                } elseif ($score->data3 > 0) {
+                                                    $image = 'coin10.png';
+                                                    $amount = $score->data3;
+                                                }
+
+                                                if ($isMobile) {
+                                                    if ($gameId == 39) {
+                                                        $gameName = 'POOL';
+                                                    } elseif ($gameId == 46) {
+                                                        $gameName = 'GoFRUITS';
+                                                    } elseif ($gameId == 51) {
+                                                        $gameName = 'PLINKO';
+                                                    } elseif ($gameId == 50) {
+                                                        $gameName = 'GoWIN';
+                                                    } elseif ($gameId == 49) {
+                                                        $gameName = 'BINGO';
+                                                    } elseif ($gameId == 52) {
+                                                        $gameName = 'GoSCRATCH';
+                                                    }
+                                                } else {
+                                                    if ($gameId == 39) {
+                                                        $gameName = 'POOL';
+                                                    } elseif ($gameId == 46) {
+                                                        $gameName = 'GoFRUITS';
+                                                    } elseif ($gameId == 51) {
+                                                        $gameName = 'PLINKO';
+                                                    } elseif ($gameId == 50) {
+                                                        $gameName = 'GoWIN';
+                                                    } elseif ($gameId == 49) {
+                                                        $gameName = 'BINGO';
+                                                    } elseif ($gameId == 52) {
+                                                        $gameName = 'GoSCRATCH';
+                                                    }
+                                                }
+                                            @endphp
+                                            <img alt=""
+                                                 class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}"
+                                                 src="{{ asset('img/'.$image) }}">
+                                            <div class="flex flex-col">
+                                                @if($isMobile)
+                                                    <h2 class="pb-0 pl-4 font-semibold text-xs">{{ $score->name }}</h2>
+                                                @else
+                                                    <h2 class="pb-0 pl-4 font-semibold text-s">{{ $score->name }}</h2>
+                                                @endif
+                                                @if($amount > 0)
+                                                    <span href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $amount }}</span>
+                                                @endif
+                                                @if($isMobile)
+                                                    <span href="#"
+                                                          class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">{{ $gameName }}</span>
+                                                @else
+                                                    <span href="#"
+                                                          class="ml-4 text-s font-bold text-orange-600 lg:mb-0">{{ $gameName }}</span>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        @empty
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <div
+                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                        <div class="flex">
+                                            <img alt="" class="inline-block object-center w-12 h-12"
+                                                 src="./img/gem10.png">
+                                            <div class="flex">
+                                                <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                                    Dummy<br>
+                                                    <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10 ✧</span>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        @endforelse
+                    </div>
+                </div>
+            </div>
+        </section>
+    </winner>
+-->
 
     <!-- JOUEZ UNE FOIS CONNECTE -->
     <container class="mx-auto max-w-7xl" id="win">
@@ -516,6 +505,130 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                 </div>
         </section>
     </container>
+        @isset($count)
+        @if($count <= 2)
+            @if($isMobile)
+                <container class="mx-auto max-w-7xl" id="win">
+                    <section>
+                        <div
+                            class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                            <div class="flex flex-col w-full text-center">
+                                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
+                            </div>
+                            <table class="mt-2 mx-auto m-full text-xs">
+                                <tbody>
+                                <tr>
+                                    <td class="pr-2">
+                                        <i class="fas fa-2x fa-user-group text-white"></i>
+                                    </td>
+                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Remportez')}} 20
+                                        <img src='img/gem10.png' style='display:inline-block;'
+                                             class=' w-5 h-5 align-middle'
+                                             alt='Gem 10'> {{__('par ami parrainé ! (MAX : 3)')}}<br>
+                                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
+                                              data-barba-prevent="self"
+                                              id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
+                                        <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </container>
+            @else
+                <container class="mx-auto max-w-7xl" id="win">
+                    <section>
+                        <div
+                            class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                            <div class="flex flex-col w-full text-center">
+                                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
+                            </div>
+                            <table class="mt-2 mx-auto m-full text-s">
+                                <tbody>
+                                <tr>
+                                    <td class="pr-4">
+                                        <i class="fas fa-3x fa-user-group text-white"></i>
+                                    </td>
+                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Remportez')}} 20
+                                        <img src='img/gem10.png' style='display:inline-block;'
+                                             class=' w-5 h-5 align-middle'
+                                             alt='Gem 10'> {{__('par ami parrainé ! (MAX : 3)')}}<br>
+                                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
+                                              data-barba-prevent="self"
+                                              id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
+                                        <i style="color: orange; font-size: 13px;">{{__("Toute triche sera synonyme d'exclusion du site")}}</i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </container>
+            @endif
+        @endif
+    @endisset
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    @php
+        $locale = app()->getLocale();
+        $notificationText = '';
+        $errorText = '';
+        switch ($locale) {
+            case 'fr':
+                $notificationText = "Le lien a été copié !";
+                $errorText = "Erreur lors de la copie du lien.";
+                break;
+            case 'en':
+                $notificationText = "Link copied !";
+                $errorText = "Error when copy link";
+                break;
+            case 'es':
+                $notificationText = "¡Enlace copiado!";
+                $errorText = "Error al copiar!";
+                break;
+            case 'de':
+                $notificationText = "Link kopiert!";
+                $errorText = "Fehler beim Kopieren!";
+                break;
+            case 'it':
+                $notificationText = "Link copiato!";
+                $errorText = "Errore durante la copia!";
+                break;
+            default:
+                break;
+        }
+    @endphp
+
+    <script>
+        document.getElementById("copyLink").addEventListener("click", function (event) {
+            event.preventDefault();
+            var link = this.href;
+            navigator.clipboard.writeText(link)
+                .then(function () {
+                    Toastify({
+                        text: "{{ $notificationText }}",
+                        duration: 3000,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "linear-gradient(to right, #4bb543, #006400)",
+                        className: "toastify-custom",
+                    }).showToast();
+                })
+                .catch(function () {
+                    Toastify({
+                        text: "{{ $errorText }}",
+                        duration: 3000,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "#ff6347",
+                        className: "toastify-custom",
+                    }).showToast();
+                });
+        });
+    </script>
 
 @else
 
