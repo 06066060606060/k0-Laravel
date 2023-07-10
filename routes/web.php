@@ -11,23 +11,26 @@ use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
-
-Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
+// Routes avec le domaine spécifique à la langue
+Route::domain('{locale}.gokdo.com')->middleware(['web', 'set-language'])->group(function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
-        // Updated route for login
+    // Route mise à jour pour la connexion
 });
 
 Route::controller(GlobalController::class)->group(function () {
+    // Routes communes à toutes les langues
     Route::get('/language/{locale}', function ($locale, Illuminate\Http\Request $request) {
         app()->setLocale($locale);
         session()->put('locale', $locale);
-        $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
+        $redirectTo = $request->getScheme() . '://' . $locale . '.gokdo.com';
         return redirect($redirectTo);
     });
+    
     Route::middleware('set-language')->group(function () {
-        Route::domain('{locale?}.' . config('app.url'))->group(function () {
+        // Routes communes à toutes les langues avec le domaine spécifique à la langue
+        Route::domain('{locale}.gokdo.com')->group(function () {
             Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
                 // Vérifier si le parrain existe dans la table "users"
                 $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -60,6 +63,7 @@ Route::controller(GlobalController::class)->group(function () {
             Route::get('partenaires', 'partenaires');
         });
 
+        // Routes communes à toutes les langues
         Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
             // Vérifier si le parrain existe dans la table "users"
             $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -92,44 +96,38 @@ Route::controller(GlobalController::class)->group(function () {
         Route::get('confidentialite-site', 'confidentialitesite');
         Route::get('partenaires', 'partenaires');
 
-        
-    Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
-    Route::post('setorderpack', [GlobalController::class, 'setOrderpack'])->name('setOrderpack');
+        Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
+        Route::post('setorderpack', [GlobalController::class, 'setOrderpack'])->name('setOrderpack');
 
-    Route::get('order', [GlobalController::class, 'getProfil'])->name('getProfil');
-    Route::get('orderpack', [GlobalController::class, 'getProfil']);
+        Route::get('order', [GlobalController::class, 'getProfil'])->name('getProfil');
+        Route::get('orderpack', [GlobalController::class, 'getProfil']);
 
-    Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
-    Route::post('confirm_orderpack', [GlobalController::class, 'confirmOrderpack'])->name('confirmOrderpack');
-// Route::get('order', [GlobalController::class, 'getOrder'])->name('getOrder');
-    Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
+        Route::post('confirm_order', [GlobalController::class, 'confirmOrder'])->name('confirmOrder');
+        Route::post('confirm_orderpack', [GlobalController::class, 'confirmOrderpack'])->name('confirmOrderpack');
 
-    Route::get('delete_order', [GlobalController::class, 'getProfil']);
-    Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
+        Route::post('delete_order', [GlobalController::class, 'deleteOrder'])->name('deleteOrder');
+        Route::get('delete_order', [GlobalController::class, 'getProfil']);
+        Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
 
-    Route::post('contactmail', [MailController::class, 'sendMessage']);
-
+        Route::post('contactmail', [MailController::class, 'sendMessage']);
     });
 });
 
-Route::domain('{locale?}.' . config('app.url'))->middleware('set-language')->group(function () {
+// Routes pour les jeux avec un paramètre "id" spécifique (ex: id=46)
+Route::domain('{locale}.gokdo.com')->middleware('set-language')->group(function () {
     Route::middleware(['cors'])->group(function () {
-        // Route pour le jeu avec un paramètre "id" spécifique (ex: id=46)
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
     });
-
-
 });
+
 Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
 Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
 
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
 
-
 Route::get('processtart', [ProcessController::class, 'execute']);
 
-// La redirection vers le provider
+// La redirection vers le fournisseur d'authentification
 Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
-// Le callback du provider
+// Le rappel du fournisseur d'authentification
 Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
