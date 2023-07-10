@@ -418,7 +418,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                         @php
                                             $borderColor = $allgame->prix == 0 ? 'blue-700' : 'orange-800';
                                             $price = $allgame->prix == 0 ? '10 ' . __('par 24h') : $allgame->prix;
-                                            $imagePath = $allgame->type_prix == 'Diamants' && $allgame->prix == 0 ? 'img/diamond5.png' : 'img/coin10.png';
+                                            $imagePath = $allgame->type_prix == 'Diamants' && $allgame->prix == 0 ? 'img/diamond5.png' : 'img/gem10.png';
                                         @endphp
                                         <div
                                             class="border z-20 absolute transform rotate-45 select-none bg-{{ $borderColor }} text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
