@@ -11,8 +11,6 @@ use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
-Route::get('/', 'getAll')->name('getAll');
-
 Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
@@ -23,7 +21,7 @@ Route::controller(GlobalController::class)->group(function () {
     Route::get('/language/{locale}', function ($locale, Illuminate\Http\Request $request) {
         app()->setLocale($locale);
         session()->put('locale', $locale);
-        $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
+        $redirectTo = $request->getScheme() . '://' . $locale . '.gokdo.com';
         return redirect($redirectTo);
     });
 
