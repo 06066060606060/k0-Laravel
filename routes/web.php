@@ -27,7 +27,7 @@ Route::controller(GlobalController::class)->group(function () {
         return redirect($redirectTo);
     });
     Route::middleware('set-language')->group(function () {
-        Route::domain('{locale?}.' . env('APP_DOMAIN'))->group(function () {
+        Route::domain('{locale?}.' . config('app.url'))->group(function () {
             Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
                 // Vérifier si le parrain existe dans la table "users"
                 $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -110,11 +110,6 @@ Route::controller(GlobalController::class)->group(function () {
     Route::post('contactmail', [MailController::class, 'sendMessage']);
 
         
-    // La redirection vers le provider
-    Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
-    // Le callback du provider
-    Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
     });
 });
 
@@ -133,4 +128,9 @@ Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('d
 
 
 Route::get('processtart', [ProcessController::class, 'execute']);
+    // La redirection vers le provider
+    Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
+
+    // Le callback du provider
+    Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
 
