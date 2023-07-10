@@ -50,7 +50,7 @@
                 <a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a>
 
                 @if (config('backpack.base.registration_open'))
-                / <a href="{{ str_replace('/password', '', 'register')}}">{{ trans('backpack::base.register') }}</a>
+                / <a href="{{ str_replace('/login', '/register', route('backpack.auth.login')) }}">{{ trans('backpack::base.register') }}</a>
                 @endif
               </div>
                     <div class="clearfix"></div>
