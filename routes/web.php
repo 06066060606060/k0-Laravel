@@ -13,6 +13,11 @@ use App\Http\Controllers\ExtendedRegisterController;
 
 
 Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
+    Route::get('/', function ($locale) {
+        if (empty($locale) || empty(config('app.url'))) {
+            return redirect('https://en.gokdo.com');
+        }
+    });
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
@@ -130,8 +135,3 @@ Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->nam
 
 // Le callback du provider
 Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
-Route::get('/', function () {
-    return redirect('https://{locale?}.gokdo.com');
-})->name('getAll');
-
