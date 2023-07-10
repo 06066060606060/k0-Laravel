@@ -11,7 +11,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
 @endphp 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-             <a href="{{ str_replace('/admin/login', '', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
+             <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://en.gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
