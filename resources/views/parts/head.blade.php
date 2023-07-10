@@ -4,7 +4,7 @@
 <!-- Primary Meta Tags -->
 <meta name="title" content="Gokdo">
 <meta name="description" content="{{__("Jouez gratuitement à nos jeux multijoueurs, gagnez de l'argent et des cadeaux ! Plongez dans notre univers captivant, défiez vos amis et remportez de superbes récompenses. Participez à nos concours pour des gains énormes. Inscrivez-vous maintenant et vivez l'excitation des jeux gratuits en ligne !")}}">
-<meta name="keywords" content="" />
+<meta name=keywords content="{{__("jeux, jeux gratuit, jeux fr, jeux gratuits, gagner, gagner des cadeaux et de l'argent cash, gagner de l'argent cash, argent, cash, jeu, jeu en ligne, jeux flash, jeux gratuits en ligne, grattez, jeux de grattage")}}" />
 <meta name="robots" content="index,follow" />
 <link rel="shortcut icon" href="https://gokdo.com/img/favicon.png" type="image/x-icon" />
 <!-- Open Graph / Facebook -->
