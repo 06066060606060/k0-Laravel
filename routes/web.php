@@ -13,6 +13,7 @@ use App\Http\Controllers\ExtendedRegisterController;
 
 
 Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
+    Route::get('/', 'getAll')->name('getAll');
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
@@ -26,7 +27,6 @@ Route::controller(GlobalController::class)->group(function () {
         $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
         return redirect($redirectTo);
     });
-    Route::get('/', 'getAll')->name('getAll');
 
     Route::middleware('set-language')->group(function () {
         Route::domain('{locale?}.' . config('app.url'))->group(function () {
