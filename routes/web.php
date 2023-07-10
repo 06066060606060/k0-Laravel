@@ -79,6 +79,7 @@ Route::controller(GlobalController::class)->group(function () {
         Route::get('jeux', 'games');
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
         Route::get('pack', 'pack');
+        Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
         Route::get('concours', 'winner');
         Route::get('cadeaux', 'store');
         Route::get('cadeaux', 'search')->name('searchfilter');
@@ -99,7 +100,6 @@ Route::domain('{locale?}.' . config('app.url'))->middleware('set-language')->gro
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
     });
 
-    Route::get('profil', [GlobalController::class, 'getProfil'])->name('getProfil');
 
     Route::post('order', [GlobalController::class, 'setOrder'])->name('setOrder');
     Route::post('setorderpack', [GlobalController::class, 'setOrderpack'])->name('setOrderpack');
