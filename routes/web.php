@@ -11,6 +11,8 @@ use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
+Route::get('/', 'getAll')->name('getAll');
+
 Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
