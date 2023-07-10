@@ -20,6 +20,11 @@ Route::domain('{locale}.gokdo.com')->middleware(['web', 'set-language'])->group(
 });
 
 Route::controller(GlobalController::class)->group(function () {
+    // La redirection vers le fournisseur d'authentification
+Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
+// Le rappel du fournisseur d'authentification
+Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
     // Routes communes à toutes les langues
     Route::get('/language/{locale}', function ($locale, Illuminate\Http\Request $request) {
         app()->setLocale($locale);
@@ -118,11 +123,6 @@ Route::domain('{locale}.gokdo.com')->middleware('set-language')->group(function 
     Route::middleware(['cors'])->group(function () {
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
     });
-    // La redirection vers le fournisseur d'authentification
-Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
-// Le rappel du fournisseur d'authentification
-Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
 });
 
 Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
@@ -131,4 +131,3 @@ Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('sav
 Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('deleteUser');
 
 Route::get('processtart', [ProcessController::class, 'execute']);
-
