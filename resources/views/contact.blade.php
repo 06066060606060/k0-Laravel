@@ -10,8 +10,8 @@
              </div>
          @endif
          @if (session('already_send'))
-             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000, PopupUser())" class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-                 <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-red-500">&zwnj; {{__("Vous avez déjà envoyé un message aujourd'hui !")}}</div>
+             <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 3000, PopupUser())" class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl text-center sm:px-16 md:px-24 lg:py-18">
+                 <div id="popmenu" class="px-4 py-2 text-lg btnmenu text-red-600">&zwnj; {{__("Vous avez déjà envoyé un message aujourd'hui !")}}</div>
              </div>
          @endif
                  <div class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
