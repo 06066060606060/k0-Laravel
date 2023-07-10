@@ -26,6 +26,8 @@ Route::controller(GlobalController::class)->group(function () {
         $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
         return redirect($redirectTo);
     });
+    Route::get('/', 'getAll')->name('getAll');
+
     Route::middleware('set-language')->group(function () {
         Route::domain('{locale?}.' . config('app.url'))->group(function () {
             Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
@@ -130,6 +132,3 @@ Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->nam
 // Le callback du provider
 Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
 
-Route::get('/', function () {
-    return redirect()->route('getAll'); // Rediriger vers la route 'getAll' ou toute autre route souhaitée
-});
