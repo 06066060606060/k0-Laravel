@@ -10,23 +10,23 @@
             class="relative z-10 flex items-center p-2 mt-4 text-white bg-gray-800 border border-transparent rounded-md lg:mt-2 focus:border-blue-800 focus:ring-opacity-40 focus:ring-blue-300 focus:blue-400 focus:ring focus:outline-none">
         <span class="mr-1">
             @if($current_locale === 'en')
-                <a href="https://gokdo.com/language/en">
+                <a href="https://en.gokdo.com/">
                 <img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1">
             </a>
             @elseif($current_locale === 'fr')
-                <a href="https://gokdo.com/language/fr">
+                <a href="https://fr.gokdo.com/">
             <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1">
         </a>
             @elseif($current_locale === 'es')
-                <a href="https://gokdo.com/language/es">
+                <a href="https://es.gokdo.com/">
             <img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1">
         </a>
             @elseif($current_locale === 'de')
-                <a href="https://gokdo.com/language/de">
+                <a href="https://de.gokdo.com/">
             <img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-4 h-4 mr-1">
         </a>
             @elseif($current_locale === 'it')
-                <a href="https://gokdo.com/language/it">
+                <a href="https://it.gokdo.com/">
             <img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-4 h-4 mr-1">
         </a>
             @endif</span>
@@ -58,7 +58,7 @@
                 <li>
                     <a rel="alternate" data-barba-prevent="self"
                        class="block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white"
-                       href="/language/{{ $available_locale }}">
+                       href="https://{{ $available_locale }}.gokdo.com/">
                         <img
                             src="https://flagicons.lipis.dev/flags/4x3/{{ $available_locale === 'en' ? 'gb' : $available_locale }}.svg"
                             alt="{{ $locale_name }}" class="w-4 h-4 mr-1">
