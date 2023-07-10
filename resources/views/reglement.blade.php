@@ -57,7 +57,7 @@
     </section>
     <section class="mb-2 relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Propriété intellectuelle')}}</h2>
-    <p class="leading-relaxed text-gray-300">{{__("Tous les éléments présents sur le site Gokdo, tels que les textes, les images, les graphismes, les logos, les icônes, les sons et les logiciels, sont la propriété exclusive de Gokdo ou de ses partenaires et sont protégés par les lois françaises et internationales sur le droit d'auteur et la propriété intellectuelle.")}}</p>
+    <p class="leading-relaxed text-gray-300">{{__("Tous les éléments présents sur le site Gokdo, tels que les textes, les images, les graphismes, les logos, les icônes, les sons et les logiciels, sont la propriété exclusive de Gokdo ou de ses partenaires et sont protégés par les lois internationales sur le droit d'auteur et la propriété intellectuelle.")}}</p>
 
     <p class="leading-relaxed text-gray-300">{{__("Toute reproduction, représentation, modification, publication, transmission, dénaturation, totale ou partielle des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de Gokdo.")}}</p>
 
@@ -73,7 +73,7 @@
     </section>
     <section class="mb-2 relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Litiges et droit applicable')}}</h2>
-    <p class="leading-relaxed text-gray-300">{{__("En cas de litige, une solution amiable sera recherchée en priorité. À défaut, les tribunaux français seront seuls compétents. Le présent règlement est soumis à la loi française.")}}</p>
+    <p class="leading-relaxed text-gray-300">{{__("En cas de litige, une solution amiable sera recherchée en priorité. À défaut, les tribunaux chypriotes seront seuls compétents. Le présent règlement est soumis à la loi chypriote.")}}</p>
     </section>
     <section class="relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Contact')}}</h2>
