@@ -153,7 +153,7 @@ if (!empty($user->email)) {
         backpack_auth()->login($user);
 
         # 5. On redirige l'utilisateur vers /home avec un message de succès
-        return redirect('https://en.gokdo.com/callback/'.$provider);
+        return redirect('https://en.gokdo.com');
      }
      abort(404);
 }
