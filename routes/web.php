@@ -117,6 +117,11 @@ Route::controller(GlobalController::class)->group(function () {
 Route::domain('{locale}.gokdo.com')->middleware('set-language')->group(function () {
     Route::middleware(['cors'])->group(function () {
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
+// La redirection vers le fournisseur d'authentification
+Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
+// Le rappel du fournisseur d'authentification
+Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
     });
 });
 
@@ -127,7 +132,3 @@ Route::post('deleteuser/{id}', [GlobalController::class, 'deleteUser'])->name('d
 
 Route::get('processtart', [ProcessController::class, 'execute']);
 
-// La redirection vers le fournisseur d'authentification
-Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
-// Le rappel du fournisseur d'authentification
-Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
