@@ -22,6 +22,11 @@
 
 <meta name="coverage" content="Worldwide" />
 <link rel="canonical" href="https://gokdo.com" />
+<link rel="canonical" href="https://en.gokdo.com" />
+<link rel="canonical" href="https://it.gokdo.com" />
+<link rel="canonical" href="https://es.gokdo.com" />
+<link rel="canonical" href="https://fr.gokdo.com" />
+<link rel="canonical" href="https://de.gokdo.com" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
 <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" async></script>
