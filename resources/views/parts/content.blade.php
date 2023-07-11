@@ -378,7 +378,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
     </container>
 
     <!-- JOUEZ UNE FOIS CONNECTE -->
-    <container class="mx-auto max-w-7xl" id="win">
+   <!-- <container class="mx-auto max-w-7xl" id="win">
         <section>
             <div
                 class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
@@ -490,21 +490,11 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                             @endforelse
 
                         </div>
-                        <!--<a href="jeux"
-                            class="relative flex justify-center w-48 px-5 py-2 mx-auto mt-8 font-medium text-white shadow-lg group">
-                            <span
-                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
-                            <span
-                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
-                            <span
-                                class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
-                            <span
-                                class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                            <span class="relative">Voir la liste complète</span>
-                        </a>-->
+                        
                 </div>
         </section>
     </container>
+    -->    
         @isset($count)
         @if($count <= 2)
             @if($isMobile)
