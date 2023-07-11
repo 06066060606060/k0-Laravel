@@ -14,7 +14,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
              <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://en.gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
-                    <form class="col-md-12" role="form" method="POST" action="{{ route('backpack.auth.register') }}">
+                    <form class="col-md-12" role="form" method="POST" action="{{ url('/admin/register') }}">
                         {!! csrf_field() !!}
                         <input type="hidden" name="parrain" value="{{ request()->input('parrain') }}">
                         <div class"form-group">
