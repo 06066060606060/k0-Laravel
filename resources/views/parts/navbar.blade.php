@@ -93,9 +93,9 @@ $isMobile = GlobalController::isMobile();
                         <i class="fa-solid fa-user"></i>&nbsp; {{__('Profil')}}
                     </a>
                 @endif
-                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="discord"
+                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="#"
                     @click="isOpen = false"  data-barba-prevent="self">
-                    <i class="fa-solid fa-comment"></i>&nbsp; {{__('Chat')}}
+                    <script id="cid0020000350031291567" data-cfasync="false" async src="//st.chatango.com/js/gz/emb.js" style="width: 200px;height: 300px;">{"handle":"gokdocom","arch":"js","styles":{"a":"404040","b":100,"c":"FFFFFF","d":"FFFFFF","k":"404040","l":"404040","m":"404040","n":"FFFFFF","p":"10","q":"404040","r":100,"cv":1,"cvbg":"404040","cvw":75,"cvh":30}}</script>
                 </a>
             </div>
 
