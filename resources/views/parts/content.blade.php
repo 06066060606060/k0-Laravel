@@ -113,7 +113,21 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                             class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                             <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">{{ $eventsgame->name }}</h2>
                                             @if($isMobile == false)
-                                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->$descriptionField }}</p>
+                                         @php
+                                             
+                                           if ($locale == 'fr') {
+                                            $description = $eventsgame->description;
+                                        } elseif ($locale == 'en') {
+                                            $description = $eventsgame->description_en;
+                                        } elseif ($locale == 'de') {
+                                            $description = $eventsgame->description_de;
+                                        } elseif ($locale == 'es') {
+                                            $description = $eventsgame->description_es;
+                                        } elseif ($locale == 'it') {
+                                            $description = $eventsgame->description_it;
+                                        }
+                                        @endphp
+                                                <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $eventsgame->$description }}</p>
                                             @endif
                                             <a href="/game/{{ $eventsgame->id }}"
                                                onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $eventsgame->id }}';"
