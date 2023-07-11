@@ -114,7 +114,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                             <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">{{ $eventsgame->name }}</h2>
                                             @if($isMobile == false)
                                          @php
-                                             
+                                        $locale = app()->getLocale();   
                                            if ($locale == 'fr') {
                                             $description = $eventsgame->description;
                                         } elseif ($locale == 'en') {
