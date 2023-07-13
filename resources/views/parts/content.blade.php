@@ -112,7 +112,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                         @endphp
                                         <img alt="gallery"
                                              class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
-                                             src="{{ $gifiUrl }}" onerror="this.src='/img/empty.png'">
+                                             src="{{ $imgiUrl }}" onerror="this.src='/img/empty.png'">
                                         <div
                                             class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                             <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">{{ $eventsgame->name }}</h2>
@@ -658,17 +658,11 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                     $imgUrl = asset('storage/' . $imagesd);
                                     $gifUrl = str_replace(".mp4", ".gif", $imgUrl);
                                 @endphp
-                                @if($isMobile)
-                                    <video class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                           autoplay loop>
-                                        <source src="{{ asset('storage/' . $imagesd) }}" type="video/mp4">
-                                        Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
-                                    </video>
-                                @else
+                                
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                         src="{{ $gifUrl }}" width="920" height="420"
+                                         src="{{ $imgUrl }}" width="920" height="420"
                                          onerror="this.src='/img/empty.png'">
-                                @endif
+                       
                             </div>
                         </div>
                     </div>
