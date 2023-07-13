@@ -83,10 +83,11 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                 <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                     <a href="/game/{{ $eventsgame->id }}">
                                         <div class="absolute top-0 right-0 w-16 h-16">
+                                             @if($isMobile == true)
+                                             @else 
+                                    
                                             <div
                                                 class="border z-20 absolute transform rotate-45 select-none bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
-                                                @if($isMobile == true)
-                                                @else 
                                                 @if($eventsgame->prix == 0)
                                                     1 {{__('par 24h')}}
                                                 @else
@@ -101,8 +102,8 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                                         <img src="img/coin10.png" class="w-4" style="display:inline;">
                                                     @endif
                                                 @endif
-                                                @endif
                                             </div>
+                                            @endif
                                         </div>
                                         @php
                                             $imagesb = $eventsgame->image[0] ?? null;
