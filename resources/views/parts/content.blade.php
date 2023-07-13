@@ -310,6 +310,9 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                 <a href="/game/{{ $allgame->id }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
+                                         @if($isMobile == true)
+                                                @else 
+                                        
                                         @php
                                             $borderColor = $allgame->prix == 0 ? 'blue-700' : 'orange-800';
                                             $price = $allgame->prix == 0 ? '10 ' . __('par 24h') : $allgame->prix;
@@ -322,6 +325,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                                 <img src="{{ $imagePath }}" class="w-4" style="display:inline;">
                                             @endif
                                         </div>
+                                        @endif
                                     </div>
                                     @php
                                         $imagesbb = $allgame->image[0] ?? null;
