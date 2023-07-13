@@ -83,6 +83,8 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                 <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                     <a href="/game/{{ $eventsgame->id }}">
                                         <div class="absolute top-0 right-0 w-16 h-16">
+                                        @if($isMobile ==true)
+                                        @else
                                             <div
                                                 class="border z-20 absolute transform rotate-45 select-none bg-blue-700 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px] shadow-lg">
                                                 @if($eventsgame->prix == 0)
@@ -100,15 +102,15 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                                     @endif
                                                 @endif
                                             </div>
+                                            @endif
                                         </div>
                                         @php
                                             $imagesb = $eventsgame->image[0] ?? null;
                                             $imgiUrl = asset('storage/' . $imagesb);
-                                            $gifiUrl = str_replace(".mp4", ".gif", $imgiUrl);
                                         @endphp
                                         <img alt="gallery"
                                              class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
-                                             src="{{ $gifiUrl }}" onerror="this.src='/img/empty.png'">
+                                             src="{{ $imgiUrl }}" onerror="this.src='/img/empty.png'">
                                         <div
                                             class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                             <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">{{ $eventsgame->name }}</h2>
@@ -306,6 +308,8 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                 <a href="/game/{{ $allgame->id }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
+                                    @if($isMobile ==true)
+                                        @else
                                         @php
                                             $borderColor = $allgame->prix == 0 ? 'blue-700' : 'orange-800';
                                             $price = $allgame->prix == 0 ? '10 ' . __('par 24h') : $allgame->prix;
@@ -317,12 +321,11 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                             @if ($allgame->prix > 0)
                                                 <img src="{{ $imagePath }}" class="w-4" style="display:inline;">
                                             @endif
-                                        </div>
+                                        </div>@endif
                                     </div>
                                     @php
                                         $imagesbb = $allgame->image[0] ?? null;
                                         $imgibUrl = asset('storage/' . $imagesbb);
-                                        $gifibUrl = str_replace(".mp4", ".gif", $imgibUrl);
                                         $locale = app()->getLocale();
                                         $description = '';
                                         if ($locale == 'fr') {
@@ -339,7 +342,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                     @endphp
                                     <img alt="gallery"
                                          class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
-                                         src="{{ $gifibUrl }}" onerror="this.src='/img/empty.png'">
+                                         src="{{ $imgibUrl }}" onerror="this.src='/img/empty.png'">
                                     <div
                                         class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0 hover:opacity-100">
                                         <h2 class="text-sm font-bold tracking-widest text-indigo-500 md:mb-1 title-font">{{ $allgame->name }}</h2>
@@ -648,19 +651,11 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                 @php
                                     $imagesd =  $starred->image[0] ?? null;
                                     $imgUrl = asset('storage/' . $imagesd);
-                                    $gifUrl = str_replace(".mp4", ".gif", $imgUrl);
                                 @endphp
-                                @if($isMobile)
-                                    <video class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                           autoplay loop>
-                                        <source src="{{ asset('storage/' . $imagesd) }}" type="video/mp4">
-                                        Votre navigateur ne prend pas en charge la lecture de vidéos au format MP4.
-                                    </video>
-                                @else
+                               
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                         src="{{ $gifUrl }}" width="920" height="420"
+                                         src="{{ $imgUrl }}" width="920" height="420"
                                          onerror="this.src='/img/empty.png'">
-                                @endif
                             </div>
                         </div>
                     </div>
