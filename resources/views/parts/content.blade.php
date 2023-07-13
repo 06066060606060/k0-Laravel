@@ -108,7 +108,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                         @php
                                             $imagesb = $eventsgame->image[0] ?? null;
                                             $imgiUrl = asset('storage/' . $imagesb);
-                                            $gifiUrl = str_replace(".mp4", ".gif", $imgiUrl);
                                         @endphp
                                         <img alt="gallery"
                                              class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
@@ -330,7 +329,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                     @php
                                         $imagesbb = $allgame->image[0] ?? null;
                                         $imgibUrl = asset('storage/' . $imagesbb);
-                                        $gifibUrl = str_replace(".mp4", ".gif", $imgibUrl);
                                         $locale = app()->getLocale();
                                         $description = '';
                                         if ($locale == 'fr') {
@@ -656,7 +654,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                 @php
                                     $imagesd =  $starred->image[0] ?? null;
                                     $imgUrl = asset('storage/' . $imagesd);
-                                    $gifUrl = str_replace(".mp4", ".gif", $imgUrl);
                                 @endphp
                                 
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
