@@ -126,6 +126,9 @@ class SocialiteController extends Controller
                     )
                 );
             }
+            $guard = backpack_guard_name();
+        $this->middleware("guest:$guard");
+        $this->redirectTo = property_exists($this, 'redirectTo') ? $this->redirectTo : config('backpack.base.route_prefix', 'dashboard');
             backpack_auth()->guard()->login($user);
             # 5. On redirige l'utilisateur vers /home avec un message de succès
             return redirect(url('/'));
