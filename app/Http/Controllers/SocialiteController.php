@@ -2,103 +2,136 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+
 use Socialite;
+
 use App\Models\User;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class SocialiteController extends Controller
 {
+
+  // Les tableaux des providers autorisés
     protected $providers = [ "google", "github", "facebook" ];
 
+    # La vue pour les liens vers les providers
     public function loginRegister () {
         return view("socialite.login-register");
     }
 
+    # redirection vers le provider
     public function redirect (Request $request) {
+
         $provider = $request->provider;
+
+        // On vérifie si le provider est autorisé
         if (in_array($provider, $this->providers)) {
-            return Socialite::driver($provider)->redirect();
+            return Socialite::driver($provider)->redirect(); // On redirige vers le provider
         }
-        abort(404);
+        abort(404); // Si le provider n'est pas autorisé
     }
 
+    // Callback du provider
     public function callback (Request $request) {
+
         $provider = $request->provider;
 
         if (in_array($provider, $this->providers)) {
+
+            // Les informations provenant du provider
             $data = Socialite::driver($provider)->stateless()->user();
+          
+            # Social login - register
+            $email = $data->getEmail(); // L'adresse email
+            $name = $data->getName(); // le nom
 
-            $email = $data->getEmail();
-            $name = $data->getName();
-            $nameLength = strlen($name);
+            // Compter le nombre de caractères dans $name
+            $nameLength = mb_strlen($name);
+            $nameShort = '';
 
-            $nameShort = substr($name, 0, min(4, $nameLength));
-            $randomDigits = str_pad(rand(1, 9999), 4, '0', STR_PAD_LEFT); 
-            $nameWithDigits = $nameShort . $randomDigits;
-
-            if ($nameLength == 0) {
-                $characters = 'abcdefghijklmnopqrstuvwxyz0123456789';
-                $nameShort = '';
-                $charactersLength = strlen($characters);
-                
-                for ($i = 0; $i < 4; $i++) {
-                    $nameShort .= $characters[rand(0, $charactersLength - 1)];
-                }
-                $randomDigits = rand(1, 9999); 
-                $nameWithDigits = $nameShort . $randomDigits;
+            // Vérifier si le nombre de caractères est supérieur ou égal à 4
+            if ($nameLength >= 4) {
+                $nameShort = mb_substr($name, 0, 4); // Récupérer les 4 premières lettres de $name
+            } else {
+                $nameShort = $name; // Utiliser le nom complet si moins de 4 caractères
             }
 
+            $randomDigits = rand(1, 9999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+            $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
+
+            # 1. On récupère l'utilisateur à partir de l'adresse email
             $user = User::where("email", $email)->first();
+
+            # 2. On récupère l'utilisateur à partir du pseudo
             $user2 = User::where("name", $nameWithDigits)->first();
 
-            if ($user) {
+            // Si le mail existe en bdd
+            if (!empty($user->email)) {
+                // Mise à jour des informations de l'utilisateur
                 $user->save();
-            } elseif (!$user && $user2 !== null && $user2->name != $nameWithDigits) {
+            } elseif (empty($user->email) && $user2 !== null && $user2->name != $nameWithDigits) {
+                //$parrain = $request->input('parrain');
+                // Si le mail n'existe pas et que le pseudo est différent de $randomDigits, on inscrit l'utilisateur
                 $user = User::create([
-                    'name' => $nameWithDigits,
+                    'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
                     'email' => $email,
                     'role' => 'user',
-                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"),
-                    'parties' => '10',
+                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
+                    'parties' => '10', // on ajoute 10 parties gratuites
                     'trophee1' => '150',
+                //      'parrain' => $parrain // On offre 150 diamants
                 ]);
+                //$request->session()->forget('parrain');
 
+                //create notification
                 $admin = User::where('role', 'admin')->first();
                 $admin->notify(
                     new DatabaseNotification(
-                        ($type = 'info'),
+                        ($type = 'info'), // info / success / warning / error
                         ($message = 'Nouvelle Inscription'),
                         ($messageLong = 'Nouvelle Inscription: ' . $email)
                     )
                 );
             } else {
+                // Boucle pour générer un nouveau pseudo jusqu'à ce qu'il soit unique
                 do {
-                    $randomDigits = rand(1, 99999); 
-                    $nameWithDigits = $nameShort . $randomDigits;
+                    $randomDigits = rand(1, 99999); // Générer 4 chiffres aléatoires (entre 1 et 9999)
+                    $nameWithDigits = $nameShort . $randomDigits; // créer la combinaison
                     $user3 = User::where("name", $nameWithDigits)->first();
                 } while ($user3 !== null);
-
+                //    $parrain = $request->input('parrain');
+                // Inscrire l'utilisateur avec le nouveau pseudo unique
                 $user = User::create([
-                    'name' => $nameWithDigits,
+                    'name' => $nameWithDigits, // Combinaison des lettres et des chiffres
                     'email' => $email,
                     'role' => 'user',
-                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"),
-                    'parties' => '10',
-                    'trophee1' => '150'
+                    'password' => bcrypt("emiliedghioljfydesretyuioiuytrds"), // On fait un mot de passe
+                    'parties' => '10', // on ajoute 10 parties gratuites
+                    'trophee1' => '150',
+                //  'parrain' => $parrain // On offre 150 diamants
                 ]);
 
+                // Utilisez la valeur du parrain comme vous le souhaitez
+
+                // Effacez la clé "parrain" de la session pour éviter de l'utiliser à nouveau
+                //$request->session()->forget('parrain');
+
+                //create notification
                 $admin = User::where('role', 'admin')->first();
                 $admin->notify(
                     new DatabaseNotification(
-                        ($type = 'info'),
+                        ($type = 'info'), // info / success / warning / error
                         ($message = 'Nouvelle Inscription'),
                         ($messageLong = 'Nouvelle Inscription: ' . $email)
                     )
                 );
             }
 
+            # 4. On connecte l'utilisateur
             backpack_auth()->login($user);
-            return redirect(url('/'));
+
+            # 5. On redirige l'utilisateur vers /home avec un message de succès
+            return redirect('/');
         }
         abort(404);
     }
