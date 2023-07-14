@@ -115,8 +115,6 @@ Route::domain('{locale?}.' . config('app.url'))->middleware('set-language')->gro
 
     Route::get('delete_order', [GlobalController::class, 'getProfil']);
     Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
-    Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
 });
 Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
 Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
@@ -131,3 +129,4 @@ Route::get('processtart', [ProcessController::class, 'execute']);
 Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
 
 // Le callback du provider
+Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
