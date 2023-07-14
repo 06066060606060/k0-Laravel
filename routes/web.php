@@ -16,8 +16,6 @@ Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-languag
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
-    Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
         // Updated route for login
 });
 
@@ -61,8 +59,6 @@ Route::controller(GlobalController::class)->group(function () {
             Route::get('mentions-legales', 'mentionslegales');
             Route::get('confidentialite-site', 'confidentialitesite');
             Route::get('partenaires', 'partenaires');
-            Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
         });
 
         Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
@@ -95,8 +91,6 @@ Route::controller(GlobalController::class)->group(function () {
         Route::get('mentions-legales', 'mentionslegales');
         Route::get('confidentialite-site', 'confidentialitesite');
         Route::get('partenaires', 'partenaires');
-        Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
     });
 });
 
@@ -135,3 +129,4 @@ Route::get('processtart', [ProcessController::class, 'execute']);
 Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
 
 // Le callback du provider
+Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
