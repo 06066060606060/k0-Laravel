@@ -127,7 +127,7 @@ class SocialiteController extends Controller
                 );
             }
             # 4. On connecte l'utilisateur
-            backpack_auth()->login($user);
+            url(backpack_auth()->login($user));
             # 5. On redirige l'utilisateur vers /home avec un message de succès
             return redirect(url('/'));
         }
