@@ -98,7 +98,7 @@ class SocialiteController extends Controller
             }
 
             backpack_auth()->login($user);
-            return redirect('/');
+            return redirect(url('/'));
         }
         abort(404);
     }
