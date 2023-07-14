@@ -59,6 +59,8 @@ Route::controller(GlobalController::class)->group(function () {
             Route::get('mentions-legales', 'mentionslegales');
             Route::get('confidentialite-site', 'confidentialitesite');
             Route::get('partenaires', 'partenaires');
+            Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
         });
 
         Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
@@ -91,6 +93,8 @@ Route::controller(GlobalController::class)->group(function () {
         Route::get('mentions-legales', 'mentionslegales');
         Route::get('confidentialite-site', 'confidentialitesite');
         Route::get('partenaires', 'partenaires');
+        Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
     });
 });
 
