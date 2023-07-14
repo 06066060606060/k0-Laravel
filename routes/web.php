@@ -16,6 +16,8 @@ Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-languag
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
+    Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
+
         // Updated route for login
 });
 
