@@ -322,8 +322,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                         @else
                         <div class="w-1/2 p-4 lg:w-1/2">
                         @endif
-
-                        <div class="w-1/2 p-4 lg:w-1/2">
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                 <a href="/game/{{ $allgame->id }}">
                                     <div class="absolute top-0 right-0 w-16 h-16">
