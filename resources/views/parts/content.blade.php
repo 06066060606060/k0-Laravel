@@ -9,7 +9,7 @@
     @if($width && $height) 
         @php $isPortrait = $height > $width; @endphp
     @endif
-    @if($isPortrait)
+    @if($height > $width)
     @php session(['portrait_mode' => true]); @endphp
     @else
     @php session()->forget('portrait_mode');@endphp
