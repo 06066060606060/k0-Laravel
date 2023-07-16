@@ -6,7 +6,7 @@
     $height = $_SERVER['HTTP_SCREEN_HEIGHT'] ?? null; @endphp
 
     @if($width && $height) 
-        @php $isPortrait = $height > $width; @endphp
+    @php $isPortrait = $width && $height ? ($height > $width) : false; @endphp
     @endif
 @if($isMobile == true)
 @else
