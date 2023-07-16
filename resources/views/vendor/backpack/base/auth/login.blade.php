@@ -111,6 +111,10 @@
                         <br>
                     @endif
                     @if (config('backpack.base.registration_open'))
+                    @php
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+echo $userAgent;
+@endphp
                         <div class="text-center"><a
                                 href="register">{{ trans('backpack::base.register') }}</a>
                             / <a
