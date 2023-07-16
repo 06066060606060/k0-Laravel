@@ -9,11 +9,6 @@
     @if($width && $height) 
         @php $isPortrait = $height > $width; @endphp
     @endif
-    @if($height > $width)
-    @php session(['portrait_mode' => true]); @endphp
-    @else
-    @php session()->forget('portrait_mode');@endphp
-    @endif                
 @endif
 @if($isMobile == true)
 @else
@@ -316,14 +311,13 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                     <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux Multijoueurs')}}</h1>
                 </div>
     
-                    
-                @if(session('portrait_mode'))
+                @if($isMobile == true && $height > $width)
                 <div class="flex-wrap m-full">
                 @else
                 <div class="flex flex-wrap -m-4">
                 @endif
                     @forelse ($allgames as $allgame)
-                        @if(session('portrait_mode'))
+                        @if($isMobile == true && $height > $width)
                         <div class="w-1/1 p-4 lg:w-1/1">
                         @else
                         <div class="w-1/2 p-4 lg:w-1/2">
