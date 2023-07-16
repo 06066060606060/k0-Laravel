@@ -13,7 +13,7 @@
     @php session(['portrait_mode' => true]); @endphp
     @else
     @php session()->forget('portrait_mode');@endphp
-    @endphp                
+    @endif                
 @endif
 @if($isMobile == true)
 @else
