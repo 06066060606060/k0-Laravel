@@ -3,6 +3,19 @@
     $isMobile = GlobalController::isMobile();
 @endphp
 @if($isMobile == true)
+    @php $width = $_SERVER['HTTP_SCREEN_WIDTH'] ?? null;
+    $height = $_SERVER['HTTP_SCREEN_HEIGHT'] ?? null; @endphp
+
+    @if($width && $height) 
+        @php $isPortrait = $height > $width; @endphp
+    @endif
+    @if($isPortrait)
+    @php session(['portrait_mode' => true]); @endphp
+    @else
+    @php session()->forget('portrait_mode');@endphp
+    @endphp                
+@endif
+@if($isMobile == true)
 @else
     <div class="z-0 one"></div>
 @endif
@@ -302,8 +315,20 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                 <div class="flex flex-col w-full text-center">
                     <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux Multijoueurs')}}</h1>
                 </div>
+    
+                    
+                @if(session('portrait_mode'))
+                <div class="flex-wrap m-full">
+                @else
                 <div class="flex flex-wrap -m-4">
+                @endif
                     @forelse ($allgames as $allgame)
+                        @if(session('portrait_mode'))
+                        <div class="w-1/1 p-4 lg:w-1/1">
+                        @else
+                        <div class="w-1/2 p-4 lg:w-1/2">
+                        @endif
+
                         <div class="w-1/2 p-4 lg:w-1/2">
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                 <a href="/game/{{ $allgame->id }}">
