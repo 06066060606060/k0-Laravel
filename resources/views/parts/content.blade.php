@@ -2,12 +2,6 @@
     use \App\Http\Controllers\GlobalController;
     $isMobile = GlobalController::isMobile();
 @endphp
-    @php $width = $_SERVER['HTTP_SCREEN_WIDTH'] ?? null;
-    $height = $_SERVER['HTTP_SCREEN_HEIGHT'] ?? null; @endphp
-
-    @if($width && $height) 
-    @php $isPortrait = $width && $height ? ($height > $width) : false; @endphp
-    @endif
 @if($isMobile == true)
 @else
     <div class="z-0 one"></div>
@@ -309,13 +303,13 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                     <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux Multijoueurs')}}</h1>
                 </div>
     
-                @if($isMobile == true && $isPortrait)
+                @if($isMobile == true)
                 <div class="flex-wrap m-full">
                 @else
                 <div class="flex flex-wrap -m-4">
                 @endif
                     @forelse ($allgames as $allgame)
-                        @if($isMobile == true && $isPortrait)
+                        @if($isMobile == true)
                         <div class="w-1/1 p-4 lg:w-1/1">
                         @else
                         <div class="w-1/2 p-4 lg:w-1/2">
