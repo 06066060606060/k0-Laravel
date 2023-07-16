@@ -2,14 +2,12 @@
     use \App\Http\Controllers\GlobalController;
     $isMobile = GlobalController::isMobile();
 @endphp
-@if($isMobile == true)
     @php $width = $_SERVER['HTTP_SCREEN_WIDTH'] ?? null;
     $height = $_SERVER['HTTP_SCREEN_HEIGHT'] ?? null; @endphp
 
     @if($width && $height) 
         @php $isPortrait = $height > $width; @endphp
     @endif
-@endif
 @if($isMobile == true)
 @else
     <div class="z-0 one"></div>
