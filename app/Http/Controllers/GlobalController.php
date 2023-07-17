@@ -881,19 +881,19 @@ if ($onegame->isEmpty()) {
 
     static function getSommeDiamants()
     {
-       $sommediamants = User::All()->sum('trophee1');
+        $sommediamants = User::where('name', '!=', 'Admin')->sum('trophee1');
         return number_format($sommediamants, 0, ',', ' ');
     }
 
     static function getSommeRubis()
     {
-       $sommerubis = User::All()->sum('trophee2');
+       $sommerubis = User::where('name', '!=', 'Admin')->sum('trophee2');
         return number_format($sommerubis, 0, ',', ' ');
     }
 
     static function getSommeCoins()
     {
-       $sommecoins = User::All()->sum('trophee3');
+       $sommecoins = User::where('name', '!=', 'Admin')->sum('trophee3');
         return number_format($sommecoins, 0, ',', ' ');
     }
 
