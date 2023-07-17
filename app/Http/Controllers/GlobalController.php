@@ -153,7 +153,7 @@ if ($onegame->isEmpty()) {
         $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
         $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
         $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
-        
+         
         //Score effectués ordre par id desc
         if ($concours->active == 1) {
             Derniers_Gagnants_Concours::query()->delete();
