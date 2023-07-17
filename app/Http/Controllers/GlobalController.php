@@ -158,11 +158,11 @@ if ($onegame->isEmpty()) {
         if ($concours->active == 1) {
             Derniers_Gagnants_Concours::query()->delete();
             $scoresconcours = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
-                ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
-                ->groupBy('id_user') // groupé par id users
-                ->orderBy('total', 'desc') // ordre par score total plus grand au plus petit 
-                ->get(); // récupère le résultat
-            
+            ->whereRaw('game_id > 0')
+            ->groupBy('id_user')
+            ->orderBy('total', 'desc')
+            ->get();
+
             // Trouver la position de l'utilisateur dans le classement des scores
             $userPosition = 0; // défini la position à 0
             $userScore = null; // défini un score vierge
