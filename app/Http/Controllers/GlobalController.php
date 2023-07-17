@@ -149,7 +149,7 @@ if ($onegame->isEmpty()) {
     {
         $gains = Gains::all(); // récup tous les gains du concours
         $concours = Concours::All()->last(); //Selectionne le concours
-        $lesscoresdeconcours = ScoresConcours::whereRaw('game_id > 0')->count();
+        $lesscoresdeconcours = ScoresConcours::where('game_id', $concours->game_id)->count();
         $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
         $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
         $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
@@ -158,7 +158,7 @@ if ($onegame->isEmpty()) {
         if ($concours->active == 1) {
             Derniers_Gagnants_Concours::query()->delete();
             $scoresconcours = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
-                ->whereRaw('game_id > 0') // ou id du jeu = au jeu du concours
+                ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
                 ->groupBy('id_user') // groupé par id users
                 ->orderBy('total', 'desc') // ordre par score total plus grand au plus petit 
                 ->get(); // récupère le résultat
