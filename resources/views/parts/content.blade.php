@@ -6,14 +6,14 @@
 @else
     <div class="z-0 one"></div>
 @endif
-@php
+<?php
 $url = Request::url();
 $subdomain = parse_url($url, PHP_URL_HOST);
 $subdomainParts = explode('.', $subdomain);
 $languageSubdomain = $subdomainParts[0];
 $languages = ['en', 'fr', 'de', 'es', 'it'];
-$isLanguageSubdomain = in_array($languageSubdomain, $languages); @endphp
-@if(!$isLanguageSubdomain): 
+$isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
+<?php if(!$isLanguageSubdomain): ?> 
 <div x-data="{ modelOpen: false, languages: [
     {code: 'en', name: 'English', flag: 'gb'},
     {code: 'fr', name: 'Français', flag: 'fr'},
