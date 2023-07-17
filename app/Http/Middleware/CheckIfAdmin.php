@@ -25,7 +25,7 @@ class CheckIfAdmin
 
             //create notification
             $admin = backpack_user()->where('role', 'admin')->first();
-            $admin->notify(
+            /*$admin->notify(
                 new DatabaseNotification(
                     ($type = 'info'), // info / success / warning / error
                     ($message = 'Nouvelle Inscription'),
@@ -34,7 +34,7 @@ class CheckIfAdmin
                    // ($href = '/some-custom-url'), // optional, e.g. backpack_url('/example')
                    // ($hrefText = 'Go to custom URL') // optional
                 )
-            );
+            );*/
             //$user->parrain = $parrain;
 
             
