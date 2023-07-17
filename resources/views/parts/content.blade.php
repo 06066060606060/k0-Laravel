@@ -6,15 +6,14 @@
 @else
     <div class="z-0 one"></div>
 @endif
-<?php
+@php
 $url = Request::url();
 $subdomain = parse_url($url, PHP_URL_HOST);
 $subdomainParts = explode('.', $subdomain);
 $languageSubdomain = $subdomainParts[0];
 $languages = ['en', 'fr', 'de', 'es', 'it'];
-$isLanguageSubdomain = in_array($languageSubdomain, $languages);
-?>
-<?php if (!$isLanguageSubdomain): ?>
+$isLanguageSubdomain = in_array($languageSubdomain, $languages); @endphp
+@if(!$isLanguageSubdomain): 
 <div x-data="{ modelOpen: false, languages: [
     {code: 'en', name: 'English', flag: 'gb'},
     {code: 'fr', name: 'Français', flag: 'fr'},
@@ -41,7 +40,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages);
                                         <li>
                                             <a rel="alternate" data-barba-prevent="self"
                                                :class="`block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white`"
-                                               :href="`/language/${lang.code}`"
+                                               :href="`https://${lang.code}.gokdo.com`"
                                                @click="localStorage.setItem('languageSelected', true)">
                                                 <img :src="`https://flagicons.lipis.dev/flags/4x3/${lang.flag}.svg`"
                                                      :alt="lang.name" :width="isMobile ? 8 : 10"
