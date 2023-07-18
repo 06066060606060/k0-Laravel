@@ -36,12 +36,12 @@ class SocialiteController extends Controller
     public function callback (Request $request) {
 
         $provider = $request->provider;
+        dd($provider);
 
         if (in_array($provider, $this->providers)) {
 
             // Les informations provenant du provider
             $data = Socialite::driver($provider)->stateless()->user();
-            dd($data);
             # Social login - register
             $email = $data->getEmail(); // L'adresse email
             $name = $data->getName(); // le nom
