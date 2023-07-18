@@ -87,13 +87,13 @@ class SocialiteController extends Controller
 
                 //create notification
                 $admin = User::where('role', 'admin')->first();
-                /*$admin->notify(
+                $admin->notify(
                     new DatabaseNotification(
                         ($type = 'info'), // info / success / warning / error
                         ($message = 'Nouvelle Inscription'),
                         ($messageLong = 'Nouvelle Inscription: ' . $email)
                     )
-                );*/
+                );
             } else {
                 // Boucle pour générer un nouveau pseudo jusqu'à ce qu'il soit unique
                 do {
