@@ -10,7 +10,6 @@ use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification
 
 class SocialiteController extends Controller
 {
-
   // Les tableaux des providers autorisés
     protected $providers = [ "google", "github", "facebook" ];
 
