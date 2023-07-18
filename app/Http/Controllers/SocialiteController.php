@@ -22,7 +22,7 @@ class SocialiteController extends Controller
     public function redirect (Request $request) {
 
         $provider = $request->provider;
-        dd($request->getHttpHost());
+        dd($request->getScheme());
         // On vérifie si le provider est autorisé
         if (in_array($provider, $this->providers)) {
             return Socialite::driver($provider)->with([
