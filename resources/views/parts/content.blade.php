@@ -114,6 +114,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         @php
                                             $imagesb = $eventsgame->image[0] ?? null;
                                             $imgiUrl = asset('storage/' . $imagesb);
+                                            dd($imgiUrl);
                                         @endphp
                                         @endif
                                         <img alt="gallery"
