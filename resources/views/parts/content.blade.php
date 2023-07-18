@@ -108,7 +108,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         $imagesb = $eventsgame->image[0] ?? null;
                                         $filename = pathinfo($imagesb, PATHINFO_FILENAME);
                                         $imgiUrl = asset('storage/' . $filename . '_m.gif');
-                                        dd($filename);
                                         @endphp
                                         @else
                                         @php
