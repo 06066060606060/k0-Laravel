@@ -28,7 +28,7 @@ class SocialiteController extends Controller
             $locale = app()->getLocale();
             dd($locale);
             return Socialite::driver($provider)->with([
-                'redirect_uri' => 'https://' . $locale . '.gokdo.com/callback/' . $provider,
+                'redirect_uri' => 'gokdo.com/callback/' . $provider,
             ])->redirect(); // On redirige vers le provider
         }
         abort(404); // Si le provider n'est pas autorisé
