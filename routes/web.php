@@ -13,8 +13,6 @@ use App\Http\Controllers\ExtendedRegisterController;
 
 
 Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
-    Route::get("/callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
-
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
@@ -131,3 +129,4 @@ Route::get('processtart', [ProcessController::class, 'execute']);
 Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
 
 // Le callback du provider
+Route::get("callback/{provider}", [SocialiteController::class, 'callback'])->name('socialite.callback');
