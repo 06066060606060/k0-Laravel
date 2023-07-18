@@ -104,10 +104,20 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                             @endif
                                         </div>
                                         @if($isMobile == true)
-                                        @php
-                                        $imagesb = $eventsgame->image[0] ?? null;
-                                        $filename = pathinfo($imagesb, PATHINFO_FILENAME);
-                                        $imgiUrl = asset('storage/uploads/' . $filename . '_m.gif');
+                                        @php $imagesb = $eventsgame->image[0] ?? null; @endphp
+                                        @php $filename = pathinfo($imagesb, PATHINFO_FILENAME); @endphp
+                                        @php $locale = app()->getLocale();
+                                        if($locale == 'fr'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_m.gif'); 
+                                        } else if($locale == 'en'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_men.gif');     
+                                        } else if($locale == 'de'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_mde.gif');     
+                                        } else if($locale == 'es'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_mes.gif');     
+                                        } else if($locale == 'it'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_mit.gif');     
+                                        }
                                         @endphp
                                         @else
                                         @php
