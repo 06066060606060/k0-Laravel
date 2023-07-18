@@ -26,6 +26,8 @@
 <meta property="twitter:description" content="">
 <meta property="twitter:image" content="https://gokdo.com/img/logo-sm.png">
 
+<meta name="surfe.pro" content="98fe09e1b43164e3fb1bfcb37b760463">
+
 <meta name="coverage" content="Worldwide" />
 <link rel="canonical" href="https://gokdo.com" />
 <link rel="canonical" href="https://en.gokdo.com" />
