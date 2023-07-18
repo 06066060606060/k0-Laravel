@@ -360,19 +360,19 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         </div>@endif
                                     </div>
                                     
-                                        @php $imagesb = $allgame->image[0] ?? null;
-                                        $filename = pathinfo($imagesb, PATHINFO_FILENAME);
+                                        @php $imagesbs = $allgame->image[0] ?? null;
+                                        $filenames = pathinfo($imagesbs, PATHINFO_FILENAME);
                                         $locale = app()->getLocale();
                                         if($locale == 'fr'){
-                                        $imgiUrl = asset('storage/uploads/' . $filename . '.gif'); 
+                                        $imgibUrl = asset('storage/uploads/' . $filenames . '.gif'); 
                                         } else if($locale == 'en'){
-                                        $imgiUrl = asset('storage/uploads/' . $filename . '_en.gif');     
+                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_en.gif');     
                                         } else if($locale == 'de'){
-                                        $imgiUrl = asset('storage/uploads/' . $filename . '_de.gif');     
+                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_de.gif');     
                                         } else if($locale == 'es'){
-                                        $imgiUrl = asset('storage/uploads/' . $filename . '_es.gif');     
+                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_es.gif');     
                                         } else if($locale == 'it'){
-                                        $imgiUrl = asset('storage/uploads/' . $filename . '_it.gif');     
+                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_it.gif');     
                                         }
                                         $description = '';
                                         if ($locale == 'fr') {
