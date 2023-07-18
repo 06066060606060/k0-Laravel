@@ -107,14 +107,12 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         @php
                                         $imagesb = $eventsgame->image[0] ?? null;
                                         $filename = pathinfo($imagesb, PATHINFO_FILENAME);
-                                        $imgiUrl = asset('storage/' . $filename . '_m.gif');
-                                        dd($imgiUrl);
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_m.gif');
                                         @endphp
                                         @else
                                         @php
                                             $imagesb = $eventsgame->image[0] ?? null;
                                             $imgiUrl = asset('storage/' . $imagesb);
-                                            dd($imgiUrl);
                                         @endphp
                                         @endif
                                         <img alt="gallery"
