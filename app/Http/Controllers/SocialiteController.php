@@ -27,14 +27,17 @@ class SocialiteController extends Controller
             return Socialite::driver($provider)->with([
                 'redirect_uri' => $request->getScheme() . '://' . $request->getHttpHost() . '/callback/google',
             ])->redirect(); // On redirige vers le provider
+            abort(404); // Si le provider n'est pas autorisé
+    
         } elseif($provider == 'facebook')
         if (in_array($provider, $this->providers)) {
             return Socialite::driver($provider)->with([
                 'redirect_uri' => $request->getScheme() . '://' . $request->getHttpHost() . '/callback/facebook',
             ])->redirect(); // On redirige vers le provider
         }
-    }
+    
         abort(404); // Si le provider n'est pas autorisé
+    }
     }
 
     // Callback du provider
