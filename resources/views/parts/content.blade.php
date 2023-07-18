@@ -103,16 +103,18 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                             </div>
                                             @endif
                                         </div>
-                                        @php
                                         @if($isMobile == true)
+                                        @php
                                         $imagesb = $eventsgame->image[0] ?? null;
                                         $filename = pathinfo($imagesb, PATHINFO_FILENAME);
                                         $imgiUrl = asset('storage/' . $filename . '_m.gif');
+                                        @endphp
                                         @else
+                                        @php
                                             $imagesb = $eventsgame->image[0] ?? null;
                                             $imgiUrl = asset('storage/' . $imagesb);
-                                        @endif
                                         @endphp
+                                        @endif
                                         <img alt="gallery"
                                              class="absolute inset-0 object-cover object-center w-full h-full rounded-md imggame animate__animated animate__pulse"
                                              src="{{ $imgiUrl }}" onerror="this.src='/img/empty.png'">
