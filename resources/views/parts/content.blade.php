@@ -359,10 +359,22 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                             @endif
                                         </div>@endif
                                     </div>
-                                    @php
-                                        $imagesbb = $allgame->image[0] ?? null;
-                                        $imgibUrl = asset('storage/' . $imagesbb);
+                                    
+                                        @php $imagesb = $allgame->image[0] ?? null;
+                                        $filename = pathinfo($imagesb, PATHINFO_FILENAME);
                                         $locale = app()->getLocale();
+                                        if($locale == 'fr'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '.gif'); 
+                                        } else if($locale == 'en'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_en.gif');     
+                                        } else if($locale == 'de'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_de.gif');     
+                                        } else if($locale == 'es'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_es.gif');     
+                                        } else if($locale == 'it'){
+                                        $imgiUrl = asset('storage/uploads/' . $filename . '_it.gif');     
+                                        }
+                                        @endphp                                        $locale = app()->getLocale();
                                         $description = '';
                                         if ($locale == 'fr') {
                                             $description = $allgame->description;
