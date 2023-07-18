@@ -374,7 +374,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         } else if($locale == 'it'){
                                         $imgiUrl = asset('storage/uploads/' . $filename . '_it.gif');     
                                         }
-                                        @endphp                                        $locale = app()->getLocale();
                                         $description = '';
                                         if ($locale == 'fr') {
                                             $description = $allgame->description;
