@@ -26,7 +26,7 @@ class SocialiteController extends Controller
         // On vérifie si le provider est autorisé
         if (in_array($provider, $this->providers)) {
             return Socialite::driver($provider)->with([
-                'redirect_uri' => $request->getScheme() . '://' . $request->getHttpHost() . '/callback/' . $provider,
+                'redirect_uri' => 'https://gokdo.com/callback/' . $provider,
             ])->redirect(); // On redirige vers le provider
         }
         abort(404); // Si le provider n'est pas autorisé
@@ -36,7 +36,6 @@ class SocialiteController extends Controller
     public function callback (Request $request) {
 
         $provider = $request->provider;
-        dd($provider);
 
         if (in_array($provider, $this->providers)) {
 
