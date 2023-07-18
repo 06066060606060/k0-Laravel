@@ -823,3 +823,9 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
         </section>
     </container>
 @endif
+@if($isMobile == true)
+@else
+<script src="//static.surfe.pro/js/net.js"></script>
+<ins class="surfe-be" data-sid="378356"></ins>
+<script>(adsurfebe = window.adsurfebe || []).push({});</script>
+@endif
