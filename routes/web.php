@@ -126,9 +126,8 @@ Route::post('contactmail', [MailController::class, 'sendMessage']);
 Route::get('processtart', [ProcessController::class, 'execute']);
 
 // La redirection vers le provider
-Route::get('/redirect/{provider}', [SocialiteController::class, 'redirect'])
-    ->name('redirect');
-    
+Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
+
 // Le callback du provider
 Route::get('/{locale}/callback/{provider}', [SocialiteController::class, 'callback'])
     ->name('callback');
