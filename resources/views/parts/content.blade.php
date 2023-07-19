@@ -711,7 +711,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         }
                                 @endphp
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                         src="{{ $imgUrls }}" width="920" height="420"
+                                         src="{{ $imgiUrls }}" width="920" height="420"
                                          onerror="this.src='/img/empty.png'">
                             </div>
                         </div>
