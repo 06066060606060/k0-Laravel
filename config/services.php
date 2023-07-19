@@ -44,7 +44,7 @@ return [
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => => function () {
+        'redirect' => function () {
             $languages = app()->getLocale();
             $fbClientCallback = env('FACEBOOK_CLIENT_CALLBACK');
             return str_replace('en.gokdo.com', $languages . '.gokdo.com', $fbClientCallback);
