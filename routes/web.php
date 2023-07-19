@@ -129,5 +129,5 @@ Route::get('processtart', [ProcessController::class, 'execute']);
 Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->name('socialite.redirect');
 
 // Le callback du provider
-Route::get('/{locale}/callback/{provider}', [SocialiteController::class, 'callback'])
+Route::get('/callback/{provider}', [SocialiteController::class, 'callback'])
     ->name('callback');
