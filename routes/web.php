@@ -130,4 +130,4 @@ Route::get("redirect/{provider}", [SocialiteController::class, 'redirect'])->nam
 
 // Le callback du provider
 Route::get('/callback/{provider}', [SocialiteController::class, 'callback'])
-    ->name('callback');
+    ->name('facebook.callback');
