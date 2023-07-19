@@ -31,21 +31,20 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     
-    $language = app()->getLocale();
-    // Récupérer la valeur de GOOGLE_CLIENT_CALLBACK depuis le fichier .env
-    $googleClientCallback = env('GOOGLE_CLIENT_CALLBACK');
-    // Modifier l'URL en fonction de la langue
-    $dynamicCallbackUrl = str_replace('en.gokdo.com', $language . '.gokdo.com', $googleClientCallback);
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
-        'redirect' => $dynamicCallbackUrl
+        'redirect' => function () {
+            $language = app()->getLocale();
+            $googleClientCallback = env('GOOGLE_CLIENT_CALLBACK');
+            return str_replace('en.gokdo.com', $language . '.gokdo.com', $googleClientCallback);
+        }
     ],
 
     'facebook' => [
         'client_id' => env('FACEBOOK_CLIENT_ID'),
         'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
-        'redirect' => url('/callback/google')
+        'redirect' => env('FACEBOOK_CLIENT_CALLBACK')
     ],
 
     'github' => [
