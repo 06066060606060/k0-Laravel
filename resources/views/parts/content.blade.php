@@ -695,13 +695,23 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                     <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
                         <div class="relative w-full max-w-lg">
                             <div class="relative">
-                                @php
-                                    $imagesd =  $starred->image[0] ?? null;
-                                    $imgUrl = asset('storage/' . $imagesd);
+                                @php $imagesbs = $starred->image[0] ?? null;
+                                        $filenamesq = pathinfo($imagesbs, PATHINFO_FILENAME);
+                                        $locale = app()->getLocale();
+                                        if($locale == 'fr'){
+                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '.gif'); 
+                                        } else if($locale == 'en'){
+                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_en.gif');     
+                                        } else if($locale == 'de'){
+                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_de.gif');     
+                                        } else if($locale == 'es'){
+                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_es.gif');     
+                                        } else if($locale == 'it'){
+                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_it.gif');     
+                                        }
                                 @endphp
-                               
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                         src="{{ $imgUrl }}" width="920" height="420"
+                                         src="{{ $imgUrls }}" width="920" height="420"
                                          onerror="this.src='/img/empty.png'">
                             </div>
                         </div>
