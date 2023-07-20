@@ -81,6 +81,7 @@ class SocialiteController extends Controller
 
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
             }
+            backpack_auth()->login($user); // Connexion de l'utilisateur créé
 
             return redirect('/');
         }
