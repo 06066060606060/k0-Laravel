@@ -6,58 +6,6 @@
 @else
     <div class="z-0 one"></div>
 @endif
-@if(session('notification'))
-    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
-    @php
-        $locale = app()->getLocale();
-        $notificationText = '';
-        $errorText = '';
-        switch ($locale) {
-            case 'fr':
-                $notificationText = "Vous êtes désormais inscrit, veuillez maintenant vous connecter.";
-                $errorText = "Erreur lors de la copie du lien.";
-                break;
-            case 'en':
-                $notificationText = "You are now registered, you have to connect now!";
-                $errorText = "Error when copy link";
-                break;
-            case 'es':
-                $notificationText = "¡Enlace copiado!";
-                $errorText = "Error al copiar!";
-                break;
-            case 'de':
-                $notificationText = "Link kopiert!";
-                $errorText = "Fehler beim Kopieren!";
-                break;
-            case 'it':
-                $notificationText = "Link copiato!";
-                $errorText = "Errore durante la copia!";
-                break;
-            default:
-                break;
-        }
-    @endphp
-
-<script>
-    // Fonction pour afficher la notification
-    function showNotification() {
-            console.log("showNotification called");
-        Toastify({
-            text: "{{ $notificationText }}",
-            duration: 3000,
-            close: true,
-            gravity: "top",
-            position: "right",
-            backgroundColor: "linear-gradient(to right, #4bb543, #006400)",
-            className: "toastify-custom",
-        }).showToast();
-    }
-
-    // Appel de la fonction lors du chargement de la page
-    window.addEventListener('load', showNotification);
-</script>
-@endif
 <?php
 $url = Request::url();
 $subdomain = parse_url($url, PHP_URL_HOST);
