@@ -87,6 +87,7 @@ public function callback(Request $request)
             //      'parrain' => $parrain // On offre 150 diamants
             ]);
             //$request->session()->forget('parrain');
+            $user = User::where("email", $email)->first();
 
             //create notification
             backpack_auth()->login($user);
@@ -108,6 +109,8 @@ public function callback(Request $request)
                 'trophee1' => '150',
             //  'parrain' => $parrain // On offre 150 diamants
             ]);
+            $user = User::where("email", $email)->first();
+
             backpack_auth()->login($user);
         }
 
