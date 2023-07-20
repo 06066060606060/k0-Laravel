@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Socialite;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class SocialiteController extends Controller
@@ -34,7 +33,6 @@ class SocialiteController extends Controller
     public function callback(Request $request)
     {
         $provider = $request->provider;
-        $lasession = 0;
         
         if (in_array($provider, $this->providers)) {
             $data = Socialite::driver($provider)->stateless()->user();
@@ -61,7 +59,6 @@ class SocialiteController extends Controller
                 ]);
     
                 $this->createNewUserNotification($email);
-                $lasession = 1;
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
             } else {
                 do {
@@ -80,12 +77,7 @@ class SocialiteController extends Controller
                 ]);
     
                 $this->createNewUserNotification($email);
-                $lasession = 1;
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
-            }
-            
-            if ($lasession == 1) { 
-                Session::put('notification', true);
             }
             
             return redirect('/');
