@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Socialite;
 use App\Models\User;
-use App\Models\Session;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class SocialiteController extends Controller
