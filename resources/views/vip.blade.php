@@ -17,12 +17,12 @@
 
 <table style="border: 1px solid white; width:100%;">
   <tr>
-    <th class="border-white bg-gray-600 text-black">VIP</th>
-    <th class="border-white bg-gray-600 text-black">GIFT</th>
+    <th class="border-white bg-gray-400 text-black">VIP</th>
+    <th class="border-white bg-gray-400 text-black">GIFT</th>
   </tr>
   <tr>
     <td class="border-white pl-4 py-4 bg-white text-black">10 VIP</td>
-    <td class="border-white pl-4 py-4 bg-white text-black"><span class="inline-flex">10 000 <img src="/img/diamond5.png" class="w-5 h-4"></span></td>
+    <td class="border-white pl-4 py-4 bg-white text-lg text-black"><span class="inline-flex">10 000 <img src="/img/diamond5.png" class="w-5 h-4"></span></td>
   </tr>
   <tr>
     <td class="border-white pl-4 py-4 bg-white text-black">20 VIP</td>
