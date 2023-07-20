@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td class="border-white pl-4 py-4 bg-white text-black">10 VIP</td>
-    <td class="border-white pl-4 py-4 bg-white text-lg font-bold text-black"><span class="inline-flex">10 000 <img src="/img/diamond5.png" class="ml-2 w-7 h-6"></span></td>
+    <td class="border-white pl-4 py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">10 000 <img src="/img/diamond5.png" class="ml-2 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white pl-4 py-4 bg-white text-black">20 VIP</td>
