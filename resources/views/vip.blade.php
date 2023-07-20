@@ -168,29 +168,29 @@
     <td class="border-white py-4 text-lg font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">5 Packs Tera achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">500 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 text-lg font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">20 Packs Tera achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">5 000 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">80 Packs Tera achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">50 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">2 500 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">200 Packs Tera achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">5 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black">500 Packs Tera achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black"><span class="inline-flex">2 500 <img src="/img/coin10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
@@ -228,7 +228,7 @@
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">500 Packs Expert achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">5 000 <img src="/img/coin10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
