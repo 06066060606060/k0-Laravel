@@ -62,7 +62,7 @@ class SocialiteController extends Controller
                 ]);
 
                 $this->createNewUserNotification($email);
-                Session::put('notification', true);
+                $lasession = 1;
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
             } else {
                 do {
@@ -81,10 +81,12 @@ class SocialiteController extends Controller
                 ]);
 
                 $this->createNewUserNotification($email);
-
+                $lasession = 1;
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
-                Session::put('notification', true);
             }
+            @if($lasession == 1)
+            Session::put('notification', true);
+            @endif
             return redirect('/');
         }
 
