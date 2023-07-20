@@ -118,7 +118,7 @@
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black">500 Packs Booster achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black"><span class="inline-flex">500 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black"><span class="inline-flex">500 <img src="/img/coin10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
@@ -154,7 +154,7 @@
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black">500 Packs Maxi achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black"><span class="inline-flex">1 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black"><span class="inline-flex">1 000 <img src="/img/coin10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
