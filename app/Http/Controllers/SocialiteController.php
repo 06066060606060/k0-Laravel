@@ -59,6 +59,8 @@ class SocialiteController extends Controller
                 ]);
 
                 $this->createNewUserNotification($email);
+
+                backpack_auth()->login($user); // Connexion de l'utilisateur créé
             } else {
                 do {
                     $randomDigits = rand(1, 99999);
@@ -76,9 +78,9 @@ class SocialiteController extends Controller
                 ]);
 
                 $this->createNewUserNotification($email);
-            }
 
-            backpack_auth()->login($user);
+                backpack_auth()->login($user); // Connexion de l'utilisateur créé
+            }
 
             return redirect('/');
         }
