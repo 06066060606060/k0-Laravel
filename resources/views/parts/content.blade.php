@@ -42,6 +42,7 @@
 <script>
     // Fonction pour afficher la notification
     function showNotification() {
+            console.log("showNotification called");
         Toastify({
             text: "{{ $notificationText }}",
             duration: 3000,
