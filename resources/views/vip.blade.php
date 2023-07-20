@@ -17,8 +17,8 @@
 
 <table style="border: 1px solid white; width:100%;">
   <tr>
-    <th width="50%" class="border-white bg-gray-700 text-white">VIP</th>
-    <th width="50%" class="border-white bg-gray-700 text-white">GIFT</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">VIP</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
     <td class="border-white pl-4 py-4 bg-white text-black">10 VIP</td>
