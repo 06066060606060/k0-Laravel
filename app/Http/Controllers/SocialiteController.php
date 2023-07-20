@@ -84,8 +84,8 @@ class SocialiteController extends Controller
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
             }
             
-            if ($lasession == 1) {
-                session(['notification' => true]);
+            if ($lasession == 1) { 
+                Session::put('notification', true);
             }
             
             return redirect('/');
