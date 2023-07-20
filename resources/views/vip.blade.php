@@ -25,31 +25,31 @@
     <td style="border: 1px solid white; background: white; color: black;"><span class="item-flex">10 000 <img src="/img/diamond5.png" class="w-8 h-6"></span></td>
   </tr>
   <tr>
-    <td style="border: 1px solid white; background: white; color: black;">20 VIP</td>
+    <td class="border-white pl-4 bg-white text-black">20 VIP</td>
     <td style="border: 1px solid white; background: white; color: black;">60 000 <img src="/img/diamond5.png" class="w-8 h-6"></td>
   </tr>
   <tr>
-    <td style="border: 1px solid white; background: white; color: black;">50 VIP</td>
+    <td class="border-white pl-4 bg-white text-black">50 VIP</td>
     <td style="border: 1px solid white; background: white; color: black;">50 <img src="/img/gem10.png" class="w-8 h-6"></td>
   </tr>
   <tr>
-    <td style="border: 1px solid white; background: white; color: black;">100 VIP</td>
+    <td class="border-white pl-4 bg-white text-black">100 VIP</td>
     <td style="border: 1px solid white; background: white; color: black;">100 <img src="/img/gem10.png" class="w-8 h-6"></td>
   </tr>
   <tr>
-    <td style="border: 1px solid white; background: white; color: black;">250 VIP</td>
+    <td class="border-white pl-4 bg-white text-black">250 VIP</td>
     <td style="border: 1px solid white; background: white; color: black;">10€ PAYPAL<br>250 <img src="/img/gem10.png" class="w-8 h-6"></td>
   </tr>
   <tr>
-    <td style="border: 1px solid white; background: white; color: black;">500 VIP</td>
+    <td class="border-white pl-4 bg-white text-black">500 VIP</td>
     <td style="border: 1px solid white; background: white; color: black;">20€ PAYPAL<br>500 <img src="/img/gem10.png" class="w-8 h-6"></td>
   </tr>
   <tr>
-    <td style="border: 1px solid white; background: white; color: black;">1000 VIP</td>
+    <td class="border-white pl-4 bg-white text-black">1 000 VIP</td>
     <td style="border: 1px solid white; background: white; color: black;">50€ PAYPAL<br>1000 <img src="/img/gem10.png" class="w-8 h-6"></td>
   </tr>
   <tr>
-    <td style="border: 1px solid white; background: white; color: black;">2000 VIP</td>
+    <td class="border-white pl-4 bg-white text-black">2 000 VIP</td>
     <td style="border: 1px solid white; background: white; color: black;">100€ PAYPAL<br>2000 <img src="/img/gem10.png" class="w-8 h-6"></td>
   </tr>
 </table>
