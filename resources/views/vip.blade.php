@@ -21,7 +21,8 @@
     <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black">10 VIP</td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+">10 VIP</td>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">10 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
