@@ -13,7 +13,7 @@
                     </div>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('FONCTIONNEMENT DU VIP')}}</h2>
-		<p class="leading-relaxed mb-4 text-gray-300">{{__("Pour chaque achat de Packs de Rubis effectué il vous sera donné des Points VIP, dans le tableau ci-dessous vous verrez combien de Points VIP atteindre pour gagner le cadeau correspondant.")}}</p>
+		<p class="leading-relaxed mb-4 text-gray-300">{{__("Pour chaque achat de Packs de Rubis effectué il vous sera donné des Points VIP.")}} <br>{{__("Dans le tableau ci-dessous vous verrez combien de Points VIP atteindre pour gagner le cadeau correspondant.")}}</p>
 
 <table class="border-white w-full text-center rounded-lg">
   <tr>
