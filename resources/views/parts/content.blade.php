@@ -6,6 +6,7 @@
 @else
     <div class="z-0 one"></div>
 @endif
+@if(session('notification'))
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
     @php
@@ -55,6 +56,7 @@
     // Appel de la fonction lors du chargement de la page
     window.addEventListener('load', showNotification);
 </script>
+@endif
 <?php
 $url = Request::url();
 $subdomain = parse_url($url, PHP_URL_HOST);
