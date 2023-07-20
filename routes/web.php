@@ -56,6 +56,7 @@ Route::controller(GlobalController::class)->group(function () {
             Route::get('aide', 'aide');
             Route::get('discord', 'discord');
             Route::get('reglement', 'reglement');
+            Route::get('vip', 'vip');
             Route::get('mentions-legales', 'mentionslegales');
             Route::get('confidentialite-site', 'confidentialitesite');
             Route::get('partenaires', 'partenaires');
@@ -88,6 +89,7 @@ Route::controller(GlobalController::class)->group(function () {
         Route::get('aide', 'aide');
         Route::get('discord', 'discord');
         Route::get('reglement', 'reglement');
+        Route::get('vip', 'vip');
         Route::get('mentions-legales', 'mentionslegales');
         Route::get('confidentialite-site', 'confidentialitesite');
         Route::get('partenaires', 'partenaires');

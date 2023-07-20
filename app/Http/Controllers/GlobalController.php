@@ -371,6 +371,11 @@ if ($onegame->isEmpty()) {
         return view('reglement');
     }
 
+    public function vip()
+    {
+        return view('vip');
+    }
+
     public function mentionslegales()
     {
         return view('mentions-legales');
