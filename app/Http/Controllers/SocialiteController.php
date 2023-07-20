@@ -136,8 +136,8 @@ public function callback(Request $request)
 # 3. On connecte l'utilisateur
 backpack_auth()->login($user);
 
-# Redirection vers la même page pour réactualiser
-return redirect()->back();
+# Redirection vers https://gokdo.com pour réactualiser
+return redirect('https://gokdo.com');
 
 # 4. On connecte à nouveau l'utilisateur
 backpack_auth()->login($user);
