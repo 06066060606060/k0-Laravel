@@ -75,8 +75,10 @@
 "><span class="inline-flex">50 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black">200 Packs Starter achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+">200 Packs Starter achetés</td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black">500 Packs Starter achetés</td>
