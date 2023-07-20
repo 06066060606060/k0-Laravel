@@ -225,9 +225,9 @@
 "><span class="inline-flex">10 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-radius:0 0 0 0.5rem; border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">500 Packs Expert achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-radius:0 0 0.5rem 0; border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 "><span class="inline-flex">5 000 <img src="/img/coin10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
