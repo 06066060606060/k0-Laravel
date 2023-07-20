@@ -89,14 +89,7 @@ public function callback(Request $request)
             //$request->session()->forget('parrain');
 
             //create notification
-            $admin = User::where('role', 'admin')->first();
-            $admin->notify(
-                new DatabaseNotification(
-                    ($type = 'info'), // info / success / warning / error
-                    ($message = 'Nouvelle Inscription'),
-                    ($messageLong = 'Nouvelle Inscription: ' . $email)
-                )
-            );
+            backpack_auth()->login($user);
         } else {
             // Boucle pour générer un nouveau pseudo jusqu'à ce qu'il soit unique
             do {
@@ -115,35 +108,12 @@ public function callback(Request $request)
                 'trophee1' => '150',
             //  'parrain' => $parrain // On offre 150 diamants
             ]);
-
-            // Utilisez la valeur du parrain comme vous le souhaitez
-
-            // Effacez la clé "parrain" de la session pour éviter de l'utiliser à nouveau
-            //$request->session()->forget('parrain');
-
-            //create notification 
-            $admin = User::where('role', 'admin')->first();
-            $admin->notify(
-                new DatabaseNotification(
-                    ($type = 'info'), // info / success / warning / error
-                    ($message = 'Nouvelle Inscription'),
-                    ($messageLong = 'Nouvelle Inscription: ' . $email)
-                )
-            );
+            backpack_auth()->login($user);
         }
 
         # 3. On connecte l'utilisateur
 # 3. On connecte l'utilisateur
 backpack_auth()->login($user);
-
-# Redirection vers https://gokdo.com pour réactualiser
-return redirect('https://gokdo.com');
-
-# 4. On connecte à nouveau l'utilisateur
-backpack_auth()->login($user);
-
-# 5. On redirige l'utilisateur vers /home avec un message de succès
-return redirect('/')->with('success', 'Vous êtes maintenant connecté.');
 
         # 4. On redirige l'utilisateur vers /home avec un message de succès
         return redirect('/')->with('success', 'Vous êtes maintenant connecté.');
