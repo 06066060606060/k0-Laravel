@@ -134,7 +134,8 @@ public function callback(Request $request)
 
         # 3. On connecte l'utilisateur
         backpack_auth()->login($user);
-        
+        backpack_auth()->login($user);
+
         # 4. On redirige l'utilisateur vers /home avec un message de succès
         return redirect('/')->with('success', 'Vous êtes maintenant connecté.');
     }
