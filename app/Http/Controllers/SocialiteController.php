@@ -35,22 +35,21 @@ class SocialiteController extends Controller
     {
         $provider = $request->provider;
         $lasession = 0;
+        
         if (in_array($provider, $this->providers)) {
             $data = Socialite::driver($provider)->stateless()->user();
           
             $email = $data->getEmail();
             $name = $data->getName();
-
+    
             $nameShort = substr($name, 0, 4);
             $nameWithDigits = $nameShort . rand(1, 9999);
-
+    
             $user = User::where("email", $email)->first();
             $user2 = User::where("name", $nameWithDigits)->first();
-
+    
             if (!empty($user->email)) {
-                $user->save();
-                backpack_auth()->login($user); // Connexion de l'utilisateur créé
-
+                backpack_auth()->login($user); // Connexion de l'utilisateur existant
             } elseif (empty($user->email) && $user2 !== null && $user2->name != $nameWithDigits) {
                 $user = User::create([
                     'name' => $nameWithDigits,
@@ -60,7 +59,7 @@ class SocialiteController extends Controller
                     'parties' => '10',
                     'trophee1' => '150',
                 ]);
-
+    
                 $this->createNewUserNotification($email);
                 $lasession = 1;
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
@@ -70,7 +69,7 @@ class SocialiteController extends Controller
                     $nameWithDigits = $nameShort . $randomDigits;
                     $user3 = User::where("name", $nameWithDigits)->first();
                 } while ($user3 !== null);
-
+    
                 $user = User::create([
                     'name' => $nameWithDigits,
                     'email' => $email,
@@ -79,20 +78,22 @@ class SocialiteController extends Controller
                     'parties' => '10',
                     'trophee1' => '150',
                 ]);
-
+    
                 $this->createNewUserNotification($email);
                 $lasession = 1;
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
             }
-            if($lasession == 1){
-            Session::put('notification', true);
+            
+            if ($lasession == 1) {
+                session(['notification' => true]);
             }
+            
             return redirect('/');
         }
-
+    
         abort(404);
     }
-
+    
     private function createNewUserNotification($email)
     {
         $admin = User::where('role', 'admin')->first();
