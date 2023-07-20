@@ -48,23 +48,23 @@
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">250 VIP</td>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">10€ PAYPAL<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">500 VIP</td>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">20€ PAYPAL<br><span class="inline-flex">500 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+">20€<br><span class="inline-flex">500 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">1 000 VIP</td>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">50€ PAYPAL<br><span class="inline-flex">1 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+">50€<br><span class="inline-flex">1 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-radius:0 0 0 0.5rem;">2 000 VIP</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-radius:0 0 0.5rem 0;">100€ PAYPAL<br><span class="inline-flex">2 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-radius:0 0 0.5rem 0;">100€<br><span class="inline-flex">2 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
