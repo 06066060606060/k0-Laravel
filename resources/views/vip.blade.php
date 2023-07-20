@@ -17,8 +17,8 @@
 
 <table class="border-white w-full text-center rounded-lg">
   <tr>
-    <th width="50%" style="border-radius:0.5rem;" class="border-white py-4 bg-gray-700 text-white">VIP</th>
-    <th width="50%" style="border-radius:0.5rem;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
+    <th width="50%" style="border-radius:0.5rem 0 0 0;" class="border-white py-4 bg-gray-700 text-white">VIP</th>
+    <th width="50%" style="border-radius:0 0.5rem 0 0;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
@@ -63,8 +63,8 @@
 ">50€ PAYPAL<br><span class="inline-flex">1 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black">2 000 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black">100€ PAYPAL<br><span class="inline-flex">2 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black" style="border-radius:0 0 0.5rem 0;">2 000 VIP</td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black" style="border-radius:0 0 0 0.5rem;">100€ PAYPAL<br><span class="inline-flex">2 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
