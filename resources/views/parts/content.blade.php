@@ -6,34 +6,56 @@
 @else
     <div class="z-0 one"></div>
 @endif
-<style>
-.notification {
-  background-color: #f2f2f2;
-  color: #333;
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-}
-
-.notification.success {
-  background-color: #dff0d8;
-  color: #3c763d;
-}
-
-.notification.error {
-  background-color: #f2dede;
-  color: #a94442;
-}
-
-.notification.warning {
-  background-color: #fcf8e3;
-  color: #8a6d3b;
-}
-</style>
 @if(session('notification'))
-    <div class="notification success">
-        {{ session('notification') }}
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    @php
+        $locale = app()->getLocale();
+        $notificationText = '';
+        $errorText = '';
+        switch ($locale) {
+            case 'fr':
+                $notificationText = "Vous êtes désormais inscrit, veuillez maintenant vous connecter.";
+                $errorText = "Erreur lors de la copie du lien.";
+                break;
+            case 'en':
+                $notificationText = "You are now registered, you have to connect now!";
+                $errorText = "Error when copy link";
+                break;
+            case 'es':
+                $notificationText = "¡Enlace copiado!";
+                $errorText = "Error al copiar!";
+                break;
+            case 'de':
+                $notificationText = "Link kopiert!";
+                $errorText = "Fehler beim Kopieren!";
+                break;
+            case 'it':
+                $notificationText = "Link copiato!";
+                $errorText = "Errore durante la copia!";
+                break;
+            default:
+                break;
+        }
+    @endphp
+
+<script>
+    // Fonction pour afficher la notification
+    function showNotification() {
+        Toastify({
+            text: "{{ $notificationText }}",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "linear-gradient(to right, #4bb543, #006400)",
+            className: "toastify-custom",
+        }).showToast();
+    }
+
+    // Appel de la fonction lors du chargement de la page
+    window.addEventListener('load', showNotification);
+</script>
 @endif
 <?php
 $url = Request::url();
