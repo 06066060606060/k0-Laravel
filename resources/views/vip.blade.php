@@ -15,46 +15,44 @@
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('VIP Work in progress...')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("We are actually working on a system of VIP Module for GoKDO.com.")}}</p>
 
-<div style="overflow-x: auto;">
-  <table style="border: 1px solid white; width: 100%;">
-    <tr>
-      <th style="border: 1px solid white;">VIP</th>
-      <th style="border: 1px solid white;">Cadeau</th>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">10 VIP</td>
-      <td style="border: 1px solid white;">10 000 <img src="/img/diamond5.png" class="w-8 h-6"></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">20 VIP</td>
-      <td style="border: 1px solid white;">60 000 <img src="/img/diamond5.png" class="w-8 h-6"></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">50 VIP</td>
-      <td style="border: 1px solid white;">50 <img src="/img/gem10.png" class="w-8 h-6"></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">100 VIP</td>
-      <td style="border: 1px solid white;">100 <img src="/img/gem10.png" class="w-8 h-6"></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">250 VIP</td>
-      <td style="border: 1px solid white;">10€ PAYPAL<br>250 <img src="/img/gem10.png" class="w-8 h-6"></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">500 VIP</td>
-      <td style="border: 1px solid white;">20€ PAYPAL<br>500 <img src="/img/gem10.png" class="w-8 h-6"></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">1000 VIP</td>
-      <td style="border: 1px solid white;">50€ PAYPAL<br>1000 <img src="/img/gem10.png" class="w-8 h-6"></td>
-    </tr>
-    <tr>
-      <td style="border: 1px solid white;">2000 VIP</td>
-      <td style="border: 1px solid white;">100€ PAYPAL<br>2000 <img src="/img/gem10.png" class="w-8 h-6"></td>
-    </tr>
-  </table>
-</div>
+<table style="border: 1px solid white;">
+  <tr>
+    <th style="border: 1px solid white; background: grey; color: black;">VIP</th>
+    <th style="border: 1px solid white; background: grey; color: black;">Cadeau</th>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">10 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">10 000 <img src="/img/diamond5.png" class="w-8 h-6"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">20 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">60 000 <img src="/img/diamond5.png" class="w-8 h-6"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">50 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">50 <img src="/img/gem10.png" class="w-8 h-6"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">100 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">100 <img src="/img/gem10.png" class="w-8 h-6"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">250 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">10€ PAYPAL<br>250 <img src="/img/gem10.png" class="w-8 h-6"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">500 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">20€ PAYPAL<br>500 <img src="/img/gem10.png" class="w-8 h-6"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">1000 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">50€ PAYPAL<br>1000 <img src="/img/gem10.png" class="w-8 h-6"></td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid white; background: white; color: black;">2000 VIP</td>
+    <td style="border: 1px solid white; background: white; color: black;">100€ PAYPAL<br>2000 <img src="/img/gem10.png" class="w-8 h-6"></td>
+  </tr>
+</table>
 
 
 	</section>
