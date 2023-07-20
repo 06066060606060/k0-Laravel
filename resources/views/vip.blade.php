@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td style="border: 1px solid white; background: white; color: black;">10 VIP</td>
-    <td style="border: 1px solid white; background: white; color: black;">10 000 <span class="item-flex"><img src="/img/diamond5.png" class="w-8 h-6"></span></td>
+    <td style="border: 1px solid white; background: white; color: black;"><span class="item-flex">10 000 <img src="/img/diamond5.png" class="w-8 h-6"></span></td>
   </tr>
   <tr>
     <td style="border: 1px solid white; background: white; color: black;">20 VIP</td>
