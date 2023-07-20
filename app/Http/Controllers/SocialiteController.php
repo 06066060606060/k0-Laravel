@@ -62,7 +62,7 @@ class SocialiteController extends Controller
                 ]);
 
                 $this->createNewUserNotification($email);
-
+                Session::put('notification', true);
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
             } else {
                 do {
