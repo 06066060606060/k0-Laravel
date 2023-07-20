@@ -22,7 +22,7 @@
   </tr>
   <tr>
     <td class="border-white py-4 text-lg font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">1 Pack Mini achetés</td>
+">1 Pack Mini acheté</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 "><span class="inline-flex">30 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
@@ -58,31 +58,31 @@
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">5 Packs Starter achetés</td>
+">1 Pack Starter acheté</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 "><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">20 Packs Starter achetés</td>
+">10 Packs Starter achetés</td>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">400 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">80 Packs Starter achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">50 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
-  </tr>
-  <tr>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">200 Packs Starter achetés</td>
+">50 Packs Starter achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 "><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+">100 Packs Starter achetés</td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+"><span class="inline-flex">200 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+  </tr>
+  <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black">500 Packs Starter achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black">200€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
@@ -96,29 +96,29 @@
     <td class="border-white py-4 text-lg font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">5 Packs Booster achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">120 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 text-lg font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">20 Packs Booster achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">800 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">80 Packs Booster achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">50 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">200 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">200 Packs Booster achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">400 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black">500 Packs Booster achetés</td>
-    <td class="border-white py-4 bg-white text-lg font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-lg font-bold text-black">800€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
