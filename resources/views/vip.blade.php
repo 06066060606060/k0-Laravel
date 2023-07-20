@@ -24,25 +24,25 @@
     <td class="border-white py-4 text-lg font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">1 Pack Mini acheté</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">15 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">20 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 text-lg font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">10 Packs Mini achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">125 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">200 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">50 Packs Mini achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">75 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">100 Packs Mini achetés</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">150 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">200 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black">500 Packs Mini achetés</td>
@@ -60,13 +60,13 @@
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">1 Pack Starter acheté</td>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">100 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">10 Packs Starter achetés</td>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">400 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+"><span class="inline-flex">1 000 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-lg font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
