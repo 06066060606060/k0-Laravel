@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use Socialite;
 use App\Models\User;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Session;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class SocialiteController extends Controller
@@ -81,9 +80,9 @@ class SocialiteController extends Controller
                 ]);
 
                 $this->createNewUserNotification($email);
-                Session::flash('message', 'Vous êtes inscrit, veuillez vous connecter');
 
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
+                $request->session()->flash('notification', 'Vous êtes inscrit, veuillez désormais vous connecter');
             }
             return redirect('/');
         }

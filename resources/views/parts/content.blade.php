@@ -6,9 +6,9 @@
 @else
     <div class="z-0 one"></div>
 @endif
-@if (session('message'))
-    <div class="alert alert-success">
-        {{ session('message') }}
+@if(session('notification'))
+    <div class="notification">
+        {{ session('notification') }}
     </div>
 @endif
 <?php
