@@ -57,15 +57,15 @@
     <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
-    <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+    <td class="border-white py-4 text-sm font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">1 Pack Starter acheté</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 "><span class="inline-flex">50 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+    <td class="border-white py-4 text-sm font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">10 Packs Starter achetés</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+    <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 "><span class="inline-flex">500 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
