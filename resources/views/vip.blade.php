@@ -45,18 +45,16 @@
 "><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">500 Packs Mini achetés</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">500 Packs Mini achetés</td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
 
-<table class="border-white w-full text-center rounded-lg">
+<table class="border-white w-full text-center">
   <tr>
-    <th width="50%" style="border-radius:0.5rem 0 0 0;" class="border-white py-4 bg-gray-700 text-white">VIP STARTER</th>
-    <th width="50%" style="border-radius:0 0.5rem 0 0;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">VIP STARTER</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
@@ -77,24 +75,20 @@
 "><span class="inline-flex">50 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">200 Packs Starter achetés</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">200 Packs Starter achetés</td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">500 Packs Starter achetés</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">500 Packs Starter achetés</td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
 
 <table class="border-white w-full text-center rounded-lg">
   <tr>
-    <th width="50%" style="border-radius:0.5rem 0 0 0;" class="border-white py-4 bg-gray-700 text-white">VIP BOOSTER</th>
-    <th width="50%" style="border-radius:0 0.5rem 0 0;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">VIP BOOSTER</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
@@ -121,18 +115,16 @@
 "><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">500 Packs Booster achetés</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">500 Packs Booster achetés</td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
 
 <table class="border-white w-full text-center rounded-lg">
   <tr>
-    <th width="50%" style="border-radius:0.5rem 0 0 0;" class="border-white py-4 bg-gray-700 text-white">VIP MAXI</th>
-    <th width="50%" style="border-radius:0 0.5rem 0 0;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">VIP MAXI</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
@@ -159,18 +151,16 @@
 "><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">500 Packs Maxi achetés</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">500 Packs Maxi achetés</td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
 
 <table class="border-white w-full text-center rounded-lg">
   <tr>
-    <th width="50%" style="border-radius:0.5rem 0 0 0;" class="border-white py-4 bg-gray-700 text-white">VIP TERA</th>
-    <th width="50%" style="border-radius:0 0.5rem 0 0;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">VIP TERA</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
@@ -197,18 +187,16 @@
 "><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">500 Packs Tera achetés</td>
-    <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">500 Packs Tera achetés</td>
+    <td class="border-white py-4 bg-white text-xl font-bold text-black">10€<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
 
 <table class="border-white w-full text-center rounded-lg">
   <tr>
-    <th width="50%" style="border-radius:0.5rem 0 0 0;" class="border-white py-4 bg-gray-700 text-white">VIP EXPERT</th>
-    <th width="50%" style="border-radius:0 0.5rem 0 0;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">VIP EXPERT</th>
+    <th width="50%" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
     <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
