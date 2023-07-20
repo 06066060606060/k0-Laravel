@@ -21,7 +21,7 @@
     <th width="50%" style="border-radius:0 0.5rem 0 0;" class="border-white py-4 bg-gray-700 text-white">GIFT</th>
   </tr>
   <tr>
-    <td class="border-white py-4 @if($isMobile == true) text-l @else text-xl @endif font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
+    <td class="border-white py-4 text-xl font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">5 Packs Mini achetés</td>
     <td class="border-white py-4 bg-white text-xl font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 "><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
