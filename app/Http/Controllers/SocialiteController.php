@@ -91,6 +91,8 @@ public function callback(Request $request)
 
             //create notification
             backpack_auth()->login($user);
+            return redirect('/')->with('success', 'Vous êtes maintenant connecté.');
+
         } else {
             // Boucle pour générer un nouveau pseudo jusqu'à ce qu'il soit unique
             do {
@@ -112,6 +114,8 @@ public function callback(Request $request)
             $user = User::where("email", $email)->first();
 
             backpack_auth()->login($user);
+            return redirect('/')->with('success', 'Vous êtes maintenant connecté.');
+
         }
 
         # 3. On connecte l'utilisateur
