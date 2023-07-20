@@ -26,31 +26,31 @@
   </tr>
   <tr>
     <td class="border-white py-4 text-2xl font-bold bg-white text-black">20 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="w-5 h-4"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">60 000 <img src="/img/diamond5.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black">50 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">50 <img src="/img/gem10.png" class="w-5 h-4"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">50 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black">100 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">100 <img src="/img/gem10.png" class="w-5 h-4"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black">250 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black">10€ PAYPAL<br><span class="inline-flex">250 <img src="/img/gem10.png" class="w-5 h-4"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black">10€ PAYPAL<br><span class="inline-flex">250 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black">500 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black">20€ PAYPAL<br><span class="inline-flex">500 <img src="/img/gem10.png" class="w-5 h-4"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black">20€ PAYPAL<br><span class="inline-flex">500 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black">1 000 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black">50€ PAYPAL<br><span class="inline-flex">1 000 <img src="/img/gem10.png" class="w-5 h-4"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black">50€ PAYPAL<br><span class="inline-flex">1 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-2xl font-bold text-black">2 000 VIP</td>
-    <td class="border-white py-4 bg-white text-2xl font-bold text-black">100€ PAYPAL<br><span class="inline-flex">2 000 <img src="/img/gem10.png" class="w-5 h-4"></span></td>
+    <td class="border-white py-4 bg-white text-2xl font-bold text-black">100€ PAYPAL<br><span class="inline-flex">2 000 <img src="/img/gem10.png" class="ml-2 mt-1 w-7 h-6"></span></td>
   </tr>
 </table>
 
