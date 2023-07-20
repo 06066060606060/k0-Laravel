@@ -6,8 +6,32 @@
 @else
     <div class="z-0 one"></div>
 @endif
+<style>
+.notification {
+  background-color: #f2f2f2;
+  color: #333;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.notification.success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.notification.error {
+  background-color: #f2dede;
+  color: #a94442;
+}
+
+.notification.warning {
+  background-color: #fcf8e3;
+  color: #8a6d3b;
+}
+</style>
 @if(session('notification'))
-    <div class="notification">
+    <div class="notification success">
         {{ session('notification') }}
     </div>
 @endif
