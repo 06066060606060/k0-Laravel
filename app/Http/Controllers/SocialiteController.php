@@ -133,8 +133,17 @@ public function callback(Request $request)
         }
 
         # 3. On connecte l'utilisateur
-        backpack_auth()->login($user);
-        backpack_auth()->login($user);
+# 3. On connecte l'utilisateur
+backpack_auth()->login($user);
+
+# Redirection vers la même page pour réactualiser
+return redirect()->back();
+
+# 4. On connecte à nouveau l'utilisateur
+backpack_auth()->login($user);
+
+# 5. On redirige l'utilisateur vers /home avec un message de succès
+return redirect('/')->with('success', 'Vous êtes maintenant connecté.');
 
         # 4. On redirige l'utilisateur vers /home avec un message de succès
         return redirect('/')->with('success', 'Vous êtes maintenant connecté.');
