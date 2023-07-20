@@ -6,6 +6,11 @@
 @else
     <div class="z-0 one"></div>
 @endif
+@if (session('message'))
+    <div class="alert alert-success">
+        {{ session('message') }}
+    </div>
+@endif
 <?php
 $url = Request::url();
 $subdomain = parse_url($url, PHP_URL_HOST);

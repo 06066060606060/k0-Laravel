@@ -80,6 +80,7 @@ class SocialiteController extends Controller
                 ]);
 
                 $this->createNewUserNotification($email);
+                Session::flash('message', 'Vous êtes inscrit, veuillez vous connecter');
 
                 backpack_auth()->login($user); // Connexion de l'utilisateur créé
             }
