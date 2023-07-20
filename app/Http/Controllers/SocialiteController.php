@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Foundation\Auth\AuthenticatesUsers; // Ajout du trait
 use Socialite;
 use App\Models\User;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class SocialiteController extends Controller
 {
+    use AuthenticatesUsers; // Utilisation du trait
+
     protected $providers = ["google", "github", "facebook"];
 
     public function loginRegister()
@@ -60,7 +63,7 @@ class SocialiteController extends Controller
 
                 $this->createNewUserNotification($email);
 
-                backpack_auth()->login($user); // Connexion de l'utilisateur créé
+                Auth::login($user); // Connexion de l'utilisateur créé
             } else {
                 do {
                     $randomDigits = rand(1, 99999);
@@ -79,9 +82,8 @@ class SocialiteController extends Controller
 
                 $this->createNewUserNotification($email);
 
-                backpack_auth()->login($user); // Connexion de l'utilisateur créé
+                Auth::login($user); // Connexion de l'utilisateur créé
             }
-            backpack_auth()->login($user); // Connexion de l'utilisateur créé
 
             return redirect('/');
         }
