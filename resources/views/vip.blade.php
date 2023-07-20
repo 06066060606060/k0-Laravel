@@ -15,7 +15,7 @@
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('VIP Work in progress...')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("We are actually working on a system of VIP Module for GoKDO.com.")}}</p>
 
-<table style="border: 1px solid white;">
+<table style="border: 1px solid white; width:100%;">
   <tr>
     <th style="border: 1px solid white; background: grey; color: black;">VIP</th>
     <th style="border: 1px solid white; background: grey; color: black;">Cadeau</th>
