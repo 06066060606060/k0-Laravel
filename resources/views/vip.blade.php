@@ -31,23 +31,27 @@
     <td class="border-white py-4 text-sm font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">10 {{__("Packs Mini achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">200 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">200 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_mini >= 10) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">50 {{__("Packs Mini achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">100 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_mini >= 50) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">100 {{__("Packs Mini achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">200 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">200 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_mini >= 100) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black">500 {{__("Packs Mini achetés")}}</td>
-    <td class="border-white py-4 bg-white text-sm font-bold text-black"><span class="inline-flex">100 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-sm font-bold text-black"><span class="inline-flex">100 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span>
+    <?php if(backpack_auth()->user()->nb_achats_mini >= 500) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
 </table>
 
