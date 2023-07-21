@@ -585,7 +585,7 @@ if ($onegame->isEmpty()) {
             $paiement->name = $request->transaction;
             $paiement->save();
             if ($request->type == 'Rubis'){
-            if($request->pack_id == 11){
+            if($request->pack_id == 11){ // si achat pack mini
                 backpack_auth()
                 ->user()
                 ->update([
@@ -594,7 +594,7 @@ if ($onegame->isEmpty()) {
                     'nb_achats_mini' =>
                         backpack_auth()->user()->nb_achats_mini + 1,    
                 ]);
-            } else if($request->pack_id == 12){
+            } else if($request->pack_id == 12){ // si achat pack starter
                 backpack_auth()
                 ->user()
                 ->update([
@@ -603,7 +603,7 @@ if ($onegame->isEmpty()) {
                     'nb_achats_starter' =>
                         backpack_auth()->user()->nb_achats_starter + 1,    
                 ]);
-            } else if($request->pack_id == 14){
+            } else if($request->pack_id == 14){ // si achat pack booster
                 backpack_auth()
                 ->user()
                 ->update([
@@ -612,7 +612,7 @@ if ($onegame->isEmpty()) {
                     'nb_achats_booster' =>
                         backpack_auth()->user()->nb_achats_booster + 1,    
                 ]);
-            } else if($request->pack_id == 15){
+            } else if($request->pack_id == 15){ // si achat pack maxi
                 backpack_auth()
                 ->user()
                 ->update([
@@ -621,7 +621,7 @@ if ($onegame->isEmpty()) {
                     'nb_achats_maxi' =>
                         backpack_auth()->user()->nb_achats_maxi + 1,    
                 ]);
-            } else if($request->pack_id == 17){
+            } else if($request->pack_id == 17){ // si achat pack tera
                 backpack_auth()
                 ->user()
                 ->update([
@@ -630,7 +630,7 @@ if ($onegame->isEmpty()) {
                     'nb_achats_tera' =>
                         backpack_auth()->user()->nb_achats_tera + 1,    
                 ]);
-            } else if($request->pack_id == 18){
+            } else if($request->pack_id == 18){ // si achat pack expert
                 backpack_auth()
                 ->user()
                 ->update([
