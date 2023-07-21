@@ -173,7 +173,8 @@
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black">500 {{__("Packs Maxi achetés")}}</td>
-    <td class="border-white py-4 bg-white text-sm font-bold text-black"><span class="inline-flex">1 000 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-sm font-bold text-black"><span class="inline-flex">1 000 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_maxi >= 500) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
 </table>
 
@@ -187,29 +188,34 @@
     <td class="border-white py-4 text-sm font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">1 {{__("Pack Tera acheté")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">500 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">500 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_tera >= 1) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 text-sm font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">10 {{__("Packs Tera achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">5 000 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">5 000 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_tera >= 10) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">50 {{__("Packs Tera achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">2 500 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">2 500 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_tera >= 50) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">100 {{__("Packs Tera achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">5 000 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">5 000 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_tera >= 100) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black">500 {{__("Packs Tera achetés")}}</td>
-    <td class="border-white py-4 bg-white text-sm font-bold text-black"><span class="inline-flex">2 500 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+    <td class="border-white py-4 bg-white text-sm font-bold text-black"><span class="inline-flex">2 500 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_tera >= 500) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
 </table>
 
@@ -223,31 +229,36 @@
     <td class="border-white py-4 text-sm font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">1 {{__("Pack Expert acheté")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">1 000 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">1 000 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_expert >= 1) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 text-sm font-bold bg-white text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">10 {{__("Packs Expert achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">10 000 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">10 000 000 <img src="/img/diamond5.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_expert >= 10) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">50 {{__("Packs Expert achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">5 000 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">5 000 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_expert >= 50) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">100 {{__("Packs Expert achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">10 000 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">10 000 <img src="/img/gem10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_expert >= 100) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
   <tr>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-radius:0 0 0 0.5rem; border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
 ">500 {{__("Packs Expert achetés")}}</td>
     <td class="border-white py-4 bg-white text-sm font-bold text-black" style="border-radius:0 0 0.5rem 0; border-bottom: 1px solid rgb(55 65 81 / var(--tw-bg-opacity));
-"><span class="inline-flex">5 000 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span></td>
+"><span class="inline-flex">5 000 <img src="/img/coin10.png" class="ml-2 mt-0 w-7 h-6"></span>
+<?php if(backpack_auth()->user()->nb_achats_expert >= 500) { ?>&nbsp;<i class="fa-solid fa-check" style="color:green;"></i><?php } else {} ?></td>
   </tr>
 </table>
 
