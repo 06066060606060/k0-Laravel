@@ -37,6 +37,12 @@ class User extends Authenticatable
         'trophee2',
         'trophee3',
         'parrain',
+        'nb_achats_mini',
+        'nb_achats_starter',
+        'nb_achats_booster',
+        'nb_achats_maxi',
+        'nb_achats_tera',
+        'nb_achats_expert',
     ];
 
     /**

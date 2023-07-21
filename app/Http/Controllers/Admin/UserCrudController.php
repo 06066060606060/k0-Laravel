@@ -47,6 +47,12 @@ class UserCrudController extends CrudController
         CRUD::column('trophee1')->label('Diamants');
         CRUD::column('trophee2')->label('Rubis');
         CRUD::column('trophee3')->label('Pièces');
+        CRUD::column('nb_achats_mini')->label('Mini');
+        CRUD::column('nb_achats_starter')->label('Starter');
+        CRUD::column('nb_achats_booster')->label('Booster');
+        CRUD::column('nb_achats_maxi')->label('Maxi');
+        CRUD::column('nb_achats_tera')->label('Tera');
+        CRUD::column('nb_achats_expert')->label('Expert');
         $this->crud->enableExportButtons();
        
 
