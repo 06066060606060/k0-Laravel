@@ -585,12 +585,61 @@ if ($onegame->isEmpty()) {
             $paiement->name = $request->transaction;
             $paiement->save();
             if ($request->type == 'Rubis'){
+            if($request->pack_id == 11){
                 backpack_auth()
                 ->user()
                 ->update([
                     'trophee2' =>
                         backpack_auth()->user()->trophee2 + $request->gain,
+                    'nb_achats_mini' =>
+                        backpack_auth()->user()->nb_achats_mini + 1,    
                 ]);
+            } else if($request->pack_id == 12){
+                backpack_auth()
+                ->user()
+                ->update([
+                    'trophee2' =>
+                        backpack_auth()->user()->trophee2 + $request->gain,
+                    'nb_achats_starter' =>
+                        backpack_auth()->user()->nb_achats_starter + 1,    
+                ]);
+            } else if($request->pack_id == 14){
+                backpack_auth()
+                ->user()
+                ->update([
+                    'trophee2' =>
+                        backpack_auth()->user()->trophee2 + $request->gain,
+                    'nb_achats_booster' =>
+                        backpack_auth()->user()->nb_achats_booster + 1,    
+                ]);
+            } else if($request->pack_id == 15){
+                backpack_auth()
+                ->user()
+                ->update([
+                    'trophee2' =>
+                        backpack_auth()->user()->trophee2 + $request->gain,
+                    'nb_achats_maxi' =>
+                        backpack_auth()->user()->nb_achats_maxi + 1,    
+                ]);
+            } else if($request->pack_id == 17){
+                backpack_auth()
+                ->user()
+                ->update([
+                    'trophee2' =>
+                        backpack_auth()->user()->trophee2 + $request->gain,
+                    'nb_achats_tera' =>
+                        backpack_auth()->user()->nb_achats_tera + 1,    
+                ]);
+            } else if($request->pack_id == 18){
+                backpack_auth()
+                ->user()
+                ->update([
+                    'trophee2' =>
+                        backpack_auth()->user()->trophee2 + $request->gain,
+                    'nb_achats_expert' =>
+                        backpack_auth()->user()->nb_achats_expert + 1,    
+                ]);
+            } else {}
             } else if ($request->type == 'Diamants'){
             backpack_auth()
                 ->user()
