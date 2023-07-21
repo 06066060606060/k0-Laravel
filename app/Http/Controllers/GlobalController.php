@@ -584,62 +584,25 @@ if ($onegame->isEmpty()) {
             $paiement->type = $request->pack_price;
             $paiement->name = $request->transaction;
             $paiement->save();
-            if ($request->type == 'Rubis'){
-            if($request->pack_id == 11){ // si achat pack mini
-                backpack_auth()
-                ->user()
-                ->update([
-                    'trophee2' =>
-                        backpack_auth()->user()->trophee2 + $request->gain,
-                    'nb_achats_mini' =>
-                        backpack_auth()->user()->nb_achats_mini + 1,    
-                ]);
-            } else if($request->pack_id == 12){ // si achat pack starter
-                backpack_auth()
-                ->user()
-                ->update([
-                    'trophee2' =>
-                        backpack_auth()->user()->trophee2 + $request->gain,
-                    'nb_achats_starter' =>
-                        backpack_auth()->user()->nb_achats_starter + 1,    
-                ]);
-            } else if($request->pack_id == 14){ // si achat pack booster
-                backpack_auth()
-                ->user()
-                ->update([
-                    'trophee2' =>
-                        backpack_auth()->user()->trophee2 + $request->gain,
-                    'nb_achats_booster' =>
-                        backpack_auth()->user()->nb_achats_booster + 1,    
-                ]);
-            } else if($request->pack_id == 15){ // si achat pack maxi
-                backpack_auth()
-                ->user()
-                ->update([
-                    'trophee2' =>
-                        backpack_auth()->user()->trophee2 + $request->gain,
-                    'nb_achats_maxi' =>
-                        backpack_auth()->user()->nb_achats_maxi + 1,    
-                ]);
-            } else if($request->pack_id == 17){ // si achat pack tera
-                backpack_auth()
-                ->user()
-                ->update([
-                    'trophee2' =>
-                        backpack_auth()->user()->trophee2 + $request->gain,
-                    'nb_achats_tera' =>
-                        backpack_auth()->user()->nb_achats_tera + 1,    
-                ]);
-            } else if($request->pack_id == 18){ // si achat pack expert
-                backpack_auth()
-                ->user()
-                ->update([
-                    'trophee2' =>
-                        backpack_auth()->user()->trophee2 + $request->gain,
-                    'nb_achats_expert' =>
-                        backpack_auth()->user()->nb_achats_expert + 1,    
-                ]);
-            } else {}
+            if ($request->type == 'Rubis') {
+                $packsToUpdate = [
+                    11 => 'nb_achats_mini',
+                    12 => 'nb_achats_starter',
+                    14 => 'nb_achats_booster',
+                    15 => 'nb_achats_maxi',
+                    17 => 'nb_achats_tera',
+                    18 => 'nb_achats_expert',
+                ];
+            
+                $packId = $request->pack_id;
+            
+                if (array_key_exists($packId, $packsToUpdate)) {
+                    $fieldToUpdate = $packsToUpdate[$packId];
+                    backpack_auth()->user()->update([
+                        'trophee2' => backpack_auth()->user()->trophee2 + $request->gain,
+                        $fieldToUpdate => backpack_auth()->user()->$fieldToUpdate + 1,
+                    ]);
+                }
             } else if ($request->type == 'Diamants'){
             backpack_auth()
                 ->user()
