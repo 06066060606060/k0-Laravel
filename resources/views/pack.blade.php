@@ -7,7 +7,7 @@
         data-sdk-integration-source="button-factory"></script>
     @elseif(app()->getLocale() == 'fr')
     <script
-        src="{{ Setting::get('paypal_link') }}"
+        src="{{ Setting::get('paypal_link').'&locale=fr_FR' }}"
         data-sdk-integration-source="button-factory"></script>
     @elseif(app()->getLocale() == 'es')
     <script
