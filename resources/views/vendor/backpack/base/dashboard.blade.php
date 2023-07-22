@@ -194,6 +194,11 @@
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container inline-flex">
                                                         {{ $user->name }} 
                                                         @if($user->language == 'fr') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1"> @endif
+                                                        @if($user->language == 'en') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1"> @endif
+                                                        @if($user->language == 'de') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/de.svg" alt="German" class="w-4 h-4 mr-1"> @endif
+                                                        @if($user->language == 'es') &nbsp;<<img src="https://flagicons.lipis.dev/flags/4x3/es.svg" alt="Español" class="w-4 h-4 mr-1"> @endif
+                                                        @if($user->language == 'it') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-4 h-4 mr-1"> @endif
+                                                        @if($user->language == 'NULL') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/xx.svg" alt="Unknown" class="w-4 h-4 mr-1"> @endif
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-gray-900 rate-container">
                                                         {{ $user->email }}
