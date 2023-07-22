@@ -192,7 +192,8 @@
                                                 <tr>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
-                                                        {{ $user->name }} ({{ $user->language }})
+                                                        {{ $user->name }} 
+                                                        @if($user->language == 'fr') <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1"> @endif
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-gray-900 rate-container">
                                                         {{ $user->email }}
