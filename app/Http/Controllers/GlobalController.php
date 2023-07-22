@@ -38,9 +38,21 @@ class GlobalController extends Controller
         $lejoueur = null;
         $count = 0;
         
+        // compte le nombre de parrain / Mise a jour du language utilisé
         if (backpack_auth()->check() && backpack_auth()->user()) {
             $lejoueur = backpack_auth()->user()->name;
             $count = User::where('parrain', backpack_auth()->user()->name)->count();
+        
+            // Get the current locale
+            $locale = app()->getLocale();
+        
+            // Check the 'language' column in the users table
+            $userLanguage = backpack_auth()->user()->language;
+        
+            // Update the 'language' column if it's null or different from the current locale
+            if (empty($userLanguage) || $userLanguage !== $locale) {
+                User::where('name', $lejoueur)->update(['language' => $locale]);
+            }
         }
         
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
