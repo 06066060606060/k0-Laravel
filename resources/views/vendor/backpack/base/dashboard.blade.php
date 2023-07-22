@@ -192,7 +192,7 @@
                                                 <tr>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
-                                                        {{ $user->name }}
+                                                        {{ $user->name }} ({{ $user->language }})
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-gray-900 rate-container">
                                                         {{ $user->email }}
