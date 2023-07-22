@@ -191,9 +191,9 @@
                                             @foreach ($users as $user)
                                                 <tr>
                                                     <td
-                                                        class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container">
+                                                        class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container inline-flex">
                                                         {{ $user->name }} 
-                                                        @if($user->language == 'fr') <img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1"> @endif
+                                                        @if($user->language == 'fr') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1"> @endif
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-gray-900 rate-container">
                                                         {{ $user->email }}
