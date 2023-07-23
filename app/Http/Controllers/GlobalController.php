@@ -623,28 +623,28 @@ if ($onegame->isEmpty()) {
                 $nbAchatsTera = backpack_auth()->user()->nb_achats_tera;
                 $nbAchatsExpert = backpack_auth()->user()->nb_achats_expert;
                 if($packId == 11){ // si c pack mini
-                if ($nbAchatsMini == 1) { // si le membre à 1 achat enregistré
-                    backpack_auth()->user()->update([
-                        'trophee1' => backpack_auth()->user()->trophee1 + 20000, // on injecte +20000 diamants
-                    ]);
-                } elseif ($nbAchatsMini == 10) { //etc etc
-                    backpack_auth()->user()->update([
-                        'trophee1' => backpack_auth()->user()->trophee1 + 200000,
-                    ]);
-                } elseif ($nbAchatsMini == 50) {
-                    backpack_auth()->user()->update([
-                        'trophee2' => backpack_auth()->user()->trophee2 + 100,
-                    ]);
-                } elseif ($nbAchatsMini == 100) {
-                    backpack_auth()->user()->update([
-                        'trophee2' => backpack_auth()->user()->trophee2 + 200,
-                    ]);
-                } elseif ($nbAchatsMini == 500) {
-                    backpack_auth()->user()->update([
-                        'trophee3' => backpack_auth()->user()->trophee3 + 100,
-                        'nb_achats_mini' => 0,
-                    ]);
-                }
+                    if ($nbAchatsMini == 1) { // si le membre à 1 achat enregistré
+                        backpack_auth()->user()->update([
+                            'trophee1' => backpack_auth()->user()->trophee1 + 20000, // on injecte +20000 diamants
+                        ]);
+                    } elseif ($nbAchatsMini == 10) { //etc etc
+                        backpack_auth()->user()->update([
+                            'trophee1' => backpack_auth()->user()->trophee1 + 200000,
+                        ]);
+                    } elseif ($nbAchatsMini == 50) {
+                        backpack_auth()->user()->update([
+                            'trophee2' => backpack_auth()->user()->trophee2 + 100,
+                        ]);
+                    } elseif ($nbAchatsMini == 100) {
+                        backpack_auth()->user()->update([
+                            'trophee2' => backpack_auth()->user()->trophee2 + 200,
+                        ]);
+                    } elseif ($nbAchatsMini == 500) {
+                        backpack_auth()->user()->update([
+                            'trophee3' => backpack_auth()->user()->trophee3 + 100,
+                            'nb_achats_mini' => 0,
+                        ]);
+                    }
             }
             if($packId == 12){ // si c pack mini
                 if ($nbAchatsStarter == 1) { // si le membre à 1 achat enregistré
@@ -718,7 +718,7 @@ if ($onegame->isEmpty()) {
                     ]);
                 }
             }
-            if($packId == 14){ // si c pack booster
+            if($packId == 17){ // si c pack booster
                 if ($nbAchatsTera == 1) { // si le membre à 1 achat enregistré
                     backpack_auth()->user()->update([
                         'trophee1' => backpack_auth()->user()->trophee1 + 500000, // on injecte +20000 diamants
