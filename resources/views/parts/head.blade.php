@@ -50,6 +50,10 @@
 
   gtag('config', 'G-VNPT87NKHJ');
 </script>
+<!-- GOOGLE ADSENSE -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4337256114287476"
+     crossorigin="anonymous"></script>
+
 <link crossorigin="anonymous" href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
 <script crossorigin="anonymous" src="https://unpkg.com/swiper/swiper-bundle.min.js" async></script>
 <title>{{__('Jeux en ligne GoKDO - Jeux gratuits pour gagner des cadeaux !')}}</title>

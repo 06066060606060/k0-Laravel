@@ -248,7 +248,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                     } elseif ($gameId == 51) {
                                                         $gameName = 'PLINKO';
                                                     } elseif ($gameId == 50) {
-                                                        $gameName = 'GoSCRATCH';
+                                                        $gameName = 'JUNGLE';
                                                     } elseif ($gameId == 49) {
                                                         $gameName = 'BINGO';
                                                     } elseif ($gameId == 52) {
@@ -262,7 +262,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                     } elseif ($gameId == 51) {
                                                         $gameName = 'PLINKO';
                                                     } elseif ($gameId == 50) {
-                                                        $gameName = 'GoSCRATCH';
+                                                        $gameName = 'JUNGLE';
                                                     } elseif ($gameId == 49) {
                                                         $gameName = 'BINGO';
                                                     } elseif ($gameId == 52) {
