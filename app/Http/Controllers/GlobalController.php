@@ -74,7 +74,7 @@ class GlobalController extends Controller
         $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'asc')->get();
 
         // Jeux Solo
-        $scratchgames = Games::where('type', 'Grattage')->limit(6)->orderBy('id', 'asc')->get();        
+        $scratchgames = Games::where('type', 'Grattage')->limit(6)->orderBy('id', 'desc')->get();        
 
         // Jeux event
         $eventsgames = Games::where('type', 'Event')->get();
