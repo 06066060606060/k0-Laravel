@@ -62,7 +62,7 @@ class GlobalController extends Controller
         ->get();
             
         // Tous les jeux
-        $allgames = Games::whereNotIn('type', ['Event', 'Solo'])->orderBy('id', 'desc')->get();
+        $allgames = Games::whereNotIn('type', ['Event', 'Solo', 'Grattage'])->orderBy('id', 'desc')->get();
         
         // Jeux Gratuits
         $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
