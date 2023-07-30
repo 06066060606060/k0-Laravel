@@ -72,7 +72,10 @@ class GlobalController extends Controller
         
         // Jeux Solo
         $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'asc')->get();
-        
+
+        // Jeux Solo
+        $scratchgames = Games::where('type', 'Grattage')->limit(6)->orderBy('id', 'asc')->get();        
+
         // Jeux event
         $eventsgames = Games::where('type', 'Event')->get();
         $countevent = Games::where('type', 'Event')->where('status', 1)->count();
@@ -80,7 +83,7 @@ class GlobalController extends Controller
         // Jeux mis en avant
         $starred = Games::where('status', 1)->inRandomOrder()->first();
         
-        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
         
 /////////////////////////////////////////////////////////////////////////////////////////////////////
