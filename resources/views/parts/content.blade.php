@@ -895,7 +895,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                 [
                     'icon' => 'fa-solid fa-user fa-2x',
                     'title' => __('Inscrivez-vous gratuitement'),
-                    'description' => __("L'inscription est rapide, gratuite et on vous offre 150 diamants pour bien commencer.")
+                    'description' => __("L'inscription est rapide, gratuite, on vous offre 150 diamants pour bien commencer et vous bénéficiez d'un ticket à gratter chaque jour pour le jeu Egypt ainsi que de 10 parties gratuites par jour pour le jeu multijoueur GoFRUITS.")
                 ],
                 [
                     'icon' => 'fa-solid fa-gamepad fa-2x',
