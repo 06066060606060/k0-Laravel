@@ -68,7 +68,7 @@ $isMobile = GlobalController::isMobile();
                 @else
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
                         href="/#video" @click="isOpen = false">
-                        <i class="fa-solid fa-video"></i>&nbsp; {{__('Vidéo')}}
+                        <i class="fa-solid fa-gamepad"></i>&nbsp; {{__('GoKDO')}}
                     </a>
                 @endif
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="cadeaux"
