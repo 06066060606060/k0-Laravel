@@ -900,7 +900,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                 [
                     'icon' => 'fa-solid fa-gamepad fa-2x',
                     'title' => __('Jouer à des jeux'),
-                    'description' => __("Chaque jour, vous avez la possibilité de jouer gratuitement 10 parties sur la grille GoFRUITS en multijoueur, avec la possibilité de gagner des lots instantanés. Vos scores vous donnent la possibilité de participer à notre concours mensuel, où le gros lot de 500€ (500 Coins) est en jeu ! Cette offre est une excellente occasion de profiter d'un jeu amusant tout en ayant la chance de gagner de superbes prix.")
+                    'description' => __("Sur GoKDO.com vous aurez le choix, nous proposons des jeux multijoueurs, jeux de grille, jeux de chasse au trésor, jeux de pêche, mais également des tickets de jeux à gratter.")
                 ],
                 [
                     'icon' => 'fa-regular fa-gem fa-2x',
