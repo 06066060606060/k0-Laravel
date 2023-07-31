@@ -905,7 +905,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                 [
                     'icon' => 'fa-regular fa-gem fa-2x',
                     'title' => __('Gagnez des Diamants, Rubis, Coins'),
-                    'description' => __("Pool est une grille de jeux instantanées que vous pouvez jouer pour booster vos chances de participer au concours mensuel. De plus, vous avez la possibilité de remporter des Diamants, Rubis et Coins en jouant à ce jeu ! En cumulant vos scores, vous pouvez améliorer vos chances de remporter le gros lot de 500€ (500 Coins) offert dans le concours mensuel. Cette offre est une excellente opportunité pour les joueurs de s'amuser tout en ayant la chance de gagner de superbes récompenses.")
+                    'description' => __("Tous les jeux que nous proposons vous permettent de gagner des lots tels que des Diamants, Rubis ou encore Coins. Les Diamants et Coins vous seront utile pour les convertir en cadeaux, les Rubis vous permettrons de jouer sur certains jeux.")
                 ],
                 [
                     'icon' => 'fa-solid fa-gift fa-2x',
