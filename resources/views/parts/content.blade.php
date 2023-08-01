@@ -252,7 +252,9 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                     } elseif ($gameId == 49) {
                                                         $gameName = 'BINGO';
                                                     } elseif ($gameId == 52) {
-                                                        $gameName = 'GoSCRATCH';
+                                                        $gameName = 'EGYPT';
+                                                    } elseif ($gameId == 56) {
+                                                        $gameName = 'SOCCER';
                                                     }
                                                 } else {
                                                     if ($gameId == 39) {
@@ -266,7 +268,9 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                     } elseif ($gameId == 49) {
                                                         $gameName = 'BINGO';
                                                     } elseif ($gameId == 52) {
-                                                        $gameName = 'GoSCRATCH';
+                                                        $gameName = 'EGYPT';
+                                                    } elseif ($gameId == 50) {
+                                                        $gameName = 'JUNGLE';
                                                     }
                                                 }
                                             @endphp
