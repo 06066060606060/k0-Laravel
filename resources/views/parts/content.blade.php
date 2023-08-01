@@ -843,6 +843,8 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                             {{__('JOUEZ GRATUITEMENT A')}}
                         @elseif($starred->name == 'Jungle')
                             {{__('Jeux de Grattage')}}
+                        @elseif($starred->name == 'Soccer')
+                            {{__('Jeux de Grattage')}}
                         @elseif($starred->name == 'Tresor')
                             {{__('CHASSE AU TRESOR')}}
                         @else
