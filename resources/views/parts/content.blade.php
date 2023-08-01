@@ -249,11 +249,9 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                         $gameName = 'PLINKO';
                                                     } elseif ($gameId == 50) {
                                                         $gameName = 'JUNGLE';
-                                                    } elseif ($gameId == 49) {
-                                                        $gameName = 'BINGO';
                                                     } elseif ($gameId == 52) {
                                                         $gameName = 'EGYPT';
-                                                    } elseif ($gameId == 56) {
+                                                    } elseif ($gameId == 49) {
                                                         $gameName = 'SOCCER';
                                                     }
                                                 } else {
@@ -265,12 +263,10 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                         $gameName = 'PLINKO';
                                                     } elseif ($gameId == 50) {
                                                         $gameName = 'JUNGLE';
-                                                    } elseif ($gameId == 49) {
-                                                        $gameName = 'BINGO';
                                                     } elseif ($gameId == 52) {
                                                         $gameName = 'EGYPT';
-                                                    } elseif ($gameId == 50) {
-                                                        $gameName = 'JUNGLE';
+                                                    } elseif ($gameId == 49) {
+                                                        $gameName = 'SOCCER';
                                                     }
                                                 }
                                             @endphp
