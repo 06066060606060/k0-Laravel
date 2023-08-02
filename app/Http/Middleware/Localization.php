@@ -39,7 +39,7 @@ class Localization
                     App::setLocale(config('app.locale'));
                 }
             } else {
-                App::setLocale(config('app.fallback_locale'));
+                App::setLocale(config('app.locale'));
             }
         } 
         
