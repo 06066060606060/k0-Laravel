@@ -32,12 +32,11 @@ class Localization
     
             // Utiliser la langue par défaut de l'application si aucune langue du navigateur n'est disponible
             if (!empty($browserLocales)) {
-                $preferredLanguage = App::setLocale(config('app.locale'));
-
+                $preferredLanguage = $browserLocales[0]->getValue();
                 if (in_array($preferredLanguage, $availableLocales)) {
                     App::setLocale($preferredLanguage);
                 } else {
-                    App::setLocale(config('app.fallback_locale'));
+                    App::setLocale(config('app.locale'));
                 }
             } else {
                 App::setLocale(config('app.fallback_locale'));
