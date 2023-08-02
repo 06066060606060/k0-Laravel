@@ -36,10 +36,11 @@ class Localization
                 if (in_array($preferredLanguage, $availableLocales)) {
                     App::setLocale($preferredLanguage);
                 } else {
-                    App::setLocale(config('app.locale'));
+                    App::setLocale(config('app.locale')); // 'app.fallback_locale'
                 }
             } else {
-                App::setLocale(config('app.locale'));
+                App::setLocale(config('app.locale')); // App::setLocale(config('app.fallback_locale'));
+
             }
         } 
         
