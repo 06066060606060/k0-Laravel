@@ -34,7 +34,7 @@ class Localization
             if (!empty($browserLocales)) {
                 $preferredLanguage = $browserLocales[0]->getValue();
                 if (in_array($preferredLanguage, $availableLocales)) {
-                    App::setLocale($preferredLanguage);
+                    App::setLocale(config('app.locale'));
                 } else {
                     App::setLocale(config('app.fallback_locale'));
                 }
