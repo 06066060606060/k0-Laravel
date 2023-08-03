@@ -6,6 +6,14 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
 @endphp
 @php $locale = app()->getLocale();
+$localizedTitles = [
+            'en' => 'OR',
+            'fr' => 'OU',
+            'es' => 'O',
+            'de' => 'ODER',
+            'it' => 'O',
+        ];
+        $iclassic = $localizedTitles[$locale] ?? '';
 // Traduction Multi Langues minifiée
 switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";$iclassique='Classic Registration';break;case'fr':$rules="En vous iscrivant vous acceptez le";$rules2="règlement";$iclassique='Inscription Classique';break;case'es':$rules="Al registrarte, aceptas el";$rules2="reglamento";$iclassique='Registro Clásico';break;case'de':$rules="Durch Ihre Anmeldung akzeptieren Sie die";$rules2="Bestimmungen";$iclassique='Klassische Anmeldung';break;case'it':$rules="Iscrivendoti, accetti il";$rules2="regolamento";$iclassique='Registrazione Classica';break;default:break;}
 @endphp 
@@ -54,7 +62,31 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                                 </a>-->
                                 </div>
                                 </div>
+                        <div class="divider">
+                            <span class="divider-text">{{ $iclassic }}</span>
+                        </div>
+                        <style>
+                        .divider {
+                        display: flex;
+                        align-items: center;
+                        }
 
+                        /* Style for the horizontal line */
+                        .divider::before,
+                        .divider::after {
+                        content: "";
+                        flex: 1;
+                        border-bottom: 1px solid #000; /* You can change the color and size of the line here */
+                        }
+
+                        /* Style for the text "ou" */
+                        .divider-text {
+                        padding: 0 10px;
+                        font-weight: bold;
+                        color: #000; /* You can change the text color here */
+                        }
+                        </style>
+                        
                                 <style>
                         #show,#content{display:none;}
                         #show:checked~#content{display:block;}
