@@ -126,6 +126,7 @@ class UserCrudController extends CrudController
             'type'        => 'number',
             'attributes' => ["step" => "0.01"], // allow decimals
             ]);
+            CRUD::field('jours_gratuits')->label('Jours gratuits accordés')->type('number');
             CRUD::field('partie_egypt')->label('Partie Egypt')->type('number');
             CRUD::field('parties')->label('Partie GoFRUITS')->type('number');
             CRUD::field('pelle1')->label('Pelle TRESOR')->type('number');
