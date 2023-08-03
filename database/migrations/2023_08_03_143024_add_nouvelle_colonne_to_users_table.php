@@ -11,10 +11,13 @@ return new class extends Migration
      *
      * @return void
      */
-    Schema::table('users', function (Blueprint $table) {
-        // Ajouter la nouvelle colonne avant la colonne 'partie_egypt'
-        $table->integer('jours_gratuits')->default(0)->before('partie_egypt');
-    });
+    public function up()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            // Ajouter la nouvelle colonne avant la colonne 'partie_egypt'
+            $table->integer('jours_gratuits')->default(0)->before('partie_egypt');
+        });
+    }
 
     /**
      * Reverse the migrations.
