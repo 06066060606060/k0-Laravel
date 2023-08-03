@@ -69,6 +69,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                         .divider {
                         display: flex;
                         align-items: center;
+                        margin-top:10px;
                         }
 
                         /* Style for the horizontal line */
