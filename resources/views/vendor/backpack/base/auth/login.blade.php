@@ -7,8 +7,8 @@
         $localizedTitles = [
             'en' => 'OR',
             'fr' => 'OU',
-            'es' => 'ODER',
-            'de' => 'O',
+            'es' => 'O',
+            'de' => 'ODER',
             'it' => 'O',
         ];
         $iclassic = $localizedTitles[$locale] ?? '';
