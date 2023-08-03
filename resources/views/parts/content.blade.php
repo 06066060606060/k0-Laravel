@@ -849,7 +849,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
     </container>
 
     <!-- WINNER -->
-    <winner class="mx-auto max-w-7xl" id="win">
+    <winner class="mx-auto max-w-7xl mt-4" id="win">
         <section>
             <div
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
