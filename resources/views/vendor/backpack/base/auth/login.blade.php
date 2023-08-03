@@ -68,7 +68,6 @@
                         color: #000; /* You can change the text color here */
                         }
                         </style>
-                        <input type="checkbox" id="show">
                         <span id="content">
                             <div class="form-group">
                                 <label class="control-label" for="{{ $username }}">{{ config('backpack.base.authentication_column_name') }}</label>
