@@ -710,55 +710,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                     <div
                                         class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                         <div class="flex">
-                                            @php
-                                                $image = '';
-                                                $amount = 0;
-                                                $gameName = '';
-                                                $gameId = $score->game_id;
-                                                if ($score->data > 0) {
-                                                    $image = 'diamond5.png';
-                                                    $amount = $score->data;
-                                                } elseif ($score->data2 > 0) {
-                                                    $image = 'gem10.png';
-                                                    $amount = $score->data2;
-                                                } elseif ($score->data3 > 0) {
-                                                    $image = 'coin10.png';
-                                                    $amount = $score->data3;
-                                                }
-
-                                                if ($isMobile) {
-                                                    if ($gameId == 39) {
-                                                        $gameName = 'POOL';
-                                                    } elseif ($gameId == 46) {
-                                                        $gameName = 'GoFRUITS';
-                                                    } elseif ($gameId == 51) {
-                                                        $gameName = 'PLINKO';
-                                                    } elseif ($gameId == 50) {
-                                                        $gameName = 'JUNGLE';
-                                                    } elseif ($gameId == 52) {
-                                                        $gameName = 'EGYPT';
-                                                    } elseif ($gameId == 49) {
-                                                        $gameName = 'SOCCER';
-                                                    }
-                                                } else {
-                                                    if ($gameId == 39) {
-                                                        $gameName = 'POOL';
-                                                    } elseif ($gameId == 46) {
-                                                        $gameName = 'GoFRUITS';
-                                                    } elseif ($gameId == 51) {
-                                                        $gameName = 'PLINKO';
-                                                    } elseif ($gameId == 50) {
-                                                        $gameName = 'JUNGLE';
-                                                    } elseif ($gameId == 52) {
-                                                        $gameName = 'EGYPT';
-                                                    } elseif ($gameId == 49) {
-                                                        $gameName = 'SOCCER';
-                                                    }
-                                                }
-                                            @endphp
-                                            <img alt=""
-                                                 class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}"
-                                                 src="{{ asset('img/'.$image) }}">
+                                            <i class="fa fa-gift"></i>
                                             <div class="flex flex-col">
                                                 @if($isMobile)
                                                     <h2 class="pb-0 pl-4 font-semibold text-xs">{{ $score->name }}</h2>
