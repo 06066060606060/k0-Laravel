@@ -44,7 +44,29 @@
                                 </a>-->
                             </div>
                         </div>
+                        <div class="divider">
+                            <span class="divider-text">ou</span>
+                        </div>
                         <style>
+                        .divider {
+  display: flex;
+  align-items: center;
+}
+
+/* Style for the horizontal line */
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #000; /* You can change the color and size of the line here */
+}
+
+/* Style for the text "ou" */
+.divider-text {
+  padding: 0 10px;
+  font-weight: bold;
+  color: #000; /* You can change the text color here */
+}
                             #show,
                             #content {
                                 display: none;
