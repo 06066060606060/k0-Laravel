@@ -56,8 +56,9 @@ class GlobalController extends Controller
         }
         
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX
-        $scores = Commandes::select('commandes.*', 'users.name')
+        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name')
         ->join('users', 'users.id', '=', 'commandes.user_id')
+        ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
         ->take(10)
         ->get();
             

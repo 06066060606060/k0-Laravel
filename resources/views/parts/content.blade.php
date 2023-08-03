@@ -767,7 +767,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                 @endif
                                                 @if($amount > 0)
                                                     <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $amount }}</span>
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $cadeau_name }}</span>
                                                 @endif
                                                 @if($isMobile)
                                                     <span href="#"
