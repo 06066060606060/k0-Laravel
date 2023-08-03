@@ -5,11 +5,11 @@
     @php
         $locale = app()->getLocale();
         $localizedTitles = [
-            'en' => 'Classic Login',
-            'fr' => 'Connexion Classique',
-            'es' => 'Conexión clásico',
-            'de' => 'Klassische Anmeldung',
-            'it' => 'Accesso Classico',
+            'en' => 'OR',
+            'fr' => 'OU',
+            'es' => 'ODER',
+            'de' => 'O',
+            'it' => 'O',
         ];
         $iclassic = $localizedTitles[$locale] ?? '';
     @endphp
@@ -45,7 +45,7 @@
                             </div>
                         </div>
                         <div class="divider">
-                            <span class="divider-text">ou</span>
+                            <span class="divider-text">{{ $iclassic }}</span>
                         </div>
                         <style>
                         .divider {
