@@ -734,14 +734,6 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                     <span href="#"
                                                           class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_it }}</span>    
                                                     @endif
-
-                                                @if($isMobile)
-                                                    <span href="#"
-                                                          class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">{{ $gameName }}</span>
-                                                @else
-                                                    <span href="#"
-                                                          class="ml-4 text-s font-bold text-orange-600 lg:mb-0">{{ $gameName }}</span>
-                                                @endif
                                             </div>
                                         </div>
                                     </div>
