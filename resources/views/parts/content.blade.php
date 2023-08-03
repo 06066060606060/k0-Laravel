@@ -765,8 +765,24 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                 @else
                                                     <h2 class="pb-0 pl-4 font-semibold text-s">{{ $score->name }}</h2>
                                                 @endif
+                                                
+                                                    @if($locale == 'fr')
                                                     <span href="#"
                                                           class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name }}</span>
+                                                    @elseif($locale =='de')
+                                                    <span href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_de }}</span>    
+                                                    @elseif($locale =='en')
+                                                    <span href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_en }}</span>    
+                                                    @elseif($locale =='es')
+                                                    <span href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_es }}</span>    
+                                                    @elseif($locale =='it')
+                                                    <span href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_it }}</span>    
+                                                    @endif
+
                                                 @if($isMobile)
                                                     <span href="#"
                                                           class="ml-4 text-xs font-bold text-orange-600 lg:mb-0">{{ $gameName }}</span>
