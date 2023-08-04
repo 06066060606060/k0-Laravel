@@ -225,7 +225,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         @if($scratchgame->prix > 0)
                                         @if(backpack_auth()->user()->trophee2 < $scratchgame->prix)
                                         <a href="/pack"
-                                           onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $scratchgame->id }}';"
+                                           onclick="event.preventDefault(); window.location.reload(true); window.location.href='/pack';"
                                            class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         @else
                                         <a href="/game/{{ $scratchgame->id }}"
