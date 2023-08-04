@@ -79,12 +79,12 @@ $isMobile = GlobalController::isMobile();
                   @if($isMobile == true)
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-red-600"  style="color:red;" href="pack"
                         @click="isOpen = false" data-barba-prevent="self">
-                        <i class="fa-regular fa-gem" style="color:red;"></i>&nbsp; {{__('Acheter')}} &nbsp;<i class="fa-regular fa-gem" style="color:red;"></i>
+                        <i class="fa-regular fa-gem" style="color:red;"></i>&nbsp; {{__('Acheter des Rubis')}} &nbsp;<i class="fa-regular fa-gem" style="color:red;"></i>
                         </a>
 @else
 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600"  style="color:yellow;" href="pack"
                         @click="isOpen = false" data-barba-prevent="self">
-                        <i class="fa-regular fa-gem" style="color:yellow;"></i>&nbsp; {{__('Acheter')}} &nbsp;<i class="fa-regular fa-gem" style="color:yellow;"></i>
+                        <i class="fa-regular fa-gem" style="color:yellow;"></i>&nbsp; {{__('Acheter des Rubis')}} &nbsp;<i class="fa-regular fa-gem" style="color:yellow;"></i>
                         </a>
                         @endif
                     
