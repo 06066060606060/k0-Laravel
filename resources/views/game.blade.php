@@ -42,7 +42,8 @@
                                 <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
                             </div> 
                             <div class="display-block mt-6">
-                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" scrolling="no" onload="adjustFrameHeight()"></iframe>                            </div>
+                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1" scrolling="no" onload="adjustFrameHeight()"></iframe>                            
+                                </div>
                            </div>
 
 
@@ -72,6 +73,23 @@
 
 
 <script>
+  // Fonction pour détecter les dimensions de l'écran
+    function detectScreenSize() {
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+        // Vérifier si les dimensions correspondent à un téléphone portable
+        if (screenWidth <= 480 && screenHeight <= 800) {
+            document.getElementById("gameBody").classList.remove("h-[667px]");
+        } else {
+            document.getElementById("gameBody").classList.add("h-[667px]");
+        }
+    }
+    
+    // Appeler la fonction lors du chargement de la page et lors du redimensionnement de la fenêtre
+    window.onload = detectScreenSize;
+    window.onresize = detectScreenSize;
+
 function adjustFrameHeight() {
   var iframe = document.getElementById('gameBody');
   iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
