@@ -16,7 +16,29 @@
     @else
     @endif
     <script type="text/javascript" src="https://tags.clickintext.net/UNfVAzqi3jmAK" title="Interstitiel"></script>
-                                    <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1 h-[667px]" scrolling="no"></iframe>                            
+                                 @if (backpack_auth()->check())
+                             @php
+                              $link =  $game->link ?? null;
+                              $secret =  encrypt(['userid' => $userid, '&tk=' . csrf_token(), 'rubis' => $rubis, 'gameid' => $game->id, 'free_game' => $free, 'parties' => $parties, 'timestamp' => time()]);
+                             @endphp
+                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1 h-[667px]" scrolling="no"></iframe>                            
+
+
+                                
+                                @else
+                                @if(app()->getLocale() == 'en') 
+                                <script>alert('You must be logged in to play a game!')</script>
+                                @elseif(app()->getLocale() == 'fr')
+                                <script>alert('Vous devez être connecté pour jouer à un jeu !')</script>
+                                @elseif(app()->getLocale() == 'de')
+                                <script>alert('Sie müssen angemeldet sein, um ein Spiel zu spielen!')</script>
+                                @elseif(app()->getLocale() == 'es')
+                                <script>alert('¡Debes iniciar sesión para jugar a un juego!')</script>
+                                @elseif(app()->getLocale() == 'it')
+                                <script>alert("Devi effettuare l'accesso per giocare a un gioco!")</script>                                
+                                @else
+                                @endif
+                                @endif
 
          <container class="block px-4 mx-auto text-white max-w-7xl">
     
@@ -44,6 +66,7 @@
                                 <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
                             </div> 
                             <div class="display-block mt-6">
+                                <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden -mt-1 h-[667px]" scrolling="no"></iframe>                            
                                 </div>
                            </div>
 
