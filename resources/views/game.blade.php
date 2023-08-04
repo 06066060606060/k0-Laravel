@@ -16,7 +16,8 @@
     @else
     @endif
     <script type="text/javascript" src="https://tags.clickintext.net/UNfVAzqi3jmAK" title="Interstitiel"></script>
-                                 @if (backpack_auth()->check())
+         <container class="block px-4 mx-auto text-white max-w-7xl">
+               @if (backpack_auth()->check())
                              @php
                               $link =  $game->link ?? null;
                               $secret =  encrypt(['userid' => $userid, '&tk=' . csrf_token(), 'rubis' => $rubis, 'gameid' => $game->id, 'free_game' => $free, 'parties' => $parties, 'timestamp' => time()]);
@@ -40,7 +41,6 @@
                                 @endif
                                 @endif
 
-         <container class="block px-4 mx-auto text-white max-w-7xl">
     
              <div class="container pt-4 mx-auto lg:px-5">
 
