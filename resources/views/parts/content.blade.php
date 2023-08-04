@@ -222,9 +222,21 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         @if ($isMobile == false && !empty($description))
                                             <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $description }}</p>
                                         @endif
+                                        @if($scratchgame->prix > 0)
+                                        @if(backpack_auth()->user()->trophee2 < $scratchgame->prix)
+                                        <a href="/pack"
+                                           onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $scratchgame->id }}';"
+                                           class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                        @else
                                         <a href="/game/{{ $scratchgame->id }}"
                                            onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $scratchgame->id }}';"
                                            class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                        @endif
+                                        @else
+                                        <a href="/game/{{ $scratchgame->id }}"
+                                           onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $scratchgame->id }}';"
+                                           class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                        @endif
                                             <span
                                                 class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                             <span
