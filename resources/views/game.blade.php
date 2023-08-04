@@ -82,7 +82,7 @@
         if (screenWidth <= 480 && screenHeight <= 800) {
             document.getElementById("gameBody").classList.remove("h-[667px]");
         } else {
-            document.getElementById("gameBody").classList.add("h-[667px]");
+            document.getElementById("gameBody").classList.add("h-[667px] mb-4");
         }
     }
     
