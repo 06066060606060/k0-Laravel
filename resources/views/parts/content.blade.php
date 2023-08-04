@@ -162,8 +162,16 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                         <div class="w-1/3 p-4 lg:w-1/3">
                         @endif
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                                <a href="/game/{{ $scratchgame->id }}">
-                                    <div class="absolute top-0 right-0 w-16 h-16">
+                                @if($scratchgame->prix > 0)
+                                        @if(backpack_auth()->user()->trophee2 < $scratchgame->prix)
+                                        <a href="/pack">
+                                        @else
+                                        <a href="/game/{{ $scratchgame->id }}">
+                                        @endif
+                                        @else
+                                        <a href="/game/{{ $scratchgame->id }}">
+                                        @endif
+                                <div class="absolute top-0 right-0 w-16 h-16">
                                     @if($isMobile ==true)
                                         @else
                                         @php
@@ -303,8 +311,16 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                         <div class="w-1/2 p-4 lg:w-1/2">
                         @endif
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
+                                        @if($allgame->prix > 0)
+                                        @if(backpack_auth()->user()->trophee2 < $allgame->prix)
+                                <a href="/pack">
+                                        @else
                                 <a href="/game/{{ $allgame->id }}">
-                                    <div class="absolute top-0 right-0 w-16 h-16">
+                                        @endif
+                                        @else
+                                <a href="/game/{{ $allgame->id }}">
+                                        @endif
+                                                           <div class="absolute top-0 right-0 w-16 h-16">
                                     @if($isMobile ==true)
                                         @else
                                         @php
@@ -426,7 +442,16 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                         @forelse ($eventsgames as $eventsgame)
                             <div class="w-1/1 p-4 lg:w-1/1">
                                 <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
+                                            @if($eventsgame->prix > 0)
+                                        @if(backpack_auth()->user()->trophee2 < $eventsgame->prix)
+                                    <a href="/pack">
+                                        @else
                                     <a href="/game/{{ $eventsgame->id }}">
+                                            @endif
+                                        @else
+                                    <a href="/game/{{ $eventsgame->id }}">
+                                            @endif
+                                
                                         <div class="absolute top-0 right-0 w-16 h-16">
                                         @if($isMobile ==true)
                                         @else
