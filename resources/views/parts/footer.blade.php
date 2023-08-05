@@ -52,7 +52,7 @@
     </div>
     <div class="bg-gray-700">
         <div class="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-            <p class="text-sm text-center text-white sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}}</p>
+            <p class="text-sm text-center text-white sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}} - <a href="https://www.crocastuce.fr" target="_blank" title="Les meilleurs jeux gratuits">Jeux gratuits</a></p>
             <span class="inline-flex justify-center mt-2 sm:ml-auto sm:mt-0 sm:justify-start">
                 <a href="https://www.facebook.com/gokdocom" class="text-white">
                     <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
