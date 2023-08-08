@@ -46,6 +46,25 @@
 </div>
 
 <script>
+window.addEventListener('load', function () {
+    var iframe = document.getElementById('gameBody');
+    
+    // Tente d'activer le mode plein écran dès que la page est chargée
+    enterFullscreen(iframe);
+});
+
+function enterFullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) { // Firefox
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) { // Chrome, Safari and Opera
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) { // IE/Edge
+        element.msRequestFullscreen();
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     var iframe = document.getElementById("gameBody");
     
