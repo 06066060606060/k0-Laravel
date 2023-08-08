@@ -444,7 +444,11 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                         @forelse ($eventsgames as $eventsgame)
                             <div class="w-1/1 p-4 lg:w-1/1">
                                 <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
+                                            @if($eventsgame->prix > 0)
+                                        @else
                                     <a href="/game/{{ $eventsgame->id }}" data-barba-prevent="self">
+                                            @endif
+                                
                                         <div class="absolute top-0 right-0 w-16 h-16">
                                         @if($isMobile ==true)
                                         @else
@@ -524,9 +528,11 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                                 <p class="text-xs leading-relaxed text-gray-800 md:text-sm">{{ $description }}</p>
                                             @endif
                                             @if($eventsgame->prix > 0)
+                                        @else
                                         <a href="/game/{{ $eventsgame->id }}" data-barba-prevent="self"
                                                onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $eventsgame->id }}';"
                                                class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
+                                            @endif
                                                 <span
                                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                                 <span
