@@ -604,21 +604,22 @@ if ($onegame->isEmpty()) {
             $paiement->save();
             if ($request->type == 'Rubis') {
                 $packsToUpdate = [
-                    11 => 'nb_achats_mini',
-                    12 => 'nb_achats_starter',
-                    14 => 'nb_achats_booster',
-                    15 => 'nb_achats_maxi',
-                    17 => 'nb_achats_tera',
-                    18 => 'nb_achats_expert',
+                    11 => ['nb_achats_mini', 1],    // Ajout de 1 pelle pour le pack 11
+                    12 => ['nb_achats_starter', 2],  // Ajout de 2 pelles pour le pack 12
+                    14 => ['nb_achats_booster', 5],  // Ajout de 5 pelles pour le pack 14
+                    15 => ['nb_achats_maxi', 10],     // Ajout de 10 pelles pour le pack 15
+                    17 => ['nb_achats_tera', 25],     // Ajout de 25 pelles pour le pack 17
+                    18 => ['nb_achats_expert', 50],   // Ajout de 50 pelles pour le pack 18
                 ];
             
                 $packId = $request->pack_id;
             
                 if (array_key_exists($packId, $packsToUpdate)) {
-                    $fieldToUpdate = $packsToUpdate[$packId];
+                    $fieldsToUpdate = $packsToUpdate[$packId];
                     backpack_auth()->user()->update([
                         'trophee2' => backpack_auth()->user()->trophee2 + $request->gain,
-                        $fieldToUpdate => backpack_auth()->user()->$fieldToUpdate + 1,
+                        $fieldsToUpdate[0] => backpack_auth()->user()->{$fieldsToUpdate[0]} + 1,
+                        'pelle1' => backpack_auth()->user()->pelle1 + $fieldsToUpdate[1],
                     ]);
                 }
 
