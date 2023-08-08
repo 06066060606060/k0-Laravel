@@ -49,17 +49,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     var iframe = document.getElementById("gameBody");
     
-    document.getElementById("fullscreenButton").addEventListener("click", function() {
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.mozRequestFullScreen) {
-            iframe.mozRequestFullScreen();
-        } else if (iframe.webkitRequestFullscreen) {
-            iframe.webkitRequestFullscreen();
-        } else if (iframe.msRequestFullscreen) {
-            iframe.msRequestFullscreen();
-        }
-    });
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+    }
 });
 </script>
 
