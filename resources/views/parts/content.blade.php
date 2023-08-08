@@ -6,6 +6,8 @@
 @else
     <div class="z-0 one"></div>
 @endif
+<script type="text/javascript" src="https://tags.clickintext.net/UNUMeRyq3YEfI" title="Classic (IAB)"></script>
+
 <?php
 $url = Request::url();
 $subdomain = parse_url($url, PHP_URL_HOST);
