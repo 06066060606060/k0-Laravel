@@ -1,7 +1,6 @@
  @extends('layouts.app')
 
  @section('main')
-     <div data-barba="container">
              @php
         use \App\Http\Controllers\GlobalController;
 
@@ -84,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function() {
              </div>
             
          </container>
-     </div>
 
 
 <script>
