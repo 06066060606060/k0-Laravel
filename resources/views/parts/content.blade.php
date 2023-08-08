@@ -178,7 +178,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         @else
                                         @php
                                             $borderColor = $scratchgame->prix == 0 ? 'blue-700' : 'orange-800';
-                                            $price = $scratchgame->prix == 0 ? '1 ' . __('par 24h') : $scratchgame->prix;
+                                            $price = $scratchgame->prix == 0 ? '5 ' . __('par 24h') : $scratchgame->prix;
                                             $imagePath = $scratchgame->type_prix == 'Diamants' && $scratchgame->prix == 0 ? 'img/diamond5.png' : 'img/gem10.png';
                                         @endphp
                                         <div
