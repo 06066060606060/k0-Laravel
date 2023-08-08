@@ -82,7 +82,7 @@
                                     @elseif($locale=='de')
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_de }}</p>
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->add_de }}</p>
-                                    @elseif($locale=='es')
+                                    @elseif($locale=='es') 
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_es }}</p>
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->add_es }}</p>
                                     @elseif($locale=='it')
