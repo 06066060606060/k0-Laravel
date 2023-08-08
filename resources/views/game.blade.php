@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Vérifier si les dimensions correspondent à un téléphone portable
         if (screenWidth <= 480 && screenHeight <= 800) {
             document.getElementById("gameBody").classList.remove("h-[667px]");
+            document.getElementById("gameBody").classList.add("mt-4 mb-4");
         } else {
             document.getElementById("gameBody").classList.add("h-[667px] mb-4");
         }
