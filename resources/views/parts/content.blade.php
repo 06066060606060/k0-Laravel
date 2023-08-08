@@ -315,12 +315,12 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                         @if($allgame->prix > 0)
                                         @if(backpack_auth()->user()->trophee2 < $allgame->prix)
-                                <a href="/pack">
+                                <a href="/pack" data-barba-prevent="self">
                                         @else
-                                <a href="/game/{{ $allgame->id }}">
+                                <a href="/game/{{ $allgame->id }}" data-barba-prevent="self">
                                         @endif
                                         @else
-                                <a href="/game/{{ $allgame->id }}">
+                                <a href="/game/{{ $allgame->id }}" data-barba-prevent="self">
                                         @endif
                                                            <div class="absolute top-0 right-0 w-16 h-16">
                                     @if($isMobile ==true)
@@ -377,16 +377,16 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                                         @endif
                                         @if($allgame->prix > 0)
                                         @if(backpack_auth()->user()->trophee2 < $allgame->prix)
-                                        <a href="/pack"
+                                        <a href="/pack" data-barba-prevent="self"
                                            onclick="event.preventDefault(); window.location.reload(true); window.location.href='/pack';"
                                            class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         @else
-                                        <a href="/game/{{ $allgame->id }}"
+                                        <a href="/game/{{ $allgame->id }}" data-barba-prevent="self"
                                            onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $allgame->id }}';"
                                            class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         @endif
                                         @else
-                                        <a href="/game/{{ $allgame->id }}"
+                                        <a href="/game/{{ $allgame->id }}" data-barba-prevent="self"
                                            onclick="event.preventDefault(); window.location.reload(true); window.location.href='/game/{{ $allgame->id }}';"
                                            class="relative flex justify-center w-24 px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                         @endif
