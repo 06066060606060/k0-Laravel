@@ -43,6 +43,8 @@ class User extends Authenticatable
         'nb_achats_maxi',
         'nb_achats_tera',
         'nb_achats_expert',
+        'pelle1',
+        'support1',
     ];
 
     /**

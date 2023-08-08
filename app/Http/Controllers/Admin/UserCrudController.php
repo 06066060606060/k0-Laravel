@@ -54,6 +54,8 @@ class UserCrudController extends CrudController
         CRUD::column('nb_achats_maxi')->label('Maxi');
         CRUD::column('nb_achats_tera')->label('Tera');
         CRUD::column('nb_achats_expert')->label('Expert');
+        CRUD::column('pelle1')->label('Pelle');
+        CRUD::column('support1')->label('Support');
         $this->crud->enableExportButtons();
        
 
