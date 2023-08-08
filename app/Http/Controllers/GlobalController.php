@@ -620,6 +620,7 @@ if ($onegame->isEmpty()) {
                         'trophee2' => backpack_auth()->user()->trophee2 + $request->gain,
                         $fieldsToUpdate[0] => backpack_auth()->user()->{$fieldsToUpdate[0]} + 1,
                         'pelle1' => backpack_auth()->user()->pelle1 + $fieldsToUpdate[1],
+                        'support1' => backpack_auth()->user()->support1 + $fieldsToUpdate[1],
                     ]);
                 }
 
