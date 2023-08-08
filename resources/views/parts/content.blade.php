@@ -444,11 +444,7 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                         @forelse ($eventsgames as $eventsgame)
                             <div class="w-1/1 p-4 lg:w-1/1">
                                 <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
-                                            @if($eventsgame->prix > 0)
-                                        @else
-                                    <a href="/game/{{ $eventsgame->id }}" data-barba-prevent="self">
-                                            @endif
-                                
+                                    <a href="/game/{{ $eventsgame->id }}" data-barba-prevent="self">                                
                                         <div class="absolute top-0 right-0 w-16 h-16">
                                         @if($isMobile ==true)
                                         @else
