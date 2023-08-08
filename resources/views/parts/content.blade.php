@@ -151,6 +151,9 @@ $isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
                     <div class="flex flex-col w-full text-center">
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeu Event')}}</h1>
                     </div>
+                    @if($locale=='fr')
+                    <p>Si vous achetez des Packs sur le menu + de parties, le pack vous donnera des Parties de Chasse au Trésor !</p>
+                    @endif
                     <div class="flex-wrap m-full">
                         @forelse ($eventsgames as $eventsgame)
                             <div class="w-1/1 p-4 lg:w-1/1">
