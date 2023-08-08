@@ -57,6 +57,11 @@ class PacksCrudController extends CrudController
         CRUD::column('description_de');
         CRUD::column('description_es');
         CRUD::column('description_it');
+        CRUD::column('add');
+        CRUD::column('add_en');
+        CRUD::column('add_de');
+        CRUD::column('add_es');
+        CRUD::column('add_it');
         CRUD::column('prix');
         $this->crud->addColumn([
             'name'    => 'active',
@@ -124,6 +129,11 @@ class PacksCrudController extends CrudController
         CRUD::field('description_de')->type('textarea');
         CRUD::field('description_es')->type('textarea');
         CRUD::field('description_it')->type('textarea');
+        CRUD::field('add')->type('textarea');
+        CRUD::field('add_en')->type('textarea');
+        CRUD::field('add_de')->type('textarea');
+        CRUD::field('add_es')->type('textarea');
+        CRUD::field('add_it')->type('textarea');
         $this->crud->addField([   // radio
             'name'        => 'active', // the name of the db column
             'label'       => 'Activer', // the input label

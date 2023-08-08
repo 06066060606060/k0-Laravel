@@ -75,14 +75,19 @@
                                     @php $locale = app()->getLocale(); @endphp
                                     @if($locale=='fr')
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description }}</p>
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->add }}</p>
                                     @elseif($locale=='en')
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_en }}</p>
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->add_en }}</p>
                                     @elseif($locale=='de')
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_de }}</p>
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->add_de }}</p>
                                     @elseif($locale=='es')
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_es }}</p>
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->add_es }}</p>
                                     @elseif($locale=='it')
                                     <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->description_it }}</p>
+                                    <p class="mx-2 mb-2 text-sm text-gray-400">{{ $pack->add_it }}</p>
                                     @else
                                     @endif
 
