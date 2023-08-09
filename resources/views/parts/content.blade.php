@@ -6,7 +6,7 @@
 @else
     <div class="z-0 one"></div>
 @endif
-<script type="text/javascript" src="https://tags.clickintext.net/UNUMeRyq3YEfI" title="Classic (IAB)"></script>
+<script type="text/javascript" src="https://tags.clickintext.net/UNkyrUzOFBqnC" title="Slide In"></script>
 
 <?php
 $url = Request::url();
