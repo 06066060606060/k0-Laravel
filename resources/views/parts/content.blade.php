@@ -6,69 +6,52 @@
 @else
     <div class="z-0 one"></div>
 @endif
-<script type="text/javascript" src="https://tags.clickintext.net/UNkyrUzOFBqnC" title="Slide In"></script>
-
-<?php
-$url = Request::url();
-$subdomain = parse_url($url, PHP_URL_HOST);
-$subdomainParts = explode('.', $subdomain);
-$languageSubdomain = $subdomainParts[0];
-$languages = ['en', 'fr', 'de', 'es', 'it'];
-$isLanguageSubdomain = in_array($languageSubdomain, $languages); ?>
-<?php if(!$isLanguageSubdomain): ?> 
-<div x-data="{ modelOpen: false, languages: [
-    {code: 'en', name: 'English', flag: 'gb'},
-    {code: 'fr', name: 'Français', flag: 'fr'},
-    {code: 'de', name: 'German', flag: 'de'},
-    {code: 'es', name: 'Español', flag: 'es'},
-    {code: 'it', name: 'Italian', flag: 'it'}
-    ], isMobile: window.innerWidth <= 768 }" x-init="modelOpen = !localStorage.getItem('languageSelected')">
-
-    <template x-if="!localStorage.getItem('languageSelected')">
-        <!-- Modale -->
-        <div x-show="modelOpen" @click.away="modelOpen = false" class="fixed inset-0 z-50 overflow-y-auto">
-            <div class="flex items-center justify-center px-4 text-center sm:block sm:p-0">
-                <div class="fixed inset-0 w-screen transition-opacity bg-gray-900 bg-opacity-60"
-                     aria-hidden="true"></div>
-                <div class="inline-block w-full max-w-4xl pt-32 mx-auto overflow-hidden transition-all transform">
-                    <div class="flex flex-col mt-6 mb-0 bg-gray-800 rounded-md shadow-2xl">
-                        <div class="flex justify-between w-full border-b">
-                            <h1 class="py-6 mx-auto text-white text-lg font-bold">SELECT LANGUAGE</h1>
-                        </div>
-                        <div class="bg-gray-700 rounded-b-md">
-                            <div class="flex items-center justify-center pb-8 mx-20 mt-8">
-                                <ul class="flex flex-wrap justify-center">
-                                    <template x-for="lang in languages" :key="lang.code">
-                                        <li>
-                                            <a rel="alternate" data-barba-prevent="self"
-                                               :class="`block px-4 py-3 text-sm font-bold text-gray-300 capitalize transition-colors duration-300 transform hover:bg-gray-700 hover:text-white`"
-                                               :href="`https://${lang.code}.gokdo.com`"
-                                               @click="localStorage.setItem('languageSelected', true)">
-                                                <img :src="`https://flagicons.lipis.dev/flags/4x3/${lang.flag}.svg`"
-                                                     :alt="lang.name" :width="isMobile ? 8 : 10"
-                                                     :height="isMobile ? 8 : 10"
-                                                     :class="isMobile ? 'w-8 h-8 mr-1' : 'w-10 h-10 mr-1'">
-                                            </a>
-                                        </li>
-                                    </template>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </template>
-</div>
-@endif
-
-
 @if (backpack_auth()->check())
 
     @php
         $locale = app()->getLocale();
         $descriptionField = 'description_' . $locale;
     @endphp
+       <container class="mx-auto max-w-7xl" id="win">
+            <section>
+                <div
+                    class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                    <div class="flex flex-col w-full text-center">
+                        <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Le jeu du concours')}}</h1>
+                    </div>
+                    @if($locale=='fr')
+                    <p class="text-white text-center text-sm">Pour pouvoir jour il vous faudra des Rubis, achetez-en sur "+ de Parties dans le menu si vous le désirez !</p>
+                    @endif
+                    <div class="w-full">
+    <div class="display-block">
+        <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
+    </div> 
+    <div class="display-block mt-6">
+        <iframe id="gameBody" src="https://pool.gokdo.com/index.html?userid={{ $userid }}&locale={{ $locale }}" class="w-full overflow-hidden -mt-1 h-[667px]" scrolling="no"></iframe>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var iframe = document.getElementById("gameBody");
+    
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+    }
+});
+</script>
+                     </div>
+                    </div>
+                </div>
+            </section>
+        </container>
+ 
 
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">

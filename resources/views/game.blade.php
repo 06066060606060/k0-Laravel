@@ -14,7 +14,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     @else
     @endif
-    <script type="text/javascript" src="https://tags.clickintext.net/UNfVAzqi3jmAK" title="Interstitiel"></script>
          <container class="block px-4 mx-auto text-white max-w-7xl">
              <div class="container pt-4 mx-auto lg:px-5">
 
