@@ -20,7 +20,7 @@
                     <div class="flex flex-col w-full text-center">
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Le jeu du concours')}}</h1>
                     </div>
-                    <p class="text-white text-center text-sm">Pour pouvoir jour il vous faudra des Rubis, achetez-en sur "+ de Parties dans le menu si vous le désirez !</p>
+                    <p class="text-white text-center text-sm">Pour jouer il vous faudra des Rubis, achetez-en sur "+ de Parties" dans le menu si vous le désirez !</p>
                     <div class="w-full">
     <div class="display-block">
         <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
