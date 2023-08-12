@@ -45,6 +45,79 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>
+<script>
+  // Fonction pour détecter les dimensions de l'écran
+    function detectScreenSize() {
+        var screenWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+        var screenHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+        
+        // Vérifier si les dimensions correspondent à un téléphone portable
+        if (screenWidth <= 480 && screenHeight <= 800) {
+            document.getElementById("gameBody").classList.remove("h-[667px]");
+            document.getElementById("gameBody").classList.add("mt-4 mb-4");
+        } else {
+            document.getElementById("gameBody").classList.add("h-[667px] mb-4");
+        }
+    }
+    
+    // Appeler la fonction lors du chargement de la page et lors du redimensionnement de la fenêtre
+    window.onload = detectScreenSize;
+    window.onresize = detectScreenSize;
+
+function adjustFrameHeight() {
+  var iframe = document.getElementById('gameBody');
+  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+}
+
+    const fullscreenButton = document.getElementById('fullscreenButton');
+    const gameIframe = document.getElementById('gameBody');
+
+    fullscreenButton.addEventListener('click', () => {
+        if (gameIframe.requestFullscreen) {
+            gameIframe.requestFullscreen();
+        } else if (gameIframe.mozRequestFullScreen) {
+            gameIframe.mozRequestFullScreen();
+        } else if (gameIframe.webkitRequestFullscreen) {
+            gameIframe.webkitRequestFullscreen();
+        } else if (gameIframe.msRequestFullscreen) {
+            gameIframe.msRequestFullscreen();
+        }
+
+        // Verrouiller en mode paysage sur les appareils mobiles
+        if (screen.orientation && screen.orientation.lock) {
+            screen.orientation.lock('landscape').catch((error) => {
+                console.log('Échec du verrouillage en mode paysage:', error);
+            });
+        } else if (screen.lockOrientation) {
+            screen.lockOrientation('landscape');
+        }
+
+
+        var currentLocale = '{{ app()->getLocale() }}';
+
+        // Vérifier si l'appareil est un iPhone
+        const isiPhone = /iPhone/i.test(navigator.userAgent);
+
+        // Vérifier si l'appareil est en mode portrait
+        const isPortrait = window.matchMedia("(orientation: portrait)").matches;
+
+        // Afficher un message demandant de basculer en mode paysage sur iPhone en mode portrait
+        if (isiPhone && isPortrait) {
+            if(currentLocale == 'fr'){
+            alert("Veuillez basculer votre appareil en mode paysage pour une meilleure expérience.");
+            } else if (currentLocale == 'en'){
+            alert("Please rotate your device to landscape mode for a better experience.");
+            } else if (currentLocale == 'de'){
+            alert("Bitte drehen Sie Ihr Gerät in den Querformatmodus für ein besseres Erlebnis.");
+            } else if (currentLocale == 'es'){
+            alert("Por favor, gire su dispositivo al modo horizontal para una mejor experiencia.");
+            } else if (currentLocale == 'it'){
+            alert("Si prega di ruotare il dispositivo in modalità orizzontale per un'esperienza migliore.");
+            }
+        }
+    });
+</script>
+
                      </div>
                     </div>
                 </div>
