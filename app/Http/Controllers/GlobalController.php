@@ -31,15 +31,17 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
+
         $concours = Concours::all(); // TOUTES LES COMMANDES
         
         $winner = User::latest()->get(); //DERNIERS GAGNANTS JEUX
         
         $lejoueur = null;
         $count = 0;
-        
+        $userid = null;
         // compte le nombre de parrain / Mise a jour du language utilisé
         if (backpack_auth()->check() && backpack_auth()->user()) {
+            $userid = backpack_auth()->id(); // retourne l'id
             $lejoueur = backpack_auth()->user()->name;
             $count = User::where('parrain', backpack_auth()->user()->name)->count();
         
@@ -86,7 +88,7 @@ class GlobalController extends Controller
         // Jeux mis en avant
         $starred = Games::where('status', 1)->inRandomOrder()->first();
         
-        return view('index', compact('count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
         
 /////////////////////////////////////////////////////////////////////////////////////////////////////
