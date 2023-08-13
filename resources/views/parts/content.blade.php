@@ -15,57 +15,46 @@
     @endphp
 @if($locale == 'fr')
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<style>
-    .notification {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        background-color: #f3f3f3;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-        z-index: 10000;
-    }
-
-    .close-btn {
-        float: right;
-        cursor: pointer;
-        margin-left: 20px;
-    }
-</style>
-
-@php
-    $notificationClosed = session('notification_closed');
-    $showNotification = true;
-
-    if ($notificationClosed) {
-        $notificationClosedTime = \Carbon\Carbon::parse($notificationClosed);
-        $currentDateTime = \Carbon\Carbon::now();
-
-        // Comparing the last closed time with the current time
-        if ($currentDateTime->diffInDays($notificationClosedTime) < 3) {
-            $showNotification = false;
+    <style>
+        .notification {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f3f3f3;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            z-index:10000;
         }
-    }
-@endphp
-
-@if ($showNotification)
+        .close-btn {
+            float: right;
+            cursor: pointer;
+            margin-left:20px;
+        }
+    </style>
     <div class="notification" id="notification">
         1 Pack de Rubis acheté = Pas de pub pendant 1 Mois. <span class="close-btn">X</span>
     </div>
-@endif
 
-<script>
+    <script>
     $(document).ready(function() {
+        
+        // Vérifier si le cookie "hideNotification" est défini et si sa valeur est "true"
+        if ($.cookie('hideNotification') !== 'true') {
+            $('#notification').show();
+        } else {
+            $('#notification').hide();
+        }
+
         $("#notification .close-btn").click(function() {
             $("#notification").fadeOut();
-            var now = new Date();
-            now.setDate(now.getDate() + 3); // Adding 3 days
-            document.cookie = "notification_closed=" + now.toUTCString() + "; path=/";
+
+            // Définir le cookie pour cacher la notification pendant 30 jours (ou le nombre de jours que vous voulez)
+            $.cookie('hideNotification', 'true', { expires: 2 });
         });
     });
-</script>
+    </script>
 @endif
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
