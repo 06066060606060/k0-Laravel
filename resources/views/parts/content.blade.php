@@ -17,12 +17,11 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Inclusion des fichiers JavaScript de Bootstrap depuis le CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<div class="alert alert-info alert-dismissible fade show" role="alert">
-    Votre message de notification ici.
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
+<div class="container mt-5">
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        Voici une notification Bootstrap. Cliquez sur <strong>"x"</strong> pour la fermer.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 </div>
 @endif
     <!-- WINNER -->
