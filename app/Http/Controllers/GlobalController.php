@@ -623,7 +623,7 @@ if ($onegame->isEmpty()) {
                         $fieldsToUpdate[0] => backpack_auth()->user()->{$fieldsToUpdate[0]} + 1,
                         'pelle1' => backpack_auth()->user()->pelle1 + $fieldsToUpdate[1],
                         'support1' => backpack_auth()->user()->support1 + $fieldsToUpdate[1],
-                        'jours_gratuits' => backpack_auth()->user()->30,
+                        'jours_gratuits' => backpack_auth()->user()->jours_gratuits = 30,
                     ]);
                 }
 
