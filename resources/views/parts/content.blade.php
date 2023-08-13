@@ -36,7 +36,7 @@
         }
     </style>
     <div class="notification" id="notification">
-        1 Pack de Rubis acheté = Pas de pub pendant 1 Mois. <span class="close-btn">X</span>
+        1 Pack de Rubis acheté = Pas de pub pendant 30 jours. <span class="close-btn">X</span>
     </div>
 
     <script>
