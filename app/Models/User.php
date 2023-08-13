@@ -45,6 +45,7 @@ class User extends Authenticatable
         'nb_achats_expert',
         'pelle1',
         'support1',
+        'jours_gratuit',
     ];
 
     /**

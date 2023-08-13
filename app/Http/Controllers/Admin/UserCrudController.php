@@ -56,6 +56,7 @@ class UserCrudController extends CrudController
         CRUD::column('nb_achats_expert')->label('Expert');
         CRUD::column('pelle1')->label('Pelle');
         CRUD::column('support1')->label('Support');
+        CRUD::column('jours_gratuit')->label('Jours sans pub');
         $this->crud->enableExportButtons();
        
 
@@ -133,6 +134,7 @@ class UserCrudController extends CrudController
             CRUD::field('parties')->label('Partie GoFRUITS')->type('number');
             CRUD::field('pelle1')->label('Pelle TRESOR')->type('number');
             CRUD::field('support1')->label('Support TRESOR')->type('number');
+            CRUD::field('jours_gratuit')->label('Jours sans pub')->type('number');
 
         $this->crud->addField([   // select_from_array
             'name'        => 'role',
