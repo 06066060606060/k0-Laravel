@@ -17,43 +17,51 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
         .notification {
-            background-color: #333;
-            color: white;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #f3f3f3;
             padding: 10px;
-            margin-bottom: 10px;
-            display: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
-
-        .success {
-            background-color: #4CAF50;
-        }
-
-        .error {
-            background-color: #FF5733;
-        }
-
-        .info {
-            background-color: #3498DB;
+        .close-btn {
+            float: right;
+            cursor: pointer;
         }
     </style>
-    <div id="notification-container"></div>
+</head>
+<body>
+    <div class="notification" id="notification">
+        Bienvenue sur notre site ! Cliquez sur <span class="close-btn">X</span> pour fermer cette notification.
+    </div>
+
     <script>
-        function showNotification(message, type) {
-            var notification = $('<div class="notification ' + type + '">' + message + '</div>');
-            $('#notification-container').append(notification);
-
-            setTimeout(function() {
-                notification.fadeOut(500, function() {
-                    $(this).remove();
-                });
-            }, 5000); // 5000 milliseconds = 5 seconds
-        }
-
-        // Exemples d'utilisation automatique
         $(document).ready(function() {
-            showNotification('Opération réussie !', 'success');
-            showNotification('Une erreur est survenue.', 'error');
-            showNotification('Information importante.', 'info');
+            $("#notification .close-btn").click(function() {
+                $("#notification").fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>
+Ce code créera une petite notification en haut à droite de la page. L'utilisateur peut la fermer en cliquant sur le bouton "X". Le style de la notification peut être personnalisé en ajustant les propriétés CSS dans la balise <style>.
+
+
+
+
+
+
+  <div class="notification" id="notification">
+        Bienvenue sur notre site ! Cliquez sur <span class="close-btn">X</span> pour fermer cette notification.
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $("#notification .close-btn").click(function() {
+                $("#notification").fadeOut();
+            });
         });
     </script>
 @endif
