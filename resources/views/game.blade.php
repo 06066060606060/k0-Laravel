@@ -10,6 +10,7 @@
     @else
         <div class="z-0 one"></div>
     @endif
+    <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6215734"></script>
     @if($isMobile == true)
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     @else
