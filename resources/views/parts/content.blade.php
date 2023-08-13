@@ -25,6 +25,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            z-index:10000;
         }
         .close-btn {
             float: right;
