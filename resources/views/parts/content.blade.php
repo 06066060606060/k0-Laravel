@@ -13,6 +13,50 @@
         $locale = app()->getLocale();
         $descriptionField = 'description_' . $locale;
     @endphp
+@if($locale == 'fr')
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .notification {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        .success {
+            background-color: #4CAF50;
+        }
+
+        .error {
+            background-color: #FF5733;
+        }
+
+        .info {
+            background-color: #3498DB;
+        }
+    </style>
+    <div id="notification-container"></div>
+    <script>
+        function showNotification(message, type) {
+            var notification = $('<div class="notification ' + type + '">' + message + '</div>');
+            $('#notification-container').append(notification);
+
+            setTimeout(function() {
+                notification.fadeOut(500, function() {
+                    $(this).remove();
+                });
+            }, 5000); // 5000 milliseconds = 5 seconds
+        }
+
+        // Exemples d'utilisation automatique
+        $(document).ready(function() {
+            showNotification('Opération réussie !', 'success');
+            showNotification('Une erreur est survenue.', 'error');
+            showNotification('Information importante.', 'info');
+        });
+    </script>
+@endif
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
