@@ -29,10 +29,11 @@
         .close-btn {
             float: right;
             cursor: pointer;
+            margin-left:20px;
         }
     </style>
     <div class="notification" id="notification">
-        Bienvenue sur notre site ! Cliquez sur <span class="close-btn">X</span> pour fermer cette notification.
+        1 Pack de Rubis acheté = Pas de pub pendant 1 Mois. <span class="close-btn">X</span>
     </div>
 
     <script>
