@@ -31,29 +31,7 @@
             cursor: pointer;
         }
     </style>
-</head>
-<body>
     <div class="notification" id="notification">
-        Bienvenue sur notre site ! Cliquez sur <span class="close-btn">X</span> pour fermer cette notification.
-    </div>
-
-    <script>
-        $(document).ready(function() {
-            $("#notification .close-btn").click(function() {
-                $("#notification").fadeOut();
-            });
-        });
-    </script>
-</body>
-</html>
-Ce code créera une petite notification en haut à droite de la page. L'utilisateur peut la fermer en cliquant sur le bouton "X". Le style de la notification peut être personnalisé en ajustant les propriétés CSS dans la balise <style>.
-
-
-
-
-
-
-  <div class="notification" id="notification">
         Bienvenue sur notre site ! Cliquez sur <span class="close-btn">X</span> pour fermer cette notification.
     </div>
 
