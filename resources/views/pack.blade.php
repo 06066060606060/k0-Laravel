@@ -35,7 +35,7 @@
             <div class="container px-5 pt-8 mx-auto">
                 <div class="flex flex-col w-full mb-10 text-center">
                     <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">{{__('Tous nos packs')}}</h1>
-                    <p class="mx-auto text-base leading-relaxed">{{__('Acheter des rubis supplémentaires !')}}</p>
+                    <p class="mx-auto text-base leading-relaxed">{{__('Peu importe le Pack acheté vous aurez 30 jours SANS PUB !')}}</p>
                 </div>
                 <div class="flex flex-wrap justify-center -m-4">
                     @forelse ($packs as $pack)
