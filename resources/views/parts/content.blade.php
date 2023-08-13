@@ -13,19 +13,18 @@
         $locale = app()->getLocale();
         $descriptionField = 'description_' . $locale;
     @endphp
+    <!-- WINNER -->
+    <winner class="mx-auto max-w-7xl" id="win">
 @if($locale == 'fr')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Inclusion des fichiers JavaScript de Bootstrap depuis le CDN -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<div class="container mt-5">
     <div class="alert alert-info alert-dismissible fade show" role="alert">
         Voici une notification Bootstrap. Cliquez sur <strong>"x"</strong> pour la fermer.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
-</div>
 @endif
-    <!-- WINNER -->
-    <winner class="mx-auto max-w-7xl" id="win">
+
         <section>
             <div
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
