@@ -18,6 +18,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <style>
         .notification {
+            display: none; /* Ajout de cette ligne */
             position: fixed;
             top: 10px;
             right: 10px;
@@ -26,7 +27,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-            z-index:10000;
+            z-index: 10000;
         }
         .close-btn {
             float: right;
