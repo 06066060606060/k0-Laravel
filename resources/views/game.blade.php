@@ -10,7 +10,10 @@
     @else
         <div class="z-0 one"></div>
     @endif
+    @if(backpack_auth()->user()->jours_gratuits > 0)
+    @else
     <script async="async" data-cfasync="false" src="//ophoacit.com/1?z=6215734"></script>
+    @endif
     @if($isMobile == true)
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     @else
