@@ -13,7 +13,48 @@
         $locale = app()->getLocale();
         $descriptionField = 'description_' . $locale;
     @endphp
+@if($locale == 'fr')
+<style>
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: none;
+}
 
+.close {
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #ff0000;
+}
+</style>
+<script>
+const notification = document.querySelector('.notification');
+const closeBtn = document.querySelector('.close');
+
+closeBtn.addEventListener('click', () => {
+    notification.style.display = 'none';
+});
+
+// Afficher la notification initialement (vous pouvez déclencher cela en réponse à une action utilisateur)
+notification.style.display = 'block';
+</script>
+ <div class="notification">
+        <span class="close">&times;</span>
+        <h3>Titre de la notification</h3>
+        <p>Contenu de la notification.</p>
+    </div>
+
+@endif
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
