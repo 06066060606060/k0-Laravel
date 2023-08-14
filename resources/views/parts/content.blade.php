@@ -151,7 +151,7 @@
 .slider-item {
     flex: 0 0 100%;
     display: none;
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
     background-color: none;
 }
