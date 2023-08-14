@@ -75,13 +75,14 @@
                 <div class="slider-container">
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
-         @php $nbr = 0; @endphp
+         @php $nbr = 0; $oki = 0; @endphp
     @if(count($scores) > 0)
         @if($isMobile == true)
-        @foreach ($scores->chunk(1) as $scoreChunk)
+        @php $oki = 1; @endphp
         @else
-        @foreach ($scores->chunk(1) as $scoreChunk)
+        @php $oki = 4; @endphp
         @endif
+        @foreach ($scores->chunk($oki) as $scoreChunk)
             <div class="slider-item active" id="item-{{ $nbr += 1 }}">
                 @foreach ($scoreChunk as $score)
                 @if($isMobile == true)
