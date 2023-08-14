@@ -114,9 +114,9 @@
 }
 
 .slider-item {
-    flex: 100%;
+    flex: 0 0 100%;
     display: none;
-    padding: 20px;
+    padding: 0px;
     box-sizing: border-box;
     background-color: #f5f5f5;
 }
