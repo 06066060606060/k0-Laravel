@@ -119,7 +119,7 @@
     display: none;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #f5f5f5;
+    background-color: none;
 }
 
 .slider-item.active {
