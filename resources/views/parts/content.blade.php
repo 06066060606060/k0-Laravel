@@ -76,10 +76,14 @@
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
             @php $nbr = 0; @endphp
-            @forelse ($scores as $score)            
+
+                                    @forelse ($scores as $score)
             @php $nbr++; @endphp
-            <div class="slider-item active" id="item-{{ $nbr }}">
-                <blockquote>
+
+                                        <div class="slider-item active" id="item-{{ $nbr }}">
+
+                            <div class="swiper-slide">
+                                <blockquote>
                                     <div
                                         class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                         <div class="flex">
@@ -114,7 +118,26 @@
                                         </div>
                                     </div>
                                 </blockquote>
-                                @empty
+                            </div>
+                        @empty
+                            <div class="swiper-slide">
+                                <blockquote>
+                                    <div
+                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                        <div class="flex">
+                                            <img alt="" class="inline-block object-center w-12 h-12"
+                                                 src="./img/gem10.png">
+                                            <div class="flex">
+                                                <h2 class="pb-2 pl-4 font-semibold md:text-xl">
+                                                    Dummy<br>
+                                                    <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10 ✧</span>
+                                                </h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </blockquote>
+                            </div>
+                        @empty
                             <div class="p-4 lg:w-1/3 sm:w-1/2">
                                 <div class="relative flex overflow-hidden">
                                     <div class="absolute top-0 right-0 w-16 h-16">
@@ -137,7 +160,8 @@
                                            class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">{{__('Jouer')}}</a>
                                     </div>
                                 </div>
-                            </div>@endforelse
+                            </div>
+                        @endforelse
         </div>
         <button class="slider-arrow" id="next">&#10095;</button>
     </div>
