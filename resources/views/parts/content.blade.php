@@ -75,9 +75,9 @@
                 <div class="slider-container">
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
-        @php $nbr = 0; @endphp
+        <?php $nbr = 0; ?>
         @forelse ($scores as $score)
-        @php $nbr++; @endphp
+        <?php $nbr++; ?>
             <div class="slider-item active" id="item-{{ $nbr }}">
                 Contenu {{ $nbr }}
             </div>
