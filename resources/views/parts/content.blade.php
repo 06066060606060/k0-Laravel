@@ -72,6 +72,74 @@
                 <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
                     {{__('DERNIERS GAGNANTS')}}
                 </h2>
+                <div class="slider-container">
+        <button class="slider-arrow" id="prev">&#10094;</button>
+        <div class="slider-content">
+            <div class="slider-item active" id="item-1">
+                Contenu 1
+            </div>
+            <div class="slider-item" id="item-2">
+                Contenu 2
+            </div>
+        </div>
+        <button class="slider-arrow" id="next">&#10095;</button>
+    </div>
+    <style>
+    .slider-container {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-arrow {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 20px;
+}
+
+.slider-content {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s;
+}
+
+.slider-item {
+    flex: 0 0 100%;
+    display: none;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #f5f5f5;
+}
+
+.slider-item.active {
+    display: block;
+}
+</style>
+<script>
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const items = document.querySelectorAll(".slider-item");
+
+let current = 0;
+
+nextBtn.addEventListener("click", function() {
+    items[current].classList.remove("active");
+    current = (current + 1) % items.length;
+    items[current].classList.add("active");
+});
+
+prevBtn.addEventListener("click", function() {
+    items[current].classList.remove("active");
+    current = (current - 1 + items.length) % items.length;
+    items[current].classList.add("active");
+});
+
+</script>
                 <div
                     class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
                     <div class="swiper-wrapper">
