@@ -77,7 +77,7 @@
         <div class="slider-content">
          @php $nbr = 0; @endphp
     @if(count($scores) > 0)
-        @foreach ($scores->chunk(4) as $scoreChunk)
+        @foreach ($scores->chunk(1) as $scoreChunk)
             <div class="slider-item active" id="item-{{ $nbr += 1 }}">
                 @foreach ($scoreChunk as $score)
                 <blockquote style="display:inline-block;">
