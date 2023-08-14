@@ -137,7 +137,7 @@
                                            class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">{{__('Jouer')}}</a>
                                     </div>
                                 </div>
-                            </div>
+                            </div>@endforelse
         </div>
         <button class="slider-arrow" id="next">&#10095;</button>
     </div>
