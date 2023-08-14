@@ -234,7 +234,7 @@ prevBtn.addEventListener("click", function() {
                                     </div>
                                 </blockquote>
                             </div>
-                        @@empty
+                        @empty
                             <div class="p-4 lg:w-1/3 sm:w-1/2">
                                 <div class="relative flex overflow-hidden">
                                     <div class="absolute top-0 right-0 w-16 h-16">
