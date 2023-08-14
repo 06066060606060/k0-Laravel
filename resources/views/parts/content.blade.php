@@ -95,7 +95,7 @@
                                         class="flex flex-col w-full max-w-md p-8 text-left bg-white shadow-lg rounded-xl h-28">
                 @else
                              <div
-                                        class="flex flex-col w-full max-w-md p-8 mx-4 mr-2 text-left bg-white shadow-lg rounded-xl h-28">
+                                        class="flex flex-col w-full max-w-md p-8 mx-4 mr-4 text-left bg-white shadow-lg rounded-xl h-28">
                 @endif                      
                                         <div class="flex">
                                             <img alt=""
