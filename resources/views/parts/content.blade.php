@@ -88,10 +88,11 @@
     .slider-container {
     display: flex;
     align-items: center;
-    width: 300px;
+    width: 100%; /* Modifié pour 100% */
     overflow: hidden;
     position: relative;
 }
+
 
 .slider-arrow {
     cursor: pointer;
