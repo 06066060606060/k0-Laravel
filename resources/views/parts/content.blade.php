@@ -109,6 +109,7 @@
 
 .slider-content {
     display: flex;
+    overflow:hidden;
     width: 100%;
     transition: transform 0.3s;
 }
