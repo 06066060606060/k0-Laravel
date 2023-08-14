@@ -75,12 +75,11 @@
                 <div class="slider-container">
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
-            
-            <div class="slider-item active" id="item-1">
-                <div class="swiper-wrapper">
-                        @forelse ($scores as $score)
-                            <div class="swiper-slide">
-                                <blockquote>
+            @php $nbr = 0; @endphp
+            @forelse ($scores as $score)            
+            @php $nbr++; @endphp
+            <div class="slider-item active" id="item-{{ $nbr }}">
+                <blockquote>
                                     <div
                                         class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                         <div class="flex">
@@ -115,34 +114,7 @@
                                         </div>
                                     </div>
                                 </blockquote>
-                            </div>
-                        @empty
-                            <div class="swiper-slide">
-                                <blockquote>
-                                    <div
-                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-                                        <div class="flex">
-                                            <img alt="" class="inline-block object-center w-12 h-12"
-                                                 src="./img/gem10.png">
-                                            <div class="flex">
-                                                <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                                    Dummy<br>
-                                                    <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10 ✧</span>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        @endforelse
-                    </div>
-                
-
-
-            </div>
-            <div class="slider-item" id="item-2">
-                Contenu 2
-            </div>
+            </div>@endforelse
         </div>
         <button class="slider-arrow" id="next">&#10095;</button>
     </div>
