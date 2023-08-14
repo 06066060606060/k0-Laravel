@@ -76,11 +76,9 @@
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
             
+            <div class="slider-item active" id="item-1">
                 <div class="swiper-wrapper">
-                    @php $nbr = 0; @endphp
                         @forelse ($scores as $score)
-                    @php $nbr++; @endphp
-            <div class="slider-item active" id="item-{{ $nbr }}">
                             <div class="swiper-slide">
                                 <blockquote>
                                     <div
@@ -137,7 +135,7 @@
                                 </blockquote>
                             </div>
                         @endforelse
-                    </div></div>
+                    </div>
                 
 
 
