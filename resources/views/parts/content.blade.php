@@ -76,92 +76,11 @@
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
             @php $nbr = 0; @endphp
-
-                                    @forelse ($scores as $score)
+            @forelse ($scores as $score)            
             @php $nbr++; @endphp
-
-                                        <div class="slider-item active" id="item-{{ $nbr }}">
-
-                            <div class="swiper-slide">
-                                <blockquote>
-                                    <div
-                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-                                        <div class="flex">
-                                            <img alt=""
-                                                 class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}"
-                                                 src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png">
-                                            <div class="flex flex-col">
-                                                @if($isMobile)
-                                                    <h2 class="pb-0 pl-4 font-semibold text-xs">{{ $score->name }}</h2>
-                                                @else
-                                                    <h2 class="pb-0 pl-4 font-semibold text-s">{{ $score->name }}</h2>
-                                                @endif
-                                                
-                                                    @if($locale == 'fr')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name }}</span>
-                                                    @elseif($locale =='de')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_de }}</span>    
-                                                    @elseif($locale =='en')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_en }}</span>    
-                                                    @elseif($locale =='es')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_es }}</span>    
-                                                    @elseif($locale =='it')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_it }}</span>    
-                                                    @endif
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        @empty
-                            <div class="swiper-slide">
-                                <blockquote>
-                                    <div
-                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-                                        <div class="flex">
-                                            <img alt="" class="inline-block object-center w-12 h-12"
-                                                 src="./img/gem10.png">
-                                            <div class="flex">
-                                                <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                                    Dummy<br>
-                                                    <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10 ✧</span>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        @empty
-                            <div class="p-4 lg:w-1/3 sm:w-1/2">
-                                <div class="relative flex overflow-hidden">
-                                    <div class="absolute top-0 right-0 w-16 h-16">
-                                        <div
-                                            class="border z-20 absolute transform rotate-45 select-none bg-red-800 text-center text-white font-semibold py-1 right-[-50px] top-[20px] w-[170px]">
-                                            {{__('Aucun jeu')}}
-                                        </div>
-                                    </div>
-                                    <img alt="gallery"
-                                         class="absolute inset-0 object-cover object-center w-full h-full rounded-md animate__animated animate__pulse"
-                                         src="./img/empty.png">
-                                    <div
-                                        class="relative z-10 w-full p-4 transition duration-200 bg-blue-100 border-4 border-gray-200 rounded-lg opacity-0">
-                                        <h2 class="mb-1 text-sm font-bold tracking-widest text-indigo-500 title-font"></h2>
-                                        <h1 class="mb-1 text-lg font-medium text-gray-700 title-font">Shooting
-                                            Stars</h1>
-                                        <p class="text-sm leading-relaxed text-gray-800">Photo booth fam kinfolk
-                                            cold-pressed sriracha leggings jianbing microdosing tousled waistcoat.</p>
-                                        <a href="game"
-                                           class="flex justify-center w-20 px-4 py-2 mx-auto mt-2 text-white bg-green-700 rounded-full hover:bg-green-600 active:bg-green-800">{{__('Jouer')}}</a>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforelse
+            <div class="slider-item active" id="item-{{ $nbr }}">
+            </div>
+            @endforelse
         </div>
         <button class="slider-arrow" id="next">&#10095;</button>
     </div>
