@@ -82,7 +82,7 @@
                 @foreach ($scoreChunk as $score)
                 <blockquote style="display:inline-block;">
                                     <div
-                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                                        class="flex flex-col w-full max-w-md p-8 text-left bg-white shadow-lg rounded-xl h-28">
                                         <div class="flex">
                                             <img alt=""
                                                  class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}"
