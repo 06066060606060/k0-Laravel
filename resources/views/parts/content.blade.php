@@ -73,7 +73,11 @@
                     {{__('DERNIERS GAGNANTS')}}
                 </h2>
                 <div class="slider-container">
+                @if($isMobile == true)
         <button class="slider-arrow" id="prev">&#10094;</button>
+                @else
+        <button class="slider-arrow" style="margin-right:7px;" id="prev">&#10094;</button>
+        @endif
         <div class="slider-content">
          @php $nbr = 0; $oki = 0; @endphp
     @if(count($scores) > 0)
@@ -88,7 +92,7 @@
                 @if($isMobile == true)
                 <blockquote>
                 @else
-                <blockquote style="display:inline-block; pl-2">
+                <blockquote style="display:inline-block;">
                 @endif
                 @if($isMobile == true)
                                     <div
