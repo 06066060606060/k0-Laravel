@@ -75,13 +75,12 @@
                 <div class="slider-container">
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
-        <?php $nbr = 0; ?>
-        @forelse ($scores as $score)
-        <?php $nbr++; ?>
-            <div class="slider-item active" id="item-<?php echo $nbr; ?>">
-                Contenu <?php echo $nbr; ?>
+            <div class="slider-item active" id="item-1">
+                Contenu 1
             </div>
-        @endforelse
+            <div class="slider-item" id="item-2">
+                Contenu 2
+            </div>
         </div>
         <button class="slider-arrow" id="next">&#10095;</button>
     </div>
