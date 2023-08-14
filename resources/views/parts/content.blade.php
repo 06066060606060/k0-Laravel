@@ -77,12 +77,25 @@
         <div class="slider-content">
          @php $nbr = 0; @endphp
     @if(count($scores) > 0)
+        @if($isMobile == true)
         @foreach ($scores->chunk(1) as $scoreChunk)
+        @else
+        @foreach ($scores->chunk(1) as $scoreChunk)
+        @endif
             <div class="slider-item active" id="item-{{ $nbr += 1 }}">
                 @foreach ($scoreChunk as $score)
+                @if($isMobile == true)
+                <blockquote>
+                @else
                 <blockquote style="display:inline-block;">
+                @endif
+                @if($isMobile == true)
                                     <div
                                         class="flex flex-col w-full max-w-md p-8 text-left bg-white shadow-lg rounded-xl h-28">
+                @else
+                             <div
+                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+                @endif                      
                                         <div class="flex">
                                             <img alt=""
                                                  class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}"
