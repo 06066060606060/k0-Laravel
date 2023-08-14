@@ -75,12 +75,16 @@
                 <div class="slider-container">
         <button class="slider-arrow" id="prev">&#10094;</button>
         <div class="slider-content">
-            <div class="slider-item active" id="item-1">
-                Contenu 1
+         @php $nbr = 0; @endphp
+    @if(count($scores) > 0)
+        @foreach ($scores as $score)
+            @php $nbr++; @endphp
+            <div class="slider-item active" id="item-{{ $nbr }}">
+                Contenu {{ $nbr }}
             </div>
-            <div class="slider-item" id="item-2">
-                Contenu 2
-            </div>
+            @endforeach
+            @else
+            @endif
         </div>
         <button class="slider-arrow" id="next">&#10095;</button>
     </div>
