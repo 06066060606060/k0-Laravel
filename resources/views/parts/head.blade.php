@@ -30,7 +30,7 @@
 
 <meta name="coverage" content="Worldwide" />
 
-@php $url_en_cours = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; @endphp
+@php $url_en_cours = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; @endphp
 
 <link rel="canonical" href="{{ $url_en_cours }}" />
 
