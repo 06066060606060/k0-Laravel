@@ -980,21 +980,19 @@ prevBtn.addEventListener("click", function() {
                     </div>
                     <div
                         class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                    <span class="mb-4 font-bold tracking-widest text-blue-600 uppercase text-md">
-                        @if($starred->name == 'GoFRUITS' || $starred->name == 'Egypt')
-                            {{__('JOUEZ GRATUITEMENT A')}}
+                        <h1 class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
+                            @if($starred->name == 'GoFRUITS' || $starred->name == 'Egypt')
+                            {{__('JEUX GRATUITS')}}
                         @elseif($starred->name == 'Jungle')
-                            {{__('Jeux de Grattage')}}
+                            {{__('JEUX DE GRATTAGE')}}
                         @elseif($starred->name == 'Soccer')
-                            {{__('Jeux de Grattage')}}
+                            {{__('JEUX DE GRATTAGE')}}
                         @elseif($starred->name == 'Tresor')
                             {{__('CHASSE AU TRESOR')}}
                         @else
                             {{__('JEU 100% GAGNANT !')}}
                         @endif
-                    </span>
-                        <h1 class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
-                            {{ $starred->name }}</h1>
+                        </h1>
                         @php $locale = app()->getLocale(); @endphp
                         @if ($locale=='fr')
                             <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
