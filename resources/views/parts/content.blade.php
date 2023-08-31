@@ -990,7 +990,7 @@ prevBtn.addEventListener("click", function() {
                         @elseif($starred->name == 'Tresor')
                             {{__('CHASSE AU TRESOR')}}
                         @else
-                            {{__('JEU 100% GAGNANT !')}}
+                            {{__('JEUX MULTIJOUEURS')}}
                         @endif
                         </h1>
                         @php $locale = app()->getLocale(); @endphp
