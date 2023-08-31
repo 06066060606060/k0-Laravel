@@ -1053,20 +1053,20 @@ prevBtn.addEventListener("click", function() {
                                                 @endif
                                                 
                                                     @if($locale == 'fr')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name }}</span>
+                                                    <h2 href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name }}</h2>
                                                     @elseif($locale =='de')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_de }}</span>    
+                                                    <h2 href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_de }}</h2>    
                                                     @elseif($locale =='en')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_en }}</span>    
+                                                    <h2 href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_en }}</h2>    
                                                     @elseif($locale =='es')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_es }}</span>    
+                                                    <h2 href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_es }}</h2>    
                                                     @elseif($locale =='it')
-                                                    <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_it }}</span>    
+                                                    <h2 href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_it }}</h2>    
                                                     @endif
 
                                             </div>
