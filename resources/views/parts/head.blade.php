@@ -105,3 +105,12 @@ detectMultipleWindows();
 } else { }
 @endphp
 <link rel="stylesheet" href="{{ asset('css/appcss.min.css') }}">
+@php
+// Vérifie si la connexion est en HTTP
+if ($_SERVER["HTTPS"] != "on") {
+    // Redirige vers la version HTTPS de la même page
+    header("Location: https://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"]);
+    exit();
+}
+// Le reste du code de votre page web
+@endphp
