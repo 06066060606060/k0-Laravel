@@ -55,7 +55,7 @@
 
 <link crossorigin="anonymous" href="https://unpkg.com/swiper/swiper-bundle.min.css" rel="stylesheet" />
 <script crossorigin="anonymous" src="https://unpkg.com/swiper/swiper-bundle.min.js" async></script>
-<title>{{__('Jeux en ligne GoKDO - Jeux gratuits pour gagner des cadeaux !')}}</title>
+<title>{{__('Jeux gratuits multijoueurs pour gagner des cadeaux !')}}</title>
 @vite('resources/css/app.css')
 <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 <script>
