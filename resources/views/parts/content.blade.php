@@ -1172,12 +1172,3 @@ prevBtn.addEventListener("click", function() {
         </section>
     </container>
 @endif
-@if($isMobile == true)
-<script src="//static.surfe.pro/js/net.js"></script>
-<ins class="surfe-be" data-sid="378356"></ins>
-<script>(adsurfebe = window.adsurfebe || []).push({});</script>
-@else
-<script src="//static.surfe.pro/js/net.js"></script>
-<ins class="surfe-be" data-sid="378356"></ins>
-<script>(adsurfebe = window.adsurfebe || []).push({});</script>
-@endif
