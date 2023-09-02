@@ -946,8 +946,6 @@ prevBtn.addEventListener("click", function() {
     </script>
 
 @else
-<script src="https://alwingulla.com/88/tag.min.js" data-zone="4959" async data-cfasync="false"></script>
-
     <container id="home">
         <section>
             <div
