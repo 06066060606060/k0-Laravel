@@ -19,14 +19,14 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
 @endphp 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-           <!--  <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://en.gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
+            <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://en.gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ url('/admin/register') }}">
                         {!! csrf_field() !!}
                         <input type="hidden" name="parrain" value="{{ request()->input('parrain') }}">
                         <div class"form-group">
-                        <div>
+                       <!--  <div>
                         <a href="{{ route('socialite.redirect', 'google') }}" class="border btn btn-block">
                                     <div class="flex justify-center">
                                         <svg class="w-6 h-6 mx-2" viewBox="0 0 40 40">
