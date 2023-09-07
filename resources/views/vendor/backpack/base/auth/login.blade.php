@@ -22,7 +22,7 @@
                     <form class="pt-0 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">
                         {!! csrf_field() !!}
                         <div class="mb-2 form-group">
-                            <div>
+                           <!-- <div>
                                 <a href="{{ route('socialite.redirect', 'google') }}" class="border btn btn-block">
                                     <div class="flex justify-center">
                                         <svg class="w-6 h-6 mx-2" viewBox="0 0 40 40">
@@ -41,12 +41,12 @@
                                         </svg>
                                         <span class="py-1 text-sm"> {{ trans('backpack::base.login') }} Facebook</span>
                                     </div>
-                                </a>-->
-                            </div>
+                                </a>
+                            </div>-->
                         </div>
-                        <div class="divider">
+                        <!--<div class="divider">
                             <span class="divider-text">{{ $iclassic }}</span>
-                        </div>
+                        </div>-->
                         <style>
                         .divider {
                         display: flex;
