@@ -19,7 +19,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
 @endphp 
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-             <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://en.gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
+           <!--  <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://en.gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ url('/admin/register') }}">
@@ -46,7 +46,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
 
                                         <span class="py-1 text-sm"> {{ trans('backpack::base.register') }} via Google</span>
                                     </div>
-                                </a>
+                                </a>-->
 
                                <!-- <a href="{{ route('socialite.redirect', 'facebook') }}" class="btn btn-block btn-primary">
                                     <div class="flex justify-center">
@@ -62,9 +62,9 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                                 </a>-->
                                 </div>
                                 </div>
-                        <div class="divider">
+                        <!--<div class="divider">
                             <span class="divider-text">{{ $iclassic }}</span>
-                        </div>
+                        </div>-->
                         <style>
                         .divider {
                         display: flex;
@@ -92,9 +92,9 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                         #show,#content{display:none;}
                         #show:checked~#content{display:block;}
                         </style>
-                        <input type=checkbox id="show">
+                       <!-- <input type=checkbox id="show">
                         <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> {{ $iclassique }}</label>
-                        <span id="content">
+                        <span id="content">-->
                         <div class="form-group">
                             <!--<label class="control-label" for="name">Pseudo</label>
 
@@ -177,7 +177,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                                  
                             </div>
                         </div>
-                        </span>
+                      <!--  </span>-->
                     </form>
                     @if(!empty(request()->input('parrain')))
     @php
