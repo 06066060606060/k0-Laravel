@@ -577,7 +577,7 @@ prevBtn.addEventListener("click", function() {
                         @if($isMobile == true)
                         <div class="w-1/1 p-4 lg:w-1/1">
                         @else
-                        <div class="w-1/3 p-4 lg:w-1/3">
+                        <div class="w-1/2 p-4 lg:w-1/2">
                         @endif
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                 @if($scratchgame->prix > 0)
@@ -726,7 +726,7 @@ prevBtn.addEventListener("click", function() {
                         @if($isMobile == true)
                         <div class="w-1/1 p-4 lg:w-1/1">
                         @else
-                        <div class="w-1/2 p-4 lg:w-1/2">
+                        <div class="w-1/3 p-4 lg:w-1/3">
                         @endif
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                         @if($allgame->prix > 0)
