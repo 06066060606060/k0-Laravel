@@ -74,8 +74,12 @@ class GlobalController extends Controller
         ->get();
 
         // Jeux Gratuits
-        $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
-        
+        $freegames = Games::where('type', 'Gratuit')
+        ->where('prix', '!=', 0)
+        ->limit(6)
+        ->orderBy('id', 'desc')
+        ->get();
+
         // Jeux Booster
         $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
         
@@ -83,8 +87,12 @@ class GlobalController extends Controller
         $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'asc')->get();
 
         // Jeux Solo
-        $scratchgames = Games::where('type', 'Grattage')->limit(6)->orderBy('id', 'desc')->get();        
-
+        $scratchgames = Games::where('type', 'Grattage')
+        ->where('prix', '!=', 0)
+        ->limit(6)
+        ->orderBy('id', 'desc')
+        ->get();
+    
         // Jeux event
         $eventsgames = Games::where('type', 'Event')->get();
         $countevent = Games::where('type', 'Event')->where('status', 1)->count();
