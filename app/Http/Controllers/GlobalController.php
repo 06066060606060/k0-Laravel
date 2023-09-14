@@ -68,7 +68,11 @@ class GlobalController extends Controller
             
         // Tous les jeux
         $allgames = Games::whereNotIn('type', ['Event', 'Solo', 'Grattage'])->orderBy('id', 'desc')->get();
-        
+        $thefree = Games::where('prix', 0)
+        ->whereNotIn('type', ['Event', 'Solo', 'Grattage'])
+        ->orderBy('id', 'desc')
+        ->get();
+
         // Jeux Gratuits
         $freegames = Games::where('type', 'Gratuit')->where('status', 0)->limit(6)->inRandomOrder()->get();
         
@@ -88,7 +92,7 @@ class GlobalController extends Controller
         // Jeux mis en avant
         $starred = Games::where('status', 1)->inRandomOrder()->first();
         
-        return view('index', compact('userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('thefree', 'userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
     }
         
 /////////////////////////////////////////////////////////////////////////////////////////////////////
