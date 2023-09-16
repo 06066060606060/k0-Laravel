@@ -111,7 +111,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                             @endphp
                                 <input type="hidden" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" id="name" value="{{ $code }}">
                                
-                            <!--</div>-->
+                            </div>
                         </div>
 
                         <div class="form-group">
