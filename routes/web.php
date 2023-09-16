@@ -28,7 +28,7 @@ Route::controller(GlobalController::class)->group(function () {
     });
 
     Route::middleware('set-language')->group(function () {
-        Route::domain('{locale?}.' . config('app.url'))->group(function () {
+        Route::domain('' . config('app.url'))->group(function () {
             Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
                 // Vérifier si le parrain existe dans la table "users"
                 $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -96,7 +96,7 @@ Route::controller(GlobalController::class)->group(function () {
     });
 });
 
-Route::domain('{locale?}.' . config('app.url'))->middleware('set-language')->group(function () {
+Route::domain('' . config('app.url'))->middleware('set-language')->group(function () {
     Route::middleware(['cors'])->group(function () {
         // Route pour le jeu avec un paramètre "id" spécifique (ex: id=46)
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
