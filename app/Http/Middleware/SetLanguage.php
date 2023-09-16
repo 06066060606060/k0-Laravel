@@ -25,7 +25,7 @@ class SetLanguage
         }
         $sessionLocale = app()->getLocale();
         if (empty($urlLocale) || !in_array($urlLocale, config('app.available_locales'))) {
-            $redirectTo = $request->getScheme() . '://' . $sessionLocale . '.' . env('APP_DOMAIN') . $request->getPathInfo();
+            $redirectTo = $request->getScheme() . '://' . env('APP_DOMAIN') . $request->getPathInfo();
             return redirect($redirectTo);
         } elseif ($urlLocale != $sessionLocale) {
             app()->setLocale($urlLocale);
