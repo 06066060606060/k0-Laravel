@@ -726,7 +726,7 @@ prevBtn.addEventListener("click", function() {
                         @if($isMobile == true)
                         <div class="w-1/1 p-4 lg:w-1/1">
                         @else
-                        <div class="w-1/3 p-4 lg:w-1/3">
+                        <div class="w-1/2 p-4 lg:w-1/2">
                         @endif
                             <div class="relative flex overflow-hidden max-h-[150px] md:max-h-full">
                                         @if($allgame->prix > 0)
@@ -1170,80 +1170,6 @@ prevBtn.addEventListener("click", function() {
             </div>
         </section>
     </container>
-
-    <!-- WINNER -->
-    <winner class="mx-auto max-w-7xl" id="win">
-        <section>
-            <div
-                class="mt-4 mb-0 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-                <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
-                    {{__('DERNIERS GAGNANTS')}}
-                </h2>
-                <div
-                    class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
-                    <div class="swiper-wrapper">
-                        @forelse ($scores as $score)
-                            <div class="swiper-slide">
-                                <blockquote>
-                                    <div
-                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-                                        <div class="flex">
-                                            <img alt=""
-                                                 class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}"
-                                                 src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png">
-                                            <div class="flex flex-col">
-                                                @if($isMobile)
-                                                    <h3 class="pb-0 pl-4 font-semibold text-xs">{{ $score->name }}</h3>
-                                                @else
-                                                    <h3 class="pb-0 pl-4 font-semibold text-s">{{ $score->name }}</h3>
-                                                @endif
-                                                
-                                                    @if($locale == 'fr')
-                                                    <h2 href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name }}</h2>
-                                                    @elseif($locale =='de')
-                                                    <h2 href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_de }}</h2>    
-                                                    @elseif($locale =='en')
-                                                    <h2 href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_en }}</h2>    
-                                                    @elseif($locale =='es')
-                                                    <h2 href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_es }}</h2>    
-                                                    @elseif($locale =='it')
-                                                    <h2 href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">{{ $score->cadeau_name_it }}</h2>    
-                                                    @endif
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        @empty
-                            <div class="swiper-slide">
-                                <blockquote>
-                                    <div
-                                        class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-                                        <div class="flex">
-                                            <img alt="" class="inline-block object-center w-12 h-12"
-                                                 src="./img/gem10.png">
-                                            <div class="flex">
-                                                <h2 class="pb-2 pl-4 font-semibold md:text-xl">
-                                                    Dummy<br>
-                                                    <span href="#" class="ml-4 text-xs font-bold text-blue-700 lg:mb-0">Bonus 10 ✧</span>
-                                                </h2>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </blockquote>
-                            </div>
-                        @endforelse
-                    </div>
-                </div>
-            </div>
-        </section>
-    </winner>
 
     <!-- CADEAU -->
     <div id="concept"></div>
