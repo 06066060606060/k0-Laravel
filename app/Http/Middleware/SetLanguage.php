@@ -29,7 +29,7 @@ class SetLanguage
             return redirect($redirectTo);
         } elseif ($urlLocale != $sessionLocale) {
             app()->setLocale($urlLocale);
-            session()->put('locale', $urlLocale);
+           // session()->put('locale', $urlLocale);
         }
         return $next($request);
     }
