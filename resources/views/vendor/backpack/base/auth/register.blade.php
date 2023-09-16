@@ -26,8 +26,8 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                         {!! csrf_field() !!}
                         <input type="hidden" name="parrain" value="{{ request()->input('parrain') }}">
                         <div class"form-group">
-                       <!--  <div>
-                        <a href="{{ route('socialite.redirect', 'google') }}" class="border btn btn-block">
+                        <div>
+                       <!--  <a href="{{ route('socialite.redirect', 'google') }}" class="border btn btn-block">
                                     <div class="flex justify-center">
                                         <svg class="w-6 h-6 mx-2" viewBox="0 0 40 40">
                                             <path
@@ -96,9 +96,9 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                         <label for="show"class="mt-2 border btn btn-block" style="cursor:pointer;"><i class="mr-2 fa fa-user"></i> {{ $iclassique }}</label>-->
                         <span id="content">
                         <div class="form-group">
-                            <!--<label class="control-label" for="name">Pseudo</label>
+                            <!--<label class="control-label" for="name">Pseudo</label>-->
 
-                            <div>-->
+                            <div>
                             
                             @php
                             $code = null;
