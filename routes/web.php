@@ -12,7 +12,7 @@ use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
 
-Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
+Route::domain('' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
