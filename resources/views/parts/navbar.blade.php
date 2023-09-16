@@ -11,8 +11,7 @@ $isMobile = GlobalController::isMobile();
                     <img src="/img/logo_mobile.webp" alt="Gokdo" width="354" height="96" class="w-auto h-16">
                 </a>
             </div>
-            @include('parts/language_switcher')
-
+            
             <!-- Mobile menu button -->
             <div class="flex lg:hidden">
                 <button x-cloak @click="isOpen = !isOpen" type="button"
