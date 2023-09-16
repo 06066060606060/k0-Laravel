@@ -12,23 +12,23 @@ use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
 
 
-//Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
+Route::domain('{locale?}.' . config('app.url'))->middleware(['web', 'set-language'])->group(function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
     Route::post('/admin/register', [ExtendedRegisterController::class, 'register'])->name('backpack.auth.register');
     Route::post('/register', [ExtendedRegisterController::class, 'register']);
         // Updated route for login
-//});
+});
 
 Route::controller(GlobalController::class)->group(function () {
-//    Route::get('/language/{locale}', function ($locale, Illuminate\Http\Request $request) {
-  //      app()->setLocale($locale);
-    //    session()->put('locale', $locale);
-      //  $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
-       // return redirect($redirectTo);
-   // });
+    Route::get('/language/{locale}', function ($locale, Illuminate\Http\Request $request) {
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
+        $redirectTo = $request->getScheme() . '://' . $locale . '.' . env('APP_DOMAIN');
+        return redirect($redirectTo);
+    });
 
-//    Route::middleware('set-language')->group(function () {
-  //      Route::domain('{locale?}.' . config('app.url'))->group(function () {
+    Route::middleware('set-language')->group(function () {
+        Route::domain('{locale?}.' . config('app.url'))->group(function () {
             Route::get('admin/register?parrain={le_parrain}', function ($le_parrain) {
                 // Vérifier si le parrain existe dans la table "users"
                 $parrainExiste = \App\Models\User::where('name', $le_parrain)->exists();
@@ -93,10 +93,10 @@ Route::controller(GlobalController::class)->group(function () {
         Route::get('mentions-legales', 'mentionslegales');
         Route::get('confidentialite-site', 'confidentialitesite');
         Route::get('partenaires', 'partenaires');
-    //});
-//});
+    });
+});
 
-//Route::domain('{locale?}.' . config('app.url'))->middleware('set-language')->group(function () {
+Route::domain('{locale?}.' . config('app.url'))->middleware('set-language')->group(function () {
     Route::middleware(['cors'])->group(function () {
         // Route pour le jeu avec un paramètre "id" spécifique (ex: id=46)
         Route::get('game/{id}', [GlobalController::class, 'game'])->name('specific-game');
@@ -117,7 +117,7 @@ Route::controller(GlobalController::class)->group(function () {
 
     Route::get('delete_order', [GlobalController::class, 'getProfil']);
     Route::get('delete_orderpack', [GlobalController::class, 'getProfil']);
-//});
+});
 Route::post('delete_orderpack', [GlobalController::class, 'deleteOrderpack'])->name('deleteOrderpack');
 Route::post('save_address', [GlobalController::class, 'saveAddress'])->name('saveAddress');
 
