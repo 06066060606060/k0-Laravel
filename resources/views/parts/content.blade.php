@@ -1228,7 +1228,7 @@ prevBtn.addEventListener("click", function() {
     </container>
 
     <!-- FREE GAMES -->
-<div id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
+<container id="game" class="block px-2 pb-8 mx-auto md:px-4 md:pt-8 max-w-7xl">
     <section id="video" class="text-gray-400 border-gray-600 body-font">
         <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="w-full text-left">
@@ -1255,6 +1255,6 @@ prevBtn.addEventListener("click", function() {
             </div>
         </div>
     </section>
-</div>
+</container>
 
 @endif
