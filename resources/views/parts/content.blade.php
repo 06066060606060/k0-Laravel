@@ -1238,7 +1238,9 @@ prevBtn.addEventListener("click", function() {
                     <br>
                     <a href="admin/register" class="text-blue-500 prevent">{{__("L'inscription est gratuite")}}</a> {{__("et vous bénéficiez même de 150 Diamants offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de gagner de superbes prix.")}}
                 </p>
-                <h2>{{__("Découvrez une variété de jeux captivants")}}</h2><br>
+                
+            </div>
+            <h2>{{__("Découvrez une variété de jeux captivants")}}</h2><br>
                     {{__("Chez GoKDO, nous sommes fiers de vous offrir une vaste sélection de jeux divertissants pour tous les goûts. Que vous soyez fan de jeux de réflexion, de jeux de cartes, de jeux de stratégie ou de jeux d'action, notre site regorge de possibilités pour satisfaire votre appétit ludique. Explorez notre catalogue de jeux en constante expansion et découvrez de nouvelles expériences de jeu à chaque visite.")}}
                 <h2>{{__("Communauté conviviale et compétitive")}}</h2><br>
                     {{__("Rejoignez notre communauté de joueurs passionnés et partagez votre passion pour les jeux. Interagissez avec d'autres membres, créez des alliances, et mesurez-vous à des adversaires du monde entier. Notre plateforme favorise l'esprit de compétition tout en encourageant une atmosphère conviviale où vous pouvez discuter de stratégies, échanger des conseils, et nouer de nouvelles amitiés.")}}
@@ -1247,7 +1249,6 @@ prevBtn.addEventListener("click", function() {
                     <br>
                     {{__("Enrichissez votre quotidien en jouant à nos jeux gratuits, faites partie d'une communauté dynamique, et profitez des opportunités de gagner des récompenses exceptionnelles. Chez GoKDO, nous sommes déterminés à vous offrir une expérience de jeu inoubliable. Rejoignez-nous dès aujourd'hui et plongez dans le monde passionnant de nos jeux en ligne gratuits !")}}
                 
-            </div>
         </div>
     </section>
 </container>
