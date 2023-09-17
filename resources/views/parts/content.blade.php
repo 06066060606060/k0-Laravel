@@ -1237,6 +1237,7 @@ prevBtn.addEventListener("click", function() {
                     {{__("Notre site GoKDO vous offre la possibilité de jouer gratuitement à des jeux divertissants et de remporter des cadeaux !")}}
                     <br>
                     <a href="admin/register" class="text-blue-500 prevent">{{__("L'inscription est gratuite")}}</a> {{__("et vous bénéficiez même de 150 Diamants offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de gagner de superbes prix.")}}
+                </p>
                 <h2>{{__("Découvrez une variété de jeux captivants")}}</h2><br>
                     {{__("Chez GoKDO, nous sommes fiers de vous offrir une vaste sélection de jeux divertissants pour tous les goûts. Que vous soyez fan de jeux de réflexion, de jeux de cartes, de jeux de stratégie ou de jeux d'action, notre site regorge de possibilités pour satisfaire votre appétit ludique. Explorez notre catalogue de jeux en constante expansion et découvrez de nouvelles expériences de jeu à chaque visite.")}}
                 <h2>{{__("Communauté conviviale et compétitive")}}</h2><br>
@@ -1245,7 +1246,7 @@ prevBtn.addEventListener("click", function() {
                     {{__("Chez GoKDO, nous aimons récompenser nos joueurs fidèles. En plus des 150 Diamants gratuits offerts lors de votre inscription, vous pouvez gagner des récompenses supplémentaires en participant à des tournois, en accomplissant des défis, ou simplement en jouant régulièrement. Restez à l'affût des cadeaux surprises, des événements spéciaux et des promotions exclusives qui vous permettront de maximiser votre expérience de jeu tout en augmentant vos chances de remporter des prix incroyables.")}}
                     <br>
                     {{__("Enrichissez votre quotidien en jouant à nos jeux gratuits, faites partie d'une communauté dynamique, et profitez des opportunités de gagner des récompenses exceptionnelles. Chez GoKDO, nous sommes déterminés à vous offrir une expérience de jeu inoubliable. Rejoignez-nous dès aujourd'hui et plongez dans le monde passionnant de nos jeux en ligne gratuits !")}}
-                </p>
+                
             </div>
         </div>
     </section>
