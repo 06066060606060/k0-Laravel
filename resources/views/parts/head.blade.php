@@ -101,7 +101,7 @@ detectMultipleWindows();
 @php
 } else { }
 @endphp
-<link rel="stylesheet" href="{{ asset('css/appcss.min.css') }}">
+<link rel="stylesheet" href="https://gokdo.com/css/appcss.min.css">
 @php
 // Vérifie si la connexion utilise le port HTTPS (port 443)
 if ($_SERVER["SERVER_PORT"] == 443) {
