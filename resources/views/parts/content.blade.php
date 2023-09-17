@@ -1128,14 +1128,16 @@ prevBtn.addEventListener("click", function() {
                     <div
                         class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
                         <h1 class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
-                            @if($starred->name == 'GoFRUITS' || $starred->name == 'Egypt')
+                            @if($starred->name == 'GoFRUITS')
                             {{__('JEUX GRATUITS')}}
+                        @elseif($starred->name == 'Egypt')
+                        {{__('TICKET DE GRATTAGE')}}
                         @elseif($starred->name == 'Jungle')
-                            {{__('JEUX DE GRATTAGE')}}
+                            {{__('GRATTAGE EN LIGNE')}}
                         @elseif($starred->name == 'Soccer')
                             {{__('JEUX DE GRATTAGE')}}
                         @elseif($starred->name == 'Tresor')
-                            {{__('JEUX EN LIGNE')}}
+                            {{__('JEUX DE CHASSE AU TRESOR')}}
                         @else
                             {{__('JEUX MULTIJOUEURS')}}
                         @endif
