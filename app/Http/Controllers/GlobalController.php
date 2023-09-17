@@ -103,7 +103,7 @@ class GlobalController extends Controller
         
         $starredGames = Games::where('status', 1)->get();
         
-        return view('index', compact('thefree', 'userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starred', 'allgames', 'winner', 'concours'));
+        return view('index', compact('thefree', 'userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starredGames', 'allgames', 'winner', 'concours'));
     }
         
 /////////////////////////////////////////////////////////////////////////////////////////////////////
