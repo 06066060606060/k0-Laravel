@@ -1096,6 +1096,7 @@ prevBtn.addEventListener("click", function() {
 
 @else
     <container id="home">
+    @foreach($starredGames as $starred)
         <section>
             <div
                 class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
@@ -1169,6 +1170,7 @@ prevBtn.addEventListener("click", function() {
                 </div>
             </div>
         </section>
+        @endforeach
     </container>
 
     <!-- CADEAU -->
