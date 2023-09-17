@@ -36,6 +36,9 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4337256114287476"
+     crossorigin="anonymous"></script>
+
 <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
 
