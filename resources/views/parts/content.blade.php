@@ -1138,7 +1138,7 @@ prevBtn.addEventListener("click", function() {
                             {{__('JEUX DE GRATTAGE')}}
                         @elseif($starred->name == 'Tresor')
                             {{__('JEUX DE CHASSE AU TRESOR')}}
-                        @elseif($starred->name == 'Stone')
+                        @elseif($starred->name == 'STONE')
                             {{__('JEUX DE GRILLE')}}
                         @else
                             {{__('JEUX MULTIJOUEURS')}}
