@@ -14,7 +14,12 @@
                 {{__("GoKDO est un site de jeux gratuits sans obligation d'achat.")}}
             </p>
         </div>
-        <div class="flex flex-wrap flex-grow mt-10 
+        <div class="flex flex-wrap flex-grow 
+        @if($isMobile == true)
+        mt-1 
+        @else
+        mt-10 
+        @endif
         @if($isMobile == true)
                 -mb-2 
                 @else
