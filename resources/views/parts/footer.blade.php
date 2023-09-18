@@ -5,7 +5,7 @@
 
 <!-- FOOTER -->
 <container id="footer" class="mx-auto text-gray-400 body-font max-w-7xl">
-    <div class="container flex flex-col flex-wrap px-5 py-12 mx-auto md:items-center lg:items-start md:flex-row md:flex-nowrap">
+    <div class="container flex flex-col flex-wrap px-5 py-2 mx-auto md:items-center lg:items-start md:flex-row md:flex-nowrap">
         <div class="flex-shrink-0 w-64 mx-auto text-center md:mx-0 md:text-left">
             <a href="/" class="flex items-center justify-center font-medium text-gray-700 title-font md:justify-start">
                 <h2 class="
