@@ -1269,5 +1269,6 @@ prevBtn.addEventListener("click", function() {
         </div>
     </section>
 </container>
+<script type="text/javascript" src="https://tags.clickintext.net/UN1zVvElTqOuf" title="Interstitiel"></script>
 
 @endif
