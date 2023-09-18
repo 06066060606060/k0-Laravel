@@ -66,13 +66,13 @@
 @if($isMobile == true)
 <style>
         .marquee-container {
-            width: 100%;
+            width: 60%;
             overflow: hidden;
         }
 
         .marquee-content {
             white-space: nowrap;
-            animation: marquee 5s linear infinite;
+            animation: marquee 20s linear infinite;
         }
 
         @keyframes marquee {
