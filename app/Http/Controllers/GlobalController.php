@@ -62,7 +62,7 @@ class GlobalController extends Controller
         ->join('users', 'users.id', '=', 'commandes.user_id')
         ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
         ->latest() // Trie les résultats par date de création, en ordre décroissant (les derniers en premier)
-        ->take(9)
+        ->take(5)
         ->get();
     
             
