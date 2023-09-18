@@ -974,7 +974,7 @@
                                 @endphp
                                 <a href="admin/register">
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                         src="{{ $imgiUrls }}" width="381" height="174"
+                                         src="{{ $imgiUrls }}" width="100%" height="auto"
                                          onerror="this.src='/img/empty.png'">
                                 </a>
                             </div>
