@@ -73,9 +73,9 @@
             <div class="w-full px-4 lg:w-1/4 md:w-1/2">
                 <h2 class="
                 @if($isMobile == true)
-                mb-1 
+                mb-1 mt-0
                 @else
-                mb-3
+                mb-3 
                 @endif
                 text-sm font-medium tracking-widest text-blue-400 title-font" data-barba-prevent="self">{{__('Plus')}}</h2>
                 <div class="mb-10 list-none">
