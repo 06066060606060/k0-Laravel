@@ -139,7 +139,7 @@
         var totalWidth = marquee.scrollWidth;
 
         // Réglez la durée de l'animation en fonction de la largeur totale
-        var animationDuration = (totalWidth / marquee.offsetWidth) * 20 + 's'; // 20s est la vitesse de défilement actuelle
+        var animationDuration = (totalWidth / marquee.offsetWidth) * 10 + 's'; // 20s est la vitesse de défilement actuelle
         marquee.style.animation = 'marquee linear infinite ' + animationDuration;
     </script>    </div>
 </div>
