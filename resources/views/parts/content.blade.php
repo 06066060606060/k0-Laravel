@@ -93,7 +93,7 @@
                     {{__('DERNIERS GAGNANTS')}}
                 </h2>
 <div class="marquee-container">
-        <div class="marquee-content">
+        <div class="marquee-content pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
              @php
                 $winnersText = "";
                 foreach ($scores as $score) {
