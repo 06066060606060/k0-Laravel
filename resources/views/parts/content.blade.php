@@ -974,8 +974,14 @@
                                 @endphp
                                 <a href="admin/register">
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                         src="{{ $imgiUrls }}"
-                                         onerror="this.src='/img/empty.png'">
+                                    src="{{ $imgiUrls }}"
+                                    srcset="@if($isMobile)
+                                            {{ $imgiUrls }} 480w"
+                                    @else
+                                    {{ $imgiUrls }} 920w,
+                                    @endif
+                                    sizes="(min-width: 800px) 920px, 480px"
+                                    onerror="this.src='/img/empty.png'">
                                 </a>
                             </div>
                         </div>
