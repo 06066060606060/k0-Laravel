@@ -16,7 +16,7 @@
         </div>
         <div class="flex flex-wrap flex-grow 
         @if($isMobile == true)
-        mt-1 
+        mt-4 
         @else
         mt-10 
         @endif
