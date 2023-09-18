@@ -69,6 +69,14 @@
 
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
+
+
+            <div
+                class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
+                    {{__('DERNIERS GAGNANTS')}}
+                </h2>
+
 <style>
  .marquee-container {
             width: 100%;
@@ -107,12 +115,6 @@
             <!-- Ajoutez autant d'éléments que nécessaire -->
         </div>
     </div>
-
-            <div
-                class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-                <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
-                    {{__('DERNIERS GAGNANTS')}}
-                </h2>
    <!--   
                       <div class="slider-container">
                 @if($isMobile == true)
