@@ -92,7 +92,7 @@
                 <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
                     {{__('DERNIERS GAGNANTS')}}
                 </h2>
-<div class="marquee-container">
+<div class="marquee-container mt-2">
     <div class="marquee-content flex"> <!-- Ajout de la classe "flex" ici -->
         @php
             $winnersText = "";
@@ -100,7 +100,8 @@
                 $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
                                         <img alt="" class="inline-block object-center w-auto h-' . ($isMobile ? '9' : '12') . '" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png"> 
-                                        <b>' . $score->name . '</b> <br>à gagné <b>' . $score->cadeau_name . '</b>
+                                        <b>' . $score->name . '</b> <br><span href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">' . $score->cadeau_name . '</span>
                                     </div>
                                 </div>';
             }
