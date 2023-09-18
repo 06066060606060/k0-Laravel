@@ -14,13 +14,25 @@
                 {{__("GoKDO est un site de jeux gratuits sans obligation d'achat.")}}
             </p>
         </div>
-        <div class="flex flex-wrap flex-grow mt-10 -mb-10 text-center md:pl-20 md:mt-0 md:text-left">
+        <div class="flex flex-wrap flex-grow mt-10 
+        @if($isMobile == true)
+                -mb-2 
+                @else
+                -mb-10
+                @endif
+         text-center md:pl-20 md:mt-0 md:text-left">
             <div class="w-full px-4 lg:w-1/4 md:w-1/2">
             </div>
             <div class="w-full px-4 lg:w-1/4 md:w-1/2">
             </div>
             <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('A Propos')}}</h2>
+                <h2 class="
+                @if($isMobile == true)
+                mb-1 
+                @else
+                mb-3
+                @endif
+                text-sm font-medium tracking-widest text-blue-400 title-font">{{__('A Propos')}}</h2>
                 <div class="mb-10 list-none">
                     <ul>
                     @if($isMobile == true)
@@ -42,12 +54,18 @@
                 </div>
             </div>
             <div class="w-full px-4 lg:w-1/4 md:w-1/2">
-                <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font" data-barba-prevent="self">{{__('Plus')}}</h2>
+                <h2 class="
+                @if($isMobile == true)
+                mb-1 
+                @else
+                mb-3
+                @endif
+                text-sm font-medium tracking-widest text-blue-400 title-font" data-barba-prevent="self">{{__('Plus')}}</h2>
                 <div class="mb-10 list-none">
                     <ul>
                     @if($isMobile == true)
-                            <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a> - 
-                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Contact')}}</a>
+                            <a href="aide" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Aide')}}</a> - 
+                            <a href="contact" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Contact')}}</a>
                     @else
                         <li>
                             <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a>
