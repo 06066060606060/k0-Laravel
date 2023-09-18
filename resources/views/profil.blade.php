@@ -48,7 +48,13 @@ text-s
 text-xs
 @endif
  text-white border-b border-gray-500">
-    <b>{{__('Score Concours')}} :</b> {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
+    <b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
+    @if($isMobile == true)
+class="flex w-4 h-4 ml-2"
+@else
+class="flex w-3 h-3 ml-2"
+@endif
+>
 </p>
 @else
 <p class="flex py-4 
@@ -58,7 +64,13 @@ text-s
 text-xs
 @endif
  text-white border-b border-gray-500">
-    <b>{{__('Score Concours')}} :</b> 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
+    <b>{{__('Score Concours')}} :</b>&nbsp; 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
+    @if($isMobile == true)
+class="flex w-4 h-4 ml-2"
+@else
+class="flex w-3 h-3 ml-2"
+@endif
+>
 </p>
 @endif
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
