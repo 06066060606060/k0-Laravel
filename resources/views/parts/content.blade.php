@@ -63,7 +63,27 @@
     </script>
 @endif
 @endif
+<style>
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+        }
 
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 20s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
@@ -72,6 +92,15 @@
                 <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
                     {{__('DERNIERS GAGNANTS')}}
                 </h2>
+<div class="marquee-container">
+        <div class="marquee-content">
+            @foreach($scores as $score)
+                <div>
+                    {{ $score->name }} gagne {{ $score->cadeau_name }}
+                </div>
+            @endforeach
+        </div>
+    </div>
                 <div
                     class="pb-4 mt-4 border-gray-600 md:mt-4 swiper-container swiper-initialized swiper-horizontal swiper-backface-hidden">
                     <div class="swiper-wrapper">
