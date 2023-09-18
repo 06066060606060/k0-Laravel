@@ -33,9 +33,9 @@
         mt-10 
         @endif
         @if($isMobile == true)
-                -mb-2 
+                mb-2 
                 @else
-                -mb-10
+                mb-10
                 @endif
          text-center md:pl-20 md:mt-0 md:text-left">
             <div class="w-full px-4 lg:w-1/4 md:w-1/2">
