@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Vérifier si les dimensions correspondent à un téléphone portable
         if (screenWidth <= 480 && screenHeight <= 800) {
             document.getElementById("gameBody").classList.remove("h-[667px]");
-            document.getElementById("gameBody").classList.add("mt-6 mb-6");
+            document.getElementById("gameBody").classList.add("mt-10 mb-10");
         } else {
             document.getElementById("gameBody").classList.add("h-[667px] mb-6 mt-6");
         }
@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function adjustFrameHeight() {
   var iframe = document.getElementById('gameBody');
-  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 10 'px';
+  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
 }
 
     const fullscreenButton = document.getElementById('fullscreenButton');
@@ -129,9 +129,6 @@ function adjustFrameHeight() {
             screen.lockOrientation('landscape');
         }
 
-
-        var currentLocale = '{{ app()->getLocale() }}';
-
         // Vérifier si l'appareil est un iPhone
         const isiPhone = /iPhone/i.test(navigator.userAgent);
 
@@ -140,17 +137,7 @@ function adjustFrameHeight() {
 
         // Afficher un message demandant de basculer en mode paysage sur iPhone en mode portrait
         if (isiPhone && isPortrait) {
-            if(currentLocale == 'fr'){
             alert("Veuillez basculer votre appareil en mode paysage pour une meilleure expérience.");
-            } else if (currentLocale == 'en'){
-            alert("Please rotate your device to landscape mode for a better experience.");
-            } else if (currentLocale == 'de'){
-            alert("Bitte drehen Sie Ihr Gerät in den Querformatmodus für ein besseres Erlebnis.");
-            } else if (currentLocale == 'es'){
-            alert("Por favor, gire su dispositivo al modo horizontal para una mejor experiencia.");
-            } else if (currentLocale == 'it'){
-            alert("Si prega di ruotare il dispositivo in modalità orizzontale per un'esperienza migliore.");
-            }
         }
     });
 </script>
