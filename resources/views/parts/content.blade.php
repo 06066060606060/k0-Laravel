@@ -125,7 +125,7 @@
         @php
             $winnersText = "";
             foreach ($scores as $score) {
-                $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28" style="min-width:200px;">
+                $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28" style="min-width:' . ($isMobile ? '180' : '200') . 'px;">
                                     <div class="flex">
                                         <img alt="" class="inline-block object-center w-auto h-' . ($isMobile ? '9' : '12') . '" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png"> 
                                         <div class="flex flex-col"><h2 class="pb-0 pl-4 font-bold text-' . ($isMobile ? 's' : 's') . '">' . $score->name . '</h2> <span href="#"
