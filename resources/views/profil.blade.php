@@ -41,12 +41,24 @@
     } else {}
 @endphp
 @if(isset($scory->total))
-<p class="flex py-4 text-' . ($isMobile ? 's' : 'xs') . ' text-white border-b border-gray-500">
-    <b>{{__('Score Concours')}}</b> : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
+<p class="flex py-4 
+@if($isMobile == true)
+text-s
+@else
+text-xs
+@endif
+ text-white border-b border-gray-500">
+    <b>{{__('Score Concours')}} :</b> {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
 @else
-<p class="flex py-4 text-' . ($isMobile ? 's' : 'xs') . ' text-white border-b border-gray-500">
-    <b>{{__('Score Concours')}}</b> : 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
+<p class="flex py-4 
+@if($isMobile == true)
+text-s
+@else
+text-xs
+@endif
+ text-white border-b border-gray-500">
+    <b>{{__('Score Concours')}} :</b> 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
 @endif
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
