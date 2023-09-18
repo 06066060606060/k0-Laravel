@@ -4,7 +4,7 @@
 <head>
     @include('parts.head')
 </head>
-<body class="overflow-x-hidden bg-gray-900 pattern" data-barba="wrapper">
+<body class="overflow-x-hidden bg-gray-900 pattern">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLHCZTD3"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
