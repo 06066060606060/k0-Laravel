@@ -50,9 +50,9 @@
                              text-white border-b border-gray-500">
                                 <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
                                 @if($isMobile == true)
-                            class="flex w-4 h-4 ml-2" style="margin-top:2px;"
+                            class="flex w-4 h-4 ml-2" style="margin-top:4px;"
                             @else
-                            class="flex w-3 h-3 ml-2" style="margin-top:4px;"
+                            class="flex w-3 h-3 ml-2" style="margin-top:2px;"
                             @endif
                             >&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} 
                             </p>
