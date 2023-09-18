@@ -50,7 +50,13 @@
                 mb-3
                 @endif
                 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('A Propos')}}</h2>
-                <div class="mb-10 list-none">
+                <div class="
+                  @if($isMobile == true)
+                mb-2
+                @else
+                mb-10
+                @endif
+                 list-none">
                     <ul>
                     @if($isMobile == true)
                             <a href="/reglement" class="text-gray-400 hover:text-gray-500 text-xs"  data-barba-prevent="self">{{__('Règlement')}}</a> - 
