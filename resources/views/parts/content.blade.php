@@ -63,7 +63,44 @@
     </script>
 @endif
 @endif
+<style>
+ .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+        }
 
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 10s linear infinite; /* Ajustez la vitesse et la durée selon vos préférences */
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Style de chaque élément dans la bannière (ajustez selon vos besoins) */
+        .marquee-item {
+            margin-right: 20px; /* Espace entre les éléments */
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+</style>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="marquee-item">Gagnant 1</div>
+            <div class="marquee-item">Gagnant 2</div>
+            <div class="marquee-item">Gagnant 3</div>
+            <div class="marquee-item">Gagnant 4</div>
+            <!-- Ajoutez autant d'éléments que nécessaire -->
+        </div>
+    </div>
  <container class="mx-auto max-w-7xl" id="win">
         <section>
             <div
