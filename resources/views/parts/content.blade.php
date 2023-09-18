@@ -995,14 +995,14 @@
                     <div
                         class="flex flex-col items-start 
                         @if($isMobile == true) 
-                        mt-2
+                        mt-2 mb-2
                         @else 
-                        mt-12
+                        mt-12 mb-16
                         @endif        
-                         mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
+                         text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
                         <h1 class="mb-4 
                         @if($isMobile == true) 
-                        text-2xl
+                        text-1xl
                         @else 
                         text-4xl
                         @endif        
