@@ -967,7 +967,7 @@
         <section style="margin-top:20px;">
             <div
                 class="px-12  @if($isMobile == true) 
-                pt-4
+                pt-4 pb-0
                 @else 
                 py-12 
                 @endif
