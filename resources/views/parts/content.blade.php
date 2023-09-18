@@ -171,7 +171,11 @@
                                         @else
                                         @php
                                             $borderColor = $freethe->prix == 0 ? 'blue-700' : 'orange-800';
-                                            $price = $freethe->prix == 0 ? '5 ' . __('par 24h') : $freethe->prix;
+                                            if ($freethe->name == 'GoFRUITS') {
+                                            $price = '10 (par 24)';
+                                            } else {
+                                            $price = '5 (par 24)';
+                                            }
                                             $imagePath = $freethe->type_prix == 'Diamants' && $freethe->prix == 0 ? 'img/diamond5.png' : 'img/gem10.png';
                                         @endphp
                                         <div
@@ -188,27 +192,9 @@
                                         $locale = app()->getLocale();
                                         if($locale == 'fr'){
                                         $imgibUrl = asset('storage/uploads/' . $filenames . '.gif'); 
-                                        } else if($locale == 'en'){
-                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_en.gif');     
-                                        } else if($locale == 'de'){
-                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_de.gif');     
-                                        } else if($locale == 'es'){
-                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_es.gif');     
-                                        } else if($locale == 'it'){
-                                        $imgibUrl = asset('storage/uploads/' . $filenames . '_it.gif');     
                                         }
                                         $description = '';
-                                        if ($locale == 'fr') {
                                             $description = $freethe->description;
-                                        } elseif ($locale == 'en') {
-                                            $description = $freethe->description_en;
-                                        } elseif ($locale == 'de') {
-                                            $description = $freethe->description_de;
-                                        } elseif ($locale == 'es') {
-                                            $description = $freethe->description_es;
-                                        } elseif ($locale == 'it') {
-                                            $description = $freethe->description_it;
-                                        }
                                     @endphp
                                     @if($isMobile == true)
                                     <img alt="gallery"
