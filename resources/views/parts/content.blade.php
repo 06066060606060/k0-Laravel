@@ -97,7 +97,10 @@
              @php
                 $winnersText = "";
                 foreach ($scores as $score) {
-                    $winnersText .= $score->name . " gagne " . $score->cadeau_name . "   ";
+                    $winnersText .= "<img alt=''
+                                                 class='inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}'
+                                                 src='https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png'>
+                                            " . $score->name . " gagne " . $score->cadeau_name . "   ";
                 }
             @endphp
             {{ $winnersText }}
