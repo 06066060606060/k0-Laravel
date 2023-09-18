@@ -1016,7 +1016,7 @@
                         @elseif($starred->name == 'Soccer')
                             {{__('JEUX DE GRATTAGE')}}
                         @elseif($starred->name == 'Tresor')
-                            {{__('CHASSE AU TRESOR EN LIGNE')}}
+                            {{__('CHASSE AU TRESOR')}}
                         @elseif($starred->name == 'STONE')
                             {{__('JEUX DE GRILLE')}}
                         @else
