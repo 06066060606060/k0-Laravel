@@ -172,9 +172,9 @@
                                         @php
                                             $borderColor = $freethe->prix == 0 ? 'blue-700' : 'orange-800';
                                             if ($freethe->name == 'GoFRUITS') {
-                                            $price = '10 (par 24)';
+                                            $price = '10 par 24H';
                                             } else {
-                                            $price = '5 (par 24)';
+                                            $price = '5 par 24H';
                                             }
                                             $imagePath = $freethe->type_prix == 'Diamants' && $freethe->prix == 0 ? 'img/diamond5.png' : 'img/gem10.png';
                                         @endphp
