@@ -28,8 +28,6 @@ class GlobalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    $isMobile = GlobalController::isMobile();
-
     public function getAll()
     {
 
@@ -57,7 +55,8 @@ class GlobalController extends Controller
                 User::where('name', $lejoueur)->update(['language' => $locale]);
             }
         }
-        
+        $isMobile = GlobalController::isMobile();
+ 
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX    
         if($isMobile == true) {
         $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name', 'cadeaux.name_de as cadeau_name_de', 'cadeaux.name_en as cadeau_name_en', 'cadeaux.name_es as cadeau_name_es', 'cadeaux.name_it as cadeau_name_it')
