@@ -100,8 +100,8 @@
                 $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
                                     <div class="flex">
                                         <img alt="" class="inline-block object-center w-auto h-' . ($isMobile ? '9' : '12') . '" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png"> 
-                                        <h2 class="pb-0 pl-4 font-semibold text-xs">' . $score->name . '</h2><span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">' . $score->cadeau_name . '</span>
+                                        <div class="flex flex-col"><h2 class="pb-0 pl-4 font-bold text-xs">' . $score->name . '</h2> <span href="#"
+                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">' . $score->cadeau_name . '</span></div>
                                     </div>
                                 </div>';
             }
