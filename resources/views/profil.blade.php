@@ -41,11 +41,11 @@
     } else {}
 @endphp
 @if(isset($scory->total))
-<p class="flex py-4 text-xs text-white border-b border-gray-500">
+<p class="flex py-4 text-s text-white border-b border-gray-500">
     {{__('Score Concours')}} : {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
 @else
-<p class="flex py-4 text-xs text-white border-b border-gray-500">
+<p class="flex py-4 text-s text-white border-b border-gray-500">
     {{__('Score Concours')}} : 0 <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="flex w-3 h-3 ml-2">
 </p>
 @endif
