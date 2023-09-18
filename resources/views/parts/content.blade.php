@@ -72,7 +72,7 @@
 
         .marquee-content {
             white-space: nowrap;
-            animation: marquee 5s linear infinite;
+            animation: marquee linear infinite;
         }
 
         @keyframes marquee {
