@@ -283,7 +283,7 @@
                     <div class="flex flex-col w-full text-center">
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeu Live')}}</h1>
                     </div>
-                    <p class="text-white text-center text-sm">Si vous achetez des Packs sur le menu <font color="yellow"><b>+ de parties</b></font> chaque pack acheté vous donnera des Parties de Chasse au Trésor !</p>
+                    <p class="text-white text-center text-sm">Achetez des Packs sur le menu <font color="yellow"><b>+ de parties</b></font> pour avoir des Parties de Chasse au Trésor !</p>
                     <div class="flex-wrap m-full">
                         @forelse ($eventsgames as $eventsgame)
                             <div class="w-1/1 p-4 lg:w-1/1">
