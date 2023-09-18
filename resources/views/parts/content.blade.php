@@ -92,7 +92,7 @@
                 <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
                     {{__('DERNIERS GAGNANTS')}}
                 </h2>
-<div class="marquee-container mt-4">
+<div class="marquee-container mt-4 mb-4">
     <div class="marquee-content flex"> <!-- Ajout de la classe "flex" ici -->
         @php
             $winnersText = "";
