@@ -86,14 +86,15 @@
     </style>
 @else
 <style>
-.marquee-container {
+    .marquee-container {
         width: 100%;
         overflow: hidden;
     }
 
     .marquee-content {
         white-space: nowrap;
-        animation: marquee 20s linear infinite; /* Animation infinie */
+        animation: marquee linear infinite; /* Animation infinie avec timing linéaire */
+        animation-duration: 60s; /* Durée de l'animation pour couvrir tout le contenu */
     }
 
     @keyframes marquee {
