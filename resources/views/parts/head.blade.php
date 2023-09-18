@@ -104,7 +104,7 @@ if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
   });
 }
 </script>
-
+ 
 <script>
 function detectMultipleWindows() {
   // Vérifiez si le localStorage est disponible dans le navigateur

@@ -1014,16 +1014,9 @@
                         @endif
                         </h1>
                         @php $locale = app()->getLocale(); @endphp
-                        @if ($locale=='fr')
+                        @if($isMobile == true)
+                        @else
                             <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
-                        @elseif ($locale=='en')
-                            <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_en }}</p>
-                        @elseif ($locale=='de')
-                            <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_de }}</p>
-                        @elseif ($locale=='es')
-                            <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_es }}</p>
-                        @elseif ($locale=='it')
-                            <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description_it }}</p>
                         @endif
                         <div>
                             <a href="admin/register"
