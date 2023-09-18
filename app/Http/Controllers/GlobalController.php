@@ -20,6 +20,7 @@ use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+$isMobile = GlobalController::isMobile();
 
 class GlobalController extends Controller
 {
