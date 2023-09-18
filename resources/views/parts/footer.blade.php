@@ -23,6 +23,11 @@
                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('A Propos')}}</h2>
                 <div class="mb-10 list-none">
                     <ul>
+                    @if($isMobile == true)
+                            <a href="/reglement" class="text-gray-400 hover:text-gray-500"  data-barba-prevent="self">{{__('Règlement')}}</a> - 
+                            <a href="mentions-legales" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Mentions Légales')}}</a> - 
+                            <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Confidentialité')}}</a>
+                    @else
                         <li>
                             <a href="/reglement" class="text-gray-400 hover:text-gray-500"  data-barba-prevent="self">{{__('Règlement')}}</a>
                         </li>
@@ -32,6 +37,7 @@
                         <li>
                             <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Confidentialité')}}</a>
                         </li>
+                    @endif
                     </ul>
                 </div>
             </div>
@@ -41,13 +47,13 @@
                     <ul>
                     @if($isMobile == true)
                             <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a> - 
-                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
+                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Contact')}}</a>
                     @else
                         <li>
                             <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a>
                         </li>
                         <li>
-                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
+                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Contact')}}</a>
                         </li>
                     @endif
                     </ul>
