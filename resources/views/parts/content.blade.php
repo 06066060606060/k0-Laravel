@@ -843,8 +843,8 @@
                                     <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 1
                                         <img src='img/gem10.png' style='display:inline-block;'
                                              class=' w-5 h-5 align-middle'
-                                             alt='Gem 10'> {{__('par ami parrainé !')}} <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
-                                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
+                                             alt='Gem 10'> {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                        <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               data-barba-prevent="self"
                                               id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                                         <i style="color: orange; font-size: 13px;">{{__("Triche = Exclusion du site")}}</i>
@@ -872,8 +872,8 @@
                                     <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 1
                                         <img src='img/gem10.png' style='display:inline-block;'
                                              class=' w-5 h-5 align-middle'
-                                             alt='Gem 10'> {{__('par ami parrainé !')}} <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
-                                        <b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
+                                             alt='Gem 10'> {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                        <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               data-barba-prevent="self"
                                               id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
                                         <i style="color: orange; font-size: 13px;">{{__("Triche = Exclusion du site")}}</i>
