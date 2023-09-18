@@ -24,9 +24,9 @@
                 <div class="mb-10 list-none">
                     <ul>
                     @if($isMobile == true)
-                            <a href="/reglement" class="text-gray-400 hover:text-gray-500"  data-barba-prevent="self">{{__('Règlement')}}</a>-
-                            <a href="mentions-legales" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Mentions Légales')}}</a>-
-                            <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Confidentialité')}}</a>
+                            <a href="/reglement" class="text-gray-400 hover:text-gray-500 text-xs"  data-barba-prevent="self">{{__('Règlement')}}</a> - 
+                            <a href="mentions-legales" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Mentions Légales')}}</a> - 
+                            <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Confidentialité')}}</a>
                     @else
                         <li>
                             <a href="/reglement" class="text-gray-400 hover:text-gray-500"  data-barba-prevent="self">{{__('Règlement')}}</a>
