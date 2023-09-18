@@ -50,9 +50,9 @@ text-xs
  text-white border-b border-gray-500">
     <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
     @if($isMobile == true)
-class="flex w-4 h-4 ml-2 mt-2"
+class="flex w-4 h-4 ml-2" style="margin-top:2px;"
 @else
-class="flex w-3 h-3 ml-2 mt-2"
+class="flex w-3 h-3 ml-2" style="margin-top:2px;"
 @endif
 >&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} 
 </p>
@@ -66,9 +66,9 @@ text-xs
  text-white border-b border-gray-500">
     <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
     @if($isMobile == true)
-class="flex w-4 h-4 ml-2"
+class="flex w-4 h-4 ml-2" style="margin-top:2px;"
 @else
-class="flex w-3 h-3 ml-2"
+class="flex w-3 h-3 ml-2" style="margin-top:2px;"
 @endif
 >&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; 0 
 </p>
