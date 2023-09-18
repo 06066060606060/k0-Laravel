@@ -978,7 +978,7 @@
                                     srcset="@if($isMobile)
                                             {{ $imgiUrls }} 480w"
                                     @else
-                                    {{ $imgiUrls }} 920w,
+                                    {{ $imgiUrls }} 920w"
                                     @endif
                                     sizes="(min-width: 800px) 920px, 480px"
                                     onerror="this.src='/img/empty.png'">
