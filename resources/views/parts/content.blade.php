@@ -87,24 +87,14 @@
 @else
 <style>
     .marquee-container {
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .marquee-content {
-        white-space: nowrap;
-        animation: marquee linear infinite; /* Animation infinie avec timing linéaire */
-        animation-duration: 20s; /* Durée de l'animation pour couvrir tout le contenu */
-    }
-
-    @keyframes marquee {
-        0% {
-            transform: translateX(100%);
+            width: 100%;
+            overflow: hidden;
         }
-        100% {
-            transform: translateX(-100%);
+
+        .marquee-content {
+            white-space: nowrap;
+            display: inline-block; /* Pour permettre le défilement horizontal */
         }
-    }
     </style>
 @endif
 </head>
@@ -118,20 +108,40 @@
                 </h2>
 <div class="marquee-container mt-4 mb-4">
     <div class="marquee-content flex"> <!-- Ajout de la classe "flex" ici -->
-        @php
-            $winnersText = "";
-            foreach ($scores as $score) {
-                $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28" style="min-width:200px;">
-                                    <div class="flex">
-                                        <img alt="" class="inline-block object-center w-auto h-' . ($isMobile ? '9' : '12') . '" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png"> 
-                                        <div class="flex flex-col"><h2 class="pb-0 pl-4 font-bold text-' . ($isMobile ? 'xs' : 's') . '">' . $score->name . '</h2> <span href="#"
-                                                          class="ml-4 text-m font-bold text-blue-700 lg:mb-0">' . $score->cadeau_name . '</span></div>
-                                    </div>
-                                </div>';
-            }
-        @endphp
-        {!! $winnersText !!}
+<div class="marquee-container">
+        <div class="marquee-content" id="marquee">
+            <!-- Votre contenu généré dynamiquement ici -->
+        </div>
     </div>
+
+    <script>
+        // Obtenez la référence de l'élément marquee
+        var marquee = document.getElementById("marquee");
+
+        // Générez votre contenu ici (exemple avec 10 éléments)
+        var winnersText = "";
+        for (var i = 0; i < 10; i++) {
+            winnersText += '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28" style="min-width:200px;">' +
+                            '<div class="flex">' +
+                                '<img alt="" class="inline-block object-center w-auto h-12" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png">' +
+                                '<div class="flex flex-col">' +
+                                    '<h2 class="pb-0 pl-4 font-bold text-s">Nom du gagnant</h2>' +
+                                    '<span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">Nom du cadeau</span>' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+        }
+
+        // Remplacez le contenu de l'élément marquee avec le texte généré
+        marquee.innerHTML = winnersText;
+
+        // Calculez la largeur totale du contenu
+        var totalWidth = marquee.scrollWidth;
+
+        // Réglez la durée de l'animation en fonction de la largeur totale
+        var animationDuration = (totalWidth / marquee.offsetWidth) * 20 + 's'; // 20s est la vitesse de défilement actuelle
+        marquee.style.animation = 'marquee linear infinite ' + animationDuration;
+    </script>    </div>
 </div>
 </div>
         </section>
