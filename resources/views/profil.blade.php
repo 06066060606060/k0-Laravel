@@ -48,13 +48,13 @@ text-s
 text-xs
 @endif
  text-white border-b border-gray-500">
-    <b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
+    <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
     @if($isMobile == true)
 class="flex w-4 h-4 ml-2 mt-2"
 @else
 class="flex w-3 h-3 ml-2 mt-2"
 @endif
->
+><b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} 
 </p>
 @else
 <p class="flex py-4 
