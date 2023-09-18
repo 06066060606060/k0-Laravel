@@ -63,6 +63,28 @@
     </script>
 @endif
 @endif
+@if($isMobile == true)
+<style>
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .marquee-content {
+            white-space: nowrap;
+            animation: marquee 5s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+@else
 <style>
         .marquee-container {
             width: 100%;
@@ -83,6 +105,7 @@
             }
         }
     </style>
+@endif
 </head>
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
