@@ -96,12 +96,16 @@
         <div class="marquee-content">
              @php
                 $winnersText = "";
-                foreach ($scores as $score) {
-                    $winnersText .= '<div class="flex flex-col w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
-                                        
-<img alt="" class="inline-block object-center w-auto h-' . ($isMobile ? '9' : '12') . '" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png"> <b>' . $score->name . '</b> <br>à gagné <b>' . $score->cadeau_name . '</b></div>   ';
-                }
-            @endphp
+<div class="flex">
+    @foreach ($scores as $score)
+        <div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28">
+            <div class="flex">
+                <img alt="" class="inline-block object-center w-auto h-{{ $isMobile ? '9' : '12' }}" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png">
+                <b>{{ $score->name }}</b> <br>à gagné <b>{{ $score->cadeau_name }}</b>
+            </div>
+        </div>
+    @endforeach
+</div>            @endphp
             {!! $winnersText !!} <
         </div>
     </div>
