@@ -29,7 +29,12 @@
                              @endphp                            
                              <img src="{{ $imgiUrl }}" alt="" class="block w-32 pl-1 mb-4 rounded-md"
                                  onerror="this.src='/img/empty.png'">
-                             <h1 class="block pt-2 pr-2 text-4xl font-extrabold text-gray-50">{{ $game->name }}</h1>
+                             <h1 class="block pt-2 pr-2 @if($isMobile == true)
+                              text-xl 
+                              @else
+                              text-4xl 
+                              @endif
+                              font-extrabold text-gray-50">{{ $game->name }}</h1>
                          </div>
 
                          <div class="container flex flex-col-reverse xl:flex-row">
