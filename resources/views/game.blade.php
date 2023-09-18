@@ -71,18 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                                 
                                 @else
-                                @if(app()->getLocale() == 'en') 
-                                <script>alert('You must be logged in to play a game!')</script>
-                                @elseif(app()->getLocale() == 'fr')
                                 <script>alert('Vous devez être connecté pour jouer à un jeu !')</script>
-                                @elseif(app()->getLocale() == 'de')
-                                <script>alert('Sie müssen angemeldet sein, um ein Spiel zu spielen!')</script>
-                                @elseif(app()->getLocale() == 'es')
-                                <script>alert('¡Debes iniciar sesión para jugar a un juego!')</script>
-                                @elseif(app()->getLocale() == 'it')
-                                <script>alert("Devi effettuare l'accesso per giocare a un gioco!")</script>                                
-                                @else
-                                @endif
                                 @endif
                          </div>
                   
@@ -102,9 +91,9 @@ document.addEventListener("DOMContentLoaded", function() {
         // Vérifier si les dimensions correspondent à un téléphone portable
         if (screenWidth <= 480 && screenHeight <= 800) {
             document.getElementById("gameBody").classList.remove("h-[667px]");
-            document.getElementById("gameBody").classList.add("mt-4 mb-4");
+            document.getElementById("gameBody").classList.add("mt-6 mb-6");
         } else {
-            document.getElementById("gameBody").classList.add("h-[667px] mb-4");
+            document.getElementById("gameBody").classList.add("h-[667px] mb-6 mt-6");
         }
     }
     
