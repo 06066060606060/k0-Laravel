@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function adjustFrameHeight() {
   var iframe = document.getElementById('gameBody');
-  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
+  iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 100 'px';
 }
 
     const fullscreenButton = document.getElementById('fullscreenButton');
