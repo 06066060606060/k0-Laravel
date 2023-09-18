@@ -72,7 +72,7 @@
 
         .marquee-content {
             white-space: nowrap;
-            animation: marquee linear infinite;
+            animation: marquee 5s linear infinite;
         }
 
         @keyframes marquee {
@@ -86,24 +86,24 @@
     </style>
 @else
 <style>
-        .marquee-container {
-            width: 100%;
-            overflow: hidden;
-        }
+.marquee-container {
+        width: 100%;
+        overflow: hidden;
+    }
 
-        .marquee-content {
-            white-space: nowrap;
-            animation: marquee 20s linear infinite;
-        }
+    .marquee-content {
+        white-space: nowrap;
+        animation: marquee 20s linear infinite; /* Animation infinie */
+    }
 
-        @keyframes marquee {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
         }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
     </style>
 @endif
 </head>
