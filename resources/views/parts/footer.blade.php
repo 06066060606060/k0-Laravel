@@ -39,12 +39,17 @@
                 <h2 class="mb-3 text-sm font-medium tracking-widest text-blue-400 title-font" data-barba-prevent="self">{{__('Plus')}}</h2>
                 <div class="mb-10 list-none">
                     <ul>
+                    @if($isMobile == true)
+                            <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a> - 
+                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
+                    @else
                         <li>
                             <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a>
                         </li>
                         <li>
                             <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Nous Contacter')}}</a>
                         </li>
+                    @endif
                     </ul>
                 </div>
             </div>
