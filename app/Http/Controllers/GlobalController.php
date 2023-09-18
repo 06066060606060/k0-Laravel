@@ -20,8 +20,6 @@ use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-$isMobile = isMobile();
-
 class GlobalController extends Controller
 {
     /**
@@ -30,6 +28,8 @@ class GlobalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+    $isMobile = GlobalController::isMobile();
+
     public function getAll()
     {
 
