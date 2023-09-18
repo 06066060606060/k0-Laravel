@@ -94,7 +94,7 @@
     .marquee-content {
         white-space: nowrap;
         animation: marquee linear infinite; /* Animation infinie avec timing linéaire */
-        animation-duration: 25s; /* Durée de l'animation pour couvrir tout le contenu */
+        animation-duration: 16s; /* Durée de l'animation pour couvrir tout le contenu */
     }
 
     @keyframes marquee {
@@ -114,7 +114,7 @@
             <div
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                 <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
-                    {{__('5 DERNIERS GAGNANTS')}}
+                    {{__('10 DERNIERS GAGNANTS')}}
                 </h2>
 <div class="marquee-container mt-4 mb-4">
     <div class="marquee-content flex"> <!-- Ajout de la classe "flex" ici -->
