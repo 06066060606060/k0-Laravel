@@ -16,7 +16,13 @@
                 @endif        
                  text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Jeux en ligne Multijoueurs')}}</h2>
             </a>
-            <p class="mt-2 text-sm text-gray-400">{{__("Gagnez des cadeaux en jouant !")}}<br>
+            <p class="mt-2 
+            @if($isMobile == true)
+                text-xs
+                @else
+                text-sm
+                @endif            
+             text-gray-400">{{__("Gagnez des cadeaux en jouant !")}}<br>
                 {{__("GoKDO est un site de jeux gratuits sans obligation d'achat.")}}
             </p>
         </div>
