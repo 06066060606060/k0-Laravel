@@ -966,7 +966,11 @@
     @foreach($starredGames as $starred)
         <section style="margin-top:20px;">
             <div
-                class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                class="px-12  @if($isMobile == true) 
+                @else 
+                py-12 
+                @endif
+                mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                 <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
                     <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
                         <div class="relative w-full max-w-lg">
