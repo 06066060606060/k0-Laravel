@@ -54,7 +54,7 @@ class="flex w-4 h-4 ml-2 mt-2"
 @else
 class="flex w-3 h-3 ml-2 mt-2"
 @endif
-><b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} 
+>&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} 
 </p>
 @else
 <p class="flex py-4 
@@ -70,7 +70,7 @@ class="flex w-4 h-4 ml-2"
 @else
 class="flex w-3 h-3 ml-2"
 @endif
-><b>{{__('Score Concours')}} :</b>&nbsp; 0 
+>&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; 0 
 </p>
 @endif
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
