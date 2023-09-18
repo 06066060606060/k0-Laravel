@@ -966,7 +966,8 @@
     @foreach($starredGames as $starred)
         <section style="margin-top:20px;">
             <div
-                class="px-12  @if($isMobile == true) 
+                class="px-12  
+                @if($isMobile == true) 
                 pt-4 pb-0
                 @else 
                 py-12 
@@ -981,14 +982,6 @@
                                         $locale = app()->getLocale();
                                         if($locale == 'fr'){
                                         $imgiUrls = asset('storage/uploads/' . $filenamesq . '.gif'); 
-                                        } else if($locale == 'en'){
-                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_en.gif');     
-                                        } else if($locale == 'de'){
-                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_de.gif');     
-                                        } else if($locale == 'es'){
-                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_es.gif');     
-                                        } else if($locale == 'it'){
-                                        $imgiUrls = asset('storage/uploads/' . $filenamesq . '_it.gif');     
                                         }
                                 @endphp
                                 <a href="admin/register">
@@ -1001,7 +994,13 @@
                     </div>
                     <div
                         class="flex flex-col items-start mt-12 mb-16 text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                        <h1 class="mb-4 text-4xl font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
+                        <h1 class="mb-4 
+                        @if($isMobile == true) 
+                        text-2xl
+                        @else 
+                        text-4xl
+                        @endif        
+                         font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                             @if($starred->name == 'GoFRUITS')
                             {{__('JEUX GRATUITS')}}
                         @elseif($starred->name == 'Egypt')
