@@ -94,11 +94,13 @@
                 </h2>
 <div class="marquee-container">
         <div class="marquee-content">
-            @foreach($scores as $score)
-                <div>
-                    {{ $score->name }} gagne {{ $score->cadeau_name }}
-                </div>
-            @endforeach
+             @php
+                $winnersText = "";
+                foreach ($scores as $score) {
+                    $winnersText .= $score->name . " gagne " . $score->cadeau_name . "   ";
+                }
+            @endphp
+            {{ $winnersText }}
         </div>
     </div>
                 <div
