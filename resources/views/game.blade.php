@@ -49,7 +49,7 @@
     </div> 
     <div class="display-block mt-6">
     @if($isMobile == true)
-        <iframe id="gameBody" style="min-height:250px;" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
+        <iframe id="gameBody" style="min-height:200px;" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
     @else
         <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
     @endif
