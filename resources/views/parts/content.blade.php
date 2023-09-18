@@ -94,7 +94,7 @@
     .marquee-content {
         white-space: nowrap;
         animation: marquee linear infinite; /* Animation infinie avec timing linéaire */
-        animation-duration: 10s; /* Durée de l'animation pour couvrir tout le contenu */
+        animation-duration: 25s; /* Durée de l'animation pour couvrir tout le contenu */
     }
 
     @keyframes marquee {
