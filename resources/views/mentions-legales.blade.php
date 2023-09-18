@@ -14,8 +14,9 @@
                 
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Informations Principales')}}</h2> 
-		<p class="leading-relaxed text-gray-300">GOKDO
-        <br>{{__('Iakovou Tompazi, Limassol, Cyprus')}}
+		<p class="leading-relaxed text-gray-300">Nom de l'entreprise : GOKDO
+        <br>Nom du propriétaire : JORGEVU Nicolaï
+        <br>Addresse : {{__('Iakovou Tompazi, Limassol, Chypre')}}
         </p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
