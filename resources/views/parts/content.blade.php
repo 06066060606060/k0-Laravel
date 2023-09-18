@@ -106,15 +106,14 @@
             color: #333;
         }
 </style>
+                        @forelse ($scores as $score)
     <div class="marquee-container">
         <div class="marquee-content">
-            <div class="marquee-item">Gagnant 1</div>
-            <div class="marquee-item">Gagnant 2</div>
-            <div class="marquee-item">Gagnant 3</div>
-            <div class="marquee-item">Gagnant 4</div>
+            <div class="marquee-item">{{$score->name}} gagne {{$score->cadeau_name}}</div>
             <!-- Ajoutez autant d'éléments que nécessaire -->
         </div>
     </div>
+    @endforelse
    <!--   
                       <div class="slider-container">
                 @if($isMobile == true)
