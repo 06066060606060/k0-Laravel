@@ -1028,7 +1028,11 @@
                         @else
                             <p class="mb-4 text-base leading-relaxed text-left text-gray-300">{{ $starred->description }}</p>
                         @endif
+                        @if($isMobile == true)
+                        <div class="mt-4">
+                        @else
                         <div>
+                        @endif
                             <a href="admin/register"
                                class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
                                 <span
