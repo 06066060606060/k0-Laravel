@@ -52,15 +52,7 @@
     </div>
     <div class="bg-gray-700">
         <div class="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-            <p class="text-sm text-center text-white sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}} - <a href="http://www.guidedesjeux.org" target "blanc" title="Guide de jeux">Guide de jeux</a> - <a href="https://www.crocastuce.fr" target="_blank" title="Les meilleurs jeux gratuits">Jeux gratuits</a></p>                 <a href="https://www.facebook.com/gokdocom" class="text-white">
-                    <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        class="w-5 h-5" viewBox="0 0 24 24">
-                        <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
-                    </svg>
-                    @if($isMobile == true)
-                    Facebook
-                    @endif
-                </a>
+            <p class="text-sm text-center text-white sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}}</p> 
         </div>
     </div>
 </container>
