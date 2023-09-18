@@ -71,7 +71,7 @@ class ExtendedRegisterController extends RegisterController
     if (isset($data['parrain'])) {
         $user->parrain = $data['parrain'];
         $user->save();
-        User::where('name', $data['parrain'])->update(['trophee2' => DB::raw('trophee2 + 20')]);
+        User::where('name', $data['parrain'])->update(['trophee2' => DB::raw('trophee2 + 1')]);
     }
 
     event(new Registered($user));
