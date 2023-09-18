@@ -995,7 +995,7 @@
                     <div
                         class="flex flex-col items-start 
                         @if($isMobile == true) 
-                        mt-2 mb-4
+                        mt-2 mb-6
                         @else 
                         mt-12 mb-16
                         @endif        
