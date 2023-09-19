@@ -44,6 +44,18 @@
 <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous" async></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
 
+<!--GoogleADS -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11338958296"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11338958296');
+</script>
+
+
 <!--Analytics-->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNPT87NKHJ"></script>

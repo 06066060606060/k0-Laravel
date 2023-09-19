@@ -958,7 +958,7 @@
                 @if($isMobile == true) 
                 pt-4 pb-0
                 @else 
-                py-12 
+                py-12  
                 @endif
                 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                 <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
