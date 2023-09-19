@@ -175,9 +175,6 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
                                     {{ trans('backpack::base.register') }}
                                 </button>
 
-                                <script>
-                                gtag('event', 'conversion', {'send_to': 'AW-11338958296/WdlMCMb3mOMYENiL654q'});
-                                </script>
 
                             </div>
                         </div>
