@@ -140,6 +140,9 @@
                                                     <div
                                                         class="flex flex-col justify-center px-4 my-4 bg-white rounded-md shadow-2xl">
                                                     <h1 class="pt-2 text-2xl font-bold text-center text-gray-900">{{__('Modes de paiement')}}:</h1>
+                                                         <script>
+                                gtag('event', 'conversion', {'send_to': 'AW-11338958296/WdlMCMb3mOMYENiL654q'});
+                                </script>
                                                         <div class="pt-4 paypal-button">
                                                             <div style="text-align: center;">
                                                                 <div id="paypal-button-container{{ $pack->id }}"></div>
