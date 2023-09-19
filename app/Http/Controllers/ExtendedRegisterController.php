@@ -76,11 +76,6 @@ class ExtendedRegisterController extends RegisterController
 
     event(new Registered($user));
     $this->guard()->login($user);
-
-    <script>
-    gtag('event', 'conversion', {'send_to': 'AW-11338958296/WdlMCMb3mOMYENiL654q'});
-    </script>
-
     return redirect($this->redirectPath());
 }
 
