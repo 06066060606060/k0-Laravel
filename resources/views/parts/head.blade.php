@@ -3,6 +3,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Primary Meta Tags -->
 <meta name="title" content="Gokdo">
+<title>{{__('Jeux gratuits multijoueurs pour gagner des cadeaux !')}}</title>
 <meta name="description" content="{{__("Jeux multijoueurs gratuits, gains d'argent et cadeaux ! Concours excitants, inscrivez-vous maintenant.")}}">
 <meta name="keywords" content="{{__("jeux, jeux gratuit, jeux fr, jeux gratuits, gagner, gagner des cadeaux et de l'argent cash, gagner de l'argent cash, argent, cash, jeu, jeu en ligne, jeux flash, jeux gratuits en ligne, grattez, jeux de grattage")}}" />
 <!--<meta name="identifier-url" content="https://{{ app()->getLocale() }}.gokdo.com" />-->
@@ -45,7 +46,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" async></script>
 
 <!--GoogleADS -->
-<!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js)
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11338958296"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -53,7 +54,7 @@
   gtag('js', new Date());
 
   gtag('config', 'AW-11338958296');
-</script>
+</script>-->
 
 
 <!--Analytics-->
@@ -67,13 +68,16 @@
   gtag('config', 'G-VNPT87NKHJ');
 </script>
 
-<title>{{__('Jeux gratuits multijoueurs pour gagner des cadeaux !')}}</title>
 @vite('resources/css/app.css')
+
+<!--LE TOKEN-->
 <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
 <script>
     myToken = <?php echo json_encode(['csrfToken' => csrf_token()]); ?>
 </script>
+
 @php
+// SI ON EST SUR LA PAGE DE JEU
 if(request()->path()=='game')  {
 @endphp
 <script>
@@ -91,7 +95,8 @@ if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
   });
 }
 </script>
- 
+
+// FONCTION DE DETECTION SI PLUSIEURS FENETRES SONT OUVERTES 
 <script>
 function detectMultipleWindows() {
   // Vérifiez si le localStorage est disponible dans le navigateur
@@ -110,14 +115,17 @@ function detectMultipleWindows() {
   }
 }
 
-// Appeler la fonction pour détecter les fenêtres multiples
+//APPELLE LA DETECTION DES FENETRES MULTIPLES
 detectMultipleWindows();
 </script>
 @php
 } else { }
 @endphp
 <link rel="stylesheet" href="https://gokdo.com/appcss.min.css">
+
+
 @php
+// FORCE LE HTTPS
 // Vérifie si la connexion utilise le port HTTPS (port 443)
 if ($_SERVER["SERVER_PORT"] == 443) {
     // La connexion est sécurisée, ne faites rien

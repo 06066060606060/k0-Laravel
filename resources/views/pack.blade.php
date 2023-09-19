@@ -215,10 +215,10 @@
                                                  console.log(error);
                                             }
                                          });
-                                            gtag('event', 'conversion', {
-                                                'send_to': 'AW-11338958296/_2R2CITJnuMYENiL654q',
-                                                'transaction_id': ''
-                                            });
+                                            //gtag('event', 'conversion', {
+                                              //  'send_to': 'AW-11338958296/_2R2CITJnuMYENiL654q',
+                                                //'transaction_id': ''
+                                           // });
 
                                         // alert("Paiement effectué avec succès");
                                            //  window.location.href = "http://127.0.0.1:8000/profil";
