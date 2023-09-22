@@ -108,6 +108,9 @@
     </style>
 @endif
 </head>
+
+<iframe width="100%" frameBorder="0" height="2000px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1=&subid_2"></iframe>
+
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
