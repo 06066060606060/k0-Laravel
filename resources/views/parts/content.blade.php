@@ -1141,6 +1141,4 @@ Gagnez des Diamants FACILEMENT avec les sondages !
         </div>
     </section>
 </container>
-<script type="text/javascript" src="https://tags.clickintext.net/UN1zVvElTqOuf" title="Interstitiel"></script>
-
 @endif
