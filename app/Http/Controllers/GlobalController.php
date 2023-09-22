@@ -110,7 +110,7 @@ class GlobalController extends Controller
         $countevent = Games::where('type', 'Event')->where('status', 1)->count();
         
         $starredGames = Games::where('status', 1)
-        ->orderBy('id', 'asc')
+        ->orderBy('id', 'desc')
         ->get();
         
         return view('index', compact('thefree', 'userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starredGames', 'allgames', 'winner', 'concours'));
