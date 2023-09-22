@@ -37,9 +37,6 @@
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
-<script type="text/javascript" src="https://tags.clickintext.net/UNMbsxpNb1xCe" title="Slide In"></script>
-
-
 <!-- ADSENSE -->
 <!--<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4337256114287476"
      crossorigin="anonymous"></script>
@@ -60,6 +57,7 @@
 </script>-->
 
 
+@if (backpack_auth()->check())
 <!--Analytics-->
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VNPT87NKHJ"></script>
@@ -70,6 +68,8 @@
 
   gtag('config', 'G-VNPT87NKHJ');
 </script>
+@else 
+@endif
 
 @vite('resources/css/app.css')
 
