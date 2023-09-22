@@ -114,7 +114,7 @@
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                 <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
 Gagnez des Diamants FACILEMENT avec les sondages ! 
-<iframe width="100%" frameBorder="0" height="2000px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1=&subid_2"></iframe>
+<iframe width="100%" frameBorder="0" min-height="2000px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1=&subid_2"></iframe>
 </div>
 </section>
 </winner>
