@@ -186,13 +186,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
     @endphp
     @if($parrain)
         @php $count = \App\Models\User::where('parrain', request()->input('parrain'))->count(); @endphp
-        @if ($count > 2) 
-        @php header("Location: https://gokdo.com/admin/register");
-        exit; 
-        @endphp
-        @else 
         <center><b>{{__('Parrain :')}} {{ request()->input('parrain') }} </b></center>
-        @endif
     @else
         <div class="alert alert-danger mb-0 mt-4 text-center">
             {{__("Le parrain indiqué n'existe pas")}}
