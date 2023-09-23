@@ -56,6 +56,8 @@
   gtag('config', 'AW-11338958296');
 </script>-->
 
+<meta name="site-verification" content="025856174dae3df55d27158e65fc17c6" />
+
 
 @if (backpack_auth()->check())
 <!--Analytics-->
