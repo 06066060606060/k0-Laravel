@@ -44,7 +44,7 @@
                                          <option value="" {{ $category == ''  ? 'selected' : '' }} >{{__('Toutes les catégories')}}</option>
                                          <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
                                          <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
-                                         <option value="Cryptomonnaie" {{ $category == 'Cryptomonnaie'  ? 'selected' : '' }}>{{__('Cryptomonnaie')}}</option>
+                                         <option value="Codeotop" {{ $category == 'Codeotop'  ? 'selected' : '' }}>{{__('Codeotop')}}</option>
                                          <option value="Electroménager" {{ $category == 'Electroménager'  ? 'selected' : '' }}>{{__('Electroménager')}}</option>
                                          <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>{{__('High Tech')}}</option>
                                          <option value="Jeux Vidéo" {{ $category == 'Jeux Vidéo'  ? 'selected' : '' }}>{{__('Jeux Vidéo')}}</option>

@@ -133,7 +133,7 @@ class CadeauxCrudController extends CrudController
             'options'     => [
                 'Amazon' => 'Amazon',
                 'Paypal' => 'Paypal',                
-                'Cryptomonnaie' => 'Cryptomonnaie',                
+                'Codeotop' => 'Codeotop',                
                 'Electroménager' => 'Electroménager',
                 'High Tech' => 'High Tech',
                 'Jeux Vidéo' => 'Jeux Vidéo',
