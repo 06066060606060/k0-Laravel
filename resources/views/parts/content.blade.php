@@ -113,7 +113,10 @@
             <div
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                 <h2 class="text-2xl font-bold tracking-tight text-center text-gray-100 ">
-Gagnez des Diamants FACILEMENT avec les sondages ! 
+Gagnez des Diamants FACILEMENT avec les sondages !</h2> <br>
+                <h2 class="text-s font-bold tracking-tight text-center text-gray-100 ">
+                Un sondage complété donne aussi 1 point de concours
+                </h2>
 <iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
 </div>
 </section>
