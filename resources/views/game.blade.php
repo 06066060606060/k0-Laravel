@@ -12,7 +12,7 @@
     @endif
     @if(backpack_auth()->user()->jours_gratuits > 0)
     @else
-    <script data-cfasync="false" type="text/javascript" src="//brightadnetwork.com/a/display.php?r=7490122"></script>
+
     @endif
     @if($isMobile == true)
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">

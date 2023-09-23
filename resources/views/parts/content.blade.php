@@ -150,7 +150,7 @@ Gagnez des Diamants FACILEMENT avec les sondages !
 </div>
         </section>
     </winner>
-<script data-cfasync="false" type="text/javascript" src="//brightadnetwork.com/a/display.php?r=7490126"></script>
+
  <container class="mx-auto max-w-7xl" id="win">
         <section>
             <div
