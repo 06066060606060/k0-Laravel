@@ -51,6 +51,7 @@
     @if($game->name == 'Egypt' || $game->name == 'GoFRUITS')
         @if(backpack_auth()->user()->permission_gratuit == 'non')
         Pour débloquer vos parties gratuites vous devez faire un sondage, chaque jour.
+        @endif
         @else
     @if($isMobile == true)
         <iframe id="gameBody" style="min-height:200px;" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
