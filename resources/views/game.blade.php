@@ -52,8 +52,14 @@
         @if(backpack_auth()->user()->permission_gratuit == 'non')
         Pour débloquer vos parties gratuites vous devez faire un sondage, chaque jour.<br><br>
         <iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
-        @endif
         @else
+    @if($isMobile == true)
+        <iframe id="gameBody" style="min-height:200px;" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
+    @else
+        <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
+    @endif
+    @endif
+    @else
     @if($isMobile == true)
         <iframe id="gameBody" style="min-height:200px;" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
     @else
