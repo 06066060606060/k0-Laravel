@@ -58,8 +58,6 @@
 
 <meta name="site-verification" content="025856174dae3df55d27158e65fc17c6" />
 
-<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/20311/a7c64aebf3c696e927bac11924c5bf34e86e9e9a/lib.js"></script>
-
 
 @if (backpack_auth()->check())
 <!--Analytics-->

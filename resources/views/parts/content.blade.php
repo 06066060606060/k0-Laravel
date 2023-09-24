@@ -17,7 +17,6 @@
 @if($locale == 'fr')
 @if(backpack_auth()->user()->jours_gratuits > 0)
 @else
-<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/20311/a7c64aebf3c696e927bac11924c5bf34e86e9e9a/lib.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <style>

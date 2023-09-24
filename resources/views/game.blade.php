@@ -12,7 +12,6 @@
     @endif
     @if(backpack_auth()->user()->jours_gratuits > 0)
     @else
-<script type="text/javascript" src="https://cdn.diclotrans.com/sdk/v1/20311/a7c64aebf3c696e927bac11924c5bf34e86e9e9a/lib.js"></script>
     @endif
     @if($isMobile == true)
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
