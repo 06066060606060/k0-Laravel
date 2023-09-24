@@ -48,10 +48,15 @@
         <button class="w-full px-2 py-2 font-bold rounded-md text-white bg-green-800 border-green-700 active:bg-green-600 hover:bg-green-600 focus:ring-opacity-75" id="fullscreenButton">{{__('JOUER EN MODE PLEIN ECRAN')}}</button>
     </div> 
     <div class="display-block mt-6">
+    @if($game->name == 'Egypt' || $game->name == 'GoFRUITS')
+        @if(backpack_auth()->user()->permission_gratuit == 'non')
+        Pour débloquer vos parties gratuites vous devez faire un sondage, chaque jour.
+        @else
     @if($isMobile == true)
         <iframe id="gameBody" style="min-height:200px;" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
     @else
         <iframe id="gameBody" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
+    @endif
     @endif
     </div>
 </div>
