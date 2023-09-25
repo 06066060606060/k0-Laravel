@@ -50,9 +50,40 @@
     @if($game->name == 'Egypt' || $game->name == 'GoFRUITS')
         @if(backpack_auth()->user()->permission_gratuit == 'non')
         Pour débloquer vos parties gratuites vous devez faire un sondage, chaque jour.<br><br>
-        <iframe style="width:100%; height:500px; border:0; padding:0; margin:0;" scrolling="yes" frameborder="0" src="https://earn.wannads.com/wall?apiKey=65114f7a6bf63413717232&userId={{ backpack_auth()->user()->id }}&aff_sub={{ backpack_auth()->user()->name }}"></iframe>
-        
-        <iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
+        <style>
+        /* Cache initialement les iframes */
+        iframe {
+            display: none;
+            width: 100%;
+            height: 500px;
+            border: 0;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+    <button id="methode1">Méthode 1</button>
+    <button id="methode2">Méthode 2</button>
+        <iframe id="iframe1" style="width:100%; height:500px; border:0; padding:0; margin:0;" scrolling="yes" frameborder="0" src="https://earn.wannads.com/wall?apiKey=65114f7a6bf63413717232&userId={{ backpack_auth()->user()->id }}&aff_sub={{ backpack_auth()->user()->name }}"></iframe>
+
+        <iframe id="iframe2" width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
+        <script>
+        const methode1Button = document.getElementById('methode1');
+        const methode2Button = document.getElementById('methode2');
+        const iframe1 = document.getElementById('iframe1');
+        const iframe2 = document.getElementById('iframe2');
+
+        // Afficher iframe1 lorsque Méthode 1 est cliqué
+        methode1Button.addEventListener('click', () => {
+            iframe1.style.display = 'block';
+            iframe2.style.display = 'none';
+        });
+
+        // Afficher iframe2 lorsque Méthode 2 est cliqué
+        methode2Button.addEventListener('click', () => {
+            iframe1.style.display = 'none';
+            iframe2.style.display = 'block';
+        });
+    </script>
         @else
     @if($isMobile == true)
         <iframe id="gameBody" style="min-height:200px;" src="{{ $link . '?userid=' . $userid . '&locale=' . app()->getLocale() . '&tk=' . csrf_token() . '&user_name=' . $username . '&rubis=' . $rubis . '&gameid=' . $game->id . '&free_game=' . $free . '&parties=' . $parties . '&secret=' . $secret}}" class="w-full overflow-hidden mt-20 h-[667px]" scrolling="no"></iframe>
