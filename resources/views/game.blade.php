@@ -49,7 +49,7 @@
     <div class="display-block mt-6">
     @if($game->name == 'Egypt' || $game->name == 'GoFRUITS')
         @if(backpack_auth()->user()->permission_gratuit == 'non')
-        Pour débloquer vos parties gratuites vous devez faire un sondage, chaque jour.<br><br>
+        Pour débloquer vos parties gratuites vous devez accomplir une mission, cliquez sur une des deux méthôdes proposées.<br><br>
         <style>
         /* Cache initialement les iframes */
         iframe {
@@ -61,7 +61,7 @@
             margin: 0;
         }
     </style>
-        <div class="button-container flex">
+        <div class="button-container flex mb-4">
     <button id="methode1" class="w-full mr-2 text-center flex inline px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Méthode 1</button>
     <button id="methode2" class="w-full ml-2 flex inline text-center px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Méthode 2</button>
        </div>
