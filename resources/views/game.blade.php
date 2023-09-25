@@ -50,6 +50,8 @@
     @if($game->name == 'Egypt' || $game->name == 'GoFRUITS')
         @if(backpack_auth()->user()->permission_gratuit == 'non')
         Pour débloquer vos parties gratuites vous devez faire un sondage, chaque jour.<br><br>
+        <iframe style="width:100%; height:500px; border:0; padding:0; margin:0;" scrolling="yes" frameborder="0" src="https://earn.wannads.com/wall?apiKey=65114f7a6bf63413717232&userId={{ backpack_auth()->user()->id }}&aff_sub={{ backpack_auth()->user()->name }}"></iframe>
+        
         <iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
         @else
     @if($isMobile == true)
