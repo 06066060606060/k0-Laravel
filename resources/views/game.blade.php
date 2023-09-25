@@ -62,8 +62,8 @@
         }
     </style>
         <div class="button-container flex">
-    <button id="methode1" class="w-full flex inline px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Méthode 1</button>
-    <button id="methode2" class="w-full flex inline px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Méthode 2</button>
+    <button id="methode1" class="w-full mr-2 flex inline px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Méthode 1</button>
+    <button id="methode2" class="w-full ml-2 flex inline px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">Méthode 2</button>
        </div>
         <iframe id="iframe2" style="width:100%; height:500px; border:0; padding:0; margin:0;" scrolling="yes" frameborder="0" src="https://earn.wannads.com/wall?apiKey=65114f7a6bf63413717232&userId={{ backpack_auth()->user()->id }}&aff_sub={{ backpack_auth()->user()->name }}"></iframe>
 
