@@ -14,8 +14,6 @@
         $locale = app()->getLocale();
         $descriptionField = 'description_' . $locale;
     @endphp
-<!--@if(backpack_auth()->user()->jours_gratuits > 0)
-@else-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <style>
@@ -59,7 +57,6 @@
         });
     });
     </script>
-<!--@endif-->
 @if($isMobile == true)
 <style>
         .marquee-container {
