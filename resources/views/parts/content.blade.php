@@ -14,9 +14,8 @@
         $locale = app()->getLocale();
         $descriptionField = 'description_' . $locale;
     @endphp
-@if($locale == 'fr')
-@if(backpack_auth()->user()->jours_gratuits > 0)
-@else
+<!--@if(backpack_auth()->user()->jours_gratuits > 0)
+@else-->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
     <style>
@@ -39,7 +38,7 @@
         }
     </style>
     <div class="notification" id="notification">
-        1 Pack de Rubis acheté = Pas de pub pendant 30 jours. <span class="close-btn">X</span>
+        Nouveau concours en cours avec 500€ de gains en jeu ! <span class="close-btn">X</span>
     </div>
 
     <script>
@@ -60,8 +59,7 @@
         });
     });
     </script>
-@endif
-@endif
+<!--@endif-->
 @if($isMobile == true)
 <style>
         .marquee-container {
