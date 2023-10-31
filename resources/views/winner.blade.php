@@ -47,7 +47,7 @@
                     <p class="mb-4 text-base leading-relaxed text-left text-gray-300"> {{ $concours->description_it }}</p>
                     @else
                     @endif    
-                    <div class="">
+                    <!--<div class="">
                             <a href="game/{{ $concours->game_id }}" data-barba-prevent="self"
                                 class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                 <span
@@ -60,7 +60,7 @@
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
                                 <span class="relative">{{__('Jouer')}}</span>
                             </a>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
