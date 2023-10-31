@@ -87,10 +87,10 @@ $isMobile = GlobalController::isMobile();
                         </a>
                         @endif
                     -->
-                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" style="color:#e920e0;" href="vip"
+                    <!--<a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" style="color:#e920e0;" href="vip"
                         @click="isOpen = false"  data-barba-prevent="self">
                         <i class="fa-solid fa-rocket"></i>&nbsp; {{__('VIP')}}
-                    </a>
+                    </a>-->
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
                         @click="isOpen = false"  data-barba-prevent="self">
                         <i class="fa-solid fa-user"></i>&nbsp; {{__('Profil')}}
