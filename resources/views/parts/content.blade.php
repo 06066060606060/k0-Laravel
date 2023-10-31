@@ -421,7 +421,7 @@ Gagnez des Diamants FACILEMENT avec les sondages !</h2>
             </section>
         </container>
     @endif
-
+<!--
  <container class="mx-auto max-w-7xl" id="win">
         <section>
             <div
@@ -568,9 +568,6 @@ Gagnez des Diamants FACILEMENT avec les sondages !</h2>
         </section>
     </container>
 
-
-
-    <!-- JOUEZ UNE FOIS CONNECTE -->
     <container class="mx-auto max-w-7xl" id="win">
         <section>
             <div
@@ -709,7 +706,7 @@ Gagnez des Diamants FACILEMENT avec les sondages !</h2>
                 </div>
             </div>
         </section>
-    </container>
+    </container>-->
 
 
 
