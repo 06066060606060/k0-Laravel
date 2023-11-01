@@ -35,6 +35,10 @@
 		<p class="leading-relaxed text-gray-300">{{__("Les membres qui le désirent peuvent faire un achat via paypal ou carte bleu sur la section pack du menu du site, qui permet l'achat de Rubis supplémentaires. Gokdo reste un site de jeu gratuit sans obligation d'achat.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Rubis')}}</h2>
+		<p class="leading-relaxed text-gray-300">{{__("Les Rubis sont automatiquement remis à 0 tous les 40 jours, le membre doit impérativement jouer l'ensemble de ses Rubis pour ne pas les perdre, aucun recours ne sera possible.")}}</p>
+	</section>
+    <section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Triche et manipulation frauduleuse')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Toute triche ou manipulation frauduleuse du site ou du jeu entraine une suppression du compte membre sans préavis ni remboursement.")}}</p>
 	</section>
