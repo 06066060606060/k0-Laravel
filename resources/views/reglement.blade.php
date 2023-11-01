@@ -61,7 +61,7 @@
     </section>
     <section class="mb-2 relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Jeu Live')}}</h2>
-    <p class="leading-relaxed text-gray-300">{{__("Le jeu Live est présent sur Gokdo, il s'agit d'un jeu de chasse au trésor multijoueur, 3 parties coûtent 20 Rubis (10 Rubis pour 3 pelles et 10 Rubis pour 3 supports).")}}</p>
+    <p class="leading-relaxed text-gray-300">{{__("Le jeu Live est présent sur Gokdo, il s'agit d'un jeu de chasse au trésor multijoueur, 3 parties coûtent 20 Rubis (10 Rubis pour 3 pelles et 10 Rubis pour 3 supports). Le membre doit jouer toutes ses parties dans les 40 jours maximum, les pelles et les supports sont remis à 0 au bout de ces 40 jours.")}}</p>
     </section>
     <section class="mb-2 relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Propriété intellectuelle')}}</h2>
