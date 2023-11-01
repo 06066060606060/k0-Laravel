@@ -23,17 +23,17 @@
 		<p class="leading-relaxed text-gray-300">{{__("Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS. 10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille de jeu est régénérée une fois le gain le plus haut trouvé, certaines cases de la grille GoFRUITS sont perdantes.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le jeu POOL')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Il faut 10 Rubis pour faire une partie sur le jeu Pool. Le jeu multijoueurs Pool est 100% gagnant, il n'y a pas de case perdante. Le but du jeu Pool est de trouver le gain le plus élevé, si le gain le plus élevé est découvert alors une nouvelle grille est générée.")}}</p>
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le jeu Egypt')}}</h2>
+		<p class="leading-relaxed text-gray-300">{{__("Les joueurs reçoivent chaque jour 5 parties gratuites sur le jeu de grattage Egypt. Le but du jeu Egypt est de trouver trois symbole identique ayant une dotation positive.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Les concours mensuels')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Chaque mois, un concours est en place sur Gokdo pour une durée déterminée qui peut être modifiée à tout moment. Chaque concours promet une dotation aux 3000 premiers du classement et leur distribuera un gain que ce soit Carte cadeau Amazon, versement paypal, Coins, Rubis, Diamants, à partir du 3001ème joueur, ils ne gagnent rien.")}}</p>
 	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
+	<!--<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Achats sur Gokdo.com')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Les membres qui le désirent peuvent faire un achat via paypal ou carte bleu sur la section pack du menu du site, qui permet l'achat de Rubis supplémentaires. Gokdo reste un site de jeu gratuit sans obligation d'achat.")}}</p>
-	</section>
+	</section>-->
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Rubis')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Les Rubis sont automatiquement remis à 0 tous les 40 jours, le membre doit impérativement jouer l'ensemble de ses Rubis pour ne pas les perdre, aucun recours ne sera possible.")}}</p>
@@ -56,8 +56,8 @@
     <p class="leading-relaxed text-gray-300">{{__("Des mails peuvent être envoyés par l'administrateur au membre, les membres peuvent contacter le webmaster pour demander l'arrêt d'envoi de mails.")}}</p>
     </section>
     <section class="mb-2 relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Jeu Events')}}</h2>
-    <p class="leading-relaxed text-gray-300">{{__("Le jeu Events est présent chaque mois pour une durée de 15 jours sur le site Gokdo.com, en général c'est un jeu multijoueur à niveau avec jackpot cumulatif qui vous permet de gagner d'avantage de Diamants, Rubis ou Coins. Vous bénéficiez chaque jour d'une partie gratuite !")}}</p>
+    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Jeu Live')}}</h2>
+    <p class="leading-relaxed text-gray-300">{{__("Le jeu Live est présent sur Gokdo, il s'agit d'un jeu de chasse au trésor multijoueur, 3 parties coûtent 20 Rubis (10 Rubis pour 3 pelles et 10 Rubis pour 3 supports).")}}</p>
     </section>
     <section class="mb-2 relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Propriété intellectuelle')}}</h2>
