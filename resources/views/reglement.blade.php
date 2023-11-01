@@ -19,6 +19,10 @@
 		<p class="leading-relaxed text-gray-300">{{__("Gokdo.com est accessible via une application Google Play ou en se rendant sur le site https://gokdo.com. C'est un site de jeu gratuit sans obligation d'achat.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Les Sondages')}}</h2>
+		<p class="leading-relaxed text-gray-300">{{__("Les sondages vous permettent de gagner des Diamants et 1 point de concours par sondage répondu, le ratio est le suivant : lorsque Gokdo gagne 1€ vous en gagné automatiquement 0.20€ (soit 20 000 Diamants), le concours lui propose de vous faire gagner une somme définie dans un temps prédéfini, il faudra être dans les 3 premiers pour espèrer gagner de l'argent.")}}</p>
+	</section>
+	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le jeu GoFRUITS')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS. 10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille de jeu est régénérée une fois le gain le plus haut trouvé, certaines cases de la grille GoFRUITS sont perdantes.")}}</p>
 	</section>
