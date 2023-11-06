@@ -1001,7 +1001,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                         @php $locale = app()->getLocale(); @endphp
                         @if($isMobile == true)
                         @else
-                            <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Gagnez des Diamants et des Pts de concours grâce aux sondages. <br><br>Concours avec 3000 Gagnants, 1000€ de dotation mise en jeu chaque mois !</p>
+                            <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Gagnez des Diamants et des Pts de concours grâce aux sondages. <br><br>Concours avec 3000 Gagnants<br> 1000€ de dotation mise en jeu chaque mois !</p>
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
