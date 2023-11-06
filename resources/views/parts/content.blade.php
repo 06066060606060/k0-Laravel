@@ -1018,7 +1018,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">{{__('Jouez Maintenant')}}</span>
+                                <span class="relative">{{__('Inscription Gratuite')}}</span>
                             </a>
                         </div>
                     </div>
@@ -1133,20 +1133,35 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                     'title' => __('Inscrivez-vous gratuitement'),
                     'description' => __("L'inscription est rapide, gratuite, on vous offre 150 diamants pour bien commencer et vous bénéficiez d'un ticket à gratter chaque jour pour le jeu Egypt ainsi que de 10 parties gratuites par jour pour le jeu multijoueur GoFRUITS.")
                 ],
-                [
+                /*[
                     'icon' => 'fa-solid fa-gamepad fa-2x',
                     'title' => __('Jouer à des jeux'),
                     'description' => __("Sur GoKDO.com vous aurez le choix, nous proposons des jeux multijoueurs, jeux de grille, jeux de chasse au trésor, jeux de pêche, mais également des tickets de jeux à gratter.")
-                ],
+                ],*/
                 [
+                    'icon' => 'fa-solid fa-gamepad fa-2x',
+                    'title' => __('Répondez aux Sondages'),
+                    'description' => __("Répondez aux sondages afin de récolter des Diamants et cumuler des points de concours.")
+                ],
+                /*[
                     'icon' => 'fa-regular fa-gem fa-2x',
                     'title' => __('Gagnez des Diamants, Rubis, Coins'),
                     'description' => __("Tous les jeux que nous proposons vous permettent de gagner des lots tels que des Diamants, Rubis ou encore Coins. Les Diamants et Coins vous seront utile pour les convertir en cadeaux, les Rubis vous permettrons de jouer sur certains jeux.")
-                ],
+                ],*/
                 [
+                    'icon' => 'fa-solid fa-gem fa-2x',
+                    'title' => __('Montez au Classement du Concours'),
+                    'description' => __("1000€ de dotation sur chaque concours mensuel, montez au classement pour pouvoir espèrer gagner de l'argent.")
+                ],
+                /*[
                     'icon' => 'fa-solid fa-gift fa-2x',
                     'title' => __('Convertissez les en cadeaux'),
                     'description' => __("Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.")
+                ]*/
+                [
+                    'icon' => 'fa-solid fa-gift fa-2x',
+                    'title' => __('Gagnez des cadeaux'),
+                    'description' => __("Pour 1€ remporté par Gokdo vous en gagnez 0.20€ en Diamants, ces Diamants sont échangeable contre des cadeaux en boutique. Pour le concours à la fin du concours les gains sont automatiquement attribués !")
                 ]
             ]; @endphp
                 @foreach($steps as $index => $step)
