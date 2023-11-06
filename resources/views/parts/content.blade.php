@@ -1206,7 +1206,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                 <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
                 {{__("Sondages rémunérés")}}</h2><br>
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Pour 1€ gagné via vos sondage sur GoKDO nous reversons automatiquement 0.20€ en Diamants, cumulez les pour pouvoir les échanger contre des cadeaux dans la boutique.<br><br>Chaque sondage complété vous fait remporter 1 point de concours, plus vous répondez aux sondages et plus vous monterez au classement du concours dans lequel est mis en jeu plus de 1000€ Chaque mois !")}}
+                    {{__("Pour 1€ gagné via vos sondage sur GoKDO nous reversons automatiquement 0.20€ en Diamants, cumulez les pour pouvoir les échanger contre des cadeaux dans la boutique.\n\nChaque sondage complété vous fait remporter 1 point de concours, plus vous répondez aux sondages et plus vous monterez au classement du concours dans lequel est mis en jeu plus de 1000€ Chaque mois !")}}
                 </p>
 
                 <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
