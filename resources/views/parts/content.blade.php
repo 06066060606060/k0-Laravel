@@ -970,7 +970,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                         <div class="relative w-full max-w-lg">
                             <div class="relative">
                                 @php 
-                                $imgiUrls = asset('storage/uploads/sondagesphoto.gif'); 
+                                $imgiUrls = asset('storage/uploads/sondagesphoto.png'); 
                                 @endphp
                                 <a href="admin/register">
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
