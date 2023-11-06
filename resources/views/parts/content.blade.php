@@ -975,7 +975,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                                 <a href="admin/register">
                                     <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
                                          src="{{ $imgiUrls }}" width="920" height="420"
-                                         onerror="this.src='/img/empty.png'">
+                                         ">
                                 </a>
                             </div>
                         </div>
