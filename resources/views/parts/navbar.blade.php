@@ -180,10 +180,10 @@ $isMobile = GlobalController::isMobile();
                     <img src="/img/diamond5.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                 </div>
-                <div class="flex px-2">
+<!--                <div class="flex px-2">
                     <img src="/img/gem10.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
-                </div>
+                </div>-->
                 <div class="flex px-2">
                     <img src="/img/coin10.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
