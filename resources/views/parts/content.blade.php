@@ -1181,7 +1181,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
     <section id="video" class="text-gray-400 border-gray-600 body-font">
         <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="w-full text-left">
-                <h3>Qu'est-ce que Gokdo, le site de sondage rémunéré ?</h3>
+                <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Qu'est-ce que Gokdo, le site de sondage rémunéré ?</h2>
                 
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
                     {{__("Les sondages rémunérés sont une façon rapide et pratique d'ajouter un revenu supplémentaire, que vous soyez étudiant, parent, ou simplement à la recherche de moyens pour augmenter votre solde bancaire !")}}
