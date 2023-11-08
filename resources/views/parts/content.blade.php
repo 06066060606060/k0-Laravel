@@ -1193,27 +1193,9 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                 
 
                 <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
-                {{__("Sondages rémunérés")}}</h2><br>
+                {{__("Nos reversements")}}</h2>
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Pour 1€ gagné via vos sondage sur GoKDO nous reversons automatiquement 0.20€ en Diamants, cumulez les pour pouvoir les échanger contre des cadeaux dans la boutique.\n\nChaque sondage complété vous fait remporter 1 point de concours, plus vous répondez aux sondages et plus vous monterez au classement du concours dans lequel est mis en jeu plus de 1000€ Chaque mois !")}}
-                </p>
-
-                <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
-                {{__("Découvrez une variété de jeux captivants")}}</h2><br>
-                <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Chez GoKDO, nous sommes fiers de vous offrir une vaste sélection de jeux divertissants pour tous les goûts. Que vous soyez fan de jeux de réflexion, de jeux de cartes, de jeux de stratégie ou de jeux d'action, notre site regorge de possibilités pour satisfaire votre appétit ludique. Explorez notre catalogue de jeux en constante expansion et découvrez de nouvelles expériences de jeu à chaque visite.")}}
-                </p>
-                <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
-                {{__("Communauté conviviale et compétitive")}}</h2><br>
-                <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Rejoignez notre communauté de joueurs passionnés et partagez votre passion pour les jeux. Interagissez avec d'autres membres, créez des alliances, et mesurez-vous à des adversaires du monde entier. Notre plateforme favorise l'esprit de compétition tout en encourageant une atmosphère conviviale où vous pouvez discuter de stratégies, échanger des conseils, et nouer de nouvelles amitiés.")}}
-                </p>
-                <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
-                {{__("Récompenses et surprises constantes")}}</h2><br>
-                <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">    
-                    {{__("Chez GoKDO, nous aimons récompenser nos joueurs fidèles. En plus des 150 Diamants gratuits offerts lors de votre inscription, vous pouvez gagner des récompenses supplémentaires en participant à des tournois, en accomplissant des défis, ou simplement en jouant régulièrement. Restez à l'affût des cadeaux surprises, des événements spéciaux et des promotions exclusives qui vous permettront de maximiser votre expérience de jeu tout en augmentant vos chances de remporter des prix incroyables.")}}
-                    <br>
-                    {{__("Enrichissez votre quotidien en jouant à nos jeux gratuits, faites partie d'une communauté dynamique, et profitez des opportunités de gagner des récompenses exceptionnelles. Chez GoKDO, nous sommes déterminés à vous offrir une expérience de jeu inoubliable. Rejoignez-nous dès aujourd'hui et plongez dans le monde passionnant de nos jeux en ligne gratuits !")}}
+                    {{__("Chaque fois que Gokdo gagne 1€ grâce aux enquêtes, nous vous reversons automatiquement 50% de cette somme, soit 0.50€, sous forme de Diamants, notre monnaie virtuelle. Vous pourrez ensuite échanger ces Diamants en boutique contre de véritables cadeaux ou même de l'argent. Découvrez comment maximiser vos récompenses avec Gokdo !")}}
                 </p>
                 </div>
         </div>
