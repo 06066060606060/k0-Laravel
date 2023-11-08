@@ -1144,15 +1144,10 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                     'title' => __('Concours mensuel sur le parrainage'),
                     'description' => __("Gagnez jusqu'à 200€ lors de chaque concours mensuel pour les 5 premiers participants. Augmentez vos chances de gagner davantage en parrainant de nouveaux membres, car chaque membre parrainé compte comme 1 point de concours au classement. Décuplez vos opportunités de gagner de l'argent avec nous !")
                 ],
-                /*[
-                    'icon' => 'fa-solid fa-gift fa-2x',
-                    'title' => __('Convertissez les en cadeaux'),
-                    'description' => __("Notre site offre une variété de cadeaux attrayants, tels que la Playstation 5, le Cookéo, la plancha, la barre de son, les Rubis, ainsi que des cartes-cadeaux Amazon et de la cryptomonnaie (crypto satoshi). De plus, vous pouvez retirer votre gain via Paypal gratuitement. Cette offre est une excellente opportunité pour les joueurs de remporter des prix incroyables tout en profitant d'une expérience de jeu amusante et excitante.")
-                ]*/
                 [
                     'icon' => 'fa-solid fa-gift fa-2x',
-                    'title' => __('Gagnez des cadeaux'),
-                    'description' => __("Pour 1€ remporté par Gokdo vous en gagnez 0.20€ en Diamants, ces Diamants sont échangeable contre des cadeaux en boutique. Pour le concours à la fin du concours les gains sont automatiquement attribués !")
+                    'title' => __('Convertissez vos Diamants en KDO'),
+                    'description' => __("Transformez vos Diamants en boutique contre des cartes-cadeaux (Amazon, Fnac, Micromania...), paiements via PayPal, ou même en KDO exclusifs tels que l'iPhone 15, la PlayStation 5, et d'autres surprises alléchantes ! Découvrez comment maximiser la valeur de vos Diamants aujourd'hui !")
                 ]
             ]; @endphp
                 @foreach($steps as $index => $step)
