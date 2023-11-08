@@ -1141,8 +1141,8 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                 ],
                 [
                     'icon' => 'fa-solid fa-gem fa-2x',
-                    'title' => __('Montez au Classement du Concours'),
-                    'description' => __("1000€ de dotation sur chaque concours mensuel, montez au classement pour pouvoir espèrer gagner de l'argent.")
+                    'title' => __('Concours mensuel sur le parrainage'),
+                    'description' => __("Gagnez jusqu'à 200€ lors de chaque concours mensuel pour les 5 premiers participants. Augmentez vos chances de gagner davantage en parrainant de nouveaux membres, car chaque membre parrainé compte comme 1 point de concours au classement. Décuplez vos opportunités de gagner de l'argent avec nous !")
                 ],
                 /*[
                     'icon' => 'fa-solid fa-gift fa-2x',
