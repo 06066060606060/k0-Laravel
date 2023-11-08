@@ -38,7 +38,7 @@ $isMobile = GlobalController::isMobile();
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" data-barba-prevent="self" href="/"
                     @click="isOpen = false">
                     @if (backpack_auth()->check())
-                        <i class="fa-solid fa-gamepad"></i>&nbsp; {{__('Jeux')}}
+                        <i class="fa-solid fa-poll"></i>&nbsp; {{__('Sondages')}}
                     @else
                         <i class="fa-solid fa-house"></i>&nbsp; {{__('Accueil')}}
                     @endif
