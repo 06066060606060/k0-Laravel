@@ -19,7 +19,7 @@
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title text-l">{{__("Qu'est-ce qu'un Diamant ?")}}</h2>
-                        <div class="px-6 py-6 text-white">{{__("Le Diamant est la principale monnaie virtuelle du site. Les Diamants se cumulent lorsque vous jouez sur les jeux et vous permettent de commander des Cadeaux. Vous pouvez obtenir des Diamants en jouant aux jeux GoFRUITS, POOL mais également via le concours et les Events. Les Diamants que vous gagnez sont stockés dans votre Compte Joueur. Pour consulter votre Compte Joueur, votre historique de gains et les Cadeaux que vous avez gagnés et commandés, il vous suffit de cliquer sur 'Profil' en haut à droite de la page. Il est important de noter que les Diamants n'ont aucune valeur monétaire.")}}</div>
+                        <div class="px-6 py-6 text-white">{{__("Le Diamant est la principale monnaie virtuelle du site, 1€ équivaut à 50 000 Diamants. Les Diamants se cumulent lorsque vous complétez les sondages, ces Diamants sont échangeable en boutique contre les récompenses.")}}</div>
                     </div>
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
