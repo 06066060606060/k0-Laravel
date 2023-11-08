@@ -1001,7 +1001,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                         @php $locale = app()->getLocale(); @endphp
                         @if($isMobile == true)
                         @else
-                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Participez à nos sondages rémunérés pour accumuler des Diamants.<br><br> Ne manquez pas notre concours de parrainage avec 3000 gagnants chaque mois, offrant une dotation totale de plus de 200€ !</p>
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Participez à nos sondages rémunérateurs pour accumuler des Diamants, nous reversons automatiquement 50% de nos bénéfices.<br><br> Ne manquez pas notre concours de parrainage avec 3000 gagnants chaque mois, offrant une dotation totale de plus de 200€ !</p>
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
