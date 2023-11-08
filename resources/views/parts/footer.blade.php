@@ -110,7 +110,7 @@
     </div>
     <div class="bg-gray-700">
         <div class="container flex flex-col flex-wrap px-5 py-4 mx-auto sm:flex-row">
-            <p class="text-sm text-center text-white sm:text-left">© 2023 GoKDO - {{__('Tous Droits Réservés')}}</p> 
+            <p class="text-sm text-center text-white sm:text-left">© 2023 GoKDO - Gagner de l'argent avec des sondages {{__('Tous Droits Réservés')}}</p> 
         </div>
     </div>
 </container>
