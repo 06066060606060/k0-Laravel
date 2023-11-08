@@ -14,7 +14,7 @@
                 @else
                 mb-3
                 @endif        
-                 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Jeux en ligne Multijoueurs')}}</h2>
+                 text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Sondages rémunérés')}}</h2>
             </a>
             <p class="mt-2 
             @if($isMobile == true)
@@ -22,8 +22,8 @@
                 @else
                 text-sm
                 @endif            
-             text-gray-400">{{__("Gagnez des cadeaux en jouant !")}}<br>
-                {{__("GoKDO est un site de jeux gratuits sans obligation d'achat.")}}
+             text-gray-400">{{__("Sondages rémunérateurs")}}<br>
+                {{__("GoKDO est un site de sondages rémunérés totalement GRATUIT.")}}
             </p>
         </div>
         <div class="flex flex-wrap flex-grow 
