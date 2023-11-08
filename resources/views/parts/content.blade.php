@@ -1132,23 +1132,13 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                 [
                     'icon' => 'fa-solid fa-user fa-2x',
                     'title' => __('Inscrivez-vous gratuitement'),
-                    'description' => __("L'inscription est rapide, gratuite, on vous offre 150 diamants pour bien commencer et vous bénéficiez d'un ticket à gratter chaque jour pour le jeu Egypt ainsi que de 10 parties gratuites par jour pour le jeu multijoueur GoFRUITS.")
+                    'description' => __("Inscrivez-vous rapidement et gratuitement, recevez 150 diamants pour bien commencer votre parcours vers les sondages rémunérés en ligne. Commencez à gagner de l'argent avec votre opinion dès aujourd'hui !")
                 ],
-                /*[
-                    'icon' => 'fa-solid fa-gamepad fa-2x',
-                    'title' => __('Jouer à des jeux'),
-                    'description' => __("Sur GoKDO.com vous aurez le choix, nous proposons des jeux multijoueurs, jeux de grille, jeux de chasse au trésor, jeux de pêche, mais également des tickets de jeux à gratter.")
-                ],*/
                 [
                     'icon' => 'fa-solid fa-gamepad fa-2x',
                     'title' => __('Répondez aux Sondages'),
-                    'description' => __("Répondez aux sondages afin de récolter des Diamants et cumuler des points de concours.")
+                    'description' => __("Participez aux sondages pour accumuler des Diamants. Nous partageons 50% de nos revenus, ce qui signifie que lorsque nous gagnons 1€, vous gagnez 0.50€ en Diamants, que vous pouvez échanger dans notre boutique en ligne.")
                 ],
-                /*[
-                    'icon' => 'fa-regular fa-gem fa-2x',
-                    'title' => __('Gagnez des Diamants, Rubis, Coins'),
-                    'description' => __("Tous les jeux que nous proposons vous permettent de gagner des lots tels que des Diamants, Rubis ou encore Coins. Les Diamants et Coins vous seront utile pour les convertir en cadeaux, les Rubis vous permettrons de jouer sur certains jeux.")
-                ],*/
                 [
                     'icon' => 'fa-solid fa-gem fa-2x',
                     'title' => __('Montez au Classement du Concours'),
