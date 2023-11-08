@@ -1181,11 +1181,14 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
     <section id="video" class="text-gray-400 border-gray-600 body-font">
         <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="w-full text-left">
-                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeux gratuits')}}</h1>
+                <h3>Qu'est-ce que Gokdo, le site de sondage rémunéré ?</h3>
+                
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Notre site GoKDO vous offre la possibilité de jouer gratuitement à des jeux divertissants et de remporter des cadeaux !")}}
-                    <br>
-                    <a href="admin/register" class="text-blue-500 prevent">{{__("L'inscription est gratuite")}}</a> {{__("et vous bénéficiez même de 150 Diamants offerts dès votre inscription. Cette offre est une excellente occasion de s'amuser tout en ayant la chance de remporter des cadeaux intéressants. En jouant sur notre site, vous pouvez profiter d'une expérience de jeu passionnante tout en augmentant vos chances de gagner de superbes prix.")}}
+                    {{__("Les sondages rémunérés sont une façon rapide et pratique d'ajouter un revenu supplémentaire, que vous soyez étudiant, parent, ou simplement à la recherche de moyens pour augmenter votre solde bancaire !")}}
+                    <br><br>
+                    {{__("Pour démarrer, répondez à quelques questions simples pour créer votre profil - vous serez ensuite jumelé avec des sondages rémunérés qui vous conviennent. Après avoir partagé vos opinions en répondant aux sondages, vous recevrez des récompenses en argent pour votre temps et votre contribution !")}}
+                    <br><br>
+                    {{__("Le processus est incroyablement simple. Vous pourrez faire entendre votre voix tout en renflouant vos finances en un rien de temps.")}}
                 </p>
                 
 
