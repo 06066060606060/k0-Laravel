@@ -3,8 +3,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Primary Meta Tags -->
 <meta name="title" content="Gokdo">
-<title>{{__('Jeux gratuits multijoueurs pour gagner des cadeaux !')}}</title>
-<meta name="description" content="{{__("Jeux multijoueurs gratuits, gains d'argent et cadeaux ! Concours excitants, inscrivez-vous maintenant.")}}">
+<title>{{__('Participez à des Sondages Rémunérés et Gagnez de l\'Argent en Ligne : Votre Avis Compte !')}}</title>
+<meta name="description" content="{{__("Gagnez de l'argent en partageant votre opinion avec des sondages rémunérés en ligne. Inscrivez-vous dès maintenant pour des récompenses en échange de vos précieux avis. Votre voix compte, tout comme votre rémunération !")}}">
 <meta name="keywords" content="{{__("jeux, jeux gratuit, jeux fr, jeux gratuits, gagner, gagner des cadeaux et de l'argent cash, gagner de l'argent cash, argent, cash, jeu, jeu en ligne, jeux flash, jeux gratuits en ligne, grattez, jeux de grattage")}}" />
 <!--<meta name="identifier-url" content="https://{{ app()->getLocale() }}.gokdo.com" />-->
 <meta name="identifier-url" content="https://gokdo.com" />
