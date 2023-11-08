@@ -44,11 +44,8 @@
                                          <option value="" {{ $category == ''  ? 'selected' : '' }} >{{__('Toutes les catégories')}}</option>
                                          <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
                                          <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
-                                         <option value="Codeotop" {{ $category == 'Codeotop'  ? 'selected' : '' }}>{{__('Codeotop')}}</option>
-                                         <option value="Electroménager" {{ $category == 'Electroménager'  ? 'selected' : '' }}>{{__('Electroménager')}}</option>
                                          <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>{{__('High Tech')}}</option>
                                          <option value="Jeux Vidéo" {{ $category == 'Jeux Vidéo'  ? 'selected' : '' }}>{{__('Jeux Vidéo')}}</option>
-                                         <option value="Rubis" {{ $category == 'Rubis'  ? 'selected' : '' }}>{{__('Rubis')}}</option>
                                      </select>
                                      <div class="absolute inset-y-0 right-0 flex items-center px-2 pt-2 text-gray-500 transition pointer-events-none hover:text-gray-700">
                                          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
