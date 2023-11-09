@@ -11,6 +11,123 @@
     @else
         <div class="z-0 one"></div>
     @endif
+            @if($isMobile)
+                <container class="mx-auto max-w-7xl" id="win">
+                    <section>
+                        <div
+                            class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                            <div class="flex flex-col w-full text-center">
+                                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
+                            </div>
+                            <table class="mt-2 mx-auto m-full text-xs">
+                                <tbody>
+                                <tr>
+                                    <td class="pr-2">
+                                        <i class="fas fa-2x fa-user-group text-white"></i>
+                                    </td>
+                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 1
+                                        <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2 inline-block"> de concours {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                        <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
+                                              data-barba-prevent="self"
+                                              id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
+                                        <i style="color: orange; font-size: 13px;">{{__("Triche = Exclusion du site")}}</i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </container>
+            @else
+                <container class="mx-auto max-w-7xl" id="win">
+                    <section>
+                        <div
+                            class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                            <div class="flex flex-col w-full text-center">
+                                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Parrainage')}}</h1>
+                            </div>
+                            <table class="mt-2 mx-auto m-full text-s">
+                                <tbody>
+                                <tr>
+                                    <td class="pr-4">
+                                        <i class="fas fa-3x fa-user-group text-white"></i>
+                                    </td>
+                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 1
+                                        <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2 inline-block"> de concours {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                        <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
+                                              data-barba-prevent="self"
+                                              id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
+                                        <i style="color: orange; font-size: 13px;">{{__("Triche = Exclusion du site")}}</i>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </container>
+            @endif
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    @php
+        $locale = app()->getLocale();
+        $notificationText = '';
+        $errorText = '';
+        switch ($locale) {
+            case 'fr':
+                $notificationText = "Le lien a été copié !";
+                $errorText = "Erreur lors de la copie du lien.";
+                break;
+            case 'en':
+                $notificationText = "Link copied !";
+                $errorText = "Error when copy link";
+                break;
+            case 'es':
+                $notificationText = "¡Enlace copiado!";
+                $errorText = "Error al copiar!";
+                break;
+            case 'de':
+                $notificationText = "Link kopiert!";
+                $errorText = "Fehler beim Kopieren!";
+                break;
+            case 'it':
+                $notificationText = "Link copiato!";
+                $errorText = "Errore durante la copia!";
+                break;
+            default:
+                break;
+        }
+    @endphp
+
+    <script>
+        document.getElementById("copyLink").addEventListener("click", function (event) {
+            event.preventDefault();
+            var link = this.href;
+            navigator.clipboard.writeText(link)
+                .then(function () {
+                    Toastify({
+                        text: "{{ $notificationText }}",
+                        duration: 3000,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "linear-gradient(to right, #4bb543, #006400)",
+                        className: "toastify-custom",
+                    }).showToast();
+                })
+                .catch(function () {
+                    Toastify({
+                        text: "{{ $errorText }}",
+                        duration: 3000,
+                        close: true,
+                        gravity: "top",
+                        position: "right",
+                        backgroundColor: "#ff6347",
+                        className: "toastify-custom",
+                    }).showToast();
+                });
+        });
+    </script>
+
   <div
             class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
@@ -47,8 +164,8 @@
                     <p class="mb-4 text-base leading-relaxed text-left text-gray-300"> {{ $concours->description_it }}</p>
                     @else
                     @endif    
-                    <!--<div class="">
-                            <a href="game/{{ $concours->game_id }}" data-barba-prevent="self"
+                    <div class="">
+                            <a href="#classement" data-barba-prevent="self"
                                 class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group">
                                 <span
                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
@@ -58,9 +175,9 @@
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">{{__('Jouer')}}</span>
+                                <span class="relative">{{__('Voir le classement')}}</span>
                             </a>
-                    </div>-->
+                    </div>
 
                 </div>
             </div>
