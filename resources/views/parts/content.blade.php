@@ -1042,7 +1042,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                 [
                     'icon' => 'fa-solid fa-user fa-2x',
                     'title' => __('Inscrivez-vous gratuitement'),
-                    'description' => __("Inscrivez-vous rapidement et gratuitement, recevez 150 diamants pour bien commencer votre parcours vers les sondages rémunérés en ligne. Commencez à gagner de l'argent avec votre opinion dès aujourd'hui !")
+                    'description' => __("Inscrivez-vous rapidement et gratuitement, recevez 7 diamants pour bien commencer votre parcours vers les sondages rémunérés en ligne. Commencez à gagner de l'argent avec votre opinion dès aujourd'hui !")
                 ],
                 [
                     'icon' => 'fa-solid fa-gamepad fa-2x',
