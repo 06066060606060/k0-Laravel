@@ -46,18 +46,9 @@ class UserCrudController extends CrudController
         CRUD::column('language')->label('Lang');
         CRUD::column('email');
         CRUD::column('trophee1')->label('Diamants');
-        CRUD::column('trophee2')->label('Rubis');
         CRUD::column('trophee3')->label('Pièces');
-        CRUD::column('global_score')->label('Score Global');
-        CRUD::column('nb_achats_mini')->label('Mini');
-        CRUD::column('nb_achats_starter')->label('Starter');
-        CRUD::column('nb_achats_booster')->label('Booster');
-        CRUD::column('nb_achats_maxi')->label('Maxi');
-        CRUD::column('nb_achats_tera')->label('Tera');
-        CRUD::column('nb_achats_expert')->label('Expert');
-        CRUD::column('pelle1')->label('Pelle');
-        CRUD::column('support1')->label('Support');
-        CRUD::column('jours_gratuits')->label('Jours sans pub');
+        CRUD::column('parties')->label('Sondages');
+        CRUD::column('global_score')->label('Parrainages');
         $this->crud->enableExportButtons();
        
 
@@ -123,19 +114,14 @@ class UserCrudController extends CrudController
         CRUD::field('name');
         CRUD::field('email');
         CRUD::field('trophee1')->label('Diamants')->type('number');
-        CRUD::field('trophee2')->label('Rubis')->type('number');
         $this->crud->addField([   // select_from_array
             'name'        => 'trophee3',
             'label'       => "Pièces",
             'type'        => 'number',
             'attributes' => ["step" => "0.01"], // allow decimals
             ]);
-            CRUD::field('jours_gratuits')->label('Jours gratuits accordés')->type('number');
-            CRUD::field('partie_egypt')->label('Partie Egypt')->type('number');
-            CRUD::field('parties')->label('Partie GoFRUITS')->type('number');
-            CRUD::field('pelle1')->label('Pelle TRESOR')->type('number');
-            CRUD::field('support1')->label('Support TRESOR')->type('number');
-            CRUD::field('jours_gratuits')->label('Jours sans pub')->type('number');
+            CRUD::field('parties')->label('Sondages')->type('number');
+            CRUD::field('global_score')->label('Parrainages')->type('number');
 
         $this->crud->addField([   // select_from_array
             'name'        => 'role',
