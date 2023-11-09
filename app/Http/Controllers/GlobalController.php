@@ -327,10 +327,13 @@ if ($onegame->isEmpty()) {
                 // Supprime tous les scores concours
                 User::update(['global_score' => 0]);
             }
-            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
+
         } else {
-            return view('winner', compact('lesderniers_gagnants_concours'));
+            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
         }
+    } else {
+        // Le cas où aucun concours n'a été trouvé
+        return view('winner', compact('lesderniers_gagnants_concours'));
     }
     
     public function store()
