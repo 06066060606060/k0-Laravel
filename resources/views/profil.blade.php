@@ -274,7 +274,7 @@
                                             {{ $joueur->name }}
                                         </td>
                                         <td style="width:50%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
-                                        1 <img src="/img/gem10.png"  style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+                                        1 <img src="/img/trophy.png"  class="w-4 h-4 ml-2 inline-block">
                                         </td>
                                     </tr>
                                 @empty
