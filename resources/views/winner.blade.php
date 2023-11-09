@@ -55,7 +55,7 @@
                                     <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 1
                                         <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2 inline-block"> de concours {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
                                         <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
-                                              data-barba-prevent="self"
+                                              class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group" data-barba-prevent="self"
                                               id="copyLink"><span
                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
                                 <span
