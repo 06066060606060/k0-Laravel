@@ -74,7 +74,7 @@
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
                      <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">{{__('Classement Concours')}}:</h1>
-                     <p>Attention: il faudra impérativement que chaque membre parrainé remplissent 1 sondage pour qu'il soit prit en compte dans le classement, lors de la fin du concours des vérifications seront effectuées et chaque membre parrainé qui n'aura pas complété au moins 1 sondage sera retiré des points de concours du parrain.</p>
+                     <p class="text-gray-300">Attention: il faudra impérativement que chaque membre parrainé remplissent 1 sondage pour qu'il soit prit en compte dans le classement, lors de la fin du concours des vérifications seront effectuées et chaque membre parrainé qui n'aura pas complété au moins 1 sondage sera retiré des points de concours du parrain.</p>
                      <section class="text-gray-300 body-font">
                          <div class="container py-8 mx-auto">
                                  <div
