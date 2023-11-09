@@ -5,7 +5,7 @@
 @php  $users = GlobalController::getUsers();@endphp
 @php  $games = GlobalController::getGames();@endphp
 @php  $sommediamants = GlobalController::getSommeDiamants();@endphp
-@php  $sommerubis = GlobalController::getSommeRubis();@endphp
+@php  $sommesondages = GlobalController::getSommeSondages();@endphp
 @php  $sommecoins = GlobalController::getSommeCoins();@endphp
 @extends(backpack_view('blank'))
 @section('content')
@@ -31,12 +31,12 @@
                                                     Diamants:
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
-                                                    Rubis:
-                                                </th>
-                                                <th scope="col"
                                                     class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase md:block">
                                                     Coins:
+                                                </th>
+                                                <th scope="col"
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
+                                                    Sondages:
                                                 </th>
                                             </tr>
                                         </thead>
@@ -49,15 +49,15 @@
                                                     </div>
                                                 </td>
                                                 <td
-                                                    class="p-4 text-sm font-normal text-center text-gray-900 time-container ">
-                                                    <div class="flex justify-center">
-                                                        {{ $sommerubis }}
-                                                    </div>
-                                                </td>
-                                                <td
                                                     class="p-4 text-sm font-normal text-center whitespace-nowrap rate-container md:block">
                                                     <div class="flex justify-center">
                                                         {{ $sommecoins }}€
+                                                    </div>
+                                                </td>
+                                                <td
+                                                    class="p-4 text-sm font-normal text-center text-gray-900 time-container ">
+                                                    <div class="flex justify-center">
+                                                        {{ $sommesondages }}
                                                     </div>
                                                 </td>
                                             </tr>

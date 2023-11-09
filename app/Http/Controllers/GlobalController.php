@@ -1093,10 +1093,10 @@ public function winner()
         return number_format($sommediamants, 0, ',', ' ');
     }
 
-    static function getSommeRubis()
+    static function getSommeSondages()
     {
-       $sommerubis = User::where('name', '!=', 'Admin')->sum('trophee2');
-        return number_format($sommerubis, 0, ',', ' ');
+       $sommesondages = User::where('name', '!=', 'Admin')->sum('parties');
+        return number_format($sommesondages, 0, ',', ' ');
     }
 
     static function getSommeCoins()
