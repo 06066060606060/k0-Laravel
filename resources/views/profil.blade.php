@@ -79,10 +79,6 @@
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                         </div>
                         <div class="flex py-2">
-                            <img src="/img/gem10.png" class="w-10 h-8">
-                            <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
-                        </div>
-                        <div class="flex py-2">
                             <img src="/img/coin10.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
                         </div>
@@ -116,65 +112,6 @@
             </div>
             <div class="flex flex-col w-full py-2">
 
-                <h1 class="pt-0 text-lg font-bold text-white">{{__('Mes Packs achetés')}}:</h1>
-                <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
-                    <div class="overflow-x-auto rounded-t-lg">
-                        <table class="min-w-full py-2 text-sm divide-y divide-gray-200 ">
-                            <thead class="bg-gray-100 rounded-t-lg">
-                                <tr>
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        {{__('Type')}}
-                                    </th>
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        {{__('Prix')}}
-                                    </th>
-
-                                    <th class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        {{__('Status')}}
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="divide-y divide-gray-500">
-                                @forelse ($paiements as $paiement)
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{ $paiement->pack->name }}
-                                        </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> {{ $paiement->type }} €
-                                        </td>
-
-
-
-                                        @if ($paiement->status == 'Non')
-                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
-                                                <p
-                                                    class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-red-400 md:flex">
-                                                    {{__('En attente')}}</p>
-                                            </td>
-                                        @elseif ($paiement->status == 'Oui')
-                                            <td class="px-4 py-2 text-gray-300 whitespace-nowrap">
-                                                <p class="w-20 px-2 py-2 font-bold text-center text-gray-700 bg-blue-400">
-                                                    {{__('Payée')}}</p>
-                                            </td>
-                                        @endif
-
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{__('Aucune recharge effectuée')}}
-                                        </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"></td>
-                                    </tr>
-                                @endforelse
-
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
                 <h1 class="pt-3 text-lg font-bold text-white">{{__('Mes commandes')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
