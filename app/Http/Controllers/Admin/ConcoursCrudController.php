@@ -56,8 +56,6 @@ class ConcoursCrudController extends CrudController
         
         CRUD::column('name')->label('Titre');
         $this->getFieldsData();
-        CRUD::column('cadeau_id')->label('Cadeaux');
-        CRUD::column('game_id')->label('Jeux');
         $this->crud->addColumn([
             'name'    => 'type',
             'label'   => 'Type',
