@@ -293,12 +293,12 @@ Complétez des sondages rémunérés !</h2>
                         <div class="relative w-full max-w-lg">
                             <div class="relative">
                 @if($isMobile == true)
-<video width="100%" height="150" controls>
+<video width="100%" height="150" controls autoplay loop>
     <source src="/img/sondages.mp4" type="video/mp4">
     Votre navigateur ne prend pas en charge la balise vidéo.
 </video>
 @else
-<video width="560" height="315" controls>
+<video width="560" height="315" controls autoplay loop>
     <source src="/img/sondages.mp4" type="video/mp4">
     Votre navigateur ne prend pas en charge la balise vidéo.
 </video>
