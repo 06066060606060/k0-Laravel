@@ -199,7 +199,7 @@ public function winner()
         $userid = backpack_auth()->id(); // retourne l'id
         $lejoueur = backpack_auth()->user()->name;
         $count = User::where('parrain', backpack_auth()->user()->name)->count();
-    @endif
+    }
     // Score effectués, triés par id desc
     if ($concours) {
         if ($concours->active == 1) {
