@@ -1069,6 +1069,14 @@ public function winner()
         return $users;
     }
 
+    static function getUsersscore()
+    {
+    //retrive all users
+    $usersscore = User::orderBy('parties', 'desc')->get();
+    return $usersscore;
+    }
+
+
     static function getSessions()
     {
         //retrive all users
