@@ -75,22 +75,6 @@ $isMobile = GlobalController::isMobile();
                     <i class="fa-solid fa-gift"></i>&nbsp; {{__('Cadeaux')}}
                 </a>
                 @if (backpack_auth()->check())
-                  <!--@if($isMobile == true)
-                    <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-red-600"  style="color:red;" href="pack"
-                        @click="isOpen = false" data-barba-prevent="self">
-                        <i class="fa-regular fa-gem" style="color:red;"></i>&nbsp; {{__('+ de parties')}} &nbsp;<i class="fa-regular fa-gem" style="color:red;"></i>
-                        </a>
-@else
-<a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600"  style="color:yellow;" href="pack"
-                        @click="isOpen = false" data-barba-prevent="self">
-                        <i class="fa-regular fa-gem" style="color:yellow;"></i>&nbsp; {{__('+ de parties')}} &nbsp;<i class="fa-regular fa-gem" style="color:yellow;"></i>
-                        </a>
-                        @endif
-                    -->
-                    <!--<a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" style="color:#e920e0;" href="vip"
-                        @click="isOpen = false"  data-barba-prevent="self">
-                        <i class="fa-solid fa-rocket"></i>&nbsp; {{__('VIP')}}
-                    </a>-->
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
                         @click="isOpen = false"  data-barba-prevent="self">
                         <i class="fa-solid fa-user"></i>&nbsp; {{__('Profil')}}
@@ -183,10 +167,6 @@ $isMobile = GlobalController::isMobile();
                     <img src="/img/diamond5.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
                 </div>
-<!--                <div class="flex px-2">
-                    <img src="/img/gem10.png" class="w-8 h-6">
-                    <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee2 }}</p>
-                </div>-->
                 <div class="flex px-2">
                     <img src="/img/coin10.png" class="w-8 h-6">
                     <p class="pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
