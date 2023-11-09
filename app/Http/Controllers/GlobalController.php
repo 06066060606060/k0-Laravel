@@ -1039,13 +1039,6 @@ public function winner()
 
         // Création de la notification
         $admin = User::where('role', 'admin')->first();
-        $admin->notify(
-            new DatabaseNotification(
-                'info', // Type de notification : info / success / warning / error
-                'Désinscription',
-                'Désinscription de : ' . $thisuser->email
-            )
-        );
 
         $thisuser->delete();
         $request->session()->flush();

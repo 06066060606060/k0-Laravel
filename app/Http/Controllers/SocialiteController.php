@@ -89,12 +89,5 @@ class SocialiteController extends Controller
     private function createNewUserNotification($email)
     {
         $admin = User::where('role', 'admin')->first();
-        $admin->notify(
-            new DatabaseNotification(
-                'info',
-                'Nouvelle Inscription',
-                'Nouvelle Inscription: ' . $email
-            )
-        );
     }
 }
