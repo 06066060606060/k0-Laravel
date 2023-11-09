@@ -293,48 +293,15 @@ Complétez des sondages rémunérés !</h2>
                         <div class="relative w-full max-w-lg">
                             <div class="relative">
                 @if($isMobile == true)
-                                <div id="video-container">
-    <iframe id="ytplayer" width="100%" height="150" src="https://www.youtube.com/embed/reueXvBe3bU?si=WtRIUeXrewrv2yYG&autoplay=1&mute=1" title="Gokdo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-<script>
-// Attendez que la fenêtre soit chargée
-window.onload = function() {
-    // Récupérez l'iframe et son conteneur
-    var player = document.getElementById("ytplayer");
-    var container = document.getElementById("video-container");
-
-    // Écoutez l'événement 'ended' (fin de la vidéo) et appelez la fonction loopVideo
-    player.addEventListener("ended", loopVideo);
-
-    // Fonction pour réinitialiser la vidéo
-    function loopVideo() {
-        player.currentTime = 0; // Réinitialiser la position de lecture à 0
-        player.play(); // Redémarrer la vidéo
-    }
-};
-</script>
+<video width="100%" height="150" controls>
+    <source src="/img/sondages.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la balise vidéo.
+</video>
 @else
-<div id="video-container">
-    <iframe id="ytplayer" width="560" height="315" src="https://www.youtube.com/embed/reueXvBe3bU?si=WtRIUeXrewrv2yYG&autoplay=1&mute=1" title="Gokdo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-</div>
-
-<script>
-// Attendez que la fenêtre soit chargée
-window.onload = function() {
-    // Récupérez l'iframe et son conteneur
-    var player = document.getElementById("ytplayer");
-    var container = document.getElementById("video-container");
-
-    // Écoutez l'événement 'ended' (fin de la vidéo) et appelez la fonction loopVideo
-    player.addEventListener("ended", loopVideo);
-
-    // Fonction pour réinitialiser la vidéo
-    function loopVideo() {
-        player.currentTime = 0; // Réinitialiser la position de lecture à 0
-        player.play(); // Redémarrer la vidéo
-    }
-};
-</script>
+<video width="560" height="315" controls>
+    <source src="/img/sondages.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la balise vidéo.
+</video>
 @endif
 
                             </div>
