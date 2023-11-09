@@ -186,38 +186,40 @@ if ($onegame->isEmpty()) {
     }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 
-    // Fonction du concours
-    public function winner()
-    {
-        $gains = Gains::all(); // récup tous les gains du concours
-        $concours = Concours::All()->last(); //Selectionne le concours
-        $lesscoresdeconcours = User::where('global_score', '>', 0)->count();
-        $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
-        $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
-        $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
-        
-        //Score effectués ordre par id desc
+public function winner()
+{
+    $gains = Gains::all(); // récupère tous les gains du concours
+    $concours = Concours::latest()->first(); // Sélectionne le dernier concours
+    $lesscoresdeconcours = User::where('global_score', '>', 0)->count();
+    $derniers_gagnants_concours = Derniers_Gagnants_Concours::latest()->first(); // Sélectionne le dernier gagnant concours
+    $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::latest()->get(); // Sélectionne tous les gagnants concours
+    $now = Carbon::now(); // Vérifie si la date actuelle est après la date de fin du concours
+
+    // Score effectués, triés par id desc
+    if ($concours) {
         if ($concours->active == 1) {
             Derniers_Gagnants_Concours::query()->delete();
             $scoresconcours = User::orderBy('global_score', 'desc')->get();
-            
+
             // Trouver la position de l'utilisateur dans le classement des scores
             $userPosition = 0; // défini la position à 0
             $userScore = null; // défini un score vierge
-            for ($i = 0; $i < count($scoresconcours); $i++) {
-                $score = $scoresconcours[$i];
-                if ($score && $score->id_user && auth()->user() && $score->id_user == auth()->user()->id) {
+            $authUser = auth()->user();
+
+            foreach ($scoresconcours as $i => $score) {
+                if ($score->id_user == $authUser->id) {
                     $userPosition = $i + 1;
                     $userScore = $score;
                     break;
                 }
             }
-            
+
             $position = $userPosition;
             $startdate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_debut)->format('d/m H:i');
             $enddate = Carbon::createFromFormat('Y-m-d H:i:s', $concours->date_fin)->format('d/m H:i');
             $gain_id = 1;
-            
+
+            // Déterminer l'identifiant du gain en fonction de la position
             if ($position == 1) {
                 $gain_id = 1;
             } elseif ($position == 2) {
@@ -244,20 +246,20 @@ if ($onegame->isEmpty()) {
                 $gain_id = 12;
             }
 
-            $gain = $gains->where('id', $gain_id)->first();
+            $gain = $gains->find($gain_id);
             $gain_nom = $gain ? $gain->name : null;
 
             if ($now->gt($concours->date_fin)) {
-                // Récupère users selon le score et position
+                // Récupère les utilisateurs selon le score et la position
                 $scores_sorted = $scoresconcours->sortByDesc('global_score'); // Tri par ordre décroissant de score
                 $users = User::whereIn('id', $scores_sorted->pluck('id'))->get();
-                
+
                 // Boucle pour la distribution
                 foreach ($users as $user) {
                     $user_position = $scores_sorted->search(function ($score) use ($user) {
                         return $score->id_user === $user->id;
                     });
-                    
+
                     if ($user_position !== false) {
                         // Déterminer l'identifiant du gain en fonction de la position
                         if ($user_position == 0) {
@@ -285,56 +287,52 @@ if ($onegame->isEmpty()) {
                         } else {
                             $gain_id = 12;
                         }
-                        
+
                         // Obtenir le gain correspondant à l'identifiant
-                        $gain = $gains->where('id', $gain_id)->first();
-                        
+                        $gain = $gains->find($gain_id);
+
                         // Ajouter le gain à l'utilisateur en fonction de son type
                         switch ($gain->type) {
                             case 'Diamants':
                                 $user->trophee1 += $gain->name;
                                 break;
-                            //case 'Rubis':
-                              //  $user->trophee2 += $gain->name;
-                                //break;
                             case 'Coins':
                                 $user->trophee3 += $gain->name;
                                 break;
                         }
-                        // Ajoute les nouveaux derniers gagnants
+
+                        // Ajouter les nouveaux derniers gagnants
                         $dernier_gagnant = new Derniers_Gagnants_Concours;
                         $dernier_gagnant->name = $user->name;
-                        if (isset($user->scores)) {
-                            $dernier_gagnant->score = $user->scores->sum(function ($score) {
-                                return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
-                            });
-                        } else {
-                            $dernier_gagnant->score = 0;
-                        }
+                        $dernier_gagnant->score = $user->scores->sum(function ($score) {
+                            return $score->data + ($score->data2 * 100) + ($score->data3 * 1000);
+                        });
                         $dernier_gagnant->gain = $gain->name;
                         $dernier_gagnant->type = $gain->type;
                         $dernier_gagnant->date_gain = $now;
                         $dernier_gagnant->created_at = $now;
                         $dernier_gagnant->updated_at = $now;
                         $dernier_gagnant->save();
-                        
+
                         // Enregistrer les modifications de l'utilisateur
                         $user->save();
                     }
                 }
-                // Désactive le concours en cours
-                Concours::where('id', 10)->update(['active' => 0]);
-                // Supprime tous les scores concours
+
+                // Désactiver le concours en cours
+                $concours->update(['active' => 0]);
+
+                // Réinitialiser les scores globaux des utilisateurs
                 User::update(['global_score' => 0]);
             }
 
-        } else {
             return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
         }
-    } else {
-        // Le cas où aucun concours n'a été trouvé
-        return view('winner', compact('lesderniers_gagnants_concours'));
     }
+
+    return view('winner', compact('lesderniers_gagnants_concours'));
+}
+
     
     public function store()
     {
