@@ -195,7 +195,7 @@
                             <thead class="bg-gray-100 rounded-t-lg">
                                 <tr>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        {{__('Jeux')}}
+                                        {{__('Sondage')}}
                                     </th>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
                                         {{__('Score')}}
@@ -210,7 +210,7 @@
                                 @forelse ($scores as $score)
                                     <tr>
                                         <td style="width:33%;" class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{ $score->game->name }}
+                                            Sondage
                                         </td>
                                         <td style="width:33%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
                                         @if($score->data > 0)
