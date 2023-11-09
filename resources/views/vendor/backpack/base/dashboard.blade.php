@@ -182,7 +182,7 @@
                                                 </th>
                                                 <th scope="col"
                                                     class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
-                                                    Email
+                                                    Sondages
                                                 </th>
                                             </tr>
                                         </thead>
@@ -201,7 +201,7 @@
                                                         @if($user->language == NULL) &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/xx.svg" alt="Unknown" class="w-4 h-4 mr-1"> @endif
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-gray-900 rate-container">
-                                                        {{ $user->email }}
+                                                        {{ $user->parties }}
                                                     </td>
                                                 </tr>
                                             @endforeach
