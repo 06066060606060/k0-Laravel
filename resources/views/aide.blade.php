@@ -24,7 +24,7 @@
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title text-l">{{__("Qu'est-ce qu'un Coins ?")}}</h2>
-                        <div class="px-6 py-6 text-white">{{__("Le Coin est la monnaie secondaire du site, 1 Coin vaut 1€. Vous pouvez cumuler vos Coins en les gagnants sur le jeu POOL, le concours ou encore les jeux Events. Une boutique dédiée spécialement aux Coins est disponible dans la page 'Cadeaux' en cliquant sur l'onglet 'COINS', vous pourrez alors échanger contre des bons Amazon mais également des versements Paypal.")}}</div>
+                        <div class="px-6 py-6 text-white">{{__("Le Coin est la monnaie secondaire du site, 1 Coin vaut 1€. Vous pouvez cumuler vos Coins en les gagnants sur le concours parrainage, vous pourrez alors échanger contre des bons Amazon mais également des versements Paypal ou autre en boutique.")}}</div>
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title">{{__('Comment participer au concours parrainage ?')}}</h2>
