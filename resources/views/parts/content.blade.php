@@ -36,7 +36,7 @@
         }
     </style>
     <div class="notification" id="notification">
-        Nouveau concours en cours avec 500€ de gains en jeu ! <span class="close-btn">X</span>
+        Nouveau concours parrainage avec 200€ de gains en jeu ! <span class="close-btn">X</span>
     </div>
 
     <script>
