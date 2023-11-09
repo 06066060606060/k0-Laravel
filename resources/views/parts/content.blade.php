@@ -294,10 +294,10 @@ Complétez des sondages rémunérés !</h2>
                             <div class="relative">
                 @if($isMobile == true)
                                 <a href="admin/register" style="display: block; width: 100%;">
-    <iframe width="100%" height="150" src="https://www.youtube.com/embed/reueXvBe3bU?si=WtRIUeXrewrv2yYG&autoplay=1" title="Gokdo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="100%" height="150" src="https://www.youtube.com/embed/reueXvBe3bU?si=WtRIUeXrewrv2yYG&autoplay=1&mute=1" title="Gokdo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </a>@else
                            <a href="admin/register" style="display: block; width: 100%;">
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/reueXvBe3bU?si=WtRIUeXrewrv2yYG&autoplay=1" title="Gokdo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/reueXvBe3bU?si=WtRIUeXrewrv2yYG&autoplay=1&mute=1" title="Gokdo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </a>
 @endif
 
