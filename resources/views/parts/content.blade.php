@@ -846,9 +846,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                                         <i class="fas fa-2x fa-user-group text-white"></i>
                                     </td>
                                     <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 1
-                                        <img src='img/gem5.png' style='display:inline-block;'
-                                             class=' w-5 h-5 align-middle'
-                                             alt='Gem 10'> {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                        PT de concours {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
                                         <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               data-barba-prevent="self"
                                               id="copyLink">{{__('Cliquez-ici pour copier votre lien')}}</a></b><br>
