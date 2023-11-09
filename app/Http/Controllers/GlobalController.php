@@ -199,7 +199,7 @@ public function winner()
     if ($concours) {
         if ($concours->active == 1) {
             Derniers_Gagnants_Concours::query()->delete();
-            $scoresconcours = User::orderBy('global_score', 'desc')->get();
+            $scoresconcours = User::where('global_score', '>', 0)->orderBy('global_score', 'desc')->get();
 
             // Trouver la position de l'utilisateur dans le classement des scores
             $userPosition = 0; // défini la position à 0
