@@ -233,7 +233,7 @@
                                 @empty
                                     <tr>
                                         <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{__('Aucun score enregistré')}}
+                                            {{__('Aucun sondage complété')}}
                                         </td>
                                         <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;</td>
 
