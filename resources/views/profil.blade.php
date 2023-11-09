@@ -184,7 +184,7 @@
                     </div>
                 </div>
 
-                <h1 class="py-4 text-lg font-bold text-white">{{__('Mes scores')}}:</h1>
+                <h1 class="py-4 text-lg font-bold text-white">{{__('Sondages')}}:</h1>
                 <div class="flex flex-col w-full mt-0 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
                     @if($isMobile == true)
