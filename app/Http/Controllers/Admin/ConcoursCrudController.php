@@ -112,9 +112,6 @@ class ConcoursCrudController extends CrudController
             'upload'    => true,
             'temporary' => 10,
         ]);
-        $this->crud->Field('cadeau_id');
-        $this->crud->Field('game_id')->label('Jeux');
-
         
         $this->crud->addField([   // select_from_array
             'name'        => 'type',
@@ -129,10 +126,10 @@ class ConcoursCrudController extends CrudController
             // 'allows_multiple' => true, // OPTIONAL; needs you to cast this to array in your model;
         ]);
         CRUD::field('description')->type('textarea');
-        CRUD::field('description_en')->type('textarea');
-        CRUD::field('description_de')->type('textarea');
-        CRUD::field('description_es')->type('textarea');
-        CRUD::field('description_it')->type('textarea');
+        //CRUD::field('description_en')->type('textarea');
+        //CRUD::field('description_de')->type('textarea');
+        //CRUD::field('description_es')->type('textarea');
+        //CRUD::field('description_it')->type('textarea');
         CRUD::field('date_debut')->type('datetime');
         CRUD::field('date_fin')->type('datetime');
         $this->crud->addField([   // radio
