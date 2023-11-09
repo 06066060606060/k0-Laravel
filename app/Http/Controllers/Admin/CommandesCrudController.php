@@ -39,7 +39,7 @@ class CommandesCrudController extends CrudController
      */
     protected function setupListOperation()
     {
-        CRUD::column('id')->label('Numero de commande');
+        CRUD::column('id')->label('N°');
         CRUD::column('user_id')->label('Utilisateur');
         CRUD::column('created_at')->label('Date');
         CRUD::column('cadeau_id')->label('Contenu');
