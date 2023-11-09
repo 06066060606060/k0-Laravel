@@ -19,7 +19,7 @@
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-4">
                     <h2 class="accordion-title text-l">{{__("Qu'est-ce qu'un Diamant ?")}}</h2>
-                        <div class="px-6 py-6 text-white">{{__("Le Diamant est la principale monnaie virtuelle du site, 1€ équivaut à 50 000 Diamants. Les Diamants se cumulent lorsque vous complétez les sondages, ces Diamants sont échangeable en boutique contre les récompenses.")}}</div>
+                        <div class="px-6 py-6 text-white">{{__("Le Diamant est la principale monnaie virtuelle du site, 1€ équivaut à 5 000 Diamants. Les Diamants se cumulent lorsque vous complétez les sondages, ces Diamants sont échangeable en boutique contre les récompenses.")}}</div>
                     </div>
                     </div>
                     <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
