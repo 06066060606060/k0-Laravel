@@ -189,6 +189,8 @@ if ($onegame->isEmpty()) {
 public function winner()
 {
     $lejoueur = null;
+    $count = 0;
+    $userid = null;
     $gains = Gains::all(); // récupère tous les gains du concours
     $concours = Concours::latest()->first(); // Sélectionne le dernier concours
     $lesscoresdeconcours = User::where('global_score', '>', 0)->count();
