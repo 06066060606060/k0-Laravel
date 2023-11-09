@@ -20,48 +20,28 @@
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Les Sondages')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Les sondages vous permettent de gagner des Diamants et 1 point de concours par sondage répondu, le ratio est le suivant : lorsque Gokdo gagne 1€ vous en gagné automatiquement 0.20€ (soit 20 000 Diamants), le concours lui propose de vous faire gagner une somme définie dans un temps prédéfini, il faudra être dans les 3 premiers pour espèrer gagner de l'argent.")}}</p>
+		<p class="leading-relaxed text-gray-300">{{__("Les sondages vous permettent de gagner des Diamants à chaque sondage complété, le ratio est le suivant : lorsque Gokdo gagne 1€ vous en gagné automatiquement 50% de notre gain, soit 0.50€ (soit 2 500 Diamants), vous pouvez échanger vos Diamants en boutique contre de vrai cadeaux ou de l'argent.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le jeu GoFRUITS')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Les joueurs reçoivent chaque jour 10 parties gratuites sur le jeu multijoueurs GoFRUITS. 10 parties supplémentaires sur le jeu GoFRUITS valent un échange contre 5 Rubis. Le but du jeu GoFRUITS est de trouver le gain le plus élevé, la grille de jeu est régénérée une fois le gain le plus haut trouvé, certaines cases de la grille GoFRUITS sont perdantes.")}}</p>
+		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le concours parrainage')}}</h2>
+		<p class="leading-relaxed text-gray-300">{{__("Chaque mois, un concours parrainage est en place sur Gokdo pour une durée déterminée qui peut être modifiée à tout moment. Chaque concours promet une dotation aux 10 premiers du classement et leur distribuera un gain en 'Coins', dès le 11ème joueur au classement le gain sera de 0.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le jeu Egypt')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Les joueurs reçoivent chaque jour 5 parties gratuites sur le jeu de grattage Egypt. Le but du jeu Egypt est de trouver trois symbole identique ayant une dotation positive.")}}</p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Les concours mensuels')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Chaque mois, un concours est en place sur Gokdo pour une durée déterminée qui peut être modifiée à tout moment. Chaque concours promet une dotation aux 3000 premiers du classement et leur distribuera un gain que ce soit Carte cadeau Amazon, versement paypal, Coins, Rubis, Diamants, à partir du 3001ème joueur, ils ne gagnent rien.")}}</p>
-	</section>
-	<!--<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Achats sur Gokdo.com')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Les membres qui le désirent peuvent faire un achat via paypal ou carte bleu sur la section pack du menu du site, qui permet l'achat de Rubis supplémentaires. Gokdo reste un site de jeu gratuit sans obligation d'achat.")}}</p>
-	</section>-->
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Rubis')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Les Rubis sont automatiquement remis à 0 tous les 40 jours, le membre doit impérativement jouer l'ensemble de ses Rubis pour ne pas les perdre, aucun recours ne sera possible.")}}</p>
-	</section>
-    <section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Triche et manipulation frauduleuse')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Toute triche ou manipulation frauduleuse du site ou du jeu entraine une suppression du compte membre sans préavis ni remboursement.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Inactivité')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Les membres du site Gokdo qui ne se seront pas connecter au moins une fois dans les 6 mois suivants leur dernière connexion verront leur compte supprimé, étant considéré comme Inactif. Aucun remboursement ni autre manipulation ne pourra être demandée, un e-mail d'information visant à lui rapeller de se connecter pour éviter la suppression de son compte lui sera envoyé 1 mois avant afin de l'en avertir.")}}</p>
+		<p class="leading-relaxed text-gray-300">{{__("Les membres du site Gokdo qui ne se seront pas connecter au moins une fois dans les 12 mois suivants leur dernière connexion verront leur compte supprimé, étant considéré comme Inactif. Aucun remboursement ni autre manipulation ou compensation ne pourra être demandée.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('La page de cadeaux')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Une page de cadeau est disponible et propose des cadeaux contre un échange de Diamants ou de Coins. Les cadeaux sont divers et variés et classés en catégories et par prix. L'envoi des commandes se fait au maximum sous 30 jours. Le webmaster peut supprimer les commandes de joueurs qui auraient enfreint le règlement.")}}</p>
+		<p class="leading-relaxed text-gray-300">{{__("Une page de cadeau est disponible et propose des cadeaux contre un échange de Diamants ou de Coins. Les cadeaux sont divers et variés et classés en catégories et par prix. L'envoi des commandes se fait au maximum sous 60 jours. Le webmaster peut supprimer les commandes de joueurs qui auraient enfreint le règlement.")}}</p>
 	</section>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__("Contact avec l'équipe de Gokdo.com")}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Les joueurs peuvent contacter une fois par jour l'équipe de Gokdo via l'espace de contact dont le lien est situé en bas de page.")}}</p>
     <p class="leading-relaxed text-gray-300">{{__("Des mails peuvent être envoyés par l'administrateur au membre, les membres peuvent contacter le webmaster pour demander l'arrêt d'envoi de mails.")}}</p>
-    </section>
-    <section class="mb-2 relative text-gray-600 body-font">
-    <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Jeu Live')}}</h2>
-    <p class="leading-relaxed text-gray-300">{{__("Le jeu Live est présent sur Gokdo, il s'agit d'un jeu de chasse au trésor multijoueur, 3 parties coûtent 20 Rubis (10 Rubis pour 3 pelles et 10 Rubis pour 3 supports). Le membre doit jouer toutes ses parties dans les 40 jours maximum, les pelles et les supports sont remis à 0 au bout de ces 40 jours.")}}</p>
     </section>
     <section class="mb-2 relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Propriété intellectuelle')}}</h2>
@@ -85,7 +65,7 @@
     </section>
     <section class="relative text-gray-600 body-font">
     <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Contact')}}</h2>
-    <p class="leading-relaxed text-gray-300">{{__("Pour toute question concernant le présent règlement, les membres peuvent contacter Gokdo en utilisant le formulaire de contact disponible sur le site.")}}</p>
+    <p class="leading-relaxed text-gray-300">{{__("Pour toute question concernant le présent règlement, les membres peuvent contacter Gokdo en utilisant le formulaire de contact disponible sur le site ou par mail à gokdo.com@gmail.com")}}</p>
 
                         </div>
                     </div>
