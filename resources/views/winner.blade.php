@@ -128,18 +128,18 @@
     </td>
     <td class="px-4 pt-2 text-left text-gray-200 whitespace-nowrap">
         @php 
-            $total1 = $score->total;
+            $total1 = $score->global_score;
             $total2 = $score->total2 * 100;
             $total3 = $score->total3 * 1000;
             $totalite = $total1+$total2+$total3;
         @endphp
         @if($isMobile == true)
         <strong class="flex rounded md:px-3 py-1.5 text-xs mb-2 font-bold bg-blue-600 text-white max-w-[180px]">
-            <p class="ml-1 md:block">{{ $score->total }}</p><img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
+            <p class="ml-1 md:block">{{ $score->global_score }}</p><img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
         </strong>
         @else
         <strong class="flex rounded mb-2 md:px-3 py-1.5 text-xs font-bold bg-blue-600 text-white max-w-[180px]">
-            <p class="hidden ml-1 md:block">{{ $score->total }}</p> <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
+            <p class="hidden ml-1 md:block">{{ $score->global_score }}</p> <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2">  
         </strong>
         @endif
     </td>
