@@ -331,7 +331,7 @@ public function winner()
                 User::update(['global_score' => 0]);
             }
 
-            return view('winner', compact('lejoueur', 'count', 'user_id', 'lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
+            return view('winner', compact('lejoueur', 'count', 'userid', 'lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
         }
     }
 
