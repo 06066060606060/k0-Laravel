@@ -188,13 +188,18 @@ if ($onegame->isEmpty()) {
 
 public function winner()
 {
+    $lejoueur = null;
     $gains = Gains::all(); // récupère tous les gains du concours
     $concours = Concours::latest()->first(); // Sélectionne le dernier concours
     $lesscoresdeconcours = User::where('global_score', '>', 0)->count();
     $derniers_gagnants_concours = Derniers_Gagnants_Concours::latest()->first(); // Sélectionne le dernier gagnant concours
     $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::latest()->get(); // Sélectionne tous les gagnants concours
     $now = Carbon::now(); // Vérifie si la date actuelle est après la date de fin du concours
-
+    if (backpack_auth()->check() && backpack_auth()->user()) {
+        $userid = backpack_auth()->id(); // retourne l'id
+        $lejoueur = backpack_auth()->user()->name;
+        $count = User::where('parrain', backpack_auth()->user()->name)->count();
+    @endif
     // Score effectués, triés par id desc
     if ($concours) {
         if ($concours->active == 1) {
@@ -324,7 +329,7 @@ public function winner()
                 User::update(['global_score' => 0]);
             }
 
-            return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
+            return view('winner', compact('lejoueur', 'count', 'user_id', 'lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
         }
     }
 
