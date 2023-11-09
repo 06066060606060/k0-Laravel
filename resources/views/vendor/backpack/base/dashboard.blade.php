@@ -185,6 +185,10 @@
                                                     class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                                     Sondages
                                                 </th>
+                                                <th scope="col"
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    Parrainages
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white">
@@ -203,6 +207,9 @@
                                                     </td>
                                                     <td class="p-4 text-sm font-normal text-gray-900 rate-container">
                                                         {{ $user->parties }}
+                                                    </td>
+                                                    <td class="p-4 text-sm font-normal text-gray-900 rate-container">
+                                                        {{ $user->global_score }}
                                                     </td>
                                                 </tr>
                                             @endforeach
