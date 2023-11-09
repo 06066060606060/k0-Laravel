@@ -191,7 +191,7 @@ if ($onegame->isEmpty()) {
     {
         $gains = Gains::all(); // récup tous les gains du concours
         $concours = Concours::All()->last(); //Selectionne le concours
-        $lesscoresdeconcours = ScoresConcours::where('game_id', $concours->game_id)->count();
+        $lesscoresdeconcours = User::where('global_score', '>', 0)->count();
         $derniers_gagnants_concours = Derniers_Gagnants_Concours::All()->last(); //Selectionne le dernier gagnant concours
         $lesderniers_gagnants_concours = Derniers_Gagnants_Concours::All(); //Selectionne tous les gagnants concours
         $now = Carbon::now(); // Vérifie si date actuelle est après date de fin du concours
@@ -199,11 +199,7 @@ if ($onegame->isEmpty()) {
         //Score effectués ordre par id desc
         if ($concours->active == 1) {
             Derniers_Gagnants_Concours::query()->delete();
-            $scoresconcours = ScoresConcours::selectRaw('id_user, SUM(score) AS total')
-                ->where('game_id', $concours->game_id) // ou id du jeu = au jeu du concours
-                ->groupBy('id_user') // groupé par id users
-                ->orderBy('total', 'desc') // ordre par score total plus grand au plus petit 
-                ->get(); // récupère le résultat
+            $scoresconcours = User::orderBy('global_score', 'desc')->get();
             
             // Trouver la position de l'utilisateur dans le classement des scores
             $userPosition = 0; // défini la position à 0
@@ -253,8 +249,8 @@ if ($onegame->isEmpty()) {
 
             if ($now->gt($concours->date_fin)) {
                 // Récupère users selon le score et position
-                $scores_sorted = $scoresconcours->sortByDesc('score'); // Tri par ordre décroissant de score
-                $users = User::whereIn('id', $scores_sorted->pluck('id_user'))->get();
+                $scores_sorted = $scoresconcours->sortByDesc('global_score'); // Tri par ordre décroissant de score
+                $users = User::whereIn('id', $scores_sorted->pluck('id'))->get();
                 
                 // Boucle pour la distribution
                 foreach ($users as $user) {
@@ -329,7 +325,7 @@ if ($onegame->isEmpty()) {
                 // Désactive le concours en cours
                 Concours::where('id', 10)->update(['active' => 0]);
                 // Supprime tous les scores concours
-                ScoresConcours::query()->delete();
+                User::update(['global_score' => 0]);
             }
             return view('winner', compact('lesderniers_gagnants_concours', 'derniers_gagnants_concours', 'gain_nom', 'gain', 'gains', 'position', 'scoresconcours', 'concours', 'startdate', 'enddate', 'gain_nom', 'lesscoresdeconcours'));
         } else {
