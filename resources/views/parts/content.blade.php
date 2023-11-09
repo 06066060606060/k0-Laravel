@@ -147,7 +147,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
 </div>
         </section>
     </winner>
-
+<!--
  <container class="mx-auto max-w-7xl" id="win">
         <section>
             <div
@@ -279,18 +279,17 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
             </div>
         </section>
     </container>
-
+-->
 
 
     @if($countevent > 0)
-        <container class="mx-auto max-w-7xl" id="win">
+<!--        <container class="mx-auto max-w-7xl" id="win">
             <section>
                 <div
                     class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                     <div class="flex flex-col w-full text-center">
                         <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Jeu Live')}}</h1>
                     </div>
-                   <!-- <p class="text-white text-center text-sm">Achetez des Packs sur le menu <font color="yellow"><b>+ de parties</b></font> pour avoir des Parties de Chasse au Trésor !</p>-->
                    <p class="text-white text-center text-sm">Sur la chasse aux trésor vous pouvez gagner gros avec de la chance !</p>
                     <div class="flex-wrap m-full">
                         @forelse ($eventsgames as $eventsgame)
@@ -420,7 +419,7 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
                     </div>
                 </div>
             </section>
-        </container>
+        </container>-->
     @endif
 <!--
  <container class="mx-auto max-w-7xl" id="win">
