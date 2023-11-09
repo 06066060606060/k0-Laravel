@@ -30,11 +30,8 @@ class GlobalController extends Controller
      */
     public function getAll()
     {
-
-        $concours = Concours::all(); // TOUTES LES COMMANDES
-        
+        $concours = Concours::all(); // TOUTES LES COMMANDES   
         $winner = User::latest()->get(); //DERNIERS GAGNANTS JEUX
-        
         $lejoueur = null;
         $count = 0;
         $userid = null;
@@ -301,9 +298,9 @@ if ($onegame->isEmpty()) {
                             case 'Diamants':
                                 $user->trophee1 += $gain->name;
                                 break;
-                            case 'Rubis':
-                                $user->trophee2 += $gain->name;
-                                break;
+                            //case 'Rubis':
+                              //  $user->trophee2 += $gain->name;
+                                //break;
                             case 'Coins':
                                 $user->trophee3 += $gain->name;
                                 break;
