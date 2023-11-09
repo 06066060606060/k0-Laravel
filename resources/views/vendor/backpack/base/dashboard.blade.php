@@ -157,7 +157,7 @@
                     </div>
                 </div>-->
 
-                <div class="p-3 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
+                <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
                     <div class="flex items-center justify-between mb-2">
                         <div>
                             <h3 class="mb-1 text-xl font-bold text-gray-900">Utilisateurs</h3>
