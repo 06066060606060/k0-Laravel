@@ -16,10 +16,6 @@ class CheckIfAdmin
             // dd('admin');
             return true;
         } elseif ($user->role == 'user') {
-            //$user->role = 'user'; 
-            //$user->parties = '10';
-            //$user->trophee1 = '150';
-         //   $user->parrain = $parrain; // On offre 150 diamants
          
             $user->save();
 
