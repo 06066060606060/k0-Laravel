@@ -158,7 +158,7 @@
                 </div>-->
 
                 <div class="flex flex-col gap-4 px-4 pt-6 pb-6 xl:flex-row">
-                    <div class="flex items-center rounded-lg justify-between mb-2 bg-white">
+                    <div class="flex items-center p-4 rounded-lg justify-between mb-2 bg-white">
                         <div>
                             <h3 class="mb-1 text-xl font-bold text-gray-900">Utilisateurs</h3>
                             <a class="p-2 text-sm font-medium text-gray-800 rounded-lg">Total: {{ $users->count() }}</a>
