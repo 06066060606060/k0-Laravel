@@ -292,14 +292,10 @@ Complétez des sondages rémunérés !</h2>
                     <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
                         <div class="relative w-full max-w-lg">
                             <div class="relative">
-                                @php 
-                                $imgiUrls = asset('storage/uploads/sondagesphoto.png'); 
-                                @endphp
-                                <a href="admin/register">
-                                    <img class="object-cover object-center mx-auto rounded-lg shadow-2xl" alt="hero"
-                                         src="{{ $imgiUrls }}" width="920" height="420"
-                                         ">
-                                </a>
+                                <a href="admin/register" style="display: block; width: 100%;">
+    <iframe width="100%" height="420" src="https://youtube.com/shorts/yzK1Ekr9snI?si=NmeTz9jRS94L52yb" frameborder="0" allowfullscreen></iframe>
+</a>
+
                             </div>
                         </div>
                     </div>
