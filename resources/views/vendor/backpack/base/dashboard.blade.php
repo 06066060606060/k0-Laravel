@@ -3,6 +3,7 @@
 @php  $starred = GlobalController::starred();@endphp
 @php  $sessions = GlobalController::getSessions();@endphp
 @php  $users = GlobalController::getUsers();@endphp
+@php  $usersscore = GlobalController::getUsersscore();@endphp
 @php  $games = GlobalController::getGames();@endphp
 @php  $sommediamants = GlobalController::getSommeDiamants();@endphp
 @php  $sommesondages = GlobalController::getSommeSondages();@endphp
@@ -188,7 +189,7 @@
                                         </thead>
                                         <tbody class="bg-white">
 
-                                            @foreach ($users as $user)
+                                            @foreach ($usersscore as $user)
                                                 <tr>
                                                     <td
                                                         class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container inline-flex">
