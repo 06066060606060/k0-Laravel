@@ -187,7 +187,7 @@
 
 
 
-         <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
+         <container id="classement" class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
              <div class="container px-5 pt-8 mx-auto">
                  <div class="flex flex-col w-full mb-20 text-center">
                      <h1 class="mb-4 text-4xl font-bold text-gray-300 md:text-5xl title-font">{{__('Classement Concours')}}:</h1>
