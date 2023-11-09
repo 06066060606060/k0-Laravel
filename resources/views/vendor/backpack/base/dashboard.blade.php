@@ -69,7 +69,7 @@
                     </div>
                 </div>
             </div>
-
+<!--
             <div class="flex flex-col h-auto gap-4 px-4 pb-6 xl:flex-row">
                 <div class="p-3 bg-white rounded-lg shadow sm:p-6 xl:p-8 w-full">
                     <div class="flex items-center justify-between mb-2">
@@ -155,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
 
                 <div class="p-3 bg-white rounded-lg shadow sm:p-6 xl:p-8 ">
                     <div class="flex items-center justify-between mb-2">
@@ -213,6 +213,7 @@
                         </div>
                     </div>
                 </div>
+    <!--
                 <div class="p-3 bg-white rounded-lg shadow sm:p-6 xl:p-8 xl:w-1/5">
                     <div class="flex items-center justify-between mb-2">
                         <div>
@@ -270,7 +271,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
