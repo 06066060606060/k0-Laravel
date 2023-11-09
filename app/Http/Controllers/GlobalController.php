@@ -207,7 +207,7 @@ public function winner()
             $authUser = auth()->user();
 
             foreach ($scoresconcours as $i => $score) {
-                if ($score->id_user == $authUser->id) {
+                if ($score->id == $authUser->id) {
                     $userPosition = $i + 1;
                     $userScore = $score;
                     break;
