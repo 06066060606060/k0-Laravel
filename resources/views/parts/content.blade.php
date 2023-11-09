@@ -1035,11 +1035,11 @@ Répondez aux sondages et tentez de gagner 250€ CASH du concours !</h2>
         <section class="text-gray-400 body-font">
             <div class="flex flex-col items-center">
             @if($isMobile == true)
-            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-3xl title-font">{{__("Sondages Rémunérés en Ligne")}}</h1>
-            <h2 class="mb-4 text-4xl font-bold text-gray-100 md:text-xl title-font">{{__("Gagnez de l'Argent en Partageant Votre Opinion")}}</h2>
-            @else
             <h1 class="mb-4 text-2xl font-bold text-gray-100 md:text-xl title-font">{{__("Sondages Rémunérés en Ligne")}}</h1>
             <h2 class="mb-4 text-2xl font-bold text-gray-100 md:text-xl title-font">{{__("Gagnez de l'Argent en Partageant Votre Opinion")}}</h2>
+            @else
+            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-2xl title-font">{{__("Sondages Rémunérés en Ligne")}}</h1>
+            <h2 class="mb-4 text-4xl font-bold text-gray-100 md:text-xl title-font">{{__("Gagnez de l'Argent en Partageant Votre Opinion")}}</h2>
             @endif
             </div>
             <div class="container flex flex-wrap px-5 py-8 mx-auto">
