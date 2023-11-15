@@ -6,9 +6,7 @@
 <title>{{__('Participez à des Sondages Rémunérés et Gagnez de l\'Argent en Ligne : Votre Avis Compte !')}}</title>
 <meta name="description" content="{{__("Gagnez de l'argent en partageant votre opinion avec des sondages rémunérés en ligne. Inscrivez-vous dès maintenant pour des récompenses en échange de vos précieux avis. Votre voix compte, tout comme votre rémunération !")}}">
 <meta name="keywords" content="{{__("sondages rémunérés, enquêtes rémunérées, gagner de l'argent en ligne, panels de consommateurs, récompenses pour sondages, opinions rémunérées, participer à des sondages, sites de sondages, sondages payants, argent sur internet, sondages en ligne rémunérés, rémunération pour avis, panel d'opinion, compensations pour enquêtes, gains en répondant à des sondages, opportunités de revenus en ligne, rémunération pour feedback, études de marché payées, sondages rétribués, gagner de l'argent avec des sondages, travail en ligne rémunéré, plateformes de sondages, inscription à des panels de consommateurs, rémunération pour avis, gagner de l'argent avec des opinions, rémunération pour participation à des études, récompenses pour partager son opinion, rémunération pour réponses à des questionnaires en ligne")}}" />
-<!--<meta name="identifier-url" content="https://{{ app()->getLocale() }}.gokdo.com" />-->
 <meta name="identifier-url" content="https://gokdo.com" />
-<!--<meta http-equiv="content-language" content="{{ app()->getLocale() }}" />-->
 <meta http-equiv="content-language" content="fr" />
 <meta name="author" content="GoKDO" />
 <!--Yandex-->
