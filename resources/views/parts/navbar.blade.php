@@ -8,7 +8,7 @@ $isMobile = GlobalController::isMobile();
         <div class="flex items-center justify-between">
             <div>
                 <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/">
-                    <img src="/img/logo_mobile.webp" alt="Gokdo" width="354" height="96" class="w-auto h-24">
+                    <img src="/img/logo-mobile.webp" alt="Gokdo" width="354" title="Gokdo Sondages rémunérés" height="96" class="w-auto h-24">
                 </a>
             </div>
             
