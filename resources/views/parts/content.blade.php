@@ -408,7 +408,7 @@ Complétez des sondages rémunérés !</h2>
                                 <i class="{{ $step['icon'] }}"></i>
                             </div>
                             <div class="flex-grow mt-6 sm:pl-6 sm:mt-0">
-                                <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{ $step['title'] }}</h2>
+                                <div class="mb-1 text-xl font-bold text-blue-500 title-font">{{ $step['title'] }}</div>
                                 <p class="leading-relaxed text-gray-300">{{ $step['description'] }}</p>
                             </div>
                         </div>
