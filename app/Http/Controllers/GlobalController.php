@@ -1107,6 +1107,12 @@ public function winner()
         return number_format($sommesondages, 0, ',', ' ');
     }
 
+    static function getSommeSondagesJour()
+    {
+       $sommesondagesjour = User::where('name', '!=', 'Admin')->sum('parties_jour');
+        return number_format($sommesondagesjour, 0, ',', ' ');
+    }
+
     static function getSommeCoins()
     {
        $sommecoins = User::where('name', '!=', 'Admin')->sum('trophee3');

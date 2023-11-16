@@ -7,6 +7,7 @@
 @php  $games = GlobalController::getGames();@endphp
 @php  $sommediamants = GlobalController::getSommeDiamants();@endphp
 @php  $sommesondages = GlobalController::getSommeSondages();@endphp
+@php  $sommesondagesjour = GlobalController::getSommeSondagesJour();@endphp
 @php  $sommecoins = GlobalController::getSommeCoins();@endphp
 @extends(backpack_view('blank'))
 @section('content')
@@ -59,6 +60,12 @@
                                                     class="p-4 text-sm font-normal text-center text-gray-900 time-container ">
                                                     <div class="flex justify-center">
                                                         {{ $sommesondages }}
+                                                    </div>
+                                                </td>
+                                                <td
+                                                    class="p-4 text-sm font-normal text-center text-gray-900 time-container ">
+                                                    <div class="flex justify-center">
+                                                        {{ $sommesondagesjour }}
                                                     </div>
                                                 </td>
                                             </tr>
@@ -215,7 +222,7 @@
                                                     <td class="p-4 text-sm font-normal text-gray-900 rate-container">
                                                         {{ $user->parties_jour }}
                                                     </td>
-                                                    <td class="p-4 text-sm font-normal text-gray-900 rate-container">
+                                                    <td class="p-4 al text-sm font-normal text-gray-900 rate-container">
                                                         {{ $user->global_score }}
                                                     </td>
                                                 </tr>
