@@ -40,6 +40,10 @@
                                                     class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Sondages:
                                                 </th>
+                                                <th scope="col"
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
+                                                    Sondages jour:
+                                                </th>
                                             </tr>
                                         </thead>
                                         <tbody class="bg-white">
