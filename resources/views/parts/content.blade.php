@@ -102,8 +102,18 @@
     </style>
 @endif
 </head>
-<center><a target="_blank" href="https://www.amazon.fr/b?_encoding=UTF8&tag=gokdocom-21&linkCode=ur2&linkId=3dc8d7c3401195b08635b543f298d15d&camp=1642&creative=6746&node=14135877031">Bons Plans</a></center>
-
+    <winner class="mx-auto max-w-7xl" id="win">
+        <section>
+            <div
+                class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100 ">
+Complétez des sondages rémunérés !</h2>
+<center><a target="_blank" href="https://www.amazon.fr/b?_encoding=UTF8&tag=gokdocom-21&linkCode=ur2&linkId=3dc8d7c3401195b08635b543f298d15d&camp=1642&creative=6746&node=14135877031">Bons Plans du moment</a></center>
+<!-- Sample Iframe 
+<iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
+--></div>
+</section>
+</winner>
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
             <div
