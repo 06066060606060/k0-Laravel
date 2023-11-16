@@ -106,7 +106,7 @@
         <section>
             <div
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-<center><a class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100" target="_blank" href="https://www.amazon.fr/b?_encoding=UTF8&tag=gokdocom-21&linkCode=ur2&linkId=3a096ecfc746a2a3226a40612e1e3b3b&camp=1642&creative=6746&node=530490">Bons Plans Cadeaux du moment</a></center>
+<center><a class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100" target="_blank" href="https://www.amazon.fr/b?_encoding=UTF8&tag=gokdocom-21&linkCode=ur2&linkId=be370f1b4ee5a9623c1c7e1c09f8e4bf&camp=1642&creative=6746&node=20904281031">Bons Plans Cadeaux du moment</a></center>
 </div>
 </section>
 </winner>
