@@ -102,6 +102,8 @@
     </style>
 @endif
 </head>
+<center><a target="_blank" href="https://www.amazon.fr/b?_encoding=UTF8&tag=gokdocom-21&linkCode=ur2&linkId=3dc8d7c3401195b08635b543f298d15d&camp=1642&creative=6746&node=14135877031">Bons Plans</a></center>
+
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
             <div
