@@ -293,7 +293,8 @@
                     </div>
 
                 </div>
-
+                </container>
+                <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-8xl md:pl-8">
                 <h1 class="pt-4 text-lg font-bold text-white">{{__('Mon adresse de livraison')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
                     <form action="save_address" class="container flex flex-col mx-auto" method="POST">
