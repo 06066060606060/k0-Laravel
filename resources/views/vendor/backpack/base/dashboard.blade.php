@@ -189,7 +189,7 @@
                                         <thead class="bg-gray-50">
                                             <tr>
                                                 <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
                                                     Nom
                                                 </th>
                                                 <th scope="col"
@@ -211,7 +211,7 @@
                                             @foreach ($usersscore as $user)
                                                 <tr>
                                                     <td
-                                                        class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container inline-flex">
+                                                        class="p-4 text-sm font-normal text-left text-gray-900 whitespace-nowrap time-container inline-flex">
                                                         <a href="user/{{ $user->id }}/edit">{{ $user->name }}</a> 
                                                         @if($user->language == 'fr') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1"> @endif
                                                         @if($user->language == 'en') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1"> @endif
