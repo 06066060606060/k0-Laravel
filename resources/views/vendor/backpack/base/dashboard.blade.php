@@ -189,19 +189,19 @@
                                         <thead class="bg-gray-50">
                                             <tr>
                                                 <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Nom
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Sondages
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Sondages jour
                                                 </th>
                                                 <th scope="col"
-                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-left text-gray-500 uppercase">
+                                                    class="px-4 py-2 text-xs font-medium tracking-wider text-center text-gray-500 uppercase">
                                                     Parrainages
                                                 </th>
                                             </tr>
@@ -211,7 +211,7 @@
                                             @foreach ($usersscore as $user)
                                                 <tr>
                                                     <td
-                                                        class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap time-container inline-flex">
+                                                        class="p-4 text-sm font-normal text-center text-gray-900 whitespace-nowrap time-container inline-flex">
                                                         <a href="user/{{ $user->id }}/edit">{{ $user->name }}</a> 
                                                         @if($user->language == 'fr') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/fr.svg" alt="Français" class="w-4 h-4 mr-1"> @endif
                                                         @if($user->language == 'en') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/gb.svg" alt="English" class="w-4 h-4 mr-1"> @endif
@@ -220,13 +220,13 @@
                                                         @if($user->language == 'it') &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/it.svg" alt="Italian" class="w-4 h-4 mr-1"> @endif
                                                         @if($user->language == NULL) &nbsp;<img src="https://flagicons.lipis.dev/flags/4x3/xx.svg" alt="Unknown" class="w-4 h-4 mr-1"> @endif
                                                     </td>
-                                                    <td class="p-4 text-sm font-normal text-gray-900 rate-container">
+                                                    <td class="p-4 text-sm font-normal text-center text-gray-900 rate-container">
                                                         {{ $user->parties }}
                                                     </td>
-                                                    <td class="p-4 text-sm font-normal text-gray-900 rate-container">
+                                                    <td class="p-4 text-sm font-normal text-center text-gray-900 rate-container">
                                                         {{ $user->parties_jour }}
                                                     </td>
-                                                    <td class="p-4 al text-sm font-normal text-gray-900 rate-container">
+                                                    <td class="p-4 al text-sm font-normal text-center text-gray-900 rate-container">
                                                         {{ $user->global_score }}
                                                     </td>
                                                 </tr>
