@@ -11,7 +11,7 @@
                 <div id="popmenu" class="px-4 py-2 text-gray-100 btnmenu">{{__('Transaction confirmée')}}</div>
             </div>
         @endif
-        <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-6xl md:pl-16">
+        <container class="flex flex-col min-h-screen px-8 mx-auto md:flex-row lg:max-w-8xl md:pl-8">
             <div class="flex flex-col pt-2">
                 <card
                     class="relative w-full p-4 py-2 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:w-64 md:mb-0 md:mr-4">
