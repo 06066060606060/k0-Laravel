@@ -117,9 +117,7 @@
                 <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100 ">
 Complétez des sondages rémunérés !</h2>
 <iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
-<!-- Sample Iframe 
-<iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
---></div>
+</div>
 </section>
 </winner>
     <!-- WINNER -->
@@ -333,7 +331,7 @@ Complétez des sondages rémunérés !</h2>
                         @endif        
                          font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                             
-                            {{__('Sondages Rémunérés !')}}
+                            {{__('a Sondages Rémunérés !')}}
                         </h1>
                         @php $locale = app()->getLocale(); @endphp
                         @if($isMobile == true)
