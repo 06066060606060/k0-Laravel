@@ -22,10 +22,10 @@
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Les Sondages')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Les sondages vous permettent de gagner des Diamants à chaque sondage complété, le ratio est le suivant : lorsque Gokdo gagne 1€ vous en gagné automatiquement 50% de notre gain, soit 0.50€ (soit 2 500 Diamants), vous pouvez échanger vos Diamants en boutique contre de vrai cadeaux ou de l'argent.")}}</p>
 	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
+<!--	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Le concours parrainage')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Chaque mois, un concours parrainage est en place sur Gokdo pour une durée déterminée qui peut être modifiée à tout moment. Chaque concours promet une dotation aux 10 premiers du classement et leur distribuera un gain en 'Coins', dès le 11ème joueur au classement le gain sera de 0.")}}</p>
-	</section>
+	</section>-->
 	<section class="mb-2 relative text-gray-600 body-font">
 		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Triche et manipulation frauduleuse')}}</h2>
 		<p class="leading-relaxed text-gray-300">{{__("Toute triche ou manipulation frauduleuse du site ou du jeu entraine une suppression du compte membre sans préavis ni remboursement.")}}</p>
