@@ -11,6 +11,11 @@ $db = new PDO($dsn, $username, $password);
 $sql = "UPDATE users SET parties = 10";
 
 // Exécuter la requête avec un identifiant d'utilisateur spécifique
+// test du push
+
+
 $stmt = $db->prepare($sql);
 $stmt->execute();
 ?>
+
+
