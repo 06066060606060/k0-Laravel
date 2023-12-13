@@ -26,10 +26,10 @@
                     <h2 class="accordion-title text-l">{{__("Qu'est-ce qu'un Coins ?")}}</h2>
                         <div class="px-6 py-6 text-white">{{__("Le Coin est la monnaie secondaire du site, 1 Coin vaut 1€. Vous pouvez cumuler vos Coins en les gagnants sur le concours parrainage, vous pourrez alors échanger contre des bons Amazon mais également des versements Paypal ou autre en boutique.")}}</div>
                     </div>
-                    <div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
+                    <!--<div class="accordion-section bg-gray-800 bg-opacity-40 mb-8">
                     <h2 class="accordion-title">{{__('Comment participer au concours parrainage ?')}}</h2>
                     <div class="px-6 py-6 text-white">{{__("Pour participer au concours de parrainage, il vous suffit simplement de parrainer de nouveaux membres sur Gokdo, un membre parrainé vous rapportera 1 point de concours parrainage, plus vous parrainez et plus vous aurez de chance de remporter de gains !")}}</div>
-                    </div>
+                    </div>-->
 
                     
                     <style>
