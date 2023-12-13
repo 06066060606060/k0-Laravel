@@ -375,7 +375,7 @@ Complétez des sondages rémunérés !</h2>
             <div class="mb-4 text-2xl font-bold text-gray-100 md:text-xl title-font">{{__("Sondages Rémunérés en Ligne")}}</div>
             <h2 class="mb-4 text-l font-bold text-gray-100 md:text-l title-font">{{__("Gagnez de l'Argent en Partageant Votre Opinion")}}</h2>
             @else
-            <div class="mb-4 text-4xl font-bold text-gray-100 md:text-2xl title-font">{{__("LES Sondages Rémunérés en Ligne")}}</div>
+            <div class="mb-4 text-4xl font-bold text-gray-100 md:text-2xl title-font">{{__("Sondages Rémunérés en Ligne")}}</div>
             <h2 class="mb-4 text-4xl font-bold text-gray-100 md:text-xl title-font">{{__("Gagnez de l'Argent en Partageant Votre Opinion")}}</h2>
             @endif
             </div>
