@@ -84,9 +84,9 @@
                         </div>
                         @if(empty($leparrain))
                         @else
-                            <p class="flex py-4 text-xs text-white border-t border-gray-500">
+                         <!--   <p class="flex py-4 text-xs text-white border-t border-gray-500">
                               <b>  {{__('Parrain :')}} &nbsp;</b> {{ $leparrain }}
-                            </p>
+                            </p>-->
                         @endif
 
                         <div class="flex py-2">
@@ -248,7 +248,7 @@
                     </div>
 
                 </div>
-                <h1 class="py-4 text-lg font-bold text-white">{{__('Mes filleuls :')}}</h1>
+<!--                <h1 class="py-4 text-lg font-bold text-white">{{__('Mes filleuls :')}}</h1>
                 <div class="flex flex-col w-full mt-0 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
                     @if($isMobile == true)
@@ -292,7 +292,7 @@
                         </table>
                     </div>
 
-                </div>
+                </div>-->
 
                 <h1 class="pt-4 text-lg font-bold text-white">{{__('Mon adresse de livraison')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
