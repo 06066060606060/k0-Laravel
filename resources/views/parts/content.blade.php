@@ -110,59 +110,26 @@
 </div>
 </section>
 </winner>-->
-<style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            margin: 0;
-            padding: 0;
-        }
-
-        .winner-container {
-            max-width: 100%;
-            margin: 0 auto;
-        }
-
-        .survey-section {
-            background-color: #3498db;
-            color: #ecf0f1;
-            border-radius: 15px;
-            padding: 40px 20px;
-            margin: 40px 0;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .survey-title {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .survey-iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            border-radius: 15px;
-            margin-top: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-    </style>
-    <div class="winner-container">
-        <section class="survey-section">
-            <div class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-                <h2 class="survey-title">Participate in Rewarding Surveys!</h2>
-                <iframe class="survey-iframe"
-                    src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"
-                    frameborder="0" allowfullscreen="true"></iframe>
-                <!-- Sample Iframe 
-                    <iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" 
-                    width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
+<winner class="mx-auto max-w-7xl" id="win">
+    <section class="mb-4 px-2 mx-8 lg:mx-8 xl:mx-auto">
+        <div class="py-2 bg-gray-800 rounded-lg lg:py-18 bg-opacity-40 max-w-7xl sm:px-16 md:px-24">
+            <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100">
+                Complétez des sondages rémunérés !
+            </h2>
+            <div class="iframe-container">
+                <iframe width="100%" height="500px" frameborder="0"
+                    src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2">
+                </iframe>
+                <!-- Exemple d'Iframe
+                <iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234"
+                    width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter">
+                </iframe>
                 -->
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</winner>
+
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
