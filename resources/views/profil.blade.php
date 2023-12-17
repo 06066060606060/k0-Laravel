@@ -198,7 +198,7 @@
                                         {{__('Sondage')}}
                                     </th>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        {{__('Score')}}
+                                        {{__('Gains')}}
                                     </th>
                                     <th style="width:33%;" class="px-4 py-2 font-bold text-gray-900 md:block whitespace-nowrap">
                                         {{__('Date')}}
