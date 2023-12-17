@@ -155,7 +155,7 @@ Complétez des sondages rémunérés !</h2>
         </section>
     </winner>
             @if($isMobile)
-               <!-- <container class="mx-auto max-w-7xl" id="win">
+               <container class="mx-auto max-w-7xl" id="win">
                     <section>
                         <div
                             class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
@@ -188,9 +188,9 @@ Complétez des sondages rémunérés !</h2>
                             </table>
                         </div>
                     </section>
-                </container>-->
+                </container>
             @else
-                <!--<container class="mx-auto max-w-7xl" id="win">
+                <container class="mx-auto max-w-7xl" id="win">
                     <section>
                         <div
                             class="mb-4 px-2 py-4 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
@@ -223,7 +223,7 @@ Complétez des sondages rémunérés !</h2>
                             </table>
                         </div>
                     </section>
-                </container>-->
+                </container>
             @endif
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
