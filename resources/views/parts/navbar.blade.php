@@ -155,54 +155,25 @@ $isMobile = GlobalController::isMobile();
 </header>
 
 @if (backpack_auth()->check())
-    <style>
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-
-    @keyframes bounceInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-
-    .animated {
-        animation-duration: 1s;
-        animation-fill-mode: both;
-    }
-</style>
-
-<div class="welcome-container py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-70 max-w-7xl">
+    <div class="welcome-container py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-70 max-w-7xl">
     <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
         @unless($isMobile)
-            <p class="welcome-message pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0 animated fadeIn">
+            <p class="welcome-message pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0">
                 {{__('Bienvenue')}} {{ backpack_auth()->user()->name }}</p>
         @endunless
 
         <div class="resources-info flex items-center pr-4 mt-1">
-            <div class="resource-item flex px-2 animated fadeIn">
+            <div class="resource-item flex px-2">
                 <img src="/img/diamond5.png" class="w-8 h-6">
                 <p class="resource-quantity pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
             </div>
-            <div class="resource-item flex px-2 animated fadeIn">
+            <div class="resource-item flex px-2">
                 <img src="/img/coin10.png" class="w-8 h-6">
                 <p class="resource-quantity pt-1 text-white">&nbsp; x {{ backpack_auth()->user()->trophee3 }}</p>
             </div>
         </div>
     </div>
 </div>
-
-
 
 @else
 @endif
