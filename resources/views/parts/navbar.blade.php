@@ -35,7 +35,7 @@ $isMobile = GlobalController::isMobile();
             class="absolute inset-x-0 z-50 w-screen px-6 py-4 mt-12 transition-all duration-300 ease-in-out bg-blue-100 shadow-md lg:bg-transparent lg:shadow-none lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
             <div class="flex flex-col pb-4 space-y-4 align-baseline mynav lg:mt-0 lg:flex-row lg:space-y-0 md:pb-0">
             @php $locale = app()->getLocale(); @endphp
-                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" data-barba-prevent="self" href="/"
+                <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="/"
                     @click="isOpen = false">
                     @if (backpack_auth()->check())
                         <i class="fa-solid fa-poll"></i>&nbsp; {{__('Sondages')}}
@@ -71,12 +71,12 @@ $isMobile = GlobalController::isMobile();
                     </a>
                 @endif
                 <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="cadeaux"
-                    @click="isOpen = false" data-barba-prevent="self">
+                    @click="isOpen = false">
                     <i class="fa-solid fa-gift"></i>&nbsp; {{__('Cadeaux')}}
                 </a>
                 @if (backpack_auth()->check())
                     <a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600 lg:pr-6" href="profil"
-                        @click="isOpen = false"  data-barba-prevent="self">
+                        @click="isOpen = false">
                         <i class="fa-solid fa-user"></i>&nbsp; {{__('Profil')}}
                     </a>
                 @endif
