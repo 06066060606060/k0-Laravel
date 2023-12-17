@@ -59,18 +59,18 @@
                  list-none">
                     <ul>
                     @if($isMobile == true)
-                            <a href="/reglement" class="text-gray-400 hover:text-gray-500 text-xs"  data-barba-prevent="self">{{__('Règlement')}}</a> - 
-                            <a href="mentions-legales" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Mentions Légales')}}</a> - 
-                            <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Confidentialité')}}</a>
+                            <a href="/reglement" class="text-gray-400 hover:text-gray-500 text-xs">{{__('Règlement')}}</a> - 
+                            <a href="mentions-legales" class="text-gray-400 hover:text-gray-500  text-xs">{{__('Mentions Légales')}}</a> - 
+                            <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500  text-xs">{{__('Confidentialité')}}</a>
                     @else
                         <li>
-                            <a href="/reglement" class="text-gray-400 hover:text-gray-500"  data-barba-prevent="self">{{__('Règlement')}}</a>
+                            <a href="/reglement" class="text-gray-400 hover:text-gray-500">{{__('Règlement')}}</a>
                         </li>
                         <li>
-                            <a href="mentions-legales" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Mentions Légales')}}</a>
+                            <a href="mentions-legales" class="text-gray-400 hover:text-gray-500">{{__('Mentions Légales')}}</a>
                         </li>
                         <li>
-                            <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Confidentialité')}}</a>
+                            <a href="confidentialite-site" class="text-gray-400 hover:text-gray-500">{{__('Confidentialité')}}</a>
                         </li>
                     @endif
                     </ul>
@@ -83,7 +83,7 @@
                 @else
                 mb-3 
                 @endif
-                text-sm font-medium tracking-widest text-blue-400 title-font" data-barba-prevent="self">{{__('Plus')}}</h2>
+                text-sm font-medium tracking-widest text-blue-400 title-font">{{__('Plus')}}</h2>
                 <div class="
                 @if($isMobile == true)
                 mb-1
@@ -93,14 +93,14 @@
                  list-none">
                     <ul>
                     @if($isMobile == true)
-                            <a href="aide" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Aide')}}</a> - 
-                            <a href="contact" class="text-gray-400 hover:text-gray-500  text-xs" data-barba-prevent="self">{{__('Contact')}}</a>
+                            <a href="aide" class="text-gray-400 hover:text-gray-500  text-xs">{{__('Aide')}}</a> - 
+                            <a href="contact" class="text-gray-400 hover:text-gray-500  text-xs">{{__('Contact')}}</a>
                     @else
                         <li>
-                            <a href="aide" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Aide')}}</a>
+                            <a href="aide" class="text-gray-400 hover:text-gray-500">{{__('Aide')}}</a>
                         </li>
                         <li>
-                            <a href="contact" class="text-gray-400 hover:text-gray-500" data-barba-prevent="self">{{__('Contact')}}</a>
+                            <a href="contact" class="text-gray-400 hover:text-gray-500">{{__('Contact')}}</a>
                         </li>
                     @endif
                     </ul>
