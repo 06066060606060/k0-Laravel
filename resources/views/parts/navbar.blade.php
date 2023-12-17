@@ -55,12 +55,12 @@ $isMobile = GlobalController::isMobile();
                 @if (backpack_auth()->check())
                     @if(isset($concours))
                         <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
-                            href="concours" @click="isOpen = false" data-barba-prevent="self">
+                            href="concours" @click="isOpen = false">
                             <i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}
                         </a>
                     @else
                         <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
-                            href="concours" @click="isOpen = false" data-barba-prevent="self">
+                            href="concours" @click="isOpen = false">
                             <i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}
                         </a>
                     @endif
