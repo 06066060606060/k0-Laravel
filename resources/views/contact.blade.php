@@ -81,7 +81,7 @@
                                      </button>
                                  </div>
                              </form>-->
-                             Pour nous contacter, écrivez-nous par email à <a href="gokdo.com@gmail.com">gokdo.com@gmail.com</a>
+                             Pour nous contacter, écrivez-nous par email à <a href="mailto:gokdo.com@gmail.com">gokdo.com@gmail.com</a>
                          </div>
                      </div>
                  </section>
