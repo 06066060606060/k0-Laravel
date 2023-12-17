@@ -22,7 +22,7 @@
                              <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Espace Contact')}}</h1>
                          </div>
                          <div class="mx-auto lg:w-1/2 md:w-2/3">
-                             <form class="flex flex-wrap -m-2" method="post" action="contactmail">
+                           <!--  <form class="flex flex-wrap -m-2" method="post" action="contactmail">
                                  @csrf
                                  <div class="w-1/2 p-2">
                                      <div class="relative">
@@ -80,7 +80,8 @@
                                          <span class="relative">{{__('Envoyer le message')}}</span>
                                      </button>
                                  </div>
-                             </form>
+                             </form>-->
+                             Pour nous contacter, écrivez-nous par email à <a href="gokdo.com@gmail.com">gokdo.com@gmail.com</a>
                          </div>
                      </div>
                  </section>
