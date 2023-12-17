@@ -155,10 +155,37 @@ $isMobile = GlobalController::isMobile();
 </header>
 
 @if (backpack_auth()->check())
-    <div class="welcome-container py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-70 max-w-7xl animated fadeIn">
+    <style>
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounceInLeft {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animated {
+        animation-duration: 1s;
+        animation-fill-mode: both;
+    }
+</style>
+
+<div class="welcome-container py-2 mx-8 mb-4 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-70 max-w-7xl">
     <div class="flex flex-wrap items-center justify-center py-2 mx-auto md:justify-between max-w-7xl">
         @unless($isMobile)
-            <p class="welcome-message pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0 animated bounceInLeft">
+            <p class="welcome-message pb-2 ml-4 mr-2 font-bold text-gray-200 capitalize lg:ml-8 md:pb-0 animated fadeIn">
                 {{__('Bienvenue')}} {{ backpack_auth()->user()->name }}</p>
         @endunless
 
@@ -174,6 +201,7 @@ $isMobile = GlobalController::isMobile();
         </div>
     </div>
 </div>
+
 
 
 @else
