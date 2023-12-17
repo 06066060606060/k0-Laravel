@@ -110,26 +110,18 @@
 </div>
 </section>
 </winner>-->
-<winner class="mx-auto max-w-7xl" id="win">
-    <section class="mb-4 px-2 mx-8 lg:mx-8 xl:mx-auto">
-        <div class="py-2 bg-gray-800 rounded-lg lg:py-18 bg-opacity-40 max-w-7xl sm:px-16 md:px-24">
-            <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100">
-                Complétez des sondages rémunérés !
-            </h2>
-            <div class="iframe-container">
-                <iframe width="100%" height="500px" frameborder="0"
-                    src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2">
-                </iframe>
-                <!-- Exemple d'Iframe
-                <iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234"
-                    width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter">
-                </iframe>
-                -->
-            </div>
-        </div>
-    </section>
+    <winner class="mx-auto max-w-7xl" id="win">
+        <section>
+            <div
+                class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+                <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100 ">
+Complétez des sondages rémunérés !</h2>
+<iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
+<!-- Sample Iframe 
+<iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
+--></div>
+</section>
 </winner>
-
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
         <section>
