@@ -21,7 +21,7 @@
                          <div class="flex flex-col w-full mb-4 text-center">
                              <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-5xl title-font">{{__('Espace Contact')}}</h1>
                          </div>
-                         <div class="mx-auto lg:w-1/2 md:w-2/3">
+                         <div class="mx-auto lg:w-1/2 md:w-2/3 text-white">
                            <!--  <form class="flex flex-wrap -m-2" method="post" action="contactmail">
                                  @csrf
                                  <div class="w-1/2 p-2">
