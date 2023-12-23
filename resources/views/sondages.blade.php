@@ -13,7 +13,7 @@
                     </div>
                 
 	<section class="mb-2 relative text-white body-font">
-  		<h1 class="mb-1 text-xl font-bold text-blue-500 title-font">Top 5 Sondages Rémunérés</h1>
+  		<h1 class="mb-1 text-3xl font-bold text-blue-500 title-font">Top 10 Sondages Rémunérés</h1>
 
     <p>Les sondages rémunérés sont devenus une méthode populaire pour gagner de l'argent en ligne tout en partageant son opinion. De nombreux prestataires offrent des opportunités pour participer à des enquêtes et être récompensé pour cela. Voici quelques-uns des prestataires les plus connus dans ce domaine :</p>
 
