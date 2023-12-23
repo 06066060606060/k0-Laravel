@@ -51,7 +51,7 @@ $isMobile = GlobalController::isMobile();
                     </a>
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
                         href="sondages" @click="isOpen = false">
-                        <i class="fa-solid fa-poll"></i>&nbsp; {{__('Top Sondages')}}
+                        <i class="fa-solid fa-poll"></i>&nbsp; {{__('Top 10 Sondages')}}
                     </a>
                 @endif
                 <!--<a class="text-sm font-bold text-gray-400  lg:mx-4 hover:text-blue-600" href="jeux"
