@@ -410,6 +410,11 @@ public function winner()
         return view('partenaires');
     }
 
+    public function sondages()
+    {
+        return view('sondages');
+    }
+
     public function reglement()
     {
         return view('reglement');
