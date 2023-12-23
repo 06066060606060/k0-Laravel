@@ -52,40 +52,9 @@
     <p class="mt-2">En conclusion, les sondages rémunérés offrent une opportunité simple et accessible de gagner de l'argent en ligne. En choisissant parmi des prestataires bien établis tels que Swagbucks, Toluna, Survey Junkie et Vindale Research, vous pouvez commencer à participer à des enquêtes et à être récompensé pour votre temps et votre opinion.</p>
 
 
-
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Informations Principales')}}</h2> 
-		<p class="leading-relaxed text-gray-300">Nom de l'entreprise : GOKDO
-        <br>Nom du propriétaire : JORGEVU Nicolaï
-        <br>Addresse : {{__('Iakovou Tompazi, Limassol, Chypre')}}
-        </p>
-	</section>
-	<section class="mb-2 relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Hébergement')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__("Le site GoKDO est hébergé par HOSTINGER, dont le siège social est situé HOSTINGER INTERNATIONAL LTD, 61 Lordou Vironos Street, 6023 Larnaca, Chypre, joignable par le moyen suivant :https://www.hostinger.fr/contact.")}}</p>
-	</section>
-	<section class="relative text-gray-600 body-font">
-		<h2 class="mb-1 text-xl font-bold text-blue-500 title-font">{{__('Création')}}</h2>
-		<p class="leading-relaxed text-gray-300">{{__('Site développé et conçu par Micky XBMOD')}}</p>
-	</section>
-                        </div>
-                    </div>
-                </div>
             </section>
         </div>
     </div>
 </div>
-<script>
-    $(document).ready(function() {
-        // écouter le clic sur les titres des onglets
-        $('.tab-titles a').click(function(e) {
-            e.preventDefault();
-            // afficher le contenu associé
-            $($(this).attr('href')).show().siblings('.tab-pane').hide();
-            // activer la classe 'active' sur l'onglet sélectionné
-            $(this).parent('li').addClass('active').siblings().removeClass('active');
-        });
-        // afficher le premier onglet par défaut
-        $('.tab-titles li:first-child a').click();
-    });
-</script>
+
 @endsection
