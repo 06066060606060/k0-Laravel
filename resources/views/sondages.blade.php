@@ -17,26 +17,35 @@
 
     <p>Les sondages rémunérés sont devenus une méthode populaire pour gagner de l'argent en ligne tout en partageant son opinion. De nombreux prestataires offrent des opportunités pour participer à des enquêtes et être récompensé pour cela. Voici quelques-uns des prestataires les plus connus dans ce domaine :</p>
 
-    <h2 class="mb-1 text-xl font-bold text-yellow-400 title-font">1. Swagbucks</h2>
-    <p>Swagbucks est l'un des leaders dans le domaine des sondages rémunérés. En plus des sondages, vous pouvez gagner des points en effectuant diverses tâches en ligne, comme regarder des vidéos, faire des achats en ligne, et plus encore.</p>
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">1. Swagbucks</h2>
+    <p class="mt-2 mb-2">Swagbucks est l'un des leaders dans le domaine des sondages rémunérés. En plus des sondages, vous pouvez gagner des points en effectuant diverses tâches en ligne, comme regarder des vidéos, faire des achats en ligne, et plus encore.</p>
 
-    <h2 class="mb-1 text-xl font-bold text-yellow-400 title-font">2. Toluna</h2>
-    <p>Toluna propose une plateforme conviviale pour participer à des sondages rémunérés. En partageant votre opinion, vous accumulez des points échangeables contre des cartes-cadeaux, des produits gratuits ou de l'argent PayPal.</p>
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">2. Toluna</h2>
+    <p class="mt-2 mb-2">Toluna propose une plateforme conviviale pour participer à des sondages rémunérés. En partageant votre opinion, vous accumulez des points échangeables contre des cartes-cadeaux, des produits gratuits ou de l'argent PayPal.</p>
 
-    <h2 class="mb-1 text-xl font-bold text-yellow-400 title-font">3. Survey Junkie</h2>
-    <p>Survey Junkie se concentre exclusivement sur les sondages en ligne. Les utilisateurs peuvent gagner de l'argent ou des cartes-cadeaux en participant à des enquêtes et en donnant leur avis sur différents produits et services.</p>
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">3. Survey Junkie</h2>
+    <p class="mt-2 mb-2">Survey Junkie se concentre exclusivement sur les sondages en ligne. Les utilisateurs peuvent gagner de l'argent ou des cartes-cadeaux en participant à des enquêtes et en donnant leur avis sur différents produits et services.</p>
 
-    <h2 class="mb-1 text-xl font-bold text-yellow-400 title-font">4. Vindale Research</h2>
-    <p>Vindale Research propose des sondages rémunérés ainsi que des opportunités de test de produits. Les membres peuvent gagner de l'argent en participant à des études de marché et en donnant leur feedback sur divers produits et services.</p>
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">4. Vindale Research</h2>
+    <p class="mt-2 mb-2">Vindale Research propose des sondages rémunérés ainsi que des opportunités de test de produits. Les membres peuvent gagner de l'argent en participant à des études de marché et en donnant leur feedback sur divers produits et services.</p>
 
-    <h2 class="mb-1 text-xl font-bold text-yellow-400 title-font">5. YouGov</h2>
-    <p>YouGov est reconnu pour ses enquêtes axées sur l'opinion politique et sociale. Les participants peuvent influencer les décisions politiques en partageant leurs points de vue et sont récompensés par des points convertibles en argent ou en cartes-cadeaux.</p>
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">5. YouGov</h2>
+    <p class="mt-2 mb-2">YouGov est reconnu pour ses enquêtes axées sur l'opinion politique et sociale. Les participants peuvent influencer les décisions politiques en partageant leurs points de vue et sont récompensés par des points convertibles en argent ou en cartes-cadeaux.</p>
 
-    <h2 class="mb-1 text-xl font-bold text-yellow-400 title-font">6. Gaddin</h2>
-    <p>Gaddin offre des opportunités de sondages rémunérés ainsi que d'autres moyens de gagner de l'argent en ligne, tels que la lecture d'emails rémunérés. Les membres peuvent accumuler des points échangeables contre des récompenses attractives.</p>
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">6. Gaddin</h2>
+    <p class="mt-2 mb-2">Gaddin offre des opportunités de sondages rémunérés ainsi que d'autres moyens de gagner de l'argent en ligne, tels que la lecture d'emails rémunérés. Les membres peuvent accumuler des points échangeables contre des récompenses attractives.</p>
 
-    <h2 class="mb-1 text-xl font-bold text-yellow-400 title-font">7. SondagesRémunérés.fr</h2>
-    <p>SondagesRémunérés.fr propose une variété de sondages rémunérés couvrant différents domaines. Les participants peuvent gagner de l'argent ou des chèques-cadeaux en partageant leur avis sur divers sujets.</p>
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">7. SondagesRémunérés.fr</h2>
+    <p class="mt-2 mb-2">SondagesRémunérés.fr propose une variété de sondages rémunérés couvrant différents domaines. Les participants peuvent gagner de l'argent ou des chèques-cadeaux en partageant leur avis sur divers sujets.</p>
+
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">8. YouGov</h2>
+    <p class="mt-2 mb-2">YouGov est reconnu pour ses enquêtes axées sur l'opinion politique et sociale. Les participants peuvent influencer les décisions politiques en partageant leurs points de vue et sont récompensés par des points convertibles en argent ou en cartes-cadeaux.</p>
+
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">9. Gaddin</h2>
+    <p class="mt-2 mb-2">Gaddin offre des opportunités de sondages rémunérés ainsi que d'autres moyens de gagner de l'argent en ligne, tels que la lecture d'emails rémunérés. Les membres peuvent accumuler des points échangeables contre des récompenses attractives.</p>
+
+    <h2 class="mb-1 text-xl font-bold text-yellow title-font">10. SondagesRémunérés.fr</h2>
+    <p class="mt-2 mb-2">SondagesRémunérés.fr propose une variété de sondages rémunérés couvrant différents domaines. Les participants peuvent gagner de l'argent ou des chèques-cadeaux en partageant leur avis sur divers sujets.</p>
 
     <p>Il est important de noter que la disponibilité des sondages peut varier en fonction de votre emplacement géographique et de votre profil démographique. Avant de vous inscrire à un prestataire, assurez-vous de lire les conditions d'utilisation et de comprendre comment fonctionne le processus de rémunération.</p>
 
