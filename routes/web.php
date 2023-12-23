@@ -52,6 +52,7 @@ Route::controller(GlobalController::class)->group(function(){
     Route::get('reglement', 'reglement');
     Route::get('vip', 'vip');
     Route::get('mentions-legales', 'mentionslegales');
+    Route::get('sondages', 'sondages');
     Route::get('confidentialite-site', 'confidentialitesite');
     Route::get('partenaires', 'partenaires');
 });
