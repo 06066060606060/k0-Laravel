@@ -100,6 +100,9 @@
                             <a href="aide" class="text-gray-400 hover:text-gray-500">{{__('Aide')}}</a>
                         </li>
                         <li>
+                            <a href="sondages" class="text-gray-400 hover:text-gray-500">{{__('Top 10 Sondages')}}</a>
+                        </li>
+                        <li>
                             <a href="contact" class="text-gray-400 hover:text-gray-500">{{__('Contact')}}</a>
                         </li>
                     @endif
