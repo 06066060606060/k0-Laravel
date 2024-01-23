@@ -119,6 +119,7 @@ Complétez des sondages rémunérés !</h2>
  <style>
     .tab-container {
       display: flex;
+      margin-bottom:10px;
     }
 
     .tab-button {
@@ -149,9 +150,9 @@ Complétez des sondages rémunérés !</h2>
 <body>
 
 <div class="tab-container">
-  <button class="tab-button" style="border-radius:10px 0 10px 0;" onclick="showTab('tab1')">Gagnez des <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
+  <button class="tab-button" style="border-radius:10px 0 0 10px;" onclick="showTab('tab1')">Gagnez des <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
 <b>Diamants</b> <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4"></button>
-  <button class="tab-button" style="background:#FFD700; color:#000000; border-radius:0 0 10px 10px;" onclick="showTab('tab2')">Gagnez des <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+  <button class="tab-button" style="background:#FFD700; color:#000000; border-radius:0 10px 10px 0;" onclick="showTab('tab2')">Gagnez des <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
 <b>Coins</b> <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4"></button>
 </div>
 
