@@ -122,6 +122,7 @@ Complétez des sondages rémunérés !</h2>
     }
 
     .tab-button {
+      width:100%;
       cursor: pointer;
       padding: 10px;
       margin: 0;
@@ -149,7 +150,7 @@ Complétez des sondages rémunérés !</h2>
 
 <div class="tab-container">
   <button class="tab-button" onclick="showTab('tab1')">Gagnez des Diamants</button>
-  <button class="tab-button" onclick="showTab('tab2')">Gagnez des Coins</button>
+  <button class="tab-button" style="backgroundColor:gold; color:black;" onclick="showTab('tab2')">Gagnez des Coins</button>
 </div>
 
 <div id="tab1" class="tab-content">
