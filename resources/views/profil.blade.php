@@ -213,7 +213,9 @@
                                             Sondage
                                         </td>
                                         <td style="width:33%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
-                                        @if($score->data > 0)
+                                        @if($score->data > 0 && $score->data < 100)
+                                        {{ $score->data }} <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+                                        @else
                                         {{ $score->data }} <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
                                         @endif
                                         @if($score->data2 > 0)
