@@ -116,9 +116,63 @@
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
                 <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100 ">
 Complétez des sondages rémunérés !</h2>
-<iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
-<iframe width="100%" frameBorder="0" height="700px" src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
-<!-- Sample Iframe 
+ <style>
+    .tab-container {
+      display: flex;
+    }
+
+    .tab-button {
+      cursor: pointer;
+      padding: 10px;
+      margin: 0;
+      border: none;
+      background-color: #f1f1f1;
+      transition: background-color 0.3s;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    iframe {
+      width: 100%;
+      border: 0;
+      height: 500px; /* Ajustez la hauteur en fonction de vos besoins */
+    }
+  </style>
+</head>
+<body>
+
+<div class="tab-container">
+  <button class="tab-button" onclick="showTab('tab1')">Gagnez des Diamants</button>
+  <button class="tab-button" onclick="showTab('tab2')">Gagnez des Coins</button>
+</div>
+
+<div id="tab1" class="tab-content">
+  <iframe src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
+</div>
+
+<div id="tab2" class="tab-content">
+  <iframe src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
+</div>
+
+<script>
+  function showTab(tabId) {
+    // Masquer tous les onglets
+    var tabs = document.querySelectorAll('.tab-content');
+    tabs.forEach(function(tab) {
+      tab.classList.remove('active');
+    });
+
+    // Afficher l'onglet spécifique
+    var activeTab = document.getElementById(tabId);
+    activeTab.classList.add('active');
+  }
+</script><!-- Sample Iframe 
 <iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
 --></div>
 </section>
