@@ -149,18 +149,18 @@ Complétez des sondages rémunérés !</h2>
 <body>
 
 <div class="tab-container">
-  <button class="tab-button" onclick="showTab('tab1')">Gagnez des <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
+  <button class="tab-button" style="border-radius:10px 10px 0 0;" onclick="showTab('tab1')">Gagnez des <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
 <b>Diamants</b> <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4"></button>
-  <button class="tab-button" style="background:#FFD700; color:#000000;" onclick="showTab('tab2')">Gagnez des <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
+  <button class="tab-button" style="background:#FFD700; color:#000000; border-radius:0 0 10px 10px;" onclick="showTab('tab2')">Gagnez des <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
 <b>Coins</b> <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4"></button>
 </div>
 
 <div id="tab1" class="tab-content">
-  <iframe src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
+  <iframe style="border-radius:10px;" src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
 </div>
 
 <div id="tab2" class="tab-content">
-  <iframe style="width:100%;" src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
+  <iframe style="width:100%; border-radius:10px;" src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
 </div>
 
 <script>
