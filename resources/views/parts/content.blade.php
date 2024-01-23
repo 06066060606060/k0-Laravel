@@ -119,7 +119,7 @@ Complétez des sondages rémunérés !</h2>
  <style>
     .tab-container {
       display: flex;
-      margin-bottom:10px;
+      margin-bottom:20px;
     }
 
     .tab-button {
