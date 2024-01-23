@@ -160,7 +160,7 @@ Complétez des sondages rémunérés !</h2>
 </div>
 
 <div id="tab2" class="tab-content">
-  <iframe src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
+  <iframe style="width:100%;" src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
 </div>
 
 <script>
