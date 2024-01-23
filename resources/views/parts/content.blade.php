@@ -117,7 +117,7 @@
                 <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100 ">
 Complétez des sondages rémunérés !</h2>
 <iframe width="100%" frameBorder="0" height="500px"  src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
-<!--<iframe width="100%" frameBorder="0" height="500px" src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>-->
+<iframe width="100%" frameBorder="0" height="500px" src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
 <!-- Sample Iframe 
 <iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
 --></div>
