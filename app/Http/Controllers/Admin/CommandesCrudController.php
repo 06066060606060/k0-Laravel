@@ -40,12 +40,7 @@ class CommandesCrudController extends CrudController
     protected function setupListOperation()
     {
         CRUD::column('id')->label('N°');
-        CRUD::field('user_id')
-        ->label('Utilisateur')
-        ->link('/user/{user_id}/edit')
-        ->value(function ($entry) {
-            return $entry->user_id; // Remplacez cela par le nom de votre modèle et votre clé étrangère
-        });
+        CRUD::column('user_id')->label('Utilisateur');
         CRUD::column('created_at')->label('Date');
         CRUD::column('cadeau_id')->label('Contenu');
 
