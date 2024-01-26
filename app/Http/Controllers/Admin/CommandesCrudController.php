@@ -43,10 +43,9 @@ class CommandesCrudController extends CrudController
         CRUD::field('user_id')
         ->label('Utilisateur')
         ->link('/user/{{user_id}}/edit')
-        ->value(function($entry) {
+        ->value(function ($entry) {
             return $entry->user_id; // Remplacez cela par le nom de votre modèle et votre clé étrangère
-        })
-        ->text('Voir le profil de l\'utilisateur');
+        });
         CRUD::column('created_at')->label('Date');
         CRUD::column('cadeau_id')->label('Contenu');
 
@@ -85,14 +84,8 @@ class CommandesCrudController extends CrudController
     {
         CRUD::setValidation(CommandesRequest::class);
 
-        CRUD::field('user_id')
-        ->label('Utilisateur')
-        ->link('/user/{{user_id}}/edit')
-        ->value(function($entry) {
-            return $entry->user_id; // Remplacez cela par le nom de votre modèle et votre clé étrangère
-        })
-        ->text('Voir le profil de l\'utilisateur');
-            CRUD::field('created_at')->label('Date de commande');
+        CRUD::field('user_id')->label('Utilisateur');
+        CRUD::field('created_at')->label('Date de commande');
         CRUD::field('cadeau_id')->label('Contenu commande');
 
         $this->crud->addField([   // radio
