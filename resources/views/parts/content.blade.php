@@ -156,16 +156,20 @@ Complétez des sondages rémunérés !</h2>
 <b>Coins</b> <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4"></button>
 </div>
 
-<div id="tab1" class="tab-content">
+<div id="tab1" class="tab-content" onclick="showTab('tab1')">
   <iframe style="border-radius:10px;" src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
 </div>
 
-<div id="tab2" class="tab-content">
+<div id="tab2" class="tab-content" onclick="showTab('tab2')">
   <iframe style="width:100%; border-radius:10px;" src="https://web.bitlabs.ai/?uid={{ backpack_auth()->user()->id }}&token=24d8aab4-f899-4309-87bf-20e62127aab3&username={{ backpack_auth()->user()->name }}"></iframe>
 </div>
 
 <script>
   function showTab(tabId) {
+    // Masquer l'image sondagess
+    var sondagessImage = document.querySelector('img[src="/img/sondagess.png"]');
+    sondagessImage.style.display = 'none';
+
     // Masquer tous les onglets
     var tabs = document.querySelectorAll('.tab-content');
     tabs.forEach(function(tab) {
@@ -176,9 +180,8 @@ Complétez des sondages rémunérés !</h2>
     var activeTab = document.getElementById(tabId);
     activeTab.classList.add('active');
   }
-</script><!-- Sample Iframe 
-<iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
--->
+</script>
+
 <center><img src="/img/sondagess.png" width="50%"></center>
 
 </div>
