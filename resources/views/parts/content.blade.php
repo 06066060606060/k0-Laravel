@@ -450,7 +450,17 @@ l.parentNode.insertBefore(s, l);
         </section>
     </container>
 
-
+<script>
+(function(__htavim){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = __htavim || {};
+s.src = "\/\/closed-philosophy.com\/dRmSFXz.dJGdlSt\/PV3bp\/vFbImDVMJ\/ZkDG0U1\/MvTFY\/3\/M\/DTIv0HLPTSULxoNDjYcRwpMajfUJ";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})()
+</script>
 <script>
 (function(mcbu){
 var d = document,
