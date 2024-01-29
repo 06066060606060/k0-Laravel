@@ -114,17 +114,7 @@
         <section>
             <div
                 class="mb-4 px-2 py-2 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-                <script>
-(function(mcbu){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = mcbu || {};
-s.src = "\/\/aggravatingcomplaint.com\/bMX.VWsZdOGzlk0UYYWXdliKYbWH5DueZwX-IW\/teamW9BuXZ\/U\/l_kiPRTMUoxZNljCYS5ZOnT-IItnNGT\/Ep2zNNjlkY5qMWwl";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
+                
                 <h2 class="text-2xl mb-4 font-bold tracking-tight mt-2 text-center text-gray-100 ">
 Complétez des sondages rémunérés !</h2>
  <style>
@@ -192,9 +182,29 @@ Complétez des sondages rémunérés !</h2>
     activeTab.classList.add('active');
   }
 </script>
-
+<script>
+(function(__htavim){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = __htavim || {};
+s.src = "\/\/closed-philosophy.com\/dRmSFXz.dJGdlSt\/PV3bp\/vFbImDVMJ\/ZkDG0U1\/MvTFY\/3\/M\/DTIv0HLPTSULxoNDjYcRwpMajfUJ";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})()
+</script>
 <center><img src="/img/sondagess.png" width="50%"></center>
-
+<script>
+(function(mcbu){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = mcbu || {};
+s.src = "\/\/aggravatingcomplaint.com\/bMX.VWsZdOGzlk0UYYWXdliKYbWH5DueZwX-IW\/teamW9BuXZ\/U\/l_kiPRTMUoxZNljCYS5ZOnT-IItnNGT\/Ep2zNNjlkY5qMWwl";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
 </div>
 </section>
 </winner>
