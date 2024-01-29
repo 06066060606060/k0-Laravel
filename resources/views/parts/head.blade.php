@@ -45,6 +45,21 @@
             document.getElementById("pageTitle").innerText = "Sondages pour gagner des cadeaux";
             document.getElementById("pageDesc").innerText = "Répondez à des sondages rémunérés pour gagner des cadeaux";
         }
+        if (currentPage === "https://gokdo.com/admin/login") {
+            // Modifier le titre si l'URL est https://gokdo.com/cadeaux
+            document.getElementById("pageTitle").innerText = "Connexion sur Gokdo";
+            document.getElementById("pageDesc").innerText = "Connectez vous et répondez à des sondages rémunérés pour gagner des cadeaux";
+        }
+        if (currentPage === "https://gokdo.com/admin/register") {
+            // Modifier le titre si l'URL est https://gokdo.com/cadeaux
+            document.getElementById("pageTitle").innerText = "Inscription sur Gokdo";
+            document.getElementById("pageDesc").innerText = "Inscrivez-vous et répondez à des sondages rémunérés pour gagner des cadeaux";
+        }
+        if (currentPage === "https://gokdo.com/admin/password/reset") {
+            // Modifier le titre si l'URL est https://gokdo.com/cadeaux
+            document.getElementById("pageTitle").innerText = "Mot de passe oublié sur Gokdo";
+            document.getElementById("pageDesc").innerText = "Récupérez votre mot de passe oublié";
+        }
     </script>
 <meta name="keywords" content="{{__("sondages rémunérés, enquêtes rémunérées, gagner de l'argent en ligne, panels de consommateurs, récompenses pour sondages, opinions rémunérées, participer à des sondages, sites de sondages, sondages payants, argent sur internet, sondages en ligne rémunérés, rémunération pour avis, panel d'opinion, compensations pour enquêtes, gains en répondant à des sondages, opportunités de revenus en ligne, rémunération pour feedback, études de marché payées, sondages rétribués, gagner de l'argent avec des sondages, travail en ligne rémunéré, plateformes de sondages, inscription à des panels de consommateurs, rémunération pour avis, gagner de l'argent avec des opinions, rémunération pour participation à des études, récompenses pour partager son opinion, rémunération pour réponses à des questionnaires en ligne")}}" />
 <meta name="identifier-url" content="https://gokdo.com" />
