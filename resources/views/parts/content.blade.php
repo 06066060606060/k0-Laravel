@@ -179,8 +179,9 @@ Complétez des sondages rémunérés !</h2>
 </script><!-- Sample Iframe 
 <iframe src="https://www.rapidoreach.com/ofw/?userId=597a0ed87760ae04c29975ee-1sJ57hgit-838ab4b72d221a585af8b4be7a540234" width="100%" height="500px" frameborder="0" scrolling="no" name="RewardsCenter"></iframe>
 --></div>
+<center><img src="/img/sondagess.png" width="80%"></center>
+
 </section>
-<img src="/img/sondagess.png">
 </winner>
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
