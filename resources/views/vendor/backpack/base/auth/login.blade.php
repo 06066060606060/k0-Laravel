@@ -17,6 +17,7 @@
         <div class="col-12 col-md-8 col-lg-4">
             <a href="/">
                 <img class="w-auto pb-4 mx-auto h-auto" src="{{ asset('img/logo.png') }}"></a>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Connexion sur Gokdo')}}</h1>
             <div class="card">
                 <div class="card-body">
                     <form class="pt-0 col-md-12" role="form" method="POST" action="{{ route('backpack.auth.login') }}">

@@ -20,6 +20,8 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
+            <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Inscription sur Gokdo')}}</h1>
+
             <div class="card">
                 <div class="card-body">
                     <form class="col-md-12" role="form" method="POST" action="{{ url('/admin/register') }}">

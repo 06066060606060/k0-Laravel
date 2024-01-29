@@ -5,6 +5,8 @@
         <div class="col-12 col-md-9 col-lg-6">
                 <a href="/">
                 <img class="w-auto pb-2 mx-auto h-1/8" src="/img/logo.png"></a>
+                <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Mot de passe oublié')}}</h1>
+
             <div class="nav-steps-wrapper">
                 <ul class="nav nav-tabs">
                       <li class="nav-item"><a class="nav-link disabled text-muted"><strong>{{ trans('backpack::base.step') }} 1.</strong> {{ trans('backpack::base.confirm_email') }}</a></li>
