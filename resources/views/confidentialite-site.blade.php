@@ -13,7 +13,7 @@
                     </div>
 
     <header class="z-10 flex px-4 pt-6 pb-2 md:px-0 md:mx-auto max-w-7xl border-x-1 justify-evenly">
-		<h1 class="mb-4 text-3xl font-bold text-gray-100 md:text-3xl title-font">{{__('Politique de confidentialité')}}</h1>
+		<h2 class="mb-4 text-3xl font-bold text-gray-100 md:text-3xl title-font">{{__('Politique de confidentialité')}}</h1>
 	</header>
 	<section class="mb-2 relative text-gray-600 body-font">
 		<p class="leading-relaxed text-gray-300">{{__("Le site web https://gokdo.com est détenu par GoKDO, qui est un contrôleur de données de vos données personnelles. Nous avons adopté cette politique de confidentialité, qui détermine la manière dont nous traitons les informations collectées par https://gokdo.com, qui fournit également les raisons pour lesquelles nous devons collecter certaines données personnelles vous concernant. Par conséquent, vous devez lire cette politique de confidentialité avant d'utiliser le site web de https://gokdo.com. Nous prenons soin de vos données personnelles et nous nous engageons à en garantir la confidentialité et la sécurité.")}}</p>
