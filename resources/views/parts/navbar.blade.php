@@ -9,7 +9,7 @@ $isMobile = GlobalController::isMobile();
             <div>
                 <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/">
                 @if($isMobile == true)
-                    <img src="/img/logo-mobile.webp" alt="Gokdo" width="50%" title="Gokdo Sondages rémunérés" class="h-18">
+                    <img src="/img/logo-mobile.webp" alt="Gokdo" width="70%" title="Gokdo Sondages rémunérés" class="h-20">
                 @else
                     <img src="/img/logo-mobile.webp" alt="Gokdo" width="354" title="Gokdo Sondages rémunérés" height="96" class="w-auto h-24">
                 @endif
