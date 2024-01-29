@@ -3,7 +3,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Primary Meta Tags -->
 <meta name="title" content="Gokdo - Sondages Rémunérés">
-<title>{{__('Sondages Rémunérés Gagnez de l\'Argent en Ligne : Votre Avis Compte !')}}</title>
+<title id="pageTitle">Sondages Rémunérés Gagnez de l'Argent en Ligne : Votre Avis Compte !</title>
+<script>
+        // Récupérer l'URL de la page
+        var currentPage = window.location.href;
+
+        // Vérifier si l'URL correspond à https://gokdo.com/reglement
+        if (currentPage === "https://gokdo.com/reglement") {
+            // Modifier le titre si l'URL est https://gokdo.com/reglement
+            document.getElementById("pageTitle").innerText = "Règlement du site Gokdo";
+        }
+        if (currentPage === "https://gokdo.com/contact") {
+            // Modifier le titre si l'URL est https://gokdo.com/contact
+            document.getElementById("pageTitle").innerText = "Espace de contact Gokdo";
+        }
+        if (currentPage === "https://gokdo.com/confidentialite-site") {
+            // Modifier le titre si l'URL est https://gokdo.com/confidentialite-site
+            document.getElementById("pageTitle").innerText = "Confidentitalité du site Gokdo";
+        }
+        if (currentPage === "https://gokdo.com/sondages") {
+            // Modifier le titre si l'URL est https://gokdo.com/sondages
+            document.getElementById("pageTitle").innerText = "Top 10 sondages rémunérés";
+        }
+        if (currentPage === "https://gokdo.com/mentions-legales") {
+            // Modifier le titre si l'URL est https://gokdo.com/mentions-legales
+            document.getElementById("pageTitle").innerText = "Mentions légales Gokdo";
+        }
+        if (currentPage === "https://gokdo.com/aide") {
+            // Modifier le titre si l'URL est https://gokdo.com/aide
+            document.getElementById("pageTitle").innerText = "Aide du site Gokdo";
+        }
+        if (currentPage === "https://gokdo.com/cadeaux") {
+            // Modifier le titre si l'URL est https://gokdo.com/cadeaux
+            document.getElementById("pageTitle").innerText = "Sondages pour gagner des cadeaux";
+        }
+    </script>
 <meta name="description" content="{{__("Gagnez de l'argent en partageant votre opinion avec des sondages rémunérés en ligne. Inscrivez-vous dès maintenant pour des récompenses en échange de vos avis")}}">
 <meta name="keywords" content="{{__("sondages rémunérés, enquêtes rémunérées, gagner de l'argent en ligne, panels de consommateurs, récompenses pour sondages, opinions rémunérées, participer à des sondages, sites de sondages, sondages payants, argent sur internet, sondages en ligne rémunérés, rémunération pour avis, panel d'opinion, compensations pour enquêtes, gains en répondant à des sondages, opportunités de revenus en ligne, rémunération pour feedback, études de marché payées, sondages rétribués, gagner de l'argent avec des sondages, travail en ligne rémunéré, plateformes de sondages, inscription à des panels de consommateurs, rémunération pour avis, gagner de l'argent avec des opinions, rémunération pour participation à des études, récompenses pour partager son opinion, rémunération pour réponses à des questionnaires en ligne")}}" />
 <meta name="identifier-url" content="https://gokdo.com" />
