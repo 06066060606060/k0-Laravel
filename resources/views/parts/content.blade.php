@@ -194,7 +194,7 @@ s.async = true;
 l.parentNode.insertBefore(s, l);
 })()
 </script></center>
-<center><img src="/img/sondagess.png" width="50%"></center>
+<center><img src="/img/sondagess.png" width="50%">
 <script>
 (function(mcbu){
 var d = document,
@@ -205,7 +205,7 @@ s.src = "\/\/aggravatingcomplaint.com\/bMX.VWsZdOGzlk0UYYWXdliKYbWH5DueZwX-IW\/t
 s.async = true;
 l.parentNode.insertBefore(s, l);
 })({})
-</script>
+</script></center>
 </div>
 </section>
 </winner>
