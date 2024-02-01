@@ -194,8 +194,10 @@ s.async = true;
 l.parentNode.insertBefore(s, l);
 })()
 </script></center>
-<center><img src="/img/sondagess.png" width="50%">
-<script>
+<center><img src="/img/sondagess.png" width="50%"></center>
+</div>
+</section>
+<center><script>
 (function(mcbu){
 var d = document,
     s = d.createElement('script'),
@@ -206,8 +208,6 @@ s.async = true;
 l.parentNode.insertBefore(s, l);
 })({})
 </script></center>
-</div>
-</section>
 </winner>
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
