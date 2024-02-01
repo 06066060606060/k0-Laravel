@@ -187,6 +187,7 @@ Complétez des sondages rémunérés !</h2>
     activeTab.classList.add('active');
   }
 </script>
+<center>
 <script>
 (function(__htavim){
 var d = document,
@@ -197,7 +198,7 @@ s.src = "\/\/closed-philosophy.com\/dRmSFXz.dJGdlSt\/PV3bp\/vFbImDVMJ\/ZkDG0U1\/
 s.async = true;
 l.parentNode.insertBefore(s, l);
 })()
-</script>
+</script></center>
 <center><img src="/img/sondagess.png" width="50%"></center>
 <script>
 (function(mcbu){
@@ -454,7 +455,7 @@ l.parentNode.insertBefore(s, l);
             </div>
         </section>
     </container>
-
+<center>
 <script>
 (function(__htavim){
 var d = document,
@@ -476,7 +477,7 @@ s.src = "\/\/aggravatingcomplaint.com\/bMX.VWsZdOGzlk0UYYWXdliKYbWH5DueZwX-IW\/t
 s.async = true;
 l.parentNode.insertBefore(s, l);
 })({})
-</script>
+</script></center>
     <!-- CADEAU -->
     <div id="concept"></div>
     <container id="how" class="block py-16 mx-8 border-gray-600 max-w-7xl md:mx-auto">
