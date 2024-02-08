@@ -182,32 +182,10 @@ Complétez des sondages rémunérés !</h2>
     activeTab.classList.add('active');
   }
 </script>
-<center>
-<script>
-(function(__htavim){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = __htavim || {};
-s.src = "\/\/closed-philosophy.com\/dRmSFXz.dJGdlSt\/PV3bp\/vFbImDVMJ\/ZkDG0U1\/MvTFY\/3\/M\/DTIv0HLPTSULxoNDjYcRwpMajfUJ";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})()
-</script></center>
+
 <center><img src="/img/sondagess.png" width="50%"></center>
 </div>
 </section>
-<center><script>
-(function(mcbu){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = mcbu || {};
-s.src = "\/\/aggravatingcomplaint.com\/bMX.VWsZdOGzlk0UYYWXdliKYbWH5DueZwX-IW\/teamW9BuXZ\/U\/l_kiPRTMUoxZNljCYS5ZOnT-IItnNGT\/Ep2zNNjlkY5qMWwl";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})({})
-</script></center>
 </winner>
     <!-- WINNER -->
     <winner class="mx-auto max-w-7xl" id="win">
@@ -450,29 +428,7 @@ l.parentNode.insertBefore(s, l);
             </div>
         </section>
     </container>
-<center>
-<script>
-(function(__htavim){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = __htavim || {};
-s.src = "\/\/closed-philosophy.com\/dRmSFXz.dJGdlSt\/PV3bp\/vFbImDVMJ\/ZkDG0U1\/MvTFY\/3\/M\/DTIv0HLPTSULxoNDjYcRwpMajfUJ";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})()
-</script>
-<script>
-(function(mcbu){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = mcbu || {};
-s.src = "\/\/aggravatingcomplaint.com\/bMX.VWsZdOGzlk0UYYWXdliKYbWH5DueZwX-IW\/teamW9BuXZ\/U\/l_kiPRTMUoxZNljCYS5ZOnT-IItnNGT\/Ep2zNNjlkY5qMWwl";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})({})
-</script></center>
+
     <!-- CADEAU -->
     <div id="concept"></div>
     <container id="how" class="block py-16 mx-8 border-gray-600 max-w-7xl md:mx-auto">
