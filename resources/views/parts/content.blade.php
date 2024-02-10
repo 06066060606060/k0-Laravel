@@ -246,7 +246,7 @@ Complétez des sondages rémunérés !</h2>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
                                 <span class="relative">{{__('Cliquez-ici pour copier votre lien')}}</span></a></b><br><br>
-                                        <i style="color: orange; font-size: 13px;">{{__("Triche = Exclusion du site")}}</i>
+                                        <i style="color: orange; font-size: 13px;">Triche = Exclusion du site</i>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -281,7 +281,7 @@ Complétez des sondages rémunérés !</h2>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
                                 <span class="relative">{{__('Cliquez-ici pour copier votre lien')}}</span></a></b><br><br>
-                                        <i style="color: orange; font-size: 13px;">{{__("Triche = Exclusion du site")}}</i>
+                                        <i style="color: orange; font-size: 13px;">Triche = Exclusion du site</i>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -440,11 +440,11 @@ Complétez des sondages rémunérés !</h2>
         <section class="text-gray-400 body-font">
             <div class="flex flex-col items-center">
             @if($isMobile == true)
-            <div class="mb-4 text-2xl font-bold text-gray-100 md:text-xl title-font">{{__("Sondages rémunérés en ligne")}}</div>
-            <h2 class="mb-4 text-l font-bold text-gray-100 md:text-l title-font">{{__("Gagnez de l'argent en partageant votre opinion")}}</h2>
+            <div class="mb-4 text-2xl font-bold text-gray-100 md:text-xl title-font">Sondages rémunérés en ligne</div>
+            <h2 class="mb-4 text-l font-bold text-gray-100 md:text-l title-font">Gagnez de l'argent en partageant votre opinion</h2>
             @else
-            <div class="mb-4 text-4xl font-bold text-gray-100 md:text-2xl title-font">{{__("Sondages rémunérés en ligne")}}</div>
-            <h2 class="mb-4 text-4xl font-bold text-gray-100 md:text-xl title-font">{{__("Gagnez de l'argent en partageant votre opinion")}}</h2>
+            <div class="mb-4 text-4xl font-bold text-gray-100 md:text-2xl title-font">Sondages rémunérés en ligne</div>
+            <h2 class="mb-4 text-4xl font-bold text-gray-100 md:text-xl title-font">Gagnez de l'argent en partageant votre opinion</h2>
             @endif
             </div>
             <div class="container flex flex-wrap px-5 py-8 mx-auto">
@@ -501,21 +501,21 @@ Complétez des sondages rémunérés !</h2>
     <section id="video" class="text-gray-400 border-gray-600 body-font">
         <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
             <div class="w-full text-left">
-                <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Qu'est-ce que Gokdo, le site de sondage rémunéré ?</h2>
+                <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Gokdo, le site de sondage rémunéré.</h2>
                 
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Les sondages rémunérés sont une façon rapide et pratique d'ajouter un revenu supplémentaire, que vous soyez étudiant, parent, ou simplement à la recherche de moyens pour augmenter votre solde bancaire !")}}
+                    Participez à des enquêtes rémunérées et gagnez des points à échanger contre des bons d'achat Amazon ou des virements Paypal. En fonction de votre profil, vous recevrez régulièrement des invitations à participer à des sondages sur des thèmes divers.
                     <br><br>
-                    {{__("Pour démarrer, répondez à quelques questions simples pour créer votre profil - vous serez ensuite jumelé avec des sondages rémunérés qui vous conviennent. Après avoir partagé vos opinions en répondant aux sondages, vous recevrez des récompenses en argent pour votre temps et votre contribution !")}}
+                    En 2024 il est très important de pouvoir arrondir ses fins de mois, c'est pourquoi il vous est proposé de compléter des sondages, votre opinion compte et elle peut vous rapporter de l'argent, alors profitez-en.
                     <br><br>
-                    {{__("Le processus est incroyablement simple. Vous pourrez faire entendre votre voix tout en renflouant vos finances en un rien de temps.")}}
+                    Le monde de demain vous appartient, il vous suffit de devenir paneliste, c'est facile et gratuit.
                 </p>
                 
 
                 <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
-                {{__("Nos reversements")}}</h2>
+                Vous gagnez</h2>
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Chaque fois que Gokdo gagne 1€ grâce aux enquêtes, nous vous reversons automatiquement 50% de cette somme, soit 0.50€, sous forme de Diamants, notre monnaie virtuelle. Vous pourrez ensuite échanger ces Diamants en boutique contre de véritables cadeaux ou même de l'argent. Découvrez comment maximiser vos récompenses avec Gokdo !")}}
+                50% redistribué au membre par sondage complété, tout le monde est gagnant.
                 </p>
                 </div>
         </div>
