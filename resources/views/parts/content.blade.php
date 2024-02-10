@@ -398,12 +398,15 @@ Complétez des sondages rémunérés !</h2>
                         @endif        
                          font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                             
-                            {{__('Sondages Rémunérés !')}}
+                            {{__('Sondages rémunérés')}}
                         </h1>
                         @php $locale = app()->getLocale(); @endphp
                         @if($isMobile == true)
                         @else
-                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Participez à nos sondages rémunérateurs pour accumuler des Diamants, nous reversons automatiquement 50% de nos bénéfices.<br><br> Ne manquez pas notre concours de parrainage avec chaque mois plus de 200€ mis en jeu !</p>
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
+                        Partagez votre avis et gagnez des récompenses, tel est le concept du site Gokdo.com.<br>
+                        Participez à des sondages en ligne, vous avez la chance de pouvoir d'influencer le développement des produits et services que vous consommerez demain. Exprimez-vous en participant à des sondages rémunérés, des tests de produits et des visites mystères en échange d'argent ou de cartes cadeaux.
+                        Participez aux sondages rémunérés pour gagner des récompenses, ce site reverse automatiquement 50% des bénéfices réalisés.<br><br> Parrainez de nouveaux membres pour gagner au concours de parrainage, 200€ mis en jeu chaque mois !</p>
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
