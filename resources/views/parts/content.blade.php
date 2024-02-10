@@ -403,7 +403,7 @@ Complétez des sondages rémunérés !</h2>
                         @php $locale = app()->getLocale(); @endphp
                         @if($isMobile == true)
                         @else
-                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Participez à nos sondages rémunérateurs pour accumuler des Diamants, nous reversons automatiquement 50% de nos bénéfices.<br><br> Ne manquez pas notre concours de parrainage avec chaque mois plus de 200€ mis en jeu !</p>
+                        <p class="mb-4 text-base leading-relaxed text-left text-gray-300">Participez à des sondages rémunérateurs pour accumuler des Diamants et Coins, Gokdo reverse automatiquement 50% de ses bénéfices.<br><br> Ne manquez pas le concours de parrainage avec chaque mois plus de 200€ mis en jeu !</p>
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
@@ -447,22 +447,22 @@ Complétez des sondages rémunérés !</h2>
                 [
                     'icon' => 'fa-solid fa-user fa-2x',
                     'title' => __('Inscrivez-vous gratuitement'),
-                    'description' => __("Inscrivez-vous rapidement et gratuitement, recevez 7 diamants pour bien commencer votre parcours vers les sondages rémunérés en ligne. Commencez à gagner de l'argent avec votre opinion dès aujourd'hui !")
+                    'description' => __("Inscription rapideme et gratuite, reçevez 7 diamants pour bien commencer votre aventure de paneliste. Gokdo permet de gagner de l'argent en partageant votre opinion !")
                 ],
                 [
                     'icon' => 'fa-solid fa-gamepad fa-2x',
                     'title' => __('Répondez aux Sondages'),
-                    'description' => __("Participez aux sondages pour accumuler des Diamants. Nous partageons 50% de nos revenus, ce qui signifie que lorsque nous gagnons 1€, vous gagnez 0.50€ en Diamants, que vous pouvez échanger dans notre boutique en ligne.")
+                    'description' => __("Gokdo propose de répondre à des sondages pour accumuler des Diamants et partage 50% de ses revenus, ce qui signifie que lorsque Gokdo gagne 1€, vous gagnez 0.50€ en Diamants ou en Coins, que vous pouvez échanger dans la boutique en ligne.")
                 ],
                 [
                     'icon' => 'fa-solid fa-gem fa-2x',
                     'title' => __('Concours mensuel sur le parrainage'),
-                    'description' => __("Gagnez jusqu'à 200€ lors de chaque concours mensuel pour les 5 premiers participants. Augmentez vos chances de gagner davantage en parrainant de nouveaux membres, car chaque membre parrainé compte comme 1 point de concours au classement. Décuplez vos opportunités de gagner de l'argent avec nous !")
+                    'description' => __("Gagnez jusqu'à 200€ lors de chaque concours mensuel pour les 5 premiers participants. Augmentez vos chances de gagner d'avantage en parrainant de nouveaux membres, car chaque membre parrainé compte comme 1 point de concours au classement. Décuplez vos opportunités pour gagner de l'argent !")
                 ],
                 [
                     'icon' => 'fa-solid fa-gift fa-2x',
                     'title' => __('Convertissez vos Diamants en KDO'),
-                    'description' => __("Transformez vos Diamants en boutique contre des cartes-cadeaux (Amazon, Fnac, Micromania...), paiements via PayPal, ou même en KDO exclusifs tels que l'iPhone 15, la PlayStation 5, et d'autres surprises alléchantes ! Découvrez comment maximiser la valeur de vos Diamants aujourd'hui !")
+                    'description' => __("Echangez vos Diamants et Coins en boutique contre des cartes-cadeaux Amazon, Fnac, Micromania..., profitez de reversements PayPal, ou même en cadeaux physique tels que des consoles de jeux vidéos ! Les sondages rémunérés, cela rapporte chaque mois !")
                 ]
             ]; @endphp
                 @foreach($steps as $index => $step)
@@ -499,9 +499,9 @@ Complétez des sondages rémunérés !</h2>
                 <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">Qu'est-ce que Gokdo, le site de sondage rémunéré ?</h2>
                 
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Les sondages rémunérés sont une façon rapide et pratique d'ajouter un revenu supplémentaire, que vous soyez étudiant, parent, ou simplement à la recherche de moyens pour augmenter votre solde bancaire !")}}
+                    {{__("Les sondages rémunérés sont une façon rapide et pratique d'ajouter un revenu supplémentaire dans votre portefeuille, que vous soyez étudiant, parent, ou simplement à la recherche de moyens pour arrondir ses fins de mois !")}}
                     <br><br>
-                    {{__("Pour démarrer, répondez à quelques questions simples pour créer votre profil - vous serez ensuite jumelé avec des sondages rémunérés qui vous conviennent. Après avoir partagé vos opinions en répondant aux sondages, vous recevrez des récompenses en argent pour votre temps et votre contribution !")}}
+                    {{__("Pour démarrer, répondez à quelques questions simples pour créer votre profil utilisateur - vous serez ensuite selectionné avec des sondages rémunérés qui conviennent à votre profil. Après avoir partagé vos opinions en répondant aux sondages, vous recevrez des récompenses pour votre temps et votre contribution !")}}
                     <br><br>
                     {{__("Le processus est incroyablement simple. Vous pourrez faire entendre votre voix tout en renflouant vos finances en un rien de temps.")}}
                 </p>
@@ -510,7 +510,7 @@ Complétez des sondages rémunérés !</h2>
                 <h2 class="mb-1 text-xl font-bold text-blue-500 title-font">
                 {{__("Nos reversements")}}</h2>
                 <p class="mb-8 text-base leading-relaxed text-gray-300 lg:w-3/4">
-                    {{__("Chaque fois que Gokdo gagne 1€ grâce aux enquêtes, nous vous reversons automatiquement 50% de cette somme, soit 0.50€, sous forme de Diamants, notre monnaie virtuelle. Vous pourrez ensuite échanger ces Diamants en boutique contre de véritables cadeaux ou même de l'argent. Découvrez comment maximiser vos récompenses avec Gokdo !")}}
+                    {{__("Si Gokdo gagne 1€ grâce aux enquêtes, vous gagnez automatiquement 50% de cette somme, soit 0.50€, sous forme de "Diamants", notre monnaie virtuelle ou "Coin", vous pourrez ensuite échanger vos gains en boutique contre de véritables cadeaux ou même de l'argent. Découvrez comment gagner des revenus et arrondir ses fins de mois sur Gokdo !")}}
                 </p>
                 </div>
         </div>
