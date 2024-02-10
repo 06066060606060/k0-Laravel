@@ -440,11 +440,11 @@ Complétez des sondages rémunérés !</h2>
         <section class="text-gray-400 body-font">
             <div class="flex flex-col items-center">
             @if($isMobile == true)
-            <div class="mb-4 text-2xl font-bold text-gray-100 md:text-xl title-font">{{__("Sondages Rémunérés en Ligne")}}</div>
-            <h2 class="mb-4 text-l font-bold text-gray-100 md:text-l title-font">{{__("Gagnez de l'Argent en Partageant Votre Opinion")}}</h2>
+            <div class="mb-4 text-2xl font-bold text-gray-100 md:text-xl title-font">{{__("Sondages rémunérés en ligne")}}</div>
+            <h2 class="mb-4 text-l font-bold text-gray-100 md:text-l title-font">{{__("Gagnez de l'argent en partageant votre opinion")}}</h2>
             @else
-            <div class="mb-4 text-4xl font-bold text-gray-100 md:text-2xl title-font">{{__("Sondages Rémunérés en Ligne")}}</div>
-            <h2 class="mb-4 text-4xl font-bold text-gray-100 md:text-xl title-font">{{__("Gagnez de l'Argent en Partageant Votre Opinion")}}</h2>
+            <div class="mb-4 text-4xl font-bold text-gray-100 md:text-2xl title-font">{{__("Sondages rémunérés en ligne")}}</div>
+            <h2 class="mb-4 text-4xl font-bold text-gray-100 md:text-xl title-font">{{__("Gagnez de l'argent en partageant votre opinion")}}</h2>
             @endif
             </div>
             <div class="container flex flex-wrap px-5 py-8 mx-auto">
@@ -452,22 +452,22 @@ Complétez des sondages rémunérés !</h2>
                 [
                     'icon' => 'fa-solid fa-user fa-2x',
                     'title' => __('Inscrivez-vous gratuitement'),
-                    'description' => __("Inscrivez-vous rapidement et gratuitement, recevez 7 diamants pour bien commencer votre parcours vers les sondages rémunérés en ligne. Commencez à gagner de l'argent avec votre opinion dès aujourd'hui !")
+                    'description' => __("Inscrivez-vous rapidement et gratuitement, ce site vous offre 7 diamants pour bien commencer votre parcours dans le monde du sondage rémunéré en ligne. Commencez à gagner de l'argent en devenant paneliste dès aujourd'hui !")
                 ],
                 [
                     'icon' => 'fa-solid fa-gamepad fa-2x',
-                    'title' => __('Répondez aux Sondages'),
-                    'description' => __("Participez aux sondages pour accumuler des Diamants. Nous partageons 50% de nos revenus, ce qui signifie que lorsque nous gagnons 1€, vous gagnez 0.50€ en Diamants, que vous pouvez échanger dans notre boutique en ligne.")
+                    'title' => __('Complétez des sondages'),
+                    'description' => __("Faites valoir votre opinion et influencez les produits et services de demain, il vous sera offert 50% des bénéfices par sondage complété.")
                 ],
                 [
                     'icon' => 'fa-solid fa-gem fa-2x',
-                    'title' => __('Concours mensuel sur le parrainage'),
-                    'description' => __("Gagnez jusqu'à 200€ lors de chaque concours mensuel pour les 5 premiers participants. Augmentez vos chances de gagner davantage en parrainant de nouveaux membres, car chaque membre parrainé compte comme 1 point de concours au classement. Décuplez vos opportunités de gagner de l'argent avec nous !")
+                    'title' => __('Parrainage'),
+                    'description' => __("Parrainez de nouveaux membre pour vous hisser sur le classement du concours parrainage, tentez de gagner jusqu'à 200€ lors de chaque concours mensuel. Parfait pour arrondir ses fins de mois.")
                 ],
                 [
                     'icon' => 'fa-solid fa-gift fa-2x',
-                    'title' => __('Convertissez vos Diamants en KDO'),
-                    'description' => __("Transformez vos Diamants en boutique contre des cartes-cadeaux (Amazon, Fnac, Micromania...), paiements via PayPal, ou même en KDO exclusifs tels que l'iPhone 15, la PlayStation 5, et d'autres surprises alléchantes ! Découvrez comment maximiser la valeur de vos Diamants aujourd'hui !")
+                    'title' => __('Soyez récompensé'),
+                    'description' => __("Votre participation aux sondages rémunérés vous rapporte de l'argent et des cadeaux.")
                 ]
             ]; @endphp
                 @foreach($steps as $index => $step)
