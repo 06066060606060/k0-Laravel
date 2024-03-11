@@ -36,7 +36,7 @@
         }
     </style>
     <div class="notification" id="notification">
-        Nouveau concours parrainage avec 200€ de gains en jeu ! <span class="close-btn">X</span>
+        Parrainez vos amis et gagnez 5 000 Diamants par ami parrainé ! <span class="close-btn">X</span>
     </div>
 
     <script>
@@ -406,7 +406,7 @@ Complétez des sondages rémunérés !</h2>
                         <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
                         <b>Partagez votre avis</b> et <b>gagnez des récompenses</b>, tel est le concept du site Gokdo.com.<br><br>
                         Participez à des <b>sondages rémunérés en ligne</b>, vous avez la chance de pouvoir <b>influencer le développement des produits et services</b> que vous consommerez demain. Exprimez-vous en participant au <b>sondage rémunéré</b> maintenant en échange de récompenses.
-                        <br><br><b>Ce site reverse automatiquement 50% des bénéfices réalisés.</b><br><br> Parrainez de nouveaux membres pour <b>gagner</b> au concours de parrainage, 200€ mis en jeu chaque mois !</p>
+                        <br><br><b>Ce site reverse automatiquement 50% des bénéfices réalisés.</b><br><br> Parrainez de nouveaux membres pour <b>gagner</b> 5 000 Diamants par ami parrainé !</p>
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
@@ -460,7 +460,7 @@ Complétez des sondages rémunérés !</h2>
                 [
                     'icon' => 'fa-solid fa-gem fa-2x',
                     'title' => __('Parrainage'),
-                    'description' => __("Parrainez de nouveaux membre pour vous hisser sur le classement du concours parrainage, tentez de gagner jusqu'à 200€ lors de chaque concours mensuel. Parfait pour arrondir ses fins de mois.")
+                    'description' => __("Parrainez de nouveaux membre pour gagner 5 000 Diamants par nouvel ami parrainé. Parfait pour gagner plus rapidement.")
                 ],
                 [
                     'icon' => 'fa-solid fa-gift fa-2x',
