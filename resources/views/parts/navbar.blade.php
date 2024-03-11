@@ -61,15 +61,15 @@ $isMobile = GlobalController::isMobile();
                     @click="isOpen = false"><i class="fa-solid fa-gamepad"></i>&nbsp; Nos jeux</a>-->
                 @if (backpack_auth()->check())
                     @if(isset($concours))
-                        <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
+                        <!--<a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
                             href="concours" @click="isOpen = false">
                             <i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}
-                        </a>
+                        </a>-->
                     @else
-                        <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
+                        <!--<a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"
                             href="concours" @click="isOpen = false">
                             <i class="fa-solid fa-trophy"></i>&nbsp; {{__('Concours')}}
-                        </a>
+                        </a>-->
                     @endif
                 @else
                     <a class="text-sm font-bold text-gray-400 lg:mx-4 hover:text-blue-600 first-letter:uppercase"

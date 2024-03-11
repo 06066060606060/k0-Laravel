@@ -52,7 +52,7 @@
         }
         if (currentPage === "https://gokdo.com/admin/register") {
             // Modifier le titre si l'URL est https://gokdo.com/cadeaux
-            document.getElementById("pageTitle").innerText = "Inscription sur Gokdo";
+            document.getElementById("pageTitle").innerText = "Inscription Sondages rému Gokdo";
             document.getElementById("pageDesc").innerText = "Inscrivez-vous et répondez à des sondages rémunérés pour gagner des cadeaux";
         }
         if (currentPage === "https://gokdo.com/admin/password/reset") {

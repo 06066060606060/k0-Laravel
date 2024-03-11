@@ -233,8 +233,8 @@ Complétez des sondages rémunérés !</h2>
                                     <td class="pr-2">
                                         <i class="fas fa-2x fa-user-group text-white"></i>
                                     </td>
-                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 1
-                                        <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2 inline-block"> de concours {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 5 000
+                                        <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-2 inline-block"> {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
                                         <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group" data-barba-prevent="self"
                                               id="copyLink"><span
@@ -268,8 +268,8 @@ Complétez des sondages rémunérés !</h2>
                                     <td class="pr-4">
                                         <i class="fas fa-3x fa-user-group text-white"></i>
                                     </td>
-                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 1
-                                        <img src="{{ asset('img/trophy.png') }}" alt="trophy" class="w-4 h-4 ml-2 inline-block"> de concours {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 5 000
+                                        <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-2 inline-block"> {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
                                         <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group" data-barba-prevent="self"
                                               id="copyLink"><span
