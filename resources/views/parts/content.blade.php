@@ -36,7 +36,7 @@
         }
     </style>
     <div class="notification" id="notification">
-        Parrainez vos amis et gagnez 5 000 Diamants par ami parrainé ! <span class="close-btn">X</span>
+        Parrainez vos amis et gagnez 500 Diamants par ami parrainé ! <span class="close-btn">X</span>
     </div>
 
     <script>
@@ -233,7 +233,7 @@ Complétez des sondages rémunérés !</h2>
                                     <td class="pr-2">
                                         <i class="fas fa-2x fa-user-group text-white"></i>
                                     </td>
-                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 5 000 <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"> {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 500 <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"> {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage)')}}</i><br>
                                         <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group" data-barba-prevent="self"
                                               id="copyLink"><span
@@ -267,7 +267,7 @@ Complétez des sondages rémunérés !</h2>
                                     <td class="pr-4">
                                         <i class="fas fa-3x fa-user-group text-white"></i>
                                     </td>
-                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 5 000 <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"> {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
+                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 500 <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"> {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage)')}}</i><br>
                                         <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group" data-barba-prevent="self"
                                               id="copyLink"><span
@@ -406,7 +406,7 @@ Complétez des sondages rémunérés !</h2>
                         <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
                         <b>Partagez votre avis</b> et <b>gagnez des récompenses</b>, tel est le concept du site Gokdo.com.<br><br>
                         Participez à des <b>sondages rémunérés en ligne</b>, vous avez la chance de pouvoir <b>influencer le développement des produits et services</b> que vous consommerez demain. Exprimez-vous en participant au <b>sondage rémunéré</b> maintenant en échange de récompenses.
-                        <br><br><b>Ce site reverse automatiquement 50% des bénéfices réalisés.</b><br><br> Parrainez de nouveaux membres pour <b>gagner</b> 5 000 Diamants par ami parrainé !</p>
+                        <br><br><b>Ce site reverse automatiquement 50% des bénéfices réalisés.</b><br><br> Parrainez de nouveaux membres pour <b>gagner</b> 500 Diamants par ami parrainé !</p>
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
@@ -460,7 +460,7 @@ Complétez des sondages rémunérés !</h2>
                 [
                     'icon' => 'fa-solid fa-gem fa-2x',
                     'title' => __('Parrainage'),
-                    'description' => __("Parrainez de nouveaux membre pour gagner 5 000 Diamants par nouvel ami parrainé. Parfait pour gagner plus rapidement.")
+                    'description' => __("Parrainez de nouveaux membre pour gagner 500 Diamants par nouvel ami parrainé. Parfait pour gagner plus rapidement.")
                 ],
                 [
                     'icon' => 'fa-solid fa-gift fa-2x',
