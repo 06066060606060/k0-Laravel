@@ -157,26 +157,9 @@ $isMobile = GlobalController::isMobile();
                     <span class="relative">{{__('Connexion')}}</span>
                 </a>
                 <!--Script Google Multilangue-->
-                <script type="text/javascript">
-                    function googleTranslateElementInit() {
-                        new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
-                    }
-                </script>
-                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-                <div id="google_translate_element"></div>
-                <style>
-                    .goog-te-banner-frame.skiptranslate {
-                        display: none !important;
-                    }
-
-                    body {
-                        top: 0px !important;
-                    }
-
-                    .goog-te-gadget-icon {
-                        display: none !important;
-                    }
-                </style>
+                <div class="gtranslate_wrapper"></div>
+                <script>window.gtranslateSettings = {"default_language":"fr","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper","alt_flags":{"en":"usa"}}</script>
+                <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
             @endif
         </div>
     </nav>
