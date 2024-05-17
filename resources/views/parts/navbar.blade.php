@@ -156,6 +156,27 @@ $isMobile = GlobalController::isMobile();
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
                     <span class="relative">{{__('Connexion')}}</span>
                 </a>
+                <!--Script Google Multilangue-->
+                <script type="text/javascript">
+                    function googleTranslateElementInit() {
+                        new google.translate.TranslateElement({pageLanguage: 'fr'}, 'google_translate_element');
+                    }
+                </script>
+                <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                <div id="google_translate_element"></div>
+                <style>
+                    .goog-te-banner-frame.skiptranslate {
+                        display: none !important;
+                    }
+
+                    body {
+                        top: 0px !important;
+                    }
+
+                    .goog-te-gadget-icon {
+                        display: none !important;
+                    }
+                </style>
             @endif
         </div>
     </nav>
