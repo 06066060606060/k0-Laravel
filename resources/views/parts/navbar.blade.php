@@ -156,10 +156,6 @@ $isMobile = GlobalController::isMobile();
                         class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-blue-400 -rotate-12"></span>
                     <span class="relative">{{__('Connexion')}}</span>
                 </a>
-                <!--Script Google Multilangue-->
-                <div class="gtranslate_wrapper"></div>
-                <script>window.gtranslateSettings = {"default_language":"fr","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper","alt_flags":{"en":"usa"}}</script>
-                <script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
             @endif
         </div>
     </nav>
@@ -201,3 +197,7 @@ $isMobile = GlobalController::isMobile();
         }
     });
 </script>
+<!--Lang multi widget-->
+<div class="gtranslate_wrapper"></div>
+<script>window.gtranslateSettings = {"default_language":"fr","detect_browser_language":true,"wrapper_selector":".gtranslate_wrapper","alt_flags":{"en":"usa"}}</script>
+<script src="https://cdn.gtranslate.net/widgets/latest/float.js" defer></script>
