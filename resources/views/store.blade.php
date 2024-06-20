@@ -19,6 +19,48 @@
                          <div class="flex flex-col w-full mb-4 text-center">
                                  <p class="flex mx-auto text-base leading-relaxed">{{__('Echangez vos Diamants et vos Coins contre de magnifique cadeaux.')}}<br></p>
                              </div>
+                         <div class="sm:flex-1">
+                             <form action="{{ route('searchfilter') }}" method="get">
+                                 <div class="relative w-1/2 mx-auto">
+                                                                          <a href="cadeaux"
+                                         class="absolute top-1.5 right-0 h-full px-3 py-2 text-gray-500 transition hover:text-gray-700 focus:outline-none">
+                                         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                             <path fill-rule="evenodd"
+                                                 d="M16.707 3.293a1 1 0 0 0-1.414 0L10 8.586 5.707 4.293a1 1 0 0 0-1.414 1.414L8.586 10l-4.293 4.293a1 1 0 1 0 1.414 1.414L10 11.414l4.293 4.293a1 1 0 0 0 1.414-1.414L11.414 10l4.293-4.293a1 1 0 0 0 0-1.414z"
+                                                 clip-rule="evenodd" />
+                                         </svg>
+                                     </a>
+                                 </div>
+                                 <input type="submit" value="Search" class="hidden">
+                                 @if ($isMobile == true)
+                                 <div class="relative inline-flex min-w-full">
+                                 @else
+                                 <div class="relative inline-flex" style="width:50%;">
+                                 @endif 
+
+                                     <select name="category"
+                                         class="w-full p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
+                                         onchange="submit()">
+                                         <option value="" {{ $category == ''  ? 'selected' : '' }} >{{__('Toutes les catégories')}}</option>
+                                         <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
+                                         <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
+                                         <option value="Beauté" {{ $category == 'Beauté'  ? 'selected' : '' }}>Beauté</option>         
+                                         <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>{{__('High Tech')}}</option>
+                                         <option value="Vêtements" {{ $category == 'Vêtements'  ? 'selected' : '' }}>{{__('Vêtements')}}</option>
+                                     </select>
+                                     <div class="absolute inset-y-0 right-0 flex items-center px-2 pt-2 text-gray-500 transition pointer-events-none hover:text-gray-700">
+                                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                             <path
+                                                 d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                 clip-rule="evenodd" fill-rule="evenodd"></path>
+                                         </svg>
+                                     </div>
+                                 </div>
+                             </form>
+
+
+
+                         </div>
                          <div class="container mt-4 px-5 py-4 mx-auto">
                              <div class="container px-0 mx-auto">
                                  <div class="flex flex-wrap -m-4">
@@ -42,8 +84,7 @@
                                                         <h2 name="name"
                                                             class="py-1 text-l font-bold text-green-600 title-font ">
                                                             {{ $cadeau->name }}</h2>
-
-
+                                                    
                                                          <div style="display:inline;">
                                                              @if($isMobile == true)
                                                              <img src="/img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">
