@@ -158,7 +158,7 @@ Complétez des sondages rémunérés !</h2>
 </div>  
 
 <div id="tab1" class="tab-content" onclick="showTab('tab1')">
-  <iframe style="border-radius:10px;" src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
+<iframe style="border-radius:10px;" src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2&lang=en"></iframe>
 </div>
 
 <div id="tab2" class="tab-content" onclick="showTab('tab2')">
