@@ -34,8 +34,7 @@
                     </div>
 
                     <div class="flex flex-col md:items-center">
-                        @php    
-                        <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
+                        <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Points')}}</h3>
                         <div class="flex py-2">
                             <img src="/img/diamond5.png" class="w-10 h-8">
                             <p class="text-white">&nbsp; x {{ backpack_auth()->user()->trophee1 }}</p>
