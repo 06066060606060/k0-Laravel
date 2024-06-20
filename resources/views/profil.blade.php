@@ -81,8 +81,7 @@
                         <fieldset class="grid grid-cols-4 gap-6 p-6">
                             <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
                                 <div class="col-span-full sm:col-span-3">
-                                    <label for="lastname" class="text-sm text-gray-300">{{__('Votre adresse email Paypal')}}</label>
-                                    <input name="lastname" id="lastname" type="text" placeholder=""
+                                    <input name="lastname" id="lastname" type="text" placeholder="Ecrivez votre adresse e-mail Paypal ici"
                                         class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
                                         value="{{ $infos[0]->nom ?? null }}">
                                 </div>
