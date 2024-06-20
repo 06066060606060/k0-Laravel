@@ -151,11 +151,11 @@ Complétez des sondages rémunérés !</h2>
 <body>
 
 <div class="tab-container">
-  <button class="tab-button" style="border-radius:10px 0 0 10px;" onclick="showTab('tab1')">Gagnez des <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4">
-<b>Diamants</b> <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4"></button>
-  <button class="tab-button" style="background:#FFD700; color:#000000; border-radius:0 10px 10px 0;" onclick="showTab('tab2')">Gagnez des <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4">
-<b>Coins</b> <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4"></button>
-</div>
+  <button class="tab-button" style="border-radius:10px 0 0 10px;" onclick="showTab('tab1')">Pour gagner des 
+<b>Diamants</b> <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4"><br>Cliquez-ici</button>
+  <button class="tab-button" style="background:#FFD700; color:#000000; border-radius:0 10px 10px 0;" onclick="showTab('tab2')">Pour gagner des
+<b>Coins</b> <img src="/img/coin10.png" style="display:inline-block;" class="flex ml-1 mt-1 w-5 h-4"><br> Cliquez-ici</button>
+</div>  
 
 <div id="tab1" class="tab-content" onclick="showTab('tab1')">
   <iframe style="border-radius:10px;" src="https://offers.cpx-research.com/index.php?app_id=20132&ext_user_id={{ backpack_auth()->user()->id }}&secure_hash=0INpuQOyRvhHLJLMd9IPO57IDDbGBbZP&username={{ backpack_auth()->user()->name }}&email={{ backpack_auth()->user()->email }}&subid_1={{ backpack_auth()->user()->name }}&subid_2"></iframe>
