@@ -205,8 +205,8 @@ Complétez des sondages rémunérés !</h2>
     $winnersText = "";
     foreach ($scores as $score) {
         $cadeau_name = $score->cadeau_name;
-        if (strpos($cadeau_name, 'PayPal') !== false) {
-            $cadeau_name = str_replace('PayPal', '<br>PayPal', $cadeau_name);
+        if (strpos($cadeau_name, 'Paypal') !== false) {
+            $cadeau_name = str_replace('Paypal', '<br>Paypal', $cadeau_name);
         }
 
         $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28" style="min-width:' . ($isMobile ? '100' : '200') . 'px;">
