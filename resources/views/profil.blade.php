@@ -73,6 +73,31 @@
             </div>
             <div class="flex flex-col w-full py-2">
 
+                <h1 class="pt-4 text-lg font-bold text-white">{{__('Mon adresse email Paypal')}}:</h1>
+                <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
+                    <form action="save_address" class="container flex flex-col mx-auto" method="POST">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ backpack_auth()->user()->id }}">
+                        <fieldset class="grid grid-cols-4 gap-6 p-6">
+                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
+                                <div class="col-span-full sm:col-span-3">
+                                    <label for="lastname" class="text-sm text-gray-300">{{__('Votre adresse email Paypal')}}</label>
+                                    <input name="lastname" id="lastname" type="text" placeholder=""
+                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
+                                        value="{{ $infos[0]->nom ?? null }}">
+                                </div>
+                                <div class="col-span-full sm:col-span-3">
+                                    <label for="" class="text-sm text-gray-300"> &nbsp;</label>
+                                    <button type="submit"
+                                        class="w-full px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">{{__('Enregistrer')}}
+                                    </button>    
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+
                 <h1 class="pt-3 text-lg font-bold text-white">{{__('Mes commandes')}}:</h1>
                 <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
                     <div class="overflow-x-auto rounded-t-lg">
@@ -210,75 +235,6 @@
                         </table>
                     </div>
 
-                </div>
-<!--                <h1 class="py-4 text-lg font-bold text-white">{{__('Mes filleuls :')}}</h1>
-                <div class="flex flex-col w-full mt-0 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0 max-h-64">
-                    <div class="overflow-x-auto rounded-t-lg">
-                    @if($isMobile == true)
-                                     <table style="width:500px;" class="min-w-full py-2 text-sm divide-y divide-gray-200">
-                          @else
-                                     <table style="width:500px;" class="min-w-full py-2 text-sm divide-y divide-gray-200">
-                          @endif
-                            <thead class="bg-gray-100 rounded-t-lg">
-                                <tr>
-                                    <th style="width:50%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        {{__('Pseudo')}}
-                                    </th>
-                                    <th style="width:50%;" class="px-4 py-2 font-bold text-left text-gray-900 whitespace-nowrap">
-                                        {{__('Gain')}}
-                                    </th>
-                                </tr>
-                            </thead>
-
-                            <tbody class="divide-y divide-gray-500">
-                                @forelse($joueursParraines as $joueur)
-                                    <tr>
-                                        <td style="width:50%;" class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{ $joueur->name }}
-                                        </td>
-                                        <td style="width:50%; display:inline-block;" class="px-4 py-4 font-medium text-gray-200 whitespace-nowrap"> 
-                                        1 <img src="/img/trophy.png"  class="w-4 h-4 ml-2 inline-block">
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td class="px-4 py-2 font-medium text-gray-200 whitespace-nowrap">
-                                            {{__('Aucun filleul enregistré')}}
-                                        </td>
-                                        <td class="px-4 py-2 text-gray-300 whitespace-nowrap"> &nbsp; &nbsp; &nbsp;
-                                        </td>
-                                    </tr>
-                                @endforelse
-
-
-                            </tbody>
-                        </table>
-                    </div>
-
-                </div>-->
-
-                <h1 class="pt-4 text-lg font-bold text-white">{{__('Mon adresse email Paypal')}}:</h1>
-                <div class="flex flex-col w-full mt-4 mb-4 bg-gray-800 border border-gray-700 rounded-xl md:mb-0">
-                    <form action="save_address" class="container flex flex-col mx-auto" method="POST">
-                        @csrf
-                        <input type="hidden" name="user_id" value="{{ backpack_auth()->user()->id }}">
-                        <fieldset class="grid grid-cols-4 gap-6 p-6">
-                            <div class="grid grid-cols-6 gap-4 col-span-full lg:col-span-6">
-                                <div class="col-span-full sm:col-span-3">
-                                    <label for="lastname" class="text-sm text-gray-300">{{__('Votre adresse email Paypal')}}</label>
-                                    <input name="lastname" id="lastname" type="text" placeholder=""
-                                        class="w-full px-2 py-2 text-gray-900 border-gray-700 rounded-md focus:ring focus:ring-opacity-75 focus:ring-blue-400"
-                                        value="{{ $infos[0]->nom ?? null }}">
-                                </div>
-                                <div class="col-span-full sm:col-span-3">
-                                    <label for="" class="text-sm text-gray-300"> &nbsp;</label>
-                                    <button type="submit"
-                                        class="w-full px-2 py-2 text-white bg-blue-600 border-gray-700 rounded-md active:bg-blue-600 hover:bg-blue-400 focus:ring-opacity-75">{{__('Enregistrer')}}
-                                    </button>    
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
                 </div>
         </container>
     </div>
