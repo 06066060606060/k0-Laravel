@@ -182,7 +182,7 @@ Complétez des sondages rémunérés !</h2>
     activeTab.classList.add('active');
   }
 </script>
-
+<!-- Event snippet for Page vue conversion page --> <script> gtag('event', 'conversion', {'send_to': 'AW-11485783310/LbP0CLjHhrEZEI7K7OQq'}); </script>
 <center><img src="/img/sondagess.png" width="50%"></center>
 </div>
 </section>
