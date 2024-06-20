@@ -33,13 +33,8 @@
                         </div>
                     </div>
 
-                    <div class="flex flex-col md:items-center">
+                    <!--<div class="flex flex-col md:items-center">
                         @php
-                            if(isset($scory->total)){
-                            $total1 = $scory->total;
-                            $totalite = $total1;
-                            } else {}
-                        @endphp
                         @if(isset($scory->total))
                             <p class="flex py-4 
                             @if($isMobile == true)
@@ -73,6 +68,7 @@
                             >&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; 0 
                             </p>
                             @endif
+                        -->
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
                         <div class="flex py-2">
                             <img src="/img/diamond5.png" class="w-10 h-8">
