@@ -132,6 +132,7 @@ class CadeauxCrudController extends CrudController
             'type'        => 'select_from_array',
             'options'     => [
                 'Amazon' => 'Amazon',
+                'Bijouterie' => 'Bijouterie', 
                 'Paypal' => 'Paypal',                
                 'Codeotop' => 'Codeotop',                
                 'Electroménager' => 'Electroménager',

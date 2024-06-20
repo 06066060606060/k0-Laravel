@@ -45,6 +45,7 @@
                                          <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
                                          <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
                                          <option value="Beauté" {{ $category == 'Beauté'  ? 'selected' : '' }}>Beauté</option>         
+                                         <option value="Bijouterie" {{ $category == 'Bijouterie'  ? 'selected' : '' }}>Bijouterie</option>         
                                          <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>{{__('High Tech')}}</option>
                                          <option value="Mode" {{ $category == 'Mode'  ? 'selected' : '' }}>{{__('Mode')}}</option>
                                      </select>
