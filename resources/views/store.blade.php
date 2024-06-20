@@ -41,7 +41,7 @@
                                                 @endif
                                                         <h2 name="name"
                                                             class="py-1 text-l font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_it }}</h2>
+                                                            {{ $cadeau->name }}</h2>
 
 
                                                          <div style="display:inline;">
