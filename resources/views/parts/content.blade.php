@@ -202,26 +202,24 @@ Complétez des sondages rémunérés !</h2>
 <div class="marquee-container mt-4 mb-4">
     <div class="marquee-content flex"> <!-- Ajout de la classe "flex" ici -->
         @php
-            $winnersText = "";
-            foreach ($scores as $score) {
-                $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28" style="min-width:' . ($isMobile ? '100' : '200') . 'px;">
-                                    <div class="flex">
-                                        <img alt="" class="inline-block object-center w-auto h-' . ($isMobile ? '9' : '12') . '" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png"> 
-                                        
-$cadeau_name = $score->cadeau_name;
-if (strpos($cadeau_name, 'PayPal') !== false) {
-    $cadeau_name = str_replace('PayPal', '<br>PayPal', $cadeau_name);
-}
+    $winnersText = "";
+    foreach ($scores as $score) {
+        $cadeau_name = $score->cadeau_name;
+        if (strpos($cadeau_name, 'PayPal') !== false) {
+            $cadeau_name = str_replace('PayPal', '<br>PayPal', $cadeau_name);
+        }
 
-<div class="flex flex-col">
-    <h2 class="pb-0 pl-4 font-bold text-' . ($isMobile ? 's' : 's') . '">' . $score->name . '</h2> 
-    <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">' . $cadeau_name . '</span>
-</div>
-
-                                    </div>
-                                </div>';
-            }
-        @endphp
+        $winnersText .= '<div class="w-full max-w-md p-8 mx-4 text-left bg-white shadow-lg rounded-xl h-28" style="min-width:' . ($isMobile ? '100' : '200') . 'px;">
+                            <div class="flex">
+                                <img alt="" class="inline-block object-center w-auto h-' . ($isMobile ? '9' : '12') . '" src="https://i.pinimg.com/originals/5c/15/c1/5c15c1539c9c566b5413d98f9cf3592f.png"> 
+                                <div class="flex flex-col">
+                                    <h2 class="pb-0 pl-4 font-bold text-' . ($isMobile ? 's' : 's') . '">' . $score->name . '</h2> 
+                                    <span href="#" class="ml-4 text-m font-bold text-blue-700 lg:mb-0">' . $cadeau_name . '</span>
+                                </div>
+                            </div>
+                        </div>';
+    }
+@endphp
         {!! $winnersText !!}
     </div>
 </div>
