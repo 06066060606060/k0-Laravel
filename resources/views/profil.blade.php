@@ -34,44 +34,7 @@
                     </div>
 
                     <div class="flex flex-col md:items-center">
-                        @php
-                    @if(isset($scory->total))
-                    {{-- 
-                @if(isset($scory->total))
-                    <p class="flex py-4 
-                    @if($isMobile == true)
-                        text-s
-                    @else
-                        text-xs
-                    @endif
-                    text-white border-b border-gray-500">
-                        <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
-                        @if($isMobile == true)
-                            class="flex w-4 h-4 ml-2" style="margin-top:4px;"
-                        @else
-                            class="flex w-3 h-3 ml-2" style="margin-top:2px;"
-                        @endif
-                        >&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; {{ $totalite }} 
-                    </p>
-                @else
-                    <p class="flex py-4 
-                    @if($isMobile == true)
-                        text-s
-                    @else
-                        text-xs
-                    @endif
-                    text-white border-b border-gray-500">
-                        <img src="{{ asset('img/trophy.png') }}" alt="trophy" 
-                        @if($isMobile == true)
-                            class="flex w-4 h-4 ml-2" style="margin-top:4px;"
-                        @else
-                            class="flex w-3 h-3 ml-2" style="margin-top:2px;"
-                        @endif
-                        >&nbsp;<b>{{__('Score Concours')}} :</b>&nbsp; 0 
-                    </p>
-                @endif
-                --}}
-    
+                        @php    
                         <h3 class="pt-1 pb-2 text-lg font-bold text-white">{{__('Mes Butins')}}</h3>
                         <div class="flex py-2">
                             <img src="/img/diamond5.png" class="w-10 h-8">
