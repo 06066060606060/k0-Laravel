@@ -46,7 +46,7 @@
                                          <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
                                          <option value="Beauté" {{ $category == 'Beauté'  ? 'selected' : '' }}>Beauté</option>         
                                          <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>{{__('High Tech')}}</option>
-                                         <option value="Vêtements" {{ $category == 'Vêtements'  ? 'selected' : '' }}>{{__('Vêtements')}}</option>
+                                         <option value="Mode" {{ $category == 'Mode'  ? 'selected' : '' }}>{{__('Mode')}}</option>
                                      </select>
                                      <div class="absolute inset-y-0 right-0 flex items-center px-2 pt-2 text-gray-500 transition pointer-events-none hover:text-gray-700">
                                          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">

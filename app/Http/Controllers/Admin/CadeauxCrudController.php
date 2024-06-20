@@ -137,6 +137,8 @@ class CadeauxCrudController extends CrudController
                 'Electroménager' => 'Electroménager',
                 'High Tech' => 'High Tech',
                 'Jeux Vidéo' => 'Jeux Vidéo',
+                'Beauté' => 'Beauté',
+                'Mode' => 'Mode',
                 'Rubis' => 'Rubis',
             ],
             'allows_null' => false,
