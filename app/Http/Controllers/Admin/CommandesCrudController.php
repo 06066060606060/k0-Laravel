@@ -78,26 +78,36 @@ class CommandesCrudController extends CrudController
     protected function setupCreateOperation()
     {
         CRUD::setValidation(CommandesRequest::class);
-
-        CRUD::field('user_id')->label('Utilisateur');
+    
+        // Utilisation de select2 pour joindre la table users et afficher l'email
+        CRUD::addField([
+            'name' => 'user_id', // le nom de la colonne dans la table commandes
+            'label' => 'Utilisateur', // le label affiché
+            'type' => 'select2', // type select2 pour créer une liste déroulante
+            'entity' => 'user', // la relation définie dans le modèle Commandes
+            'attribute' => 'email', // la colonne à afficher (email de l'utilisateur)
+            'model' => "App\\Models\\User", // le modèle correspondant
+        ]);
+    
         CRUD::field('created_at')->label('Date de commande');
         CRUD::field('cadeau_id')->label('Contenu commande');
-
-        $this->crud->addField([   // radio
-            'name'        => 'status', // the name of the db column
-            'label'       => 'Validé', // the input label
+    
+        $this->crud->addField([
+            'name'        => 'status', // le nom de la colonne dans la table commandes
+            'label'       => 'Validé', // le label affiché
             'type'        => 'radio',
             'options'     => [
-                // the key will be stored in the db, the value will be shown as label; 
+                // la clé sera stockée dans la db, la valeur sera affichée comme label
                 "Envoyé" => "Envoyé",
                 "Annulé" => "Annulé",
                 "Oui" => "Oui",
                 "Non" => "Non"
             ],
-            // optional
             'default'     => 'Oui',
-           'inline'      => true, // show the radios all on the same line?
-        ],);
+            'inline'      => true, // afficher les radios sur la même ligne
+        ]);
+    }
+    
    
 
         /**
