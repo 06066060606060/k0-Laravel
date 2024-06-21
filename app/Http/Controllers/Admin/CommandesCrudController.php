@@ -77,7 +77,7 @@ class CommandesCrudController extends CrudController
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CommandesRequest::class);
+        CRUD::setValidation(CommandesRequest::class); 
 
         CRUD::field('user_id')->label('Utilisateur');
         CRUD::field('created_at')->label('Date de commande');
