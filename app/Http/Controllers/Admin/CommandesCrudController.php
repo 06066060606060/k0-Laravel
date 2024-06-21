@@ -52,17 +52,16 @@ class CommandesCrudController extends CrudController
                 'element' => 'span',
                 'class' => function ($crud, $column, $entry, $related_key) {
                     if ($entry->status == 'Oui') {
-                        return 'ml-4 badge badge-success';
-                    } else if ($entry->status == 'Non') {
-                        return 'ml-4 badge badge-danger';
-                    } else if ($entry->status == 'Annulé') {
-                        return 'ml-4 badge badge-danger';
-                    } else {
-                        return 'ml-4 badge badge-warning';
-                    }
-                },
-            ]
-        ]);
+                            return 'ml-4 badge badge-success';
+                        } else if ($entry->status == 'Non') {
+                            return 'ml-4 badge badge-danger';
+                        } else if ($entry->status == 'Annulé') {
+                            return 'ml-4 badge badge-danger';
+                        } else {
+                            return 'ml-4 badge badge-warning';
+                        }
+                },  ]
+            ]);
         /**
          * Columns can be defined using the fluent syntax or array syntax:
          * - CRUD::column('price')->type('number');
@@ -80,41 +79,34 @@ class CommandesCrudController extends CrudController
     {
         CRUD::setValidation(CommandesRequest::class);
 
-        // Utilisation de select2 pour joindre la table users et afficher l'email
-        CRUD::addField([
-            'name' => 'user_id', // le nom de la colonne dans la table commandes
-            'label' => 'Utilisateur', // le label affiché
-            'type' => 'select2', // type select2 pour créer une liste déroulante
-            'entity' => 'user', // la relation définie dans le modèle Commandes
-            'attribute' => 'email', // la colonne à afficher (email de l'utilisateur)
-            'model' => "App\\Models\\User", // le modèle correspondant
-        ]);
-
+        CRUD::field('user_id')->label('Utilisateur');
         CRUD::field('created_at')->label('Date de commande');
         CRUD::field('cadeau_id')->label('Contenu commande');
 
-        $this->crud->addField([
-            'name'        => 'status', // le nom de la colonne dans la table commandes
-            'label'       => 'Validé', // le label affiché
+        $this->crud->addField([   // radio
+            'name'        => 'status', // the name of the db column
+            'label'       => 'Validé', // the input label
             'type'        => 'radio',
             'options'     => [
-                // la clé sera stockée dans la db, la valeur sera affichée comme label
+                // the key will be stored in the db, the value will be shown as label; 
                 "Envoyé" => "Envoyé",
                 "Annulé" => "Annulé",
                 "Oui" => "Oui",
                 "Non" => "Non"
             ],
+            // optional
             'default'     => 'Oui',
-            'inline'      => true, // afficher les radios sur la même ligne
-        ]);
+           'inline'      => true, // show the radios all on the same line?
+        ],);
+   
+
+        /**
+         * Fields can be defined using the fluent syntax or array syntax:
+         * - CRUD::field('price')->type('number');
+         * - CRUD::addField(['name' => 'price', 'type' => 'number'])); 
+         */
     }
 
-    /**
-     * Fields can be defined using the fluent syntax or array syntax:
-     * - CRUD::field('price')->type('number');
-     * - CRUD::addField(['name' => 'price', 'type' => 'number']);
-     */
-    
     /**
      * Define what happens when the Update operation is loaded.
      * 
