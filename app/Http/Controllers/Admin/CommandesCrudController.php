@@ -1,5 +1,5 @@
 <?php
- 
+
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\CommandesRequest;
@@ -73,11 +73,11 @@ class CommandesCrudController extends CrudController
      * Define what happens when the Create operation is loaded.
      * 
      * @see https://backpackforlaravel.com/docs/crud-operation-create
-     * @return void 
+     * @return void
      */
     protected function setupCreateOperation()
     {
-        CRUD::setValidation(CommandesRequest::class); 
+        CRUD::setValidation(CommandesRequest::class);
 
         CRUD::field('user_id')->label('Utilisateur');
         CRUD::field('created_at')->label('Date de commande');
