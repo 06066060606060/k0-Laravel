@@ -42,21 +42,22 @@
                                          class="w-full p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
                                          onchange="submit()">
                                          <option value="" {{ $category == ''  ? 'selected' : '' }} >{{__('Toutes les catégories')}}</option>
-                                         <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
-                                         <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
-                                         <option value="Jeux Vidéos" {{ $category == 'Jeux Vidéos'  ? 'selected' : '' }}>Jeux Vidéos</option>
-                                         <option value="Beauté et Soins" {{ $category == 'Beauté et Soins'  ? 'selected' : '' }}>Beauté et Soins</option>         
-                                         <option value="Bijoux" {{ $category == 'Bijoux'  ? 'selected' : '' }}>Bijoux</option>         
-                                         <option value="High-Tech" {{ $category == 'High-Tech'  ? 'selected' : '' }}>{{__('High-Tech')}}</option>
-                                         <option value="Mode" {{ $category == 'Mode et Accessoires'  ? 'selected' : '' }}>{{__('Mode')}}</option>
-                                         <option value="Sport" {{ $category == 'Sport'  ? 'selected' : '' }}>{{__('Sport')}}</option>
-                                         <option value="Voyages" {{ $category == 'Voyages'  ? 'selected' : '' }}>{{__('Voyages')}}</option>
-                                         <option value="Alimentation" {{ $category == 'Alimentation'  ? 'selected' : '' }}>{{__('Alimentation')}}</option>
-                                         <option value="Maison" {{ $category == 'Maison'  ? 'selected' : '' }}>{{__('Maison')}}</option>
-                                         <option value="Divertissement" {{ $category == 'Divertissement'  ? 'selected' : '' }}>{{__('Divertissement')}}</option>
-                                         <option value="Services" {{ $category == 'Services'  ? 'selected' : '' }}>{{__('Services')}}</option>
-                                         <option value="Enfants" {{ $category == 'Enfants'  ? 'selected' : '' }}>{{__('Enfants')}}</option>
-                                         <option value="Animaux" {{ $category == 'Animaux'  ? 'selected' : '' }}>{{__('Animaux')}}</option>
+                                        <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
+                                        <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
+                                        <option value="Alimentation" {{ $category == 'Alimentation'  ? 'selected' : '' }}>{{__('Alimentation')}}</option>
+                                        <option value="Animaux" {{ $category == 'Animaux'  ? 'selected' : '' }}>{{__('Animaux')}}</option>
+                                        <option value="Beauté et Soins" {{ $category == 'Beauté et Soins'  ? 'selected' : '' }}>Beauté et Soins</option>         
+                                        <option value="Bijoux" {{ $category == 'Bijoux'  ? 'selected' : '' }}>Bijoux</option>         
+                                        <option value="Divertissement" {{ $category == 'Divertissement'  ? 'selected' : '' }}>{{__('Divertissement')}}</option>
+                                        <option value="Enfants" {{ $category == 'Enfants'  ? 'selected' : '' }}>{{__('Enfants')}}</option>
+                                        <option value="High-Tech" {{ $category == 'High-Tech'  ? 'selected' : '' }}>{{__('High-Tech')}}</option>
+                                        <option value="Jeux Vidéos" {{ $category == 'Jeux Vidéos'  ? 'selected' : '' }}>Jeux Vidéos</option>
+                                        <option value="Maison" {{ $category == 'Maison'  ? 'selected' : '' }}>{{__('Maison')}}</option>
+                                        <option value="Mode" {{ $category == 'Mode et Accessoires'  ? 'selected' : '' }}>{{__('Mode')}}</option>
+                                        <option value="Services" {{ $category == 'Services'  ? 'selected' : '' }}>{{__('Services')}}</option>
+                                        <option value="Sport" {{ $category == 'Sport'  ? 'selected' : '' }}>{{__('Sport')}}</option>
+                                        <option value="Voyages" {{ $category == 'Voyages'  ? 'selected' : '' }}>{{__('Voyages')}}</option>
+
                                      </select>
                                      <div class="absolute inset-y-0 right-0 flex items-center px-2 pt-2 text-gray-500 transition pointer-events-none hover:text-gray-700">
                                          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
