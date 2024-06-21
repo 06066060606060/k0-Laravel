@@ -21,10 +21,6 @@ class Cadeaux extends Model
     protected $guarded = ['id'];
     protected $fillable = [
         'name',
-        'name_en',
-        'name_de',
-        'name_es',
-        'name_it',
         'image',
         'category',
         'description',

@@ -42,10 +42,22 @@
                                          class="w-full p-3 mx-auto mt-2 text-gray-700 transition bg-gray-100 border-gray-200 rounded-md shadow-sm appearance-none focus:border-white focus:outline-none focus:ring focus:ring-gray-400"
                                          onchange="submit()">
                                          <option value="" {{ $category == ''  ? 'selected' : '' }} >{{__('Toutes les catégories')}}</option>
-                                         <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
-                                         <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
-                                         <option value="High Tech" {{ $category == 'High Tech'  ? 'selected' : '' }}>{{__('High Tech')}}</option>
-                                         <option value="Jeux Vidéo" {{ $category == 'Jeux Vidéo'  ? 'selected' : '' }}>{{__('Jeux Vidéo')}}</option>
+                                        <option value="Amazon" {{ $category == 'Amazon'  ? 'selected' : '' }}>Amazon</option>
+                                        <option value="Paypal" {{ $category == 'Paypal'  ? 'selected' : '' }}>Paypal</option>
+                                        <option value="Alimentation" {{ $category == 'Alimentation'  ? 'selected' : '' }}>{{__('Alimentation')}}</option>
+                                        <option value="Animaux" {{ $category == 'Animaux'  ? 'selected' : '' }}>{{__('Animaux')}}</option>
+                                        <option value="Beauté et Soins" {{ $category == 'Beauté et Soins'  ? 'selected' : '' }}>Beauté et Soins</option>         
+                                        <option value="Bijoux" {{ $category == 'Bijoux'  ? 'selected' : '' }}>Bijoux</option>         
+                                        <option value="Divertissement" {{ $category == 'Divertissement'  ? 'selected' : '' }}>{{__('Divertissement')}}</option>
+                                        <option value="Enfants" {{ $category == 'Enfants'  ? 'selected' : '' }}>{{__('Enfants')}}</option>
+                                        <option value="High-Tech" {{ $category == 'High-Tech'  ? 'selected' : '' }}>{{__('High-Tech')}}</option>
+                                        <option value="Jeux Vidéos" {{ $category == 'Jeux Vidéos'  ? 'selected' : '' }}>Jeux Vidéos</option>
+                                        <option value="Maison" {{ $category == 'Maison'  ? 'selected' : '' }}>{{__('Maison')}}</option>
+                                        <option value="Mode" {{ $category == 'Mode et Accessoires'  ? 'selected' : '' }}>{{__('Mode')}}</option>
+                                        <option value="Services" {{ $category == 'Services'  ? 'selected' : '' }}>{{__('Services')}}</option>
+                                        <option value="Sport" {{ $category == 'Sport'  ? 'selected' : '' }}>{{__('Sport')}}</option>
+                                        <option value="Voyages" {{ $category == 'Voyages'  ? 'selected' : '' }}>{{__('Voyages')}}</option>
+
                                      </select>
                                      <div class="absolute inset-y-0 right-0 flex items-center px-2 pt-2 text-gray-500 transition pointer-events-none hover:text-gray-700">
                                          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
@@ -80,65 +92,10 @@
                                                 @else
                                                      <div class="text-center mx-4">
                                                 @endif
-                                                         @php $locale = app()->getLocale(); @endphp
-                                                        @if($locale=='fr')
-                                                        @if ($isMobile == true)
-                                                        <h2 name="name"
-                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name }}</h2>
-                                                        @else
                                                         <h2 name="name"
                                                             class="py-1 text-l font-bold text-green-600 title-font ">
                                                             {{ $cadeau->name }}</h2>
-
-                                                        @endif
-                                                        @elseif($locale=='en')
-                                                        @if ($isMobile == true)
-                                                        <h2 name="name"
-                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_en }}</h2>
-                                                        @else
-                                                        <h2 name="name"
-                                                            class="py-1 text-l font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_en }}</h2>
-
-                                                        @endif
-                                                        @elseif($locale=='de')
-                                                        @if ($isMobile == true)
-                                                        <h2 name="name"
-                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_de }}</h2>
-                                                        @else
-                                                        <h2 name="name"
-                                                            class="py-1 text-l font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_de }}</h2>
-
-                                                        @endif
-                                                        @elseif($locale=='es')
-                                                        @if ($isMobile == true)
-                                                        <h2 name="name"
-                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_es }}</h2>
-                                                        @else
-                                                        <h2 name="name"
-                                                            class="py-1 text-l font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_es }}</h2>
-
-                                                        @endif
-                                                        @elseif($locale=='it')
-                                                        @if ($isMobile == true)
-                                                        <h2 name="name"
-                                                            class="py-1 text-xs font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_it }}</h2>
-                                                        @else
-                                                        <h2 name="name"
-                                                            class="py-1 text-l font-bold text-green-600 title-font ">
-                                                            {{ $cadeau->name_it }}</h2>
-
-                                                        @endif
-                                                        @else
-                                                        @endif
-
+                                                    
                                                          <div style="display:inline;">
                                                              @if($isMobile == true)
                                                              <img src="/img/diamond5.png" style="display:inline;" class="w-6 h-4 mx-0 mt-0">

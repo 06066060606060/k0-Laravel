@@ -56,14 +56,14 @@ class GlobalController extends Controller
  
         // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX    
         if($isMobile == true) {
-        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name', 'cadeaux.name_de as cadeau_name_de', 'cadeaux.name_en as cadeau_name_en', 'cadeaux.name_es as cadeau_name_es', 'cadeaux.name_it as cadeau_name_it')
+        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name')
         ->join('users', 'users.id', '=', 'commandes.user_id')
         ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
         ->latest() // Trie les résultats par date de création, en ordre décroissant (les derniers en premier)
         ->take(1)
         ->get();
         }else{
-        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name', 'cadeaux.name_de as cadeau_name_de', 'cadeaux.name_en as cadeau_name_en', 'cadeaux.name_es as cadeau_name_es', 'cadeaux.name_it as cadeau_name_it')
+        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name')
         ->join('users', 'users.id', '=', 'commandes.user_id')
         ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
         ->latest() // Trie les résultats par date de création, en ordre décroissant (les derniers en premier)
