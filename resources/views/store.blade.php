@@ -35,7 +35,7 @@
                                  @if ($isMobile == true)
                                  <div class="relative inline-flex min-w-full">
                                  @else
-                                 <div class="relative inline-flex" style="width:50%;">
+                                 <div class="relative inline-flex" style="width:50%;"> 
                                  @endif 
 
                                      <select name="category"
