@@ -489,7 +489,7 @@ public function winner()
                 compact('leparrainne', 'leparrain', 'concours', 'idjoueur', 'scory', 'scores', 'orders', 'infos', 'paiements', 'joueursParraines')
             );
         } else {
-            return redirect('admin/login');
+            return redirect('admin/login'); 
         }
     }
     // achat en boutique lorsque le joueur confirme sa commande en boutique
