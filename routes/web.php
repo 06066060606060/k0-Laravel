@@ -10,6 +10,7 @@ use App\Http\Controllers\SocialiteController;
 use App\Http\Controllers\ParrainageController;
 use App\Http\Controllers\StripePaymentController;
 use App\Http\Controllers\ExtendedRegisterController;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/register', [ExtendedRegisterController::class, 'showRegistrationForm'])->name('backpack.auth.register');
@@ -94,3 +95,7 @@ Route::get("redirect/{provider}",[SocialiteController::class, 'redirect'])->name
 
 // Le callback du provider
 Route::get("callback/{provider}",[SocialiteController::class, 'callback'])->name('socialite.callback');
+
+// Définir la route login
+Route::get('/admin/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/admin/login', [LoginController::class, 'login']);
