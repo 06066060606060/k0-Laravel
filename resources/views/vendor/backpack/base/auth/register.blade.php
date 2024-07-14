@@ -17,6 +17,15 @@ $localizedTitles = [
 // Traduction Multi Langues minifiée
 switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";$iclassique='Classic Registration';break;case'fr':$rules="En vous iscrivant vous acceptez le";$rules2="règlement";$iclassique='Inscription Classique';break;case'es':$rules="Al registrarte, aceptas el";$rules2="reglamento";$iclassique='Registro Clásico';break;case'de':$rules="Durch Ihre Anmeldung akzeptieren Sie die";$rules2="Bestimmungen";$iclassique='Klassische Anmeldung';break;case'it':$rules="Iscrivendoti, accetti il";$rules2="regolamento";$iclassique='Registrazione Classica';break;default:break;}
 @endphp 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11485783310"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11485783310');
+</script>
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://gokdo.com', route('backpack.auth.login')) }}"><img class="pb-2 mx-auto w-[240px]" src="{{ asset('img/logo.png') }}"></a>
