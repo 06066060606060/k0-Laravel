@@ -5,7 +5,16 @@
     <script src="https://kit.fontawesome.com/59ecaaffaa.js" crossorigin="anonymous"></script>
 
     @if (config('backpack.base.meta_robots_content'))<meta name="robots" content="{{ config('backpack.base.meta_robots_content', 'index, follow') }}"> @endif
-    <link rel="shortcut icon" href=".././img/favicon.png" type="image/x-icon" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://gokdo.com/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://gokdo.com/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://gokdo.com/img/favicon-16x16.png">
+    <link rel="manifest" href="https://gokdo.com/img/site.webmanifest">
+    <link rel="mask-icon" href="https://gokdo.com/img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+
     <meta name="csrf-token" content="{{ csrf_token() }}" /> {{-- Encrypted CSRF token for Laravel, in order for Ajax requests to work --}}
     <title>{{ isset($title) ? $title.' :: '.config('backpack.base.project_name') : config('backpack.base.project_name') }}</title>
     @vite('resources/css/app.css')
