@@ -18,8 +18,6 @@
             <a href="/">
                     <img class="w-auto pb-4 mx-auto h-auto" src="/img/logo-mobile.webp" alt="Gokdo" width="354" title="Gokdo Sondages rémunérés" height="96" class="w-auto h-24">
                 </a>
-            <a href="/">
-                <img class="w-auto pb-4 mx-auto h-auto" src="{{ asset('img/logo.png') }}"></a>
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Connexion sur Gokdo')}}</h1>
             <div class="card">
                 <div class="card-body">
