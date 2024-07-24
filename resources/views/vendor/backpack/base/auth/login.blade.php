@@ -15,12 +15,8 @@
     @endphp
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
-            <a class="text-2xl font-bold text-gray-700 lg:text-3xl hover:text-gray-400" href="/">
-                @if($isMobile == true)
-                    <img src="/img/logo-mobile.webp" alt="Gokdo" width="80%" title="Gokdo Sondages rémunérés" class="h-22">
-                @else
-                    <img src="/img/logo-mobile.webp" alt="Gokdo" width="354" title="Gokdo Sondages rémunérés" height="96" class="w-auto h-24">
-                @endif
+            <a href="/">
+                    <img class="w-auto pb-4 mx-auto h-auto" src="/img/logo-mobile.webp" alt="Gokdo" width="354" title="Gokdo Sondages rémunérés" height="96" class="w-auto h-24">
                 </a>
             <a href="/">
                 <img class="w-auto pb-4 mx-auto h-auto" src="{{ asset('img/logo.png') }}"></a>
