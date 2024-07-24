@@ -208,7 +208,7 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
 @endif
 
                       @if (backpack_users_have_email() && config('backpack.base.setup_password_recovery_routes', true))
-                <br>
+                
             @endif
             <div class="text-center"><a href="{{ route('backpack.auth.login') }}">{{ trans('backpack::base.login') }}</a> /
             <a href="{{ route('backpack.auth.password.reset') }}">{{ trans('backpack::base.forgot_your_password') }}</a></div>
