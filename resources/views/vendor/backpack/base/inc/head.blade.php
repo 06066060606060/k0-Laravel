@@ -16,7 +16,7 @@
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}" /> {{-- Encrypted CSRF token for Laravel, in order for Ajax requests to work --}}
-    <title>{{ isset($title) ? $title.' :: '.config('backpack.base.project_name') : config('backpack.base.project_name') }}</title>
+    <title>Gokdo.com - Le site de sondages rémunérés</title>
     @vite('resources/css/app.css')
     @yield('before_styles')
     
