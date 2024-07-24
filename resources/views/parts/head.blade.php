@@ -14,7 +14,15 @@
 <meta name="yandex-verification" content="6e37c7dac9342d3a" />
 
 <meta name="robots" content="index,follow" />
-<link rel="shortcut icon" href="https://gokdo.com/img/favicon.png" type="image/x-icon" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="https://gokdo.com/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://gokdo.com/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://gokdo.com/img/favicon-16x16.png">
+<link rel="manifest" href="https://gokdo.com/img/site.webmanifest">
+<link rel="mask-icon" href="https://gokdo.com/img/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#ffffff">
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gokdo.com">
