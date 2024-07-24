@@ -413,7 +413,7 @@ Complétez des sondages rémunérés !</h2>
                         <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
                         <b>Partagez votre avis</b> et <b>gagnez des récompenses</b>, tel est le concept du site Gokdo.com.<br><br>
                         Participez à des <b>sondages rémunérés en ligne</b>, vous avez la chance de pouvoir <b>influencer le développement des produits et services</b> que vous consommerez demain. Exprimez-vous en participant au <b>sondage rémunéré</b> maintenant en échange de récompenses.
-                        <br><br><b>Ce site reverse automatiquement 50% des bénéfices réalisés.</b><br><br> Parrainez de nouveaux membres pour <b>gagner</b> 500 Diamants par ami parrainé !</p>
+                        <br><br> Parrainez de nouveaux membres pour <b>gagner</b> 500 Diamants par ami parrainé !</p>
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
