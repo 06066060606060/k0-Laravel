@@ -5,7 +5,8 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
              <a href="/">
-                <img class="w-auto pb-2 mx-auto h-1/6" src="/img/logo.png"></a>
+                    <img class="w-auto pb-4 mx-auto h-auto" src="/img/logo-mobile.webp" alt="Gokdo" width="354" title="Gokdo Sondages rémunérés" height="96" class="w-auto h-24">
+                </a>
                 <h1 class="mb-4 text-4xl font-bold text-gray-100 md:text-4xl title-font">{{__('Mot de passe oublié')}}</h1>
 
             <div class="nav-steps-wrapper">
