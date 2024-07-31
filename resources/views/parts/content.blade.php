@@ -366,7 +366,7 @@ Complétez des sondages rémunérés !</h2>
             <div class="bg-white text-gray-800 font-bold mt-2 text-4xl md:text-5xl lg:text-6xl rounded-lg px-6 py-3 inline-block shadow-lg">
                 € {{ number_format($totalAmount, 2) }}
             </div>
-            <p class="text-lg text-white text-center mt-4">en cashback en utilisant notre service de sondages rémunérés</p>
+            <p class="text-lg text-white text-center mt-4">en cartes cadeaux ou Paypal en utilisant notre service de sondages rémunérés</p>
         </div>
     </section>
 </container>
