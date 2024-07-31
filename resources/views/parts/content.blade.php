@@ -362,7 +362,7 @@ Complétez des sondages rémunérés !</h2>
     <section class="mt-5 relative">
         <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 flex flex-col lg:flex-row items-center lg:items-center">
             <div class="lg:w-1/2 flex flex-col items-center lg:items-center text-center">
-                <h1 class="text-4xl font-bold text-white mb-4">Économiser de l'argent. Gagner de l'argent.</h1>
+                <h1 class="text-4xl font-bold text-white mb-4">Économiser de l'argent.<br> Gagner de l'argent.</h1>
                 <p class="text-lg text-white mb-7">Des membres comme vous ont déjà encaissé :</p>
                 <div class="bg-white text-gray-800 font-bold mt-2 text-4xl md:text-5xl lg:text-6xl rounded-lg px-6 py-3 inline-block shadow-lg">
                     € {{ number_format($totalAmount, 2) }}
