@@ -58,7 +58,7 @@ class GlobalController extends Controller
     $isMobile = GlobalController::isMobile();
 
     // Calculer la somme de amount_usd
-    $totalAmount = DB::table('cpx_research_survey_completes')->sum('amount_usd');
+    $totalAmount = DB::table('cpx_reserach_survey_completes')->sum('amount_usd');
  
     // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX    
     if($isMobile == true) {
