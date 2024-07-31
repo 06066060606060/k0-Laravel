@@ -360,16 +360,13 @@ Complétez des sondages rémunérés !</h2>
 @else
 <container id="home">
     <section class="mt-5 relative">
-        <div class="absolute top-0 right-0 mt-4 mr-4">
-            <button class="bg-gray-800 text-white px-4 py-2 rounded-lg">S'identifier</button>
-        </div>
         <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 flex flex-col items-center">
             <h1 class="text-4xl font-bold text-white text-center mb-4">Économiser de l'argent. Gagner de l'argent.</h1>
-            <p class="text-lg text-white text-center mb-6">Des membres comme vous ont déjà encaissé :</p>
-            <div class="bg-white text-gray-800 font-bold text-4xl md:text-5xl lg:text-6xl rounded-lg px-6 py-3 inline-block shadow-lg">
+            <p class="text-lg text-white text-center mb-7">Des membres comme vous ont déjà encaissé :</p>
+            <div class="bg-white text-gray-800 font-bold mt-2 text-4xl md:text-5xl lg:text-6xl rounded-lg px-6 py-3 inline-block shadow-lg">
                 € {{ number_format($totalAmount, 2) }}
             </div>
-            <p class="text-lg text-white text-center mt-4">en cashback en utilisant notre service</p>
+            <p class="text-lg text-white text-center mt-4">en cashback en utilisant notre service de sondages rémunérés</p>
         </div>
     </section>
 </container>
