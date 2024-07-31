@@ -371,9 +371,9 @@ Complétez des sondages rémunérés !</h2>
             </div>
             <div class="lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
                 @if($isMobile == true)
-                <img src="/img/sondages_remuneres.png" alt="Sondages rémunérés Gokdo.com" width="100%" height="150" style="border-radius: 10px;">
+                <img src="/img/gagner_de_l_argent.jpg" alt="Gagner de l'argent" width="100%" height="150" style="border-radius: 10px;">
                 @else
-                <img src="/img/sondages_remuneres.png" alt="Sondages rémunérés Gokdo.com" width="560" height="315" style="border-radius: 10px;">
+                <img src="/img/gagner_de_l_argent.jpg" alt="Gagner de l'argent" width="560" height="315" style="border-radius: 10px;">
                 @endif
             </div>
         </div>
