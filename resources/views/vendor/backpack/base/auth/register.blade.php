@@ -26,6 +26,23 @@ switch($locale){case'en':$rules="By signing up, you accept the";$rules2="rules";
 
   gtag('config', 'AW-11485783310');
 </script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1845096579302002');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1845096579302002&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
             <a href="{{ str_replace('https://gokdo.com/admin/login', 'https://gokdo.com', route('backpack.auth.login')) }}">
