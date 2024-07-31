@@ -421,17 +421,15 @@ Complétez des sondages rémunérés !</h2>
                         @endif        
                          font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
                             
-                            {{__('Sondages rémunérés')}}
+                            Soyez payé pour répondre à des sondages. À tout moment. Partout.
                         </h1>
                         @php $locale = app()->getLocale(); @endphp
                         @if($isMobile == true)
                         <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
-                        <b>Partagez votre avis</b> et participez à des <b>sondages rémunérés</b> en échange de récompenses.
+                        Partagez vos opinions en répondant à des sondages en ligne pour gagner de l'argent supplémentaire. Des sondages à une seule question aux questionnaires d'étude de marché de 30 minutes, il est toujours temps de gagner de l'argent.
                         @else
                         <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
-                        <b>Partagez votre avis</b> et <b>gagnez des récompenses</b>, tel est le concept du site Gokdo.com.<br><br>
-                        Participez à des <b>sondages rémunérés en ligne</b>, vous avez la chance de pouvoir <b>influencer le développement des produits et services</b> que vous consommerez demain. Exprimez-vous en participant au <b>sondage rémunéré</b> maintenant en échange de récompenses.
-                        <br><br> Parrainez de nouveaux membres pour <b>gagner</b> 500 Diamants par ami parrainé !</p>
+                        Partagez vos opinions en répondant à des sondages en ligne pour gagner de l'argent supplémentaire. Des sondages à une seule question aux questionnaires d'étude de marché de 30 minutes, il est toujours temps de gagner de l'argent.
                         @endif
                         @if($isMobile == true)
                         <div class="mt-4">
