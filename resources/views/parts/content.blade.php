@@ -360,7 +360,7 @@ Complétez des sondages rémunérés !</h2>
 @else
 <container id="home">
     <section class="mt-5 relative">
-        <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 flex flex-col lg:flex-row items-center lg:items-center">
+        <div class="px-12 py-12 mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18 flex flex-col lg:flex-row items-center lg:items-center lg:space-x-8">
             <div class="lg:w-1/2 flex flex-col items-center lg:items-center text-center">
                 <h1 class="text-4xl font-bold text-white mb-4">Économiser de l'argent.<br> Gagner de l'argent.</h1>
                 <p class="text-lg text-white mb-7">Des membres comme vous ont déjà encaissé :</p>
@@ -369,7 +369,7 @@ Complétez des sondages rémunérés !</h2>
                 </div>
                 <p class="text-lg text-white mt-4">par Paypal ou en cartes cadeaux grâce aux sondages rémunérés</p>
             </div>
-            <div class="lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0">
+            <div class="lg:w-1/2 flex justify-center lg:justify-end mt-8 lg:mt-0 @if(!$isMobile) lg:ml-8 @endif">
                 @if($isMobile == true)
                 <img src="/img/gagner_de_l_argent.jpg" alt="Gagner de l'argent" width="100%" height="150" style="border-radius: 10px;">
                 @else
@@ -379,6 +379,7 @@ Complétez des sondages rémunérés !</h2>
         </div>
     </section>
 </container>
+
 
 
     <container id="home">
