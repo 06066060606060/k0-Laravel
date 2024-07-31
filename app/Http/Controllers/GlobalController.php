@@ -29,89 +29,93 @@ class GlobalController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getAll()
-    {
-        $concours = Concours::all(); // TOUTES LES COMMANDES   
-        $winner = User::latest()->get(); //DERNIERS GAGNANTS JEUX
-        $lejoueur = null;
-        $count = 0;
-        $userid = null;
-        // compte le nombre de parrain / Mise a jour du language utilisé
-        if (backpack_auth()->check() && backpack_auth()->user()) {
-            $userid = backpack_auth()->id(); // retourne l'id
-            $lejoueur = backpack_auth()->user()->name;
-            $count = User::where('parrain', backpack_auth()->user()->name)->count();
-        
-            // Get the current locale
-            $locale = app()->getLocale();
-        
-            // Check the 'language' column in the users table
-            $userLanguage = backpack_auth()->user()->language;
-        
-            // Update the 'language' column if it's null or different from the current locale
-            if (empty($userLanguage) || $userLanguage !== $locale) {
-                User::where('name', $lejoueur)->update(['language' => $locale]);
-            }
+{
+    $concours = Concours::all(); // TOUTES LES COMMANDES   
+    $winner = User::latest()->get(); //DERNIERS GAGNANTS JEUX
+    $lejoueur = null;
+    $count = 0;
+    $userid = null;
+    
+    // compte le nombre de parrain / Mise a jour du language utilisé
+    if (backpack_auth()->check() && backpack_auth()->user()) {
+        $userid = backpack_auth()->id(); // retourne l'id
+        $lejoueur = backpack_auth()->user()->name;
+        $count = User::where('parrain', backpack_auth()->user()->name)->count();
+    
+        // Get the current locale
+        $locale = app()->getLocale();
+    
+        // Check the 'language' column in the users table
+        $userLanguage = backpack_auth()->user()->language;
+    
+        // Update the 'language' column if it's null or different from the current locale
+        if (empty($userLanguage) || $userLanguage !== $locale) {
+            User::where('name', $lejoueur)->update(['language' => $locale]);
         }
-        $isMobile = GlobalController::isMobile();
- 
-        // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX    
-        if($isMobile == true) {
-        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name')
-        ->join('users', 'users.id', '=', 'commandes.user_id')
-        ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
-        ->latest() // Trie les résultats par date de création, en ordre décroissant (les derniers en premier)
-        ->take(1)
-        ->get();
-        }else{
-        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name')
-        ->join('users', 'users.id', '=', 'commandes.user_id')
-        ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
-        ->latest() // Trie les résultats par date de création, en ordre décroissant (les derniers en premier)
-        ->take(9)
-        ->get();
-        } 
+    }
+    $isMobile = GlobalController::isMobile();
 
-        // Tous les jeux
-        $allgames = Games::whereNotIn('type', ['Event', 'Solo', 'Grattage'])
+    // Calculer la somme de amount_usd
+    $totalAmount = DB::table('cpx_research_surveys_completes')->sum('amount_usd');
+ 
+    // JOINT SCORE ET USERS POUR DERNIERS GAGNANTS PAGE JEUX    
+    if($isMobile == true) {
+        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name')
+            ->join('users', 'users.id', '=', 'commandes.user_id')
+            ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
+            ->latest() // Trie les résultats par date de création, en ordre décroissant (les derniers en premier)
+            ->take(1)
+            ->get();
+    } else {
+        $scores = Commandes::select('commandes.*', 'users.name', 'cadeaux.name as cadeau_name')
+            ->join('users', 'users.id', '=', 'commandes.user_id')
+            ->leftJoin('cadeaux', 'cadeaux.id', '=', 'commandes.cadeau_id')
+            ->latest() // Trie les résultats par date de création, en ordre décroissant (les derniers en premier)
+            ->take(9)
+            ->get();
+    } 
+
+    // Tous les jeux
+    $allgames = Games::whereNotIn('type', ['Event', 'Solo', 'Grattage'])
         ->where('prix', '!=', 0)
         ->orderBy('id', 'desc')
         ->get();
-    
-        $thefree = Games::where('prix', 0)
+
+    $thefree = Games::where('prix', 0)
         ->whereNotIn('type', ['Event', 'Solo'])
         ->orderBy('id', 'desc')
         ->get();
 
-        // Jeux Gratuits
-        $freegames = Games::where('type', 'Gratuit')
+    // Jeux Gratuits
+    $freegames = Games::where('type', 'Gratuit')
         ->where('prix', '!=', 0)
         ->limit(6)
         ->orderBy('id', 'desc')
         ->get();
 
-        // Jeux Booster
-        $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
-        
-        // Jeux Solo
-        $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'asc')->get();
+    // Jeux Booster
+    $boostergames = Games::where('type', 'Booster')->limit(6)->inRandomOrder()->get();
+    
+    // Jeux Solo
+    $sologames = Games::where('type', 'Solo')->limit(6)->orderBy('id', 'asc')->get();
 
-        // Jeux Solo
-        $scratchgames = Games::where('type', 'Grattage')
+    // Jeux Solo
+    $scratchgames = Games::where('type', 'Grattage')
         ->where('prix', '!=', 0)
         ->limit(6)
+        ->orderBy('id', 'desc')
+        ->get();
+
+    // Jeux event
+    $eventsgames = Games::where('type', 'Event')->get();
+    $countevent = Games::where('type', 'Event')->where('status', 1)->count();
+    
+    $starredGames = Games::where('status', 1)
         ->orderBy('id', 'desc')
         ->get();
     
-        // Jeux event
-        $eventsgames = Games::where('type', 'Event')->get();
-        $countevent = Games::where('type', 'Event')->where('status', 1)->count();
-        
-        $starredGames = Games::where('status', 1)
-        ->orderBy('id', 'desc')
-        ->get();
-        
-        return view('index', compact('thefree', 'userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starredGames', 'allgames', 'winner', 'concours'));
-    }
+    return view('index', compact('thefree', 'userid', 'count', 'lejoueur', 'scores', 'freegames', 'sologames', 'scratchgames', 'boostergames', 'eventsgames', 'countevent', 'starredGames', 'allgames', 'winner', 'concours', 'totalAmount'));
+}
         
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 

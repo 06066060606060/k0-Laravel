@@ -358,6 +358,76 @@ Complétez des sondages rémunérés !</h2>
     </script>
 
 @else
+<container id="home">
+    <section style="margin-top:20px;">
+        <div
+            class="px-12  
+            @if($isMobile == true) 
+            pt-4 pb-0
+            @else 
+            py-12  
+            @endif
+            mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+            <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
+                <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
+                    <div class="relative w-full max-w-lg">
+                        <div class="relative">
+                            Déjà {{ number_format($totalAmount, 2) }}€ de cadeaux redistribués !
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="flex flex-col items-start 
+                    @if($isMobile == true) 
+                    mt-2 mb-8
+                    @else 
+                    mt-12 mb-16
+                    @endif        
+                     text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
+                    <h1 class="mb-4 
+                    @if($isMobile == true) 
+                    text-1xl
+                    @else 
+                    text-4xl
+                    @endif        
+                     font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
+                        
+                        {{__('Sondages rémunérés')}}
+                    </h1>
+                    @php $locale = app()->getLocale(); @endphp
+                    @if($isMobile == true)
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
+                    <b>Partagez votre avis</b> et participez à des <b>sondages rémunérés</b> en échange de récompenses.
+                    @else
+                    <p class="mb-4 text-base leading-relaxed text-left text-gray-300">
+                    <b>Partagez votre avis</b> et <b>gagnez des récompenses</b>, tel est le concept du site Gokdo.com.<br><br>
+                    Participez à des <b>sondages rémunérés en ligne</b>, vous avez la chance de pouvoir <b>influencer le développement des produits et services</b> que vous consommerez demain. Exprimez-vous en participant au <b>sondage rémunéré</b> maintenant en échange de récompenses.
+                    <br><br> Parrainez de nouveaux membres pour <b>gagner</b> 500 Diamants par ami parrainé !</p>
+                    @endif
+                    @if($isMobile == true)
+                    <div class="mt-4">
+                    @else
+                    <div>
+                    @endif
+                        <a href="admin/register"
+                           class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group prevent">
+                            <span
+                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
+                            <span
+                                class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform skew-x-12 bg-indigo-700 group-hover:bg-indigo-500 group-active:bg-indigo-600 group-hover:-skew-x-12"></span>
+                            <span
+                                class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
+                            <span
+                                class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
+                            <span class="relative">{{__('Inscription Gratuite')}}</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</container>
+    
     <container id="home">
         <section style="margin-top:20px;">
             <div
