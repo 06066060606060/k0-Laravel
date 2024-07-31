@@ -372,10 +372,10 @@ Complétez des sondages rémunérés !</h2>
                     <div class="w-full lg:max-w-lg lg:w-1/2 rounded-xl">
                         <div class="relative w-full max-w-lg">
                             <div class="relative">
-                @if($isMobile == true)
-<img src="/img/sondages_remuneres.png" alt="Sondages rémunérés Gokdo.com" width="100%" height="150">
+@if($isMobile == true)
+<img src="/img/sondages_remuneres.png" alt="Sondages rémunérés Gokdo.com" width="100%" height="150" style="border-radius: 10px;">
 @else
-<img src="/img/sondages_remuneres.png" alt="Sondages rémunérés Gokdo.com" width="560" height="315">
+<img src="/img/sondages_remuneres.png" alt="Sondages rémunérés Gokdo.com" width="560" height="315" style="border-radius: 10px;">
 @endif
 
                             </div>
