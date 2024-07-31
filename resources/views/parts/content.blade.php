@@ -359,34 +359,12 @@ Complétez des sondages rémunérés !</h2>
 
 @else
 <container id="home">
-    <section style="margin-top:20px;">
-        <div
-            class="px-12  
-            @if($isMobile == true) 
-            pt-4 pb-0
-            @else 
-            py-12  
-            @endif
-            mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
-            <div class="flex flex-wrap items-center mx-auto max-w-7xl lg:pl-8">
-                <div
-                    class="flex flex-col items-start 
-                    @if($isMobile == true) 
-                    mt-2 mb-8
-                    @else 
-                    mt-12 mb-16
-                    @endif        
-                     text-left lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
-                    <h1 class="mb-4 
-                    @if($isMobile == true) 
-                    text-1xl
-                    @else 
-                    text-4xl
-                    @endif        
-                     font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
-                        
-                    Déjà {{ number_format($totalAmount, 2) }}€ de cadeaux redistribués !
-
+    <section class="mt-5">
+        <div class="px-12 @if($isMobile) pt-4 pb-0 @else py-12 @endif mx-8 bg-gray-800 rounded-lg lg:mx-8 xl:mx-auto bg-opacity-40 max-w-7xl sm:px-16 md:px-24 lg:py-18">
+            <div class="flex flex-wrap items-center justify-center mx-auto max-w-7xl lg:pl-8">
+                <div class="flex flex-col items-center @if($isMobile) mt-2 mb-8 @else mt-12 mb-16 @endif text-center lg:flex-grow lg:w-1/2 lg:pl-6 xl:pl-24 md:mb-0 xl:mt-0">
+                    <h1 class="mb-4 @if($isMobile) text-1xl @else text-4xl @endif font-bold leading-none tracking-tighter text-gray-100 md:text-7xl lg:text-5xl">
+                        Déjà plus de {{ number_format($totalAmount, 2) }}€ de cadeaux redistribués !
                     </h1>
                 </div>
             </div>
