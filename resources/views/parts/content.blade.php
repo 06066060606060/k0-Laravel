@@ -149,7 +149,10 @@ Complétez des sondages rémunérés !</h2>
   </style>
 </head>
 <body>
-
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLHCZTD3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="tab-container">
   <button class="tab-button" style="border-radius:10px 0 0 10px;" onclick="showTab('tab1')">Pour gagner des 
 <b>Diamants</b> <img src="/img/diamond5.png" style="display:inline-block;" class="flex ml-1 mt-1 w-6 h-4"><br><b>Cliquez-ici</b></button>
