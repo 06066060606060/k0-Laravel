@@ -4,43 +4,52 @@
     <!-- Primary Meta Tags -->
     <meta name="title" content="Gokdo - Sondages Rémunérés">
     <title>Gokdo.com</title>
+    <meta id="pageDesc" name="description" content="Gagnez de l'argent en partageant votre opinion avec des sondages rémunérés en ligne. Inscrivez-vous dès maintenant pour des récompenses en échange de vos avis">
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var path = window.location.pathname;
+            var description = "Gagnez de l'argent en partageant votre opinion avec des sondages rémunérés en ligne. Inscrivez-vous dès maintenant pour des récompenses en échange de vos avis";
 
             switch (path) {
                 case "/sondages":
                     document.title = "Gokdo.com - Top 10 des sites de sondages rémunérés";
+                    description = "Découvrez les meilleurs sites de sondages rémunérés et commencez à gagner de l'argent en partageant votre opinion dès aujourd'hui.";
                     break;
                 case "/cadeaux":
                     document.title = "Gokdo.com - Gagner des cartes cadeaux";
+                    description = "Gagnez des cartes cadeaux en participant à des sondages rémunérés en ligne. Inscrivez-vous et commencez à accumuler des récompenses.";
                     break;
                 case "/":
                     document.title = "Gokdo.com - Sondages rémunérés en ligne";
+                    description = "Participez à des sondages rémunérés en ligne et gagnez de l'argent ou des récompenses en échange de votre opinion.";
                     break;
                 case "/reglement":
                     document.title = "Gokdo.com - Règlement du site";
+                    description = "Prenez connaissance du règlement du site Gokdo.com pour comprendre les règles et conditions d'utilisation.";
                     break;
                 case "/mentions-legales":
                     document.title = "Gokdo.com - Mentions Légales";
+                    description = "Lisez les mentions légales de Gokdo.com pour en savoir plus sur les aspects juridiques de notre site.";
                     break;
                 case "/confidentialite-site":
-                    document.title = "Gokdo.com - Politique de Confientialité";
+                    document.title = "Gokdo.com - Politique de Confidentialité";
+                    description = "Découvrez notre politique de confidentialité et comment nous protégeons vos données personnelles sur Gokdo.com.";
                     break;
                 case "/aide":
                     document.title = "Gokdo.com - Aide";
+                    description = "Besoin d'aide? Consultez notre section d'aide pour obtenir des réponses à vos questions sur Gokdo.com.";
                     break;
                 case "/contact":
                     document.title = "Gokdo.com - Nous contacter";
+                    description = "Contactez-nous pour toute question ou support concernant votre expérience sur Gokdo.com.";
                     break;
                 default:
                     document.title = "Gokdo.com - Le site de sondages rémunérés";
             }
+
+            document.querySelector('meta[name="description"]').setAttribute("content", description);
         });
     </script>
-
-    <title id="pageTitle">Sondages Rémunérés Gagnez de l'Argent en Ligne : Votre Avis Compte !</title>
-    <meta id="pageDesc" name="description" content="Gagnez de l'argent en partageant votre opinion avec des sondages rémunérés en ligne. Inscrivez-vous dès maintenant pour des récompenses en échange de vos avis">
     <meta name="keywords" content="sondages rémunérés, enquêtes rémunérées, gagner de l'argent en ligne, panels de consommateurs, récompenses pour sondages, opinions rémunérées, participer à des sondages, sites de sondages, sondages payants, argent sur internet, sondages en ligne rémunérés, rémunération pour avis, panel d'opinion, compensations pour enquêtes, gains en répondant à des sondages, opportunités de revenus en ligne, rémunération pour feedback, études de marché payées, sondages rétribués, gagner de l'argent avec des sondages, travail en ligne rémunéré, plateformes de sondages, inscription à des panels de consommateurs, rémunération pour avis, gagner de l'argent avec des opinions, rémunération pour participation à des études, récompenses pour partager son opinion, rémunération pour réponses à des questionnaires en ligne">
     <meta name="identifier-url" content="https://gokdo.com">
     <meta http-equiv="content-language" content="fr">
