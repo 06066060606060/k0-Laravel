@@ -3,6 +3,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Primary Meta Tags -->
     <meta name="title" content="Gokdo - Sondages Rémunérés">
+    <title>Gokdo.com</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var path = window.location.pathname;
+
+            switch (path) {
+                case "/sondages":
+                    document.title = "Gokdo.com - Top 10 des sites de sondages rémunérés";
+                    break;
+                case "/cadeaux":
+                    document.title = "Gokdo.com - Gagner des cartes cadeaux";
+                    break;
+                case "/":
+                    document.title = "Gokdo.com - Sondages rémunérés en ligne";
+                    break;
+                case "/reglement":
+                    document.title = "Gokdo.com - Règlement du site";
+                    break;
+                case "/mentions-legales":
+                    document.title = "Gokdo.com - Mentions Légales";
+                    break;
+                case "/confidentialite-site":
+                    document.title = "Gokdo.com - Politique de Confientialité";
+                    break;
+                case "/aide":
+                    document.title = "Gokdo.com - Aide";
+                    break;
+                case "/contact":
+                    document.title = "Gokdo.com - Nous contacter";
+                    break;
+                default:
+                    document.title = "Gokdo.com - Le site de sondages rémunérés";
+            }
+        });
+    </script>
+
     <title id="pageTitle">Sondages Rémunérés Gagnez de l'Argent en Ligne : Votre Avis Compte !</title>
     <meta id="pageDesc" name="description" content="Gagnez de l'argent en partageant votre opinion avec des sondages rémunérés en ligne. Inscrivez-vous dès maintenant pour des récompenses en échange de vos avis">
     <meta name="keywords" content="sondages rémunérés, enquêtes rémunérées, gagner de l'argent en ligne, panels de consommateurs, récompenses pour sondages, opinions rémunérées, participer à des sondages, sites de sondages, sondages payants, argent sur internet, sondages en ligne rémunérés, rémunération pour avis, panel d'opinion, compensations pour enquêtes, gains en répondant à des sondages, opportunités de revenus en ligne, rémunération pour feedback, études de marché payées, sondages rétribués, gagner de l'argent avec des sondages, travail en ligne rémunéré, plateformes de sondages, inscription à des panels de consommateurs, rémunération pour avis, gagner de l'argent avec des opinions, rémunération pour participation à des études, récompenses pour partager son opinion, rémunération pour réponses à des questionnaires en ligne">
