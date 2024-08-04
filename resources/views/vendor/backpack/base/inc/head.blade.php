@@ -23,8 +23,27 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
     <meta name="csrf-token" content="{{ csrf_token() }}" /> {{-- Encrypted CSRF token for Laravel, in order for Ajax requests to work --}}
-    <title>Gokdo.com - Le site de sondages rémunérés</title>
-    @vite('resources/css/app.css')
+<title>Gokdo.com</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var path = window.location.pathname;
+
+            switch (path) {
+                case "/admin/register":
+                    document.title = "Gokdo.com - Inscription rapide";
+                    break;
+                case "/admin/login":
+                    document.title = "Gokdo.com - Connexion";
+                    break;
+                case "/admin/password/reset":
+                    document.title = "Gokdo.com - Mot de passe oublié";
+                    break;
+                default:
+                    document.title = "Gokdo.com - Le site de sondages rémunérés";
+            }
+        });
+    </script>
+        @vite('resources/css/app.css')
     @yield('before_styles')
     
     @stack('before_styles')
