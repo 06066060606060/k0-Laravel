@@ -52,30 +52,48 @@ class ExtendedRegisterController extends RegisterController
 }
 
 
-    public function register(Request $request)
+public function register(Request $request)
 {
     if (!config('backpack.base.registration_open')) {
         abort(403, trans('backpack::base.registration_closed'));
     }
 
+    // Validation des données
     $this->validator($request->all())->validate();
 
+    // Récupération des données
     $data = $request->all();
 
+    // Vérification si un parrain est présent
     if ($request->has('parrain')) {
         $data['parrain'] = $request->input('parrain');
     }
 
+    // Création du nouvel utilisateur
     $user = $this->create($data);
 
     if (isset($data['parrain'])) {
+        // Si un parrain est présent, associer le parrain au nouvel utilisateur
         $user->parrain = $data['parrain'];
         $user->save();
-        User::where('name', $data['parrain'])->update(['trophee1' => DB::raw('trophee1 + 0')]);
+
+        // Mise à jour du parrain avec trophee1 + 500
+        User::where('name', $data['parrain'])->update(['trophee1' => DB::raw('trophee1 + 500')]);
+
+        // Mise à jour du nouvel utilisateur (parrainé) avec trophee1 + 1000
+        $user->update(['trophee1' => DB::raw('trophee1 + 1000')]);
+    } else {
+        // Si pas de parrain, le nouvel utilisateur reste avec trophee1 + 0 (par défaut)
+        $user->update(['trophee1' => DB::raw('trophee1 + 0')]);
     }
 
+    // Événement d'enregistrement
     event(new Registered($user));
+
+    // Connexion de l'utilisateur après l'enregistrement
     $this->guard()->login($user);
+
+    // Redirection après inscription
     return redirect($this->redirectPath());
 }
 
