@@ -243,7 +243,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <td class="pr-2">
                                         <i class="fas fa-2x fa-user-group text-white"></i>
                                     </td>
-                                    <td style="display:inline-block;" class="pl-2 text-white">
+                                    <td style="display:inline-block;" class="pl-2 text-white">{{__('Gagnez')}} 500 <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"> {{__('par ami parrainé !')}} <br><i>{{__('(Aucune Limite de parrainage et votre ami gagne 1 000)')}}</i> <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"><br>
                                         <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group" data-barba-prevent="self"
                                               id="copyLink"><span
@@ -254,7 +254,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">{{__('Cliquez-ici pour copier votre lien')}}</span></a></b>
+                                <span class="relative">{{__('Cliquez-ici pour copier votre lien')}}</span></a></b><br><br>
+                                        <i style="color: orange; font-size: 13px;">Triche = Exclusion du site</i>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -276,7 +277,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <td class="pr-4">
                                         <i class="fas fa-3x fa-user-group text-white"></i>
                                     </td>
-                                    <td style="display:inline-block;" class="pl-4 text-white"><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
+                                    <td style="display:inline-block;" class="pl-4 text-white">{{__('Gagnez')}} 500 <img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"> {{__('par ami parrainé !')}}<br> <i>{{__('(Aucune Limite de parrainage et votre ami gagne 1 000)')}}</i><img src="{{ asset('img/diamond5.png') }}" alt="Diamants" class="w-4 h-4 ml-1 inline-block"><br>
+                                        <br><b><a href="https://gokdo.com/admin/register?parrain={{ $lejoueur }}"
                                               class="relative px-5 py-2 mx-auto mt-4 font-medium text-white shadow-lg group" data-barba-prevent="self"
                                               id="copyLink"><span
                                     class="absolute inset-0 w-full h-full transition-all duration-300 ease-out transform translate-x-0 -skew-x-12 bg-indigo-500 group-hover:bg-indigo-700 group-hover:skew-x-12"></span>
@@ -286,7 +288,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     class="absolute bottom-0 left-0 hidden w-10 h-20 transition-all duration-100 ease-out transform -translate-x-8 translate-y-10 bg-indigo-600 -rotate-12"></span>
                                 <span
                                     class="absolute bottom-0 right-0 hidden w-10 h-20 transition-all duration-100 ease-out transform translate-x-10 translate-y-8 bg-indigo-400 -rotate-12"></span>
-                                <span class="relative">{{__('Cliquez-ici pour copier votre lien')}}</span></a></b>
+                                <span class="relative">{{__('Cliquez-ici pour copier votre lien')}}</span></a></b><br><br>
+                                        <i style="color: orange; font-size: 13px;">Triche = Exclusion du site</i>
                                     </td>
                                 </tr>
                                 </tbody>
